@@ -1,7 +1,7 @@
 <GenerationInfo_G_C>
   <Options>
     <ProjectName>ProcessorExpert</ProjectName>
-    <ProjectDirectory>C:\Documents and Settings\jeffw\Desktop\CHE_Attempt\KW2\</ProjectDirectory>
+    <ProjectDirectory>C:\Documents and Settings\jeffw\git\KW2\</ProjectDirectory>
     <DestEventsDirectory>Sources\</DestEventsDirectory>
     <DestDriversSubDirectory>..\Generated_Code\</DestDriversSubDirectory>
     <DestDocumentationDirectory>Documentation\</DestDocumentationDirectory>
@@ -219,7 +219,7 @@
     </GenFiles>
     <SignalListFile>Documentation\ProcessorExpert_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>94</ProjectModificationStamp>
+    <ProjectModificationStamp>95</ProjectModificationStamp>
   </Options>
   <CpuID_47>
     <Generated>true</Generated>
@@ -227,7 +227,7 @@
     <GenComponentVersion>01.006</GenComponentVersion>
     <GenDriverVersion>01.04</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1154714119</HeaderAge>
+    <HeaderAge>1154969450</HeaderAge>
     <CodeAge>1154746789</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>10</GenNumMethods>
@@ -3089,8 +3089,8 @@
     <GenComponentVersion>01.006</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1154746825</HeaderAge>
-    <CodeAge>1154647877</CodeAge>
+    <HeaderAge>-1</HeaderAge>
+    <CodeAge>-1</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>3</GenNumMethods>
     <CriticalVariable>true</CriticalVariable>

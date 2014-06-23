@@ -3,8 +3,8 @@
   <Header>
     <Name>ProcessorExpert</Name>
     <SavedBy>jeffw</SavedBy>
-    <ModificationStamp>93</ModificationStamp>
-    <Date>2014-06-20</Date>
+    <ModificationStamp>95</ModificationStamp>
+    <Date>2014-06-23</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.8.0.RT5_b1337-1809</PEversion>
   </Header>
@@ -28,7 +28,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>72</ProjectCompNumb>
+    <ProjectCompNumb>75</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -7588,7 +7588,7 @@
     <CompNumb>1</CompNumb>
     <NodeName>AisleController</NodeName>
     <CnfgEnabled>false</CnfgEnabled>
-    <TargetCPU>0</TargetCPU>
+    <TargetCPU>47</TargetCPU>
     <ConfigurationComment lines_count="0" />
     <BoolList_FpgaConfig>
       <Count>0</Count>
@@ -7707,11 +7707,11 @@
     <BoolList_BeanConfig>
       <Count>18</Count>
       <ItemId0>8</ItemId0>
-      <Value0>false</Value0>
+      <Value0>true</Value0>
       <ItemId1>10</ItemId1>
-      <Value1>false</Value1>
+      <Value1>true</Value1>
       <ItemId2>12</ItemId2>
-      <Value2>false</Value2>
+      <Value2>true</Value2>
       <ItemId3>25</ItemId3>
       <Value3>true</Value3>
       <ItemId4>26</ItemId4>
@@ -18264,7 +18264,7 @@
         <ItemSymbol>PeriodDevice</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value />
+        <Value>FTM0_MOD</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
