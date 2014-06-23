@@ -1,0 +1,301 @@
+/*
+*****************************************************************************
+**
+**  File        : K22DN512M5_flash.ld
+**
+**  Default linker command file for Flash targets
+**
+*****************************************************************************
+*/
+
+#if !defined(gUseBootloaderLink_d)
+#define gUseBootloaderLink_d 0
+#endif
+
+#if !defined(gUseInternalStorageLink_d)
+#define gUseInternalStorageLink_d 0
+#endif
+
+#if !defined(gUseStandardNVMLink_d)
+#define gUseStandardNVMLink_d 1
+#endif
+
+/* Entry Point */
+ENTRY(__thumb_startup)
+
+/*--ROM memory--*/
+#if gUseBootloaderLink_d
+    #define __BOOT_size__  0x00004000
+#else
+    #define __BOOT_size__  0x00000000
+#endif
+#define __BOOT_start__     0x00000000
+#define __ROM_start__     (__BOOT_start__ + __BOOT_size__)
+#define __ROM_size__	   512K
+#define __ROM_end__        0x0007FFFF
+#define __intvec_size__    0x400
+/* If gUseBootloaderLink_d is TRUE, here will  be stored the Bootloader Flags */
+#define __FlashConfig_start__  (__ROM_start__ + __intvec_size__)
+#define __FlashConfig_size__   0x10
+
+/*--RAM memory--*/
+#define __RAM_start__  0x1FFF8000 
+#define __RAM_end__    0x1FFFFFFF
+#define __RAM2_start__ 0x20000000
+#define __RAM2_end__   0x20007FFF
+
+
+/*--FSL Production Data--*/
+#define _FSL_PROD_DATA_SIZE          0x80
+#define _FSL_PROD_DATA_SECTOR_SIZE   0x800
+#define _FSL_PROD_DATA_END_ADDRESS   __ROM_end__
+#define _FSL_PROD_DATA_START_ADDRESS (_FSL_PROD_DATA_END_ADDRESS - _FSL_PROD_DATA_SECTOR_SIZE + 1)
+
+/*--NVM Section--*/
+#if(gUseStandardNVMLink_d)
+  #define _NV_STORAGE_SECTOR_SIZE   0x800 /* 2k flash sector size */
+  #define _NV_STORAGE_MAX_SECTORS   7     /* NV_STORAGE_MAX_SECTORS * NV_STORAGE_SECTOR_SIZE = total NV Storage space */
+  #define _NV_STORAGE_SIZE          (_NV_STORAGE_MAX_SECTORS * _NV_STORAGE_SECTOR_SIZE)
+  #define _NV_STORAGE_START_ADDRESS (_FSL_PROD_DATA_START_ADDRESS - _NV_STORAGE_SIZE)
+  #define _NV_STORAGE_END_ADDRESS   _FSL_PROD_DATA_START_ADDRESS
+#else
+  #define _NV_STORAGE_SIZE 0
+#endif
+
+/*--Internal Storage Section--*/
+#if(gUseInternalStorageLink_d)
+	#define _INT_STORAGE_SECTOR_SIZE   0x800 /* 2k flash sector size */
+	#if(gUseStandardNVMLink_d)
+	  #define _INT_STORAGE_SIZE   ((_NV_STORAGE_START_ADDRESS - __ROM_start__) >> 1)
+	  #define _INT_STORAGE_END    _NV_STORAGE_START_ADDRESS
+	#else
+	  #define _INT_STORAGE_SIZE   ((_FSL_PROD_DATA_START_ADDRESS - __ROM_start__) >> 1)
+	  #define _INT_STORAGE_END    _FSL_PROD_DATA_START_ADDRESS
+	#endif    
+	  #define _INT_STORAGE_START (_INT_STORAGE_END - _INT_STORAGE_SIZE)
+#else
+  #define _INT_STORAGE_SIZE 0
+#endif
+
+/*--ROM CODE--*/
+#define __code_start__ (__FlashConfig_start__ + __FlashConfig_size__)
+#define __code_size__  (__ROM_size__ - __BOOT_size__ - __intvec_size__ - __FlashConfig_size__ - \
+                        _FSL_PROD_DATA_SECTOR_SIZE - _NV_STORAGE_SIZE - _INT_STORAGE_SIZE)
+
+/* Generate a link error if heap and stack don't fit into RAM */
+__heap_size = 0x00;	    /* required amount of heap  */
+__stack_size = 0x800; 	/* required amount of stack */
+
+__region_RAM_start__  = __RAM_start__; 
+__region_RAM_end__	  = __RAM_end__;
+__region_RAM2_start__ = __RAM2_start__;
+__region_RAM2_end__   = __RAM2_end__;
+__region_ROM_end__    = __ROM_end__;
+__region_ROM_start__  = __ROM_start__;
+
+#if(gUseInternalStorageLink_d)
+INT_STORAGE_END       = _INT_STORAGE_START; 
+INT_STORAGE_START     = _INT_STORAGE_END;
+#endif
+
+/* Highest address of the user mode stack */
+_estack = __region_RAM2_end__;    /* end of upper SRAM */
+__SP_INIT = _estack;
+
+/* Specify the memory areas */
+MEMORY
+{
+  m_interrupts	(rx) : ORIGIN = __ROM_start__,         LENGTH = __intvec_size__
+  m_cfmprotrom 	(rx) : ORIGIN = __FlashConfig_start__, LENGTH = __FlashConfig_size__
+  m_text 		(rx) : ORIGIN = __code_start__,        LENGTH = __code_size__
+#if (gUseInternalStorageLink_d)  
+  m_intStorage (rwx) : ORIGIN = _INT_STORAGE_START,    LENGTH = _INT_STORAGE_SIZE
+#endif
+#if(gUseStandardNVMLink_d)
+  m_NVM        (rwx) : ORIGIN = _NV_STORAGE_START_ADDRESS,    LENGTH = _NV_STORAGE_SIZE
+#endif
+  m_prodData    (rx) : ORIGIN = _FSL_PROD_DATA_START_ADDRESS, LENGTH = _FSL_PROD_DATA_SECTOR_SIZE
+  m_data 	   (rwx) : ORIGIN = __RAM_start__,                LENGTH = 64K /* Lower + Upper SRAM */
+}
+
+		
+/* Define output sections */
+SECTIONS
+{
+  /* The startup code goes first into Flash */
+  .interrupts :
+  {
+	__vector_table = .;
+    . = ALIGN(4);
+    KEEP(*(.vectortable)) /* Startup code */
+    . = ALIGN(4);
+  } > m_interrupts
+  
+  .cfmprotect :
+  {
+    . = ALIGN(4);
+#if (gUseBootloaderLink_d)
+    KEEP(*(.BootloaderFlags))
+#else
+	KEEP(*(.cfmconfig))	/* Flash Configuration Field (FCF) */
+#endif
+	. = ALIGN(4);
+  } > m_cfmprotrom
+
+  /* The program code and other data goes into Flash */
+  .text :
+  {
+    . = ALIGN(4);
+    *(.text)           /* .text sections (code) */
+    *(.text*)          /* .text* sections (code) */
+    *(.rodata)         /* .rodata sections (constants, strings, etc.) */
+    *(.rodata*)        /* .rodata* sections (constants, strings, etc.) */
+    *(.glue_7)         /* glue arm to thumb code */
+    *(.glue_7t)        /* glue thumb to arm code */
+    *(.eh_frame)
+
+    KEEP (*(.init))
+    KEEP (*(.fini))
+
+    . = ALIGN(4);
+    _etext = .;        /* define a global symbols at end of code */
+  } > m_text
+
+  .ARM.extab   : { *(.ARM.extab* .gnu.linkonce.armextab.*) } > m_text
+  .ARM : {
+    __exidx_start = .;
+      *(.ARM.exidx*)
+      __exidx_end = .;
+  } > m_text
+  
+  .ctors :
+  {
+    __CTOR_LIST__ = .;
+    /* gcc uses crtbegin.o to find the start of
+       the constructors, so we make sure it is
+       first.  Because this is a wildcard, it
+       doesn't matter if the user does not
+       actually link against crtbegin.o; the
+       linker won't look for a file to match a
+       wildcard.  The wildcard also means that it
+       doesn't matter which directory crtbegin.o
+       is in.  */
+    KEEP (*crtbegin.o(.ctors))
+    /* We don't want to include the .ctor section from
+       from the crtend.o file until after the sorted ctors.
+       The .ctor section from the crtend file contains the
+       end of ctors marker and it must be last */
+    KEEP (*(EXCLUDE_FILE (*crtend.o ) .ctors))
+    KEEP (*(SORT(.ctors.*)))
+    KEEP (*(.ctors))
+    __CTOR_END__ = .;
+  } > m_text  
+  .dtors :
+  {
+    __DTOR_LIST__ = .;
+    KEEP (*crtbegin.o(.dtors))
+    KEEP (*(EXCLUDE_FILE (*crtend.o ) .dtors))
+    KEEP (*(SORT(.dtors.*)))
+    KEEP (*(.dtors))
+    __DTOR_END__ = .;
+  } > m_text  
+
+  .preinit_array :
+  {
+    PROVIDE_HIDDEN (__preinit_array_start = .);
+    KEEP (*(.preinit_array*))
+    PROVIDE_HIDDEN (__preinit_array_end = .);
+  } > m_text
+  
+  .init_array :
+  {
+    PROVIDE_HIDDEN (__init_array_start = .);
+    KEEP (*(SORT(.init_array.*)))
+    KEEP (*(.init_array*))
+    PROVIDE_HIDDEN (__init_array_end = .);
+  } > m_text
+  
+  .fini_array :
+  {
+    PROVIDE_HIDDEN (__fini_array_start = .);
+    KEEP (*(SORT(.fini_array.*)))
+    KEEP (*(.fini_array*))
+    PROVIDE_HIDDEN (__fini_array_end = .);
+	
+	___ROM_AT = .;
+  } > m_text
+
+  FREESCALE_PROD_DATA :
+  {
+    . = ALIGN(4);
+	KEEP(*(FREESCALE_PROD_DATA))	
+	. = ALIGN(4);
+  } > m_prodData
+  
+  /*************************************************************************************************
+   *  Burst-access cannot occur across the 0x2000_0000 boundary that separates the two SRAM arrays. 
+   *  Store some data at the 0x2000_0000 boundary, to avoid the above situation. 
+   *************************************************************************************************/
+  .data2 :
+  {
+    . = ALIGN(4);
+    KEEP(*(data2))	
+    . = ALIGN(4);
+  } > m_data
+  
+  /* Initialized data sections goes into RAM, load LMA copy after code */
+  .data : AT(___ROM_AT)
+  {
+    . = ALIGN(4);
+    _sdata = .;        /* create a global symbol at data start */
+    *(.data)           /* .data sections */
+    *(.data*)          /* .data* sections */
+
+    . = ALIGN(4);
+    _edata = .;        /* define a global symbol at data end */
+  } > m_data
+
+  ___data_size = _edata - _sdata;
+
+  /* Uninitialized data section */
+  . = ALIGN(4);
+  .bss :
+  {
+    /* This is used by the startup in order to initialize the .bss section */
+    __START_BSS = .;
+	PROVIDE ( __bss_start__ = __START_BSS );
+    *(.bss)
+    *(.bss*)
+    *(COMMON)
+
+    . = ALIGN(4);
+    __END_BSS = .;
+	PROVIDE ( __bss_end__ = __END_BSS );
+  } > m_data
+
+  /* User_heap_stack section, used to check that there is enough RAM left */
+  ._user_heap_stack :
+  {
+    . = ALIGN(4);
+    PROVIDE ( end = . );
+    PROVIDE ( _end = . );
+	__heap_addr = .;
+    . = . + __heap_size;
+    . = . + __stack_size;
+    . = ALIGN(4);
+  } > m_data
+  
+  _romp_at = ___ROM_AT + SIZEOF(.data);
+  .romp : AT(_romp_at)
+  {
+	__S_romp = _romp_at;
+    LONG(___ROM_AT);
+    LONG(_sdata);
+    LONG(___data_size);
+    LONG(0);
+    LONG(0);
+    LONG(0);
+  } > m_data
+ 
+  .ARM.attributes 0 : { *(.ARM.attributes) }
+}
