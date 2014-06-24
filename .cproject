@@ -309,7 +309,7 @@
 					</folderInfo>
 					<fileInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="PLM/Source/Sys Common/vectors.h|PLM/Source/Sys Common/vectors.c|Application/Source/UART.h|Application/Source/UART.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="PLM/Environment/MK21D5.h|PLM/Source/Sys Common/vectors.h|PLM/Source/Sys Common/vectors.c|Application/Source/UART.h|Application/Source/UART.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

@@ -6,7 +6,7 @@
     <ModificationStamp>95</ModificationStamp>
     <Date>2014-06-23</Date>
     <IDE>Eclipse IDE</IDE>
-    <PEversion>1.8.0.RT5_b1337-1809</PEversion>
+    <PEversion>1.9.0.RT6_b1411-0406</PEversion>
   </Header>
   <Options>
     <EventsDirectory>Sources</EventsDirectory>
@@ -192,7 +192,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>6</Index>
         <EnumSymbVal>6</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SystemOSCGrp</ItemSymbol>
@@ -258,7 +257,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>6</Index>
         <EnumSymbVal>6</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ExtOscOperatingMode</ItemSymbol>
@@ -267,7 +265,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>1</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CLKModeList</ItemSymbol>
@@ -319,7 +316,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>1</Index>
         <EnumSymbVal>1</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>IRCLKClkCLKMode0</ItemSymbol>
@@ -360,7 +356,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>3</Index>
         <EnumSymbVal>3</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ERCLK32KClkCLKMode0</ItemSymbol>
@@ -385,7 +380,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>FLLOUT</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>MCGModeCLKMode0</ItemSymbol>
@@ -405,7 +399,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>MCG_ERCLKClkCLKMode0</ItemSymbol>
@@ -444,7 +437,7 @@
       <ItemState>
         <ItemSymbol>FLLFixedClkCLKMode0</ItemSymbol>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>16.384</Value>
+        <Value>32.768</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>FLL_RefClkSrcCLKMode0</ItemSymbol>
@@ -461,7 +454,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>Auto select</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FLLRefClkCLKMode0</ItemSymbol>
@@ -475,7 +467,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>Auto select</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PLLGrp0</ItemSymbol>
@@ -513,7 +504,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>Auto select</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PLLRefClkCLKMode0</ItemSymbol>
@@ -527,7 +517,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>Auto select</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PLL_LOLIECLKMode0</ItemSymbol>
@@ -709,7 +698,6 @@
         <TypeSpecNameState>typeKinetisRCMFilterInStop</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RCMFilterInRunWait</ItemSymbol>
@@ -719,7 +707,6 @@
         <TypeSpecNameState>typeKinetisRCMFilterInRunWait</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RCMFilterWidth</ItemSymbol>
@@ -900,7 +887,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>3</Index>
         <EnumSymbVal>64</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>Dpart_</ItemSymbol>
@@ -963,7 +949,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>EEEpart_</ItemSymbol>
@@ -1004,7 +989,7 @@
       <ItemState>
         <ItemSymbol>FlexRAMSize</ItemSymbol>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>0</Value>
+        <Value>4096</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -1129,7 +1114,6 @@
         <TypeSpecNameState>typeKinetisFMCMasterPrefetch</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCMaster0AccessProtection</ItemSymbol>
@@ -1139,7 +1123,6 @@
         <TypeSpecNameState>typeKinetisFMCMasterAccessProtection</TypeSpecNameState>
         <Index>3</Index>
         <EnumSymbVal>read_write</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCMaster1_Grp</ItemSymbol>
@@ -1155,7 +1138,6 @@
         <TypeSpecNameState>typeKinetisFMCMasterPrefetch</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCMaster1AccessProtection</ItemSymbol>
@@ -1165,7 +1147,6 @@
         <TypeSpecNameState>typeKinetisFMCMasterAccessProtection</TypeSpecNameState>
         <Index>3</Index>
         <EnumSymbVal>read_write</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCMaster2_Grp</ItemSymbol>
@@ -1181,7 +1162,6 @@
         <TypeSpecNameState>typeKinetisFMCMasterPrefetch</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCMaster2AccessProtection</ItemSymbol>
@@ -1191,7 +1171,6 @@
         <TypeSpecNameState>typeKinetisFMCMasterAccessProtection</TypeSpecNameState>
         <Index>3</Index>
         <EnumSymbVal>read_write</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCMaster4_Grp</ItemSymbol>
@@ -1207,7 +1186,6 @@
         <TypeSpecNameState>typeKinetisFMCMasterPrefetch</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCMaster4AccessProtection</ItemSymbol>
@@ -1217,7 +1195,6 @@
         <TypeSpecNameState>typeKinetisFMCMasterAccessProtection</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>no_access</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCCacheGrp</ItemSymbol>
@@ -1239,7 +1216,6 @@
         <TypeSpecNameState>typeKinetisFMCBankReplacementCtrl</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCBank0DCE</ItemSymbol>
@@ -1249,7 +1225,6 @@
         <TypeSpecNameState>typeKinetisFMCBankDCE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCBank0ICE</ItemSymbol>
@@ -1259,7 +1234,6 @@
         <TypeSpecNameState>typeKinetisFMCBankICE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCBank0DPE</ItemSymbol>
@@ -1269,7 +1243,6 @@
         <TypeSpecNameState>typeKinetisFMCBankDPE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCBank0IPE</ItemSymbol>
@@ -1279,7 +1252,6 @@
         <TypeSpecNameState>typeKinetisFMCBankIPE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCBank0PBE</ItemSymbol>
@@ -1289,7 +1261,6 @@
         <TypeSpecNameState>typeKinetisFMCBankPBE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCBank1_Grp</ItemSymbol>
@@ -1305,7 +1276,6 @@
         <TypeSpecNameState>typeKinetisFMCBankDCE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCBank1ICE</ItemSymbol>
@@ -1315,7 +1285,6 @@
         <TypeSpecNameState>typeKinetisFMCBankICE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCBank1DPE</ItemSymbol>
@@ -1325,7 +1294,6 @@
         <TypeSpecNameState>typeKinetisFMCBankDPE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCBank1IPE</ItemSymbol>
@@ -1335,7 +1303,6 @@
         <TypeSpecNameState>typeKinetisFMCBankIPE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCBank1PBE</ItemSymbol>
@@ -1345,7 +1312,6 @@
         <TypeSpecNameState>typeKinetisFMCBankPBE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FMCInternalUsageGrp</ItemSymbol>
@@ -1392,8 +1358,8 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigSecurity</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unsecure</EnumSymbVal>
+        <Value>false</Value>
         <Expanded>false</Expanded>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigFslAccess</ItemSymbol>
@@ -1403,7 +1369,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigFslAccess</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>granted</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigMassEraseEnable</ItemSymbol>
@@ -1413,7 +1378,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigMassEraseEnable</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigBackdoorkeyEnable</ItemSymbol>
@@ -1423,7 +1387,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigBackdoorkeyEnable</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigBackdoorKey0</ItemSymbol>
@@ -1527,7 +1490,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion1</ItemSymbol>
@@ -1537,7 +1499,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion2</ItemSymbol>
@@ -1547,7 +1508,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion3</ItemSymbol>
@@ -1557,7 +1517,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion4</ItemSymbol>
@@ -1567,7 +1526,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion5</ItemSymbol>
@@ -1577,7 +1535,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion6</ItemSymbol>
@@ -1587,7 +1544,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion7</ItemSymbol>
@@ -1597,7 +1553,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion8</ItemSymbol>
@@ -1607,7 +1562,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion9</ItemSymbol>
@@ -1617,7 +1571,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion10</ItemSymbol>
@@ -1627,7 +1580,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion11</ItemSymbol>
@@ -1637,7 +1589,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion12</ItemSymbol>
@@ -1647,7 +1598,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion13</ItemSymbol>
@@ -1657,7 +1607,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion14</ItemSymbol>
@@ -1667,7 +1616,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion15</ItemSymbol>
@@ -1677,7 +1625,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion16</ItemSymbol>
@@ -1687,7 +1634,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion17</ItemSymbol>
@@ -1697,7 +1643,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion18</ItemSymbol>
@@ -1707,7 +1652,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion19</ItemSymbol>
@@ -1717,7 +1661,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion20</ItemSymbol>
@@ -1727,7 +1670,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion21</ItemSymbol>
@@ -1737,7 +1679,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion22</ItemSymbol>
@@ -1747,7 +1688,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion23</ItemSymbol>
@@ -1757,7 +1697,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion24</ItemSymbol>
@@ -1767,7 +1706,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion25</ItemSymbol>
@@ -1777,7 +1715,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion26</ItemSymbol>
@@ -1787,7 +1724,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion27</ItemSymbol>
@@ -1797,7 +1733,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion28</ItemSymbol>
@@ -1807,7 +1742,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion29</ItemSymbol>
@@ -1817,7 +1751,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion30</ItemSymbol>
@@ -1827,7 +1760,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigProgramFlashProtectionRegion31</ItemSymbol>
@@ -1837,7 +1769,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigProgramFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigDataFlashProtectionSettingsGrp</ItemSymbol>
@@ -1871,7 +1802,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigDataFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigDataFlashProtectionRegion1</ItemSymbol>
@@ -1881,7 +1811,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigDataFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigDataFlashProtectionRegion2</ItemSymbol>
@@ -1891,7 +1820,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigDataFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigDataFlashProtectionRegion3</ItemSymbol>
@@ -1901,7 +1829,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigDataFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigDataFlashProtectionRegion4</ItemSymbol>
@@ -1911,7 +1838,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigDataFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigDataFlashProtectionRegion5</ItemSymbol>
@@ -1921,7 +1847,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigDataFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigDataFlashProtectionRegion6</ItemSymbol>
@@ -1931,7 +1856,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigDataFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigDataFlashProtectionRegion7</ItemSymbol>
@@ -1941,7 +1865,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigDataFlashProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigEepromProtectionSettingsGrp</ItemSymbol>
@@ -1975,7 +1898,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigEepromProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigEepromProtectionRegion1</ItemSymbol>
@@ -1985,7 +1907,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigEepromProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigEepromProtectionRegion2</ItemSymbol>
@@ -1995,7 +1916,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigEepromProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigEepromProtectionRegion3</ItemSymbol>
@@ -2005,7 +1925,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigEepromProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigEepromProtectionRegion4</ItemSymbol>
@@ -2015,7 +1934,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigEepromProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigEepromProtectionRegion5</ItemSymbol>
@@ -2025,7 +1943,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigEepromProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigEepromProtectionRegion6</ItemSymbol>
@@ -2035,7 +1952,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigEepromProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigEepromProtectionRegion7</ItemSymbol>
@@ -2045,7 +1961,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigEepromProtectionRegion</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>unprotected</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigPeripheralSettingsGrp</ItemSymbol>
@@ -2061,7 +1976,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigNmiFunction</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigEzPortDis</ItemSymbol>
@@ -2071,7 +1985,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigEzPortDis</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigLpboot</ItemSymbol>
@@ -2081,7 +1994,6 @@
         <TypeSpecNameState>typeKinetisFTFL_FlashConfigLpboot</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>normal</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FTFL_FlashConfigInternalUsageGrp</ItemSymbol>
@@ -2134,7 +2046,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_AIPS0_WriteProtect</ItemSymbol>
@@ -2144,7 +2055,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_AIPS0_TrustedProtect</ItemSymbol>
@@ -2154,7 +2064,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_DMA</ItemSymbol>
@@ -2170,7 +2079,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_DMA_WriteProtect</ItemSymbol>
@@ -2180,7 +2088,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_DMA_TrustedProtect</ItemSymbol>
@@ -2190,7 +2097,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_DMA_DESCRIPTORS</ItemSymbol>
@@ -2206,7 +2112,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_DMA_DESCRIPTORS_WriteProtect</ItemSymbol>
@@ -2216,7 +2121,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_DMA_DESCRIPTORS_TrustedProtect</ItemSymbol>
@@ -2226,7 +2130,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_FMC</ItemSymbol>
@@ -2242,7 +2145,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_FMC_WriteProtect</ItemSymbol>
@@ -2252,7 +2154,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_FMC_TrustedProtect</ItemSymbol>
@@ -2262,7 +2163,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_FTFL</ItemSymbol>
@@ -2278,7 +2178,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_FTFL_WriteProtect</ItemSymbol>
@@ -2288,7 +2187,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_FTFL_TrustedProtect</ItemSymbol>
@@ -2298,7 +2196,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_DMA_MULTIPLEXOR</ItemSymbol>
@@ -2314,7 +2211,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_DMA_MULTIPLEXOR_WriteProtect</ItemSymbol>
@@ -2324,7 +2220,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_DMA_MULTIPLEXOR_TrustedProtect</ItemSymbol>
@@ -2334,7 +2229,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_SPI0</ItemSymbol>
@@ -2350,7 +2244,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_SPI0_WriteProtect</ItemSymbol>
@@ -2360,7 +2253,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_SPI0_TrustedProtect</ItemSymbol>
@@ -2370,7 +2262,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_SPI1</ItemSymbol>
@@ -2386,7 +2277,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_SPI1_WriteProtect</ItemSymbol>
@@ -2396,7 +2286,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_SPI1_TrustedProtect</ItemSymbol>
@@ -2406,7 +2295,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_I2S0</ItemSymbol>
@@ -2422,7 +2310,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_I2S0_WriteProtect</ItemSymbol>
@@ -2432,7 +2319,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_I2S0_TrustedProtect</ItemSymbol>
@@ -2442,7 +2328,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_CRC</ItemSymbol>
@@ -2458,7 +2343,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_CRC_WriteProtect</ItemSymbol>
@@ -2468,7 +2352,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_CRC_TrustedProtect</ItemSymbol>
@@ -2478,7 +2361,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_USBDCD</ItemSymbol>
@@ -2494,7 +2376,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_USBDCD_WriteProtect</ItemSymbol>
@@ -2504,7 +2385,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_USBDCD_TrustedProtect</ItemSymbol>
@@ -2514,7 +2394,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_PDB0</ItemSymbol>
@@ -2530,7 +2409,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_PDB0_WriteProtect</ItemSymbol>
@@ -2540,7 +2418,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_PDB0_TrustedProtect</ItemSymbol>
@@ -2550,7 +2427,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_PIT</ItemSymbol>
@@ -2566,7 +2442,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_PIT_WriteProtect</ItemSymbol>
@@ -2576,7 +2451,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_PIT_TrustedProtect</ItemSymbol>
@@ -2586,7 +2460,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_FTM0</ItemSymbol>
@@ -2602,7 +2475,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_FTM0_WriteProtect</ItemSymbol>
@@ -2612,7 +2484,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_FTM0_TrustedProtect</ItemSymbol>
@@ -2622,7 +2493,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_FTM1</ItemSymbol>
@@ -2638,7 +2508,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_FTM1_WriteProtect</ItemSymbol>
@@ -2648,7 +2517,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_FTM1_TrustedProtect</ItemSymbol>
@@ -2658,7 +2526,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_FTM2</ItemSymbol>
@@ -2674,7 +2541,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_FTM2_WriteProtect</ItemSymbol>
@@ -2684,7 +2550,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_FTM2_TrustedProtect</ItemSymbol>
@@ -2694,7 +2559,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_ADC0</ItemSymbol>
@@ -2710,7 +2574,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_ADC0_WriteProtect</ItemSymbol>
@@ -2720,7 +2583,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_ADC0_TrustedProtect</ItemSymbol>
@@ -2730,7 +2592,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_RTC</ItemSymbol>
@@ -2746,7 +2607,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_RTC_WriteProtect</ItemSymbol>
@@ -2756,7 +2616,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_RTC_TrustedProtect</ItemSymbol>
@@ -2766,7 +2625,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_VBAT_REGS</ItemSymbol>
@@ -2782,7 +2640,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_VBAT_REGS_WriteProtect</ItemSymbol>
@@ -2792,7 +2649,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_VBAT_REGS_TrustedProtect</ItemSymbol>
@@ -2802,7 +2658,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_LPTMR0</ItemSymbol>
@@ -2818,7 +2673,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_LPTMR0_WriteProtect</ItemSymbol>
@@ -2828,7 +2682,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_LPTMR0_TrustedProtect</ItemSymbol>
@@ -2838,7 +2691,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_SYSTEM_REGS</ItemSymbol>
@@ -2854,7 +2706,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_SYSTEM_REGS_WriteProtect</ItemSymbol>
@@ -2864,7 +2715,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_SYSTEM_REGS_TrustedProtect</ItemSymbol>
@@ -2874,7 +2724,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_SIM_LP</ItemSymbol>
@@ -2890,7 +2739,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_SIM_LP_WriteProtect</ItemSymbol>
@@ -2900,7 +2748,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_SIM_LP_TrustedProtect</ItemSymbol>
@@ -2910,7 +2757,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_SIM</ItemSymbol>
@@ -2926,7 +2772,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_SIM_WriteProtect</ItemSymbol>
@@ -2936,7 +2781,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_SIM_TrustedProtect</ItemSymbol>
@@ -2946,7 +2790,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_PORTA</ItemSymbol>
@@ -2962,7 +2805,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_PORTA_WriteProtect</ItemSymbol>
@@ -2972,7 +2814,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_PORTA_TrustedProtect</ItemSymbol>
@@ -2982,7 +2823,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_PORTB</ItemSymbol>
@@ -2998,7 +2838,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_PORTB_WriteProtect</ItemSymbol>
@@ -3008,7 +2847,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_PORTB_TrustedProtect</ItemSymbol>
@@ -3018,7 +2856,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_PORTC</ItemSymbol>
@@ -3034,7 +2871,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_PORTC_WriteProtect</ItemSymbol>
@@ -3044,7 +2880,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_PORTC_TrustedProtect</ItemSymbol>
@@ -3054,7 +2889,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_PORTD</ItemSymbol>
@@ -3070,7 +2904,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_PORTD_WriteProtect</ItemSymbol>
@@ -3080,7 +2913,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_PORTD_TrustedProtect</ItemSymbol>
@@ -3090,7 +2922,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_PORTE</ItemSymbol>
@@ -3106,7 +2937,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_PORTE_WriteProtect</ItemSymbol>
@@ -3116,7 +2946,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_PORTE_TrustedProtect</ItemSymbol>
@@ -3126,7 +2955,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_WDOG</ItemSymbol>
@@ -3142,7 +2970,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_WDOG_WriteProtect</ItemSymbol>
@@ -3152,7 +2979,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_WDOG_TrustedProtect</ItemSymbol>
@@ -3162,7 +2988,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_EWM</ItemSymbol>
@@ -3178,7 +3003,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_EWM_WriteProtect</ItemSymbol>
@@ -3188,7 +3012,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_EWM_TrustedProtect</ItemSymbol>
@@ -3198,7 +3021,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_CMT</ItemSymbol>
@@ -3214,7 +3036,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_CMT_WriteProtect</ItemSymbol>
@@ -3224,7 +3045,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_CMT_TrustedProtect</ItemSymbol>
@@ -3234,7 +3054,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_MCG</ItemSymbol>
@@ -3250,7 +3069,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_MCG_WriteProtect</ItemSymbol>
@@ -3260,7 +3078,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_MCG_TrustedProtect</ItemSymbol>
@@ -3270,7 +3087,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_OSC</ItemSymbol>
@@ -3286,7 +3102,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_OSC_WriteProtect</ItemSymbol>
@@ -3296,7 +3111,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_OSC_TrustedProtect</ItemSymbol>
@@ -3306,7 +3120,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_I2C0</ItemSymbol>
@@ -3322,7 +3135,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_I2C0_WriteProtect</ItemSymbol>
@@ -3332,7 +3144,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_I2C0_TrustedProtect</ItemSymbol>
@@ -3342,7 +3153,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_I2C1</ItemSymbol>
@@ -3358,7 +3168,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_I2C1_WriteProtect</ItemSymbol>
@@ -3368,7 +3177,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_I2C1_TrustedProtect</ItemSymbol>
@@ -3378,7 +3186,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_UART0</ItemSymbol>
@@ -3394,7 +3201,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_UART0_WriteProtect</ItemSymbol>
@@ -3404,7 +3210,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_UART0_TrustedProtect</ItemSymbol>
@@ -3414,7 +3219,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_UART1</ItemSymbol>
@@ -3430,7 +3234,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_UART1_WriteProtect</ItemSymbol>
@@ -3440,7 +3243,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_UART1_TrustedProtect</ItemSymbol>
@@ -3450,7 +3252,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_UART2</ItemSymbol>
@@ -3466,7 +3267,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_UART2_WriteProtect</ItemSymbol>
@@ -3476,7 +3276,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_UART2_TrustedProtect</ItemSymbol>
@@ -3486,7 +3285,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_UART3</ItemSymbol>
@@ -3502,7 +3300,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_UART3_WriteProtect</ItemSymbol>
@@ -3512,7 +3309,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_UART3_TrustedProtect</ItemSymbol>
@@ -3522,7 +3318,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_USB0</ItemSymbol>
@@ -3538,7 +3333,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_USB0_WriteProtect</ItemSymbol>
@@ -3548,7 +3342,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_USB0_TrustedProtect</ItemSymbol>
@@ -3558,7 +3351,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_CMP</ItemSymbol>
@@ -3574,7 +3366,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_CMP_WriteProtect</ItemSymbol>
@@ -3584,7 +3375,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_CMP_TrustedProtect</ItemSymbol>
@@ -3594,7 +3384,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_LLWU</ItemSymbol>
@@ -3610,7 +3399,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_LLWU_WriteProtect</ItemSymbol>
@@ -3620,7 +3408,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_LLWU_TrustedProtect</ItemSymbol>
@@ -3630,7 +3417,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_PMC</ItemSymbol>
@@ -3646,7 +3432,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_PMC_WriteProtect</ItemSymbol>
@@ -3656,7 +3441,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_PMC_TrustedProtect</ItemSymbol>
@@ -3666,7 +3450,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_SMC</ItemSymbol>
@@ -3682,7 +3465,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_SMC_WriteProtect</ItemSymbol>
@@ -3692,7 +3474,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_SMC_TrustedProtect</ItemSymbol>
@@ -3702,7 +3483,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccessGrp_RCM</ItemSymbol>
@@ -3718,7 +3498,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__SupervisorProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_RCM_WriteProtect</ItemSymbol>
@@ -3728,7 +3507,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__WriteProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0PrphAccess_RCM_TrustedProtect</ItemSymbol>
@@ -3738,7 +3516,6 @@
         <TypeSpecNameState>typeKinetisAIPS0PrphAccess__TrustedProtect</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AIPS0InternalUsageGrp</ItemSymbol>
@@ -3785,7 +3562,6 @@
         <TypeSpecNameState>typeKinetisMCMAXBS_ArbitrationType</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>FIXED_PRIORITY</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>MCMInternalUsageGrp</ItemSymbol>
@@ -3832,7 +3608,6 @@
         <TypeSpecNameState>typeKinetisSystemControlITFolding</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SystemControlWriteBuffer</ItemSymbol>
@@ -3842,7 +3617,6 @@
         <TypeSpecNameState>typeKinetisSystemControlWriteBuffer</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SystemControlMultiCycleInstruction</ItemSymbol>
@@ -3852,7 +3626,6 @@
         <TypeSpecNameState>typeKinetisSystemControlMultiCycleInstruction</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SystemControlPriorityGrouping</ItemSymbol>
@@ -3862,7 +3635,6 @@
         <TypeSpecNameState>typeKinetisSystemControlPriorityGrouping</TypeSpecNameState>
         <Index>4</Index>
         <EnumSymbVal>16</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SystemControlStackAlignment</ItemSymbol>
@@ -3872,7 +3644,6 @@
         <TypeSpecNameState>typeKinetisSystemControlStackAlignment</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>4_byte</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SystemControlIgnoreDbusFault</ItemSymbol>
@@ -3882,7 +3653,6 @@
         <TypeSpecNameState>typeKinetisSystemControlIgnoreDbusFault</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SystemControlUsageFaultGrp</ItemSymbol>
@@ -3898,7 +3668,6 @@
         <TypeSpecNameState>typeKinetisSystemControlDivideBy0ZeroTrap</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SystemControlUnalignedAccessTrap</ItemSymbol>
@@ -3908,7 +3677,6 @@
         <TypeSpecNameState>typeKinetisSystemControlUnalignedAccessTrap</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SystemControlSTIRUnpriviledgedAccess</ItemSymbol>
@@ -3918,7 +3686,6 @@
         <TypeSpecNameState>typeKinetisSystemControlSTIRUnpriviledgedAccess</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SystemControlInternalUsageGrp</ItemSymbol>
@@ -3957,7 +3724,6 @@
         <TypeSpecNameState>typeKinetisPMCLVDreset</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PMCLVDvoltageSelect</ItemSymbol>
@@ -3967,7 +3733,6 @@
         <TypeSpecNameState>typeKinetisPMCLVDvoltageSelect</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>low</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PMCLVWvoltageSelect</ItemSymbol>
@@ -3977,7 +3742,6 @@
         <TypeSpecNameState>typeKinetisPMCLVWvoltageSelect</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>low</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PMCBangapBuffer</ItemSymbol>
@@ -3987,7 +3751,6 @@
         <TypeSpecNameState>typeKinetisPMCBangapBuffer</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PMCBangapVLPBuffer</ItemSymbol>
@@ -3997,7 +3760,6 @@
         <TypeSpecNameState>typeKinetisPMCBangapVLPBuffer</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PMCPMCIntGrp</ItemSymbol>
@@ -4022,7 +3784,6 @@
         <TypeSpecNameState>typeKinetisPMCLVDIntNameRequest</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PMCLVDIntNamePriorityFeatureGroup</ItemSymbol>
@@ -4037,7 +3798,6 @@
         <TypeSpecNameState>typeKinetisPMCLVDIntNamePriority</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>DevInit_PMCISRnameLVDGrp</ItemSymbol>
@@ -4059,7 +3819,6 @@
         <TypeSpecNameState>typeKinetisPMCLVDinterrupt</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PMCLVWinterrupt</ItemSymbol>
@@ -4069,7 +3828,6 @@
         <TypeSpecNameState>typeKinetisPMCLVWinterrupt</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PMCInternalUsageGrp</ItemSymbol>
@@ -4129,7 +3887,6 @@
         <TypeSpecNameState>typeKinetisSIMCLKOUT</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>flashClk</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMSCGCGrp</ItemSymbol>
@@ -4147,7 +3904,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateCMT</ItemSymbol>
@@ -4157,7 +3913,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateI2C0</ItemSymbol>
@@ -4167,7 +3922,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateI2C1</ItemSymbol>
@@ -4177,7 +3931,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateUART0</ItemSymbol>
@@ -4187,7 +3940,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateUART1</ItemSymbol>
@@ -4197,7 +3949,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateUART2</ItemSymbol>
@@ -4207,7 +3958,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateUART3</ItemSymbol>
@@ -4217,7 +3967,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateUSB0</ItemSymbol>
@@ -4227,7 +3976,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateCMP</ItemSymbol>
@@ -4237,7 +3985,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateLPTMR0</ItemSymbol>
@@ -4247,7 +3994,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGatePORTA</ItemSymbol>
@@ -4257,7 +4003,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGatePORTB</ItemSymbol>
@@ -4267,7 +4012,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGatePORTC</ItemSymbol>
@@ -4277,7 +4021,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGatePORTD</ItemSymbol>
@@ -4287,7 +4030,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGatePORTE</ItemSymbol>
@@ -4297,7 +4039,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateFTFL</ItemSymbol>
@@ -4307,7 +4048,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateDMA_MULTIPLEXOR</ItemSymbol>
@@ -4317,7 +4057,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateRNGA</ItemSymbol>
@@ -4327,7 +4066,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateSPI0</ItemSymbol>
@@ -4337,7 +4075,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateSPI1</ItemSymbol>
@@ -4347,7 +4084,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateI2S0</ItemSymbol>
@@ -4357,7 +4093,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateCRC</ItemSymbol>
@@ -4367,7 +4102,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateUSBDCD</ItemSymbol>
@@ -4377,7 +4111,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGatePDB0</ItemSymbol>
@@ -4387,7 +4120,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGatePIT</ItemSymbol>
@@ -4397,7 +4129,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateFTM0</ItemSymbol>
@@ -4407,7 +4138,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateFTM1</ItemSymbol>
@@ -4417,7 +4147,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateFTM2</ItemSymbol>
@@ -4427,7 +4156,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateADC0</ItemSymbol>
@@ -4437,7 +4165,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateRTC</ItemSymbol>
@@ -4447,7 +4174,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateDMA</ItemSymbol>
@@ -4457,7 +4183,6 @@
         <TypeSpecNameState>typeKinetisSIMClkGate</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMInternalUsageGrp</ItemSymbol>
@@ -5198,7 +4923,6 @@
         <TypeSpecNameState>typeKinetisLLWUIntModule</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>LLWUIntModule1</ItemSymbol>
@@ -5208,7 +4932,6 @@
         <TypeSpecNameState>typeKinetisLLWUIntModule</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>LLWUIntModule2</ItemSymbol>
@@ -5218,7 +4941,6 @@
         <TypeSpecNameState>typeKinetisLLWUIntModule</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>LLWUIntModule5</ItemSymbol>
@@ -5228,7 +4950,6 @@
         <TypeSpecNameState>typeKinetisLLWUIntModule</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>LLWUIntModule7</ItemSymbol>
@@ -5238,7 +4959,6 @@
         <TypeSpecNameState>typeKinetisLLWUIntModule</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>LLWUFiltr1</ItemSymbol>
@@ -5770,7 +5490,6 @@
         <TypeSpecNameState>typeKinetisLLWUResetPinFilter</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>LLWUInterruptsGroup</ItemSymbol>
@@ -5795,7 +5514,6 @@
         <TypeSpecNameState>typeKinetisLLWUIntCommonRequest</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>LLWUIntCommonPriorityFeatureGroup</ItemSymbol>
@@ -5810,7 +5528,6 @@
         <TypeSpecNameState>typeKinetisLLWUIntCommonPriority</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>DevInit_LLWUISRHandleCommonGrp</ItemSymbol>
@@ -5894,7 +5611,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>3</Index>
         <EnumSymbVal>3</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SpeedModeList</ItemSymbol>
@@ -6047,7 +5763,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>MCGOutputSpeedMode0</ItemSymbol>
@@ -6068,7 +5783,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>FLLFixedClkSpeedMode0</ItemSymbol>
-        <Value>16.384</Value>
+        <Value>32.768</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>SystemClocksGrp0</ItemSymbol>
@@ -7018,7 +6733,6 @@
           <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
           <Index>2</Index>
           <EnumSymbVal>INTERNAL_FLASH</EnumSymbVal>
-          <CustomValue />
         </ItemState>
         <ItemState>
           <ItemSymbol>DefaultMemCode</ItemSymbol>
@@ -7027,7 +6741,6 @@
           <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
           <Index>2</Index>
           <EnumSymbVal>INTERNAL_FLASH</EnumSymbVal>
-          <CustomValue />
         </ItemState>
         <ItemState>
           <ItemSymbol>DefaultMemData</ItemSymbol>
@@ -7036,7 +6749,6 @@
           <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
           <Index>0</Index>
           <EnumSymbVal>INTERNAL_RAM</EnumSymbVal>
-          <CustomValue />
         </ItemState>
         <ItemState>
           <ItemSymbol>C_RomRamList</ItemSymbol>
@@ -7072,7 +6784,6 @@
           <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
           <Index>1</Index>
           <EnumSymbVal>RX</EnumSymbVal>
-          <CustomValue />
         </ItemState>
         <ItemState>
           <ItemSymbol>C_RomRamPhysicalType0</ItemSymbol>
@@ -7131,7 +6842,6 @@
           <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
           <Index>1</Index>
           <EnumSymbVal>RX</EnumSymbVal>
-          <CustomValue />
         </ItemState>
         <ItemState>
           <ItemSymbol>C_RomRamPhysicalType1</ItemSymbol>
@@ -7190,7 +6900,6 @@
           <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
           <Index>1</Index>
           <EnumSymbVal>RX</EnumSymbVal>
-          <CustomValue />
         </ItemState>
         <ItemState>
           <ItemSymbol>C_RomRamPhysicalType2</ItemSymbol>
@@ -7249,7 +6958,6 @@
           <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
           <Index>1</Index>
           <EnumSymbVal>RX</EnumSymbVal>
-          <CustomValue />
         </ItemState>
         <ItemState>
           <ItemSymbol>C_RomRamPhysicalType3</ItemSymbol>
@@ -7308,7 +7016,6 @@
           <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
           <Index>2</Index>
           <EnumSymbVal>RW</EnumSymbVal>
-          <CustomValue />
         </ItemState>
         <ItemState>
           <ItemSymbol>C_RomRamPhysicalType4</ItemSymbol>
@@ -7367,7 +7074,6 @@
           <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
           <Index>2</Index>
           <EnumSymbVal>RW</EnumSymbVal>
-          <CustomValue />
         </ItemState>
         <ItemState>
           <ItemSymbol>C_RomRamPhysicalType5</ItemSymbol>
@@ -7513,7 +7219,6 @@
           <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
           <Index>1</Index>
           <EnumSymbVal>DOS</EnumSymbVal>
-          <CustomValue />
         </ItemState>
         <ItemState>
           <ItemSymbol>C_LINKPars</ItemSymbol>
@@ -7844,7 +7549,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>automatic</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>StaticSourcesEnabled</ItemSymbol>
@@ -7907,7 +7611,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value />
         <EnumSymbVal>-1</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>IsClassicCW</ItemSymbol>
@@ -8018,7 +7721,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>MCF51CN</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ColdFireSWI</ItemSymbol>
@@ -8027,7 +7729,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>VL1swi</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ColdFireV2CPUSpecific</ItemSymbol>
@@ -8044,7 +7745,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>MCF5225x</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ColdFireV2LibraryLowestInterruptPriority</ItemSymbol>
@@ -8077,7 +7777,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>1</Index>
         <EnumSymbVal>M4</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>M4FFloatingPointSupport</ItemSymbol>
@@ -8116,7 +7815,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>useARMSysTickTimer</ItemSymbol>
@@ -8285,7 +7983,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>1</Index>
         <EnumSymbVal>2</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CleanupResources</ItemSymbol>
@@ -8380,7 +8077,7 @@
           <UserFolderName />
           <Comment lines_count="0" />
           <Template>FreeRTOS\TickLDD</Template>
-          <BeanVersion>01.158</BeanVersion>
+          <BeanVersion>01.164</BeanVersion>
           <LightErrorsIgnored>false</LightErrorsIgnored>
           <Properties>
             <ItemState>
@@ -8408,7 +8105,6 @@
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
               <EnumSymbVal>1</EnumSymbVal>
-              <CustomValue />
             </ItemState>
             <ItemState>
               <ItemSymbol>CntWidth</ItemSymbol>
@@ -8421,7 +8117,6 @@
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>0</Index>
               <EnumSymbVal>0</EnumSymbVal>
-              <CustomValue />
             </ItemState>
             <ItemState>
               <ItemSymbol>InputClock</ItemSymbol>
@@ -9403,7 +9098,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>Scheme1</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>UserHeapSectionEnabled</ItemSymbol>
@@ -12112,7 +11806,7 @@
     <UserFolderName />
     <Comment lines_count="0" />
     <Template />
-    <BeanVersion>02.141</BeanVersion>
+    <BeanVersion>02.142</BeanVersion>
     <LightErrorsIgnored>false</LightErrorsIgnored>
     <Properties>
       <ItemState>
@@ -12465,7 +12159,7 @@
           <UserFolderName />
           <Comment lines_count="0" />
           <Template />
-          <BeanVersion>01.050</BeanVersion>
+          <BeanVersion>01.052</BeanVersion>
           <LightErrorsIgnored>false</LightErrorsIgnored>
           <Properties>
             <ItemState>
@@ -12570,7 +12264,7 @@
               <ItemSymbol>_Period</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>init:3 sec;prec:5%;RTS:none</Value>
+              <Value>init:3 sec;prec:5%;RTS:none;clksrc_presc[SpeedMode0]Auto select;clksrc_presc[SpeedMode1]Auto select;clksrc_presc[SpeedMode2]Auto select;clksrc_presc[SpeedMode3]Auto select;clksrc_presc[SpeedMode4]Auto select;clksrc_presc[SpeedMode5]Auto select;clksrc_presc[SpeedMode6]Auto select;clksrc_presc[SpeedMode7]Auto select</Value>
               <RuntimeSetting>0</RuntimeSetting>
               <ReqDevPrescHigh>-1</ReqDevPrescHigh>
               <ReqDevPrescLow>-1</ReqDevPrescLow>
@@ -13090,7 +12784,7 @@
     <UserFolderName />
     <Comment lines_count="0" />
     <Template />
-    <BeanVersion>01.005</BeanVersion>
+    <BeanVersion>01.006</BeanVersion>
     <LightErrorsIgnored>false</LightErrorsIgnored>
     <Properties>
       <ItemState>
@@ -13124,7 +12818,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>1</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ClockSettingsGroup</ItemSymbol>
@@ -13145,7 +12838,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>Source0</EnumSymbVal>
-        <CustomValue />
         <Value />
       </ItemState>
       <ItemState>
@@ -13226,7 +12918,6 @@
         <TypeSpecNameState>typeSetBothEdgeSampling</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>EnableResyncFeatureCondGroup</ItemSymbol>
@@ -13242,7 +12933,6 @@
         <TypeSpecNameState>typeEnableResync</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TransferSettings</ItemSymbol>
@@ -13258,7 +12948,6 @@
         <TypeSpecNameState>typeMODE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>8bit</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CPUCondGroup2</ItemSymbol>
@@ -13273,7 +12962,6 @@
         <TypeSpecNameState>typeMSBF</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>LSB</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PE_PT</ItemSymbol>
@@ -13283,7 +12971,6 @@
         <TypeSpecNameState>typePE_PT</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>Off</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CPUCondGroup3</ItemSymbol>
@@ -13299,7 +12986,6 @@
         <TypeSpecNameState>typeSelectStopBitNumber</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>1</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CPUCondGroup4</ItemSymbol>
@@ -13314,7 +13000,6 @@
         <TypeSpecNameState>typeM10</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>ParityInLastDataBit</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ILT</ItemSymbol>
@@ -13324,7 +13009,6 @@
         <TypeSpecNameState>typeILT</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>StartBitStartsCounting</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>BreakLength</ItemSymbol>
@@ -13334,7 +13018,6 @@
         <TypeSpecNameState>typeBreakLength</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>Short</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>LBKDE</ItemSymbol>
@@ -13344,7 +13027,6 @@
         <TypeSpecNameState>typeLBKDE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SCISWAI</ItemSymbol>
@@ -13354,7 +13036,6 @@
         <TypeSpecNameState>typeSCISWAI</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>ClockContinue</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ReceiverWakeupSettings</ItemSymbol>
@@ -13370,7 +13051,6 @@
         <TypeSpecNameState>typeRWU</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NormalRxOperation</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>WAKE</ItemSymbol>
@@ -13380,7 +13060,6 @@
         <TypeSpecNameState>typeWAKE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>IdleLine</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RWUID</ItemSymbol>
@@ -13390,7 +13069,6 @@
         <TypeSpecNameState>typeRWUID</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>WakeUpIdleOnlyWakeUp</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CPUCondGroup5</ItemSymbol>
@@ -13411,7 +13089,6 @@
         <TypeSpecNameState>typeMAEn1</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>MA1</ItemSymbol>
@@ -13429,7 +13106,6 @@
         <TypeSpecNameState>typeMAEn2</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>MA2</ItemSymbol>
@@ -13458,7 +13134,6 @@
         <TypeSpecNameState>typeTXCTSE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXRTSE</ItemSymbol>
@@ -13468,7 +13143,6 @@
         <TypeSpecNameState>typeTXRTSE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXRTSPOL</ItemSymbol>
@@ -13478,7 +13152,6 @@
         <TypeSpecNameState>typeTXRTSPOL</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>ActiveLow</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXRTSE</ItemSymbol>
@@ -13488,7 +13161,6 @@
         <TypeSpecNameState>typeRXRTSE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>IrSettingsFeatureCondGroup</ItemSymbol>
@@ -13509,7 +13181,6 @@
         <TypeSpecNameState>typeIREN</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TNP</ItemSymbol>
@@ -13519,7 +13190,6 @@
         <TypeSpecNameState>typeTNP</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>3_16</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FIFOSettingsFeatureCondGroup</ItemSymbol>
@@ -13540,7 +13210,6 @@
         <TypeSpecNameState>typeTXFE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXWATER</ItemSymbol>
@@ -13558,7 +13227,6 @@
         <TypeSpecNameState>typeRXFE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXWATER</ItemSymbol>
@@ -13587,7 +13255,6 @@
         <TypeSpecNameState>typeISO_7816E</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>T_TYPE</ItemSymbol>
@@ -13605,7 +13272,6 @@
         <TypeSpecNameState>typeANACK</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>ErrorNACKNotGenerated</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ONACK</ItemSymbol>
@@ -13615,7 +13281,6 @@
         <TypeSpecNameState>typeONACK</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>OverflowNACKNotGenerated</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXTHRESHOLD</ItemSymbol>
@@ -13770,7 +13435,6 @@
         <TypeSpecNameState>typeINIT_EN</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NormalOperation</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>GTN</ItemSymbol>
@@ -13809,7 +13473,6 @@
         <TypeSpecNameState>typeCEA709</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_Collision</ItemSymbol>
@@ -13820,7 +13483,6 @@
         <TypeSpecNameState>typeCEA709_Collision</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_Transmitter</ItemSymbol>
@@ -13831,7 +13493,6 @@
         <TypeSpecNameState>typeCEA709_Transmitter</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_Collision_Polarity</ItemSymbol>
@@ -13842,7 +13503,6 @@
         <TypeSpecNameState>typeCEA709_Collision_Polarity</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>low</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CE709_PacketTimeCounter</ItemSymbol>
@@ -13976,7 +13636,6 @@
         <TypeSpecNameState>typeLOOPS</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>Normal</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RSRC</ItemSymbol>
@@ -13986,7 +13645,6 @@
         <TypeSpecNameState>typeRSRC</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>Loop</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXDIR</ItemSymbol>
@@ -13996,7 +13654,6 @@
         <TypeSpecNameState>typeTXDIR</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>Input</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXINV</ItemSymbol>
@@ -14006,7 +13663,6 @@
         <TypeSpecNameState>typeRXINV</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NonInverted</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXINV</ItemSymbol>
@@ -14016,7 +13672,6 @@
         <TypeSpecNameState>typeTXINV</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NonInverted</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PinsGrp</ItemSymbol>
@@ -14163,7 +13818,6 @@
         <TypeSpecNameState>typeCommonTx_Rx_InterruptRequest</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CommonTx_Rx_InterruptPExPriorityFeatureGroup</ItemSymbol>
@@ -14190,7 +13844,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CommonTx_Rx_ISRHandle</ItemSymbol>
@@ -14206,7 +13859,6 @@
         <TypeSpecNameState>typeTIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TIE_RqType</ItemSymbol>
@@ -14216,7 +13868,6 @@
         <TypeSpecNameState>typeTIE_RqType</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>IRQ</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TCIE</ItemSymbol>
@@ -14226,7 +13877,6 @@
         <TypeSpecNameState>typeTCIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RIE</ItemSymbol>
@@ -14236,7 +13886,6 @@
         <TypeSpecNameState>typeRIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RIE_RqType</ItemSymbol>
@@ -14246,7 +13895,6 @@
         <TypeSpecNameState>typeRIE_RqType</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>IRQ</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ILIE</ItemSymbol>
@@ -14256,7 +13904,6 @@
         <TypeSpecNameState>typeILIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>LBKDIE</ItemSymbol>
@@ -14266,7 +13913,6 @@
         <TypeSpecNameState>typeLBKDIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CPUCondGroup8</ItemSymbol>
@@ -14282,7 +13928,6 @@
         <TypeSpecNameState>typeLBKDIE_RqType</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>IRQ</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXEDGIE</ItemSymbol>
@@ -14292,7 +13937,6 @@
         <TypeSpecNameState>typeRXEDGIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ISO7816_Interrupts_CommonFeatureCondGroup</ItemSymbol>
@@ -14313,7 +13957,6 @@
         <TypeSpecNameState>typeINITDE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>Error_IntGrp</ItemSymbol>
@@ -14338,7 +13981,6 @@
         <TypeSpecNameState>typeError_InterruptRequest</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>Error_InterruptPExPriorityFeatureGroup</ItemSymbol>
@@ -14365,7 +14007,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>Error_ISRHandle</ItemSymbol>
@@ -14381,7 +14022,6 @@
         <TypeSpecNameState>typeORIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>NEIE</ItemSymbol>
@@ -14391,7 +14031,6 @@
         <TypeSpecNameState>typeNEIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FEIE</ItemSymbol>
@@ -14401,7 +14040,6 @@
         <TypeSpecNameState>typeFEIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PEIE</ItemSymbol>
@@ -14411,7 +14049,6 @@
         <TypeSpecNameState>typePEIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FIFOs_InterruptsFeatureCondGroup</ItemSymbol>
@@ -14432,7 +14069,6 @@
         <TypeSpecNameState>typeTXOF</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXUF</ItemSymbol>
@@ -14442,7 +14078,6 @@
         <TypeSpecNameState>typeRXUF</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXOFEFeatureCondGroup</ItemSymbol>
@@ -14457,7 +14092,6 @@
         <TypeSpecNameState>typeRXOFE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ISO7816_Interrupts_ErrorFeatureCondGroup</ItemSymbol>
@@ -14478,7 +14112,6 @@
         <TypeSpecNameState>typeWTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CWTE</ItemSymbol>
@@ -14488,7 +14121,6 @@
         <TypeSpecNameState>typeCWTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>BWTE</ItemSymbol>
@@ -14498,7 +14130,6 @@
         <TypeSpecNameState>typeBWTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXTE</ItemSymbol>
@@ -14508,7 +14139,6 @@
         <TypeSpecNameState>typeTXTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXTE</ItemSymbol>
@@ -14518,7 +14148,6 @@
         <TypeSpecNameState>typeRXTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>GTVE</ItemSymbol>
@@ -14528,7 +14157,6 @@
         <TypeSpecNameState>typeGTVE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_Interrupt_LONFeatureCondGroup</ItemSymbol>
@@ -14562,7 +14190,6 @@
         <TypeSpecNameState>typeCEA709_InterruptRequest</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_InterruptPExPriorityFeatureGroup</ItemSymbol>
@@ -14592,7 +14219,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
         <Value />
       </ItemState>
       <ItemState>
@@ -14628,7 +14254,6 @@
         <TypeSpecNameState>typeWBEIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ISDIE</ItemSymbol>
@@ -14639,7 +14264,6 @@
         <TypeSpecNameState>typeISDIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PRXIE</ItemSymbol>
@@ -14650,7 +14274,6 @@
         <TypeSpecNameState>typePRXIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PTXIE</ItemSymbol>
@@ -14661,7 +14284,6 @@
         <TypeSpecNameState>typePTXIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PCTEIE</ItemSymbol>
@@ -14672,7 +14294,6 @@
         <TypeSpecNameState>typePCTEIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PSIE</ItemSymbol>
@@ -14683,7 +14304,6 @@
         <TypeSpecNameState>typePSIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXFIE</ItemSymbol>
@@ -14694,7 +14314,6 @@
         <TypeSpecNameState>typeTXFIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RPLOFIEFeatureCondGroup</ItemSymbol>
@@ -14761,7 +14380,6 @@
         <TypeSpecNameState>typeSBK</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NormalTxOperation</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TE</ItemSymbol>
@@ -14771,7 +14389,6 @@
         <TypeSpecNameState>typeTE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RE</ItemSymbol>
@@ -14781,7 +14398,6 @@
         <TypeSpecNameState>typeRE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>NON_MCU_INIT</ItemSymbol>
@@ -14809,7 +14425,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>default</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>UARTInternalUsageGrp</ItemSymbol>
@@ -15202,7 +14817,7 @@
     <UserFolderName />
     <Comment lines_count="0" />
     <Template />
-    <BeanVersion>01.005</BeanVersion>
+    <BeanVersion>01.006</BeanVersion>
     <LightErrorsIgnored>false</LightErrorsIgnored>
     <Properties>
       <ItemState>
@@ -15236,7 +14851,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>1</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ClockSettingsGroup</ItemSymbol>
@@ -15257,7 +14871,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>Source0</EnumSymbVal>
-        <CustomValue />
         <Value />
       </ItemState>
       <ItemState>
@@ -15338,7 +14951,6 @@
         <TypeSpecNameState>typeSetBothEdgeSampling</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>EnableResyncFeatureCondGroup</ItemSymbol>
@@ -15354,7 +14966,6 @@
         <TypeSpecNameState>typeEnableResync</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TransferSettings</ItemSymbol>
@@ -15370,7 +14981,6 @@
         <TypeSpecNameState>typeMODE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>8bit</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CPUCondGroup2</ItemSymbol>
@@ -15385,7 +14995,6 @@
         <TypeSpecNameState>typeMSBF</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>LSB</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PE_PT</ItemSymbol>
@@ -15395,7 +15004,6 @@
         <TypeSpecNameState>typePE_PT</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>Off</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CPUCondGroup3</ItemSymbol>
@@ -15411,7 +15019,6 @@
         <TypeSpecNameState>typeSelectStopBitNumber</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>1</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CPUCondGroup4</ItemSymbol>
@@ -15426,7 +15033,6 @@
         <TypeSpecNameState>typeM10</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>ParityInLastDataBit</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ILT</ItemSymbol>
@@ -15436,7 +15042,6 @@
         <TypeSpecNameState>typeILT</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>StartBitStartsCounting</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>BreakLength</ItemSymbol>
@@ -15446,7 +15051,6 @@
         <TypeSpecNameState>typeBreakLength</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>Short</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>LBKDE</ItemSymbol>
@@ -15456,7 +15060,6 @@
         <TypeSpecNameState>typeLBKDE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SCISWAI</ItemSymbol>
@@ -15466,7 +15069,6 @@
         <TypeSpecNameState>typeSCISWAI</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>ClockContinue</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ReceiverWakeupSettings</ItemSymbol>
@@ -15482,7 +15084,6 @@
         <TypeSpecNameState>typeRWU</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NormalRxOperation</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>WAKE</ItemSymbol>
@@ -15492,7 +15093,6 @@
         <TypeSpecNameState>typeWAKE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>IdleLine</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RWUID</ItemSymbol>
@@ -15502,7 +15102,6 @@
         <TypeSpecNameState>typeRWUID</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>WakeUpIdleOnlyWakeUp</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CPUCondGroup5</ItemSymbol>
@@ -15523,7 +15122,6 @@
         <TypeSpecNameState>typeMAEn1</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>MA1</ItemSymbol>
@@ -15541,7 +15139,6 @@
         <TypeSpecNameState>typeMAEn2</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>MA2</ItemSymbol>
@@ -15570,7 +15167,6 @@
         <TypeSpecNameState>typeTXCTSE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXRTSE</ItemSymbol>
@@ -15580,7 +15176,6 @@
         <TypeSpecNameState>typeTXRTSE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXRTSPOL</ItemSymbol>
@@ -15590,7 +15185,6 @@
         <TypeSpecNameState>typeTXRTSPOL</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>ActiveLow</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXRTSE</ItemSymbol>
@@ -15600,7 +15194,6 @@
         <TypeSpecNameState>typeRXRTSE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>IrSettingsFeatureCondGroup</ItemSymbol>
@@ -15621,7 +15214,6 @@
         <TypeSpecNameState>typeIREN</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TNP</ItemSymbol>
@@ -15631,7 +15223,6 @@
         <TypeSpecNameState>typeTNP</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>3_16</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FIFOSettingsFeatureCondGroup</ItemSymbol>
@@ -15652,7 +15243,6 @@
         <TypeSpecNameState>typeTXFE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXWATER</ItemSymbol>
@@ -15670,7 +15260,6 @@
         <TypeSpecNameState>typeRXFE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXWATER</ItemSymbol>
@@ -15701,7 +15290,6 @@
         <TypeSpecNameState>typeISO_7816E</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>T_TYPE</ItemSymbol>
@@ -15721,7 +15309,6 @@
         <TypeSpecNameState>typeANACK</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>ErrorNACKNotGenerated</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ONACK</ItemSymbol>
@@ -15732,7 +15319,6 @@
         <TypeSpecNameState>typeONACK</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>OverflowNACKNotGenerated</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXTHRESHOLD</ItemSymbol>
@@ -15899,7 +15485,6 @@
         <TypeSpecNameState>typeINIT_EN</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NormalOperation</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>GTN</ItemSymbol>
@@ -15940,7 +15525,6 @@
         <TypeSpecNameState>typeCEA709</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_Collision</ItemSymbol>
@@ -15951,7 +15535,6 @@
         <TypeSpecNameState>typeCEA709_Collision</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_Transmitter</ItemSymbol>
@@ -15962,7 +15545,6 @@
         <TypeSpecNameState>typeCEA709_Transmitter</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_Collision_Polarity</ItemSymbol>
@@ -15973,7 +15555,6 @@
         <TypeSpecNameState>typeCEA709_Collision_Polarity</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>low</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CE709_PacketTimeCounter</ItemSymbol>
@@ -16107,7 +15688,6 @@
         <TypeSpecNameState>typeLOOPS</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>Normal</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RSRC</ItemSymbol>
@@ -16117,7 +15697,6 @@
         <TypeSpecNameState>typeRSRC</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>Loop</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXDIR</ItemSymbol>
@@ -16127,7 +15706,6 @@
         <TypeSpecNameState>typeTXDIR</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>Input</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXINV</ItemSymbol>
@@ -16137,7 +15715,6 @@
         <TypeSpecNameState>typeRXINV</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NonInverted</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXINV</ItemSymbol>
@@ -16147,7 +15724,6 @@
         <TypeSpecNameState>typeTXINV</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NonInverted</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PinsGrp</ItemSymbol>
@@ -16297,7 +15873,6 @@
         <TypeSpecNameState>typeCommonTx_Rx_InterruptRequest</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CommonTx_Rx_InterruptPExPriorityFeatureGroup</ItemSymbol>
@@ -16324,7 +15899,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CommonTx_Rx_ISRHandle</ItemSymbol>
@@ -16340,7 +15914,6 @@
         <TypeSpecNameState>typeTIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TIE_RqType</ItemSymbol>
@@ -16350,7 +15923,6 @@
         <TypeSpecNameState>typeTIE_RqType</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>IRQ</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TCIE</ItemSymbol>
@@ -16360,7 +15932,6 @@
         <TypeSpecNameState>typeTCIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RIE</ItemSymbol>
@@ -16370,7 +15941,6 @@
         <TypeSpecNameState>typeRIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RIE_RqType</ItemSymbol>
@@ -16380,7 +15950,6 @@
         <TypeSpecNameState>typeRIE_RqType</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>IRQ</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ILIE</ItemSymbol>
@@ -16390,7 +15959,6 @@
         <TypeSpecNameState>typeILIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>LBKDIE</ItemSymbol>
@@ -16400,7 +15968,6 @@
         <TypeSpecNameState>typeLBKDIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CPUCondGroup8</ItemSymbol>
@@ -16416,7 +15983,6 @@
         <TypeSpecNameState>typeLBKDIE_RqType</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>IRQ</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXEDGIE</ItemSymbol>
@@ -16426,7 +15992,6 @@
         <TypeSpecNameState>typeRXEDGIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ISO7816_Interrupts_CommonFeatureCondGroup</ItemSymbol>
@@ -16449,7 +16014,6 @@
         <TypeSpecNameState>typeINITDE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>Error_IntGrp</ItemSymbol>
@@ -16474,7 +16038,6 @@
         <TypeSpecNameState>typeError_InterruptRequest</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>Error_InterruptPExPriorityFeatureGroup</ItemSymbol>
@@ -16501,7 +16064,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>Error_ISRHandle</ItemSymbol>
@@ -16517,7 +16079,6 @@
         <TypeSpecNameState>typeORIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>NEIE</ItemSymbol>
@@ -16527,7 +16088,6 @@
         <TypeSpecNameState>typeNEIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FEIE</ItemSymbol>
@@ -16537,7 +16097,6 @@
         <TypeSpecNameState>typeFEIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PEIE</ItemSymbol>
@@ -16547,7 +16106,6 @@
         <TypeSpecNameState>typePEIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FIFOs_InterruptsFeatureCondGroup</ItemSymbol>
@@ -16568,7 +16126,6 @@
         <TypeSpecNameState>typeTXOF</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXUF</ItemSymbol>
@@ -16578,7 +16135,6 @@
         <TypeSpecNameState>typeRXUF</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXOFEFeatureCondGroup</ItemSymbol>
@@ -16593,7 +16149,6 @@
         <TypeSpecNameState>typeRXOFE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ISO7816_Interrupts_ErrorFeatureCondGroup</ItemSymbol>
@@ -16616,7 +16171,6 @@
         <TypeSpecNameState>typeWTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CWTE</ItemSymbol>
@@ -16627,7 +16181,6 @@
         <TypeSpecNameState>typeCWTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>BWTE</ItemSymbol>
@@ -16638,7 +16191,6 @@
         <TypeSpecNameState>typeBWTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXTE</ItemSymbol>
@@ -16649,7 +16201,6 @@
         <TypeSpecNameState>typeTXTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXTE</ItemSymbol>
@@ -16660,7 +16211,6 @@
         <TypeSpecNameState>typeRXTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>GTVE</ItemSymbol>
@@ -16671,7 +16221,6 @@
         <TypeSpecNameState>typeGTVE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_Interrupt_LONFeatureCondGroup</ItemSymbol>
@@ -16705,7 +16254,6 @@
         <TypeSpecNameState>typeCEA709_InterruptRequest</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_InterruptPExPriorityFeatureGroup</ItemSymbol>
@@ -16735,7 +16283,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
         <Value />
       </ItemState>
       <ItemState>
@@ -16771,7 +16318,6 @@
         <TypeSpecNameState>typeWBEIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ISDIE</ItemSymbol>
@@ -16782,7 +16328,6 @@
         <TypeSpecNameState>typeISDIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PRXIE</ItemSymbol>
@@ -16793,7 +16338,6 @@
         <TypeSpecNameState>typePRXIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PTXIE</ItemSymbol>
@@ -16804,7 +16348,6 @@
         <TypeSpecNameState>typePTXIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PCTEIE</ItemSymbol>
@@ -16815,7 +16358,6 @@
         <TypeSpecNameState>typePCTEIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PSIE</ItemSymbol>
@@ -16826,7 +16368,6 @@
         <TypeSpecNameState>typePSIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXFIE</ItemSymbol>
@@ -16837,7 +16378,6 @@
         <TypeSpecNameState>typeTXFIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RPLOFIEFeatureCondGroup</ItemSymbol>
@@ -16904,7 +16444,6 @@
         <TypeSpecNameState>typeSBK</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NormalTxOperation</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TE</ItemSymbol>
@@ -16914,7 +16453,6 @@
         <TypeSpecNameState>typeTE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RE</ItemSymbol>
@@ -16924,7 +16462,6 @@
         <TypeSpecNameState>typeRE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>NON_MCU_INIT</ItemSymbol>
@@ -16952,7 +16489,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>default</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>UARTInternalUsageGrp</ItemSymbol>
@@ -17299,7 +16835,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>PE_Timer</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SameValuesInAllModes</ItemSymbol>
@@ -17467,7 +17002,7 @@
               <ItemSymbol>IntPeriodTmg</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>init:50 ms;prec:5%;RTS:none</Value>
+              <Value>init:50 ms;prec:5%;RTS:none;clksrc_presc[SpeedMode0]Auto select;clksrc_presc[SpeedMode1]Auto select;clksrc_presc[SpeedMode2]Auto select;clksrc_presc[SpeedMode3]Auto select;clksrc_presc[SpeedMode4]Auto select;clksrc_presc[SpeedMode5]Auto select;clksrc_presc[SpeedMode6]Auto select;clksrc_presc[SpeedMode7]Auto select</Value>
               <RuntimeSetting>0</RuntimeSetting>
               <ReqDevPrescHigh>-1</ReqDevPrescHigh>
               <ReqDevPrescLow>-1</ReqDevPrescLow>
@@ -18076,7 +17611,7 @@
     <UserFolderName>Referenced_Components</UserFolderName>
     <Comment lines_count="0" />
     <Template />
-    <BeanVersion>01.158</BeanVersion>
+    <BeanVersion>01.164</BeanVersion>
     <LightErrorsIgnored>false</LightErrorsIgnored>
     <Properties>
       <ItemState>
@@ -18104,7 +17639,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CntWidth</ItemSymbol>
@@ -18117,7 +17651,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>2</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>InputClock</ItemSymbol>
@@ -18271,7 +17804,7 @@
         <ItemSymbol>Tmg_Period</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>init:50 ms;prec:5%;RTS:none</Value>
+        <Value>init:50 ms;prec:5%;RTS:none;clksrc_presc[SpeedMode0]Auto select;clksrc_presc[SpeedMode1]Auto select;clksrc_presc[SpeedMode2]Auto select;clksrc_presc[SpeedMode3]Auto select;clksrc_presc[SpeedMode4]Auto select;clksrc_presc[SpeedMode5]Auto select;clksrc_presc[SpeedMode6]Auto select;clksrc_presc[SpeedMode7]Auto select</Value>
         <RuntimeSetting>0</RuntimeSetting>
         <ReqDevPrescHigh>-1</ReqDevPrescHigh>
         <ReqDevPrescLow>-1</ReqDevPrescLow>
@@ -19156,7 +18689,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
     </Properties>
     <Methods>
@@ -19476,7 +19008,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
     </Properties>
     <Methods>
@@ -19646,7 +19177,7 @@
     <UserFolderName />
     <Comment lines_count="0" />
     <Template />
-    <BeanVersion>01.182</BeanVersion>
+    <BeanVersion>01.183</BeanVersion>
     <LightErrorsIgnored>false</LightErrorsIgnored>
     <Properties>
       <ItemState>
@@ -19877,7 +19408,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>Fully</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>InputPinGrp_Ch0</ItemSymbol>
@@ -19911,7 +19441,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>NegInputPinGrp_Ch0</ItemSymbol>
@@ -19949,7 +19478,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>StaticSampleGroups</ItemSymbol>
@@ -20057,7 +19585,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RunrimeSampleGroups</ItemSymbol>
@@ -20134,7 +19661,6 @@
         <TypeSpecNameState>typeSampleTime</TypeSpecNameState>
         <Index>2</Index>
         <EnumSymbVal>4</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>AverageFeatureGroup</ItemSymbol>
@@ -20148,7 +19674,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>1</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ClockDivider</ItemSymbol>
@@ -20231,7 +19756,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>3</Index>
         <EnumSymbVal>uint8_right</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>Trigger</ItemSymbol>
@@ -20269,7 +19793,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>Falling</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>HasFIFOMultipleFeatureGrp</ItemSymbol>
@@ -20285,7 +19808,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>OneSample</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TriggerType</ItemSymbol>
@@ -20323,7 +19845,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>BusClockOutputPinDivider</ItemSymbol>
@@ -20333,7 +19854,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ClockSOurceDividerImport</ItemSymbol>
@@ -20409,7 +19929,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>1</Index>
         <EnumSymbVal>Rising</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>VolatgeReferenceGrp</ItemSymbol>
@@ -20524,7 +20043,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>NormalPowerMode</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>VoltageReferencePowerMode</ItemSymbol>
@@ -21209,7 +20727,7 @@
     <UserFolderName />
     <Comment lines_count="0" />
     <Template />
-    <BeanVersion>01.005</BeanVersion>
+    <BeanVersion>01.006</BeanVersion>
     <LightErrorsIgnored>false</LightErrorsIgnored>
     <Properties>
       <ItemState>
@@ -21243,7 +20761,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>1</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ClockSettingsGroup</ItemSymbol>
@@ -21264,7 +20781,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>Source0</EnumSymbVal>
-        <CustomValue />
         <Value />
       </ItemState>
       <ItemState>
@@ -21345,7 +20861,6 @@
         <TypeSpecNameState>typeSetBothEdgeSampling</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>EnableResyncFeatureCondGroup</ItemSymbol>
@@ -21361,7 +20876,6 @@
         <TypeSpecNameState>typeEnableResync</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TransferSettings</ItemSymbol>
@@ -21377,7 +20891,6 @@
         <TypeSpecNameState>typeMODE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>8bit</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CPUCondGroup2</ItemSymbol>
@@ -21392,7 +20905,6 @@
         <TypeSpecNameState>typeMSBF</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>LSB</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PE_PT</ItemSymbol>
@@ -21402,7 +20914,6 @@
         <TypeSpecNameState>typePE_PT</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>Off</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CPUCondGroup3</ItemSymbol>
@@ -21418,7 +20929,6 @@
         <TypeSpecNameState>typeSelectStopBitNumber</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>1</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CPUCondGroup4</ItemSymbol>
@@ -21433,7 +20943,6 @@
         <TypeSpecNameState>typeM10</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>ParityInLastDataBit</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ILT</ItemSymbol>
@@ -21443,7 +20952,6 @@
         <TypeSpecNameState>typeILT</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>StartBitStartsCounting</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>BreakLength</ItemSymbol>
@@ -21453,7 +20961,6 @@
         <TypeSpecNameState>typeBreakLength</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>Short</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>LBKDE</ItemSymbol>
@@ -21463,7 +20970,6 @@
         <TypeSpecNameState>typeLBKDE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>SCISWAI</ItemSymbol>
@@ -21473,7 +20979,6 @@
         <TypeSpecNameState>typeSCISWAI</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>ClockContinue</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ReceiverWakeupSettings</ItemSymbol>
@@ -21489,7 +20994,6 @@
         <TypeSpecNameState>typeRWU</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NormalRxOperation</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>WAKE</ItemSymbol>
@@ -21499,7 +21003,6 @@
         <TypeSpecNameState>typeWAKE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>IdleLine</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RWUID</ItemSymbol>
@@ -21509,7 +21012,6 @@
         <TypeSpecNameState>typeRWUID</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>WakeUpIdleOnlyWakeUp</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CPUCondGroup5</ItemSymbol>
@@ -21530,7 +21032,6 @@
         <TypeSpecNameState>typeMAEn1</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>MA1</ItemSymbol>
@@ -21548,7 +21049,6 @@
         <TypeSpecNameState>typeMAEn2</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>MA2</ItemSymbol>
@@ -21577,7 +21077,6 @@
         <TypeSpecNameState>typeTXCTSE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXRTSE</ItemSymbol>
@@ -21587,7 +21086,6 @@
         <TypeSpecNameState>typeTXRTSE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXRTSPOL</ItemSymbol>
@@ -21597,7 +21095,6 @@
         <TypeSpecNameState>typeTXRTSPOL</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>ActiveLow</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXRTSE</ItemSymbol>
@@ -21607,7 +21104,6 @@
         <TypeSpecNameState>typeRXRTSE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>IrSettingsFeatureCondGroup</ItemSymbol>
@@ -21628,7 +21124,6 @@
         <TypeSpecNameState>typeIREN</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TNP</ItemSymbol>
@@ -21638,7 +21133,6 @@
         <TypeSpecNameState>typeTNP</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>3_16</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FIFOSettingsFeatureCondGroup</ItemSymbol>
@@ -21659,7 +21153,6 @@
         <TypeSpecNameState>typeTXFE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXWATER</ItemSymbol>
@@ -21677,7 +21170,6 @@
         <TypeSpecNameState>typeRXFE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXWATER</ItemSymbol>
@@ -21708,7 +21200,6 @@
         <TypeSpecNameState>typeISO_7816E</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>T_TYPE</ItemSymbol>
@@ -21728,7 +21219,6 @@
         <TypeSpecNameState>typeANACK</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>ErrorNACKNotGenerated</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ONACK</ItemSymbol>
@@ -21739,7 +21229,6 @@
         <TypeSpecNameState>typeONACK</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>OverflowNACKNotGenerated</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXTHRESHOLD</ItemSymbol>
@@ -21906,7 +21395,6 @@
         <TypeSpecNameState>typeINIT_EN</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NormalOperation</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>GTN</ItemSymbol>
@@ -21947,7 +21435,6 @@
         <TypeSpecNameState>typeCEA709</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_Collision</ItemSymbol>
@@ -21958,7 +21445,6 @@
         <TypeSpecNameState>typeCEA709_Collision</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_Transmitter</ItemSymbol>
@@ -21969,7 +21455,6 @@
         <TypeSpecNameState>typeCEA709_Transmitter</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_Collision_Polarity</ItemSymbol>
@@ -21980,7 +21465,6 @@
         <TypeSpecNameState>typeCEA709_Collision_Polarity</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>low</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CE709_PacketTimeCounter</ItemSymbol>
@@ -22114,7 +21598,6 @@
         <TypeSpecNameState>typeLOOPS</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>Normal</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RSRC</ItemSymbol>
@@ -22124,7 +21607,6 @@
         <TypeSpecNameState>typeRSRC</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>Loop</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXDIR</ItemSymbol>
@@ -22134,7 +21616,6 @@
         <TypeSpecNameState>typeTXDIR</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>Input</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXINV</ItemSymbol>
@@ -22144,7 +21625,6 @@
         <TypeSpecNameState>typeRXINV</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NonInverted</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXINV</ItemSymbol>
@@ -22154,7 +21634,6 @@
         <TypeSpecNameState>typeTXINV</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NonInverted</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PinsGrp</ItemSymbol>
@@ -22304,7 +21783,6 @@
         <TypeSpecNameState>typeCommonTx_Rx_InterruptRequest</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CommonTx_Rx_InterruptPExPriorityFeatureGroup</ItemSymbol>
@@ -22331,7 +21809,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CommonTx_Rx_ISRHandle</ItemSymbol>
@@ -22347,7 +21824,6 @@
         <TypeSpecNameState>typeTIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TIE_RqType</ItemSymbol>
@@ -22357,7 +21833,6 @@
         <TypeSpecNameState>typeTIE_RqType</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>IRQ</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TCIE</ItemSymbol>
@@ -22367,7 +21842,6 @@
         <TypeSpecNameState>typeTCIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RIE</ItemSymbol>
@@ -22377,7 +21851,6 @@
         <TypeSpecNameState>typeRIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RIE_RqType</ItemSymbol>
@@ -22387,7 +21860,6 @@
         <TypeSpecNameState>typeRIE_RqType</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>IRQ</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ILIE</ItemSymbol>
@@ -22397,7 +21869,6 @@
         <TypeSpecNameState>typeILIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>LBKDIE</ItemSymbol>
@@ -22407,7 +21878,6 @@
         <TypeSpecNameState>typeLBKDIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CPUCondGroup8</ItemSymbol>
@@ -22423,7 +21893,6 @@
         <TypeSpecNameState>typeLBKDIE_RqType</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>IRQ</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXEDGIE</ItemSymbol>
@@ -22433,7 +21902,6 @@
         <TypeSpecNameState>typeRXEDGIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ISO7816_Interrupts_CommonFeatureCondGroup</ItemSymbol>
@@ -22456,7 +21924,6 @@
         <TypeSpecNameState>typeINITDE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>Error_IntGrp</ItemSymbol>
@@ -22481,7 +21948,6 @@
         <TypeSpecNameState>typeError_InterruptRequest</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>Error_InterruptPExPriorityFeatureGroup</ItemSymbol>
@@ -22508,7 +21974,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>Error_ISRHandle</ItemSymbol>
@@ -22524,7 +21989,6 @@
         <TypeSpecNameState>typeORIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>NEIE</ItemSymbol>
@@ -22534,7 +21998,6 @@
         <TypeSpecNameState>typeNEIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FEIE</ItemSymbol>
@@ -22544,7 +22007,6 @@
         <TypeSpecNameState>typeFEIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PEIE</ItemSymbol>
@@ -22554,7 +22016,6 @@
         <TypeSpecNameState>typePEIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>FIFOs_InterruptsFeatureCondGroup</ItemSymbol>
@@ -22575,7 +22036,6 @@
         <TypeSpecNameState>typeTXOF</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXUF</ItemSymbol>
@@ -22585,7 +22045,6 @@
         <TypeSpecNameState>typeRXUF</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXOFEFeatureCondGroup</ItemSymbol>
@@ -22600,7 +22059,6 @@
         <TypeSpecNameState>typeRXOFE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ISO7816_Interrupts_ErrorFeatureCondGroup</ItemSymbol>
@@ -22623,7 +22081,6 @@
         <TypeSpecNameState>typeWTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CWTE</ItemSymbol>
@@ -22634,7 +22091,6 @@
         <TypeSpecNameState>typeCWTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>BWTE</ItemSymbol>
@@ -22645,7 +22101,6 @@
         <TypeSpecNameState>typeBWTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXTE</ItemSymbol>
@@ -22656,7 +22111,6 @@
         <TypeSpecNameState>typeTXTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RXTE</ItemSymbol>
@@ -22667,7 +22121,6 @@
         <TypeSpecNameState>typeRXTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>GTVE</ItemSymbol>
@@ -22678,7 +22131,6 @@
         <TypeSpecNameState>typeGTVE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_Interrupt_LONFeatureCondGroup</ItemSymbol>
@@ -22712,7 +22164,6 @@
         <TypeSpecNameState>typeCEA709_InterruptRequest</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_InterruptPExPriorityFeatureGroup</ItemSymbol>
@@ -22742,7 +22193,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <CustomValue />
         <Value />
       </ItemState>
       <ItemState>
@@ -22778,7 +22228,6 @@
         <TypeSpecNameState>typeWBEIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>ISDIE</ItemSymbol>
@@ -22789,7 +22238,6 @@
         <TypeSpecNameState>typeISDIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PRXIE</ItemSymbol>
@@ -22800,7 +22248,6 @@
         <TypeSpecNameState>typePRXIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PTXIE</ItemSymbol>
@@ -22811,7 +22258,6 @@
         <TypeSpecNameState>typePTXIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PCTEIE</ItemSymbol>
@@ -22822,7 +22268,6 @@
         <TypeSpecNameState>typePCTEIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>PSIE</ItemSymbol>
@@ -22833,7 +22278,6 @@
         <TypeSpecNameState>typePSIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TXFIE</ItemSymbol>
@@ -22844,7 +22288,6 @@
         <TypeSpecNameState>typeTXFIE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RPLOFIEFeatureCondGroup</ItemSymbol>
@@ -22911,7 +22354,6 @@
         <TypeSpecNameState>typeSBK</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NormalTxOperation</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>TE</ItemSymbol>
@@ -22921,7 +22363,6 @@
         <TypeSpecNameState>typeTE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>RE</ItemSymbol>
@@ -22931,7 +22372,6 @@
         <TypeSpecNameState>typeRE</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>NON_MCU_INIT</ItemSymbol>
@@ -22959,7 +22399,6 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>default</EnumSymbVal>
-        <CustomValue />
       </ItemState>
       <ItemState>
         <ItemSymbol>UARTInternalUsageGrp</ItemSymbol>
