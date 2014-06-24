@@ -199,6 +199,27 @@ void LcdScrollIsr(void)
   /* Write your code here ... */
 }
 
+/*
+** ===================================================================
+**     Event       :  Watchdog_OnWatchDog (module Events)
+**
+**     Component   :  Watchdog [WatchDog_LDD]
+*/
+/*!
+**     @brief
+**         Called if watchdog time-out occurs. WatchDog must support
+**         this feature and must be enabled.
+**     @param
+**         UserDataPtr     - Pointer to the user or
+**                           RTOS specific data. The pointer passed as
+**                           the parameter of Init method.
+*/
+/* ===================================================================*/
+void Watchdog_OnWatchDog(LDD_TUserData *UserDataPtr)
+{
+  /* Write your code here ... */
+}
+
 /* END Events */
 
 #ifdef __cplusplus

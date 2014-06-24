@@ -28,7 +28,7 @@
 
 #define GW_GET_SYSTEM_STATUS				RCM_SRS0;
 
-#define	GW_WATCHDOG_RESET					Watchdog_Clear();
+#define	GW_WATCHDOG_RESET					Watchdog_Clear(Watchdog_PRPH_BASE_ADDRESS);
 
 #define XSTR(x)								#x
 #define STR(x)								XSTR(x)

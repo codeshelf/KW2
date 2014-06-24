@@ -41,7 +41,6 @@
 #include "INT_UART1_RX_TX.h"
 #include "INT_UART1_ERR.h"
 #include "Watchdog.h"
-#include "WatchDogLdd1.h"
 #include "Scanner.h"
 #include "Wait.h"
 #include "Rs485.h"
@@ -178,6 +177,24 @@ void FRTOS1_vApplicationIdleHook(void);
 ** ===================================================================
 */
 void LcdScrollIsr(void);
+
+/*
+** ===================================================================
+**     Event       :  Watchdog_OnWatchDog (module Events)
+**
+**     Component   :  Watchdog [WatchDog_LDD]
+*/
+/*!
+**     @brief
+**         Called if watchdog time-out occurs. WatchDog must support
+**         this feature and must be enabled.
+**     @param
+**         UserDataPtr     - Pointer to the user or
+**                           RTOS specific data. The pointer passed as
+**                           the parameter of Init method.
+*/
+/* ===================================================================*/
+void Watchdog_OnWatchDog(LDD_TUserData *UserDataPtr);
 
 /* END Events */
 

@@ -106,32 +106,34 @@ void remoteMgmtTask(void *pvParameters) {
 		gLocalDeviceState = eLocalStateRun;
 
 		checked = FALSE;
-		for (;;) {
+		while (!checked) {
+
+			GW_WATCHDOG_RESET;
 
 			if (!checked) {
 				BufferCntType txBufferNum = lockTxBuffer();
 				createAssocCheckCommand(txBufferNum, (RemoteUniqueIDPtrType) STR(GUID));
 				if (transmitPacket(txBufferNum)) {
 				}
+				// Wait up to 1000ms for a response.
+				if (xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 1000 * portTICK_RATE_MS) == pdPASS ) {
+					if (rxBufferNum != 255) {
+						// Check to see what kind of command we just got.
+						cmdID = getCommandID(gRxRadioBuffer[rxBufferNum].bufferStorage);
+						if (cmdID == eCommandAssoc) {
+							assocSubCmd = getAssocSubCommand(rxBufferNum);
+							if (assocSubCmd == eCmdAssocACK) {
+								checked = TRUE;
+							}
+						}
+						RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
+					}
+				}
+				vTaskDelay(50);
 			}
 
-			// Wait up to 1000ms for a response.
-			if (xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 1000 * portTICK_RATE_MS) == pdPASS) {
-				if (rxBufferNum != 255) {
-					// Check to see what kind of command we just got.
-					cmdID = getCommandID(gRxRadioBuffer[rxBufferNum].bufferStorage);
-					if (cmdID == eCommandAssoc) {
-						assocSubCmd = getAssocSubCommand(rxBufferNum);
-						if (assocSubCmd == eCmdAssocACK) {
-							checked = TRUE;
-						}
-					}
-					RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
-				}
-			}
-			vTaskDelay(50);
 		}
-		//vTaskSuspend(gRemoteManagementTask);
+		vTaskSuspend(gRemoteManagementTask);
 	}
 
 	/* Will only get here if the queue could not be created. */
