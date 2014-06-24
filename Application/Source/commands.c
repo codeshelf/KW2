@@ -134,7 +134,7 @@ ENetMgmtSubCmdIDType getNetMgmtSubCommand(BufferStoragePtrType inBufferPtr) {
 ECmdAssocType getAssocSubCommand(BufferCntType inRXBufferNum) {
 	ECmdAssocType result = eCmdAssocInvalid;
 	// Make sure the command is actually for us.
-	if (memcmp("0000001c", &(gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), UNIQUE_ID_BYTES) == 0) {
+	if (memcmp(STR(GUID), &(gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), UNIQUE_ID_BYTES) == 0) {
 		result = (gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOC_SUBCMD]);
 	}
 	return result;
@@ -415,7 +415,7 @@ void processNetCheckOutboundCommand(BufferCntType inTXBufferNum) {
 	}
 
 	// We need to put the gateway (dongle) GUID into the outbound packet before it gets transmitted.
-	memcpy(&(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_GUID]), GUID, UNIQUE_ID_BYTES);
+	memcpy(&(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_GUID]), STR(GUID), UNIQUE_ID_BYTES);
 
 	/*
 	 * At this point we transmit one inbound net-check back over the serial link from the gateway (dongle) itself.
@@ -484,7 +484,7 @@ void processAssocRespCommand(BufferCntType inRXBufferNum) {
 	gwUINT8 ccrHolder;
 
 	// Let's first make sure that this assign command is for us.
-	if (memcmp("0000001c", &(gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), UNIQUE_ID_BYTES) == 0) {
+	if (memcmp(STR(GUID), &(gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), UNIQUE_ID_BYTES) == 0) {
 		// The destination address is the third half-byte of the command.
 		gMyAddr = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOCRESP_ADDR];
 		gMyNetworkID = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOCRESP_NET];
@@ -494,7 +494,7 @@ void processAssocRespCommand(BufferCntType inRXBufferNum) {
 		gLocalDeviceState = eLocalStateAssociated;
 
 		BufferCntType txBufferNum = lockTxBuffer();
-		createAssocCheckCommand(txBufferNum, (RemoteUniqueIDPtrType) GUID);
+		createAssocCheckCommand(txBufferNum, (RemoteUniqueIDPtrType) STR(GUID));
 		if (transmitPacket(txBufferNum)) {
 		}
 

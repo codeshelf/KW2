@@ -30,4 +30,7 @@
 
 #define	GW_WATCHDOG_RESET					Watchdog_Clear();
 
+#define XSTR(x)								#x
+#define STR(x)								XSTR(x)
+
 #endif /* GWSYSTEMMACROS_H_ */
