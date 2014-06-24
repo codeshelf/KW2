@@ -22,7 +22,7 @@ gwBoolean gCircularBufferIsEmpty = TRUE;
 void sendOneChar(UART_MemMapPtr uartRegPtr, UsbDataType data) {
 
 	// Until there is free space in the FIFO don't send a char.
-	while (uartRegPtr->TCFIFO < 1) {
+	while (uartRegPtr->TCFIFO >= uartRegPtr->TWFIFO) {
 		vTaskDelay(1);
 	}
 	uartRegPtr->D = data;
@@ -110,7 +110,7 @@ void serialTransmitFrame(UART_MemMapPtr uartRegPtr, BufferStoragePtrType inFrame
 	sendOneChar(uartRegPtr, END);
 	
 	// Wait until all of the TX bytes have been sent.
-	while (uartRegPtr ->TCFIFO < 32) {
+	while (uartRegPtr ->TCFIFO > 0) {
 		vTaskDelay(1);
 	}
 

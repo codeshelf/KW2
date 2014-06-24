@@ -22785,7 +22785,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IndicateInt</ItemSymbol>
-        <Value />
+        <Value>INT_Watchdog</Value>
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>

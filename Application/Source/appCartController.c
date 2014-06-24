@@ -102,7 +102,7 @@ gwUINT8 sendLcdMessage(char* msgPtr, gwUINT8 msgLen) {
 	}
 
 	// Wait until all of the TX bytes have been sent.
-	while (Lcd_DEVICE ->TCFIFO < 32) {
+	while (Lcd_DEVICE ->TCFIFO > 0) {
 		vTaskDelay(1);
 	}
 
