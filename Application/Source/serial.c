@@ -26,6 +26,9 @@ void sendOneChar(UART_MemMapPtr uartRegPtr, UsbDataType data) {
 		vTaskDelay(1);
 	}
 	uartRegPtr->D = data;
+	while (uartRegPtr->TCFIFO > 0) {
+		vTaskDelay(1);
+	}
 }
 
 // --------------------------------------------------------------------------
@@ -159,5 +162,6 @@ BufferCntType serialReceiveFrame(UART_MemMapPtr uartRegPtr, BufferStoragePtrType
 		if (bytesReceived < inMaxFrameSize)
 			inFramePtr[bytesReceived++] = nextByte;
 	}
+	
 }
 

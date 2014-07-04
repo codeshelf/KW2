@@ -45,7 +45,7 @@ void scannerReadTask(void *pvParameters) {
 
 			// If there's no characters - then wait 2ms to see if more will arrive.
 			if ((Scanner_DEVICE ->RCFIFO == 0)) {
-				Wait_Waitms(4);
+				Wait_Waitms(2);
 			}
 		}
 		GW_EXIT_CRITICAL(ccrHolder);

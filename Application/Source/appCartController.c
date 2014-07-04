@@ -97,7 +97,7 @@ gwUINT8 sendLcdMessage(char* msgPtr, gwUINT8 msgLen) {
 	gwUINT16 charsSent;
 
 	for (charsSent = 0; charsSent < msgLen; charsSent++) {
-		sendOneChar(Lcd_DEVICE, msgPtr);
+		sendOneChar(Lcd_DEVICE, *msgPtr);
 		msgPtr++;
 	}
 

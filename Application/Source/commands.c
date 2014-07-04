@@ -524,28 +524,28 @@ EControlCmdAckStateType processDisplayMsgSubCommand(BufferCntType inRXBufferNum)
 	gDisplayDataLineLen[0] = readAsPString(gDisplayDataLine[0], bufferPtr, MAX_DISPLAY_STRING_BYTES);
 
 	sendLcdMessage(LINE1_FIRST_POS, strlen(LINE1_FIRST_POS));
-	sendLcdMessage(gDisplayDataLine[0], getMin(DISPLAY_WIDTH, strlen(gDisplayDataLine[0])));
+	sendLcdMessage(gDisplayDataLine[0], getMin(DISPLAY_WIDTH, gDisplayDataLineLen[0]));
 
 	// Second display line.
 	bufferPtr += gDisplayDataLineLen[0] + 1;
 	gDisplayDataLineLen[1] = readAsPString(gDisplayDataLine[1], bufferPtr, MAX_DISPLAY_STRING_BYTES);
 
 	sendLcdMessage(LINE2_FIRST_POS, strlen(LINE2_FIRST_POS));
-	sendLcdMessage(gDisplayDataLine[1], getMin(DISPLAY_WIDTH, strlen(gDisplayDataLine[1])));
+	sendLcdMessage(gDisplayDataLine[1], getMin(DISPLAY_WIDTH, gDisplayDataLineLen[1]));
 
 	// Third display line.
 	bufferPtr += gDisplayDataLineLen[1] + 1;
 	gDisplayDataLineLen[2] = readAsPString(gDisplayDataLine[2], bufferPtr, MAX_DISPLAY_STRING_BYTES);
 
 	sendLcdMessage(LINE3_FIRST_POS, strlen(LINE3_FIRST_POS));
-	sendLcdMessage(gDisplayDataLine[2], getMin(DISPLAY_WIDTH, strlen(gDisplayDataLine[2])));
+	sendLcdMessage(gDisplayDataLine[2], getMin(DISPLAY_WIDTH, gDisplayDataLineLen[2]));
 
 	// Fourth display line.
 	bufferPtr += gDisplayDataLineLen[2] + 1;
 	gDisplayDataLineLen[3] = readAsPString(gDisplayDataLine[3], bufferPtr, MAX_DISPLAY_STRING_BYTES);
 
 	sendLcdMessage(LINE4_FIRST_POS, strlen(LINE4_FIRST_POS));
-	sendLcdMessage(gDisplayDataLine[3], getMin(DISPLAY_WIDTH, strlen(gDisplayDataLine[3])));
+	sendLcdMessage(gDisplayDataLine[3], getMin(DISPLAY_WIDTH, gDisplayDataLineLen[3]));
 
 	if ((gDisplayDataLineLen[0] <= DISPLAY_WIDTH) && (gDisplayDataLineLen[1] <= DISPLAY_WIDTH)
 			&& (gDisplayDataLineLen[2] <= DISPLAY_WIDTH) && (gDisplayDataLineLen[3] <= DISPLAY_WIDTH)) {

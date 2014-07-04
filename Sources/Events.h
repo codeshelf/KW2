@@ -38,8 +38,6 @@
 #include "UTIL1.h"
 #include "UTIL2.h"
 #include "INT_PORTB.h"
-#include "INT_UART1_RX_TX.h"
-#include "INT_UART1_ERR.h"
 #include "Watchdog.h"
 #include "Scanner.h"
 #include "Wait.h"

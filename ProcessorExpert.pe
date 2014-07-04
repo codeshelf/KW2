@@ -2,9 +2,9 @@
 <PEproject>
   <Header>
     <Name>ProcessorExpert</Name>
-    <SavedBy>jeffw</SavedBy>
-    <ModificationStamp>98</ModificationStamp>
-    <Date>2014-06-24</Date>
+    <SavedBy>Rafael Send</SavedBy>
+    <ModificationStamp>133</ModificationStamp>
+    <Date>2014-07-01</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.0.RT6_b1411-0406</PEversion>
   </Header>
@@ -28,7 +28,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>79</ProjectCompNumb>
+    <ProjectCompNumb>100</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -544,7 +544,7 @@
         <ItemSymbol>Intperiphgrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>SharedADC0</ItemSymbol>
@@ -11595,7 +11595,7 @@
     <BeanType>InterruptVector</BeanType>
     <Name>INT_UART1_RX_TX</Name>
     <CompNumb>26</CompNumb>
-    <CompEnabled>true</CompEnabled>
+    <CompEnabled>false</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PERIPHINSP</IconName>
     <UserFolderName />
@@ -11660,7 +11660,7 @@
     <BeanType>InterruptVector</BeanType>
     <Name>INT_UART1_ERR</Name>
     <CompNumb>27</CompNumb>
-    <CompEnabled>true</CompEnabled>
+    <CompEnabled>false</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PERIPHINSP</IconName>
     <UserFolderName />
@@ -12849,7 +12849,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>325</Value>
+        <Value>312</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -12862,7 +12862,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>16</Value>
+        <Value>10</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -12872,7 +12872,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>SCIBaud</ItemSymbol>
-        <Value>9211.281 baud</Value>
+        <Value>9600.231 baud</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>SCIBaudNoAdjustFeatureCondGroup</ItemSymbol>
@@ -13695,7 +13695,7 @@
         <ItemSymbol>ReceiverPin</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>PTA15/SPI0_SCK/UART0_RX/I2S0_RXD0</Value>
+        <Value>ADC0_SE7b/PTD6/LLWU_P15/SPI0_PCS3/UART0_RX/FTM0_CH6/FTM0_FLT0</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -13709,14 +13709,14 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>true</Value>
-        <Expanded>true</Expanded>
+        <Value>false</Value>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>TransmitterPin</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>PTA14/SPI0_PCS0/UART0_TX/I2S0_RX_BCLK/I2S0_TXD1</Value>
+        <Value>ADC0_SE10/PTE0/SPI1_PCS1/UART1_TX/TRACE_CLKOUT/I2C1_SDA/RTC_CLKOUT</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -14834,7 +14834,7 @@
         <ItemSymbol>PeriphDevice</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>UART2</Value>
+        <Value>UART1</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -15282,7 +15282,6 @@
         <ItemSymbol>ISO7816</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
@@ -15290,7 +15289,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeISO_7816E</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
@@ -15300,7 +15298,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>1</Index>
         <Expanded>true</Expanded>
       </ItemState>
@@ -15309,7 +15306,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeANACK</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>ErrorNACKNotGenerated</EnumSymbVal>
@@ -15319,7 +15315,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeONACK</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>OverflowNACKNotGenerated</EnumSymbVal>
@@ -15330,7 +15325,6 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>0</Value>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -15339,14 +15333,12 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>0</Value>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
         <ItemSymbol>WI8FeatureCondGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>WI8</ItemSymbol>
@@ -15354,14 +15346,12 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>10</Value>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
         <ItemSymbol>ADTIFeatureCondGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>ADTI</ItemSymbol>
@@ -15376,7 +15366,6 @@
         <ItemSymbol>WI16FeatureCondGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>WI16</ItemSymbol>
@@ -15400,7 +15389,6 @@
         <ItemSymbol>CWIFeatureCondGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>CWI</ItemSymbol>
@@ -15415,7 +15403,6 @@
         <ItemSymbol>CWI1FeatureCondGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>CWI1</ItemSymbol>
@@ -15430,7 +15417,6 @@
         <ItemSymbol>CWI2FeatureCondGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>CWI2</ItemSymbol>
@@ -15445,7 +15431,6 @@
         <ItemSymbol>WTXFeatureCondGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>WTX</ItemSymbol>
@@ -15469,7 +15454,6 @@
         <ItemSymbol>BGIFeatureCondGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>BGI</ItemSymbol>
@@ -15485,7 +15469,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeINIT_EN</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NormalOperation</EnumSymbVal>
@@ -15496,7 +15479,6 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>0</Value>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -15505,7 +15487,6 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>1</Value>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -15733,7 +15714,7 @@
         <ItemSymbol>PinsGrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>ReceiverPinGrp</ItemSymbol>
@@ -15747,7 +15728,7 @@
         <ItemSymbol>ReceiverPin</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>PTD2/LLWU_P13/SPI0_SOUT/UART2_RX/I2C0_SCL</Value>
+        <Value>CMP1_IN1/PTC3/LLWU_P7/SPI0_PCS1/UART1_RX/FTM0_CH2/CLKOUT/I2S0_TX_BCLK</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -15768,7 +15749,7 @@
         <ItemSymbol>TransmitterPin</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>PTD3/SPI0_SIN/UART2_TX/I2C0_SDA</Value>
+        <Value>ADC0_SE10/PTE0/SPI1_PCS1/UART1_TX/TRACE_CLKOUT/I2C1_SDA/RTC_CLKOUT</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -15787,7 +15768,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Value>false</Value>
         <Expanded>false</Expanded>
       </ItemState>
@@ -15796,7 +15776,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <Value />
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -15804,7 +15783,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <Value />
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>CtsPinGrp</ItemSymbol>
@@ -15862,7 +15840,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>CommonTx_Rx_Interrupt</ItemSymbol>
-        <Value>INT_UART2_RX_TX</Value>
+        <Value>INT_UART1_RX_TX</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>CommonTx_Rx_InterruptRequestFeatureGroup</ItemSymbol>
@@ -16006,7 +15984,6 @@
         <ItemSymbol>ISO7816_Interrupts_Common</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
@@ -16014,7 +15991,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeINITDE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
@@ -16027,7 +16003,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>Error_Interrupt</ItemSymbol>
-        <Value>INT_UART2_ERR</Value>
+        <Value>INT_UART1_ERR</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>Error_InterruptRequestFeatureGroup</ItemSymbol>
@@ -16163,7 +16139,6 @@
         <ItemSymbol>ISO7816_Interrupts_Error</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
@@ -16171,7 +16146,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeWTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
@@ -16181,7 +16155,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeCWTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
@@ -16191,7 +16164,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeBWTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
@@ -16201,7 +16173,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeTXTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
@@ -16211,7 +16182,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeRXTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
@@ -16221,7 +16191,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeGTVE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
@@ -20744,7 +20713,7 @@
         <ItemSymbol>PeriphDevice</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>UART3</Value>
+        <Value>UART2</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -20792,7 +20761,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>325</Value>
+        <Value>312</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -20805,7 +20774,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>16</Value>
+        <Value>15</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -20815,7 +20784,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>SCIBaud</ItemSymbol>
-        <Value>9211.281 baud</Value>
+        <Value>9595.430 baud</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>SCIBaudNoAdjustFeatureCondGroup</ItemSymbol>
@@ -21071,7 +21040,7 @@
         <ItemSymbol>ModemSettings</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>TXCTSE</ItemSymbol>
@@ -21192,7 +21161,6 @@
         <ItemSymbol>ISO7816</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
@@ -21200,7 +21168,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeISO_7816E</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
@@ -21210,7 +21177,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>1</Index>
         <Expanded>true</Expanded>
       </ItemState>
@@ -21219,7 +21185,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeANACK</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>ErrorNACKNotGenerated</EnumSymbVal>
@@ -21229,7 +21194,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeONACK</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>OverflowNACKNotGenerated</EnumSymbVal>
@@ -21240,7 +21204,6 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>0</Value>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -21249,14 +21212,12 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>0</Value>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
         <ItemSymbol>WI8FeatureCondGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>WI8</ItemSymbol>
@@ -21264,14 +21225,12 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>10</Value>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
         <ItemSymbol>ADTIFeatureCondGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>ADTI</ItemSymbol>
@@ -21286,7 +21245,6 @@
         <ItemSymbol>WI16FeatureCondGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>WI16</ItemSymbol>
@@ -21310,7 +21268,6 @@
         <ItemSymbol>CWIFeatureCondGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>CWI</ItemSymbol>
@@ -21325,7 +21282,6 @@
         <ItemSymbol>CWI1FeatureCondGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>CWI1</ItemSymbol>
@@ -21340,7 +21296,6 @@
         <ItemSymbol>CWI2FeatureCondGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>CWI2</ItemSymbol>
@@ -21355,7 +21310,6 @@
         <ItemSymbol>WTXFeatureCondGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>WTX</ItemSymbol>
@@ -21379,7 +21333,6 @@
         <ItemSymbol>BGIFeatureCondGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>BGI</ItemSymbol>
@@ -21395,7 +21348,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeINIT_EN</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>NormalOperation</EnumSymbVal>
@@ -21406,7 +21358,6 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>0</Value>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -21415,7 +21366,6 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>1</Value>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -21651,7 +21601,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>ReceiverPin</ItemSymbol>
@@ -21678,7 +21628,7 @@
         <ItemSymbol>TransmitterPin</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>PTC17/UART3_TX</Value>
+        <Value>PTD3/SPI0_SIN/UART2_TX/I2C0_SDA</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -21697,7 +21647,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Value>false</Value>
         <Expanded>false</Expanded>
       </ItemState>
@@ -21706,7 +21655,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <Value />
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -21714,7 +21662,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <Value />
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
         <ItemSymbol>CtsPinGrp</ItemSymbol>
@@ -21772,7 +21719,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>CommonTx_Rx_Interrupt</ItemSymbol>
-        <Value>INT_UART3_RX_TX</Value>
+        <Value>INT_UART2_RX_TX</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>CommonTx_Rx_InterruptRequestFeatureGroup</ItemSymbol>
@@ -21916,7 +21863,6 @@
         <ItemSymbol>ISO7816_Interrupts_Common</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
@@ -21924,7 +21870,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeINITDE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
@@ -21937,7 +21882,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>Error_Interrupt</ItemSymbol>
-        <Value>INT_UART3_ERR</Value>
+        <Value>INT_UART2_ERR</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>Error_InterruptRequestFeatureGroup</ItemSymbol>
@@ -22073,7 +22018,6 @@
         <ItemSymbol>ISO7816_Interrupts_Error</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
@@ -22081,7 +22025,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeWTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
@@ -22091,7 +22034,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeCWTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
@@ -22101,7 +22043,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeBWTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
@@ -22111,7 +22052,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeTXTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
@@ -22121,7 +22061,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeRXTE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
@@ -22131,7 +22070,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeGTVE</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>disabled</EnumSymbVal>
