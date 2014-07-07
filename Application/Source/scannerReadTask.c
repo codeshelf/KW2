@@ -13,6 +13,7 @@
 #include "commands.h"
 #include "Scanner.h"
 #include "Wait.h"
+#include "EventTimer.h"
 
 xTaskHandle gScannerReadTask = NULL;
 
@@ -31,21 +32,27 @@ void scannerReadTask(void *pvParameters) {
 		gScanString[0] = NULL;
 		gScanStringPos = 0;
 
+		// Flush the RX FIFO.
+		Scanner_DEVICE ->CFIFO |= UART_CFIFO_RXFLUSH_MASK;
+		Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
 		// Wait until there are characters in the FIFO
-		while (Scanner_DEVICE ->RCFIFO == 0) {
+		while ((Scanner_DEVICE ->RCFIFO) == 0) {
 			vTaskDelay(1);
 		}
+		Wait_Waitus(750);
 
 		// Now we have characters - read until there are no more.
 		// Do the read in a critical-area-busy-wait loop to make sure we've gotten all characters that will arrive.
 		GW_ENTER_CRITICAL(ccrHolder);
-		while ((Scanner_DEVICE ->RCFIFO != 0) && (gScanStringPos < MAX_SCAN_STRING_BYTES)) {
-			gScanString[gScanStringPos++] = Scanner_DEVICE ->D;
-			gScanString[gScanStringPos] = NULL;
-
-			// If there's no characters - then wait 2ms to see if more will arrive.
-			if ((Scanner_DEVICE ->RCFIFO == 0)) {
-				Wait_Waitms(2);
+		EventTimer_ResetCounter(NULL);
+		// If there's no characters in 50ms then stop waiting for more.
+		while ((EventTimer_GetCounterValue(NULL) < 50) && (gScanStringPos < MAX_SCAN_STRING_BYTES)) {
+			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
+			if ((Scanner_DEVICE ->SFIFO & UART_SFIFO_RXEMPT_MASK) == 0) {
+				gScanString[gScanStringPos++] = Scanner_DEVICE ->D;
+				gScanString[gScanStringPos] = NULL;
+				EventTimer_ResetCounter(NULL);
+				Wait_Waitus(750);
 			}
 		}
 		GW_EXIT_CRITICAL(ccrHolder);

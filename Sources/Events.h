@@ -39,6 +39,7 @@
 #include "UTIL2.h"
 #include "INT_PORTB.h"
 #include "Watchdog.h"
+#include "EventTimer.h"
 #include "Scanner.h"
 #include "Wait.h"
 #include "Rs485.h"
