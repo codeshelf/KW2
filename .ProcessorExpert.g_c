@@ -109,7 +109,7 @@
       <XtraAge27>1155956137</XtraAge27>
       <XtraAge43>1155956136</XtraAge43>
       <XtraAge44>1155956136</XtraAge44>
-      <XtraAge46>1155956136</XtraAge46>
+      <XtraAge46>1156006091</XtraAge46>
       <GenExtraFileType46>4</GenExtraFileType46>
       <GenExtraFileType45>4</GenExtraFileType45>
       <GenExtraFileType44>4</GenExtraFileType44>
@@ -249,7 +249,7 @@
     </GenFiles>
     <SignalListFile>Documentation\ProcessorExpert_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>150</ProjectModificationStamp>
+    <ProjectModificationStamp>151</ProjectModificationStamp>
   </Options>
   <CpuID_47>
     <Generated>true</Generated>
@@ -258,7 +258,7 @@
     <GenDriverVersion>01.04</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
     <HeaderAge>1155956136</HeaderAge>
-    <CodeAge>1155956136</CodeAge>
+    <CodeAge>1156006091</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>14</GenNumMethods>
     <SetClockConfiguration>false</SetClockConfiguration>
@@ -3357,8 +3357,8 @@
     <GenComponentVersion>01.006</GenComponentVersion>
     <GenDriverVersion>01.06</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1155957831</HeaderAge>
-    <CodeAge>1155957831</CodeAge>
+    <HeaderAge>1156006091</HeaderAge>
+    <CodeAge>1156006091</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
@@ -3373,15 +3373,15 @@
       <MethodPos0>Init</MethodPos0>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>182</LineBeg>
-      <LineEnd>196</LineEnd>
+      <LineBeg>162</LineBeg>
+      <LineEnd>176</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos1>Init</MethodPos1>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>178</LineBeg>
-      <LineEnd>265</LineEnd>
+      <LineBeg>158</LineBeg>
+      <LineEnd>225</LineEnd>
     </MethodPos>
     <GenExtraFilesCount>1</GenExtraFilesCount>
     <ExtraFile0>Documentation\doxygen\Scanner.txt</ExtraFile0>
@@ -3529,8 +3529,8 @@
     <GenComponentVersion>01.006</GenComponentVersion>
     <GenDriverVersion>01.06</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1155956137</HeaderAge>
-    <CodeAge>1155956137</CodeAge>
+    <HeaderAge>1156006091</HeaderAge>
+    <CodeAge>1156006091</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
@@ -3545,15 +3545,15 @@
       <MethodPos0>Init</MethodPos0>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>163</LineBeg>
-      <LineEnd>177</LineEnd>
+      <LineBeg>183</LineBeg>
+      <LineEnd>197</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos1>Init</MethodPos1>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>159</LineBeg>
-      <LineEnd>222</LineEnd>
+      <LineBeg>179</LineBeg>
+      <LineEnd>262</LineEnd>
     </MethodPos>
     <GenExtraFilesCount>1</GenExtraFilesCount>
     <ExtraFile0>Documentation\doxygen\Rs485.txt</ExtraFile0>
