@@ -249,7 +249,7 @@
     </GenFiles>
     <SignalListFile>Documentation\ProcessorExpert_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>151</ProjectModificationStamp>
+    <ProjectModificationStamp>153</ProjectModificationStamp>
   </Options>
   <CpuID_47>
     <Generated>true</Generated>

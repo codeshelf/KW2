@@ -36,23 +36,24 @@ void scannerReadTask(void *pvParameters) {
 		Scanner_DEVICE ->CFIFO |= UART_CFIFO_RXFLUSH_MASK;
 		Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
 		// Wait until there are characters in the FIFO
-		while ((Scanner_DEVICE ->RCFIFO) == 0) {
+		while ((Scanner_DEVICE ->S1 & UART_S1_RDRF_MASK) == 0) {
 			vTaskDelay(1);
 		}
-		Wait_Waitus(750);
+		Wait_Waitus(250);
 
 		// Now we have characters - read until there are no more.
 		// Do the read in a critical-area-busy-wait loop to make sure we've gotten all characters that will arrive.
 		GW_ENTER_CRITICAL(ccrHolder);
 		EventTimer_ResetCounter(NULL);
 		// If there's no characters in 50ms then stop waiting for more.
-		while ((EventTimer_GetCounterValue(NULL) < 50) && (gScanStringPos < MAX_SCAN_STRING_BYTES)) {
+		while ((EventTimer_GetCounterValue(NULL) < 500) && (gScanStringPos < MAX_SCAN_STRING_BYTES)) {
 			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
-			if ((Scanner_DEVICE ->SFIFO & UART_SFIFO_RXEMPT_MASK) == 0) {
-				gScanString[gScanStringPos++] = Scanner_DEVICE ->D;
+			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXOF_MASK;
+			if ((Scanner_DEVICE ->S1 & UART_S1_RDRF_MASK) != 0) {
+				gScanString[gScanStringPos++] = Scanner_DEVICE ->D;;
 				gScanString[gScanStringPos] = NULL;
 				EventTimer_ResetCounter(NULL);
-				Wait_Waitus(750);
+				Wait_Waitus(500);
 			}
 		}
 		GW_EXIT_CRITICAL(ccrHolder);
