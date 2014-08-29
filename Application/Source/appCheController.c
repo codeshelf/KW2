@@ -1,6 +1,6 @@
 /*
- FlyWeight
- © Copyright 2005, 2006 Jeffrey B. Williams
+ Codeshelf
+ © Copyright 2005, 2014 Codeshelf, Inc.
  All rights reserved
 
  $Id$
@@ -10,7 +10,7 @@
 // --------------------------------------------------------------------------
 // Kernel includes
 
-#include "appCartController.h"
+#include "appCheController.h"
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
@@ -18,7 +18,7 @@
 #include "gwSystemMacros.h"
 #include "remoteRadioTask.h"
 #include "remoteMgmtTask.h"
-#include "cartControllerTask.h"
+#include "cheControllerTask.h"
 #include "scannerReadTask.h"
 #include "commands.h"
 #include "string.h"
@@ -133,18 +133,12 @@ void startApplication(void) {
 	MLMESetChannelRequest(DEFAULT_CHANNEL);
 	MLMEPAOutputAdjust(DEFAULT_POWER);
 	MLMEXtalAdjust(DEFAULT_CRYSTAL_TRIM); 
+	MLMEFEGainAdjust(15);
 
-	LCD_OFF
-	Wait_Waitms(50);
-	LCD_ON
-
-	Wait_Waitms(750);
-
-	//sendLcdMessage(CLEAR_DISPLAY, strlen(CLEAR_DISPLAY));
-	//sendLcdMessage("DISCONNECTED", 12);
+	sendLcdMessage(CLEAR_DISPLAY, strlen(CLEAR_DISPLAY));
+	sendLcdMessage("DISCONNECTED", 12);
 
 	gLocalDeviceState = eLocalStateStarted;
-	MLMEFEGainAdjust(15);
 
 	/* Start the task that will handle the radio */
 	xTaskCreate(radioTransmitTask, (signed portCHAR *) "RadioTX", configMINIMAL_STACK_SIZE, NULL, RADIO_PRIORITY, &gRadioTransmitTask);
@@ -173,12 +167,4 @@ void startApplication(void) {
 
 void vApplicationIdleHook(void) {
 
-//	GW_WATCHDOG_RESET;
-//
-//	// If we haven't received a packet in by timeout seconds then reset.
-//	portTickType ticks = xTaskGetTickCount();
-//	if (ticks > (gLastPacketReceivedTick + kNetCheckTickCount)) {
-//		GW_RESET_MCU()
-//		;
-//	}
 }

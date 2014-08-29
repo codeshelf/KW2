@@ -17,6 +17,8 @@
 // --------------------------------------------------------------------------
 // Definitions.
 
+#define	CHE_CONTROLLER
+
 #define LCD_ON					LcdPowerCtl_SetVal(LcdPowerCtl_DeviceData);
 #define LCD_OFF					LcdPowerCtl_ClrVal(LcdPowerCtl_DeviceData);
 

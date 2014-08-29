@@ -40,6 +40,7 @@
 #include "INT_PORTB.h"
 #include "Watchdog.h"
 #include "EventTimer.h"
+#include "LedDrive.h"
 #include "Scanner.h"
 #include "Wait.h"
 #include "Rs485.h"

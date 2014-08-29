@@ -517,6 +517,7 @@ DisplayStringLenType gDisplayDataLinePos[4];
 EControlCmdAckStateType processDisplayMsgSubCommand(BufferCntType inRXBufferNum) {
 	EControlCmdAckStateType result = eAckStateOk;
 
+#ifdef CHE_CONTROLLER
 	sendLcdMessage(CLEAR_DISPLAY, strlen(CLEAR_DISPLAY));
 
 	// First display line.
@@ -557,6 +558,8 @@ EControlCmdAckStateType processDisplayMsgSubCommand(BufferCntType inRXBufferNum)
 		gDisplayDataLinePos[3] = 0;
 		startScrolling();
 	}
+#endif
+
 	return result;
 }
 
