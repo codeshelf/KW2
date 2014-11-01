@@ -137,8 +137,23 @@
 <stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_ALTERNATIVE_ALGORITHM_PATH" value=""/>
 <stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_AUTO_SYNC" value="1"/>
 <stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_CURRENT_ALGORITHM_INDEX" value="0"/>
+<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_CUSTOM_TRIM" value="0"/>
+<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_DOTRIM" value="1"/>
+<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_DO_PARTITIONING" value="0"/>
+<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_DO_PRESERVE_PARTITIONING" value="0"/>
 <stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_ENABLE_FLASH_PROGRAMMING_DIALOG" value="0"/>
 <stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_ERASE_PROGRAM_WITHOUT_ASKING" value="0"/>
+<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_NGS_TRIM_OVERRIDE_REFERENCE_FREQUENCY" value="3276800"/>
+<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_PARTITION_PARAM" value="0"/>
+<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_PRESERVE1_ACTIVE" value="0"/>
+<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_PRESERVE1_END" value="3"/>
+<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_PRESERVE1_START" value="0"/>
+<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_PRESERVE2_ACTIVE" value="0"/>
+<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_PRESERVE2_END" value="3"/>
+<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_PRESERVE2_START" value="0"/>
+<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_PRESERVE3_ACTIVE" value="0"/>
+<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_PRESERVE3_END" value="3"/>
+<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.PEDEBUG_PRESERVE3_START" value="0"/>
 <stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.STARTUP_CyclonePro_PowerDownDelay" value="250"/>
 <stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.STARTUP_CyclonePro_PowerUpDelay" value="250"/>
 <stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.STARTUP_CyclonePro_currentvoltage" value="128"/>
@@ -163,7 +178,7 @@
 <stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.STARTUP_USE_CYCLONEPRO_RELAYS" value="0"/>
 <stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.STARTUP_USE_SWD" value="0"/>
 <stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.STARTUP_interface_selection" value="1"/>
-<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.UUID" value="0a104f41-6415-4cc5-af8b-be66b04e8347"/>
+<stringAttribute key="com.pemicro.mcu.debug.connections.pne.arm.UUID" value="913f666e-e14f-4623-b82e-1b1b58ef9a22"/>
 <intAttribute key="org.eclipse.cdt.launch.ATTR_BUILD_BEFORE_LAUNCH_ATTR" value="2"/>
 <stringAttribute key="org.eclipse.cdt.launch.COREFILE_PATH" value=""/>
 <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_ID" value="com.freescale.cdt.debug.cw.arm.ArmDebugger"/>
@@ -174,9 +189,9 @@
 <booleanAttribute key="org.eclipse.cdt.launch.ENABLE_REGISTER_BOOKKEEPING" value="false"/>
 <booleanAttribute key="org.eclipse.cdt.launch.ENABLE_RESTORE_WATCHPOINTS" value="true"/>
 <booleanAttribute key="org.eclipse.cdt.launch.ENABLE_VARIABLE_BOOKKEEPING" value="false"/>
-<stringAttribute key="org.eclipse.cdt.launch.FORMAT" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&lt;contentList&gt;&lt;content id=&quot;u8DataLength-*txPacketPtr-txPacketPtr-gTxMsg--(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;data1-ledDriveInterrupt-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;data2-ledDriveInterrupt-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;sample1-ledDriveInterrupt-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;sample2-ledDriveInterrupt-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;sample3-ledDriveInterrupt-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;data1-aisleControllerTask-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;data2-aisleControllerTask-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;sample1-aisleControllerTask-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;sample2-aisleControllerTask-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;sample3-aisleControllerTask-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;frameLength-*pTxPacket-pTxPacket-PhyPdDataRequest-(format)&quot; val=&quot;1&quot;/&gt;&lt;content id=&quot;channel-remoteMgmtTask-(format)&quot; val=&quot;1&quot;/&gt;&lt;/contentList&gt;"/>
-<stringAttribute key="org.eclipse.cdt.launch.GLOBAL_VARIABLES" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;globalVariableList/&gt;&#13;&#10;"/>
-<stringAttribute key="org.eclipse.cdt.launch.MEMORY_BLOCKS" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;memoryBlockExpressionList&gt;&#13;&#10;&lt;memoryBlockExpressionItem&gt;&#13;&#10;&lt;memorySpaceID text=&quot;Virtual&quot;/&gt;&#13;&#10;&lt;expression text=&quot;&amp;amp;(*gTxMsg.txPacketPtr).smacPdu.u8Data[0]&quot;/&gt;&#13;&#10;&lt;/memoryBlockExpressionItem&gt;&#13;&#10;&lt;/memoryBlockExpressionList&gt;&#13;&#10;"/>
+<stringAttribute key="org.eclipse.cdt.launch.FORMAT" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&lt;contentList&gt;&lt;content id=&quot;inRxBufferNum-processRxPacket-(format)&quot; val=&quot;1&quot;/&gt;&lt;content id=&quot;shouldRetry-radioTransmitTask-(format)&quot; val=&quot;1&quot;/&gt;&lt;content id=&quot;txBufferNum-radioTransmitTask-(format)&quot; val=&quot;1&quot;/&gt;&lt;content id=&quot;[5]-bufferStorage-[0]-gTxRadioBuffer--(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;[4]-bufferStorage-[0]-gTxRadioBuffer--(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;[3]-bufferStorage-[0]-gTxRadioBuffer--(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;[2]-bufferStorage-[0]-gTxRadioBuffer--(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;[1]-bufferStorage-[0]-gTxRadioBuffer--(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;[0]-bufferStorage-[0]-gTxRadioBuffer--(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;bufferStorage-[0]-gTxRadioBuffer--(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;inRXBufferNum-getNetworkID-(format)&quot; val=&quot;1&quot;/&gt;&lt;content id=&quot;data1-ledDriveInterrupt-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;data2-ledDriveInterrupt-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;sample1-ledDriveInterrupt-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;sample2-ledDriveInterrupt-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;sample3-ledDriveInterrupt-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;data1-aisleControllerTask-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;data2-aisleControllerTask-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;sample1-aisleControllerTask-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;sample2-aisleControllerTask-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;sample3-aisleControllerTask-(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;frameLength-*pTxPacket-pTxPacket-PhyPdDataRequest-(format)&quot; val=&quot;1&quot;/&gt;&lt;content id=&quot;u8DataLength-*txPacketPtr-txPacketPtr-gTxMsg--(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;channel-remoteMgmtTask-(format)&quot; val=&quot;1&quot;/&gt;&lt;content id=&quot;[0]-bufferStorage-[2]-gRxRadioBuffer--(format)&quot; val=&quot;4&quot;/&gt;&lt;content id=&quot;gRxCurBufferNum--(format)&quot; val=&quot;1&quot;/&gt;&lt;/contentList&gt;"/>
+<stringAttribute key="org.eclipse.cdt.launch.GLOBAL_VARIABLES" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;globalVariableList&gt;&#13;&#10;&lt;globalVariable name=&quot;gRxRadioBuffer&quot; path=&quot;&quot;/&gt;&#13;&#10;&lt;globalVariable name=&quot;gRxCurBufferNum&quot; path=&quot;&quot;/&gt;&#13;&#10;&lt;/globalVariableList&gt;&#13;&#10;"/>
+<stringAttribute key="org.eclipse.cdt.launch.MEMORY_BLOCKS" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;memoryBlockExpressionList/&gt;&#13;&#10;"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="AisleController/AisleController.elf"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="KW2"/>
 <booleanAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_AUTO_ATTR" value="true"/>
@@ -193,5 +208,9 @@
 <booleanAttribute key="org.eclipse.debug.ui.ATTR_REDIRECT_TO_SOCKET" value="false"/>
 <stringAttribute key="org.eclipse.debug.ui.ATTR_REDIRECT_TO_SOCKET_HOST" value=""/>
 <stringAttribute key="org.eclipse.debug.ui.ATTR_REDIRECT_TO_SOCKET_PORT" value=""/>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
+<listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+</listAttribute>
 <stringAttribute key="process_factory_id" value="com.freescale.cdt.debug.cw.core.ProcessFactoryID"/>
 </launchConfiguration>

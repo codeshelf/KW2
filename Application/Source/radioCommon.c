@@ -35,6 +35,9 @@ void advanceRxBuffer() {
 
 	gRxRadioBuffer[gRxCurBufferNum].bufferStatus = eBufferStateInUse;
 
+	// marker
+	strcpy(gRxRadioBuffer[gRxCurBufferNum].bufferStorage, "advance");
+
 	// Advance to the next buffer.
 	gRxCurBufferNum++;
 	if (gRxCurBufferNum >= (RX_BUFFER_COUNT))
@@ -136,6 +139,10 @@ void resumeRadioRx() {
 	//	GW_ENTER_CRITICAL(ccrHolder);
 	// The radio's state won't go to idle, becuase this routine gets called during 
 	smacError = MLMERXDisableRequest();
+	
+	// marker
+	strcpy(gRxMsg.rxPacketPtr->smacPdu.u8Data, "task-resume");
+
 	smacError = MLMERXEnableRequest(gRxMsg.rxPacketPtr, 0);
 //	GW_EXIT_CRITICAL(ccrHolder);
 //

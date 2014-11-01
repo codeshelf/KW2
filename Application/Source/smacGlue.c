@@ -20,6 +20,7 @@ gwSINT8						gNoReceive = -1;
 extern RxRadioBufferStruct	gRxRadioBuffer[RX_BUFFER_COUNT];
 extern xQueueHandle			gRadioReceiveQueue;
 extern BufferCntType		gRxCurBufferNum;
+extern gwBoolean			gIsReceiving;
 extern gwBoolean			gIsTransmitting;
 
 extern ERxMessageHolderType gRxMsg;
@@ -32,6 +33,7 @@ extern ETxMessageHolderType gTxMsg;
 // short and sweet.  (And let a swapped-in task deal with this during a context switch.)
 
 void MCPSDataIndication(rxPacket_t *inRxPacket) {
+	gIsReceiving = FALSE;
 
 	if (inRxPacket->rxStatus == rxSuccessStatus_c) {
 
@@ -48,7 +50,7 @@ void MCPSDataIndication(rxPacket_t *inRxPacket) {
 		if (xQueueSendFromISR(gRadioReceiveQueue, &gRxCurBufferNum, (portBASE_TYPE) 0)) {
 		}
 
-		advanceRxBuffer();
+		//advanceRxBuffer();
 
 	} else {
 		// Send the message to the radio task's queue that we didn't get any packets before timing out.

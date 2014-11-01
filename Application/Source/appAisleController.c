@@ -51,7 +51,7 @@ void startApplication(void) {
 	MLMESetChannelRequest(DEFAULT_CHANNEL);
 	MLMEPAOutputAdjust(DEFAULT_POWER);
 	MLMEXtalAdjust(DEFAULT_CRYSTAL_TRIM); 
-	MLMEFEGainAdjust(15);
+//	MLMEFEGainAdjust(15);
 
 	gLocalDeviceState = eLocalStateStarted;
 
@@ -70,13 +70,13 @@ void startApplication(void) {
 
 	// Initialize the network check.
 	gLastPacketReceivedTick = xTaskGetTickCount();
-
-	/* All the tasks have been created - start the scheduler. */
-	vTaskStartScheduler();
-
-	/* Should not reach here! */
-	for (;;)
-		;
+	
+//	/* All the tasks have been created - start the scheduler. */
+//	vTaskStartScheduler();
+//
+//	/* Should not reach here! */
+//	for (;;)
+//		;
 }
 
 // --------------------------------------------------------------------------

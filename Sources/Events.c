@@ -36,6 +36,7 @@ extern "C" {
 
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
+#include "display.h"
 
 /*
 ** ===================================================================
@@ -196,7 +197,13 @@ void FRTOS1_vApplicationIdleHook(void)
 */
 void LcdScrollIsr(void)
 {
-  /* Write your code here ... */
+	uint8_t i = 1;
+	
+	clearDisplay();
+	for (i = 0; i < 8; i++) {
+		sendDisplayBuffer(0xff >> i);
+		//Wait_Waitms(50);
+	}
 }
 
 /*

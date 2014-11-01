@@ -26,6 +26,7 @@ xQueueHandle gRadioReceiveQueue = NULL;
 ERxMessageHolderType gRxMsg;
 ETxMessageHolderType gTxMsg;
 portTickType gLastAssocCheckTickCount;
+gwBoolean gIsReceiving;
 gwBoolean gIsTransmitting;
 
 extern RxRadioBufferStruct gRxRadioBuffer[RX_BUFFER_COUNT];
@@ -42,6 +43,7 @@ extern NetAddrType gMyAddr;
 // --------------------------------------------------------------------------
 
 void radioReceiveTask(void *pvParameters) {
+	BufferCntType tempRxBufferNum;
 	BufferCntType rxBufferNum;
 	smacErrors_t smacError;
 	gwUINT8 ccrHolder;
@@ -53,14 +55,19 @@ void radioReceiveTask(void *pvParameters) {
 			GW_WATCHDOG_RESET
 
 			// Setup for the next RX cycle.
-			advanceRxBuffer();
 			gRxCurBufferNum = lockRxBuffer();
 
 			gRxMsg.rxPacketPtr = (rxPacket_t *) &(gRxRadioBuffer[gRxCurBufferNum].rxPacket);
 			gRxMsg.rxPacketPtr->u8MaxDataLength = RX_BUFFER_SIZE;
 			gRxMsg.rxPacketPtr->rxStatus = rxInitStatus;
 			gRxMsg.bufferNum = gRxCurBufferNum;
+			tempRxBufferNum = gRxCurBufferNum;
+			advanceRxBuffer();
+			
+			// marker
+			strcpy(gRxMsg.rxPacketPtr->smacPdu.u8Data, "receive");
 
+			gIsReceiving = TRUE;
 			smacError = MLMERXEnableRequest(gRxMsg.rxPacketPtr, 0);
 
 			if (xQueueReceive(gRadioReceiveQueue, &rxBufferNum, portMAX_DELAY) == pdPASS ) {
@@ -71,8 +78,10 @@ void radioReceiveTask(void *pvParameters) {
 					// processRXPacket releases the RX buffer if necessary.
 				} else {
 					// Probably failed or aborted, release it.
-					RELEASE_RX_BUFFER(gRxMsg.bufferNum, ccrHolder);
+					RELEASE_RX_BUFFER(tempRxBufferNum, ccrHolder);
 				}
+			} else {
+				RELEASE_RX_BUFFER(tempRxBufferNum, ccrHolder);
 			}
 		}
 	}
@@ -115,27 +124,35 @@ void radioTransmitTask(void *pvParameters) {
 					}
 					
 					while (gIsTransmitting) {
-						vTaskDelay(2);
+						vTaskDelay(1);
 					}
 
 					if (gTxMsg.txStatus == txFailureStatus_c) {
 						shouldRetry = TRUE;
-//					} else if ((getAckId(gTxRadioBuffer[txBufferNum].bufferStorage) != 0)
-//					        && (getCommandID(gTxRadioBuffer[txBufferNum].bufferStorage) != eCommandNetMgmt)) {
-//						// If the TX packet had an ACK id then retry TX until we get the ACK or reset.
-//
-//						// We'll simply use the RX packet from the suspended task.
-//						smacError = MLMERXEnableRequest(gRxMsg.rxPacketPtr, 0);
-//
-//						if (smacError == gErrorNoError_c) {
-//							networkID = getNetworkID(gRxMsg.bufferNum);
-//							cmdDstAddr = getCommandDstAddr(gRxMsg.bufferNum);
-//							if ((getAckId(gTxRadioBuffer[txBufferNum].bufferStorage)
-//							        == getAckId(gRxRadioBuffer[gRxCurBufferNum].bufferStorage)) && (networkID == gMyNetworkID)
-//							        && (cmdDstAddr == gMyAddr)) {
-//								shouldRetry = TRUE;
-//							}
-//						}
+					} else if ((getAckId(gTxRadioBuffer[txBufferNum].bufferStorage) != 0)
+					        && (getCommandID(gTxRadioBuffer[txBufferNum].bufferStorage) != eCommandNetMgmt)) {
+						// If the TX packet had an ACK id then retry TX until we get the ACK or reset.
+
+						// marker
+						strcpy(gRxMsg.rxPacketPtr->smacPdu.u8Data, "tx-reseume");
+
+						// We'll simply use the RX packet from the suspended task.
+						smacError = MLMERXEnableRequest(gRxMsg.rxPacketPtr, 0);
+
+						if (smacError == gErrorNoError_c) {
+
+							while (gIsReceiving) {
+								vTaskDelay(1);
+							}
+
+							networkID = getNetworkID(gRxMsg.bufferNum);
+							cmdDstAddr = getCommandDstAddr(gRxMsg.bufferNum);
+							if ((getAckId(gTxRadioBuffer[txBufferNum].bufferStorage)
+							        == getAckId(gRxRadioBuffer[gRxCurBufferNum].bufferStorage)) && (networkID == gMyNetworkID)
+							        && (cmdDstAddr == gMyAddr)) {
+								shouldRetry = TRUE;
+							}
+						}
 					}
 				} while (shouldRetry);
 

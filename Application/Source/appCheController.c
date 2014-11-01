@@ -133,10 +133,7 @@ void startApplication(void) {
 	MLMESetChannelRequest(DEFAULT_CHANNEL);
 	MLMEPAOutputAdjust(DEFAULT_POWER);
 	MLMEXtalAdjust(DEFAULT_CRYSTAL_TRIM); 
-	MLMEFEGainAdjust(15);
-
-	sendLcdMessage(CLEAR_DISPLAY, strlen(CLEAR_DISPLAY));
-	sendLcdMessage("DISCONNECTED", 12);
+	//MLMEFEGainAdjust(15);
 
 	gLocalDeviceState = eLocalStateStarted;
 
@@ -161,10 +158,4 @@ void startApplication(void) {
 
 	// Initialize the network check.
 	gLastPacketReceivedTick = xTaskGetTickCount();
-}
-
-// --------------------------------------------------------------------------
-
-void vApplicationIdleHook(void) {
-
 }

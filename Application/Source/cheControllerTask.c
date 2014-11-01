@@ -36,6 +36,9 @@ void cartControllerTask(void *pvParameters) {
 
 	clearAllPositions();
 	
+	sendLcdMessage(CLEAR_DISPLAY, strlen(CLEAR_DISPLAY));
+	sendLcdMessage("DISCONNECTED", 12);
+
 	for (;;) {
 
 		// Clear the RS485 string.

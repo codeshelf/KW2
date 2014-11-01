@@ -16,10 +16,10 @@
 // --------------------------------------------------------------------------
 // Definitions.
 
-#define	CHE_CONTROLLER
+#define	LED_CONTROLLER
 
-#define DEFAULT_CHANNEL			gChannel15_c
-#define DEFAULT_POWER			23
+#define DEFAULT_CHANNEL			gChannel11_c
+#define DEFAULT_POWER			gMaxOutputPower_c
 #define DEFAULT_CRYSTAL_TRIM	115
 
 // --------------------------------------------------------------------------
