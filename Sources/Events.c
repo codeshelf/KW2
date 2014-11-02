@@ -200,10 +200,15 @@ void LcdScrollIsr(void)
 	uint8_t i = 1;
 	
 	clearDisplay();
-	for (i = 0; i < 8; i++) {
-		sendDisplayBuffer(0xff >> i);
-		//Wait_Waitms(50);
-	}
+	displayString(5, 10, "D-82 D-83", 2);
+	displayString(5, 28, "pint, nanamaesorgani", 2);
+	displayString(5, 46, "cs, Organic Unfilter", 2);
+	displayString(5, 64, "ed Gravenstein Cider Vinegar", 2);
+	sendDisplayBuffer();
+//	for (i = 0; i < 8; i++) {
+//		drawOnDisplayBuffer(0xff >> i);
+//		sendDisplayBuffer();
+//	}
 }
 
 /*
