@@ -47,13 +47,10 @@
 #include "Wait.h"
 #include "Rs485.h"
 #include "Critical.h"
-#include "LcdScrollTimer.h"
-#include "TimerIntLdd1.h"
 #include "TU1.h"
 #include "Rs485TxCtl.h"
 #include "LcdPowerCtl.h"
 #include "Battery.h"
-#include "Lcd.h"
 
 #ifdef __cplusplus
 extern "C" {

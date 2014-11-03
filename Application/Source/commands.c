@@ -16,7 +16,6 @@
 #include "gwSystemMacros.h"
 #include "Battery.h"
 #include "Wait.h"
-#include "LcdScrollTimer.h"
 #include "Rs485.h"
 
 RemoteDescStruct			gRemoteStateTable[MAX_REMOTES];
@@ -518,61 +517,35 @@ EControlCmdAckStateType processDisplayMsgSubCommand(BufferCntType inRXBufferNum)
 	EControlCmdAckStateType result = eAckStateOk;
 
 #ifdef CHE_CONTROLLER
-	sendLcdMessage(CLEAR_DISPLAY, strlen(CLEAR_DISPLAY));
+	clearDisplay();
 
 	// First display line.
 	BufferStoragePtrType bufferPtr = gRxRadioBuffer[inRXBufferNum].bufferStorage + CMDPOS_MESSAGE;
 	gDisplayDataLineLen[0] = readAsPString(gDisplayDataLine[0], bufferPtr, MAX_DISPLAY_STRING_BYTES);
 
-	sendLcdMessage(LINE1_FIRST_POS, strlen(LINE1_FIRST_POS));
-	sendLcdMessage(gDisplayDataLine[0], getMin(DISPLAY_WIDTH, gDisplayDataLineLen[0]));
+	displayMessage(1, gDisplayDataLine[0], getMin(MAX_DISPLAY_CHARS, gDisplayDataLineLen[0]));
 
 	// Second display line.
 	bufferPtr += gDisplayDataLineLen[0] + 1;
 	gDisplayDataLineLen[1] = readAsPString(gDisplayDataLine[1], bufferPtr, MAX_DISPLAY_STRING_BYTES);
 
-	sendLcdMessage(LINE2_FIRST_POS, strlen(LINE2_FIRST_POS));
-	sendLcdMessage(gDisplayDataLine[1], getMin(DISPLAY_WIDTH, gDisplayDataLineLen[1]));
+	displayMessage(2, gDisplayDataLine[1], getMin(MAX_DISPLAY_CHARS, gDisplayDataLineLen[1]));
 
 	// Third display line.
 	bufferPtr += gDisplayDataLineLen[1] + 1;
 	gDisplayDataLineLen[2] = readAsPString(gDisplayDataLine[2], bufferPtr, MAX_DISPLAY_STRING_BYTES);
 
-	sendLcdMessage(LINE3_FIRST_POS, strlen(LINE3_FIRST_POS));
-	sendLcdMessage(gDisplayDataLine[2], getMin(DISPLAY_WIDTH, gDisplayDataLineLen[2]));
+	displayMessage(3, gDisplayDataLine[2], getMin(MAX_DISPLAY_CHARS, gDisplayDataLineLen[2]));
 
 	// Fourth display line.
 	bufferPtr += gDisplayDataLineLen[2] + 1;
 	gDisplayDataLineLen[3] = readAsPString(gDisplayDataLine[3], bufferPtr, MAX_DISPLAY_STRING_BYTES);
 
-	sendLcdMessage(LINE4_FIRST_POS, strlen(LINE4_FIRST_POS));
-	sendLcdMessage(gDisplayDataLine[3], getMin(DISPLAY_WIDTH, gDisplayDataLineLen[3]));
+	displayMessage(4, gDisplayDataLine[3], getMin(MAX_DISPLAY_CHARS, gDisplayDataLineLen[3]));
 
-	if ((gDisplayDataLineLen[0] <= DISPLAY_WIDTH) && (gDisplayDataLineLen[1] <= DISPLAY_WIDTH)
-			&& (gDisplayDataLineLen[2] <= DISPLAY_WIDTH) && (gDisplayDataLineLen[3] <= DISPLAY_WIDTH)) {
-		stopScrolling();
-	} else {
-		gDisplayDataLinePos[0] = 0;
-		gDisplayDataLinePos[1] = 0;
-		gDisplayDataLinePos[2] = 0;
-		gDisplayDataLinePos[3] = 0;
-		startScrolling();
-	}
 #endif
 
 	return result;
-}
-
-// --------------------------------------------------------------------------
-
-void startScrolling() {
-	LcdScrollTimer_Enable();
-}
-
-// --------------------------------------------------------------------------
-
-void stopScrolling() {
-	LcdScrollTimer_Disable();
 }
 
 // --------------------------------------------------------------------------

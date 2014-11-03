@@ -25,7 +25,6 @@
 #include "stdlib.h"
 #include "SMAC_Interface.h"
 #include "Wait.h"
-#include "Lcd.h"
 #include "Rs485.h"
 #include "serial.h"
 #include "smacGlue.h"
@@ -47,67 +46,6 @@ extern xQueueHandle gRadioReceiveQueue;
 extern xQueueHandle gRemoteMgmtQueue;
 
 extern ELocalStatusType gLocalDeviceState;
-
-extern DisplayStringType gDisplayDataLine[2];
-extern DisplayStringLenType gDisplayDataLineLen[2];
-extern DisplayStringLenType gDisplayDataLinePos[2];
-
-// --------------------------------------------------------------------------
-
-void lcdScrollIsr() {
-	gwUINT8 error;
-	gwUINT8 remainingSpace;
-
-	for (int line = 0; line < 4; ++line) {
-
-		if (gDisplayDataLineLen[line] > DISPLAY_WIDTH) {
-			if (line == 0) {
-				error = sendDisplayMessage(LINE1_FIRST_POS, strlen(LINE1_FIRST_POS));
-			} else if (line == 1) {
-				error = sendDisplayMessage(LINE2_FIRST_POS, strlen(LINE2_FIRST_POS));
-			} else if (line == 2) {
-				error = sendDisplayMessage(LINE3_FIRST_POS, strlen(LINE3_FIRST_POS));
-			} else if (line == 3) {
-				error = sendDisplayMessage(LINE4_FIRST_POS, strlen(LINE4_FIRST_POS));
-			}
-			error = sendDisplayMessage(&(gDisplayDataLine[line][gDisplayDataLinePos[line]]),
-			        getMin(DISPLAY_WIDTH, (gDisplayDataLineLen[line] - gDisplayDataLinePos[line])));
-
-			// If there's space at the end of the display then restart from the beginning of the message.
-			if ((gDisplayDataLineLen[line] - gDisplayDataLinePos[line]) < DISPLAY_WIDTH) {
-				remainingSpace = DISPLAY_WIDTH - (gDisplayDataLineLen[line] - gDisplayDataLinePos[line]);
-				error = sendDisplayMessage("   ", getMin(3, remainingSpace));
-				if (remainingSpace > 3) {
-					error = sendDisplayMessage(&(gDisplayDataLine[line][0]), remainingSpace - 3);
-				}
-			}
-
-			gDisplayDataLinePos[line] += 3;
-			if (gDisplayDataLinePos[line] >= gDisplayDataLineLen[line]) {
-				gDisplayDataLinePos[line] = 0;
-			}
-		}
-	}
-}
-
-// --------------------------------------------------------------------------
-
-gwUINT8 sendLcdMessage(char* msgPtr, gwUINT8 msgLen) {
-
-	gwUINT16 charsSent;
-
-	for (charsSent = 0; charsSent < msgLen; charsSent++) {
-		sendOneChar(Lcd_DEVICE, *msgPtr);
-		msgPtr++;
-	}
-
-	// Wait until all of the TX bytes have been sent.
-	while (Lcd_DEVICE ->TCFIFO > 0) {
-		vTaskDelay(1);
-	}
-
-	return 0;
-}
 
 // --------------------------------------------------------------------------
 

@@ -183,36 +183,6 @@ void FRTOS1_vApplicationIdleHook(void)
 
 /*
 ** ===================================================================
-**     Event       :  LcdScrollIsr (module Events)
-**
-**     Component   :  LcdScrollTimer [TimerInt]
-**     Description :
-**         When a timer interrupt occurs this event is called (only
-**         when the component is enabled - <Enable> and the events are
-**         enabled - <EnableEvent>). This event is enabled only if a
-**         <interrupt service/event> is enabled.
-**     Parameters  : None
-**     Returns     : Nothing
-** ===================================================================
-*/
-void LcdScrollIsr(void)
-{
-	uint8_t i = 1;
-	
-	clearDisplay();
-	displayString(5, 10, "D-82 D-83", 2);
-	displayString(5, 28, "pint, nanamaesorgani", 2);
-	displayString(5, 46, "cs, Organic Unfilter", 2);
-	displayString(5, 64, "ed Gravenstein Cider Vinegar", 2);
-	sendDisplayBuffer();
-//	for (i = 0; i < 8; i++) {
-//		drawOnDisplayBuffer(0xff >> i);
-//		sendDisplayBuffer();
-//	}
-}
-
-/*
-** ===================================================================
 **     Event       :  Watchdog_OnWatchDog (module Events)
 **
 **     Component   :  Watchdog [WatchDog_LDD]

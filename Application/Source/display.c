@@ -1,4 +1,4 @@
-#include "Display.h"
+#include "display.h"
 #include "PE_Types.h"
 #include "IO_Map.h"
 #include "string.h"
@@ -157,20 +157,20 @@ void drawChar(int16_t x, int16_t y, unsigned char c, uint8_t size) {
 	}
 }
 
-void drawOnDisplayBuffer(uint8_t pattern) {
-	uint16_t row;
-	uint16_t col;
-
-	// Send image buffer
-	for (row = 0; row < DISPLAY_HEIGHT; row++) {
-		for (col = 0; col < DISPLAY_WIDTH; col += 8) {
-			displayBuffer[row * DISPLAY_HEIGHT + col] = pattern;
-		}
-	}
-}
-
 void displayString(int16_t x, int16_t y, char_t *stringPtr, uint8_t size) {
 	for (uint8_t pos = 0; pos < strlen(stringPtr); pos++) {
 		drawChar(x + (pos * size * 6), y, stringPtr[pos], size);
 	}
+	sendDisplayBuffer();
+}
+
+void displayMessage(uint8_t line, char_t *stringPtr, uint8_t maxChars) {
+	uint8_t size = 3;
+	uint8_t x = 5;
+	uint8_t y = 10 + (9 * size * (line - 1));
+	uint8_t max = getMin(maxChars, strlen(stringPtr));
+	for (uint8_t pos = 0; pos < max; pos++) {
+		drawChar(x + (pos * size * 6), y, stringPtr[pos], size);
+	}
+	sendDisplayBuffer();
 }

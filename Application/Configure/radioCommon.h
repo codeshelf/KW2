@@ -33,7 +33,7 @@
 #define GATEWAY_MGMT_QUEUE_SIZE	10
 #define REMOTE_MGMT_QUEUE_SIZE	10
 
-#define RX_QUEUE_SIZE			10
+#define RX_QUEUE_SIZE			5
 #define RX_QUEUE_LOW_WATER		2
 #define RX_QUEUE_HIGH_WATER		RX_QUEUE_SIZE - 2
 #define TX_QUEUE_SIZE			5
@@ -49,21 +49,7 @@
 
 #define KEYBOARD_QUEUE_SIZE		2
 
-#define BACKLIGHT_LOW					"\x7C\x8C"
-#define BACKLIGHT_40PERCENT				"\x7C\x8C"
-#define BACKLIGHT_50PERCENT				"\x7C\x8E"
-#define BACKLIGHT_73PERCENT				"\x7C\x96"
-#define BACKLIGHT_100PERCENT			"\x7C\x9D"
-#define CURSOR_OFF						"\xFE\x0C"
-#define LINE1_FIRST_POS 				"\xFE\x80"
-#define LINE2_FIRST_POS 				"\xFE\xC0"
-#define LINE3_FIRST_POS 				"\xFE\x94"
-#define LINE4_FIRST_POS 				"\xFE\xD4"
-#define CLEAR_DISPLAY					"\xFE\x01"
-
-#define DISPLAY_SETUP					BACKLIGHT_73PERCENT CURSOR_OFF
-
-#define DISPLAY_WIDTH					20
+#define MAX_DISPLAY_CHARS				30
 
 #define MAX_DISPLAY_STRING_BYTES		42
 #define MAX_SCAN_STRING_BYTES			64

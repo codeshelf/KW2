@@ -30,6 +30,8 @@
 
 #define readFontByte(addr) (*(const unsigned char *)(addr))
 #define swap(a, b) { int16_t t = a; a = b; b = t; }
+#define getMax(a,b)    (((a) > (b)) ? (a) : (b))
+#define getMin(a,b)    (((a) < (b)) ? (a) : (b))
 
 void sendByte(uint8_t data);
 void sendByteLSB(uint8_t data);
@@ -42,7 +44,7 @@ void fillRect(int16_t x, int16_t y, int16_t w, int16_t h);
 void drawFastVLine(int16_t x, int16_t y, int16_t h);
 void drawFastHLine(int16_t x, int16_t y, int16_t w);
 void drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1);
-void drawOnDisplayBuffer(uint8_t pattern);
 void displayString(int16_t x, int16_t y, char_t *stringPtr, uint8_t size);
+void displayMessage(uint8_t line, char_t *stringPtr, uint8_t maxChars);
 
 #endif /* DISPLAY_H_ */

@@ -17,7 +17,7 @@
 // --------------------------------------------------------------------------
 // Definitions.
 
-#define	CHE_CONTROLLER
+#define	CHE_CONTROLLER			TRUE
 
 #define LCD_ON					LcdPowerCtl_SetVal(LcdPowerCtl_DeviceData);
 #define LCD_OFF					LcdPowerCtl_ClrVal(LcdPowerCtl_DeviceData);
@@ -29,8 +29,6 @@
 // --------------------------------------------------------------------------
 // Function prototypes.
 
-void lcdScrollIsr(void);
-gwUINT8 sendLcdMessage(char* msgPtr, gwUINT8 msgLen);
 gwUINT8 sendrs485Message(char* msgPtr, gwUINT8 msgLen);
 void startApplication(void);
 

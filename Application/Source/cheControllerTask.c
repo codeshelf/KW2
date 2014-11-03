@@ -15,6 +15,7 @@
 #include "Rs485.h"
 #include "Wait.h"
 #include "EventTimer.h"
+#include "display.h"
 
 xTaskHandle			gCartControllerTask;
 xQueueHandle		gCartControllerQueue;
@@ -36,8 +37,9 @@ void cartControllerTask(void *pvParameters) {
 
 	clearAllPositions();
 	
-	sendLcdMessage(CLEAR_DISPLAY, strlen(CLEAR_DISPLAY));
-	sendLcdMessage("DISCONNECTED", 12);
+	clearDisplay();
+	displayMessage(1, "DISCONNECTED", strlen("DISCONNECTED"));
+	displayMessage(2, "TRYING TO ASSOCIATE", strlen("TRYING TO ASSOCIATE"));
 
 	for (;;) {
 
