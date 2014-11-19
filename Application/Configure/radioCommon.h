@@ -193,7 +193,7 @@ typedef struct {
 		LedData				blue;
 } LedDataStruct;
 
-typedef gwUINT8				DisplayCharType;
+typedef gwCHAR				DisplayCharType;
 typedef DisplayCharType		DisplayStringType[MAX_DISPLAY_STRING_BYTES];
 typedef DisplayStringType*	DisplayStringPtrType;
 typedef gwUINT8				DisplayStringLenType;

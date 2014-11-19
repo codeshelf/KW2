@@ -71,7 +71,7 @@ void startApplication(void) {
 	MLMESetChannelRequest(DEFAULT_CHANNEL);
 	MLMEPAOutputAdjust(DEFAULT_POWER);
 	MLMEXtalAdjust(DEFAULT_CRYSTAL_TRIM); 
-	//MLMEFEGainAdjust(15);
+	MLMEFEGainAdjust(15);
 
 	gLocalDeviceState = eLocalStateStarted;
 

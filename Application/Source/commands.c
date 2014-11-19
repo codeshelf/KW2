@@ -17,6 +17,7 @@
 #include "Battery.h"
 #include "Wait.h"
 #include "Rs485.h"
+#include "display.h"
 
 RemoteDescStruct			gRemoteStateTable[MAX_REMOTES];
 NetAddrType					gMyAddr = INVALID_REMOTE;

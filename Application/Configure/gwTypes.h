@@ -19,5 +19,6 @@
 #define gwSINT16		int16_t
 #define gwUINT32		uint32_t
 #define	gwTime			time_t
+#define gwCHAR			char
 
 #endif /* GWTYPES_H_ */

@@ -3,8 +3,8 @@
   <Header>
     <Name>ProcessorExpert</Name>
     <SavedBy>jeffw</SavedBy>
-    <ModificationStamp>205</ModificationStamp>
-    <Date>2014-11-02</Date>
+    <ModificationStamp>209</ModificationStamp>
+    <Date>2014-11-19</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.1.RT6_b1423-0421</PEversion>
   </Header>
@@ -28,7 +28,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>149</ProjectCompNumb>
+    <ProjectCompNumb>152</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -7315,19 +7315,19 @@
       <ItemId6>33</ItemId6>
       <Value6>false</Value6>
       <ItemId7>38</ItemId7>
-      <Value7>true</Value7>
+      <Value7>false</Value7>
       <ItemId8>42</ItemId8>
       <Value8>true</Value8>
       <ItemId9>43</ItemId9>
-      <Value9>true</Value9>
+      <Value9>false</Value9>
       <ItemId10>48</ItemId10>
       <Value10>true</Value10>
       <ItemId11>51</ItemId11>
       <Value11>true</Value11>
       <ItemId12>52</ItemId12>
-      <Value12>true</Value12>
+      <Value12>false</Value12>
       <ItemId13>53</ItemId13>
-      <Value13>true</Value13>
+      <Value13>false</Value13>
       <ItemId14>54</ItemId14>
       <Value14>true</Value14>
       <ItemId15>47</ItemId15>
@@ -22283,7 +22283,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>ClockSettingsGroup0</ItemSymbol>
@@ -22861,7 +22861,7 @@
         <ItemSymbol>DataOut</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>PTD2/LLWU_P13/SPI0_SOUT/UART2_RX/I2C0_SCL</Value>
+        <Value>CMP0_IN0/PTC6/LLWU_P10/SPI0_SOUT/PDB0_EXTRG/I2S0_RX_BCLK/I2S0_MCLK</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -23286,7 +23286,7 @@
         <ItemSymbol>_Pin</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>CMP0_IN0/PTC6/LLWU_P10/SPI0_SOUT/PDB0_EXTRG/I2S0_RX_BCLK/I2S0_MCLK</Value>
+        <Value>PTC4/LLWU_P8/SPI0_PCS0/UART1_TX/FTM0_CH3/CMP1_OUT</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -23329,7 +23329,7 @@
               <ItemSymbol>_Pin</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>CMP0_IN0/PTC6/LLWU_P10/SPI0_SOUT/PDB0_EXTRG/I2S0_RX_BCLK/I2S0_MCLK</Value>
+              <Value>PTC4/LLWU_P8/SPI0_PCS0/UART1_TX/FTM0_CH3/CMP1_OUT</Value>
               <SharedPrphMode>false</SharedPrphMode>
             </ItemState>
             <ItemState>
