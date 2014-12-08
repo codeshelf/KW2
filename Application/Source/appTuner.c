@@ -9,7 +9,7 @@
 
 // --------------------------------------------------------------------------
 // Kernel includes
-#include "appAisleController.h"
+#include "appTuner.h"
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
@@ -17,9 +17,6 @@
 #include "gwSystemMacros.h"
 #include "remoteRadioTask.h"
 #include "remoteMgmtTask.h"
-#include "aisleControllerTask.h"
-#include "scannerReadTask.h"
-#include "commands.h"
 #include "SMAC_Interface.h"
 #include "Wait.h"
 #include "smacGlue.h"
@@ -31,9 +28,7 @@ portTickType gLastPacketReceivedTick;
 
 extern xTaskHandle gRadioReceiveTask;
 extern xTaskHandle gRadioTransmitTask;
-extern xTaskHandle gSerialReceiveTask;
 extern xTaskHandle gRemoteManagementTask;
-extern xTaskHandle gAisleControllerTask;
 
 extern xQueueHandle gRadioTransmitQueue;
 extern xQueueHandle gRadioReceiveQueue;
@@ -59,7 +54,6 @@ void startApplication(void) {
 	xTaskCreate(radioTransmitTask, (const signed portCHAR * const) "RadioTX", configMINIMAL_STACK_SIZE, NULL, RADIO_PRIORITY, &gRadioTransmitTask );
 	xTaskCreate(radioReceiveTask, (const signed portCHAR * const) "RadioRX", configMINIMAL_STACK_SIZE, NULL, RADIO_PRIORITY, &gRadioReceiveTask );
 	xTaskCreate(remoteMgmtTask, (const signed portCHAR * const) "Mgmt", configMINIMAL_STACK_SIZE, NULL, MGMT_PRIORITY, &gRemoteManagementTask );
-	xTaskCreate(aisleControllerTask, (const signed portCHAR * const) "LED", configMINIMAL_STACK_SIZE, NULL, MGMT_PRIORITY, &gAisleControllerTask );
 
 	gRadioReceiveQueue = xQueueCreate(RX_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(BufferCntType));
 	gRadioTransmitQueue = xQueueCreate(TX_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(BufferCntType));
@@ -71,6 +65,9 @@ void startApplication(void) {
 	// Initialize the network check.
 	gLastPacketReceivedTick = xTaskGetTickCount();
 	
+//	/* Should not reach here! */
+//	for (;;)
+//		;
 }
 
 // --------------------------------------------------------------------------

@@ -14,7 +14,9 @@
 #include "gwTypes.h"
 #include "commandTypes.h"
 #include "radioCommon.h"
+#ifdef RS485
 #include "Rs485TxCtl.h"
+#endif
 
 // --------------------------------------------------------------------------
 // Definitions.
@@ -29,8 +31,10 @@
 #define LED_SAMPLE_BYTES			5
 #define POS_INSTRUCTION_BYTES		6
 
+#ifdef RS485
 #define RS485_TX_ON					Rs485TxCtl_SetVal(Rs485TxCtl_DeviceData);
 #define RS485_TX_OFF				Rs485TxCtl_ClrVal(Rs485TxCtl_DeviceData);
+#endif
 
 // --------------------------------------------------------------------------
 // Typedefs.

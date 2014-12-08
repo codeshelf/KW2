@@ -11,13 +11,12 @@
 #define APP_CART_CONTROLLER_H
 
 #include "gwTypes.h"
-#include "LcdPowerCtl.h"
 #include "SMAC_Interface.h"
 
 // --------------------------------------------------------------------------
 // Definitions.
 
-#define	CHE_CONTROLLER			TRUE
+#define RS485					TRUE
 
 #define LCD_ON					LcdPowerCtl_SetVal(LcdPowerCtl_DeviceData);
 #define LCD_OFF					LcdPowerCtl_ClrVal(LcdPowerCtl_DeviceData);
@@ -30,6 +29,5 @@
 // Function prototypes.
 
 gwUINT8 sendrs485Message(char* msgPtr, gwUINT8 msgLen);
-void startApplication(void);
 
 #endif //APP_CONTROLLER_H

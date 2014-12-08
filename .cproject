@@ -200,7 +200,7 @@
 					</folderInfo>
 					<fileInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="Application/Source/cheControllerTask.c|Application/Source/appCheController.c|Application/Source/appCartController.c|PLM/Source/Sys Common/vectors.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Application/Source/appTuner.c|Application/Source/scannerReadTask.c|Application/Source/display.c|Application/Source/cheControllerTask.c|Application/Source/appCheController.c|Application/Source/appCartController.c|PLM/Source/Sys Common/vectors.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -403,7 +403,210 @@
 					</folderInfo>
 					<fileInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="Application/Source/appAisleController.c|Application/Source/aisleControllerTask.c|PLM/Environment/MK21D5.h|PLM/Source/Sys Common/vectors.h|PLM/Source/Sys Common/vectors.c|Application/Source/UART.h|Application/Source/UART.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Application/Source/appTuner.c|Application/Source/appAisleController.c|Application/Source/aisleControllerTask.c|PLM/Environment/MK21D5.h|PLM/Source/Sys Common/vectors.h|PLM/Source/Sys Common/vectors.c|Application/Source/UART.h|Application/Source/UART.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070" moduleId="org.eclipse.cdt.core.settings" name="Tuner">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.managedbuilder.core.ManagedBuildManager" point="org.eclipse.cdt.core.ScannerInfoProvider"/>
+					<extension id="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="AisleController" buildArtefactType="org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.cross.arm.gnu.buildArtefactType.application" buildReferences="true" buildReferencingConfigurations="false" description="Target to tune devices" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser;com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;org.eclipse.cdt.core.CWDLocator;" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070" isPrebuildInvalidatingBuild="false" isVersionInfoProjSpecific="false" name="Tuner" parent="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug" produceBuildErrorsWithMissingReferences="true">
+					<folderInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070." name="/" resourcePath="">
+						<toolChain errorParsers="" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.toolchain.debug.737215759" name="ARM Ltd Windows GCC (G++ Lite)" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.toolchain.debug">
+							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.level.926418937" name="Debug level" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.max" valueType="enumerated"/>
+							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.sharedoption.librarian.2096458753" name="Enable automatic library configurations" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.sharedoption.librarian" value="true" valueType="boolean"/>
+							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.other.670859656" name="Other debugging flags" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.other" value="-gstrict-dwarf" valueType="string"/>
+							<targetPlatform id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.platform.debug.565152077" isAbstract="false" name="Windows Platform" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.platform.debug"/>
+							<builder buildPath="${ProjDirPath}/Tuner" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.CWDLocator" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.builder.debug.2026352494" keepEnvironmentInBuildfile="false" name="ARM Ltd Windows GNU Make builder" parallelBuildOn="true" parallelBuildWorkspaceOn="true" parallelizationNumber="optimal" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.builder.debug"/>
+							<tool errorParsers="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;org.eclipse.cdt.core.GASErrorParser" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.840787674" name="ARM Ltd Windows GCC Assembler" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug">
+								<option id="org.eclipse.cdt.cross.arm.gnu.assembler.option.misc.enable.lstfilename.310434741" name="Enable Assembler Listing" superClass="org.eclipse.cdt.cross.arm.gnu.assembler.option.misc.enable.lstfilename" value="false" valueType="boolean"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.assembler.option.include.paths.1852087854" name="Include paths (-I)" superClass="org.eclipse.cdt.cross.arm.gnu.assembler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
+								</option>
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.547201385" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input"/>
+							</tool>
+							<tool errorParsers="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.207836675" name="ARM Ltd Windows GCC C Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug">
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level.1377700987" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.none" valueType="enumerated"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.enable.lstfilename.841026321" name="Enable Assembler Listing" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.enable.lstfilename" value="false" valueType="boolean"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths.1736281680" name="Include paths (-I)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Application/Source&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Application/Configure&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/USB/APP/CDC&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/USB/APP/Descriptor&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/USB/Driver&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SMAC/Source&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/USB/Class&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/USB/Common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/USB&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SMAC/Interface&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/Radio/MC1324x/DRV&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/Radio/MC1324x/PHY&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Interface&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Environment&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Configure&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic Services/Interface&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic Services/Source&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic Services&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Startup_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_GCC_Support/ewl/EWL_C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_GCC_Support/ewl/EWL_Runtime/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Startup_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_GCC_Support/ewl/EWL_C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_GCC_Support/ewl/EWL_Runtime/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/lib/Kinetis/iofiles&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/lib/Kinetis/pdd/inc&quot;"/>
+								</option>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.functionsections.599098223" name="Function sections (-ffunction-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.functionsections" value="true" valueType="boolean"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections.106879313" name="Data sections (-fdata-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections" value="true" valueType="boolean"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std.1408928236" name="Language Standard" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std" value="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std.gnu99" valueType="enumerated"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.1835443960" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="GUID=&quot;00000040&quot;"/>
+									<listOptionValue builtIn="false" value="gPromiscuousMode_d=FALSE"/>
+								</option>
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.387070637" name="ARM Ltd Windows GCC C Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input"/>
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.c.compiler.input.asmSourcePreproc.1506854585" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.input.asmSourcePreproc"/>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.cpp.compiler.debug.765124529" name="ARM Ltd Windows GCC C++ Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.cpp.compiler.debug">
+								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.level.1811636656" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.none" valueType="enumerated"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.misc.enable.lstfilename.83081675" name="Enable Assembler Listing" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.misc.enable.lstfilename" value="false" valueType="boolean"/>
+							</tool>
+							<tool errorParsers="org.eclipse.cdt.core.GLDErrorParser" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.linker.debug.1152285343" name="ARM Ltd Windows GCC C Linker" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.linker.debug">
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.otherflags.48168989" name="Other flags" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.otherflags" value="-n" valueType="string"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.nostart.2029212313" name="Do not use standard start files (-nostartfiles)" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.nostart" value="false" valueType="boolean"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.gcsections.1591609323" name="Remove unused sections (-Xlinker --gc-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.gcsections" value="true" valueType="boolean"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.paths.209752201" name="Library search path (-L)" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_GCC_Support/ewl/lib/armv7e-m&quot;"/>
+								</option>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.scriptfile.1540674573" name="Script file (-T)" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.scriptfile" value="${ProjDirPath}/Project_Settings/Linker_Files/ProcessorExpert.ld" valueType="string"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.linkorder.1566653718" name="Link Order" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.linkorder" valueType="stringList">
+									<listOptionValue builtIn="false" value="Application/Source/Critical.c"/>
+									<listOptionValue builtIn="false" value="Application/Source/aisleControllerTask.c"/>
+									<listOptionValue builtIn="false" value="Application/Source/appAisleController.c"/>
+									<listOptionValue builtIn="false" value="Application/Source/commands.c"/>
+									<listOptionValue builtIn="false" value="Application/Source/radioCommon.c"/>
+									<listOptionValue builtIn="false" value="Application/Source/remoteCommon.c"/>
+									<listOptionValue builtIn="false" value="Application/Source/remoteMgmtTask.c"/>
+									<listOptionValue builtIn="false" value="Application/Source/remoteRadioTask.c"/>
+									<listOptionValue builtIn="false" value="Application/Source/scannerReadTask.c"/>
+									<listOptionValue builtIn="false" value="Application/Source/serial.c"/>
+									<listOptionValue builtIn="false" value="Application/Source/smacGlue.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/Battery.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/Cpu.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/EventTimer.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/FRTOS1.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/INT_PORTB.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/Lcd.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/LcdPowerCtl.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/LcdScrollTimer.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/LedDrive.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/PE_LDD.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/Rs485.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/Rs485TxCtl.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/Scanner.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/TU1.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/TimerIntLdd1.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/UTIL1.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/UTIL2.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/Vectors.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/Wait.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/Watchdog.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/croutine.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/event_groups.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/heap_1.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/heap_2.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/heap_3.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/heap_4.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/list.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/port.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/portasm.s"/>
+									<listOptionValue builtIn="false" value="Generated_Code/queue.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/tasks.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/timers.c"/>
+									<listOptionValue builtIn="false" value="Generic Services/Source/CommUtil.c"/>
+									<listOptionValue builtIn="false" value="Generic Services/Source/MsgSystem.c"/>
+									<listOptionValue builtIn="false" value="Generic Services/Source/Utilities.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/Keyboard/Keyboard.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/LED/LED.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/MCG/mcg.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/NVIC/Interrupt.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/Radio/MC1324x/DRV/TransceiverDrv.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/Radio/MC1324x/PHY/PhyISR.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/Radio/MC1324x/PHY/PhyPacketProcessor.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/Radio/MC1324x/PHY/PhyPlmeData.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/Radio/MC1324x/PHY/PhyTime.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/Radio/MC1324x/PHY/SimplePhy.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/TMR/Timer.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/USB/APP/CDC/usb_cdc_descriptor.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/USB/APP/CDC/virtual_com.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/USB/APP/Descriptor/usb_descriptor.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/USB/Class/usb_cdc.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/USB/Class/usb_cdc_pstn.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/USB/Class/usb_hid.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/USB/Common/USB.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/USB/Common/UsbMsgQueue.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/USB/Common/usb_class.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/USB/Common/usb_framework.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/USB/Driver/usb_dci.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/USB/Driver/usb_driver.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/USB/Driver/usb_sim_settings.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/Uart/UART.c"/>
+									<listOptionValue builtIn="false" value="PLM/Source/WDOG/wdog.c"/>
+									<listOptionValue builtIn="false" value="Project_Settings/Startup_Code/__arm_end.c"/>
+									<listOptionValue builtIn="false" value="Project_Settings/Startup_Code/__arm_start.c"/>
+									<listOptionValue builtIn="false" value="SMAC/Source/SMAC.c"/>
+									<listOptionValue builtIn="false" value="Sources/Events.c"/>
+									<listOptionValue builtIn="false" value="Sources/ProcessorExpert.c"/>
+								</option>
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.c.linker.input.239636090" superClass="org.eclipse.cdt.cross.arm.gnu.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.cpp.linker.debug.2060949307" name="ARM Ltd Windows GCC C++ Linker" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.cpp.linker.debug"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.archiver.base.1312422404" name="ARM Ltd Windows GCC Archiver" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.archiver.base"/>
+							<tool errorParsers="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;org.eclipse.cdt.core.GASErrorParser" id="com.freescale.cdt.cross.arm.gnu.sourcery.windows.elf.disassembler.debug.2102628563" name="ARM Ltd Windows GCC Disassembler" superClass="com.freescale.cdt.cross.arm.gnu.sourcery.windows.elf.disassembler.debug"/>
+							<tool errorParsers="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser" id="com.freescale.cdt.cross.arm.gnu.sourcery.windows.elf.preprocessor.debug.844596679" name="ARM Ltd Windows GCC C Preprocessor" superClass="com.freescale.cdt.cross.arm.gnu.sourcery.windows.elf.preprocessor.debug">
+								<option id="com.freescale.cdt.cross.arm.gnu.preprocessor.dirs.include.paths.271459238" name="Include paths (-I)" superClass="com.freescale.cdt.cross.arm.gnu.preprocessor.dirs.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Startup_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_GCC_Support/ewl/EWL_C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_GCC_Support/ewl/EWL_Runtime/include&quot;"/>
+								</option>
+								<inputType id="com.freescale.cdt.cross.arm.gnu.preprocessor.source.2044855839" name="Preprocessor Input" superClass="com.freescale.cdt.cross.arm.gnu.preprocessor.source"/>
+							</tool>
+							<tool id="com.freescale.cdt.cross.arm.gnu.sourcery.windows.elf.cpp.preprocessor.debug.1400196843" name="ARM Ltd Windows GCC C++ Preprocessor" superClass="com.freescale.cdt.cross.arm.gnu.sourcery.windows.elf.cpp.preprocessor.debug">
+								<option id="com.freescale.cdt.cross.arm.gnu.preprocessor.dirs.include.paths.303156178" name="Include paths (-I)" superClass="com.freescale.cdt.cross.arm.gnu.preprocessor.dirs.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Startup_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_GCC_Support/ewl/EWL_C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_GCC_Support/ewl/EWL_Runtime/include&quot;"/>
+								</option>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.createflash.debug.1349373107" name="ARM Ltd Windows GNU Create Flash Image" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.createflash.debug"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.createlisting.debug.562968791" name="ARM Ltd Windows GNU Create Listing" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.createlisting.debug"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.printsize.debug.1145131426" name="ARM Ltd Windows GNU Print Size" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.printsize.debug"/>
+						</toolChain>
+					</folderInfo>
+					<fileInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
+					<sourceEntries>
+						<entry excluding="Application/Source/scannerReadTask.c|Application/Source/display.c|Application/Source/aisleControllerTask.c|Application/Source/appAisleController.c|Application/Source/cheControllerTask.c|Application/Source/appCheController.c|Application/Source/appCartController.c|PLM/Source/Sys Common/vectors.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -421,6 +624,9 @@
 		</configuration>
 		<configuration configurationName="AisleController">
 			<resource resourceType="PROJECT" workspacePath="/AisleController"/>
+		</configuration>
+		<configuration configurationName="Tuner">
+			<resource resourceType="PROJECT" workspacePath="/KW2"/>
 		</configuration>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>

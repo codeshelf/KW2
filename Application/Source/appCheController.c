@@ -97,3 +97,9 @@ void startApplication(void) {
 	// Initialize the network check.
 	gLastPacketReceivedTick = xTaskGetTickCount();
 }
+
+// --------------------------------------------------------------------------
+
+void vApplicationIdleHook(void) {
+
+}

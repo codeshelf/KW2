@@ -14,10 +14,15 @@
 #include "queue.h"
 #include "string.h"
 #include "gwSystemMacros.h"
-#include "Battery.h"
 #include "Wait.h"
-#include "Rs485.h"
+
+#ifdef SHARP_DISPLAY
 #include "display.h"
+#endif
+
+#ifdef RS485
+#include "Rs485.h"
+#endif
 
 RemoteDescStruct			gRemoteStateTable[MAX_REMOTES];
 NetAddrType					gMyAddr = INVALID_REMOTE;
@@ -208,9 +213,7 @@ void createAssocReqCommand(BufferCntType inTXBufferNum, RemoteUniqueIDPtrType in
 
 void createAssocCheckCommand(BufferCntType inTXBufferNum, RemoteUniqueIDPtrType inUniqueID) {
 
-	gwUINT8 saveATD1C;
-	gwUINT8 saveATD1SC;
-	Battery_TResultData batteryLevel;
+	gwUINT8 batteryLevel;
 
 	// Create the command for checking if we're associated
 	createPacket(inTXBufferNum, eCommandAssoc, gMyNetworkID, gMyAddr, ADDR_BROADCAST);
@@ -223,14 +226,6 @@ void createAssocCheckCommand(BufferCntType inTXBufferNum, RemoteUniqueIDPtrType 
 
 	// Set the device version
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_DEV_VER] = 0x01;
-
-	// Save the ATD state and prepare to take a battery measurement.
-	Battery_SelectSampleGroup(Battery_DeviceData, 0);
-	Battery_StartSingleMeasurement(Battery_DeviceData);
-	while (!Battery_GetMeasurementCompleteStatus(Battery_DeviceData)) {
-		vTaskDelay(1);
-	}
-	Battery_GetMeasuredValues(Battery_DeviceData, &batteryLevel);
 
 	// Nominalize to a 0-100 scale.
 	if (batteryLevel < 0) {
@@ -626,7 +621,9 @@ EControlCmdAckStateType processLedSubCommand(BufferCntType inRXBufferNum) {
 // --------------------------------------------------------------------------
 
 EControlCmdAckStateType processSetPosControllerSubCommand(BufferCntType inRXBufferNum) {
+
 	EControlCmdAckStateType result = eAckStateOk;
+#ifdef RS485
 	gwUINT8 instructionNum;
 	gwUINT8 instructionCount;
 
@@ -656,12 +653,14 @@ EControlCmdAckStateType processSetPosControllerSubCommand(BufferCntType inRXBuff
 
 	RS485_TX_OFF
 
+#endif
 	return result;
 }
 
 EControlCmdAckStateType processClearPosControllerSubCommand(BufferCntType inRXBufferNum) {
 	EControlCmdAckStateType result = eAckStateOk;
 
+#ifdef RS485
 	gwUINT8 pos = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_CLEAR_POS];
 
 	RS485_TX_ON
@@ -671,6 +670,8 @@ EControlCmdAckStateType processClearPosControllerSubCommand(BufferCntType inRXBu
 	vTaskDelay(5);
 
 	RS485_TX_OFF
+
+#endif
 
 	return result;
 }
