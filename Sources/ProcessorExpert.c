@@ -38,6 +38,7 @@
 #include "Critical.h"
 #include "Scanner.h"
 #include "Watchdog.h"
+#include "EventTimer.h"
 #include "SharpDisplay.h"
 #include "SharpDisplay_CS.h"
 #include "BitIoLdd1.h"
@@ -67,9 +68,8 @@ PE_ISR(LcdIsr) {
 PE_ISR(LcdErrorIsr) {	
 }
 
-int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
-{
+int main(void) {
 	/* Write your local variable definition here */
 
 	/*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/

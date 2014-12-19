@@ -44,6 +44,7 @@
 #include "Critical.h"
 #include "Scanner.h"
 #include "Watchdog.h"
+#include "EventTimer.h"
 #include "SharpDisplay.h"
 #include "SharpDisplay_CS.h"
 #include "BitIoLdd1.h"

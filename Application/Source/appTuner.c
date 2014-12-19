@@ -21,6 +21,7 @@
 #include "Wait.h"
 #include "smacGlue.h"
 #include "TransceiverDrv.h"
+#include "Cpu.h"
 
 // --------------------------------------------------------------------------
 // Globals
@@ -65,9 +66,18 @@ void startApplication(void) {
 	// Initialize the network check.
 	gLastPacketReceivedTick = xTaskGetTickCount();
 	
-//	/* Should not reach here! */
-//	for (;;)
-//		;
+	/* Should not reach here! */
+	EnterCritical();
+	ExitCritical();
+	Cpu_EnableInt();
+	for (;;)
+		;
+}
+
+// --------------------------------------------------------------------------
+
+void TunerIsr(void) {
+	gLocalDeviceState = eLocalStateStarted;
 }
 
 // --------------------------------------------------------------------------

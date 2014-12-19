@@ -22,8 +22,8 @@
 #define LCD_OFF					LcdPowerCtl_ClrVal(LcdPowerCtl_DeviceData);
 
 #define DEFAULT_CHANNEL			gChannel15_c
-#define DEFAULT_POWER			23
-#define DEFAULT_CRYSTAL_TRIM	115
+#define DEFAULT_POWER			31
+#define DEFAULT_CRYSTAL_TRIM	117
 
 // --------------------------------------------------------------------------
 // Function prototypes.

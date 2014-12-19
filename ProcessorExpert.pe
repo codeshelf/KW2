@@ -3,8 +3,8 @@
   <Header>
     <Name>ProcessorExpert</Name>
     <SavedBy>jeffw</SavedBy>
-    <ModificationStamp>221</ModificationStamp>
-    <Date>2014-12-08</Date>
+    <ModificationStamp>261</ModificationStamp>
+    <Date>2014-12-18</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.1.RT6_b1423-0421</PEversion>
   </Header>
@@ -28,7 +28,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>170</ProjectCompNumb>
+    <ProjectCompNumb>185</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -544,7 +544,7 @@
         <ItemSymbol>Intperiphgrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>SharedADC0</ItemSymbol>
@@ -6139,10 +6139,10 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>1</Index>
-        <Value>false</Value>
+        <Index>0</Index>
+        <Value>true</Value>
         <LastSelection>true</LastSelection>
-        <LastUserSel>no</LastUserSel>
+        <LastUserSel>yes</LastUserSel>
         <UsrMethodName>EnableInt</UsrMethodName>
       </ItemState>
       <ItemState>
@@ -6150,10 +6150,10 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>1</Index>
-        <Value>false</Value>
+        <Index>0</Index>
+        <Value>true</Value>
         <LastSelection>true</LastSelection>
-        <LastUserSel>no</LastUserSel>
+        <LastUserSel>yes</LastUserSel>
         <UsrMethodName>DisableInt</UsrMethodName>
       </ItemState>
       <ItemState>
@@ -7409,7 +7409,7 @@
   <Configuration>
     <CompNumb>3</CompNumb>
     <NodeName>CHE</NodeName>
-    <CnfgEnabled>false</CnfgEnabled>
+    <CnfgEnabled>true</CnfgEnabled>
     <TargetCPU>47</TargetCPU>
     <ConfigurationComment lines_count="0" />
     <BoolList_FpgaConfig>
@@ -7526,7 +7526,7 @@
   <Configuration>
     <CompNumb>166</CompNumb>
     <NodeName>Tuner</NodeName>
-    <CnfgEnabled>true</CnfgEnabled>
+    <CnfgEnabled>false</CnfgEnabled>
     <TargetCPU>47</TargetCPU>
     <ConfigurationComment lines_count="0" />
     <BoolList_FpgaConfig>
@@ -7535,11 +7535,11 @@
     <BoolList_BeanConfig>
       <Count>21</Count>
       <ItemId0>152</ItemId0>
-      <Value0>false</Value0>
+      <Value0>true</Value0>
       <ItemId1>138</ItemId1>
-      <Value1>true</Value1>
+      <Value1>false</Value1>
       <ItemId2>137</ItemId2>
-      <Value2>true</Value2>
+      <Value2>false</Value2>
       <ItemId3>124</ItemId3>
       <Value3>false</Value3>
       <ItemId4>114</ItemId4>
@@ -7549,15 +7549,15 @@
       <ItemId6>53</ItemId6>
       <Value6>false</Value6>
       <ItemId7>52</ItemId7>
-      <Value7>true</Value7>
+      <Value7>false</Value7>
       <ItemId8>51</ItemId8>
       <Value8>false</Value8>
       <ItemId9>43</ItemId9>
-      <Value9>true</Value9>
+      <Value9>false</Value9>
       <ItemId10>42</ItemId10>
       <Value10>true</Value10>
       <ItemId11>38</ItemId11>
-      <Value11>true</Value11>
+      <Value11>false</Value11>
       <ItemId12>33</ItemId12>
       <Value12>false</Value12>
       <ItemId13>48</ItemId13>
@@ -18827,7 +18827,7 @@
     <BeanType>TimerUnit_LDD</BeanType>
     <Name>EventTimer</Name>
     <CompNumb>114</CompNumb>
-    <CompEnabled>false</CompEnabled>
+    <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>CLOCKS_LDD</IconName>
     <UserFolderName />
@@ -22411,7 +22411,7 @@
   </Bean>
   <Bean>
     <BeanType>Init_FTM_VAR0</BeanType>
-    <Name>TuneFTM0</Name>
+    <Name>Tuner</Name>
     <CompNumb>152</CompNumb>
     <CompEnabled>false</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
@@ -22426,7 +22426,7 @@
         <ItemSymbol>DeviceName</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>TuneFTM0</Value>
+        <Value>Tuner</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>PeriphDevice</ItemSymbol>
@@ -22451,8 +22451,8 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <EnumSymbVal>noInit</EnumSymbVal>
+        <Index>1</Index>
+        <EnumSymbVal>enabled</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>ClockSettingsGroup</ItemSymbol>
@@ -22511,7 +22511,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>Period</ItemSymbol>
-        <Value>1.366 ms</Value>
+        <Value>Counter stopped</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>DeadtimeSettingsGroupFeatureCondGroup</ItemSymbol>
@@ -22570,8 +22570,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeFTMEN</TypeSpecNameState>
-        <Index>1</Index>
-        <EnumSymbVal>tpm</EnumSymbVal>
+        <Index>0</Index>
+        <EnumSymbVal>ftm</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>BDMMODEFeatureCondGroup</ItemSymbol>
@@ -22710,7 +22710,7 @@
         <ItemSymbol>CombinedChannelsGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>ChannelCombineSettingsGrp0FeatureCondGroup</ItemSymbol>
@@ -22721,7 +22721,7 @@
         <ItemSymbol>ChannelCombineSettingsGrp0</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>CombCOMP0</ItemSymbol>
@@ -22945,7 +22945,7 @@
         <ItemSymbol>SynchronizationGrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>PWMSYNCMODE</ItemSymbol>
@@ -23159,7 +23159,7 @@
         <ItemSymbol>ExtTriggersGrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>INITTRIGEN</ItemSymbol>
@@ -23209,8 +23209,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeCHTRIG</TypeSpecNameState>
-        <Index>1</Index>
-        <EnumSymbVal>disabled</EnumSymbVal>
+        <Index>0</Index>
+        <EnumSymbVal>enabled</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CH3TRIGFeatureCondGroup</ItemSymbol>
@@ -23936,7 +23936,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeCHOCV</TypeSpecNameState>
         <Index>1</Index>
         <EnumSymbVal>zero</EnumSymbVal>
@@ -23966,7 +23965,7 @@
         <ItemSymbol>ChannelIntGrp2</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>IntChan2</ItemSymbol>
@@ -23978,8 +23977,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeIntChanEn</TypeSpecNameState>
-        <Index>1</Index>
-        <EnumSymbVal>disabled</EnumSymbVal>
+        <Index>0</Index>
+        <EnumSymbVal>enabled</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>DMAChanEn2FeatureCondGroup</ItemSymbol>
@@ -24006,7 +24005,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>Mode3</ItemSymbol>
@@ -25061,7 +25060,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>ExtClkPin</ItemSymbol>
@@ -25138,7 +25137,7 @@
         <ItemSymbol>SynchTriggerPinGrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>CPUCondGroup2</ItemSymbol>
@@ -25222,7 +25221,7 @@
         <ItemSymbol>InterruptsGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>CommonIntGrp</ItemSymbol>
@@ -25245,8 +25244,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeIntCommonRequest</TypeSpecNameState>
-        <Index>1</Index>
-        <EnumSymbVal>disabled</EnumSymbVal>
+        <Index>0</Index>
+        <EnumSymbVal>enabled</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>IntCommonPriorityFeatureGroup</ItemSymbol>
@@ -25278,7 +25277,7 @@
         <ItemSymbol>ISRHandleCommon</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value />
+        <Value>TunerIsr</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>IntChanEn</ItemSymbol>
@@ -25290,8 +25289,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeIntOverflowEn</TypeSpecNameState>
-        <Index>1</Index>
-        <EnumSymbVal>disabled</EnumSymbVal>
+        <Index>0</Index>
+        <EnumSymbVal>enabled</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>IntFaultEnFeatureCondGroup</ItemSymbol>
@@ -25311,7 +25310,7 @@
         <ItemSymbol>InitializationGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>INITCHANSFeatureCondGroup</ItemSymbol>
@@ -25338,8 +25337,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeLDOK</TypeSpecNameState>
-        <Index>1</Index>
-        <EnumSymbVal>disabled</EnumSymbVal>
+        <Index>0</Index>
+        <EnumSymbVal>enabled</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CH0SELFeatureCondGroup</ItemSymbol>
@@ -25380,8 +25379,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeCHSEL</TypeSpecNameState>
-        <Index>1</Index>
-        <EnumSymbVal>no</EnumSymbVal>
+        <Index>0</Index>
+        <EnumSymbVal>yes</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CH3SELFeatureCondGroup</ItemSymbol>
@@ -25394,8 +25393,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeCHSEL</TypeSpecNameState>
-        <Index>1</Index>
-        <EnumSymbVal>no</EnumSymbVal>
+        <Index>0</Index>
+        <EnumSymbVal>yes</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CH4SELFeatureCondGroup</ItemSymbol>
