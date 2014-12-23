@@ -46,8 +46,10 @@
 #include "Watchdog.h"
 #include "EventTimer.h"
 #include "SharpDisplay.h"
-#include "SharpDisplay_CS.h"
+#include "SharpDisplayCS.h"
 #include "BitIoLdd1.h"
+#include "EepromCS.h"
+#include "BitIoLdd2.h"
 
 #ifdef __cplusplus
 extern "C" {

@@ -40,8 +40,10 @@
 #include "Watchdog.h"
 #include "EventTimer.h"
 #include "SharpDisplay.h"
-#include "SharpDisplay_CS.h"
+#include "SharpDisplayCS.h"
 #include "BitIoLdd1.h"
+#include "EepromCS.h"
+#include "BitIoLdd2.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -77,7 +79,6 @@ int main(void) {
 	/*** End of Processor Expert internal initialization.                    ***/
 
 	/* Write your code here */
-
 	startApplication();
 	
 	/*** Don't write any code pass this line, or it will be deleted during code generation. ***/

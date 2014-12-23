@@ -9,7 +9,7 @@
 #define DISPLAY_H_
 
 #include "PE_Types.h"
-#include "SharpDisplay_CS.h"
+#include "SharpDisplayCS.h"
 #include "Wait.h"
 
 #define DISPLAY_WIDTH		400
@@ -25,8 +25,8 @@
 #define LCDCMD_VCOM			0x40
 #define LCDCMD_CLEAR		0x20
 
-#define SPI_CS_ON     		SharpDisplay_CS_SetVal();
-#define SPI_CS_OFF    		Wait_Waitus(5); SharpDisplay_CS_ClrVal();
+#define DISPLAY_CS_ON     	SharpDisplayCS_SetVal();
+#define DISPLAY_CS_OFF    	Wait_Waitus(5); SharpDisplayCS_ClrVal();
 
 #define readFontByte(addr) (*(const unsigned char *)(addr))
 #define swap(a, b) { int16_t t = a; a = b; b = t; }
@@ -35,9 +35,9 @@
 
 void sendByte(uint8_t data);
 void sendByteLSB(uint8_t data);
-void sendDisplayBuffer();
+void sendDisplayBuffer(void);
 
-void clearDisplay();
+void clearDisplay(void);
 void drawPixel(int16_t x, int16_t y);
 void drawChar(int16_t x, int16_t y, unsigned char c, uint8_t size);
 void fillRect(int16_t x, int16_t y, int16_t w, int16_t h);

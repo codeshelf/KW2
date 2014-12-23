@@ -37,7 +37,7 @@ void sendDisplayBuffer() {
 	uint16_t col;
 	uint16_t pos;
 
-	SPI_CS_ON
+	DISPLAY_CS_ON
 
 	// Send the write command
 	sendByte(LCDCMD_WRITE + LCDCMD_VCOM);
@@ -56,21 +56,21 @@ void sendDisplayBuffer() {
 	// Send another trailing 8 bits for the last line
 	sendByteLSB(LCDCMD_DUMMY);
 
-	SPI_CS_OFF
+	DISPLAY_CS_OFF
 
-	SPI_CS_ON
+	DISPLAY_CS_ON
 
 	sendByte(LCDCMD_DISPLAY);
 	sendByteLSB(LCDCMD_DUMMY);
 
-	SPI_CS_OFF
+	DISPLAY_CS_OFF
 }
 
 void clearDisplay() {
 	// Send the clear screen command rather than doing a HW refresh (quicker)
-	SPI_CS_ON
+	DISPLAY_CS_ON
 	sendByte(LCDCMD_CLEAR);
-	SPI_CS_OFF
+	DISPLAY_CS_OFF
 
 	// Clear the display buffer as well.
 	memset(&displayBuffer, 0x00, DISPLAY_BYTES);

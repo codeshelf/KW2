@@ -27,6 +27,7 @@
 #include "Wait.h"
 #include "Rs485.h"
 #include "serial.h"
+#include "eeprom.h"
 #include "smacGlue.h"
 #include "TransceiverDrv.h"
 #include "TransceiverReg.h"
@@ -67,7 +68,10 @@ gwUINT8 sendRs485Message(char* msgPtr, gwUINT8 msgLen) {
 void startApplication(void) {
 	
 	smacErrors_t smacError;
-
+	uint8_t data;
+	
+	readEepromData(0, &data, 1);
+	
 	MC1324xDrv_SPIInit();
 	smacError = MLMERadioInit();
 	MLMESetPromiscuousMode(gPromiscuousMode_d);
