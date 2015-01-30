@@ -22,6 +22,8 @@ extern xQueueHandle			gRadioReceiveQueue;
 extern BufferCntType		gRxCurBufferNum;
 extern gwBoolean			gIsReceiving;
 extern gwBoolean			gIsTransmitting;
+extern xQueueHandle gRemoteMgmtQueue;
+extern ELocalStatusType gLocalDeviceState;
 
 extern ERxMessageHolderType gRxMsg;
 extern ETxMessageHolderType gTxMsg;
@@ -47,7 +49,10 @@ void MCPSDataIndication(rxPacket_t *inRxPacket) {
 		gRxRadioBuffer[gRxCurBufferNum].bufferSize = inRxPacket->u8DataLength;
 
 		// Send the message to the radio task's queue.
-		if (xQueueSendFromISR(gRadioReceiveQueue, &gRxCurBufferNum, (portBASE_TYPE) 0)) {
+		if (gLocalDeviceState == eLocalStateRun) {
+			xQueueSendFromISR(gRadioReceiveQueue, &gRxCurBufferNum, (portBASE_TYPE) 0);
+		} else {
+			xQueueSendFromISR(gRemoteMgmtQueue, &gRxCurBufferNum, (portBASE_TYPE) 0);
 		}
 
 		//advanceRxBuffer();

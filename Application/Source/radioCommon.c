@@ -124,10 +124,10 @@ void suspendRadioRx() {
 	smacErrors_t smacError;
 	gwUINT8 ccrHolder;
 
-//	GW_ENTER_CRITICAL(ccrHolder);
+	GW_ENTER_CRITICAL(ccrHolder);
 	smacError = MLMERXDisableRequest();
-//	vTaskSuspend(gRadioReceiveTask);
-//	GW_EXIT_CRITICAL(ccrHolder);
+	vTaskSuspend(gRadioReceiveTask);
+	GW_EXIT_CRITICAL(ccrHolder);
 }
 
 // --------------------------------------------------------------------------
@@ -136,7 +136,7 @@ void resumeRadioRx() {
 	smacErrors_t smacError;
 	gwUINT8 ccrHolder;
 
-	//	GW_ENTER_CRITICAL(ccrHolder);
+	GW_ENTER_CRITICAL(ccrHolder);
 	// The radio's state won't go to idle, becuase this routine gets called during 
 	smacError = MLMERXDisableRequest();
 	
@@ -144,9 +144,9 @@ void resumeRadioRx() {
 	strcpy(gRxMsg.rxPacketPtr->smacPdu.u8Data, "task-resume");
 
 	smacError = MLMERXEnableRequest(gRxMsg.rxPacketPtr, 0);
-//	GW_EXIT_CRITICAL(ccrHolder);
-//
-//	vTaskResume(gRadioReceiveTask);
+	GW_EXIT_CRITICAL(ccrHolder);
+
+	vTaskResume(gRadioReceiveTask);
 }
 // --------------------------------------------------------------------------
 

@@ -99,7 +99,7 @@ void remoteMgmtTask(void *pvParameters) {
 				//vTaskDelay(250 * portTICK_RATE_MS);
 			}
 		}
-		gLocalDeviceState = eLocalStateRun;
+//		gLocalDeviceState = eLocalStateRun;
 
 		checked = FALSE;
 		while (!checked) {
@@ -130,8 +130,10 @@ void remoteMgmtTask(void *pvParameters) {
 				}
 				vTaskDelay(50);
 			}
-
 		}
+
+		gLocalDeviceState = eLocalStateRun;
+		resumeRadioRx();
 
 		// Just in case we receive any extra management commands we need to free them.
 		while (TRUE) {

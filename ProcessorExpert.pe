@@ -3,10 +3,10 @@
   <Header>
     <Name>ProcessorExpert</Name>
     <SavedBy>jeffw</SavedBy>
-    <ModificationStamp>276</ModificationStamp>
-    <Date>2015-01-13</Date>
+    <ModificationStamp>280</ModificationStamp>
+    <Date>2015-01-29</Date>
     <IDE>Eclipse IDE</IDE>
-    <PEversion>1.9.1.RT6_b1423-0421</PEversion>
+    <PEversion>1.9.2.RT6_b1446-0504</PEversion>
   </Header>
   <Options>
     <EventsDirectory>Sources</EventsDirectory>
@@ -28,7 +28,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>201</ProjectCompNumb>
+    <ProjectCompNumb>208</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -7291,8 +7291,8 @@
   </CPU>
   <Configuration>
     <CompNumb>1</CompNumb>
-    <NodeName>AisleController</NodeName>
-    <CnfgEnabled>true</CnfgEnabled>
+    <NodeName>LEDController</NodeName>
+    <CnfgEnabled>false</CnfgEnabled>
     <TargetCPU>47</TargetCPU>
     <ConfigurationComment lines_count="0" />
     <BoolList_FpgaConfig>
@@ -7410,8 +7410,8 @@
   </Configuration>
   <Configuration>
     <CompNumb>3</CompNumb>
-    <NodeName>CHE</NodeName>
-    <CnfgEnabled>false</CnfgEnabled>
+    <NodeName>CHEController</NodeName>
+    <CnfgEnabled>true</CnfgEnabled>
     <TargetCPU>47</TargetCPU>
     <ConfigurationComment lines_count="0" />
     <BoolList_FpgaConfig>
@@ -12913,7 +12913,7 @@
     <BeanType>Init_UART_VAR0</BeanType>
     <Name>Scanner</Name>
     <CompNumb>38</CompNumb>
-    <CompEnabled>false</CompEnabled>
+    <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PERIPHINSP</IconName>
     <UserFolderName />
@@ -14946,7 +14946,7 @@
     <BeanType>Init_UART_VAR0</BeanType>
     <Name>Rs485</Name>
     <CompNumb>43</CompNumb>
-    <CompEnabled>false</CompEnabled>
+    <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PERIPHINSP</IconName>
     <UserFolderName />
@@ -17710,7 +17710,7 @@
     <BeanType>BitIO_LDD</BeanType>
     <Name>Rs485TxCtl</Name>
     <CompNumb>52</CompNumb>
-    <CompEnabled>false</CompEnabled>
+    <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PORT_LDD</IconName>
     <UserFolderName />
@@ -19763,7 +19763,7 @@
     <BeanType>Init_SPI_VAR0</BeanType>
     <Name>LedDrive</Name>
     <CompNumb>124</CompNumb>
-    <CompEnabled>true</CompEnabled>
+    <CompEnabled>false</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PERIPHINSP</IconName>
     <UserFolderName />
@@ -20799,7 +20799,7 @@
     <BeanType>Init_SPI_VAR0</BeanType>
     <Name>SharpDisplay</Name>
     <CompNumb>137</CompNumb>
-    <CompEnabled>false</CompEnabled>
+    <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PERIPHINSP</IconName>
     <UserFolderName />
@@ -21835,7 +21835,7 @@
     <BeanType>BitIO</BeanType>
     <Name>SharpDisplayCS</Name>
     <CompNumb>138</CompNumb>
-    <CompEnabled>false</CompEnabled>
+    <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>BITIO</IconName>
     <UserFolderName />
@@ -22044,7 +22044,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>Deinit</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -22055,7 +22055,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>GetDir</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -22143,7 +22143,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>NegVal</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -22159,7 +22159,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>ConnectPin</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
@@ -22175,7 +22175,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>GetRawVal</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
+              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
