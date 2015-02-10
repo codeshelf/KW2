@@ -39,14 +39,14 @@ void scannerReadTask(void *pvParameters) {
 		while ((Scanner_DEVICE ->S1 & UART_S1_RDRF_MASK) == 0) {
 			vTaskDelay(1);
 		}
-		Wait_Waitus(250);
+		Wait_Waitus(100);
 
 		// Now we have characters - read until there are no more.
 		// Do the read in a critical-area-busy-wait loop to make sure we've gotten all characters that will arrive.
 		GW_ENTER_CRITICAL(ccrHolder);
 		EventTimer_ResetCounter(NULL);
 		// If there's no characters in 50ms then stop waiting for more.
-		while ((EventTimer_GetCounterValue(NULL) < 500) && (gScanStringPos < MAX_SCAN_STRING_BYTES)) {
+		while ((EventTimer_GetCounterValue(NULL) < 200) && (gScanStringPos < MAX_SCAN_STRING_BYTES)) {
 			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
 			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXOF_MASK;
 			if ((Scanner_DEVICE ->S1 & UART_S1_RDRF_MASK) != 0) {
