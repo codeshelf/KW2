@@ -85,7 +85,7 @@ void radioTransmitTask(void *pvParameters) {
 	gwUINT8 ackId;
 	gwUINT8 ccrHolder;
 
-	if (gRadioTransmitQueue) {
+	if (gRadioTransmitQueue && gTxAckQueue) {
 		for (;;) {
 
 			// Wait until the management thread signals us that we have a full buffer to transmit.
@@ -121,7 +121,7 @@ void radioTransmitTask(void *pvParameters) {
 								&& (getCommandID(gTxRadioBuffer[txBufferNum].bufferStorage) != eCommandNetMgmt)) {
 
 							shouldRetry = TRUE;
-							if (xQueueReceive(gRadioTransmitQueue, &ackId, 500 * portTICK_RATE_MS) == pdPASS) {
+							if (xQueueReceive(gTxAckQueue, &ackId, 500 * portTICK_RATE_MS) == pdPASS) {
 								if (getAckId(gTxRadioBuffer[txBufferNum].bufferStorage) == ackId) {
 									shouldRetry = FALSE;
 								}
