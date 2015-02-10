@@ -38,12 +38,8 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 	ECmdAssocType assocSubCmd;
 	AckDataType ackData;
 	AckIDType ackId;
-	gwUINT8 ccrHolder;
 	EControlCmdAckStateType ackState;
-	gwBoolean shouldReleasePacket;
 	BufferCntType txBufferNum;
-
-	shouldReleasePacket = TRUE;
 
 	// We just received a valid packet.
 	networkID = getNetworkID(inRxBufferNum);
@@ -78,7 +74,6 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 					if (gLocalDeviceState != eLocalStateRun) {
 						if (xQueueSend(gRemoteMgmtQueue, &inRxBufferNum, (portTickType) 0)) {
 							// The management task will handle this packet.
-							shouldReleasePacket = FALSE;
 						}
 					}
 				} else if (assocSubCmd == eCmdAssocACK) {
@@ -97,7 +92,6 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 					}
 					if (xQueueSend(gRemoteMgmtQueue, &inRxBufferNum, (portTickType) 0)) {
 						// The management task will handle this packet.
-						shouldReleasePacket = FALSE;
 					}
 				}
 				break;
@@ -142,17 +136,12 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 
 			// Send an ACK if necessary.
 			if ((ackState == eAckStateOk) && (ackId != 0)) {
-				txBufferNum = lockTxBuffer();
+				txBufferNum = 0;//lockTxBuffer();
 				createAckPacket(txBufferNum, ackId, ackData);
 				if (transmitPacket(txBufferNum)) {
 				}
 			}
 
 		}
-	}
-
-	// If we need to release the packet then do it.
-	if (shouldReleasePacket) {
-		RELEASE_RX_BUFFER(inRxBufferNum, ccrHolder);
 	}
 }

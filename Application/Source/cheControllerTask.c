@@ -76,7 +76,7 @@ void cartControllerTask(void *pvParameters) {
 		gLastUserAction = xTaskGetTickCount();
 
 		// Now send the scan string.
-		BufferCntType txBufferNum = lockTxBuffer();
+		BufferCntType txBufferNum = 0;//lockTxBuffer();
 		createButtonCommand(txBufferNum, rs485String[1], rs485String[2]);
 		transmitPacket(txBufferNum);
 

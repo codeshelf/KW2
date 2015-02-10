@@ -488,7 +488,7 @@ void processAssocRespCommand(BufferCntType inRXBufferNum) {
 		gSleepWaitMillis *= 1000;
 		gLocalDeviceState = eLocalStateAssociated;
 
-		BufferCntType txBufferNum = lockTxBuffer();
+		BufferCntType txBufferNum = 0;//lockTxBuffer();
 		createAssocCheckCommand(txBufferNum, (RemoteUniqueIDPtrType) STR(GUID));
 		if (transmitPacket(txBufferNum)) {
 		}
@@ -623,7 +623,9 @@ EControlCmdAckStateType processLedSubCommand(BufferCntType inRXBufferNum) {
 EControlCmdAckStateType processSetPosControllerSubCommand(BufferCntType inRXBufferNum) {
 
 	EControlCmdAckStateType result = eAckStateOk;
+	
 #ifdef RS485
+	
 	gwUINT8 instructionNum;
 	gwUINT8 instructionCount;
 

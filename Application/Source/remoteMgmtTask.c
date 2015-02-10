@@ -32,7 +32,7 @@ void preSleep();
 
 void remoteMgmtTask(void *pvParameters) {
 	gwUINT8 ccrHolder;
-	BufferCntType tempRxBufferNum;
+	//BufferCntType lockedBufferNum;
 	BufferCntType rxBufferNum;
 	BufferCntType txBufferNum;
 	ChannelNumberType channel;
@@ -61,17 +61,14 @@ void remoteMgmtTask(void *pvParameters) {
 			MLMESetChannelRequest(channel);
 			resumeRadioRx();
 
-			// In case we don't get a received packet.
-			tempRxBufferNum = gRxCurBufferNum;
-
 			// Send an associate request on the current channel.
-			txBufferNum = lockTxBuffer();
+			txBufferNum = 0;//lockTxBuffer();
 			createAssocReqCommand(txBufferNum, (RemoteUniqueIDPtrType) STR(GUID));
-			if (transmitPacket(txBufferNum)) {
+			if (transmitPacket(txBufferNum)) {			
 			};
 
 			// Wait up to 50ms for a response.
-			if ((xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 50 * portTICK_RATE_MS) == pdPASS ) && (rxBufferNum != 255)){
+			if ((xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 50 * portTICK_RATE_MS) == pdTRUE) && (rxBufferNum != 255)){
 				// Check to see what kind of command we just got.
 				cmdID = getCommandID(gRxRadioBuffer[rxBufferNum].bufferStorage);
 				if (cmdID == eCommandAssoc) {
@@ -83,10 +80,11 @@ void remoteMgmtTask(void *pvParameters) {
 							associated = TRUE;
 						}
 					}
+				} else {
+					//RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 				}
-				RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 			} else {
-				RELEASE_RX_BUFFER(tempRxBufferNum, ccrHolder);
+				//RELEASE_RX_BUFFER(lockedBufferNum, ccrHolder);
 			}
 			
 			// If we're still not associated then change channels.
@@ -107,13 +105,12 @@ void remoteMgmtTask(void *pvParameters) {
 			GW_WATCHDOG_RESET
 
 			if (!checked) {
-				// In case we don't get a received packet.
-				tempRxBufferNum = gRxCurBufferNum;
 				
-				BufferCntType txBufferNum = lockTxBuffer();
+				//BufferCntType txBufferNum = lockTxBuffer();
 				createAssocCheckCommand(txBufferNum, (RemoteUniqueIDPtrType) STR(GUID));
 				if (transmitPacket(txBufferNum)) {
 				}
+				
 				// Wait up to 100ms for a response.
 				if ((xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 100 * portTICK_RATE_MS) == pdPASS ) && (rxBufferNum != 255)) {
 					// Check to see what kind of command we just got.
@@ -124,9 +121,9 @@ void remoteMgmtTask(void *pvParameters) {
 							checked = TRUE;
 						}
 					}
-					RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
+					//RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 				} else {
-					RELEASE_RX_BUFFER(tempRxBufferNum, ccrHolder);
+					//RELEASE_RX_BUFFER(lockedBufferNum, ccrHolder);
 				}
 				vTaskDelay(50);
 			}
@@ -138,7 +135,7 @@ void remoteMgmtTask(void *pvParameters) {
 		// Just in case we receive any extra management commands we need to free them.
 		while (TRUE) {
 			if ((xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, portMAX_DELAY) == pdPASS ) && (rxBufferNum != 255)) {
-				RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
+				//RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 			}
 		}
 	}

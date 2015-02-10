@@ -17,7 +17,6 @@
 
 gwSINT8						gNoReceive = -1;
 
-extern RxRadioBufferStruct	gRxRadioBuffer[RX_BUFFER_COUNT];
 extern xQueueHandle			gRadioReceiveQueue;
 extern BufferCntType		gRxCurBufferNum;
 extern gwBoolean			gIsReceiving;
@@ -45,14 +44,11 @@ void MCPSDataIndication(rxPacket_t *inRxPacket) {
 		if (gRadioReceiveQueue == NULL)
 			GW_RESET_MCU();
 
-		// Set the buffer receive size to the size of the packet received.
-		gRxRadioBuffer[gRxCurBufferNum].bufferSize = inRxPacket->u8DataLength;
-
 		// Send the message to the radio task's queue.
 		if (gLocalDeviceState == eLocalStateRun) {
-			xQueueSendFromISR(gRadioReceiveQueue, &gRxCurBufferNum, (portBASE_TYPE) 0);
+			xQueueSendFromISR(gRadioReceiveQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
 		} else {
-			xQueueSendFromISR(gRemoteMgmtQueue, &gRxCurBufferNum, (portBASE_TYPE) 0);
+			xQueueSendFromISR(gRemoteMgmtQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
 		}
 
 		//advanceRxBuffer();
@@ -69,7 +65,7 @@ void MCPSDataConfirm(txStatus_t txStatus) {
 	gTxMsg.txStatus = txStatus;
 	
 	// We're done transmitting the packet, so resume the RX mode.
-	resumeRadioRx();
+	//resumeRadioRx();
 }
 
 

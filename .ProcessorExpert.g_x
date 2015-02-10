@@ -12,7 +12,7 @@
   </ToolchainSettings>
   <GeneratedFilesList>
     <GeneratedByPE>
-      <File Name="Documentation/ProcessorExpert_SIGNALS.txt" FileDate="2015-01-29, 17:15:22" FileAge="1422580522414" FileType="3072" />
+      <File Name="Documentation/ProcessorExpert_SIGNALS.txt" FileDate="2015-02-09, 13:11:30" FileAge="1423516290054" FileType="3072" />
       <File Name="Generated_Code/SharpDisplayCS.h" FileDate="2015-01-27, 23:43:16" FileAge="1422430996230" FileType="45637" CompNumb="138" />
       <File Name="Documentation/doxygen/Rs485TxCtl.txt" FileDate="2015-01-27, 23:43:16" FileAge="1422430996265" FileType="45637" CompNumb="52" />
       <File Name="Generated_Code/SharpDisplayCS.c" FileDate="2015-01-27, 23:43:16" FileAge="1422430996228" FileType="45637" CompNumb="138" />
@@ -133,5 +133,5 @@
       <File Name="Generated_Code/PDD/EWM_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
     </GeneratedByPE>
   </GeneratedFilesList>
-  <CodeGenReference>287</CodeGenReference>
+  <CodeGenReference>289</CodeGenReference>
 </CodeGenerationInfo>

@@ -33,15 +33,12 @@
 #define GATEWAY_MGMT_QUEUE_SIZE	10
 #define REMOTE_MGMT_QUEUE_SIZE	10
 
-#define RX_QUEUE_SIZE			5
-#define RX_QUEUE_LOW_WATER		2
-#define RX_QUEUE_HIGH_WATER		RX_QUEUE_SIZE - 2
-#define TX_QUEUE_SIZE			5
-
-#define RX_BUFFER_COUNT			RX_QUEUE_SIZE
+#define RX_QUEUE_SIZE			1
+#define RX_BUFFER_COUNT			1
 #define RX_BUFFER_SIZE			MAX_PACKET_SIZE
 
-#define TX_BUFFER_COUNT			TX_QUEUE_SIZE
+#define TX_QUEUE_SIZE			1
+#define TX_BUFFER_COUNT			1
 #define TX_BUFFER_SIZE			MAX_PACKET_SIZE
 
 #define INVALID_RX_BUFFER		99
@@ -71,25 +68,23 @@
 #define SCROLL_SECONDARY_SOURCE			gTmrSecondaryCnt0Input_c
 #define SCROLL_CLK_RATE					0xffff
 
-#define RELEASE_RX_BUFFER(rxBufferNum, ccrHolder)	\
-	GW_ENTER_CRITICAL(ccrHolder); \
-	if (gRxRadioBuffer[rxBufferNum].bufferStatus != eBufferStateFree) { \
-		gRxRadioBuffer[rxBufferNum].bufferStatus = eBufferStateFree; \
-	} else if (GW_DEBUG) { \
-		debugRefreed(rxBufferNum); \
-	} \
-	gRxUsedBuffers--; \
-	GW_EXIT_CRITICAL(ccrHolder);
-
-#define RELEASE_TX_BUFFER(txBufferNum, ccrHolder)	\
-	GW_ENTER_CRITICAL(ccrHolder); \
-	if (gTxRadioBuffer[txBufferNum].bufferStatus != eBufferStateFree) { \
-		gTxRadioBuffer[txBufferNum].bufferStatus = eBufferStateFree; \
-	} else if (GW_DEBUG) { \
-		debugRefreed(txBufferNum); \
-	} \
-	gTxUsedBuffers--; \
-	GW_EXIT_CRITICAL(ccrHolder);
+//#define RELEASE_RX_BUFFER(rxBufferNum, ccrHolder)	\
+//	GW_ENTER_CRITICAL(ccrHolder); \
+//	if (gRxRadioBuffer[rxBufferNum].bufferStatus != eBufferStateFree) { \
+//		gRxRadioBuffer[rxBufferNum].bufferStatus = eBufferStateFree; \
+//	} else if (GW_DEBUG) { \
+//		debugRefreed(rxBufferNum); \
+//	} \
+//	GW_EXIT_CRITICAL(ccrHolder);
+//
+//#define RELEASE_TX_BUFFER(txBufferNum, ccrHolder)	\
+//	GW_ENTER_CRITICAL(ccrHolder); \
+//	if (gTxRadioBuffer[txBufferNum].bufferStatus != eBufferStateFree) { \
+//		gTxRadioBuffer[txBufferNum].bufferStatus = eBufferStateFree; \
+//	} else if (GW_DEBUG) { \
+//		debugRefreed(txBufferNum); \
+//	} \
+//	GW_EXIT_CRITICAL(ccrHolder);
 
 // --------------------------------------------------------------------------
 // Typedefs
@@ -206,16 +201,16 @@ typedef gwUINT8				ScanStringLenType;
 // --------------------------------------------------------------------------
 // Function prototypes
 
-void advanceRxBuffer(void);
-BufferCntType lockRxBuffer(void);
-BufferCntType lockTxBuffer(void);
+//void advanceRxBuffer(void);
+//BufferCntType lockRxBuffer(void);
+//BufferCntType lockTxBuffer(void);
 void setupWatchdog(void);
 
 void suspendRadioRx();
 void resumeRadioRx();
 
 void debugReset();
-void debugRefreed(BufferCntType inBufferNum);
+//void debugRefreed(BufferCntType inBufferNum);
 void debugCrmCallback(void);
 
 #endif /* RADIOCOMMON_H */

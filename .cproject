@@ -272,7 +272,8 @@
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.functionsections.373481970" name="Function sections (-ffunction-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.functionsections" value="true" valueType="boolean"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections.671894514" name="Data sections (-fdata-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections" value="true" valueType="boolean"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.1222717843" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="GUID=&quot;00000081&quot;"/>
+									<listOptionValue builtIn="false" value="GUID=&quot;00000083&quot;"/>
+									<listOptionValue builtIn="false" value="RS485=TRUE"/>
 									<listOptionValue builtIn="false" value="CHE_CONTROLLER"/>
 									<listOptionValue builtIn="false" value="gPromiscuousMode_d=FALSE"/>
 								</option>
@@ -358,18 +359,18 @@
 									<listOptionValue builtIn="false" value="Application/Source/remoteCommon.c"/>
 									<listOptionValue builtIn="false" value="Application/Source/remoteRadioTask.c"/>
 									<listOptionValue builtIn="false" value="Application/Source/serial.c"/>
-									<listOptionValue builtIn="false" value="Generated_Code/Battery.c"/>
 									<listOptionValue builtIn="false" value="Generated_Code/EventTimer.c"/>
-									<listOptionValue builtIn="false" value="Generated_Code/Lcd.c"/>
-									<listOptionValue builtIn="false" value="Generated_Code/LcdPowerCtl.c"/>
-									<listOptionValue builtIn="false" value="Generated_Code/LcdScrollTimer.c"/>
-									<listOptionValue builtIn="false" value="Generated_Code/LedDrive.c"/>
 									<listOptionValue builtIn="false" value="Generated_Code/Rs485.c"/>
 									<listOptionValue builtIn="false" value="Generated_Code/Rs485TxCtl.c"/>
 									<listOptionValue builtIn="false" value="Generated_Code/Scanner.c"/>
-									<listOptionValue builtIn="false" value="Generated_Code/TU1.c"/>
-									<listOptionValue builtIn="false" value="Generated_Code/TimerIntLdd1.c"/>
 									<listOptionValue builtIn="false" value="Generated_Code/Watchdog.c"/>
+									<listOptionValue builtIn="false" value="Application/Source/display.c"/>
+									<listOptionValue builtIn="false" value="Application/Source/eeprom.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/BitIoLdd1.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/BitIoLdd2.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/EepromCS.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/SharpDisplay.c"/>
+									<listOptionValue builtIn="false" value="Generated_Code/SharpDisplayCS.c"/>
 								</option>
 								<inputType id="org.eclipse.cdt.cross.arm.gnu.c.linker.input.238279437" superClass="org.eclipse.cdt.cross.arm.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
