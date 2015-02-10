@@ -62,8 +62,16 @@ void startApplication(void) {
 	xTaskCreate(aisleControllerTask, (const signed portCHAR * const) "LED", configMINIMAL_STACK_SIZE, NULL, MGMT_PRIORITY, &gAisleControllerTask );
 
 	gRadioReceiveQueue = xQueueCreate(RX_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(BufferCntType));
+	vQueueAddToRegistry(gRadioReceiveQueue, (signed char*)"RxQ");
+
 	gRadioTransmitQueue = xQueueCreate(TX_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(BufferCntType));
+	vQueueAddToRegistry(gRadioTransmitQueue, (signed char*)"TxQ");
+	
 	gRemoteMgmtQueue = xQueueCreate(GATEWAY_MGMT_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(gwUINT8));
+	vQueueAddToRegistry(gRemoteMgmtQueue, (signed char*)"MgmtQ");
+
+	gTxAckQueue = xQueueCreate(TX_ACK_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(gwUINT8));
+	vQueueAddToRegistry(gTxAckQueue, (signed char*)"TxAck");
 
 	// Set the state to running
 	gLocalDeviceState = eLocalStateStarted;

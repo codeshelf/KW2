@@ -22,6 +22,8 @@ xTaskHandle gRadioTransmitTask = NULL;
 // The queue used to send data from the radio to the radio receive task.
 xQueueHandle gRadioTransmitQueue = NULL;
 xQueueHandle gRadioReceiveQueue = NULL;
+xQueueHandle gRemoteMgmtQueue = NULL;
+xQueueHandle gTxAckQueue = NULL;
 
 ERxMessageHolderType gRxMsg;
 ETxMessageHolderType gTxMsg;
@@ -80,6 +82,7 @@ void radioTransmitTask(void *pvParameters) {
 	portTickType retryTickCount;
 	NetAddrType cmdDstAddr;
 	NetworkIDType networkID;
+	gwUINT8 ackId;
 	gwUINT8 ccrHolder;
 
 	if (gRadioTransmitQueue) {
@@ -108,51 +111,29 @@ void radioTransmitTask(void *pvParameters) {
 						while (gIsTransmitting) {
 							vTaskDelay(1);
 						}
+						
+						resumeRadioRx();
+						vTaskResume(gRadioReceiveTask);				
 
 						if (gTxMsg.txStatus == txFailureStatus_c) {
 							shouldRetry = TRUE;
 						} else if ((getAckId(gTxRadioBuffer[txBufferNum].bufferStorage) != 0)
 								&& (getCommandID(gTxRadioBuffer[txBufferNum].bufferStorage) != eCommandNetMgmt)) {
 
-							// Setup for the next RX cycle.
-
-							gRxMsg.rxPacketPtr = (rxPacket_t *) &(gRxRadioBuffer[0].rxPacket);
-							gRxMsg.rxPacketPtr->u8MaxDataLength = RX_BUFFER_SIZE;
-							gRxMsg.rxPacketPtr->rxStatus = rxInitStatus;
-							gRxMsg.bufferNum = 0;//lockedBufferNum;
-
-							resumeRadioRx();
-
-							if (smacError == gErrorNoError_c) {
-
-								while (gIsReceiving) {
-									vTaskDelay(1);
-								}
-
-								networkID = getNetworkID(gRxMsg.bufferNum);
-								cmdDstAddr = getCommandDstAddr(gRxMsg.bufferNum);
-								if (((getAckId(gTxRadioBuffer[txBufferNum].bufferStorage) == getAckId(gRxRadioBuffer[gRxMsg.bufferNum].bufferStorage)) 
-										&& (networkID == gMyNetworkID)
-										&& (cmdDstAddr == gMyAddr))) {
+							shouldRetry = TRUE;
+							if (xQueueReceive(gRadioTransmitQueue, &ackId, 500 * portTICK_RATE_MS) == pdPASS) {
+								if (getAckId(gTxRadioBuffer[txBufferNum].bufferStorage) == ackId) {
 									shouldRetry = FALSE;
-								} else {
-									shouldRetry = TRUE;
 								}
-							} else {
-								shouldRetry = TRUE;
-								//vTaskDelay(50);
 							}
 
 							// If the radio can't TX then we're in big trouble.  Just reset.
 							if (((shouldRetry) && ((xTaskGetTickCount() - retryTickCount) > 500)) || (smacError != gErrorNoError_c)) {
-								GW_RESET_MCU()
+								//GW_RESET_MCU()
 							}
 						}
 					}
 				} while (shouldRetry);
-
-				resumeRadioRx();
-				vTaskResume(gRadioReceiveTask);				
 			}
 		}
 	}

@@ -46,6 +46,7 @@ extern xTaskHandle gScannerReadTask;
 extern xQueueHandle gRadioTransmitQueue;
 extern xQueueHandle gRadioReceiveQueue;
 extern xQueueHandle gRemoteMgmtQueue;
+extern xQueueHandle gTxAckQueue;
 
 extern ELocalStatusType gLocalDeviceState;
 
@@ -99,6 +100,9 @@ void startApplication(void) {
 
 	gRemoteMgmtQueue = xQueueCreate(REMOTE_MGMT_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(gwUINT8));
 	vQueueAddToRegistry(gRemoteMgmtQueue, (signed char*)"MgmtQ");
+
+	gTxAckQueue = xQueueCreate(TX_ACK_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(gwUINT8));
+	vQueueAddToRegistry(gTxAckQueue, (signed char*)"TxAck");
 
 	// Set the state to running
 	gLocalDeviceState = eLocalStateStarted;
