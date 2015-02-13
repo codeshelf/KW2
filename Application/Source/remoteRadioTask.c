@@ -49,7 +49,7 @@ void radioReceiveTask(void *pvParameters) {
 	if (gRadioReceiveQueue) {
 		for (;;) {
 
-			GW_WATCHDOG_RESET
+			GW_WATCHDOG_RESET;
 
 			gRxMsg.rxPacketPtr = (rxPacket_t *) &(gRxRadioBuffer[0].rxPacket);
 			gRxMsg.rxPacketPtr->u8MaxDataLength = RX_BUFFER_SIZE;
@@ -57,6 +57,8 @@ void radioReceiveTask(void *pvParameters) {
 			gRxMsg.bufferNum = 0;//lockedBufferNum;
 
 			gIsReceiving = TRUE;
+			
+			//Perform the actual read and store it in the pointer with no timeout
 			smacError = MLMERXEnableRequest(gRxMsg.rxPacketPtr, 0);
 
 			if (xQueueReceive(gRadioReceiveQueue, &rxBufferNum, portMAX_DELAY) == pdPASS ) {
@@ -90,12 +92,15 @@ void radioTransmitTask(void *pvParameters) {
 
 			// Wait until the management thread signals us that we have a full buffer to transmit.
 			if (xQueueReceive(gRadioTransmitQueue, &txBufferNum, portMAX_DELAY) == pdPASS) {
-
 				vTaskSuspend(gRadioReceiveTask);
-
-				shouldRetry = FALSE;
 				retryTickCount = xTaskGetTickCount();
+				
+				gwUINT8 txedAckId = getAckId(gTxRadioBuffer[txBufferNum].bufferStorage);
+				ECommandGroupIDType txCommandType = getCommandID(gTxRadioBuffer[txBufferNum].bufferStorage);
+				
 				do {
+					shouldRetry = FALSE;
+
 					// Setup for TX.
 					gTxMsg.txPacketPtr = (txPacket_t *) &(gTxRadioBuffer[txBufferNum].txPacket);
 					gTxMsg.txPacketPtr->u8DataLength = gTxRadioBuffer[txBufferNum].bufferSize;
@@ -106,33 +111,38 @@ void radioTransmitTask(void *pvParameters) {
 					smacError = MCPSDataRequest(gTxMsg.txPacketPtr);
 
 					if (smacError != gErrorNoError_c) {
+						//TODO Why reset the MCU here?
 						GW_RESET_MCU()
-					} else {
-						while (gIsTransmitting) {
-							vTaskDelay(1);
-						}
-						
-						resumeRadioRx();
-						vTaskResume(gRadioReceiveTask);				
-
-						if (gTxMsg.txStatus == txFailureStatus_c) {
-							shouldRetry = TRUE;
-						} else if ((getAckId(gTxRadioBuffer[txBufferNum].bufferStorage) != 0)
-								&& (getCommandID(gTxRadioBuffer[txBufferNum].bufferStorage) != eCommandNetMgmt)) {
-
-							shouldRetry = TRUE;
-							if (xQueueReceive(gTxAckQueue, &ackId, 500 * portTICK_RATE_MS) == pdPASS) {
-								if (getAckId(gTxRadioBuffer[txBufferNum].bufferStorage) == ackId) {
-									shouldRetry = FALSE;
-								}
-							}
-
-							// If the radio can't TX then we're in big trouble.  Just reset.
-							if (((shouldRetry) && ((xTaskGetTickCount() - retryTickCount) > 500)) || (smacError != gErrorNoError_c)) {
-								//GW_RESET_MCU()
-							}
-						}
 					}
+					
+					while (gIsTransmitting) {
+						vTaskDelay(1);
+					}
+					
+					resumeRadioRx();
+					vTaskResume(gRadioReceiveTask);			
+
+					if (gTxMsg.txStatus == txFailureStatus_c) {
+						shouldRetry = TRUE;
+						continue;
+					}
+					
+					if (txedAckId != 0 && txCommandType != eCommandNetMgmt && txCommandType != eCommandAssoc) {
+						shouldRetry = TRUE;
+						
+						//Wait up to 20ms for an ACK
+						if (xQueueReceive(gTxAckQueue, &ackId, 20 * portTICK_RATE_MS) == pdPASS) {
+							if (txedAckId == ackId) {
+								shouldRetry = FALSE;
+							}
+						}
+
+						// If we fail to receive an ACK after enough retries to exceed 500ms then RESET
+						//if (((shouldRetry) && ((xTaskGetTickCount() - retryTickCount) > 500)) || (smacError != gErrorNoError_c)) {
+						//	GW_RESET_MCU();
+						//}
+					}
+					
 				} while (shouldRetry);
 			}
 		}

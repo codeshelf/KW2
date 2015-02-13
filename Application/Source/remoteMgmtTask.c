@@ -102,7 +102,7 @@ void remoteMgmtTask(void *pvParameters) {
 		checked = FALSE;
 		while (!checked) {
 
-			GW_WATCHDOG_RESET
+			GW_WATCHDOG_RESET;
 
 			if (!checked) {
 				
