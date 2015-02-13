@@ -38,6 +38,7 @@ extern xTaskHandle gAisleControllerTask;
 extern xQueueHandle gRadioTransmitQueue;
 extern xQueueHandle gRadioReceiveQueue;
 extern xQueueHandle gRemoteMgmtQueue;
+extern xQueueHandle gTxAckQueue;
 
 extern ELocalStatusType gLocalDeviceState;
 

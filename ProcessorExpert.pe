@@ -3,7 +3,7 @@
   <Header>
     <Name>ProcessorExpert</Name>
     <SavedBy>saba</SavedBy>
-    <ModificationStamp>288</ModificationStamp>
+    <ModificationStamp>289</ModificationStamp>
     <Date>2015-02-13</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
@@ -6680,7 +6680,7 @@
           <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
           <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
           <Value>true</Value>
-          <Expanded>true</Expanded>
+          <Expanded>false</Expanded>
         </ItemState>
         <ItemState>
           <ItemSymbol>InitializationState</ItemSymbol>
@@ -22177,7 +22177,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>_Pin</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
+              <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <Value>PTC4/LLWU_P8/SPI0_PCS0/UART1_TX/FTM0_CH3/CMP1_OUT</Value>
               <SharedPrphMode>false</SharedPrphMode>
