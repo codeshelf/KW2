@@ -137,10 +137,10 @@ void radioTransmitTask(void *pvParameters) {
 							}
 						}
 
-						// If we fail to receive an ACK after enough retries to exceed 500ms then RESET
-						//if (((shouldRetry) && ((xTaskGetTickCount() - retryTickCount) > 500)) || (smacError != gErrorNoError_c)) {
-						//	GW_RESET_MCU();
-						//}
+						//If we fail to receive an ACK after enough retries to exceed 500ms then RESET
+						if (((shouldRetry) && ((xTaskGetTickCount() - retryTickCount) > 500)) || (smacError != gErrorNoError_c)) {
+							GW_RESET_MCU();
+						}
 					}
 					
 				} while (shouldRetry);

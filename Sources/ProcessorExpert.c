@@ -1,7 +1,7 @@
 /* ###################################################################
  **     Filename    : ProcessorExpert.c
  **     Project     : ProcessorExpert
- **     Processor   : MK21DX256VLK5
+ **     Processor   : MK21DX256VMC5
  **     Version     : Driver 01.01
  **     Compiler    : GNU C Compiler
  **     Date/Time   : 2014-03-24, 15:29, # CodeGen: 0
@@ -33,12 +33,19 @@
 #include "UTIL2.h"
 #include "INT_PORTB.h"
 #include "Wait.h"
+#include "Rs485.h"
+#include "Rs485TxCtl.h"
 #include "Critical.h"
+#include "Scanner.h"
 #include "Watchdog.h"
 #include "EventTimer.h"
-#include "LedDrive.h"
+#include "SharpDisplay.h"
+#include "SharpDisplayCS.h"
+#include "BitIoLdd1.h"
 #include "EepromCS.h"
 #include "BitIoLdd2.h"
+#include "LED_CLK.h"
+#include "LED_SDI.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"

@@ -1,7 +1,7 @@
 /* ###################################################################
 **     Filename    : Events.h
 **     Project     : ProcessorExpert
-**     Processor   : MK21DX256VLK5
+**     Processor   : MK21DX256VMC5
 **     Component   : Events
 **     Version     : Driver 01.00
 **     Compiler    : GNU C Compiler
@@ -39,12 +39,19 @@
 #include "UTIL2.h"
 #include "INT_PORTB.h"
 #include "Wait.h"
+#include "Rs485.h"
+#include "Rs485TxCtl.h"
 #include "Critical.h"
+#include "Scanner.h"
 #include "Watchdog.h"
 #include "EventTimer.h"
-#include "LedDrive.h"
+#include "SharpDisplay.h"
+#include "SharpDisplayCS.h"
+#include "BitIoLdd1.h"
 #include "EepromCS.h"
 #include "BitIoLdd2.h"
+#include "LED_CLK.h"
+#include "LED_SDI.h"
 
 #ifdef __cplusplus
 extern "C" {
