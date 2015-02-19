@@ -190,7 +190,7 @@ void createPacket(BufferCntType inTXBufferNum, ECommandGroupIDType inCmdID, Netw
 
 // --------------------------------------------------------------------------
 
-void createAssocReqCommand(BufferCntType inTXBufferNum, RemoteUniqueIDPtrType inUniqueID) {
+void createAssocReqCommand(BufferCntType inTXBufferNum) {
 
 	// The remote doesn't have an assigned address yet, so we send the broadcast addr as the source.
 	createPacket(inTXBufferNum, eCommandAssoc, BROADCAST_NET_NUM, ADDR_CONTROLLER, ADDR_BROADCAST);
@@ -199,19 +199,28 @@ void createAssocReqCommand(BufferCntType inTXBufferNum, RemoteUniqueIDPtrType in
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOC_SUBCMD] = eCmdAssocREQ;
 
 	// The next 8 bytes are the unique ID of the device.
-	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), inUniqueID, UNIQUE_ID_BYTES);
+	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), STR(GUID), UNIQUE_ID_BYTES);
 
-	// Set the device version
-	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_DEV_VER] = 0x01;
+	// Set the hardware version (2 bytes)
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_HW_VER] = (HARDWARE_VERSION >> 8) & 0xFF;
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_HW_VER + 1] = HARDWARE_VERSION & 0xFF;
+	
+	// Set the firmware version (2 bytes)
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_FW_VER] = (FIRMWARE_VERSION >> 8) & 0xFF;
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_FW_VER + 1] = FIRMWARE_VERSION & 0xFF;
+	
+	// Set the radio protocol version
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_RP_VER] = RADIO_PROTOCOL_VERSION;
+	
 	// Set the system status register
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_SYSSTAT] = GW_GET_SYSTEM_STATUS;
 
-	gTxRadioBuffer[inTXBufferNum].bufferSize = CMDPOS_ASSOCREQ_SYSSTAT;
+	gTxRadioBuffer[inTXBufferNum].bufferSize = CMDPOS_ASSOCREQ_SYSSTAT + 1;
 }
 
 // --------------------------------------------------------------------------
 
-void createAssocCheckCommand(BufferCntType inTXBufferNum, RemoteUniqueIDPtrType inUniqueID) {
+void createAssocCheckCommand(BufferCntType inTXBufferNum) {
 
 	gwUINT8 batteryLevel;
 
@@ -222,10 +231,7 @@ void createAssocCheckCommand(BufferCntType inTXBufferNum, RemoteUniqueIDPtrType 
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOC_SUBCMD] = eCmdAssocCHECK;
 
 	// The next 8 bytes are the unique ID of the device.
-	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), inUniqueID, UNIQUE_ID_BYTES);
-
-	// Set the device version
-	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_DEV_VER] = 0x01;
+	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), STR(GUID), UNIQUE_ID_BYTES);
 
 	// Nominalize to a 0-100 scale.
 	if (batteryLevel < 0) {
@@ -256,7 +262,7 @@ void createOutboundNetSetup() {
 	BufferCntType txBufferNum;
 	gwUINT8 ccrHolder;
 
-	txBufferNum = lockTXBuffer();
+	txBufferNum = 0;//lockTXBuffer();
 
 	//vTaskSuspend(gRadioReceiveTask);
 
@@ -361,7 +367,7 @@ void processNetIntfTestCommand(BufferCntType inTXBufferNum) {
 	 * the only safe buffer available to us comes from the TX buffer.
 	 */
 
-	txBufferNum = lockTXBuffer();
+	txBufferNum = 0;//lockTXBuffer();
 
 	//vTaskSuspend(gRadioReceiveTask);
 
@@ -430,7 +436,7 @@ void processNetCheckOutboundCommand(BufferCntType inTXBufferNum) {
 	if (gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_TYPE] == eCmdAssocREQ) {
 		gwUINT8 ccrHolder;
 
-		txBufferNum = lockTXBuffer();
+		txBufferNum = 0;//lockTXBuffer();
 
 		// This command gets setup in the TX buffers, because it only gets sent back to the controller via
 		// the serial interface.  This command never comes from the air.  It's created by the gateway (dongle)
@@ -489,7 +495,7 @@ void processAssocRespCommand(BufferCntType inRXBufferNum) {
 		gLocalDeviceState = eLocalStateAssociated;
 
 		BufferCntType txBufferNum = 0;//lockTxBuffer();
-		createAssocCheckCommand(txBufferNum, (RemoteUniqueIDPtrType) STR(GUID));
+		createAssocCheckCommand(txBufferNum);
 		if (transmitPacket(txBufferNum)) {
 		}
 

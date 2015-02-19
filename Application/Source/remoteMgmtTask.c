@@ -63,7 +63,7 @@ void remoteMgmtTask(void *pvParameters) {
 
 			// Send an associate request on the current channel.
 			txBufferNum = 0;//lockTxBuffer();
-			createAssocReqCommand(txBufferNum, (RemoteUniqueIDPtrType) STR(GUID));
+			createAssocReqCommand(txBufferNum);
 			if (transmitPacket(txBufferNum)) {			
 			};
 
@@ -107,7 +107,7 @@ void remoteMgmtTask(void *pvParameters) {
 			if (!checked) {
 				
 				//BufferCntType txBufferNum = lockTxBuffer();
-				createAssocCheckCommand(txBufferNum, (RemoteUniqueIDPtrType) STR(GUID));
+				createAssocCheckCommand(txBufferNum);
 				if (transmitPacket(txBufferNum)) {
 				}
 				

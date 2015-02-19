@@ -96,8 +96,8 @@ gwUINT8 readAsPString(BufferStoragePtrType inDestStringPtr, const BufferStorageP
 
 void createNetCheckRespInboundCommand(BufferCntType inRXBufferNum);
 void createAckPacket(BufferCntType inTXBufferNum, AckIDType inAckId, AckDataType inAckData);
-void createAssocReqCommand(BufferCntType inTXBufferNum, RemoteUniqueIDPtrType inUniqueID);
-void createAssocCheckCommand(BufferCntType inTXBufferNum, RemoteUniqueIDPtrType inUniqueID);
+void createAssocReqCommand(BufferCntType inTXBufferNum);
+void createAssocCheckCommand(BufferCntType inTXBufferNum);
 void createButtonControlCommand(BufferCntType inTXBufferNum, gwUINT8 inButtonNumber, gwUINT8 inFunctionType);
 void createQueryCommand(BufferCntType inTXBufferNum, NetAddrType inRemoteAddr);
 //void createAudioCommand(BufferCntType inTXBufferNum);

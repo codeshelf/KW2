@@ -143,8 +143,9 @@ typedef gwUINT8				AckDataType[ACK_DATA_BYTES];
 typedef gwUINT8				NetAddrType;
 typedef gwUINT8				EndpointNumType;
 typedef gwUINT8				KVPNumType;
+
 typedef gwUINT8				RemoteUniqueIDType[UNIQUE_ID_BYTES + 1];
-typedef RemoteUniqueIDType	*RemoteUniqueIDPtrType;
+//typedef RemoteUniqueIDType	*RemoteUniqueIDPtrType;
 
 typedef struct {
 	ERemoteStatusType		remoteState;
