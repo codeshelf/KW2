@@ -2,9 +2,9 @@
 <PEproject>
   <Header>
     <Name>ProcessorExpert</Name>
-    <SavedBy>jeffw</SavedBy>
+    <SavedBy>saba</SavedBy>
     <ModificationStamp>311</ModificationStamp>
-    <Date>2015-02-18</Date>
+    <Date>2015-02-19</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
   </Header>
@@ -7786,7 +7786,7 @@
     <UserFolderName />
     <Comment lines_count="0" />
     <Template />
-    <BeanVersion>01.366</BeanVersion>
+    <BeanVersion>01.402</BeanVersion>
     <LightErrorsIgnored>false</LightErrorsIgnored>
     <Properties>
       <ItemState>
@@ -7799,7 +7799,7 @@
         <ItemSymbol>FreeRTOSVersion</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>V8.0.0</Value>
+        <Value>V8.2.0</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>CustomPortGroup</ItemSymbol>
@@ -10783,7 +10783,7 @@
     <UserFolderName>Referenced_Components</UserFolderName>
     <Comment lines_count="0" />
     <Template />
-    <BeanVersion>01.105</BeanVersion>
+    <BeanVersion>01.106</BeanVersion>
     <LightErrorsIgnored>false</LightErrorsIgnored>
     <Properties>
       <ItemState>
@@ -11431,7 +11431,7 @@
     <UserFolderName>Referenced_Components</UserFolderName>
     <Comment lines_count="0" />
     <Template />
-    <BeanVersion>01.105</BeanVersion>
+    <BeanVersion>01.106</BeanVersion>
     <LightErrorsIgnored>false</LightErrorsIgnored>
     <Properties>
       <ItemState>
@@ -12459,6 +12459,8 @@
         <List lines_count="0" />
         <UnitText>sec</UnitText>
         <MinCounterTicks>0</MinCounterTicks>
+        <ControlledTimingCfgFromPropertySymbol>_Period</ControlledTimingCfgFromPropertySymbol>
+        <ControlledTimingCfgFromComponentRef>InheritedComponent</ControlledTimingCfgFromComponentRef>
       </ItemState>
       <ItemState>
         <ItemSymbol>_COP8grp</ItemSymbol>
@@ -13257,13 +13259,13 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>BeforeNewSpeed</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
+        <ReadOnly>true</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
         <Expanded>true</Expanded>
         <LastSelection>false</LastSelection>
-        <LastUserSel>no</LastUserSel>
+        <LastUserSel>never</LastUserSel>
       </ItemState>
       <ItemState>
         <ItemSymbol>BeforeNewSpeedName</ItemSymbol>
@@ -13273,13 +13275,13 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterNewSpeed</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
+        <ReadOnly>true</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
         <Expanded>true</Expanded>
         <LastSelection>false</LastSelection>
-        <LastUserSel>no</LastUserSel>
+        <LastUserSel>never</LastUserSel>
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterNewSpeedName</ItemSymbol>
@@ -13329,7 +13331,7 @@
     <UserFolderName />
     <Comment lines_count="0" />
     <Template />
-    <BeanVersion>01.007</BeanVersion>
+    <BeanVersion>01.006</BeanVersion>
     <LightErrorsIgnored>false</LightErrorsIgnored>
     <Properties>
       <ItemState>
@@ -14764,7 +14766,7 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <TypeSpecNameState>typeCEA709_InterruptPriority</TypeSpecNameState>
+        <Value />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_ISRHandle</ItemSymbol>
@@ -15362,7 +15364,7 @@
     <UserFolderName />
     <Comment lines_count="0" />
     <Template />
-    <BeanVersion>01.007</BeanVersion>
+    <BeanVersion>01.006</BeanVersion>
     <LightErrorsIgnored>false</LightErrorsIgnored>
     <Properties>
       <ItemState>
@@ -16797,7 +16799,7 @@
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <TypeSpecNameState>typeCEA709_InterruptPriority</TypeSpecNameState>
+        <Value />
       </ItemState>
       <ItemState>
         <ItemSymbol>CEA709_ISRHandle</ItemSymbol>
@@ -17234,7 +17236,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>CntWidth</ItemSymbol>
-        <Value />
+        <Value>16 bits</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>ValueType</ItemSymbol>
@@ -20179,7 +20181,7 @@
     <UserFolderName />
     <Comment lines_count="0" />
     <Template />
-    <BeanVersion>01.006</BeanVersion>
+    <BeanVersion>01.005</BeanVersion>
     <LightErrorsIgnored>false</LightErrorsIgnored>
     <Properties>
       <ItemState>
@@ -21028,7 +21030,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <TypeSpecNameState>typeInterruptPriority</TypeSpecNameState>
       </ItemState>
       <ItemState>
         <ItemSymbol>InterruptPExPriorityFeatureGroup</ItemSymbol>
@@ -21216,7 +21217,7 @@
     <UserFolderName />
     <Comment lines_count="0" />
     <Template />
-    <BeanVersion>01.006</BeanVersion>
+    <BeanVersion>01.005</BeanVersion>
     <LightErrorsIgnored>false</LightErrorsIgnored>
     <Properties>
       <ItemState>
@@ -22065,7 +22066,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <TypeSpecNameState>typeInterruptPriority</TypeSpecNameState>
       </ItemState>
       <ItemState>
         <ItemSymbol>InterruptPExPriorityFeatureGroup</ItemSymbol>
@@ -22837,7 +22837,7 @@
     <UserFolderName />
     <Comment lines_count="0" />
     <Template />
-    <BeanVersion>01.010</BeanVersion>
+    <BeanVersion>01.009</BeanVersion>
     <LightErrorsIgnored>false</LightErrorsIgnored>
     <Properties>
       <ItemState>
@@ -22871,7 +22871,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>1</Index>
         <EnumSymbVal>enabled</EnumSymbVal>
-        <Value />
       </ItemState>
       <ItemState>
         <ItemSymbol>ClockSettingsGroup</ItemSymbol>
@@ -25678,7 +25677,6 @@
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
         <EnumSymbVal>0</EnumSymbVal>
-        <Value />
       </ItemState>
       <ItemState>
         <ItemSymbol>IntCommonPExPriorityFeatureGroup</ItemSymbol>
