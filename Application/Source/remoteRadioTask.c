@@ -55,11 +55,10 @@ void radioReceiveTask(void *pvParameters) {
 			gRxMsg.rxPacketPtr->u8MaxDataLength = RX_BUFFER_SIZE;
 			gRxMsg.rxPacketPtr->rxStatus = rxInitStatus;
 			gRxMsg.bufferNum = 0;//lockedBufferNum;
-
-			gIsReceiving = TRUE;
-			
+		
 			//Perform the actual read and store it in the pointer with no timeout
 			smacError = MLMERXEnableRequest(gRxMsg.rxPacketPtr, 0);
+			gIsReceiving = TRUE;
 
 			if (xQueueReceive(gRadioReceiveQueue, &rxBufferNum, portMAX_DELAY) == pdPASS ) {
 				if ((rxBufferNum != 255) && (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c)) {
