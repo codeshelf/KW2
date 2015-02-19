@@ -35,158 +35,159 @@
     <FLASHsize>256k</FLASHsize>
   </PROCESSOR>
   <PATHS>
-    <LinkerCommandFile>C:\Users\saba\workspace\KW2\Project_Settings\Linker_Files\ProcessorExpert.ld</LinkerCommandFile>
+    <LinkerCommandFile>C:\Users\jeffw\git\KW2\Project_Settings\Linker_Files\ProcessorExpert.ld</LinkerCommandFile>
     <IncludePaths>
       <Path>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\</Path>
       <Path>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\iofiles\</Path>
-      <Path>C:\Users\saba\workspace\KW2\Sources\</Path>
-      <Path>C:\Users\saba\workspace\KW2\Generated_Code\</Path>
+      <Path>C:\Users\jeffw\git\KW2\Sources\</Path>
+      <Path>C:\Users\jeffw\git\KW2\Generated_Code\</Path>
     </IncludePaths>
     <SourceCodePaths>
-      <Path>C:\Users\saba\workspace\KW2\Application\Source\</Path>
-      <Path>C:\Users\saba\workspace\KW2\Generated_Code\</Path>
-      <Path>C:\Users\saba\workspace\KW2\Generic Services\Source\</Path>
-      <Path>C:\Users\saba\workspace\KW2\PLM\Source\Keyboard\</Path>
-      <Path>C:\Users\saba\workspace\KW2\PLM\Source\LED\</Path>
-      <Path>C:\Users\saba\workspace\KW2\PLM\Source\MCG\</Path>
-      <Path>C:\Users\saba\workspace\KW2\PLM\Source\NVIC\</Path>
-      <Path>C:\Users\saba\workspace\KW2\PLM\Source\Radio\MC1324x\DRV\</Path>
-      <Path>C:\Users\saba\workspace\KW2\PLM\Source\Radio\MC1324x\PHY\</Path>
-      <Path>C:\Users\saba\workspace\KW2\PLM\Source\Sys Common\</Path>
-      <Path>C:\Users\saba\workspace\KW2\PLM\Source\TMR\</Path>
-      <Path>C:\Users\saba\workspace\KW2\PLM\Source\USB\APP\CDC\</Path>
-      <Path>C:\Users\saba\workspace\KW2\PLM\Source\USB\APP\Descriptor\</Path>
-      <Path>C:\Users\saba\workspace\KW2\PLM\Source\USB\Class\</Path>
-      <Path>C:\Users\saba\workspace\KW2\PLM\Source\USB\Common\</Path>
-      <Path>C:\Users\saba\workspace\KW2\PLM\Source\USB\Driver\</Path>
-      <Path>C:\Users\saba\workspace\KW2\PLM\Source\Uart\</Path>
-      <Path>C:\Users\saba\workspace\KW2\PLM\Source\WDOG\</Path>
-      <Path>C:\Users\saba\workspace\KW2\Project_Settings\Startup_Code\</Path>
-      <Path>C:\Users\saba\workspace\KW2\SMAC\Source\</Path>
-      <Path>C:\Users\saba\workspace\KW2\Sources\</Path>
+      <Path>C:\Users\jeffw\git\KW2\Application\Source\</Path>
+      <Path>C:\Users\jeffw\git\KW2\Generated_Code\</Path>
+      <Path>C:\Users\jeffw\git\KW2\Generic Services\Source\</Path>
+      <Path>C:\Users\jeffw\git\KW2\PLM\Source\Keyboard\</Path>
+      <Path>C:\Users\jeffw\git\KW2\PLM\Source\LED\</Path>
+      <Path>C:\Users\jeffw\git\KW2\PLM\Source\MCG\</Path>
+      <Path>C:\Users\jeffw\git\KW2\PLM\Source\NVIC\</Path>
+      <Path>C:\Users\jeffw\git\KW2\PLM\Source\Radio\MC1324x\DRV\</Path>
+      <Path>C:\Users\jeffw\git\KW2\PLM\Source\Radio\MC1324x\PHY\</Path>
+      <Path>C:\Users\jeffw\git\KW2\PLM\Source\Sys Common\</Path>
+      <Path>C:\Users\jeffw\git\KW2\PLM\Source\TMR\</Path>
+      <Path>C:\Users\jeffw\git\KW2\PLM\Source\USB\APP\CDC\</Path>
+      <Path>C:\Users\jeffw\git\KW2\PLM\Source\USB\APP\Descriptor\</Path>
+      <Path>C:\Users\jeffw\git\KW2\PLM\Source\USB\Class\</Path>
+      <Path>C:\Users\jeffw\git\KW2\PLM\Source\USB\Common\</Path>
+      <Path>C:\Users\jeffw\git\KW2\PLM\Source\USB\Driver\</Path>
+      <Path>C:\Users\jeffw\git\KW2\PLM\Source\Uart\</Path>
+      <Path>C:\Users\jeffw\git\KW2\PLM\Source\WDOG\</Path>
+      <Path>C:\Users\jeffw\git\KW2\Project_Settings\Startup_Code\</Path>
+      <Path>C:\Users\jeffw\git\KW2\SMAC\Source\</Path>
+      <Path>C:\Users\jeffw\git\KW2\Sources\</Path>
     </SourceCodePaths>
   </PATHS>
   <FILES>
     <GeneratedCs>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Source\Critical.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Source\aisleControllerTask.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Source\appAisleController.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Source\appCheController.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Source\appTuner.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Source\cheControllerTask.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Source\commands.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Source\display.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Source\eeprom.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Source\radioCommon.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Source\remoteCommon.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Source\remoteMgmtTask.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Source\remoteRadioTask.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Source\scannerReadTask.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Source\serial.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Source\smacGlue.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\BitIoLdd1.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\BitIoLdd2.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Cpu.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\EepromCS.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\EventTimer.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\FRTOS1.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\INT_PORTB.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\LED_CLK.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\LED_SDI.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\PE_LDD.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Rs485.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Rs485TxCtl.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Scanner.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\SharpDisplay.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\SharpDisplayCS.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\UTIL1.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\UTIL2.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Vectors.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Wait.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Watchdog.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\croutine.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\event_groups.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\heap_1.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\heap_2.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\heap_3.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\heap_4.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\heap_5.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\list.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\port.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\queue.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\tasks.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\timers.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generic Services\Source\CommUtil.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generic Services\Source\MsgSystem.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generic Services\Source\Utilities.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Keyboard\Keyboard.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\LED\LED.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\MCG\mcg.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\NVIC\Interrupt.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Radio\MC1324x\DRV\TransceiverDrv.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Radio\MC1324x\PHY\PhyISR.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Radio\MC1324x\PHY\PhyPacketProcessor.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Radio\MC1324x\PHY\PhyPlmeData.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Radio\MC1324x\PHY\PhyTime.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Radio\MC1324x\PHY\SimplePhy.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Sys Common\crt0.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Sys Common\vectors.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\TMR\Timer.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\APP\CDC\usb_cdc_descriptor.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\APP\CDC\virtual_com.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\APP\Descriptor\usb_descriptor.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Class\usb_cdc.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Class\usb_cdc_pstn.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Class\usb_hid.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Common\USB.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Common\UsbMsgQueue.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Common\usb_class.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Common\usb_framework.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Driver\usb_dci.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Driver\usb_driver.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Driver\usb_sim_settings.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Uart\UART.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\WDOG\wdog.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Project_Settings\Startup_Code\__arm_end.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Project_Settings\Startup_Code\__arm_start.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\SMAC\Source\SMAC.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Sources\Events.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Sources\ProcessorExpert.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\Critical.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\aisleControllerTask.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\appAisleController.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\appCheController.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\appTuner.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\cheControllerTask.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\commands.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\display.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\eeprom.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\radioCommon.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\remoteCommon.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\remoteMgmtTask.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\remoteRadioTask.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\scannerReadTask.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\serial.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\smacGlue.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\BitIoLdd1.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\BitIoLdd2.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Cpu.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\EepromCS.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\EventTimer.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\FRTOS1.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\INT_PORTB.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\LED_CLK.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\LED_SDI.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\PE_LDD.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485Power.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485TxCtl.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Scanner.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\ScannerPower.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\SharpDisplay.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\SharpDisplayCS.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\UTIL1.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\UTIL2.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Vectors.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Wait.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Watchdog.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\croutine.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\event_groups.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\heap_1.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\heap_2.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\heap_3.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\heap_4.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\list.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\port.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\queue.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\tasks.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\timers.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generic Services\Source\CommUtil.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generic Services\Source\MsgSystem.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generic Services\Source\Utilities.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Keyboard\Keyboard.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\LED\LED.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\MCG\mcg.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\NVIC\Interrupt.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Radio\MC1324x\DRV\TransceiverDrv.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Radio\MC1324x\PHY\PhyISR.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Radio\MC1324x\PHY\PhyPacketProcessor.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Radio\MC1324x\PHY\PhyPlmeData.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Radio\MC1324x\PHY\PhyTime.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Radio\MC1324x\PHY\SimplePhy.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Sys Common\crt0.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Sys Common\vectors.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\TMR\Timer.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\APP\CDC\usb_cdc_descriptor.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\APP\CDC\virtual_com.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\APP\Descriptor\usb_descriptor.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Class\usb_cdc.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Class\usb_cdc_pstn.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Class\usb_hid.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Common\USB.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Common\UsbMsgQueue.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Common\usb_class.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Common\usb_framework.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Driver\usb_dci.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Driver\usb_driver.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Driver\usb_sim_settings.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Uart\UART.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\WDOG\wdog.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Project_Settings\Startup_Code\__arm_end.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Project_Settings\Startup_Code\__arm_start.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\SMAC\Source\SMAC.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Sources\Events.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Sources\ProcessorExpert.c</PathName>
     </GeneratedCs>
     <GeneratedHs>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\Critical.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\aisleControllerTask.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\appAisleController.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\appCheController.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\appTuner.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\cheControllerTask.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\commandTypes.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\commands.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\display.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\eeprom.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\gwSystemMacros.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\gwTypes.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\lcdfont.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\radioCommon.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\remoteCommon.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\remoteMgmtTask.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\remoteRadioTask.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\scannerReadTask.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\serial.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Application\Configure\smacGlue.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\BitIoLdd1.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\BitIoLdd2.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Cpu.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\EepromCS.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\EventTimer.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\FRTOS1.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\FreeRTOS.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\FreeRTOSConfig.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\INT_PORTB.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\Critical.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\aisleControllerTask.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\appAisleController.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\appCheController.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\appTuner.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\cheControllerTask.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\commandTypes.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\commands.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\display.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\eeprom.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\gwSystemMacros.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\gwTypes.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\lcdfont.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\radioCommon.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\remoteCommon.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\remoteMgmtTask.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\remoteRadioTask.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\scannerReadTask.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\serial.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\smacGlue.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\BitIoLdd1.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\BitIoLdd2.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Cpu.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\EepromCS.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\EventTimer.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\FRTOS1.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\FreeRTOS.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\FreeRTOSConfig.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\INT_PORTB.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\iofiles\MK21D5.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\IO_Map.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\LED_CLK.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\LED_SDI.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\IO_Map.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\LED_CLK.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\LED_SDI.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\ADC_PDD.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\CMP_PDD.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\CMT_PDD.h</PathName>
@@ -217,80 +218,81 @@
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\USB_PDD.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\VREF_PDD.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\WDOG_PDD.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\PE_Const.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\PE_Error.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\PE_LDD.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\PE_Types.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Rs485.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Rs485TxCtl.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Scanner.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\SharpDisplay.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\SharpDisplayCS.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\StackMacros.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\UTIL1.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\UTIL2.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Wait.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Watchdog.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\croutine.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\deprecated_definitions.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\event_groups.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\list.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\mpu_wrappers.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\portTicks.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\portable.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\portmacro.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\projdefs.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\queue.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\semphr.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\task.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\timers.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generic Services\Interface\CommUtil.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generic Services\Interface\EmbeddedTypes.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generic Services\Interface\MsgSystem.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generic Services\Interface\Utilities_Interface.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Configure\PortConfig.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Environment\TargetTWR-KW21D512.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Interface\CDC_Interface.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Interface\Interrupt.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Interface\Keyboard.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Interface\LED.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Interface\TMR_Interface.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Interface\UART_Interface.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Interface\USB_Interface.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Interface\cau_api.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Interface\mcg.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Interface\wdog.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Radio\MC1324x\DRV\TransceiverDrv.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Radio\MC1324x\DRV\TransceiverReg.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Radio\MC1324x\PHY\Phy.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Radio\MC1324x\PHY\SimplePhy.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Sys Common\crt0.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Sys Common\vectors.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\TMR\Timer.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\APP\CDC\usb_cdc_descriptor.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\APP\Descriptor\usb_descriptor.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Class\usb_cdc.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Class\usb_cdc_pstn.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Class\usb_hid.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Common\USB.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Common\UsbMsgQueue.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Common\usb_class.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Common\usb_framework.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Driver\usb_bdt.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Driver\usb_dci.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Driver\usb_dciapi.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Driver\usb_devapi.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\Driver\usb_sim_settings.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\USB\USB_Configuration.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\PLM\Source\Uart\Uart.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Project_Settings\Startup_Code\runtime_configuration.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\SMAC\Configure\SMAC_config.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\SMAC\Interface\SMAC_Interface.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\SMAC\Source\SMAC.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Sources\Events.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\PE_Const.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\PE_Error.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\PE_LDD.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\PE_Types.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485Power.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485TxCtl.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Scanner.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\ScannerPower.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\SharpDisplay.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\SharpDisplayCS.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\StackMacros.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\UTIL1.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\UTIL2.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Wait.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Watchdog.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\croutine.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\event_groups.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\list.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\mpu_wrappers.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\portTicks.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\portable.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\portmacro.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\projdefs.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\queue.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\semphr.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\task.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\timers.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generic Services\Interface\CommUtil.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generic Services\Interface\EmbeddedTypes.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generic Services\Interface\MsgSystem.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generic Services\Interface\Utilities_Interface.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Configure\PortConfig.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Environment\TargetTWR-KW21D512.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Interface\CDC_Interface.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Interface\Interrupt.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Interface\Keyboard.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Interface\LED.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Interface\TMR_Interface.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Interface\UART_Interface.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Interface\USB_Interface.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Interface\cau_api.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Interface\mcg.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Interface\wdog.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Radio\MC1324x\DRV\TransceiverDrv.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Radio\MC1324x\DRV\TransceiverReg.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Radio\MC1324x\PHY\Phy.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Radio\MC1324x\PHY\SimplePhy.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Sys Common\crt0.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Sys Common\vectors.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\TMR\Timer.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\APP\CDC\usb_cdc_descriptor.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\APP\Descriptor\usb_descriptor.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Class\usb_cdc.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Class\usb_cdc_pstn.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Class\usb_hid.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Common\USB.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Common\UsbMsgQueue.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Common\usb_class.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Common\usb_framework.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Driver\usb_bdt.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Driver\usb_dci.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Driver\usb_dciapi.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Driver\usb_devapi.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\Driver\usb_sim_settings.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\USB\USB_Configuration.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\PLM\Source\Uart\Uart.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Project_Settings\Startup_Code\runtime_configuration.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\SMAC\Configure\SMAC_config.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\SMAC\Interface\SMAC_Interface.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\SMAC\Source\SMAC.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Sources\Events.h</PathName>
     </GeneratedHs>
     <GeneratedASMs>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\portasm.s</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\portasm.s</PathName>
     </GeneratedASMs>
   </FILES>
   <OPTIONS>

@@ -18,6 +18,7 @@
 #include "display.h"
 #include "LED_CLK.h"
 #include "LED_SDI.h"
+#include "Rs485Power.h"
 
 xTaskHandle			gCartControllerTask;
 xQueueHandle		gCartControllerQueue;
@@ -39,6 +40,8 @@ void cartControllerTask(void *pvParameters) {
 
 	clearAllPositions();
 	
+	Rs485Power_SetVal(Rs485Power_DeviceData);
+
 	clearDisplay();
 	displayMessage(1, "CONNECTING...", strlen("CONNECTING..."));
 	//displayMessage(2, "TRYING TO ASSOCIATE", strlen("TRYING TO ASSOCIATE"));
