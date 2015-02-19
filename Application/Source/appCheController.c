@@ -71,7 +71,7 @@ void startApplication(void) {
 	smacErrors_t smacError;
 	uint8_t data;
 	
-	readEepromData(0, &data, 1);
+//	readEepromData(0, &data, 1);
 	
 	MC1324xDrv_SPIInit();
 	smacError = MLMERadioInit();

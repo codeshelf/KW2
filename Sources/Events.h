@@ -52,6 +52,8 @@
 #include "BitIoLdd2.h"
 #include "LED_CLK.h"
 #include "LED_SDI.h"
+#include "ScannerPower.h"
+#include "Rs485Power.h"
 
 #ifdef __cplusplus
 extern "C" {

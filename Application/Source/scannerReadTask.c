@@ -14,6 +14,7 @@
 #include "Scanner.h"
 #include "Wait.h"
 #include "EventTimer.h"
+#include "ScannerPower.h"
 
 xTaskHandle gScannerReadTask = NULL;
 
@@ -25,6 +26,7 @@ ScanStringLenType gScanStringPos;
 void scannerReadTask(void *pvParameters) {
 
 	gwUINT8 ccrHolder;
+	ScannerPower_SetVal(ScannerPower_DeviceData);
 
 	for (;;) {
 
