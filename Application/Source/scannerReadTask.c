@@ -27,7 +27,7 @@ void scannerReadTask(void *pvParameters) {
 
 	gwUINT8 ccrHolder;
 	ScannerPower_SetVal(ScannerPower_DeviceData);
-
+	
 	for (;;) {
 
 		// Clear the scan string.

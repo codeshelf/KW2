@@ -61,8 +61,6 @@ typedef enum {
 } EControlCmdAckStateType;
 
 
-typedef gwUINT8 ChannelNumberType;
-
 // --------------------------------------------------------------------------
 // Function prototypes.
 

@@ -53,13 +53,17 @@ void remoteMgmtTask(void *pvParameters) {
 		channel = gChannel11_c;
 		associated = FALSE;
 		while (!associated) {
-
+			
+			//It's okay if we don't start at the first channel
+			channel++;
+			if (channel == gTotalChannels_c) {
+				channel = gChannel11_c;
+			}
+			
 			GW_WATCHDOG_RESET;
 
 			// Set the channel to the current channel we're testing.
-			suspendRadioRx();
-			MLMESetChannelRequest(channel);
-			resumeRadioRx();
+			setRadioChannel(channel);
 
 			// Send an associate request on the current channel.
 			txBufferNum = 0;//lockTxBuffer();
@@ -68,7 +72,7 @@ void remoteMgmtTask(void *pvParameters) {
 			};
 
 			// Wait up to 50ms for a response.
-			if ((xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 50 * portTICK_RATE_MS) == pdTRUE) && (rxBufferNum != 255)){
+			if (xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 50 * portTICK_RATE_MS) == pdTRUE){
 				// Check to see what kind of command we just got.
 				cmdID = getCommandID(gRxRadioBuffer[rxBufferNum].bufferStorage);
 				if (cmdID == eCommandAssoc) {
@@ -80,57 +84,35 @@ void remoteMgmtTask(void *pvParameters) {
 							associated = TRUE;
 						}
 					}
-				} else {
-					//RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 				}
-			} else {
-				//RELEASE_RX_BUFFER(lockedBufferNum, ccrHolder);
-			}
-			
-			// If we're still not associated then change channels.
-			if (!associated) {
-				channel++;
-				if (channel == gTotalChannels_c) {
-					channel = gChannel11_c;
-				}
-				// Delay 100ms before changing channels.
-				//vTaskDelay(250 * portTICK_RATE_MS);
 			}
 		}
-//		gLocalDeviceState = eLocalStateRun;
 
 		checked = FALSE;
 		while (!checked) {
 
 			GW_WATCHDOG_RESET;
 
-			if (!checked) {
-				
-				//BufferCntType txBufferNum = lockTxBuffer();
-				createAssocCheckCommand(txBufferNum);
-				if (transmitPacket(txBufferNum)) {
-				}
-				
-				// Wait up to 100ms for a response.
-				if ((xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 100 * portTICK_RATE_MS) == pdPASS ) && (rxBufferNum != 255)) {
-					// Check to see what kind of command we just got.
-					cmdID = getCommandID(gRxRadioBuffer[rxBufferNum].bufferStorage);
-					if (cmdID == eCommandAssoc) {
-						assocSubCmd = getAssocSubCommand(rxBufferNum);
-						if (assocSubCmd == eCmdAssocACK) {
-							checked = TRUE;
-						}
-					}
-					//RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
-				} else {
-					//RELEASE_RX_BUFFER(lockedBufferNum, ccrHolder);
-				}
-				vTaskDelay(50);
+			createAssocCheckCommand(txBufferNum);
+			if (transmitPacket(txBufferNum)) {
 			}
+
+			// Wait up to 50ms for a response.
+			if (xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 50 * portTICK_RATE_MS) == pdPASS) {
+				// Check to see what kind of command we just got.
+				cmdID = getCommandID(gRxRadioBuffer[rxBufferNum].bufferStorage);
+				if (cmdID == eCommandAssoc) {
+					assocSubCmd = getAssocSubCommand(rxBufferNum);
+					if (assocSubCmd == eCmdAssocACK) {
+						checked = TRUE;
+					}
+				}
+			}
+			vTaskDelay(50);
+
 		}
 
 		gLocalDeviceState = eLocalStateRun;
-		resumeRadioRx();
 
 		// Just in case we receive any extra management commands we need to free them.
 		while (TRUE) {

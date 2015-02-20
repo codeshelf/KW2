@@ -344,9 +344,7 @@ void processNetSetupCommand(BufferCntType inTXBufferNum) {
 	//		ExitCritical();
 	//	}
 
-	suspendRadioRx();
-	MLMESetChannelRequest(channel);
-	resumeRadioRx();
+	setRadioChannel(channel);
 
 	gLocalDeviceState = eLocalStateRun;
 }
@@ -494,10 +492,10 @@ void processAssocRespCommand(BufferCntType inRXBufferNum) {
 		gSleepWaitMillis *= 1000;
 		gLocalDeviceState = eLocalStateAssociated;
 
-		BufferCntType txBufferNum = 0;//lockTxBuffer();
-		createAssocCheckCommand(txBufferNum);
-		if (transmitPacket(txBufferNum)) {
-		}
+		//BufferCntType txBufferNum = 0;//lockTxBuffer();
+		//createAssocCheckCommand(txBufferNum);
+		//if (transmitPacket(txBufferNum)) {
+		//}
 
 	}
 }

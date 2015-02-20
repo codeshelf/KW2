@@ -25,11 +25,12 @@ xQueueHandle gRadioReceiveQueue = NULL;
 xQueueHandle gRemoteMgmtQueue = NULL;
 xQueueHandle gTxAckQueue = NULL;
 
-ERxMessageHolderType gRxMsg;
-ETxMessageHolderType gTxMsg;
+extern ERxMessageHolderType gRxMsg;
+extern ETxMessageHolderType gTxMsg;
+
 portTickType gLastAssocCheckTickCount;
-gwBoolean gIsReceiving;
-gwBoolean gIsTransmitting;
+
+extern RadioStateEnum gRadioState;
 
 extern RxRadioBufferStruct gRxRadioBuffer[RX_BUFFER_COUNT];
 extern TxRadioBufferStruct gTxRadioBuffer[TX_BUFFER_COUNT];
@@ -40,38 +41,34 @@ extern NetAddrType gMyAddr;
 // --------------------------------------------------------------------------
 
 void radioReceiveTask(void *pvParameters) {
-	//BufferCntType lockedBufferNum;
 	BufferCntType rxBufferNum;
-	smacErrors_t smacError;
-	gwUINT8 ccrHolder;
 
+	//TODO Remove buffer code. It seems we only need to do this once
+	/*gRxMsg.rxPacketPtr = (rxPacket_t *) &(gRxRadioBuffer[0].rxPacket);
+	gRxMsg.rxPacketPtr->u8MaxDataLength = RX_BUFFER_SIZE;
+	gRxMsg.rxPacketPtr->rxStatus = rxInitStatus;
+	gRxMsg.bufferNum = 0;
+	*/
 	// The radio receive task will return a pointer to a radio data packet.
 	if (gRadioReceiveQueue) {
 		for (;;) {
 
 			GW_WATCHDOG_RESET;
 
-			gRxMsg.rxPacketPtr = (rxPacket_t *) &(gRxRadioBuffer[0].rxPacket);
-			gRxMsg.rxPacketPtr->u8MaxDataLength = RX_BUFFER_SIZE;
-			gRxMsg.rxPacketPtr->rxStatus = rxInitStatus;
-			gRxMsg.bufferNum = 0;//lockedBufferNum;
-		
-			//Perform the actual read and store it in the pointer with no timeout
-			smacError = MLMERXEnableRequest(gRxMsg.rxPacketPtr, 0);
-			gIsReceiving = TRUE;
+			//A callback will add the packet to the queue below
+			readRadioRx();
 
+			//Wait for packet in the queue
 			if (xQueueReceive(gRadioReceiveQueue, &rxBufferNum, portMAX_DELAY) == pdPASS ) {
-				if ((rxBufferNum != 255) && (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c)) {
+				if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c) {
 					// Process the packet we just received.
 					processRxPacket(rxBufferNum);
-					// N.B.: processRXPacket above releases the RX buffer if necessary.
 				}
 			}
 		}
 	}
 	/* Will only get here if the queue could not be created. */
-	for (;;)
-		;
+	for (;;);
 }
 
 // --------------------------------------------------------------------------
@@ -91,8 +88,13 @@ void radioTransmitTask(void *pvParameters) {
 
 			// Wait until the management thread signals us that we have a full buffer to transmit.
 			if (xQueueReceive(gRadioTransmitQueue, &txBufferNum, portMAX_DELAY) == pdPASS) {
-				vTaskSuspend(gRadioReceiveTask);
+				
+				//Suspend receive task
+				//vTaskSuspend(gRadioReceiveTask);
+				
+				//Store current tick count
 				retryTickCount = xTaskGetTickCount();
+				
 				
 				gwUINT8 txedAckId = getAckId(gTxRadioBuffer[txBufferNum].bufferStorage);
 				ECommandGroupIDType txCommandType = getCommandID(gTxRadioBuffer[txBufferNum].bufferStorage);
@@ -100,26 +102,16 @@ void radioTransmitTask(void *pvParameters) {
 				do {
 					shouldRetry = FALSE;
 
-					// Setup for TX.
-					gTxMsg.txPacketPtr = (txPacket_t *) &(gTxRadioBuffer[txBufferNum].txPacket);
-					gTxMsg.txPacketPtr->u8DataLength = gTxRadioBuffer[txBufferNum].bufferSize;
-					gTxMsg.bufferNum = txBufferNum;
-
-					suspendRadioRx();
-					gIsTransmitting = TRUE;
-					smacError = MCPSDataRequest(gTxMsg.txPacketPtr);
-
-					if (smacError != gErrorNoError_c) {
-						//TODO Why reset the MCU here?
-						GW_RESET_MCU()
-					}
+					//Write tx to the air. Callback will notify us when done.
+					writeRadioTx();
 					
-					while (gIsTransmitting) {
+					while (gRadioState == eTx) {
 						vTaskDelay(1);
 					}
 					
-					resumeRadioRx();
-					vTaskResume(gRadioReceiveTask);			
+					//Remove receive task now that we are done
+					//TODO Do we really need to suspend it?
+					//vTaskResume(gRadioReceiveTask);			
 
 					if (gTxMsg.txStatus == txFailureStatus_c) {
 						shouldRetry = TRUE;
@@ -148,6 +140,5 @@ void radioTransmitTask(void *pvParameters) {
 	}
 
 	/* Will only get here if the queue could not be created. */
-	for (;;)
-		;
+	for (;;);
 }

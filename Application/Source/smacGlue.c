@@ -19,8 +19,7 @@ gwSINT8						gNoReceive = -1;
 
 extern xQueueHandle			gRadioReceiveQueue;
 extern BufferCntType		gRxCurBufferNum;
-extern gwBoolean			gIsReceiving;
-extern gwBoolean			gIsTransmitting;
+extern RadioStateEnum gRadioState;
 extern xQueueHandle gRemoteMgmtQueue;
 extern ELocalStatusType gLocalDeviceState;
 
@@ -34,7 +33,7 @@ extern ETxMessageHolderType gTxMsg;
 // short and sweet.  (And let a swapped-in task deal with this during a context switch.)
 
 void MCPSDataIndication(rxPacket_t *inRxPacket) {
-	gIsReceiving = FALSE;
+	gRadioState = eIdle;
 
 	if (inRxPacket->rxStatus == rxSuccessStatus_c) {
 
@@ -61,11 +60,8 @@ void MCPSDataIndication(rxPacket_t *inRxPacket) {
 }
 
 void MCPSDataConfirm(txStatus_t txStatus) {
-	gIsTransmitting = FALSE;
 	gTxMsg.txStatus = txStatus;
-	
-	// We're done transmitting the packet, so resume the RX mode.
-	//resumeRadioRx();
+	gRadioState = eIdle;
 }
 
 

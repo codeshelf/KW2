@@ -69,6 +69,12 @@
 #define SCROLL_SECONDARY_SOURCE			gTmrSecondaryCnt0Input_c
 #define SCROLL_CLK_RATE					0xffff
 
+typedef enum {
+	eIdle,
+	eRx,
+	eTx,
+} RadioStateEnum;
+
 //#define RELEASE_RX_BUFFER(rxBufferNum, ccrHolder)	\
 //	GW_ENTER_CRITICAL(ccrHolder); \
 //	if (gRxRadioBuffer[rxBufferNum].bufferStatus != eBufferStateFree) { \
@@ -199,6 +205,8 @@ typedef gwUINT8				ScanCharType;
 typedef ScanCharType		ScanStringType[MAX_SCAN_STRING_BYTES];
 typedef ScanStringType*		ScanStringPtrType;
 typedef gwUINT8				ScanStringLenType;
+typedef gwUINT8 ChannelNumberType;
+
 
 // --------------------------------------------------------------------------
 // Function prototypes
@@ -208,8 +216,9 @@ typedef gwUINT8				ScanStringLenType;
 //BufferCntType lockTxBuffer(void);
 void setupWatchdog(void);
 
-void suspendRadioRx();
-void resumeRadioRx();
+void setRadioChannel(ChannelNumberType channel);
+void readRadioRx();
+void writeRadioTx();
 
 void debugReset();
 //void debugRefreed(BufferCntType inBufferNum);
