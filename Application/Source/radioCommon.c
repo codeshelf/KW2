@@ -11,6 +11,9 @@
 #include "gwSystemMacros.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "queue.h"
+
+extern xQueueHandle	gRadioReceiveQueue;
 
 RxRadioBufferStruct	gRxRadioBuffer[RX_BUFFER_COUNT];
 TxRadioBufferStruct gTxRadioBuffer[TX_BUFFER_COUNT];
@@ -20,7 +23,7 @@ ETxMessageHolderType gTxMsg;
 
 RadioStateEnum gRadioState = eIdle;
 
-//Make sure radio is idle then change channel.
+//Make sure radio is idle then change channel. If the channel was in read mode notify the reader task waiting on the queue.
 void setRadioChannel(ChannelNumberType channel) {	
 	smacErrors_t smacError;
 	gwUINT8 ccrHolder;
@@ -33,10 +36,9 @@ void setRadioChannel(ChannelNumberType channel) {
 		//Entry critical before we check the state again
 		GW_ENTER_CRITICAL(ccrHolder);
 	}
-
-	gwBoolean wasInRxMode = FALSE;
+	gwBoolean readWasCancelled = FALSE;
 	if (gRadioState == eRx) {
-		wasInRxMode = TRUE;
+		readWasCancelled = TRUE;
 		smacError = MLMERXDisableRequest();
 		if (smacError != gErrorNoError_c){
 			GW_RESET_MCU()
@@ -52,14 +54,13 @@ void setRadioChannel(ChannelNumberType channel) {
 
 	GW_EXIT_CRITICAL(ccrHolder);
 	
-	if(wasInRxMode) {
-		//Go back to RxMode -- If we're already in Rx mode this method will just return.
-		readRadioRx();
+	if(readWasCancelled) {
+		//Notify anyone listening on the receive queue that the read was canceled.
+		xQueueSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
 	}
 }
 
-//Make sure the radio is idle then perform Tx. This method blocks until the Tx is complete. This method will return the radio to the read state if it was
-//reading before.
+//Make sure the radio is idle then perform Tx.  If the channel was in read mode notify the reader task waiting on the queue.
 void writeRadioTx() {
 	smacErrors_t smacError;
 	gwUINT8 ccrHolder;
@@ -77,14 +78,13 @@ void writeRadioTx() {
 	}
 
 	//If we are in Rx Mode then we will disable the rxRadio. Contrast this to the read method below.
-	gwBoolean wasInRxMode = FALSE;
+	gwBoolean readWasCancelled = FALSE;
 	if (gRadioState == eRx) {
-		wasInRxMode = TRUE;
+		readWasCancelled = TRUE;
 		smacError = MLMERXDisableRequest();
 		if (smacError != gErrorNoError_c){
 			GW_RESET_MCU()
 		}
-		//Should be idle now
 	}
 
 	//Request Tx
@@ -95,14 +95,9 @@ void writeRadioTx() {
 	gRadioState = eTx;
 	GW_EXIT_CRITICAL(ccrHolder);
 	
-	//Wait for write to finish
-	while (gRadioState == eTx) {
-		vTaskDelay(1);
-	}
-	
-	if(wasInRxMode) {
-		//Go back to RxMode -- If we're already in Rx mode this method will just return.
-		readRadioRx();
+	if(readWasCancelled) {
+		//Notify anyone listening on the receive queue that the read was cancelled.
+		xQueueSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
 	}
 
 }

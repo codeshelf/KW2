@@ -5,7 +5,7 @@
 
 	$Id$
 	$Name$
-*/
+ */
 
 #include "smacGlue.h"
 #include "radioCommon.h"
@@ -14,8 +14,6 @@
 #include "queue.h"
 #include "gwTypes.h"
 #include "SMAC.h"
-
-gwSINT8						gNoReceive = -1;
 
 extern xQueueHandle			gRadioReceiveQueue;
 extern BufferCntType		gRxCurBufferNum;
@@ -35,27 +33,17 @@ extern ETxMessageHolderType gTxMsg;
 void MCPSDataIndication(rxPacket_t *inRxPacket) {
 	gRadioState = eIdle;
 
-	if (inRxPacket->rxStatus == rxSuccessStatus_c) {
+	GW_WATCHDOG_RESET;
 
-		GW_WATCHDOG_RESET;
-		
-		// If we haven't initialized the radio receive queue then cause a debug trap.
-		if (gRadioReceiveQueue == NULL)
-			GW_RESET_MCU();
+	// If we haven't initialized the radio receive queue then cause a debug trap.
+	if (gRadioReceiveQueue == NULL)
+		GW_RESET_MCU();
 
-		// Send the message to the radio task's queue.
-		if (gLocalDeviceState == eLocalStateRun) {
-			xQueueSendFromISR(gRadioReceiveQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
-		} else {
-			xQueueSendFromISR(gRemoteMgmtQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
-		}
-
-		//advanceRxBuffer();
-
+	// Send the message to the radio task's queue.
+	if (gLocalDeviceState == eLocalStateRun) {
+		xQueueSendFromISR(gRadioReceiveQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
 	} else {
-		// Send the message to the radio task's queue that we didn't get any packets before timing out.
-		if (xQueueSendFromISR(gRadioReceiveQueue, &gNoReceive, (portBASE_TYPE) 0)) {
-		}
+		xQueueSendFromISR(gRemoteMgmtQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
 	}
 }
 

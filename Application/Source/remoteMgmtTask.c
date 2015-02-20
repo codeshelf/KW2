@@ -53,13 +53,13 @@ void remoteMgmtTask(void *pvParameters) {
 		channel = gChannel11_c;
 		associated = FALSE;
 		while (!associated) {
-			
+
 			//It's okay if we don't start at the first channel
 			channel++;
 			if (channel == gTotalChannels_c) {
 				channel = gChannel11_c;
 			}
-			
+
 			GW_WATCHDOG_RESET;
 
 			// Set the channel to the current channel we're testing.
@@ -71,17 +71,28 @@ void remoteMgmtTask(void *pvParameters) {
 			if (transmitPacket(txBufferNum)) {			
 			};
 
+			//Make sure we are in read mode. Transmit just puts the packet on the queue so we may have finished writing the packet to the air or not. We could be in read mode
+			// or tx mode. If we are in TxMode readRadioRx will wait. If the Tx hasn't started yet, we will go to read mode, the Tx will cancel the read and we'll be given a
+			//non-success status. If the Tx already finished, we're in a good place. We loop in order to allow us to ignore other other packets while trying to escape the
+			//read-cancellation described above.
+
 			// Wait up to 50ms for a response.
-			if (xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 50 * portTICK_RATE_MS) == pdTRUE){
-				// Check to see what kind of command we just got.
-				cmdID = getCommandID(gRxRadioBuffer[rxBufferNum].bufferStorage);
-				if (cmdID == eCommandAssoc) {
-					assocSubCmd = getAssocSubCommand(rxBufferNum);
-					if (assocSubCmd == eCmdAssocRESP) {
-						gLocalDeviceState = eLocalStateAssocRespRcvd;
-						processAssocRespCommand(rxBufferNum);
-						if (gLocalDeviceState == eLocalStateAssociated) {
-							associated = TRUE;
+			for(gwUINT8 i = 0; i < 10; i++) {
+				//It's okay if we're already in read mode
+				readRadioRx();
+				if (xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 5 * portTICK_RATE_MS) == pdTRUE){
+					if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c) {
+						// Check to see what kind of command we just got.
+						cmdID = getCommandID(gRxRadioBuffer[rxBufferNum].bufferStorage);
+						if (cmdID == eCommandAssoc) {
+							assocSubCmd = getAssocSubCommand(rxBufferNum);
+							if (assocSubCmd == eCmdAssocRESP) {
+								gLocalDeviceState = eLocalStateAssocRespRcvd;
+								processAssocRespCommand(rxBufferNum);
+								if (gLocalDeviceState == eLocalStateAssociated) {
+									associated = TRUE;
+								}
+							}
 						}
 					}
 				}
@@ -97,14 +108,25 @@ void remoteMgmtTask(void *pvParameters) {
 			if (transmitPacket(txBufferNum)) {
 			}
 
+			//Make sure we are in read mode. Transmit just puts the packet on the queue so we may have finished writing the packet to the air or not. We could be in read mode
+			// or tx mode. If we are in TxMode readRadioRx will wait. If the Tx hasn't started yet, we will go to read mode, the Tx will cancel the read and we'll be given a
+			//non-success status. If the Tx already finished, we're in a good place. We loop in order to allow us to ignore other other packets while trying to escape the
+			//read-cancellation described above.
+
 			// Wait up to 50ms for a response.
-			if (xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 50 * portTICK_RATE_MS) == pdPASS) {
-				// Check to see what kind of command we just got.
-				cmdID = getCommandID(gRxRadioBuffer[rxBufferNum].bufferStorage);
-				if (cmdID == eCommandAssoc) {
-					assocSubCmd = getAssocSubCommand(rxBufferNum);
-					if (assocSubCmd == eCmdAssocACK) {
-						checked = TRUE;
+			for(gwUINT8 i = 0; i < 10; i++) {
+				//It's okay if we're already in read mode
+				readRadioRx();
+				if (xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 5 * portTICK_RATE_MS) == pdPASS) {
+					if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c) {
+						// Check to see what kind of command we just got.
+						cmdID = getCommandID(gRxRadioBuffer[rxBufferNum].bufferStorage);
+						if (cmdID == eCommandAssoc) {
+							assocSubCmd = getAssocSubCommand(rxBufferNum);
+							if (assocSubCmd == eCmdAssocACK) {
+								checked = TRUE;
+							}
+						}
 					}
 				}
 			}
@@ -117,7 +139,8 @@ void remoteMgmtTask(void *pvParameters) {
 		// Just in case we receive any extra management commands we need to free them.
 		while (TRUE) {
 			if ((xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, portMAX_DELAY) == pdPASS ) && (rxBufferNum != 255)) {
-				//RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
+				//if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c) {
+				//}
 			}
 		}
 	}
