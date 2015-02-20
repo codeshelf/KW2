@@ -21,12 +21,19 @@ xTaskHandle gScannerReadTask = NULL;
 ScanStringType gScanString;
 ScanStringLenType gScanStringPos;
 
+extern ELocalStatusType gLocalDeviceState;
+
 // --------------------------------------------------------------------------
 
 void scannerReadTask(void *pvParameters) {
 
 	gwUINT8 ccrHolder;
 	ScannerPower_SetVal(ScannerPower_DeviceData);
+	
+	// Pause until associated.
+	while (gLocalDeviceState != eLocalStateRun) {
+		vTaskDelay(100);
+	}
 
 	for (;;) {
 
@@ -64,9 +71,11 @@ void scannerReadTask(void *pvParameters) {
 		// TODO
 
 		// Now send the scan string.
-		BufferCntType txBufferNum = 0;//lockTxBuffer();
-		createScanCommand(txBufferNum, &gScanString, gScanStringPos);
-		transmitPacket(txBufferNum);
+		if (strlen(gScanString) > 0) {
+			BufferCntType txBufferNum = 0;//lockTxBuffer();
+			createScanCommand(txBufferNum, &gScanString, gScanStringPos);
+			transmitPacket(txBufferNum);
+		}
 
 	}
 }
