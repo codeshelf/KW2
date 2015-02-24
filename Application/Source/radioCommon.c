@@ -79,7 +79,7 @@ void writeRadioTx() {
 
 	//If we are in Rx Mode then we will disable the rxRadio. Contrast this to the read method below.
 	gwBoolean readWasCancelled = FALSE;
-	if (gRadioState == eRx) {
+	if (gRadioState == eRx) {   
 		readWasCancelled = TRUE;
 		smacError = MLMERXDisableRequest();
 		if (smacError != gErrorNoError_c){
