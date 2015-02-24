@@ -42,6 +42,74 @@ void cartControllerTask(void *pvParameters) {
 
 	Rs485Power_SetVal(Rs485Power_DeviceData);
 
+//	GW_ENTER_CRITICAL(ccrHolder);
+//
+//
+//
+//	//RESET
+//
+//	LED_CLK_ClrVal(LED_CLK_DeviceData);
+//
+//	Wait_Waitus(500);
+//
+//
+//
+//	//RED
+//
+//	for(byte b=0; b<8;b++) {
+//
+//	Wait_Waitus(1);
+//
+//	LED_CLK_SetVal(LED_CLK_DeviceData);
+//
+//	Wait_Waitus(1);
+//
+//	LED_CLK_ClrVal(LED_CLK_DeviceData);
+//
+//	}
+//
+//
+//
+//	//GREEN
+//
+//	for(byte b=0; b<8;b++) {
+//
+//	Wait_Waitus(1);
+//
+//	LED_CLK_SetVal(LED_CLK_DeviceData);
+//
+//	Wait_Waitus(1);
+//
+//	LED_CLK_ClrVal(LED_CLK_DeviceData);
+//
+//	}
+//
+//
+//	LED_SDI_SetVal(LED_SDI_DeviceData);
+//
+//
+//	//BLUE
+//
+//	for(byte b=0; b<8;b++) {
+//
+//	Wait_Waitus(1);
+//
+//	LED_CLK_SetVal(LED_CLK_DeviceData);
+//
+//	Wait_Waitus(1);
+//
+//	LED_CLK_ClrVal(LED_CLK_DeviceData);
+//
+//	}
+//
+//	LED_SDI_ClrVal(LED_SDI_DeviceData);
+//
+//
+//
+//
+//
+//	GW_EXIT_CRITICAL(ccrHolder);
+	
 	clearDisplay();
 	displayMessage(1, "CONNECTING...", strlen("CONNECTING..."));
 	//displayMessage(2, "TRYING TO ASSOCIATE", strlen("TRYING TO ASSOCIATE"));
