@@ -65,13 +65,6 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 
 			switch (cmdID) {
 				
-//				case eCommandNetMgmt:
-//					if ((networkID == gMyNetworkID) && (cmdDstAddr == gMyAddr)) {
-//						if (xQueueSend(gTxAckQueue, &ackId, (portTickType) 0)) {
-//						}
-//					}
-//					break;
-
 				case eCommandAssoc:
 					// This will only return sub-commands if the command GUID matches out GUID
 					assocSubCmd = getAssocSubCommand(inRxBufferNum);
@@ -108,11 +101,16 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 					break;
 
 				case eCommandControl:
-
+					
+					// Send an ACK if necessary.
+					if (ackId != 0) {
+						txBufferNum = 0;//lockTxBuffer();
+						createAckPacket(txBufferNum, ackId, ackData);
+						writeRadioTx();
+					}
+					
 					// Make sure that there is a valid sub-command in the control command.
 					switch (getControlSubCommand(inRxBufferNum)) {
-						//						case eControlSubCmdEndpointAdj:
-						//							break;
 
 						case eControlSubCmdScan:
 							break;
@@ -135,22 +133,11 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 
 						default:
 							// Bogus command.
-							// Immediately free this command buffer since we'll never do anything with it.
-							//RELEASE_RX_BUFFER(inRxBufferNum, ccrHolder);
 							break;
 					}
 					break;
-
 						default:
 							break;
-			}
-
-			// Send an ACK if necessary.
-			if ((ackState == eAckStateOk) && (ackId != 0)) {
-				txBufferNum = 0;//lockTxBuffer();
-				createAckPacket(txBufferNum, ackId, ackData);
-				if (transmitPacket(txBufferNum)) {
-				}
 			}
 
 		}

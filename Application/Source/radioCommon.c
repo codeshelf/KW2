@@ -29,6 +29,7 @@ void setRadioChannel(ChannelNumberType channel) {
 	gwUINT8 ccrHolder;
 
 	GW_ENTER_CRITICAL(ccrHolder);
+	
 	//Wait for Tx to finish
 	while(gRadioState == eTx) {
 		GW_EXIT_CRITICAL(ccrHolder);
@@ -36,6 +37,7 @@ void setRadioChannel(ChannelNumberType channel) {
 		//Entry critical before we check the state again
 		GW_ENTER_CRITICAL(ccrHolder);
 	}
+	
 	gwBoolean readWasCancelled = FALSE;
 	if (gRadioState == eRx) {
 		readWasCancelled = TRUE;
@@ -56,7 +58,8 @@ void setRadioChannel(ChannelNumberType channel) {
 	
 	if(readWasCancelled) {
 		//Notify anyone listening on the receive queue that the read was canceled.
-		xQueueSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
+		//xQueueSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
+		xQueueGenericSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portTickType) 0, (portBASE_TYPE) queueSEND_TO_BACK);
 	}
 }
 
@@ -65,15 +68,12 @@ void writeRadioTx() {
 	smacErrors_t smacError;
 	gwUINT8 ccrHolder;
 
-	//TODO Do we really have to do this each time?
-	gTxMsg.txPacketPtr = (txPacket_t *) &(gTxRadioBuffer[0].txPacket);
-	gTxMsg.txPacketPtr->u8DataLength = gTxRadioBuffer[0].bufferSize;
-	gTxMsg.bufferNum = 0;
-
 	GW_ENTER_CRITICAL(ccrHolder);
 
-	//If we're already doing a Tx do nothing since we only have one buffer. This should never happen since we only have one task that writes
+	//If we're already doing a Tx do nothing since we only have one buffer. This should never happen since we only have one task that writes.
+	//Unfortunately, since we only have one buffer sends can get messed up
 	if(gRadioState == eTx) {
+		GW_EXIT_CRITICAL(ccrHolder);
 		return;
 	}
 
@@ -86,6 +86,11 @@ void writeRadioTx() {
 			GW_RESET_MCU()
 		}
 	}
+	
+	//TODO Do we really have to do this each time?
+	gTxMsg.txPacketPtr = (txPacket_t *) &(gTxRadioBuffer[0].txPacket);
+	gTxMsg.txPacketPtr->u8DataLength = gTxRadioBuffer[0].bufferSize;
+	gTxMsg.bufferNum = 0;
 
 	//Request Tx
 	smacError = MCPSDataRequest(gTxMsg.txPacketPtr);
@@ -97,7 +102,9 @@ void writeRadioTx() {
 	
 	if(readWasCancelled) {
 		//Notify anyone listening on the receive queue that the read was cancelled.
-		xQueueSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
+		//xQueueSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
+		xQueueGenericSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portTickType) 0, (portBASE_TYPE) queueSEND_TO_BACK);
+
 	}
 
 }
@@ -106,12 +113,6 @@ void writeRadioTx() {
 void readRadioRx() {	
 	smacErrors_t smacError;
 	gwUINT8 ccrHolder;
-
-	//TODO Do we really have to do this each time? Maybe only set rXStatus
-	gRxMsg.rxPacketPtr = (rxPacket_t *) &(gRxRadioBuffer[0].rxPacket);
-	gRxMsg.rxPacketPtr->u8MaxDataLength = RX_BUFFER_SIZE;
-	gRxMsg.rxPacketPtr->rxStatus = rxInitStatus;
-	gRxMsg.bufferNum = 0;
 
 	GW_ENTER_CRITICAL(ccrHolder);
 
@@ -125,8 +126,15 @@ void readRadioRx() {
 
 	//If we're already doing an Rx do nothing since we only have one buffer. This should never happen since we only have 1 reader
 	if(gRadioState == eRx) {
+		GW_EXIT_CRITICAL(ccrHolder);
 		return;
 	}
+	
+	//TODO Do we really have to do this each time? Maybe only set rXStatus
+	gRxMsg.rxPacketPtr = (rxPacket_t *) &(gRxRadioBuffer[0].rxPacket);
+	gRxMsg.rxPacketPtr->u8MaxDataLength = RX_BUFFER_SIZE;
+	gRxMsg.rxPacketPtr->rxStatus = rxInitStatus;
+	gRxMsg.bufferNum = 0;
 
 	//Perform the actual read and store it in the pointer with no timeout.
 	smacError = MLMERXEnableRequest(gRxMsg.rxPacketPtr, 0);

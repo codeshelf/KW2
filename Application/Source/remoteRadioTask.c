@@ -53,7 +53,7 @@ void radioReceiveTask(void *pvParameters) {
 	if (gRadioReceiveQueue) {
 		for (;;) {
 
-			GW_WATCHDOG_RESET;
+			//GW_WATCHDOG_RESET;
 
 			//A callback will add the packet to the queue below
 			readRadioRx();
@@ -74,14 +74,14 @@ void radioReceiveTask(void *pvParameters) {
 // --------------------------------------------------------------------------
 
 void radioTransmitTask(void *pvParameters) {
-	smacErrors_t smacError;
+	//smacErrors_t smacError;
 	BufferCntType txBufferNum;
 	gwBoolean shouldRetry;
 	portTickType retryTickCount;
-	NetAddrType cmdDstAddr;
-	NetworkIDType networkID;
+	//NetAddrType cmdDstAddr;
+	//NetworkIDType networkID;
 	gwUINT8 ackId;
-	gwUINT8 ccrHolder;
+	//gwUINT8 ccrHolder;
 
 	if (gRadioTransmitQueue && gTxAckQueue) {
 		for (;;) {
@@ -121,16 +121,17 @@ void radioTransmitTask(void *pvParameters) {
 					if (txedAckId != 0 && txCommandType != eCommandNetMgmt && txCommandType != eCommandAssoc) {
 						shouldRetry = TRUE;
 						
-						//Wait up to 20ms for an ACK
-						if (xQueueReceive(gTxAckQueue, &ackId, 20 * portTICK_RATE_MS) == pdPASS) {
+						//Wait up to 50ms for an ACK
+						if (xQueueReceive(gTxAckQueue, &ackId, 50 * portTICK_RATE_MS) == pdPASS) {
 							if (txedAckId == ackId) {
 								shouldRetry = FALSE;
 							}
 						}
 
 						//If we fail to receive an ACK after enough retries to exceed 500ms then RESET
-						if (((shouldRetry) && ((xTaskGetTickCount() - retryTickCount) > 500)) || (smacError != gErrorNoError_c)) {
-							GW_RESET_MCU();
+						if (shouldRetry && ((xTaskGetTickCount() - retryTickCount) > 500)) {
+							//GW_RESET_MCU();
+							break;
 						}
 					}
 					

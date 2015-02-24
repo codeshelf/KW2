@@ -12,7 +12,7 @@
   </ToolchainSettings>
   <GeneratedFilesList>
     <GeneratedByPE>
-      <File Name="ProjectInfo.xml" FileDate="2015-02-19, 12:00:19" FileAge="1424376019008" FileType="45637" />
+      <File Name="ProjectInfo.xml" FileDate="2015-02-20, 16:45:10" FileAge="1424479510210" FileType="45637" />
       <File Name="Generated_Code/FRTOS1.h" FileDate="2015-02-19, 12:00:13" FileAge="1424376013949" FileType="45637" CompNumb="8" />
       <File Name="Generated_Code/FRTOS1.c" FileDate="2015-02-19, 12:00:13" FileAge="1424376013949" FileType="45637" CompNumb="8" />
       <File Name="Documentation/doxygen/BitIoLdd2.txt" FileDate="2015-02-17, 13:00:44" FileAge="1424206844520" FileType="45637" CompNumb="193" />
@@ -24,7 +24,7 @@
       <File Name="Generated_Code/EepromCS.c" FileDate="2015-02-19, 12:00:12" FileAge="1424376012781" FileType="45637" CompNumb="192" />
       <File Name="Documentation/doxygen/Scanner.txt" FileDate="2015-02-17, 15:48:48" FileAge="1424216928587" FileType="45637" CompNumb="38" />
       <File Name="Generated_Code/PDD/USBDCD_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Documentation/ProcessorExpert_SIGNALS.txt" FileDate="2015-02-19, 12:00:14" FileAge="1424376014125" FileType="3072" />
+      <File Name="Documentation/ProcessorExpert_SIGNALS.txt" FileDate="2015-02-20, 16:45:04" FileAge="1424479504904" FileType="3072" />
       <File Name="Generated_Code/BitIoLdd2.h" FileDate="2015-02-19, 12:00:12" FileAge="1424376012781" FileType="45637" CompNumb="193" />
       <File Name="Generated_Code/PDD/SysTick_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
       <File Name="Generated_Code/EventTimer.c" FileDate="2015-02-19, 12:00:12" FileAge="1424376012828" FileType="45637" CompNumb="114" />
@@ -74,7 +74,7 @@
       <File Name="Generated_Code/UTIL2.h" FileDate="2015-02-19, 12:00:13" FileAge="1424376013965" FileType="45637" CompNumb="12" />
       <File Name="Generated_Code/PDD/DAC_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
       <File Name="Generated_Code/INT_PORTB.h" FileDate="2015-02-19, 12:00:13" FileAge="1424376013254" FileType="45637" CompNumb="25" />
-      <File Name="Sources/ProcessorExpert.c" FileDate="2015-02-19, 11:57:59" FileAge="1424375879451" FileType="128" />
+      <File Name="Sources/ProcessorExpert.c" FileDate="2015-02-19, 12:11:14" FileAge="1424376674627" FileType="128" />
       <File Name="Generated_Code/PDD/FTM_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
       <File Name="Generated_Code/FreeRTOS.h" FileDate="2015-02-19, 12:00:13" FileAge="1424376013436" FileType="45637" CompNumb="8" />
       <File Name="Generated_Code/UTIL2.c" FileDate="2015-02-19, 12:00:13" FileAge="1424376013949" FileType="45637" CompNumb="12" />
@@ -107,13 +107,13 @@
       <File Name="Generated_Code/queue.c" FileDate="2015-02-19, 12:00:13" FileAge="1424376013762" FileType="45637" CompNumb="8" />
       <File Name="Generated_Code/Vectors.c" FileDate="2015-02-19, 12:00:10" FileAge="1424376010701" FileType="45637" CompNumb="225" />
       <File Name="Generated_Code/tasks.c" FileDate="2015-02-19, 12:00:13" FileAge="1424376013841" FileType="45637" CompNumb="8" />
-      <File Name="Sources/Events.h" FileDate="2015-02-19, 11:57:59" FileAge="1424375879448" FileType="131328" />
+      <File Name="Sources/Events.h" FileDate="2015-02-19, 12:11:14" FileAge="1424376674624" FileType="131328" />
       <File Name="Generated_Code/Critical.h" FileDate="1969-12-31, 15:59:59" FileAge="-1" FileType="45637" CompNumb="48" />
       <File Name="Generated_Code/WAIT.c" FileDate="1969-12-31, 15:59:59" FileAge="-1" FileType="45637" />
       <File Name="Generated_Code/list.h" FileDate="2015-02-19, 12:00:13" FileAge="1424376013570" FileType="45637" CompNumb="8" />
       <File Name="Generated_Code/Watchdog.h" FileDate="2015-02-19, 12:00:12" FileAge="1424376012875" FileType="45637" CompNumb="78" />
       <File Name="Generated_Code/SharpDisplayCS.c" FileDate="2015-02-19, 12:00:12" FileAge="1424376012796" FileType="45637" CompNumb="138" />
-      <File Name="Sources/Events.c" FileDate="2015-02-18, 10:43:37" FileAge="1424285017594" FileType="131328" />
+      <File Name="Sources/Events.c" FileDate="2015-02-20, 13:32:26" FileAge="1424467946518" FileType="131328" />
       <File Name="Generated_Code/PE_Types.h" FileDate="2015-02-19, 12:00:12" FileAge="1424376012474" FileType="45637" />
       <File Name="Generated_Code/Critical.c" FileDate="1969-12-31, 15:59:59" FileAge="-1" FileType="45637" CompNumb="48" />
       <File Name="Generated_Code/list.c" FileDate="2015-02-19, 12:00:13" FileAge="1424376013575" FileType="45637" CompNumb="8" />
@@ -149,5 +149,5 @@
       <File Name="Generated_Code/PDD/FMC_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
     </GeneratedByPE>
   </GeneratedFilesList>
-  <CodeGenReference>322</CodeGenReference>
+  <CodeGenReference>323</CodeGenReference>
 </CodeGenerationInfo>

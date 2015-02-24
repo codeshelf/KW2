@@ -15,14 +15,14 @@
 #include "gwTypes.h"
 #include "commands.h"
 xTaskHandle gRemoteManagementTask;
-xQueueHandle gRemoteMgmtQueue;
+extern xQueueHandle gRemoteMgmtQueue;
 ELocalStatusType gLocalDeviceState;
 
 extern RxRadioBufferStruct gRxRadioBuffer[RX_BUFFER_COUNT];
 extern BufferCntType gRxCurBufferNum;
 extern BufferCntType gRxUsedBuffers;
 extern ERxMessageHolderType gRxMsg;
-
+extern xTaskHandle gRadioReceiveTask;
 extern TxRadioBufferStruct gTxRadioBuffer[TX_BUFFER_COUNT];
 extern BufferCntType gTxCurBufferNum;
 
@@ -91,6 +91,7 @@ void remoteMgmtTask(void *pvParameters) {
 								processAssocRespCommand(rxBufferNum);
 								if (gLocalDeviceState == eLocalStateAssociated) {
 									associated = TRUE;
+									break;
 								}
 							}
 						}
@@ -102,11 +103,11 @@ void remoteMgmtTask(void *pvParameters) {
 		checked = FALSE;
 		while (!checked) {
 
-			GW_WATCHDOG_RESET;
-
+			//TODO Transmit is not safe.
 			createAssocCheckCommand(txBufferNum);
-			if (transmitPacket(txBufferNum)) {
-			}
+			writeRadioTx();
+			//if (transmitPacket(txBufferNum)) {
+			//}
 
 			//Make sure we are in read mode. Transmit just puts the packet on the queue so we may have finished writing the packet to the air or not. We could be in read mode
 			// or tx mode. If we are in TxMode readRadioRx will wait. If the Tx hasn't started yet, we will go to read mode, the Tx will cancel the read and we'll be given a
@@ -125,22 +126,24 @@ void remoteMgmtTask(void *pvParameters) {
 							assocSubCmd = getAssocSubCommand(rxBufferNum);
 							if (assocSubCmd == eCmdAssocACK) {
 								checked = TRUE;
+								break;
 							}
 						}
 					}
 				}
 			}
-			vTaskDelay(50);
-
 		}
 
 		gLocalDeviceState = eLocalStateRun;
-
+		readRadioRx();
+		
 		// Just in case we receive any extra management commands we need to free them.
+		
 		while (TRUE) {
-			if ((xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, portMAX_DELAY) == pdPASS ) && (rxBufferNum != 255)) {
+			if (xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, portMAX_DELAY) == pdPASS) {
 				//if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c) {
 				//}
+				readRadioRx();
 			}
 		}
 	}
