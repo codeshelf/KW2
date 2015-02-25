@@ -89,12 +89,8 @@ void radioTransmitTask(void *pvParameters) {
 			// Wait until the management thread signals us that we have a full buffer to transmit.
 			if (xQueueReceive(gRadioTransmitQueue, &txBufferNum, portMAX_DELAY) == pdPASS) {
 				
-				//Suspend receive task
-				//vTaskSuspend(gRadioReceiveTask);
-				
 				//Store current tick count
 				retryTickCount = xTaskGetTickCount();
-				
 				
 				gwUINT8 txedAckId = getAckId(gTxRadioBuffer[txBufferNum].bufferStorage);
 				ECommandGroupIDType txCommandType = getCommandID(gTxRadioBuffer[txBufferNum].bufferStorage);
@@ -108,11 +104,7 @@ void radioTransmitTask(void *pvParameters) {
 					while (gRadioState == eTx) {
 						vTaskDelay(1);
 					}
-					
-					//Remove receive task now that we are done
-					//TODO Do we really need to suspend it?
-					//vTaskResume(gRadioReceiveTask);			
-
+		
 					if (gTxMsg.txStatus == txFailureStatus_c) {
 						shouldRetry = TRUE;
 						continue;
@@ -128,9 +120,8 @@ void radioTransmitTask(void *pvParameters) {
 							}
 						}
 
-						//If we fail to receive an ACK after enough retries to exceed 500ms then RESET
+						//If we fail to receive an ACK after enough retries to exceed 500ms then break out of the loop.
 						if (shouldRetry && ((xTaskGetTickCount() - retryTickCount) > 500)) {
-							//GW_RESET_MCU();
 							shouldRetry = FALSE;
 						}
 					}

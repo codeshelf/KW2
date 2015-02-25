@@ -68,15 +68,14 @@ void remoteMgmtTask(void *pvParameters) {
 			// Send an associate request on the current channel.
 			txBufferNum = 0;//lockTxBuffer();
 			createAssocReqCommand(txBufferNum);
-			if (transmitPacket(txBufferNum)) {			
-			};
+			writeRadioTx();
 
 			//Make sure we are in read mode. Transmit just puts the packet on the queue so we may have finished writing the packet to the air or not. We could be in read mode
 			// or tx mode. If we are in TxMode readRadioRx will wait. If the Tx hasn't started yet, we will go to read mode, the Tx will cancel the read and we'll be given a
 			//non-success status. If the Tx already finished, we're in a good place. We loop in order to allow us to ignore other other packets while trying to escape the
 			//read-cancellation described above.
 
-			// Wait up to 50ms for a response.
+			// Wait up to 50ms for a response. (It actually maybe more if readRadio is waiting for a write but that shouldn't happen, TODO use tickCount)
 			for(gwUINT8 i = 0; i < 10; i++) {
 				//It's okay if we're already in read mode
 				readRadioRx();
@@ -114,7 +113,7 @@ void remoteMgmtTask(void *pvParameters) {
 			//non-success status. If the Tx already finished, we're in a good place. We loop in order to allow us to ignore other other packets while trying to escape the
 			//read-cancellation described above.
 
-			// Wait up to 50ms for a response.
+			// Wait up to 50ms for a response. (It actually maybe more if readRadio is waiting for a write but that shouldn't happen, TODO use tickCount)
 			for(gwUINT8 i = 0; i < 10; i++) {
 				//It's okay if we're already in read mode
 				readRadioRx();
@@ -141,16 +140,12 @@ void remoteMgmtTask(void *pvParameters) {
 		
 		while (TRUE) {
 			if (xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, portMAX_DELAY) == pdPASS) {
-				//if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c) {
-				//}
-				readRadioRx();
 			}
 		}
 	}
 
 	/* Will only get here if the queue could not be created. */
-	for (;;)
-		;
+	for (;;);
 }
 
 void sleep() {
