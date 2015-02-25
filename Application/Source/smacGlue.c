@@ -33,7 +33,7 @@ extern ETxMessageHolderType gTxMsg;
 void MCPSDataIndication(rxPacket_t *inRxPacket) {
 	gRadioState = eIdle;
 
-	GW_WATCHDOG_RESET;
+	//GW_WATCHDOG_RESET;
 
 	// If we haven't initialized the radio receive queue then cause a debug trap.
 	if (gRadioReceiveQueue == NULL)

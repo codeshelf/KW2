@@ -91,12 +91,12 @@
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\EventTimer.c</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\FRTOS1.c</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\INT_PORTB.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\LED_CLK.c</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\LED_SDI.c</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\PE_LDD.c</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Rs485.c</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Rs485Power.c</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Rs485TxCtl.c</PathName>
+      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\STATUS_LED_CLK.c</PathName>
+      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\STATUS_LED_SDI.c</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Scanner.c</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\ScannerPower.c</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\SharpDisplay.c</PathName>
@@ -186,8 +186,6 @@
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\FreeRTOSConfig.h</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\INT_PORTB.h</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\IO_Map.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\LED_CLK.h</PathName>
-      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\LED_SDI.h</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\PE_Const.h</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\PE_Error.h</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\PE_LDD.h</PathName>
@@ -195,6 +193,8 @@
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Rs485.h</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Rs485Power.h</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Rs485TxCtl.h</PathName>
+      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\STATUS_LED_CLK.h</PathName>
+      <PathName>C:\Users\saba\workspace\KW2\Generated_Code\STATUS_LED_SDI.h</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\Scanner.h</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\ScannerPower.h</PathName>
       <PathName>C:\Users\saba\workspace\KW2\Generated_Code\SharpDisplay.h</PathName>

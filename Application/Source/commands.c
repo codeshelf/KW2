@@ -513,9 +513,7 @@ DisplayStringType gDisplayDataLine[4];
 DisplayStringLenType gDisplayDataLineLen[4];
 DisplayStringLenType gDisplayDataLinePos[4];
 
-EControlCmdAckStateType processDisplayMsgSubCommand(BufferCntType inRXBufferNum) {
-	EControlCmdAckStateType result = eAckStateOk;
-
+void processDisplayMsgSubCommand(BufferCntType inRXBufferNum) {
 #ifdef CHE_CONTROLLER
 	clearDisplay();
 
@@ -544,8 +542,6 @@ EControlCmdAckStateType processDisplayMsgSubCommand(BufferCntType inRXBufferNum)
 	displayMessage(4, gDisplayDataLine[3], getMin(MAX_DISPLAY_CHARS, gDisplayDataLineLen[3]));
 
 #endif
-
-	return result;
 }
 
 // --------------------------------------------------------------------------
@@ -562,9 +558,7 @@ LedPositionType gCurLedSolidDataElement;
 LedPositionType gTotalLedSolidDataElements;
 LedPositionType gNextSolidLedPosition;
 
-EControlCmdAckStateType processLedSubCommand(BufferCntType inRXBufferNum) {
-
-	EControlCmdAckStateType result = eAckStateOk;
+void processLedSubCommand(BufferCntType inRXBufferNum) {
 	gwUINT8 ccrHolder;
 	gwUINT8 effect;
 	gwUINT8 sampleCount;
@@ -619,15 +613,11 @@ EControlCmdAckStateType processLedSubCommand(BufferCntType inRXBufferNum) {
 			break;
 		}
 	}
-	return result;
 }
 
 // --------------------------------------------------------------------------
 
-EControlCmdAckStateType processSetPosControllerSubCommand(BufferCntType inRXBufferNum) {
-
-	EControlCmdAckStateType result = eAckStateOk;
-	
+void processSetPosControllerSubCommand(BufferCntType inRXBufferNum) {	
 #ifdef RS485
 	
 	gwUINT8 instructionNum;
@@ -660,12 +650,9 @@ EControlCmdAckStateType processSetPosControllerSubCommand(BufferCntType inRXBuff
 	RS485_TX_OFF
 
 #endif
-	return result;
 }
 
-EControlCmdAckStateType processClearPosControllerSubCommand(BufferCntType inRXBufferNum) {
-	EControlCmdAckStateType result = eAckStateOk;
-
+void processClearPosControllerSubCommand(BufferCntType inRXBufferNum) {
 #ifdef RS485
 	gwUINT8 pos = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_CLEAR_POS];
 
@@ -678,6 +665,4 @@ EControlCmdAckStateType processClearPosControllerSubCommand(BufferCntType inRXBu
 	RS485_TX_OFF
 
 #endif
-
-	return result;
 }

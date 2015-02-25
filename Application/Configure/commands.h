@@ -54,13 +54,6 @@ typedef enum {
 	eHooBeeBehaviorSolenoidPull = 3
 } EHooBeeBehaviorType;
 
-typedef enum {
-	eAckStateOk = 0,
-	eAckStateNotNeeded,
-	eAckStateFailed
-} EControlCmdAckStateType;
-
-
 // --------------------------------------------------------------------------
 // Function prototypes.
 
@@ -116,10 +109,10 @@ void processAssocRespCommand(BufferCntType inRXBufferNum);
 void processQueryCommand(BufferCntType inRXBufferNum, NetAddrType inRemoteAddr);
 void processResponseCommand(BufferCntType inRXBufferNum, NetAddrType inRemoteAddr);
 
-EControlCmdAckStateType processDisplayMsgSubCommand(BufferCntType inRXBufferNum);
-EControlCmdAckStateType processSetPosControllerSubCommand(BufferCntType inRXBufferNum);
-EControlCmdAckStateType processClearPosControllerSubCommand(BufferCntType inRXBufferNum);
-EControlCmdAckStateType processLedSubCommand(BufferCntType inRXBufferNum);
+void processDisplayMsgSubCommand(BufferCntType inRXBufferNum);
+void processSetPosControllerSubCommand(BufferCntType inRXBufferNum);
+void processClearPosControllerSubCommand(BufferCntType inRXBufferNum);
+void processLedSubCommand(BufferCntType inRXBufferNum);
 
 void startScrolling();
 void stopScrolling();

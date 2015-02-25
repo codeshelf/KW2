@@ -107,12 +107,6 @@ typedef enum {
 } EBufferStatusType;
 
 typedef struct {
-	BufferStorageType		bufferStorage[MAX_PACKET_SIZE];
-	EBufferStatusType		bufferStatus;
-	BufferCntType			bufferSize;
-} RadioBufferStruct;
-
-typedef struct {
 	// Grrr... SMAC now requires static references.  
 	// A pointer to a RxRadioBuffer smacpdu will actually be a pointing what "looks" like an rxPacket_t with a smacPdu_t who's u8Data starts in bufferStorage.
 	// Our application only wants what's in the buffer and none of the other SMAC stuff.

@@ -16,8 +16,8 @@
 #include "Wait.h"
 #include "EventTimer.h"
 #include "display.h"
-#include "LED_CLK.h"
-#include "LED_SDI.h"
+#include "STATUS_LED_CLK.h"
+#include "STATUS_LED_SDI.h"
 #include "Rs485Power.h"
 
 xTaskHandle			gCartControllerTask;
@@ -47,34 +47,34 @@ void cartControllerTask(void *pvParameters) {
 
 	GW_ENTER_CRITICAL(ccrHolder);
 	//RESET
-	LED_CLK_ClrVal(LED_CLK_DeviceData);
+	STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData);
 	Wait_Waitus(500);
 
 	//RED
 	for(byte b=0; b<8;b++) {
 		Wait_Waitus(1);
-		LED_CLK_SetVal(LED_CLK_DeviceData);
+		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData);
 		Wait_Waitus(1);
-		LED_CLK_ClrVal(LED_CLK_DeviceData);
+		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData);
 	}
-	LED_SDI_SetVal(LED_SDI_DeviceData);
 	
+	STATUS_LED_SDI_SetVal(STATUS_LED_SDI_DeviceData);
 	//GREEN
 	for(byte b=0; b<8;b++) {
 		Wait_Waitus(1);
-		LED_CLK_SetVal(LED_CLK_DeviceData);
+		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData);
 		Wait_Waitus(1);
-		LED_CLK_ClrVal(LED_CLK_DeviceData);
+		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData);
 	}
-	LED_SDI_ClrVal(LED_SDI_DeviceData);
+	STATUS_LED_SDI_ClrVal(STATUS_LED_SDI_DeviceData);
 
 		
 	//BLUE
 	for(byte b=0; b<8;b++) {
 		Wait_Waitus(1);
-		LED_CLK_SetVal(LED_CLK_DeviceData);
+		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData);
 		Wait_Waitus(1);
-		LED_CLK_ClrVal(LED_CLK_DeviceData);	
+		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData);	
 	}
 	GW_EXIT_CRITICAL(ccrHolder);
 

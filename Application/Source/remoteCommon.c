@@ -39,7 +39,6 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 	ECmdAssocType assocSubCmd;
 	AckDataType ackData;
 	AckIDType ackId;
-	EControlCmdAckStateType ackState;
 	BufferCntType txBufferNum;
 
 	// We just received a valid packet.
@@ -60,11 +59,12 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 
 			// Prepare to handle packet ACK.
 			ackId = getAckId(gRxRadioBuffer[inRxBufferNum].bufferStorage);
-			ackState = eAckStateNotNeeded;
 			memset(ackData, 0, ACK_DATA_BYTES);
 
 			switch (cmdID) {
-				
+				case eCommandNetMgmt:
+					GW_WATCHDOG_RESET;
+					break;
 				case eCommandAssoc:
 					// This will only return sub-commands if the command GUID matches out GUID
 					assocSubCmd = getAssocSubCommand(inRxBufferNum);
@@ -101,14 +101,14 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 					break;
 
 				case eCommandControl:
-					
+
 					// Send an ACK if necessary.
 					if (ackId != 0) {
 						txBufferNum = 0;//lockTxBuffer();
 						createAckPacket(txBufferNum, ackId, ackData);
 						writeRadioTx();
 					}
-					
+
 					// Make sure that there is a valid sub-command in the control command.
 					switch (getControlSubCommand(inRxBufferNum)) {
 
@@ -116,30 +116,29 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 							break;
 
 						case eControlSubCmdMessage:
-							ackState = processDisplayMsgSubCommand(inRxBufferNum);
+							processDisplayMsgSubCommand(inRxBufferNum);
 							break;
 
 						case eControlSubCmdLight:
-							ackState = processLedSubCommand(inRxBufferNum);
+							processLedSubCommand(inRxBufferNum);
 							break;
 
 						case eControlSubCmdSetPosController:
-							ackState = processSetPosControllerSubCommand(inRxBufferNum);
+							processSetPosControllerSubCommand(inRxBufferNum);
 							break;
 
 						case eControlSubCmdClearPosController:
-							ackState = processClearPosControllerSubCommand(inRxBufferNum);
+							processClearPosControllerSubCommand(inRxBufferNum);
 							break;
 
 						default:
-							// Bogus command.
 							break;
 					}
 					break;
+
 						default:
 							break;
 			}
-
 		}
 	}
 }
