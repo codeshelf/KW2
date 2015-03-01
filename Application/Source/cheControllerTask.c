@@ -16,14 +16,28 @@
 #include "Wait.h"
 #include "EventTimer.h"
 #include "display.h"
+#include "serial.h"
 #include "STATUS_LED_CLK.h"
 #include "STATUS_LED_SDI.h"
 #include "Rs485Power.h"
+#include "Rs485.h"
 
 xTaskHandle			gCartControllerTask;
 xQueueHandle		gCartControllerQueue;
 
 portTickType		gLastUserAction;
+
+// --------------------------------------------------------------------------
+
+gwUINT8 sendRs485Message(char* msgPtr, gwUINT8 msgLen) {
+
+	RS485_TX_ON;
+	serialTransmitFrame(Rs485_DEVICE, msgPtr, msgLen);
+	vTaskDelay(25);
+	RS485_TX_OFF;
+
+	return 0;
+}
 
 void clearAllPositions() {
 	gwUINT8 message[] = { POS_CTRL_CLEAR, POS_CTRL_ALL_POSITIONS };
@@ -32,52 +46,34 @@ void clearAllPositions() {
 
 // --------------------------------------------------------------------------
 
-void cartControllerTask(void *pvParameters) {
+void cheControllerTask(void *pvParameters) {
 
 	static ScanStringType rs485String;
 	static ScanStringLenType rs485StringPos;
+	char msg[20];
 	gwUINT8 ccrHolder;
+	
+	setStatusLed(5, 0, 0);
 
 	clearAllPositions();
 
 	Rs485Power_SetVal(Rs485Power_DeviceData);
 	
 	clearDisplay();
-	displayMessage(1, "CONNECTING...", strlen("CONNECTING..."));
+	displayMessage(1, "Connecting...", FONT_NORMAL);
 
-	GW_ENTER_CRITICAL(ccrHolder);
-	//RESET
-	STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData);
-	Wait_Waitus(500);
-
-	//RED
-	for(byte b=0; b<8;b++) {
-		Wait_Waitus(1);
-		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData);
-		Wait_Waitus(1);
-		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData);
-	}
+	strcpy(msg, "Verions hw: ");
+	strcat(msg, STR(HARDWARE_VERSION));
+	strcat(msg, " fw: ");
+	strcat(msg, STR(FIRMWARE_VERSION));
+	displayMessage(2, msg, FONT_NORMAL);
 	
-	STATUS_LED_SDI_SetVal(STATUS_LED_SDI_DeviceData);
-	//GREEN
-	for(byte b=0; b<8;b++) {
-		Wait_Waitus(1);
-		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData);
-		Wait_Waitus(1);
-		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData);
-	}
-	STATUS_LED_SDI_ClrVal(STATUS_LED_SDI_DeviceData);
-
-		
-	//BLUE
-	for(byte b=0; b<8;b++) {
-		Wait_Waitus(1);
-		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData);
-		Wait_Waitus(1);
-		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData);	
-	}
-	GW_EXIT_CRITICAL(ccrHolder);
-
+	strcpy(msg, "GUID: ");
+	strcat(msg, STR(GUID));
+	displayMessage(3, msg, FONT_NORMAL);
+	
+	displayCodeshelfLogo(32, 125);
+	
 	for (;;) {
 
 		// Clear the RS485 string.

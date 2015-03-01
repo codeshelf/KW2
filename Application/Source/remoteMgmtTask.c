@@ -14,6 +14,8 @@
 #include "queue.h"
 #include "gwTypes.h"
 #include "commands.h"
+#include "display.h"
+
 xTaskHandle gRemoteManagementTask;
 extern xQueueHandle gRemoteMgmtQueue;
 ELocalStatusType gLocalDeviceState;
@@ -125,6 +127,7 @@ void remoteMgmtTask(void *pvParameters) {
 							assocSubCmd = getAssocSubCommand(rxBufferNum);
 							if (assocSubCmd == eCmdAssocACK) {
 								checked = TRUE;
+								setStatusLed(0, 1, 5);
 								break;
 							}
 						}

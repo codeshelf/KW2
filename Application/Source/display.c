@@ -2,9 +2,16 @@
 #include "PE_Types.h"
 #include "IO_Map.h"
 #include "string.h"
+#include "stdlib.h"
+#include "gwSystemMacros.h"
 #include "SharpDisplay.h"
 #include "SPI_PDD.h"
-#include "lcdfont.h"
+#include "fontArial16.h"
+#include "fontArial26.h"
+#include "fontBarcode.h"
+#include "codeshelf.logo.h"
+#include "STATUS_LED_CLK.h"
+#include "STATUS_LED_SDI.h"
 
 __attribute__ ((section(".m_data_20000000"))) byte displayBuffer[DISPLAY_BYTES];
 
@@ -76,6 +83,36 @@ void clearDisplay() {
 	memset(&displayBuffer, 0x00, DISPLAY_BYTES);
 }
 
+void sendRowBuffer(uint16_t row, byte* rowBuffer) {
+	uint16_t pos;
+	char c;
+
+	DISPLAY_CS_ON
+
+	// Send the write command
+	sendByte(LCDCMD_WRITE + LCDCMD_VCOM);
+
+	// Send image buffer
+	sendByteLSB(row);
+	for (pos = 0; pos < ROW_BUFFER_BYTES; pos++) {
+		c = rowBuffer[pos];
+		sendByteLSB(~c);
+	}
+	sendByteLSB(LCDCMD_DUMMY);
+
+	// Send another trailing 8 bits for the last line
+	sendByteLSB(LCDCMD_DUMMY);
+
+	DISPLAY_CS_OFF
+
+	DISPLAY_CS_ON
+
+	sendByte(LCDCMD_DISPLAY);
+	sendByteLSB(LCDCMD_DUMMY);
+
+	DISPLAY_CS_OFF
+}
+
 void drawPixel(int16_t x, int16_t y) {
 	if ((x >= DISPLAY_WIDTH) || (y >= DISPLAY_HEIGHT))
 		return;
@@ -131,46 +168,189 @@ void drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1) {
 	}
 }
 
-void drawChar(int16_t x, int16_t y, unsigned char c, uint8_t size) {
-	for (int8_t i = 0; i < 6; i++) {
-		uint8_t line;
-		if (i == 5)
-			line = 0x0;
-		else
-			line = readFontByte(lcdfont+(c*5)+i);
-		for (int8_t j = 0; j < 8; j++) {
-			if (line & 0x1) {
-				if (size == 1) // default size
-					drawPixel(x + i, y + j);
-				else { // big size
-					fillRect(x + (i * size), y + (j * size), size, size);
-				}
-//			} else {
-//				if (size == 1) // default size
-//					drawPixel(x + i, y + j);
-//				else { // big size
-//				       //fillRect(x + i * size, y + j * size, size, size, bg);
-//				}
+void drawPixelInRowBuffer(int16_t x, byte *rowBufferPtr) {
+	uint16_t loc = x / 8;
+	uint8_t value = (1 << x % 8);
+	if ((loc >= 0) && (loc < ROW_BUFFER_BYTES)) {
+		rowBufferPtr[loc] |= value;
+	}
+}
+
+void putCharSliceInRowBuffer(uint16_t x, unsigned char drawChar, uint8_t *rowBufferPtr, uint8_t slice, uint8_t size) {
+	uint8_t hzPixelNum;
+	uint8_t pixelsByte;
+	uint8_t extra;
+	uint8_t sliceByteOffset;
+	uint8_t charDescOffset;
+	uint16_t pixDataOffset;
+
+	charDescOffset = (uint8_t) (drawChar - arial_26ptFontInfo.startChar);
+	pixDataOffset = arial_26ptDescriptors[charDescOffset].offset;
+
+	sliceByteOffset = 0;
+	if (slice > 0) {
+		sliceByteOffset = slice * (arial_26ptDescriptors[charDescOffset].widthBits / 8);
+		if (arial_26ptDescriptors[charDescOffset].widthBits % 8) {
+			sliceByteOffset += slice;
+		}
+	}
+
+	for (hzPixelNum = 0; hzPixelNum < arial_26ptDescriptors[charDescOffset].widthBits; hzPixelNum++) {
+		pixelsByte = arial_26ptBitmaps[pixDataOffset + sliceByteOffset + hzPixelNum / 8];
+		if (pixelsByte & (0x80 >> (hzPixelNum % 8))) {
+			for (extra = 0; extra < size; extra++) {
+				drawPixelInRowBuffer(x + hzPixelNum + extra, rowBufferPtr);
 			}
-			line >>= 1;
 		}
 	}
 }
 
-void displayString(int16_t x, int16_t y, char_t *stringPtr, uint8_t size) {
-	for (uint8_t pos = 0; pos < strlen(stringPtr); pos++) {
-		drawChar(x + (pos * size * 6), y, stringPtr[pos], size);
+void displayString(uint16_t x, uint16_t y, char_t *stringPtr, uint8_t size) {
+	byte rowBuffer[ROW_BUFFER_BYTES];
+	uint8_t slice;
+	uint8_t charPos;
+	uint8_t extra;
+	uint8_t charDescOffset;
+	uint16_t totalBits;
+
+	for (slice = 0; slice < arial_26ptFontInfo.charInfo->heightBits; slice++) {
+		memset(&rowBuffer, 0x00, ROW_BUFFER_BYTES);
+		totalBits = 0;
+		for (charPos = 0; charPos < strlen(stringPtr); charPos++) {
+			if (stringPtr[charPos] == ' ') {
+				totalBits += arial_26ptFontInfo.spacePixels * size;
+			} else {
+				putCharSliceInRowBuffer(x + totalBits, stringPtr[charPos], rowBuffer, slice, size);
+				charDescOffset = stringPtr[charPos] - arial_26ptFontInfo.startChar;
+				totalBits += arial_26ptDescriptors[charDescOffset].widthBits + size;
+			}
+		}
+		for (extra = 0; extra < size; extra++) {
+			sendRowBuffer(y + (slice * size) + extra, rowBuffer);
+		}
 	}
-	sendDisplayBuffer();
 }
 
-void displayMessage(uint8_t line, char_t *stringPtr, uint8_t maxChars) {
-	uint8_t size = 3;
-	uint8_t x = 5;
-	uint8_t y = 10 + (9 * size * (line - 1));
-	uint8_t max = getMin(maxChars, strlen(stringPtr));
-	for (uint8_t pos = 0; pos < max; pos++) {
-		drawChar(x + (pos * size * 6), y, stringPtr[pos], size);
+
+void displayMessage(uint8_t line, char_t *stringPtr, uint8_t size) {
+	displayString(5, 10 + ((line - 1) * 32 * size), stringPtr, size);
+}
+
+void putBarcodeSliceInRowBuffer(uint16_t x, unsigned char drawChar, uint8_t *rowBufferPtr, uint8_t slice, uint8_t size) {
+	uint8_t hzPixelNum;
+	uint8_t pixelsByte;
+	uint8_t extra;
+	uint8_t sliceByteOffset;
+	uint8_t charDescOffset;
+	uint16_t pixDataOffset;
+
+	charDescOffset = (uint8_t) (drawChar - barcodeFontInfo.startChar);
+	pixDataOffset = barcodeDescriptors[charDescOffset].offset;
+
+	sliceByteOffset = 0;
+	if (slice > 0) {
+		sliceByteOffset = slice * (barcodeDescriptors[charDescOffset].widthBits / 8);
+		if (barcodeDescriptors[charDescOffset].widthBits % 8) {
+			sliceByteOffset += slice;
+		}
 	}
-	sendDisplayBuffer();
+
+	for (hzPixelNum = 0; hzPixelNum < barcodeDescriptors[charDescOffset].widthBits; hzPixelNum++) {
+		pixelsByte = barcodeBitmaps[pixDataOffset + sliceByteOffset + hzPixelNum / 8];
+		if (pixelsByte & (0x80 >> (hzPixelNum % 8))) {
+			for (extra = 0; extra < size; extra++) {
+				drawPixelInRowBuffer(x + hzPixelNum + extra, rowBufferPtr);
+			}
+		}
+	}
+}
+
+void displayBarcode(uint16_t x, uint16_t y, char_t *stringPtr, uint8_t size) {
+	byte rowBuffer[ROW_BUFFER_BYTES];
+	uint8_t slice;
+	uint8_t charPos;
+	uint8_t extra;
+	uint8_t charDescOffset;
+	uint16_t totalBits;
+
+	for (slice = 0; slice < barcodeFontInfo.charInfo->heightBits; slice++) {
+		memset(&rowBuffer, 0x00, ROW_BUFFER_BYTES);
+		totalBits = 0;
+		for (charPos = 0; charPos < strlen(stringPtr); charPos++) {
+			if (stringPtr[charPos] == ' ') {
+				totalBits += barcodeFontInfo.spacePixels + size;
+			} else {
+				putBarcodeSliceInRowBuffer(x + totalBits, stringPtr[charPos], rowBuffer, slice, size);
+				charDescOffset = stringPtr[charPos] - barcodeFontInfo.startChar;
+				totalBits += barcodeDescriptors[charDescOffset].widthBits + size;
+			}
+		}
+		for (extra = 0; extra < size; extra++) {
+			sendRowBuffer(y + (slice * size) + extra, rowBuffer);
+		}
+	}
+}
+
+void setStatusLed(uint8_t red, uint8_t green, uint8_t blue) {
+	uint8_t ccrHolder;
+	
+	GW_ENTER_CRITICAL(ccrHolder);
+	
+	// Red
+	for (uint8_t b = 128; b > 0; b>>=1) {
+		if (red & b) {
+			STATUS_LED_SDI_SetVal(STATUS_LED_CLK_DeviceData );
+		} else {
+			STATUS_LED_SDI_ClrVal(STATUS_LED_CLK_DeviceData );
+		}
+		Wait_Waitus(1);
+		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData );
+		Wait_Waitus(1);
+		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData );
+		Wait_Waitus(1);
+	}
+
+	// Green
+	for (uint8_t b = 128; b > 0; b>>=1) {
+		if (green & b) {
+			STATUS_LED_SDI_SetVal(STATUS_LED_CLK_DeviceData );
+		} else {
+			STATUS_LED_SDI_ClrVal(STATUS_LED_CLK_DeviceData );
+		}
+		Wait_Waitus(1);
+		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData );
+		Wait_Waitus(1);
+		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData );
+		Wait_Waitus(1);
+	}
+
+	// Blue
+	for (uint8_t b = 128; b > 0; b>>=1) {
+		if (blue & b) {
+			STATUS_LED_SDI_SetVal(STATUS_LED_CLK_DeviceData );
+		} else {
+			STATUS_LED_SDI_ClrVal(STATUS_LED_CLK_DeviceData );
+		}
+		Wait_Waitus(1);
+		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData );
+		Wait_Waitus(1);
+		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData );
+		Wait_Waitus(1);
+	}
+
+	GW_EXIT_CRITICAL(ccrHolder);
+}
+
+void displayCodeshelfLogo(uint8_t x, uint8_t y) {
+	byte rowBuffer[ROW_BUFFER_BYTES];
+	uint8_t slice;
+	uint8_t bytePos;
+
+	for (slice = 0; slice < codeshelf_logobwHeightPixels; slice++) {
+		memset(&rowBuffer, 0x00, ROW_BUFFER_BYTES);
+		for (bytePos = 0; bytePos < codeshelf_logobwWidthPages; bytePos++) {
+			rowBuffer[bytePos + (x / 8)] = codeshelf_logobwBitmaps[(slice * codeshelf_logobwWidthPages) + bytePos];
+		}
+		sendRowBuffer(slice + y, rowBuffer);
+	}
 }

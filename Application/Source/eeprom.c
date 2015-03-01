@@ -4,7 +4,6 @@
 #include "string.h"
 //#include "SharpDisplay.h"
 #include "SPI_PDD.h"
-#include "lcdfont.h"
 
 void spiSendByte(uint8_t data) {
 

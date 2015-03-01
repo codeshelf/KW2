@@ -41,7 +41,7 @@ typedef union {
 // Local functions prototypes.
 
 void clearAllPositions();
-void cartControllerTask(void *pvParameters);
+void cheControllerTask(void *pvParameters);
 
 
 #endif //CART_CONTROLLER_TASK_H

@@ -521,25 +521,25 @@ void processDisplayMsgSubCommand(BufferCntType inRXBufferNum) {
 	BufferStoragePtrType bufferPtr = gRxRadioBuffer[inRXBufferNum].bufferStorage + CMDPOS_MESSAGE;
 	gDisplayDataLineLen[0] = readAsPString(gDisplayDataLine[0], bufferPtr, MAX_DISPLAY_STRING_BYTES);
 
-	displayMessage(1, gDisplayDataLine[0], getMin(MAX_DISPLAY_CHARS, gDisplayDataLineLen[0]));
+	displayMessage(1, gDisplayDataLine[0], FONT_NORMAL);
 
 	// Second display line.
 	bufferPtr += gDisplayDataLineLen[0] + 1;
 	gDisplayDataLineLen[1] = readAsPString(gDisplayDataLine[1], bufferPtr, MAX_DISPLAY_STRING_BYTES);
 
-	displayMessage(2, gDisplayDataLine[1], getMin(MAX_DISPLAY_CHARS, gDisplayDataLineLen[1]));
+	displayMessage(2, gDisplayDataLine[1], FONT_NORMAL);
 
 	// Third display line.
 	bufferPtr += gDisplayDataLineLen[1] + 1;
 	gDisplayDataLineLen[2] = readAsPString(gDisplayDataLine[2], bufferPtr, MAX_DISPLAY_STRING_BYTES);
 
-	displayMessage(3, gDisplayDataLine[2], getMin(MAX_DISPLAY_CHARS, gDisplayDataLineLen[2]));
+	displayMessage(3, gDisplayDataLine[2], FONT_NORMAL);
 
 	// Fourth display line.
 	bufferPtr += gDisplayDataLineLen[2] + 1;
 	gDisplayDataLineLen[3] = readAsPString(gDisplayDataLine[3], bufferPtr, MAX_DISPLAY_STRING_BYTES);
 
-	displayMessage(4, gDisplayDataLine[3], getMin(MAX_DISPLAY_CHARS, gDisplayDataLineLen[3]));
+	displayMessage(4, gDisplayDataLine[3], FONT_NORMAL);
 
 #endif
 }
