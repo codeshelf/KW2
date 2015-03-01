@@ -297,8 +297,8 @@ void setStatusLed(uint8_t red, uint8_t green, uint8_t blue) {
 	GW_ENTER_CRITICAL(ccrHolder);
 	
 	// Red
-	for (uint8_t b = 128; b > 0; b>>=1) {
-		if (red & b) {
+	for (uint8_t bitpos = 128; bitpos > 0; bitpos>>=1) {
+		if (red & bitpos) {
 			STATUS_LED_SDI_SetVal(STATUS_LED_CLK_DeviceData );
 		} else {
 			STATUS_LED_SDI_ClrVal(STATUS_LED_CLK_DeviceData );
@@ -311,8 +311,8 @@ void setStatusLed(uint8_t red, uint8_t green, uint8_t blue) {
 	}
 
 	// Green
-	for (uint8_t b = 128; b > 0; b>>=1) {
-		if (green & b) {
+	for (uint8_t bitpos = 128; bitpos > 0; bitpos>>=1) {
+		if (green & bitpos) {
 			STATUS_LED_SDI_SetVal(STATUS_LED_CLK_DeviceData );
 		} else {
 			STATUS_LED_SDI_ClrVal(STATUS_LED_CLK_DeviceData );
@@ -325,8 +325,8 @@ void setStatusLed(uint8_t red, uint8_t green, uint8_t blue) {
 	}
 
 	// Blue
-	for (uint8_t b = 128; b > 0; b>>=1) {
-		if (blue & b) {
+	for (uint8_t bitpos = 128; bitpos > 0; bitpos>>=1) {
+		if (blue & bitpos) {
 			STATUS_LED_SDI_SetVal(STATUS_LED_CLK_DeviceData );
 		} else {
 			STATUS_LED_SDI_ClrVal(STATUS_LED_CLK_DeviceData );
