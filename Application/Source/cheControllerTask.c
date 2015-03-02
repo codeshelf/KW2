@@ -62,7 +62,7 @@ void cheControllerTask(void *pvParameters) {
 	clearDisplay();
 	displayMessage(1, "Connecting...", FONT_NORMAL);
 
-	strcpy(msg, "Verions hw: ");
+	strcpy(msg, "Versions hw: ");
 	strcat(msg, STR(HARDWARE_VERSION));
 	strcat(msg, " fw: ");
 	strcat(msg, STR(FIRMWARE_VERSION));
