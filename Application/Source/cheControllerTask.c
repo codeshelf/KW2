@@ -30,6 +30,75 @@ void clearAllPositions() {
 	sendRs485Message(message, 2);
 }
 
+void setStatusLed(gwUINT8 r, gwUINT8 g, gwUINT8 b) {
+	gwUINT8 ccrHolder;
+	GW_ENTER_CRITICAL(ccrHolder);
+	//RESET
+	STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData);
+	Wait_Waitus(500);
+
+	gwUINT8 msk = 0x80;
+	//RED
+	for(gwUINT8 b=0; b<8;b++) {
+		gwBoolean isBitOn = (r & msk) == msk;
+
+		if(isBitOn) {
+			STATUS_LED_SDI_SetVal(STATUS_LED_SDI_DeviceData);
+		} else {
+			STATUS_LED_SDI_ClrVal(STATUS_LED_SDI_DeviceData);
+		}
+
+		Wait_Waitns(50);
+		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData);
+		Wait_Waitns(50);
+		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData);
+
+		msk >> 1;
+	}
+
+	msk = 0x80;
+
+	//GREEN
+	for(gwUINT8 b=0; b<8;b++) {
+		gwBoolean isBitOn = (g & msk) == msk;
+
+		if(isBitOn) {
+			STATUS_LED_SDI_SetVal(STATUS_LED_SDI_DeviceData);
+		} else {
+			STATUS_LED_SDI_ClrVal(STATUS_LED_SDI_DeviceData);
+		}
+		
+		Wait_Waitns(50);
+		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData);
+		Wait_Waitns(50);
+		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData);
+
+		msk >> 1;
+	}
+
+	msk = 0x80;
+	
+	//BLUE
+	for(gwUINT8 b=0; b<8;b++) {
+		gwBoolean isBitOn = (b & msk) == msk;
+
+		if(isBitOn) {
+			STATUS_LED_SDI_SetVal(STATUS_LED_SDI_DeviceData);
+		} else {
+			STATUS_LED_SDI_ClrVal(STATUS_LED_SDI_DeviceData);
+		}
+		
+		Wait_Waitns(50);
+		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData);
+		Wait_Waitns(50);
+		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData);
+
+		msk >> 1;
+	}
+	GW_EXIT_CRITICAL(ccrHolder);
+
+}
+
 // --------------------------------------------------------------------------
 
 void cartControllerTask(void *pvParameters) {
@@ -41,43 +110,10 @@ void cartControllerTask(void *pvParameters) {
 	clearAllPositions();
 
 	Rs485Power_SetVal(Rs485Power_DeviceData);
-	
+
 	clearDisplay();
 	displayMessage(1, "CONNECTING...", strlen("CONNECTING..."));
-
-	GW_ENTER_CRITICAL(ccrHolder);
-	//RESET
-	STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData);
-	Wait_Waitus(500);
-
-	//RED
-	for(byte b=0; b<8;b++) {
-		Wait_Waitus(1);
-		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData);
-		Wait_Waitus(1);
-		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData);
-	}
-	
-	STATUS_LED_SDI_SetVal(STATUS_LED_SDI_DeviceData);
-	//GREEN
-	for(byte b=0; b<8;b++) {
-		Wait_Waitus(1);
-		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData);
-		Wait_Waitus(1);
-		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData);
-	}
-	STATUS_LED_SDI_ClrVal(STATUS_LED_SDI_DeviceData);
-
-		
-	//BLUE
-	for(byte b=0; b<8;b++) {
-		Wait_Waitus(1);
-		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData);
-		Wait_Waitus(1);
-		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData);	
-	}
-	GW_EXIT_CRITICAL(ccrHolder);
-
+	setStatusLed(255,132,0);
 	for (;;) {
 
 		// Clear the RS485 string.

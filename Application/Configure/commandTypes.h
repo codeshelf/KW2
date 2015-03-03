@@ -327,10 +327,4 @@ typedef enum {
 	eLedEffectMotel = 3
 } ESDCardControlDeviceType;
 
-// --------------------------------------------------------------------------
-// Function prototypes.
-
-// --------------------------------------------------------------------------
-// Globals.
-
 #endif /* COMMANDSTYPES_H */
