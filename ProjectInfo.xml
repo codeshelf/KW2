@@ -74,9 +74,13 @@
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\appCheController.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\appTuner.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\cheControllerTask.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\codeshelf.logo.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\commands.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\display.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\eeprom.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\fontArial16.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\fontArial26.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\fontBarcode.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\radioCommon.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\remoteCommon.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\remoteMgmtTask.c</PathName>
@@ -91,18 +95,16 @@
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\EventTimer.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\FRTOS1.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\INT_PORTB.c</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\LED_CLK.c</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\LED_SDI.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\PE_LDD.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485Power.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485TxCtl.c</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\STATUS_LED_CLK.c</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\STATUS_LED_SDI.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Scanner.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\ScannerPower.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\SharpDisplay.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\SharpDisplayCS.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\StatusLedClk.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\StatusLedSdi.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\UTIL1.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\UTIL2.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Vectors.c</PathName>
@@ -158,18 +160,22 @@
     </GeneratedCs>
     <GeneratedHs>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\Critical.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\FontTypes.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\aisleControllerTask.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\appAisleController.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\appCheController.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\appTuner.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\cheControllerTask.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\codeshelf.logo.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\commandTypes.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\commands.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\display.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\eeprom.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\fontArial16.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\fontArial26.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\fontBarcode.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\gwSystemMacros.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\gwTypes.h</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\lcdfont.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\radioCommon.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\remoteCommon.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\remoteMgmtTask.h</PathName>
@@ -188,8 +194,6 @@
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\INT_PORTB.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\iofiles\MK21D5.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\IO_Map.h</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\LED_CLK.h</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\LED_SDI.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\ADC_PDD.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\CMP_PDD.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\CMT_PDD.h</PathName>
@@ -227,13 +231,13 @@
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485Power.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485TxCtl.h</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\STATUS_LED_CLK.h</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\STATUS_LED_SDI.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Scanner.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\ScannerPower.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\SharpDisplay.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\SharpDisplayCS.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\StackMacros.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\StatusLedClk.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\StatusLedSdi.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\UTIL1.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\UTIL2.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Wait.h</PathName>

@@ -55,7 +55,7 @@ void scannerReadTask(void *pvParameters) {
 		GW_ENTER_CRITICAL(ccrHolder);
 		EventTimer_ResetCounter(NULL);
 		// If there's no characters in 50ms then stop waiting for more.
-		while ((EventTimer_GetCounterValue(NULL) < 100) && (gScanStringPos < MAX_SCAN_STRING_BYTES)) {
+		while ((EventTimer_GetCounterValue(NULL) < 150) && (gScanStringPos < MAX_SCAN_STRING_BYTES)) {
 			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
 			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXOF_MASK;
 			if ((Scanner_DEVICE ->S1 & UART_S1_RDRF_MASK) != 0) {

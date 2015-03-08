@@ -12,6 +12,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
+#include "Wait.h"
 
 extern xQueueHandle	gRadioReceiveQueue;
 
@@ -145,6 +146,55 @@ void readRadioRx() {
 	GW_EXIT_CRITICAL(ccrHolder);
 }
 
+void setStatusLed(uint8_t red, uint8_t green, uint8_t blue) {
+	uint8_t ccrHolder;
+
+	GW_ENTER_CRITICAL(ccrHolder);
+
+	// Red
+	for (uint8_t bitpos = 128; bitpos > 0; bitpos >>= 1) {
+		if (red & bitpos) {
+			StatusLedSdi_SetVal(StatusLedSdi_DeviceData);
+		} else {
+			StatusLedSdi_ClrVal(StatusLedSdi_DeviceData);
+		}
+		Wait_Waitus(1);
+		StatusLedClk_SetVal(StatusLedClk_DeviceData);
+		Wait_Waitus(1);
+		StatusLedClk_ClrVal(StatusLedClk_DeviceData);
+		Wait_Waitus(1);
+	}
+
+	// Green
+	for (uint8_t bitpos = 128; bitpos > 0; bitpos >>= 1) {
+		if (green & bitpos) {
+			StatusLedSdi_SetVal(StatusLedSdi_DeviceData);
+		} else {
+			StatusLedSdi_ClrVal(StatusLedSdi_DeviceData);
+		}
+		Wait_Waitus(1);
+		StatusLedClk_SetVal(StatusLedClk_DeviceData);
+		Wait_Waitus(1);
+		StatusLedClk_ClrVal(StatusLedClk_DeviceData);
+		Wait_Waitus(1);
+	}
+
+	// Blue
+	for (uint8_t bitpos = 128; bitpos > 0; bitpos >>= 1) {
+		if (blue & bitpos) {
+			StatusLedSdi_SetVal(StatusLedSdi_DeviceData);
+		} else {
+			StatusLedSdi_ClrVal(StatusLedSdi_DeviceData);
+		}
+		Wait_Waitus(1);
+		StatusLedClk_SetVal(StatusLedClk_DeviceData);
+		Wait_Waitus(1);
+		StatusLedClk_ClrVal(StatusLedClk_DeviceData);
+		Wait_Waitus(1);
+	}
+
+	GW_EXIT_CRITICAL(ccrHolder);
+}
 
 void debugReset() {
 	Cpu_SystemReset();

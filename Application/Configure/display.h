@@ -10,7 +10,6 @@
 
 #include "PE_Types.h"
 #include "SharpDisplayCS.h"
-#include "Wait.h"
 
 #define DISPLAY_WIDTH		400
 #define DISPLAY_HEIGHT		240
@@ -59,7 +58,6 @@ void displayString(uint16_t x, uint16_t y, char_t *stringPtr, uint8_t size);
 void displayBarcode(uint16_t x, uint16_t y, char_t *stringPtr, uint8_t size);
 void displayMessage(uint8_t line, char_t *stringPtr, uint8_t size);
 
-void setStatusLed(uint8_t red, uint8_t green, uint8_t blue);
 void displayCodeshelfLogo(uint8_t x, uint8_t y);
 
 #endif /* DISPLAY_H_ */

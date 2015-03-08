@@ -3,8 +3,8 @@
   <Header>
     <Name>ProcessorExpert</Name>
     <SavedBy>jeffw</SavedBy>
-    <ModificationStamp>315</ModificationStamp>
-    <Date>2015-02-27</Date>
+    <ModificationStamp>324</ModificationStamp>
+    <Date>2015-03-07</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
   </Header>
@@ -28,7 +28,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>245</ProjectCompNumb>
+    <ProjectCompNumb>249</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -7328,9 +7328,9 @@
       <ItemId23>225</ItemId23>
       <Value23>true</Value23>
       <ItemId24>237</ItemId24>
-      <Value24>true</Value24>
+      <Value24>false</Value24>
       <ItemId25>238</ItemId25>
-      <Value25>true</Value25>
+      <Value25>false</Value25>
     </BoolList_BeanConfig>
     <BoolList_TaskConfig>
       <Count>0</Count>
@@ -7574,133 +7574,6 @@
       <ItemId19>8</ItemId19>
       <Value19>true</Value19>
       <ItemId20>192</ItemId20>
-      <Value20>true</Value20>
-      <ItemId21>226</ItemId21>
-      <Value21>true</Value21>
-      <ItemId22>227</ItemId22>
-      <Value22>true</Value22>
-      <ItemId23>225</ItemId23>
-      <Value23>true</Value23>
-      <ItemId24>237</ItemId24>
-      <Value24>true</Value24>
-      <ItemId25>238</ItemId25>
-      <Value25>true</Value25>
-    </BoolList_BeanConfig>
-    <BoolList_TaskConfig>
-      <Count>0</Count>
-    </BoolList_TaskConfig>
-    <BoolList_ProgConfig>
-      <Count>0</Count>
-    </BoolList_ProgConfig>
-    <ItemState>
-      <ItemSymbol>Optimizations</ItemSymbol>
-      <ReadOnly>false</ReadOnly>
-      <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
-      <Expanded>true</Expanded>
-    </ItemState>
-    <ItemState>
-      <ItemSymbol>Not_for_MPC512x</ItemSymbol>
-      <ReadOnly>false</ReadOnly>
-      <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
-    </ItemState>
-    <ItemState>
-      <ItemSymbol>O_NoRangeChck</ItemSymbol>
-      <ReadOnly>false</ReadOnly>
-      <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-      <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
-      <Index>1</Index>
-      <Value>false</Value>
-    </ItemState>
-    <ItemState>
-      <ItemSymbol>O_NoEnableTest</ItemSymbol>
-      <ReadOnly>false</ReadOnly>
-      <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-      <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
-      <Index>1</Index>
-      <Value>false</Value>
-    </ItemState>
-    <ItemState>
-      <ItemSymbol>O_NoSpeedTest</ItemSymbol>
-      <ReadOnly>false</ReadOnly>
-      <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-      <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
-      <Index>1</Index>
-      <Value>false</Value>
-    </ItemState>
-    <ItemState>
-      <ItemSymbol>O_NoInitRegReset</ItemSymbol>
-      <ReadOnly>false</ReadOnly>
-      <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-      <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
-      <Index>1</Index>
-      <Value>false</Value>
-    </ItemState>
-    <ItemState>
-      <ItemSymbol>Not_for_MPC5500_MCF</ItemSymbol>
-      <ReadOnly>false</ReadOnly>
-      <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
-    </ItemState>
-    <ItemState>
-      <ItemSymbol>O_PIB_full_Init</ItemSymbol>
-      <ReadOnly>false</ReadOnly>
-      <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-      <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
-      <Index>1</Index>
-      <Value>false</Value>
-    </ItemState>
-  </Configuration>
-  <Configuration>
-    <CompNumb>222</CompNumb>
-    <NodeName>Configuration1</NodeName>
-    <CnfgEnabled>false</CnfgEnabled>
-    <TargetCPU>0</TargetCPU>
-    <ConfigurationComment lines_count="0" />
-    <BoolList_FpgaConfig>
-      <Count>0</Count>
-    </BoolList_FpgaConfig>
-    <BoolList_BeanConfig>
-      <Count>26</Count>
-      <ItemId0>192</ItemId0>
-      <Value0>true</Value0>
-      <ItemId1>152</ItemId1>
-      <Value1>false</Value1>
-      <ItemId2>138</ItemId2>
-      <Value2>true</Value2>
-      <ItemId3>137</ItemId3>
-      <Value3>true</Value3>
-      <ItemId4>124</ItemId4>
-      <Value4>false</Value4>
-      <ItemId5>114</ItemId5>
-      <Value5>true</Value5>
-      <ItemId6>78</ItemId6>
-      <Value6>true</Value6>
-      <ItemId7>53</ItemId7>
-      <Value7>false</Value7>
-      <ItemId8>52</ItemId8>
-      <Value8>true</Value8>
-      <ItemId9>51</ItemId9>
-      <Value9>false</Value9>
-      <ItemId10>43</ItemId10>
-      <Value10>true</Value10>
-      <ItemId11>42</ItemId11>
-      <Value11>true</Value11>
-      <ItemId12>38</ItemId12>
-      <Value12>true</Value12>
-      <ItemId13>33</ItemId13>
-      <Value13>false</Value13>
-      <ItemId14>48</ItemId14>
-      <Value14>true</Value14>
-      <ItemId15>27</ItemId15>
-      <Value15>false</Value15>
-      <ItemId16>26</ItemId16>
-      <Value16>false</Value16>
-      <ItemId17>25</ItemId17>
-      <Value17>true</Value17>
-      <ItemId18>12</ItemId18>
-      <Value18>true</Value18>
-      <ItemId19>10</ItemId19>
-      <Value19>true</Value19>
-      <ItemId20>8</ItemId20>
       <Value20>true</Value20>
       <ItemId21>226</ItemId21>
       <Value21>true</Value21>
@@ -14173,7 +14046,7 @@
         <ItemSymbol>Loops_SingleWire_Settings</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>LOOPS</ItemSymbol>
@@ -26509,7 +26382,7 @@
   </Bean>
   <Bean>
     <BeanType>BitIO_LDD</BeanType>
-    <Name>STATUS_LED_CLK</Name>
+    <Name>StatusLedClk</Name>
     <CompNumb>226</CompNumb>
     <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
@@ -26524,7 +26397,7 @@
         <ItemSymbol>DeviceName</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>STATUS_LED_CLK</Value>
+        <Value>StatusLedClk</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>_Pin</ItemSymbol>
@@ -26828,7 +26701,7 @@
   </Bean>
   <Bean>
     <BeanType>BitIO_LDD</BeanType>
-    <Name>STATUS_LED_SDI</Name>
+    <Name>StatusLedSdi</Name>
     <CompNumb>227</CompNumb>
     <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
@@ -26843,7 +26716,7 @@
         <ItemSymbol>DeviceName</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>STATUS_LED_SDI</Value>
+        <Value>StatusLedSdi</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>_Pin</ItemSymbol>
@@ -27487,7 +27360,7 @@
         <ItemSymbol>_Pin</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>PTD0/LLWU_P12/SPI0_PCS0/UART2_RTS_b</Value>
+        <Value>ADC0_SE21/PTD4/LLWU_P14/SPI0_PCS1/UART0_RTS_b/FTM0_CH4/EWM_IN</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>

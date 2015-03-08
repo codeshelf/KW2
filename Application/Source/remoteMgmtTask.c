@@ -14,7 +14,6 @@
 #include "queue.h"
 #include "gwTypes.h"
 #include "commands.h"
-#include "display.h"
 
 xTaskHandle gRemoteManagementTask;
 extern xQueueHandle gRemoteMgmtQueue;
@@ -44,6 +43,8 @@ void remoteMgmtTask(void *pvParameters) {
 	ECmdAssocType assocSubCmd;
 
 	if (gRemoteMgmtQueue) {
+
+		setStatusLed(5, 0, 0);
 
 		/*
 		 * Attempt to associate with our controller.

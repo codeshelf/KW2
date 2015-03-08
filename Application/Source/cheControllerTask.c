@@ -17,8 +17,6 @@
 #include "EventTimer.h"
 #include "display.h"
 #include "serial.h"
-#include "STATUS_LED_CLK.h"
-#include "STATUS_LED_SDI.h"
 #include "Rs485Power.h"
 #include "Rs485.h"
 
@@ -53,18 +51,16 @@ void cheControllerTask(void *pvParameters) {
 	char msg[20];
 	gwUINT8 ccrHolder;
 	
-	setStatusLed(5, 0, 0);
-
 	clearAllPositions();
 
 	Rs485Power_SetVal(Rs485Power_DeviceData);
 	
 	clearDisplay();
-	displayMessage(1, "Connecting...", FONT_NORMAL);
+	displayMessage(1, "CONNECTING...", FONT_NORMAL);
 
-	strcpy(msg, "Versions hw: ");
+	strcpy(msg, "VERSIONS HW: ");
 	strcat(msg, STR(HARDWARE_VERSION));
-	strcat(msg, " fw: ");
+	strcat(msg, " FW: ");
 	strcat(msg, STR(FIRMWARE_VERSION));
 	displayMessage(2, msg, FONT_NORMAL);
 	
@@ -72,7 +68,7 @@ void cheControllerTask(void *pvParameters) {
 	strcat(msg, STR(GUID));
 	displayMessage(3, msg, FONT_NORMAL);
 	
-	displayCodeshelfLogo(32, 125);
+	displayCodeshelfLogo(48, 135);
 	
 	for (;;) {
 

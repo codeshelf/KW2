@@ -16,6 +16,9 @@
 #include "gwTypes.h"
 #include "gwSystemMacros.h"
 #include "SMAC_Interface.h"
+#include "StatusLedClk.h"
+#include "StatusLedSdi.h"
+
 
 // --------------------------------------------------------------------------
 // Definitions.
@@ -217,5 +220,6 @@ void writeRadioTx();
 void debugReset();
 //void debugRefreed(BufferCntType inBufferNum);
 void debugCrmCallback(void);
+void setStatusLed(uint8_t red, uint8_t green, uint8_t blue);
 
 #endif /* RADIOCOMMON_H */

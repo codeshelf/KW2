@@ -44,8 +44,8 @@
 #include "BitIoLdd1.h"
 #include "EepromCS.h"
 #include "BitIoLdd2.h"
-#include "STATUS_LED_CLK.h"
-#include "STATUS_LED_SDI.h"
+#include "StatusLedClk.h"
+#include "StatusLedSdi.h"
 #include "ScannerPower.h"
 #include "Rs485Power.h"
 /* Including shared modules, which are used for whole project */

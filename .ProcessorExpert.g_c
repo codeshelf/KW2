@@ -18,16 +18,16 @@
         <Line>PE_Const</Line>
         <Line>IO_Map</Line>
       </GenSharedModules>
-      <ShrdHeaderAge0>1180403311</ShrdHeaderAge0>
+      <ShrdHeaderAge0>1181196673</ShrdHeaderAge0>
       <ShrdCodeAge0>-1</ShrdCodeAge0>
       <ShrdAsemblAge0>-1</ShrdAsemblAge0>
-      <ShrdHeaderAge1>1180403162</ShrdHeaderAge1>
+      <ShrdHeaderAge1>1181190908</ShrdHeaderAge1>
       <ShrdCodeAge1>-1</ShrdCodeAge1>
       <ShrdAsemblAge1>-1</ShrdAsemblAge1>
-      <ShrdHeaderAge2>1180403162</ShrdHeaderAge2>
+      <ShrdHeaderAge2>1181190908</ShrdHeaderAge2>
       <ShrdCodeAge2>-1</ShrdCodeAge2>
       <ShrdAsemblAge2>-1</ShrdAsemblAge2>
-      <ShrdHeaderAge3>1180403162</ShrdHeaderAge3>
+      <ShrdHeaderAge3>1181190908</ShrdHeaderAge3>
       <ShrdCodeAge3>-1</ShrdCodeAge3>
       <ShrdAsemblAge3>-1</ShrdAsemblAge3>
       <GenExtraFiles lines_count="49">
@@ -67,8 +67,8 @@
         <Line>Documentation\doxygen\SharpDisplay.txt</Line>
         <Line>Documentation\doxygen\BitIoLdd1.txt</Line>
         <Line>Documentation\doxygen\BitIoLdd2.txt</Line>
-        <Line>Documentation\doxygen\STATUS_LED_CLK.txt</Line>
-        <Line>Documentation\doxygen\STATUS_LED_SDI.txt</Line>
+        <Line>Documentation\doxygen\StatusLedClk.txt</Line>
+        <Line>Documentation\doxygen\StatusLedSdi.txt</Line>
         <Line>Documentation\doxygen\ScannerPower.txt</Line>
         <Line>Documentation\doxygen\Rs485Power.txt</Line>
         <Line>Documentation\doxygen\ProcessorExpert.txt</Line>
@@ -82,36 +82,36 @@
         <Line>Generated_Code\Vectors.c</Line>
       </GenExtraFiles>
       <GenExtraFileSrcDir43>lib\doxygen\</GenExtraFileSrcDir43>
-      <XtraAge0>1180403163</XtraAge0>
-      <XtraAge1>1180403163</XtraAge1>
-      <XtraAge2>1180403163</XtraAge2>
-      <XtraAge3>1180403163</XtraAge3>
-      <XtraAge4>1180403163</XtraAge4>
-      <XtraAge5>1180403163</XtraAge5>
-      <XtraAge6>1180403163</XtraAge6>
-      <XtraAge7>1180403163</XtraAge7>
-      <XtraAge8>1180403163</XtraAge8>
-      <XtraAge9>1180403163</XtraAge9>
-      <XtraAge10>1180403163</XtraAge10>
-      <XtraAge11>1180403163</XtraAge11>
-      <XtraAge12>1180403163</XtraAge12>
-      <XtraAge13>1180403163</XtraAge13>
-      <XtraAge14>1180403163</XtraAge14>
-      <XtraAge15>1180403163</XtraAge15>
-      <XtraAge16>1180403163</XtraAge16>
-      <XtraAge17>1180403163</XtraAge17>
-      <XtraAge18>1180403163</XtraAge18>
-      <XtraAge20>1180403163</XtraAge20>
-      <XtraAge21>1180403163</XtraAge21>
-      <XtraAge22>1180403163</XtraAge22>
-      <XtraAge23>1180403163</XtraAge23>
-      <XtraAge24>1180403163</XtraAge24>
-      <XtraAge25>1180403163</XtraAge25>
-      <XtraAge26>1180403163</XtraAge26>
-      <XtraAge27>1180403163</XtraAge27>
-      <XtraAge45>1180403162</XtraAge45>
-      <XtraAge46>1180403311</XtraAge46>
-      <XtraAge48>1180403311</XtraAge48>
+      <XtraAge0>1181190908</XtraAge0>
+      <XtraAge1>1181190908</XtraAge1>
+      <XtraAge2>1181190908</XtraAge2>
+      <XtraAge3>1181190908</XtraAge3>
+      <XtraAge4>1181190908</XtraAge4>
+      <XtraAge5>1181190908</XtraAge5>
+      <XtraAge6>1181190908</XtraAge6>
+      <XtraAge7>1181190908</XtraAge7>
+      <XtraAge8>1181190908</XtraAge8>
+      <XtraAge9>1181190908</XtraAge9>
+      <XtraAge10>1181190908</XtraAge10>
+      <XtraAge11>1181190908</XtraAge11>
+      <XtraAge12>1181190908</XtraAge12>
+      <XtraAge13>1181190908</XtraAge13>
+      <XtraAge14>1181190908</XtraAge14>
+      <XtraAge15>1181190908</XtraAge15>
+      <XtraAge16>1181190908</XtraAge16>
+      <XtraAge17>1181190908</XtraAge17>
+      <XtraAge18>1181190908</XtraAge18>
+      <XtraAge20>1181190908</XtraAge20>
+      <XtraAge21>1181190908</XtraAge21>
+      <XtraAge22>1181190908</XtraAge22>
+      <XtraAge23>1181190908</XtraAge23>
+      <XtraAge24>1181190908</XtraAge24>
+      <XtraAge25>1181190908</XtraAge25>
+      <XtraAge26>1181190908</XtraAge26>
+      <XtraAge27>1181190908</XtraAge27>
+      <XtraAge45>1181196673</XtraAge45>
+      <XtraAge46>1181196673</XtraAge46>
+      <XtraAge48>1181196673</XtraAge48>
       <GenExtraFileType48>4</GenExtraFileType48>
       <GenExtraFileType47>4</GenExtraFileType47>
       <GenExtraFileType46>4</GenExtraFileType46>
@@ -228,8 +228,8 @@
         <Line>ScannerPower</Line>
         <Line>SharpDisplay</Line>
         <Line>SharpDisplayCS</Line>
-        <Line>STATUS_LED_CLK</Line>
-        <Line>STATUS_LED_SDI</Line>
+        <Line>StatusLedClk</Line>
+        <Line>StatusLedSdi</Line>
         <Line>UTIL1</Line>
         <Line>UTIL2</Line>
         <Line>Wait</Line>
@@ -253,15 +253,15 @@
         <Line>BitIoLdd1</Line>
         <Line>EepromCS</Line>
         <Line>BitIoLdd2</Line>
-        <Line>STATUS_LED_CLK</Line>
-        <Line>STATUS_LED_SDI</Line>
+        <Line>StatusLedClk</Line>
+        <Line>StatusLedSdi</Line>
         <Line>ScannerPower</Line>
         <Line>Rs485Power</Line>
       </GenBeanModules>
     </GenFiles>
     <SignalListFile>Documentation\ProcessorExpert_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>315</ProjectModificationStamp>
+    <ProjectModificationStamp>324</ProjectModificationStamp>
   </Options>
   <CpuID_225>
     <Generated>true</Generated>
@@ -269,8 +269,8 @@
     <GenComponentVersion>01.006</GenComponentVersion>
     <GenDriverVersion>01.04</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1180403162</HeaderAge>
-    <CodeAge>1180403311</CodeAge>
+    <HeaderAge>1181196673</HeaderAge>
+    <CodeAge>1181196673</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>14</GenNumMethods>
     <SetClockConfiguration>false</SetClockConfiguration>
@@ -371,8 +371,8 @@
     <GenComponentVersion>01.366</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1180403163</HeaderAge>
-    <CodeAge>1180403163</CodeAge>
+    <HeaderAge>1181190908</HeaderAge>
+    <CodeAge>1181190908</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>83</GenNumMethods>
     <xTaskCreate>true</xTaskCreate>
@@ -1510,8 +1510,8 @@
     <GenComponentVersion>01.105</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1180403163</HeaderAge>
-    <CodeAge>1180403163</CodeAge>
+    <HeaderAge>1181190908</HeaderAge>
+    <CodeAge>1181190908</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>51</GenNumMethods>
     <strcpy>true</strcpy>
@@ -2306,8 +2306,8 @@
     <GenComponentVersion>01.105</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1180403163</HeaderAge>
-    <CodeAge>1180403163</CodeAge>
+    <HeaderAge>1181190908</HeaderAge>
+    <CodeAge>1181190908</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>51</GenNumMethods>
     <strcpy>true</strcpy>
@@ -3102,8 +3102,8 @@
     <GenComponentVersion>02.023</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1180403163</HeaderAge>
-    <CodeAge>1180403163</CodeAge>
+    <HeaderAge>1181190908</HeaderAge>
+    <CodeAge>1181190908</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>0</GenNumMethods>
     <GenNumEvents>0</GenNumEvents>
@@ -3216,8 +3216,8 @@
     <GenComponentVersion>02.142</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1180403163</HeaderAge>
-    <CodeAge>1180403163</CodeAge>
+    <HeaderAge>1181190908</HeaderAge>
+    <CodeAge>1181190908</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>4</GenNumMethods>
     <Enable>true</Enable>
@@ -3371,8 +3371,8 @@
     <GenComponentVersion>01.006</GenComponentVersion>
     <GenDriverVersion>01.06</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1180403163</HeaderAge>
-    <CodeAge>1180403163</CodeAge>
+    <HeaderAge>1181196673</HeaderAge>
+    <CodeAge>1181196673</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
@@ -3406,8 +3406,8 @@
     <GenComponentVersion>01.067</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1180403163</HeaderAge>
-    <CodeAge>1180403163</CodeAge>
+    <HeaderAge>1181190908</HeaderAge>
+    <CodeAge>1181190908</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>8</GenNumMethods>
     <Wait10Cycles>true</Wait10Cycles>
@@ -3543,8 +3543,8 @@
     <GenComponentVersion>01.006</GenComponentVersion>
     <GenDriverVersion>01.06</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1180403163</HeaderAge>
-    <CodeAge>1180403163</CodeAge>
+    <HeaderAge>1181196673</HeaderAge>
+    <CodeAge>1181196673</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
@@ -3687,8 +3687,8 @@
     <GenComponentVersion>01.033</GenComponentVersion>
     <GenDriverVersion>01.03</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1180403163</HeaderAge>
-    <CodeAge>1180403163</CodeAge>
+    <HeaderAge>1181196673</HeaderAge>
+    <CodeAge>1181196673</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>13</GenNumMethods>
     <Init>true</Init>
@@ -3875,8 +3875,8 @@
     <GenComponentVersion>01.052</GenComponentVersion>
     <GenDriverVersion>01.09</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1180403163</HeaderAge>
-    <CodeAge>1180403163</CodeAge>
+    <HeaderAge>1181190908</HeaderAge>
+    <CodeAge>1181190908</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>9</GenNumMethods>
     <Init>true</Init>
@@ -3947,8 +3947,8 @@
     <GenComponentVersion>01.164</GenComponentVersion>
     <GenDriverVersion>01.11</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1180403163</HeaderAge>
-    <CodeAge>1180403163</CodeAge>
+    <HeaderAge>1181190908</HeaderAge>
+    <CodeAge>1181190908</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>22</GenNumMethods>
     <Init>true</Init>
@@ -4056,12 +4056,13 @@
     <GenComponentVersion>01.005</GenComponentVersion>
     <GenDriverVersion>01.05</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>-1</HeaderAge>
-    <CodeAge>-1</CodeAge>
+    <HeaderAge>1181190908</HeaderAge>
+    <CodeAge>1181190908</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
     <GenNumEvents>0</GenNumEvents>
+    <ISR_ISRHandleINT>ledDriveInterrupt</ISR_ISRHandleINT>
     <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
     <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
     <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
@@ -4089,8 +4090,8 @@
     <GenComponentVersion>01.005</GenComponentVersion>
     <GenDriverVersion>01.05</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1180403163</HeaderAge>
-    <CodeAge>1180403163</CodeAge>
+    <HeaderAge>1181196672</HeaderAge>
+    <CodeAge>1181196672</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
@@ -4122,8 +4123,8 @@
     <GenComponentVersion>02.086</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1180403163</HeaderAge>
-    <CodeAge>1180403163</CodeAge>
+    <HeaderAge>1181196672</HeaderAge>
+    <CodeAge>1181196672</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>11</GenNumMethods>
     <GetDir>false</GetDir>
@@ -4205,8 +4206,8 @@
       <GenComponentVersion>01.033</GenComponentVersion>
       <GenDriverVersion>01.03</GenDriverVersion>
       <GenEventModule />
-      <HeaderAge>1180403163</HeaderAge>
-      <CodeAge>1180403163</CodeAge>
+      <HeaderAge>1181196672</HeaderAge>
+      <CodeAge>1181196672</CodeAge>
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>13</GenNumMethods>
       <Init>true</Init>
@@ -4340,8 +4341,8 @@
     <GenComponentVersion>02.086</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1180403163</HeaderAge>
-    <CodeAge>1180403163</CodeAge>
+    <HeaderAge>1181190908</HeaderAge>
+    <CodeAge>1181190908</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>11</GenNumMethods>
     <GetDir>false</GetDir>
@@ -4423,8 +4424,8 @@
       <GenComponentVersion>01.033</GenComponentVersion>
       <GenDriverVersion>01.03</GenDriverVersion>
       <GenEventModule />
-      <HeaderAge>1180403163</HeaderAge>
-      <CodeAge>1180403163</CodeAge>
+      <HeaderAge>1181190908</HeaderAge>
+      <CodeAge>1181190908</CodeAge>
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>13</GenNumMethods>
       <Init>true</Init>
@@ -4521,12 +4522,12 @@
   </ComponentID_192>
   <ComponentID_226>
     <Generated>true</Generated>
-    <GenCompName>STATUS_LED_CLK</GenCompName>
+    <GenCompName>StatusLedClk</GenCompName>
     <GenComponentVersion>01.033</GenComponentVersion>
     <GenDriverVersion>01.03</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1180403311</HeaderAge>
-    <CodeAge>1180403311</CodeAge>
+    <HeaderAge>1181190908</HeaderAge>
+    <CodeAge>1181190908</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>13</GenNumMethods>
     <Init>true</Init>
@@ -4618,16 +4619,16 @@
       <LineEnd>247</LineEnd>
     </MethodPos>
     <GenExtraFilesCount>1</GenExtraFilesCount>
-    <ExtraFile0>Documentation\doxygen\STATUS_LED_CLK.txt</ExtraFile0>
+    <ExtraFile0>Documentation\doxygen\StatusLedClk.txt</ExtraFile0>
   </ComponentID_226>
   <ComponentID_227>
     <Generated>true</Generated>
-    <GenCompName>STATUS_LED_SDI</GenCompName>
+    <GenCompName>StatusLedSdi</GenCompName>
     <GenComponentVersion>01.033</GenComponentVersion>
     <GenDriverVersion>01.03</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1180403311</HeaderAge>
-    <CodeAge>1180403311</CodeAge>
+    <HeaderAge>1181190908</HeaderAge>
+    <CodeAge>1181190908</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>13</GenNumMethods>
     <Init>true</Init>
@@ -4719,7 +4720,7 @@
       <LineEnd>247</LineEnd>
     </MethodPos>
     <GenExtraFilesCount>1</GenExtraFilesCount>
-    <ExtraFile0>Documentation\doxygen\STATUS_LED_SDI.txt</ExtraFile0>
+    <ExtraFile0>Documentation\doxygen\StatusLedSdi.txt</ExtraFile0>
   </ComponentID_227>
   <ComponentID_237>
     <Generated>true</Generated>
@@ -4727,8 +4728,8 @@
     <GenComponentVersion>01.033</GenComponentVersion>
     <GenDriverVersion>01.03</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1180403311</HeaderAge>
-    <CodeAge>1180403311</CodeAge>
+    <HeaderAge>1181196672</HeaderAge>
+    <CodeAge>1181196672</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>13</GenNumMethods>
     <Init>true</Init>
@@ -4828,8 +4829,8 @@
     <GenComponentVersion>01.033</GenComponentVersion>
     <GenDriverVersion>01.03</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1180403162</HeaderAge>
-    <CodeAge>1180403162</CodeAge>
+    <HeaderAge>1181196672</HeaderAge>
+    <CodeAge>1181196672</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>13</GenNumMethods>
     <Init>true</Init>

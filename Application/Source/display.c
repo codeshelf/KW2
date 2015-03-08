@@ -10,8 +10,7 @@
 #include "fontArial26.h"
 #include "fontBarcode.h"
 #include "codeshelf.logo.h"
-#include "STATUS_LED_CLK.h"
-#include "STATUS_LED_SDI.h"
+#include "Wait.h"
 
 __attribute__ ((section(".m_data_20000000"))) byte displayBuffer[DISPLAY_BYTES];
 
@@ -233,7 +232,11 @@ void displayString(uint16_t x, uint16_t y, char_t *stringPtr, uint8_t size) {
 
 
 void displayMessage(uint8_t line, char_t *stringPtr, uint8_t size) {
-	displayString(5, 10 + ((line - 1) * 32 * size), stringPtr, size);
+	if (line == 1) {
+		displayString(5, 5 + ((line - 1) * 30 * size), stringPtr, 2);
+	} else {
+		displayString(5, 5 + (line * 30 * size), stringPtr, size);
+	}
 }
 
 void putBarcodeSliceInRowBuffer(uint16_t x, unsigned char drawChar, uint8_t *rowBufferPtr, uint8_t slice, uint8_t size) {
@@ -289,56 +292,6 @@ void displayBarcode(uint16_t x, uint16_t y, char_t *stringPtr, uint8_t size) {
 			sendRowBuffer(y + (slice * size) + extra, rowBuffer);
 		}
 	}
-}
-
-void setStatusLed(uint8_t red, uint8_t green, uint8_t blue) {
-	uint8_t ccrHolder;
-	
-	GW_ENTER_CRITICAL(ccrHolder);
-	
-	// Red
-	for (uint8_t bitpos = 128; bitpos > 0; bitpos>>=1) {
-		if (red & bitpos) {
-			STATUS_LED_SDI_SetVal(STATUS_LED_CLK_DeviceData );
-		} else {
-			STATUS_LED_SDI_ClrVal(STATUS_LED_CLK_DeviceData );
-		}
-		Wait_Waitus(1);
-		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData );
-		Wait_Waitus(1);
-		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData );
-		Wait_Waitus(1);
-	}
-
-	// Green
-	for (uint8_t bitpos = 128; bitpos > 0; bitpos>>=1) {
-		if (green & bitpos) {
-			STATUS_LED_SDI_SetVal(STATUS_LED_CLK_DeviceData );
-		} else {
-			STATUS_LED_SDI_ClrVal(STATUS_LED_CLK_DeviceData );
-		}
-		Wait_Waitus(1);
-		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData );
-		Wait_Waitus(1);
-		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData );
-		Wait_Waitus(1);
-	}
-
-	// Blue
-	for (uint8_t bitpos = 128; bitpos > 0; bitpos>>=1) {
-		if (blue & bitpos) {
-			STATUS_LED_SDI_SetVal(STATUS_LED_CLK_DeviceData );
-		} else {
-			STATUS_LED_SDI_ClrVal(STATUS_LED_CLK_DeviceData );
-		}
-		Wait_Waitus(1);
-		STATUS_LED_CLK_SetVal(STATUS_LED_CLK_DeviceData );
-		Wait_Waitus(1);
-		STATUS_LED_CLK_ClrVal(STATUS_LED_CLK_DeviceData );
-		Wait_Waitus(1);
-	}
-
-	GW_EXIT_CRITICAL(ccrHolder);
 }
 
 void displayCodeshelfLogo(uint8_t x, uint8_t y) {
