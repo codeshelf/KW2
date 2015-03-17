@@ -26,6 +26,7 @@
 
 void spiSendByte(uint8_t data);
 uint8_t spiGetByte(void);
-bool readEepromData(uint16_t addr, uint8_t* dataPtr, uint8_t bytesToRead);
+void readEepromData(uint16_t addr, uint8_t* dataPtr, uint8_t bytesToRead);
+void writeEepromData(uint16_t addr, uint8_t* dataPtr, uint8_t bytesToWrite);
 
 #endif /* EEPROM_H_ */

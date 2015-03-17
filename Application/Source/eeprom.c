@@ -2,7 +2,6 @@
 #include "PE_Types.h"
 #include "IO_Map.h"
 #include "string.h"
-//#include "SharpDisplay.h"
 #include "SPI_PDD.h"
 
 void spiSendByte(uint8_t data) {
@@ -27,36 +26,40 @@ uint8_t spiGetByte() {
 	return result;
 }
 
-bool readEepromData(uint16_t addr, uint8_t* dataPtr, uint8_t bytesToRead) {
-	bool result = FALSE;
-
-//	EEPROM_CS_ON
-//
-//	spiSendByte(WRITE_ENABLE_CMD);
-//
-//	EEPROM_CS_OFF
-//	EEPROM_CS_ON
-//
-//	spiSendByte(WRITE_CMD);
-//	spiSendByte(addr >> 8);
-//	spiSendByte(addr & 0xff);
-//	spiSendByte(0xaa);
-//
-//	EEPROM_CS_OFF
+void readEepromData(uint16_t addr, uint8_t* dataPtr, uint8_t bytesToRead) {
 	EEPROM_CS_ON
 
 	spiSendByte(READ_CMD);
 	spiSendByte(addr >> 8);
 	spiSendByte(addr & 0xFF);
-	spiSendByte(0xff);
-	spiSendByte(0xff);
-	spiSendByte(0xff);
-	spiSendByte(0xff);
-	spiSendByte(0xff);
+	for(uint8_t i = 0; i < bytesToRead; i++) {
+	//	spiSendByte(0xff);
+		dataPtr[i] = spiGetByte();
+	}
 	
-	dataPtr[0] = spiGetByte();
+	//spiSendByte(0xff);
+	//spiSendByte(0xff);
+	//spiSendByte(0xff);
+	//spiSendByte(0xff);
+	//spiSendByte(0xff);
+	//dataPtr[0] = spiGetByte();
 	
 	EEPROM_CS_OFF
+}
+
+void writeEepromData(uint16_t addr, uint8_t* dataPtr, uint8_t bytesToWrite) {
+	EEPROM_CS_ON
+	spiSendByte(WRITE_ENABLE_CMD);
+	EEPROM_CS_OFF
+	EEPROM_CS_ON
+
+	spiSendByte(WRITE_CMD);
+	spiSendByte(addr >> 8);
+	spiSendByte(addr & 0xff);
 	
-	return result;
+	for(uint8_t i = 0; i < bytesToWrite; i++) {
+		spiSendByte(dataPtr[i]);
+	}
+
+	EEPROM_CS_OFF
 }

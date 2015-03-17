@@ -19,6 +19,7 @@
 #include "serial.h"
 #include "Rs485Power.h"
 #include "Rs485.h"
+#include "eeprom.h"
 
 xTaskHandle			gCartControllerTask;
 xQueueHandle		gCartControllerQueue;
@@ -57,12 +58,24 @@ void cheControllerTask(void *pvParameters) {
 	
 	clearDisplay();
 	displayMessage(1, "CONNECTING...", FONT_NORMAL);
+	
+	//uint8_t data[] = {5};
+	//writeEepromData(0, data, 1);
+	
+	
+	//uint8_t data2[1];
+	//readEepromData(0, data2, 1);
+	
+	//char_t data3[1];
+	//data3[0] = (char_t) data2[0];
+	//displayMessage(2, data3, FONT_NORMAL);
+
 
 	strcpy(msg, "VERSIONS HW: ");
 	strcat(msg, STR(HARDWARE_VERSION));
 	strcat(msg, " FW: ");
 	strcat(msg, STR(FIRMWARE_VERSION));
-	displayMessage(2, msg, FONT_NORMAL);
+	//displayMessage(2, msg, FONT_NORMAL);
 	
 	strcpy(msg, "GUID: ");
 	strcat(msg, STR(GUID));
