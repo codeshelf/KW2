@@ -26,7 +26,7 @@
 #define LCDCMD_CLEAR		0x20
 
 #define DISPLAY_CS_ON     	SharpDisplayCS_SetVal();
-#define DISPLAY_CS_OFF    	Wait_Waitus(5); SharpDisplayCS_ClrVal();
+#define DISPLAY_CS_OFF    	Wait_Waitus(50); SharpDisplayCS_ClrVal();
 
 #define ROW_BUFFER_BYTES	DISPLAY_WIDTH / 8
 

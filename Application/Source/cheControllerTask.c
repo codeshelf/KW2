@@ -54,7 +54,8 @@ void cheControllerTask(void *pvParameters) {
 	clearAllPositions();
 
 	Rs485Power_SetVal(Rs485Power_DeviceData);
-	
+		
+	GW_ENTER_CRITICAL(ccrHolder);
 	clearDisplay();
 	displayMessage(1, "CONNECTING...", FONT_NORMAL);
 
@@ -70,6 +71,8 @@ void cheControllerTask(void *pvParameters) {
 	
 	displayCodeshelfLogo(48, 135);
 	
+	GW_EXIT_CRITICAL(ccrHolder);
+
 	for (;;) {
 
 		// Clear the RS485 string.

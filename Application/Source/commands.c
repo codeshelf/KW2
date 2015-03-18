@@ -515,6 +515,9 @@ DisplayStringLenType gDisplayDataLinePos[4];
 
 void processDisplayMsgSubCommand(BufferCntType inRXBufferNum) {
 #ifdef CHE_CONTROLLER
+	gwUINT8 ccrHolder;
+	
+	GW_ENTER_CRITICAL(ccrHolder);
 	clearDisplay();
 
 	// First display line.
@@ -540,7 +543,8 @@ void processDisplayMsgSubCommand(BufferCntType inRXBufferNum) {
 	gDisplayDataLineLen[3] = readAsPString(gDisplayDataLine[3], bufferPtr, MAX_DISPLAY_STRING_BYTES);
 
 	displayMessage(4, gDisplayDataLine[3], FONT_NORMAL);
-
+	
+	GW_EXIT_CRITICAL(ccrHolder);
 #endif
 }
 
