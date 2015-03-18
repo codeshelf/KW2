@@ -202,14 +202,16 @@ void createAssocReqCommand(BufferCntType inTXBufferNum) {
 	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), STR(GUID), UNIQUE_ID_BYTES);
 
 	// Set the hardware version (2 bytes)
-	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_HW_VER] = (HARDWARE_VERSION >> 8) & 0xFF;
-	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_HW_VER + 1] = HARDWARE_VERSION & 0xFF;
+	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_HW_VER]), STR(HARDWARE_VERSION), 4);
+	//gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_HW_VER] = (HARDWARE_VERSION >> 8) & 0xFF;
+	//gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_HW_VER + 1] = HARDWARE_VERSION & 0xFF;
 	
 	// Set the firmware version (2 bytes)
-	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_FW_VER] = (FIRMWARE_VERSION >> 8) & 0xFF;
-	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_FW_VER + 1] = FIRMWARE_VERSION & 0xFF;
+	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_FW_VER]), STR(FIRMWARE_VERSION), 4);
+	//gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_FW_VER] = (FIRMWARE_VERSION >> 8) & 0xFF;
+	//gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_FW_VER + 1] = FIRMWARE_VERSION & 0xFF;
 	
-	// Set the radio protocol version
+	// Set the radio protocol version (1 byte)
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_RP_VER] = RADIO_PROTOCOL_VERSION;
 	
 	// Set the system status register
