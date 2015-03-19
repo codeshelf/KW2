@@ -59,7 +59,7 @@ void startApplication(void);
 PE_ISR(Rs485Isr) {	
 }
 
-PE_ISR(Rs485ErrorIsr) {	
+PE_ISR(Rs485ErrorIsr) {
 }
 
 PE_ISR(ScannerIsr) {	

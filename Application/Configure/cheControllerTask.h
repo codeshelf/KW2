@@ -43,5 +43,4 @@ typedef union {
 void clearAllPositions();
 void cheControllerTask(void *pvParameters);
 
-
 #endif //CART_CONTROLLER_TASK_H

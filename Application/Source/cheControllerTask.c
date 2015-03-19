@@ -49,6 +49,7 @@ void cheControllerTask(void *pvParameters) {
 	static ScanStringType rs485String;
 	static ScanStringLenType rs485StringPos;
 	char msg[20];
+	gwUINT8 uartStatus1;
 	gwUINT8 ccrHolder;
 	
 	clearAllPositions();
@@ -85,6 +86,10 @@ void cheControllerTask(void *pvParameters) {
 		// Wait until there are characters in the FIFO
 		while ((Rs485_DEVICE ->RCFIFO) == 0) {
 			vTaskDelay(1);
+			// If the status register shows a frame error then clear it by reading S! and D.
+			if (Rs485_DEVICE->S1 & UART_S1_FE_MASK) {
+				uint8_t clearData = Rs485_DEVICE->D;
+			}
 		}
 		Wait_Waitus(750);
 

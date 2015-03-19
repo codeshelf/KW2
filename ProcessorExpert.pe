@@ -3,7 +3,7 @@
   <Header>
     <Name>ProcessorExpert</Name>
     <SavedBy>jeffw</SavedBy>
-    <ModificationStamp>334</ModificationStamp>
+    <ModificationStamp>337</ModificationStamp>
     <Date>2015-03-18</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
@@ -15391,7 +15391,7 @@
         <ItemSymbol>TransferSettings</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>MODE</ItemSymbol>
@@ -15653,7 +15653,7 @@
         <ItemSymbol>FIFOSettings</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>TXFE</ItemSymbol>
@@ -16130,7 +16130,7 @@
         <ItemSymbol>PinsGrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>ReceiverPinGrp</ItemSymbol>
@@ -16400,7 +16400,7 @@
         <ItemSymbol>ISO7816_Interrupts_Common</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>INITDE</ItemSymbol>
@@ -16512,7 +16512,7 @@
         <ItemSymbol>FIFOs_Interrupts</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>TXOF</ItemSymbol>
@@ -16555,7 +16555,7 @@
         <ItemSymbol>ISO7816_Interrupts_Error</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>WTE</ItemSymbol>
@@ -21110,7 +21110,7 @@
         <ItemSymbol>SettingsGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>PeriphClockGateFeatureGroup</ItemSymbol>
