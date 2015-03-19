@@ -54,8 +54,16 @@ void cheControllerTask(void *pvParameters) {
 	
 	clearAllPositions();
 
+	// Turn on the Rs485 bus, but disable the UART RE until it's stable.  (To avoid frame errors.)
+	Rs485_DEVICE->C2 &= ~UART_C2_RE_MASK;
 	Rs485Power_SetVal(Rs485Power_DeviceData);
-		
+	vTaskDelay(5);
+	Rs485_DEVICE->C2 &= ~UART_C2_RE_MASK;
+	RS485_TX_ON;
+	sendOneChar(Rs485_DEVICE, END);
+	sendOneChar(Rs485_DEVICE, END);
+	RS485_TX_OFF;
+
 	GW_ENTER_CRITICAL(ccrHolder);
 	clearDisplay();
 	displayMessage(1, "CONNECTING...", FONT_NORMAL);
