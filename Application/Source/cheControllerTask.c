@@ -58,7 +58,7 @@ void cheControllerTask(void *pvParameters) {
 	Rs485_DEVICE->C2 &= ~UART_C2_RE_MASK;
 	Rs485Power_SetVal(Rs485Power_DeviceData);
 	vTaskDelay(5);
-	Rs485_DEVICE->C2 &= ~UART_C2_RE_MASK;
+	Rs485_DEVICE->C2 |= UART_C2_RE_MASK;
 	RS485_TX_ON;
 	sendOneChar(Rs485_DEVICE, END);
 	sendOneChar(Rs485_DEVICE, END);
