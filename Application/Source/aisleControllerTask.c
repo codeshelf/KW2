@@ -130,18 +130,17 @@ void aisleControllerTask(void *pvParameters) {
 	for (int errorSet = 0; errorSet < TOTAL_ERROR_SETS; ++errorSet) {
 		// Light the first LED in this set.
 		ledData.position = errorSet * DISTANCE_BETWEEN_ERROR_LEDS;
-		//gLedFlashData[index++] = ledData;
-		gLedSolidData[index++] = ledData;
+		gLedFlashData[index++] = ledData;
 
 		// Light the last LED in this group.
 		ledData.position = errorSet * DISTANCE_BETWEEN_ERROR_LEDS + (DISTANCE_BETWEEN_ERROR_LEDS - 1);
-		gLedSolidData[index++] = ledData;
+		gLedFlashData[index++] = ledData;
 	}
 
 	gLedCycle = eLedCycleOff;
 	gTotalLedPositions = TOTAL_ERROR_SETS * DISTANCE_BETWEEN_ERROR_LEDS;
-	gTotalLedFlashDataElements = 0;
-	gTotalLedSolidDataElements = index;
+	gTotalLedFlashDataElements = index;
+	gTotalLedSolidDataElements = 0;
 
 	for (;;) {
 		LedDrive_DEVICE->RSER &= ~SPI_RSER_TFFF_RE_MASK;
