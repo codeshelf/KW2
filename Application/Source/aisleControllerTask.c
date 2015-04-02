@@ -43,31 +43,34 @@ void ledDriveInterrupt(void) {
 	if (LedDrive_DEVICE->RSER && SPI_RSER_TFFF_RE_MASK) {
 		if (gLedCycle == eLedCycleOff) {
 			while ((SPI_PDD_GetTxFIFOCounter(LedDrive_DEVICE) <= 1) && (gNextSolidLedPosition < gTotalLedPositions)) {
-				uint32 data1 = getNextSolidData();
-				uint32 data2 = getNextSolidData();
-				SPI_PDD_WriteData16Bits(LedDrive_DEVICE, ((uint32)(data1 << 8)));
-				SPI_PDD_WriteData16Bits(LedDrive_DEVICE, ((uint32)(data1 << 16) + (uint32)(data2 << 8)));
-				SPI_PDD_WriteData16Bits(LedDrive_DEVICE, ((uint32)(data2 << 16)));
+				uint32 data = getNextSolidData();
+
+				uint32 sample3 = data & 0xff;
+				uint32 sample2 = ((data >> 8) & 0xff);
+				uint32 sample1 = ((data >> 16) & 0xff);
+
+				SPI_PDD_WriteData8Bits(LedDrive_DEVICE, sample1);
+				SPI_PDD_WriteData8Bits(LedDrive_DEVICE, sample2);
+				SPI_PDD_WriteData8Bits(LedDrive_DEVICE, sample3);
 			}
-			if (!(gNextSolidLedPosition < gTotalLedPositions)) {
+			if ((gNextSolidLedPosition >= gTotalLedPositions)) {
 				LedDrive_DEVICE->RSER &= ~SPI_RSER_TFFF_RE_MASK;
-				LedDrive_DEVICE->MCR |= SPI_MCR_CLR_TXF_MASK;
 				//LedDrive_DEVICE->PUSHR |= SPI_PUSHR_EOQ_MASK;
 			}
 		} else {
 			while ((SPI_PDD_GetTxFIFOCounter(LedDrive_DEVICE) <= 1) && (gNextFlashLedPosition < gTotalLedPositions)) {
-				uint32 data1 = getNextFlashData();
-				uint32 data2 = getNextFlashData();
-				uint32 sample1 = ((uint32)(data1 >> 8)) & 0xffff;
-				uint32 sample2 = ((uint32)(data1 << 8) + (uint32)(data2 >> 16)) & 0xffff;
-				uint32 sample3 = ((uint32)(data2)) & 0xffff;
+				uint32 data = getNextFlashData();
+
+				uint32 sample3 = data & 0xff;
+				uint32 sample2 = ((data >> 8) & 0xff);
+				uint32 sample1 = ((data >> 16) & 0xff);
+
 				LedDrive_DEVICE->PUSHR = sample1;
 				LedDrive_DEVICE->PUSHR = sample2;
 				LedDrive_DEVICE->PUSHR = sample3;
 			}
-			if (!(gNextFlashLedPosition < gTotalLedPositions)) {
+			if ((gNextFlashLedPosition >= gTotalLedPositions)) {
 				LedDrive_DEVICE->RSER &= ~SPI_RSER_TFFF_RE_MASK;
-				LedDrive_DEVICE->MCR |= SPI_MCR_CLR_TXF_MASK;
 				//LedDrive_DEVICE->PUSHR |= SPI_PUSHR_EOQ_MASK;
 			}
 		}
@@ -116,7 +119,7 @@ void aisleControllerTask(void *pvParameters) {
 
 	gwUINT8 ccrHolder;
 
-// Create some fake test data.
+	// Create some fake test data.
 	LedDataStruct ledData;
 	ledData.channel = 1;
 	ledData.red = 0x3e;
@@ -125,36 +128,41 @@ void aisleControllerTask(void *pvParameters) {
 
 	int index = 0;
 	for (int errorSet = 0; errorSet < TOTAL_ERROR_SETS; ++errorSet) {
-// Light the first LED in this set.
+		// Light the first LED in this set.
 		ledData.position = errorSet * DISTANCE_BETWEEN_ERROR_LEDS;
-		gLedFlashData[index++] = ledData;
+		//gLedFlashData[index++] = ledData;
+		gLedSolidData[index++] = ledData;
 
-// Light the last LED in this group.
+		// Light the last LED in this group.
 		ledData.position = errorSet * DISTANCE_BETWEEN_ERROR_LEDS + (DISTANCE_BETWEEN_ERROR_LEDS - 1);
-		gLedFlashData[index++] = ledData;
+		gLedSolidData[index++] = ledData;
 	}
 
 	gLedCycle = eLedCycleOff;
 	gTotalLedPositions = TOTAL_ERROR_SETS * DISTANCE_BETWEEN_ERROR_LEDS;
-	gTotalLedFlashDataElements = index;
-	gTotalLedSolidDataElements = 0;
-	
+	gTotalLedFlashDataElements = 0;
+	gTotalLedSolidDataElements = index;
+
 	for (;;) {
 		LedDrive_DEVICE->RSER &= ~SPI_RSER_TFFF_RE_MASK;
 		LedDrive_DEVICE->MCR |= SPI_MCR_CLR_TXF_MASK;
 		//LedDrive_DEVICE->PUSHR &= ~SPI_PUSHR_EOQ_MASK;
-		
+
 		if (gLedCycle == eLedCycleOff) {
 			// Write 8 words into the FIFO - that will cause the FIFO low watermark ISR to execute.
 			gCurLedSolidDataElement = 0;
 			gNextSolidLedPosition = 0;
 			GW_ENTER_CRITICAL(ccrHolder);
-			while ((SPI_PDD_GetTxFIFOCounter(LedDrive_DEVICE) <= 1) && (gNextSolidLedPosition < gTotalLedPositions)) {
-				uint32 data1 = getNextSolidData();
-				uint32 data2 = getNextSolidData();
-				SPI_PDD_WriteData16Bits(LedDrive_DEVICE, ((uint32)(data1 << 8)));
-				SPI_PDD_WriteData16Bits(LedDrive_DEVICE, ((uint32)(data1 << 16) + (uint32)(data2 << 8)));
-				SPI_PDD_WriteData16Bits(LedDrive_DEVICE, ((uint32)(data2 << 16)));
+			while ((SPI_PDD_GetTxFIFOCounter(LedDrive_DEVICE) <= 1) && (gNextSolidLedPosition <= gTotalLedPositions)) {
+				uint32 data = getNextSolidData();
+
+				uint32 sample3 = data & 0xff;
+				uint32 sample2 = ((data >> 8) & 0xff);
+				uint32 sample1 = ((data >> 16) & 0xff);
+
+				SPI_PDD_WriteData8Bits(LedDrive_DEVICE, sample1);
+				SPI_PDD_WriteData8Bits(LedDrive_DEVICE, sample2);
+				SPI_PDD_WriteData8Bits(LedDrive_DEVICE, sample3);
 			}
 			GW_EXIT_CRITICAL(ccrHolder);
 			LedDrive_DEVICE->RSER |= SPI_RSER_TFFF_RE_MASK;
@@ -167,12 +175,13 @@ void aisleControllerTask(void *pvParameters) {
 			gCurLedFlashDataElement = 0;
 			gNextFlashLedPosition = 0;
 			GW_ENTER_CRITICAL(ccrHolder);
-			while ((SPI_PDD_GetTxFIFOCounter(LedDrive_DEVICE) <= 1) && (gNextFlashLedPosition < gTotalLedPositions)) {
-				uint32 data1 = getNextFlashData();
-				uint32 data2 = getNextFlashData();
-				uint32 sample1 = ((uint32)(data1 >> 8)) & 0xffff;
-				uint32 sample2 = ((uint32)(data1 << 8) + (uint32)(data2 >> 16)) & 0xffff;
-				uint32 sample3 = ((uint32)(data2)) & 0xffff;
+			while ((SPI_PDD_GetTxFIFOCounter(LedDrive_DEVICE) <= 1) && (gNextFlashLedPosition <= gTotalLedPositions)) {
+				uint32 data = getNextFlashData();
+
+				uint32 sample3 = data & 0xff;
+				uint32 sample2 = ((data >> 8) & 0xff);
+				uint32 sample1 = ((data >> 16) & 0xff);
+
 				LedDrive_DEVICE->PUSHR = sample1;
 				LedDrive_DEVICE->PUSHR = sample2;
 				LedDrive_DEVICE->PUSHR = sample3;
@@ -189,39 +198,40 @@ void aisleControllerTask(void *pvParameters) {
 
 // --------------------------------------------------------------------------
 gwUINT32 getNextSolidData() {
-// The default is to return zero for a blank LED.
+	// The default is to return zero for a blank LED.
 	ULedSampleType result;
 	result.word = 0x0;
 
-// Check if there are any more solid LED values to display.
+	// Check if there are any more solid LED values to display.
 	if (gCurLedSolidDataElement < gTotalLedSolidDataElements) {
-// Check if the current LED data value matches the position and channel we want to light.
+		// Check if the current LED data value matches the position and channel we want to light.
 		if ((gLedSolidData[gCurLedSolidDataElement].position == gNextSolidLedPosition)
-		        && (gLedSolidData[gCurLedSolidDataElement].channel == 1)) {
+				&& (gLedSolidData[gCurLedSolidDataElement].channel == 1)) {
 			result.bytes.byte1 = gLedSolidData[gCurLedSolidDataElement].red;
 			result.bytes.byte2 = gLedSolidData[gCurLedSolidDataElement].green;
 			result.bytes.byte3 = gLedSolidData[gCurLedSolidDataElement].blue;
 			gCurLedSolidDataElement += 1;
 		}
 	}
+
 	gNextSolidLedPosition += 1;
 	return result.word;
 }
 
 // --------------------------------------------------------------------------
 gwUINT32 getNextFlashData() {
-// The default is to return zero for a blank LED.
+	// The default is to return zero for a blank LED.
 	ULedSampleType result;
 	result.word = 0x0;
 
-// Check if there are any more flash LED values to display.
+	// Check if there are any more flash LED values to display.
 	if (gCurLedFlashDataElement < gTotalLedFlashDataElements) {
 
 		if (gLedFlashData[gCurLedFlashDataElement].position < gNextFlashLedPosition) {
 			// The next flash data element position is lower than the current LED then we've reached the end of a sequence.
 			// We return zeros until we start back at the beginning of the LED strip in the next sequence.
 		} else if ((gLedFlashData[gCurLedFlashDataElement].position == gNextFlashLedPosition)
-		        && (gLedFlashData[gCurLedFlashDataElement].channel == 1)) {
+				&& (gLedFlashData[gCurLedFlashDataElement].channel == 1)) {
 			// The current LED data value matches the position and channel we want to light.
 			result.bytes.byte1 = gLedFlashData[gCurLedFlashDataElement].red;
 			result.bytes.byte2 = gLedFlashData[gCurLedFlashDataElement].green;
@@ -229,6 +239,7 @@ gwUINT32 getNextFlashData() {
 			gCurLedFlashDataElement += 1;
 		}
 	}
+
 	gNextFlashLedPosition += 1;
 	return result.word;
 }
