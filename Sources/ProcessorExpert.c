@@ -33,15 +33,10 @@
 #include "UTIL2.h"
 #include "INT_PORTB.h"
 #include "Wait.h"
-#include "Rs485.h"
-#include "Rs485TxCtl.h"
 #include "Critical.h"
-#include "Scanner.h"
 #include "Watchdog.h"
 #include "EventTimer.h"
-#include "SharpDisplay.h"
-#include "SharpDisplayCS.h"
-#include "BitIoLdd1.h"
+#include "LedDrive.h"
 #include "EepromCS.h"
 #include "BitIoLdd2.h"
 #include "StatusLedClk.h"
@@ -59,7 +54,7 @@ void startApplication(void);
 PE_ISR(Rs485Isr) {	
 }
 
-PE_ISR(Rs485ErrorIsr) {	
+PE_ISR(Rs485ErrorIsr) {
 }
 
 PE_ISR(ScannerIsr) {	

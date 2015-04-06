@@ -22,7 +22,7 @@ void sendByte(uint8_t data) {
 	while (SPI_PDD_GetTxFIFOCounter(SharpDisplay_DEVICE) > 1)
 		;
 	SPI_PDD_WriteData8Bits(SharpDisplay_DEVICE, data);
-	Wait_Waitns(700);
+	Wait_Waitns(800);
 
 }
 
@@ -33,7 +33,7 @@ void sendByteLSB(uint8_t data) {
 	while (SPI_PDD_GetTxFIFOCounter(SharpDisplay_DEVICE) > 1)
 		;
 	SPI_PDD_WriteData8Bits(SharpDisplay_DEVICE, data);
-	Wait_Waitns(700);
+	Wait_Waitns(800);
 
 	SPI_PDD_SetDataShiftOrder(SharpDisplay_DEVICE, 0, SPI_PDD_MSB_FIRST);
 }
@@ -76,10 +76,13 @@ void clearDisplay() {
 	// Send the clear screen command rather than doing a HW refresh (quicker)
 	DISPLAY_CS_ON
 	sendByte(LCDCMD_CLEAR);
+	// Wait until the display fully erases.
+	Wait_Waitms(2);
 	DISPLAY_CS_OFF
 
 	// Clear the display buffer as well.
 	memset(&displayBuffer, 0x00, DISPLAY_BYTES);
+	
 }
 
 void sendRowBuffer(uint16_t row, byte* rowBuffer) {
@@ -233,9 +236,9 @@ void displayString(uint16_t x, uint16_t y, char_t *stringPtr, uint8_t size) {
 
 void displayMessage(uint8_t line, char_t *stringPtr, uint8_t size) {
 	if (line == 1) {
-		displayString(5, 5 + ((line - 1) * 30 * size), stringPtr, 2);
+		displayString(15, 15 + ((line - 1) * 30 * size), stringPtr, 2);
 	} else {
-		displayString(5, 5 + (line * 30 * size), stringPtr, size);
+		displayString(15, 15 + (line * 30 * size), stringPtr, size);
 	}
 }
 

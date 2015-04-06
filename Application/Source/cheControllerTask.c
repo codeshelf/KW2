@@ -50,12 +50,22 @@ void cheControllerTask(void *pvParameters) {
 	static ScanStringType rs485String;
 	static ScanStringLenType rs485StringPos;
 	char msg[20];
+	gwUINT8 uartStatus1;
 	gwUINT8 ccrHolder;
 	
 	clearAllPositions();
 
+	// Turn on the Rs485 bus, but disable the UART RE until it's stable.  (To avoid frame errors.)
+	Rs485_DEVICE->C2 &= ~UART_C2_RE_MASK;
 	Rs485Power_SetVal(Rs485Power_DeviceData);
-	
+	vTaskDelay(5);
+	Rs485_DEVICE->C2 |= UART_C2_RE_MASK;
+	RS485_TX_ON;
+	sendOneChar(Rs485_DEVICE, END);
+	sendOneChar(Rs485_DEVICE, END);
+	RS485_TX_OFF;
+
+	GW_ENTER_CRITICAL(ccrHolder);
 	clearDisplay();
 	displayMessage(1, "CONNECTING...", FONT_NORMAL);
 	
@@ -71,18 +81,20 @@ void cheControllerTask(void *pvParameters) {
 	//displayMessage(2, data3, FONT_NORMAL);
 
 
-	strcpy(msg, "VERSIONS HW: ");
+	strcpy(msg, "HW v");
 	strcat(msg, STR(HARDWARE_VERSION));
-	strcat(msg, " FW: ");
+	strcat(msg, " FW v");
 	strcat(msg, STR(FIRMWARE_VERSION));
 	//displayMessage(2, msg, FONT_NORMAL);
 	
-	strcpy(msg, "GUID: ");
+	strcpy(msg, "GUID ");
 	strcat(msg, STR(GUID));
 	displayMessage(3, msg, FONT_NORMAL);
 	
 	displayCodeshelfLogo(48, 135);
 	
+	GW_EXIT_CRITICAL(ccrHolder);
+
 	for (;;) {
 
 		// Clear the RS485 string.
@@ -95,6 +107,10 @@ void cheControllerTask(void *pvParameters) {
 		// Wait until there are characters in the FIFO
 		while ((Rs485_DEVICE ->RCFIFO) == 0) {
 			vTaskDelay(1);
+			// If the status register shows a frame error then clear it by reading S! and D.
+			if (Rs485_DEVICE->S1 & UART_S1_FE_MASK) {
+				uint8_t clearData = Rs485_DEVICE->D;
+			}
 		}
 		Wait_Waitus(750);
 

@@ -128,7 +128,7 @@ void remoteMgmtTask(void *pvParameters) {
 							assocSubCmd = getAssocSubCommand(rxBufferNum);
 							if (assocSubCmd == eCmdAssocACK) {
 								checked = TRUE;
-								setStatusLed(0, 1, 5);
+								setStatusLed(0, 0, 1);
 								break;
 							}
 						}
