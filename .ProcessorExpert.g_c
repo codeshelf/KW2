@@ -18,19 +18,39 @@
         <Line>PE_Const</Line>
         <Line>IO_Map</Line>
       </GenSharedModules>
+<<<<<<< Upstream, based on origin/master
       <ShrdHeaderAge0>1182949677</ShrdHeaderAge0>
+=======
+      <ShrdHeaderAge0>1183319195</ShrdHeaderAge0>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <ShrdCodeAge0>-1</ShrdCodeAge0>
       <ShrdAsemblAge0>-1</ShrdAsemblAge0>
+<<<<<<< Upstream, based on origin/master
       <ShrdHeaderAge1>1182949677</ShrdHeaderAge1>
+=======
+      <ShrdHeaderAge1>1183319195</ShrdHeaderAge1>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <ShrdCodeAge1>-1</ShrdCodeAge1>
       <ShrdAsemblAge1>-1</ShrdAsemblAge1>
+<<<<<<< Upstream, based on origin/master
       <ShrdHeaderAge2>1182949677</ShrdHeaderAge2>
+=======
+      <ShrdHeaderAge2>1183319195</ShrdHeaderAge2>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <ShrdCodeAge2>-1</ShrdCodeAge2>
       <ShrdAsemblAge2>-1</ShrdAsemblAge2>
+<<<<<<< Upstream, based on origin/master
       <ShrdHeaderAge3>1182949677</ShrdHeaderAge3>
+=======
+      <ShrdHeaderAge3>1183319195</ShrdHeaderAge3>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <ShrdCodeAge3>-1</ShrdCodeAge3>
       <ShrdAsemblAge3>-1</ShrdAsemblAge3>
+<<<<<<< Upstream, based on origin/master
       <GenExtraFiles lines_count="47">
+=======
+      <GenExtraFiles lines_count="46">
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
         <Line>Generated_Code\event_groups.h</Line>
         <Line>Generated_Code\event_groups.c</Line>
         <Line>Generated_Code\timers.c</Line>
@@ -62,8 +82,12 @@
         <Line>Generated_Code\croutine.c</Line>
         <Line>Generated_Code\croutine.h</Line>
         <Line>Documentation\doxygen\Watchdog.txt</Line>
+<<<<<<< Upstream, based on origin/master
         <Line>Documentation\doxygen\EventTimer.txt</Line>
         <Line>Documentation\doxygen\LedDrive.txt</Line>
+=======
+        <Line>Documentation\doxygen\Tuner.txt</Line>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
         <Line>Documentation\doxygen\BitIoLdd2.txt</Line>
         <Line>Documentation\doxygen\StatusLedClk.txt</Line>
         <Line>Documentation\doxygen\StatusLedSdi.txt</Line>
@@ -79,6 +103,7 @@
         <Line>Project_Settings\Linker_Files\ProcessorExpert.ld</Line>
         <Line>Generated_Code\Vectors.c</Line>
       </GenExtraFiles>
+<<<<<<< Upstream, based on origin/master
       <GenExtraFileSrcDir41>lib\doxygen\</GenExtraFileSrcDir41>
       <XtraAge0>1182949679</XtraAge0>
       <XtraAge1>1182949678</XtraAge1>
@@ -113,12 +138,52 @@
       <XtraAge44>1182949677</XtraAge44>
       <XtraAge46>1182949677</XtraAge46>
       <GenExtraFileType46>4</GenExtraFileType46>
+=======
+      <GenExtraFileSrcDir40>lib\doxygen\</GenExtraFileSrcDir40>
+      <XtraAge0>1183319195</XtraAge0>
+      <XtraAge1>1183319195</XtraAge1>
+      <XtraAge2>1183319195</XtraAge2>
+      <XtraAge3>1183319195</XtraAge3>
+      <XtraAge4>1183319195</XtraAge4>
+      <XtraAge5>1183319195</XtraAge5>
+      <XtraAge6>1183319195</XtraAge6>
+      <XtraAge7>1183319195</XtraAge7>
+      <XtraAge8>1183319195</XtraAge8>
+      <XtraAge9>1183319195</XtraAge9>
+      <XtraAge10>1183319195</XtraAge10>
+      <XtraAge11>1183319195</XtraAge11>
+      <XtraAge12>1183319195</XtraAge12>
+      <XtraAge13>1183319195</XtraAge13>
+      <XtraAge14>1183319195</XtraAge14>
+      <XtraAge15>1183319195</XtraAge15>
+      <XtraAge16>1183319195</XtraAge16>
+      <XtraAge17>1183319195</XtraAge17>
+      <XtraAge18>1183319195</XtraAge18>
+      <XtraAge19>1183319195</XtraAge19>
+      <XtraAge21>1183319195</XtraAge21>
+      <XtraAge22>1183319195</XtraAge22>
+      <XtraAge23>1183319195</XtraAge23>
+      <XtraAge24>1183319195</XtraAge24>
+      <XtraAge25>1183319195</XtraAge25>
+      <XtraAge26>1183319195</XtraAge26>
+      <XtraAge27>1183319195</XtraAge27>
+      <XtraAge28>1183319195</XtraAge28>
+      <XtraAge29>1183319195</XtraAge29>
+      <XtraAge42>1183319195</XtraAge42>
+      <XtraAge43>1183319195</XtraAge43>
+      <XtraAge45>1183319195</XtraAge45>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <GenExtraFileType45>4</GenExtraFileType45>
       <GenExtraFileType44>4</GenExtraFileType44>
       <GenExtraFileType43>4</GenExtraFileType43>
       <GenExtraFileType42>4</GenExtraFileType42>
+<<<<<<< Upstream, based on origin/master
       <GenExtraFileType41>5</GenExtraFileType41>
       <GenExtraFileType40>4</GenExtraFileType40>
+=======
+      <GenExtraFileType41>4</GenExtraFileType41>
+      <GenExtraFileType40>5</GenExtraFileType40>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <GenExtraFileType39>4</GenExtraFileType39>
       <GenExtraFileType38>4</GenExtraFileType38>
       <GenExtraFileType37>4</GenExtraFileType37>
@@ -205,13 +270,16 @@
         <Line>Cpu_OnSupervisorCall</Line>
         <Line>Cpu_OnPendableService</Line>
       </GenMethodsInEvents>
+<<<<<<< Upstream, based on origin/master
       <GenAllModules lines_count="21">
+=======
+      <GenAllModules lines_count="20">
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
         <Line>BitIoLdd2</Line>
         <Line>Cpu</Line>
         <Line>Critical</Line>
         <Line>EepromCS</Line>
         <Line>Events</Line>
-        <Line>EventTimer</Line>
         <Line>FRTOS1</Line>
         <Line>INT_PORTB</Line>
         <Line>IO_Map</Line>
@@ -223,13 +291,18 @@
         <Line>ScannerPower</Line>
         <Line>StatusLedClk</Line>
         <Line>StatusLedSdi</Line>
+        <Line>Tuner</Line>
         <Line>UTIL1</Line>
         <Line>UTIL2</Line>
         <Line>Wait</Line>
         <Line>Watchdog</Line>
       </GenAllModules>
       <GenExternModules lines_count="0" />
+<<<<<<< Upstream, based on origin/master
       <GenBeanModules lines_count="15">
+=======
+      <GenBeanModules lines_count="14">
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
         <Line>FRTOS1</Line>
         <Line>UTIL1</Line>
         <Line>UTIL2</Line>
@@ -237,8 +310,12 @@
         <Line>Critical</Line>
         <Line>Wait</Line>
         <Line>Watchdog</Line>
+<<<<<<< Upstream, based on origin/master
         <Line>EventTimer</Line>
         <Line>LedDrive</Line>
+=======
+        <Line>Tuner</Line>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
         <Line>EepromCS</Line>
         <Line>BitIoLdd2</Line>
         <Line>StatusLedClk</Line>
@@ -249,7 +326,11 @@
     </GenFiles>
     <SignalListFile>Documentation\ProcessorExpert_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
+<<<<<<< Upstream, based on origin/master
     <ProjectModificationStamp>339</ProjectModificationStamp>
+=======
+    <ProjectModificationStamp>355</ProjectModificationStamp>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
   </Options>
   <CpuID_225>
     <Generated>true</Generated>
@@ -257,8 +338,13 @@
     <GenComponentVersion>01.006</GenComponentVersion>
     <GenDriverVersion>01.04</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
+<<<<<<< Upstream, based on origin/master
     <HeaderAge>1182949677</HeaderAge>
     <CodeAge>1182949677</CodeAge>
+=======
+    <HeaderAge>1183319195</HeaderAge>
+    <CodeAge>1183319195</CodeAge>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>14</GenNumMethods>
     <SetClockConfiguration>false</SetClockConfiguration>
@@ -356,11 +442,20 @@
   <ComponentID_8>
     <Generated>true</Generated>
     <GenCompName>FRTOS1</GenCompName>
+<<<<<<< Upstream, based on origin/master
     <GenComponentVersion>01.402</GenComponentVersion>
+=======
+    <GenComponentVersion>01.411</GenComponentVersion>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
+<<<<<<< Upstream, based on origin/master
     <HeaderAge>1182949679</HeaderAge>
     <CodeAge>1182949679</CodeAge>
+=======
+    <HeaderAge>1183319195</HeaderAge>
+    <CodeAge>1183319195</CodeAge>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>105</GenNumMethods>
     <xTaskCreate>true</xTaskCreate>
@@ -495,517 +590,883 @@
       <MethodPos0>xTaskCreate</MethodPos0>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>220</LineBeg>
       <LineEnd>263</LineEnd>
+=======
+      <LineBeg>221</LineBeg>
+      <LineEnd>264</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos1>vTaskStartScheduler</MethodPos1>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>264</LineBeg>
       <LineEnd>283</LineEnd>
+=======
+      <LineBeg>265</LineBeg>
+      <LineEnd>284</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos2>taskYIELD</MethodPos2>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>284</LineBeg>
       <LineEnd>295</LineEnd>
+=======
+      <LineBeg>285</LineBeg>
+      <LineEnd>296</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos3>taskENTER_CRITICAL</MethodPos3>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>296</LineBeg>
       <LineEnd>311</LineEnd>
+=======
+      <LineBeg>297</LineBeg>
+      <LineEnd>312</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos4>taskEXIT_CRITICAL</MethodPos4>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>312</LineBeg>
       <LineEnd>326</LineEnd>
+=======
+      <LineBeg>313</LineBeg>
+      <LineEnd>327</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos5>taskDISABLE_INTERRUPTS</MethodPos5>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>327</LineBeg>
       <LineEnd>338</LineEnd>
+=======
+      <LineBeg>328</LineBeg>
+      <LineEnd>339</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos6>taskENABLE_INTERRUPTS</MethodPos6>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>339</LineBeg>
       <LineEnd>350</LineEnd>
+=======
+      <LineBeg>340</LineBeg>
+      <LineEnd>351</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos7>vTaskSuspendAll</MethodPos7>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>351</LineBeg>
       <LineEnd>369</LineEnd>
+=======
+      <LineBeg>352</LineBeg>
+      <LineEnd>370</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos8>xTaskResumeAll</MethodPos8>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>370</LineBeg>
       <LineEnd>387</LineEnd>
+=======
+      <LineBeg>371</LineBeg>
+      <LineEnd>388</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos9>vTaskDelay</MethodPos9>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>388</LineBeg>
       <LineEnd>420</LineEnd>
+=======
+      <LineBeg>389</LineBeg>
+      <LineEnd>421</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos10>vTaskDelayUntil</MethodPos10>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>421</LineBeg>
       <LineEnd>484</LineEnd>
+=======
+      <LineBeg>422</LineBeg>
+      <LineEnd>485</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos11>uxTaskPriorityGet</MethodPos11>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>485</LineBeg>
       <LineEnd>501</LineEnd>
+=======
+      <LineBeg>486</LineBeg>
+      <LineEnd>502</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos12>vTaskPrioritySet</MethodPos12>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>502</LineBeg>
       <LineEnd>520</LineEnd>
+=======
+      <LineBeg>503</LineBeg>
+      <LineEnd>521</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos13>xSemaphoreTakeRecursive</MethodPos13>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>521</LineBeg>
       <LineEnd>559</LineEnd>
+=======
+      <LineBeg>522</LineBeg>
+      <LineEnd>560</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos14>xSemaphoreGiveRecursive</MethodPos14>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>560</LineBeg>
       <LineEnd>587</LineEnd>
+=======
+      <LineBeg>561</LineBeg>
+      <LineEnd>588</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos15>xSemaphoreCreateRecursiveMutex</MethodPos15>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>588</LineBeg>
       <LineEnd>624</LineEnd>
+=======
+      <LineBeg>589</LineBeg>
+      <LineEnd>625</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos16>vTaskSuspend</MethodPos16>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>625</LineBeg>
       <LineEnd>645</LineEnd>
+=======
+      <LineBeg>626</LineBeg>
+      <LineEnd>646</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos17>vTaskResume</MethodPos17>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>646</LineBeg>
       <LineEnd>663</LineEnd>
+=======
+      <LineBeg>647</LineBeg>
+      <LineEnd>664</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos18>xSemaphoreCreateMutex</MethodPos18>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>664</LineBeg>
       <LineEnd>709</LineEnd>
+=======
+      <LineBeg>665</LineBeg>
+      <LineEnd>710</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos19>xSemaphoreTake</MethodPos19>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>710</LineBeg>
       <LineEnd>753</LineEnd>
+=======
+      <LineBeg>711</LineBeg>
+      <LineEnd>754</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos20>xSemaphoreGive</MethodPos20>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>754</LineBeg>
       <LineEnd>784</LineEnd>
+=======
+      <LineBeg>755</LineBeg>
+      <LineEnd>785</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos21>vSemaphoreCreateBinary</MethodPos21>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>785</LineBeg>
       <LineEnd>831</LineEnd>
+=======
+      <LineBeg>786</LineBeg>
+      <LineEnd>832</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos22>xSemaphoreCreateCounting</MethodPos22>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>832</LineBeg>
       <LineEnd>873</LineEnd>
+=======
+      <LineBeg>833</LineBeg>
+      <LineEnd>874</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos23>xSemaphoreGiveFromISR</MethodPos23>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>874</LineBeg>
       <LineEnd>906</LineEnd>
+=======
+      <LineBeg>875</LineBeg>
+      <LineEnd>907</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos24>vSemaphoreDelete</MethodPos24>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>907</LineBeg>
       <LineEnd>923</LineEnd>
+=======
+      <LineBeg>908</LineBeg>
+      <LineEnd>924</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos25>pvPortMalloc</MethodPos25>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>924</LineBeg>
       <LineEnd>940</LineEnd>
+=======
+      <LineBeg>925</LineBeg>
+      <LineEnd>941</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos26>vPortFree</MethodPos26>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>941</LineBeg>
       <LineEnd>954</LineEnd>
+=======
+      <LineBeg>942</LineBeg>
+      <LineEnd>955</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos27>xTaskGetTickCount</MethodPos27>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>955</LineBeg>
       <LineEnd>968</LineEnd>
+=======
+      <LineBeg>956</LineBeg>
+      <LineEnd>969</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos28>xTaskGetSchedulerState</MethodPos28>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>969</LineBeg>
       <LineEnd>984</LineEnd>
+=======
+      <LineBeg>970</LineBeg>
+      <LineEnd>985</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos29>uxTaskGetStackHighWaterMark</MethodPos29>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>985</LineBeg>
       <LineEnd>1008</LineEnd>
+=======
+      <LineBeg>986</LineBeg>
+      <LineEnd>1009</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos30>uxTaskGetNumberOfTasks</MethodPos30>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1009</LineBeg>
       <LineEnd>1021</LineEnd>
+=======
+      <LineBeg>1010</LineBeg>
+      <LineEnd>1022</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos31>xPortGetFreeHeapSize</MethodPos31>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1022</LineBeg>
       <LineEnd>1035</LineEnd>
+=======
+      <LineBeg>1023</LineBeg>
+      <LineEnd>1036</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos32>xQueueCreate</MethodPos32>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1036</LineBeg>
       <LineEnd>1057</LineEnd>
+=======
+      <LineBeg>1037</LineBeg>
+      <LineEnd>1058</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos33>xQueueSendToFront</MethodPos33>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1058</LineBeg>
       <LineEnd>1101</LineEnd>
+=======
+      <LineBeg>1059</LineBeg>
+      <LineEnd>1102</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos34>xQueueSendToBack</MethodPos34>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1102</LineBeg>
       <LineEnd>1145</LineEnd>
+=======
+      <LineBeg>1103</LineBeg>
+      <LineEnd>1146</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos35>xQueueReceive</MethodPos35>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1146</LineBeg>
       <LineEnd>1191</LineEnd>
+=======
+      <LineBeg>1147</LineBeg>
+      <LineEnd>1192</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos36>xQueuePeek</MethodPos36>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1192</LineBeg>
       <LineEnd>1239</LineEnd>
+=======
+      <LineBeg>1193</LineBeg>
+      <LineEnd>1240</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos37>vQueueDelete</MethodPos37>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1240</LineBeg>
       <LineEnd>1262</LineEnd>
+=======
+      <LineBeg>1241</LineBeg>
+      <LineEnd>1263</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos38>uxQueueMessagesWaiting</MethodPos38>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1263</LineBeg>
       <LineEnd>1280</LineEnd>
+=======
+      <LineBeg>1264</LineBeg>
+      <LineEnd>1281</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos39>uxQueueMessagesWaitingfromISR</MethodPos39>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1281</LineBeg>
       <LineEnd>1298</LineEnd>
+=======
+      <LineBeg>1282</LineBeg>
+      <LineEnd>1299</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos40>xQueueReceiveFromISR</MethodPos40>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1299</LineBeg>
       <LineEnd>1343</LineEnd>
+=======
+      <LineBeg>1300</LineBeg>
+      <LineEnd>1344</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos41>xQueueSendToFrontFromISR</MethodPos41>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1344</LineBeg>
       <LineEnd>1378</LineEnd>
+=======
+      <LineBeg>1345</LineBeg>
+      <LineEnd>1379</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos42>xQueueSendToBackFromISR</MethodPos42>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1379</LineBeg>
       <LineEnd>1413</LineEnd>
+=======
+      <LineBeg>1380</LineBeg>
+      <LineEnd>1414</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos43>xTaskResumeFromISR</MethodPos43>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1414</LineBeg>
       <LineEnd>1433</LineEnd>
+=======
+      <LineBeg>1415</LineBeg>
+      <LineEnd>1434</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos44>xQueueReset</MethodPos44>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1434</LineBeg>
       <LineEnd>1458</LineEnd>
+=======
+      <LineBeg>1435</LineBeg>
+      <LineEnd>1459</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos45>xSemaphoreGetMutexHolder</MethodPos45>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1459</LineBeg>
       <LineEnd>1483</LineEnd>
+=======
+      <LineBeg>1460</LineBeg>
+      <LineEnd>1484</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos46>xSemaphoreTakeFromISR</MethodPos46>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1484</LineBeg>
       <LineEnd>1521</LineEnd>
+=======
+      <LineBeg>1485</LineBeg>
+      <LineEnd>1522</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos47>Init</MethodPos47>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1522</LineBeg>
       <LineEnd>1533</LineEnd>
+=======
+      <LineBeg>1523</LineBeg>
+      <LineEnd>1534</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos48>xTaskGetTickCountFromISR</MethodPos48>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1534</LineBeg>
       <LineEnd>1548</LineEnd>
+=======
+      <LineBeg>1535</LineBeg>
+      <LineEnd>1549</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos49>xQueuePeekFromISR</MethodPos49>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1549</LineBeg>
       <LineEnd>1597</LineEnd>
+=======
+      <LineBeg>1550</LineBeg>
+      <LineEnd>1598</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos50>xQueueOverwrite</MethodPos50>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1598</LineBeg>
       <LineEnd>1638</LineEnd>
+=======
+      <LineBeg>1599</LineBeg>
+      <LineEnd>1639</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos51>xQueueOverwriteFromISR</MethodPos51>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1639</LineBeg>
       <LineEnd>1678</LineEnd>
+=======
+      <LineBeg>1640</LineBeg>
+      <LineEnd>1679</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos52>vQueueAddToRegistry</MethodPos52>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1679</LineBeg>
       <LineEnd>1696</LineEnd>
+=======
+      <LineBeg>1680</LineBeg>
+      <LineEnd>1697</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos53>vQueueUnregisterQueue</MethodPos53>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1697</LineBeg>
       <LineEnd>1711</LineEnd>
+=======
+      <LineBeg>1698</LineBeg>
+      <LineEnd>1712</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos54>xQueueIsQueueFullFromISR</MethodPos54>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1712</LineBeg>
       <LineEnd>1729</LineEnd>
+=======
+      <LineBeg>1713</LineBeg>
+      <LineEnd>1730</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos55>xQueueIsQueueEmptyFromISR</MethodPos55>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1730</LineBeg>
       <LineEnd>1747</LineEnd>
+=======
+      <LineBeg>1731</LineBeg>
+      <LineEnd>1748</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos56>xEventGroupCreate</MethodPos56>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1748</LineBeg>
       <LineEnd>1773</LineEnd>
+=======
+      <LineBeg>1749</LineBeg>
+      <LineEnd>1774</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos57>xEventGroupWaitBits</MethodPos57>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1774</LineBeg>
       <LineEnd>1855</LineEnd>
+=======
+      <LineBeg>1775</LineBeg>
+      <LineEnd>1856</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos58>xEventGroupSetBits</MethodPos58>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1856</LineBeg>
       <LineEnd>1899</LineEnd>
+=======
+      <LineBeg>1857</LineBeg>
+      <LineEnd>1900</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos59>xEventGroupSetBitsFromISR</MethodPos59>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1900</LineBeg>
       <LineEnd>1969</LineEnd>
+=======
+      <LineBeg>1901</LineBeg>
+      <LineEnd>1970</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos60>xEventGroupClearBits</MethodPos60>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1970</LineBeg>
       <LineEnd>2012</LineEnd>
+=======
+      <LineBeg>1971</LineBeg>
+      <LineEnd>2013</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos61>xEventGroupClearBitsFromISR</MethodPos61>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2013</LineBeg>
       <LineEnd>2052</LineEnd>
+=======
+      <LineBeg>2014</LineBeg>
+      <LineEnd>2053</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos62>xEventGroupGetBits</MethodPos62>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2053</LineBeg>
       <LineEnd>2075</LineEnd>
+=======
+      <LineBeg>2054</LineBeg>
+      <LineEnd>2076</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos63>xEventGroupGetBitsFromISR</MethodPos63>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2076</LineBeg>
       <LineEnd>2096</LineEnd>
+=======
+      <LineBeg>2077</LineBeg>
+      <LineEnd>2097</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos64>xEventGroupSync</MethodPos64>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2097</LineBeg>
       <LineEnd>2141</LineEnd>
+=======
+      <LineBeg>2098</LineBeg>
+      <LineEnd>2142</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos65>xTimerCreate</MethodPos65>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2142</LineBeg>
       <LineEnd>2199</LineEnd>
+=======
+      <LineBeg>2143</LineBeg>
+      <LineEnd>2200</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos66>xTimerIsTimerActive</MethodPos66>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2200</LineBeg>
       <LineEnd>2222</LineEnd>
+=======
+      <LineBeg>2201</LineBeg>
+      <LineEnd>2223</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos67>xTimerStart</MethodPos67>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2223</LineBeg>
       <LineEnd>2283</LineEnd>
+=======
+      <LineBeg>2224</LineBeg>
+      <LineEnd>2284</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos68>xTimerStop</MethodPos68>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2284</LineBeg>
       <LineEnd>2333</LineEnd>
+=======
+      <LineBeg>2285</LineBeg>
+      <LineEnd>2334</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos69>xTimerChangePeriod</MethodPos69>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2334</LineBeg>
       <LineEnd>2393</LineEnd>
+=======
+      <LineBeg>2335</LineBeg>
+      <LineEnd>2394</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos70>xTimerDelete</MethodPos70>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2394</LineBeg>
       <LineEnd>2439</LineEnd>
+=======
+      <LineBeg>2395</LineBeg>
+      <LineEnd>2440</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos71>xTimerReset</MethodPos71>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2440</LineBeg>
       <LineEnd>2503</LineEnd>
+=======
+      <LineBeg>2441</LineBeg>
+      <LineEnd>2504</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos72>xTimerStartFromISR</MethodPos72>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2504</LineBeg>
       <LineEnd>2553</LineEnd>
+=======
+      <LineBeg>2505</LineBeg>
+      <LineEnd>2554</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos73>xTimerStopFromISR</MethodPos73>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2554</LineBeg>
       <LineEnd>2600</LineEnd>
     </MethodPos>
@@ -1099,6 +1560,101 @@
       <ModuleType>Header</ModuleType>
       <LineBeg>3246</LineBeg>
       <LineEnd>3334</LineEnd>
+=======
+      <LineBeg>2555</LineBeg>
+      <LineEnd>2601</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos74>xTimerChangePeriodFromISR</MethodPos74>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>2602</LineBeg>
+      <LineEnd>2661</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos75>xTimerResetFromISR</MethodPos75>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>2662</LineBeg>
+      <LineEnd>2711</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos76>pvTimerGetTimerID</MethodPos76>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>2712</LineBeg>
+      <LineEnd>2731</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos77>xTimerGetTimerDaemonTaskHandle</MethodPos77>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>2732</LineBeg>
+      <LineEnd>2751</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos78>pcTimerGetTimerName</MethodPos78>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>2752</LineBeg>
+      <LineEnd>2768</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos79>xTimerPendFunctionCall</MethodPos79>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>2769</LineBeg>
+      <LineEnd>2819</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos80>xTimerPendFunctionCallFromISR</MethodPos80>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>2820</LineBeg>
+      <LineEnd>2889</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos81>xTaskNotifyGive</MethodPos81>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>2890</LineBeg>
+      <LineEnd>2931</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos82>ulTaskNotifyTake</MethodPos82>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>2932</LineBeg>
+      <LineEnd>3002</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos83>vTaskNotifyGiveFromISR</MethodPos83>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>3003</LineBeg>
+      <LineEnd>3056</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos84>xTaskNotify</MethodPos84>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>3057</LineBeg>
+      <LineEnd>3143</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos85>xTaskNotifyFromISR</MethodPos85>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>3144</LineBeg>
+      <LineEnd>3246</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos86>xTaskNotifyWait</MethodPos86>
+      <MethodType>method</MethodType>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>3247</LineBeg>
+      <LineEnd>3335</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos87>xTaskCreate</MethodPos87>
@@ -1827,13 +2383,26 @@
   <ComponentID_10>
     <Generated>true</Generated>
     <GenCompName>UTIL1</GenCompName>
+<<<<<<< Upstream, based on origin/master
     <GenComponentVersion>01.106</GenComponentVersion>
+=======
+    <GenComponentVersion>01.109</GenComponentVersion>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
+<<<<<<< Upstream, based on origin/master
     <HeaderAge>1182949678</HeaderAge>
     <CodeAge>1182949678</CodeAge>
+=======
+    <HeaderAge>1183319195</HeaderAge>
+    <CodeAge>1183319195</CodeAge>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <AsemblAge>-1</AsemblAge>
+<<<<<<< Upstream, based on origin/master
     <GenNumMethods>52</GenNumMethods>
+=======
+    <GenNumMethods>53</GenNumMethods>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <strcpy>true</strcpy>
     <strcat>true</strcat>
     <chcat>true</chcat>
@@ -1874,6 +2443,7 @@
     <ScanDecimal16sNumber>true</ScanDecimal16sNumber>
     <ScanDecimal32uNumber>true</ScanDecimal32uNumber>
     <ScanDecimal32sNumber>true</ScanDecimal32sNumber>
+    <ScanDecimal32sDotNumber>true</ScanDecimal32sDotNumber>
     <ScanHex8uNumber>true</ScanHex8uNumber>
     <ScanHex8uNumberNoPrefix>true</ScanHex8uNumberNoPrefix>
     <ScanHex16uNumber>true</ScanHex16uNumber>
@@ -1890,366 +2460,626 @@
     <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
     <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
     <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
+<<<<<<< Upstream, based on origin/master
     <GenMethodPos>106</GenMethodPos>
+=======
+    <GenMethodPos>108</GenMethodPos>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <MethodPos>
       <MethodPos0>strcpy</MethodPos0>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>112</LineBeg>
       <LineEnd>128</LineEnd>
+=======
+      <LineBeg>113</LineBeg>
+      <LineEnd>129</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos1>strcat</MethodPos1>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>129</LineBeg>
       <LineEnd>145</LineEnd>
+=======
+      <LineBeg>130</LineBeg>
+      <LineEnd>146</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos2>Num16sToStr</MethodPos2>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>146</LineBeg>
       <LineEnd>161</LineEnd>
+=======
+      <LineBeg>147</LineBeg>
+      <LineEnd>162</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos3>Num16sToStrFormatted</MethodPos3>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>162</LineBeg>
       <LineEnd>179</LineEnd>
+=======
+      <LineBeg>163</LineBeg>
+      <LineEnd>180</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos4>strcatNum16s</MethodPos4>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>180</LineBeg>
       <LineEnd>195</LineEnd>
+=======
+      <LineBeg>181</LineBeg>
+      <LineEnd>196</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos5>strcatNum16sFormatted</MethodPos5>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>196</LineBeg>
       <LineEnd>214</LineEnd>
+=======
+      <LineBeg>197</LineBeg>
+      <LineEnd>215</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos6>strcatNum8Hex</MethodPos6>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>215</LineBeg>
       <LineEnd>231</LineEnd>
+=======
+      <LineBeg>216</LineBeg>
+      <LineEnd>232</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos7>strcatNum16Hex</MethodPos7>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>232</LineBeg>
       <LineEnd>248</LineEnd>
+=======
+      <LineBeg>233</LineBeg>
+      <LineEnd>249</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos8>strcatNum32s</MethodPos8>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>249</LineBeg>
       <LineEnd>264</LineEnd>
+=======
+      <LineBeg>250</LineBeg>
+      <LineEnd>265</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos9>Num32sToStr</MethodPos9>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>265</LineBeg>
       <LineEnd>280</LineEnd>
+=======
+      <LineBeg>266</LineBeg>
+      <LineEnd>281</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos10>strcatNum32Hex</MethodPos10>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>281</LineBeg>
       <LineEnd>297</LineEnd>
+=======
+      <LineBeg>282</LineBeg>
+      <LineEnd>298</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos11>IsLeapYear</MethodPos11>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>298</LineBeg>
       <LineEnd>311</LineEnd>
+=======
+      <LineBeg>299</LineBeg>
+      <LineEnd>312</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos12>WeekDay</MethodPos12>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>312</LineBeg>
       <LineEnd>329</LineEnd>
+=======
+      <LineBeg>313</LineBeg>
+      <LineEnd>330</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos13>chcat</MethodPos13>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>330</LineBeg>
       <LineEnd>346</LineEnd>
+=======
+      <LineBeg>331</LineBeg>
+      <LineEnd>347</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos14>strcatNum32u</MethodPos14>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>347</LineBeg>
       <LineEnd>362</LineEnd>
+=======
+      <LineBeg>348</LineBeg>
+      <LineEnd>363</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos15>Num32uToStr</MethodPos15>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>363</LineBeg>
       <LineEnd>378</LineEnd>
+=======
+      <LineBeg>364</LineBeg>
+      <LineEnd>379</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos16>strcatNum32uFormatted</MethodPos16>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>379</LineBeg>
       <LineEnd>397</LineEnd>
+=======
+      <LineBeg>380</LineBeg>
+      <LineEnd>398</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos17>Num32uToStrFormatted</MethodPos17>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>398</LineBeg>
       <LineEnd>415</LineEnd>
+=======
+      <LineBeg>399</LineBeg>
+      <LineEnd>416</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos18>strcatNum24Hex</MethodPos18>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>416</LineBeg>
       <LineEnd>432</LineEnd>
+=======
+      <LineBeg>417</LineBeg>
+      <LineEnd>433</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos19>ReadEscapedName</MethodPos19>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>433</LineBeg>
       <LineEnd>464</LineEnd>
+=======
+      <LineBeg>434</LineBeg>
+      <LineEnd>465</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos20>xatoi</MethodPos20>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>465</LineBeg>
       <LineEnd>480</LineEnd>
+=======
+      <LineBeg>466</LineBeg>
+      <LineEnd>481</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos21>ScanDate</MethodPos21>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>481</LineBeg>
       <LineEnd>500</LineEnd>
+=======
+      <LineBeg>482</LineBeg>
+      <LineEnd>501</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos22>ScanTime</MethodPos22>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>501</LineBeg>
       <LineEnd>524</LineEnd>
+=======
+      <LineBeg>502</LineBeg>
+      <LineEnd>525</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos23>ScanDecimal16uNumber</MethodPos23>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>525</LineBeg>
       <LineEnd>540</LineEnd>
+=======
+      <LineBeg>526</LineBeg>
+      <LineEnd>541</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos24>ScanDecimal8uNumber</MethodPos24>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>541</LineBeg>
       <LineEnd>556</LineEnd>
+=======
+      <LineBeg>542</LineBeg>
+      <LineEnd>557</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos25>Num16uToStr</MethodPos25>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>557</LineBeg>
       <LineEnd>572</LineEnd>
+=======
+      <LineBeg>558</LineBeg>
+      <LineEnd>573</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos26>Num8sToStr</MethodPos26>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>573</LineBeg>
       <LineEnd>588</LineEnd>
+=======
+      <LineBeg>574</LineBeg>
+      <LineEnd>589</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos27>Num8uToStr</MethodPos27>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>589</LineBeg>
       <LineEnd>604</LineEnd>
+=======
+      <LineBeg>590</LineBeg>
+      <LineEnd>605</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos28>Num16uToStrFormatted</MethodPos28>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>605</LineBeg>
       <LineEnd>622</LineEnd>
+=======
+      <LineBeg>606</LineBeg>
+      <LineEnd>623</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos29>Num32sToStrFormatted</MethodPos29>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>623</LineBeg>
       <LineEnd>640</LineEnd>
+=======
+      <LineBeg>624</LineBeg>
+      <LineEnd>641</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos30>strcatNum16u</MethodPos30>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>641</LineBeg>
       <LineEnd>656</LineEnd>
+=======
+      <LineBeg>642</LineBeg>
+      <LineEnd>657</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos31>strcatNum16uFormatted</MethodPos31>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>657</LineBeg>
       <LineEnd>675</LineEnd>
+=======
+      <LineBeg>658</LineBeg>
+      <LineEnd>676</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos32>strcatNum32sFormatted</MethodPos32>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>676</LineBeg>
       <LineEnd>694</LineEnd>
+=======
+      <LineBeg>677</LineBeg>
+      <LineEnd>695</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos33>ScanDecimal32uNumber</MethodPos33>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>695</LineBeg>
       <LineEnd>710</LineEnd>
+=======
+      <LineBeg>696</LineBeg>
+      <LineEnd>711</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos34>strcatNum8u</MethodPos34>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>711</LineBeg>
       <LineEnd>726</LineEnd>
+=======
+      <LineBeg>712</LineBeg>
+      <LineEnd>727</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos35>strcatNum8s</MethodPos35>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>727</LineBeg>
       <LineEnd>742</LineEnd>
+=======
+      <LineBeg>728</LineBeg>
+      <LineEnd>743</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos36>strcmp</MethodPos36>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>743</LineBeg>
       <LineEnd>760</LineEnd>
+=======
+      <LineBeg>744</LineBeg>
+      <LineEnd>761</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos37>strncmp</MethodPos37>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>761</LineBeg>
       <LineEnd>779</LineEnd>
+=======
+      <LineBeg>762</LineBeg>
+      <LineEnd>780</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos38>strlen</MethodPos38>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>780</LineBeg>
       <LineEnd>795</LineEnd>
+=======
+      <LineBeg>781</LineBeg>
+      <LineEnd>796</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos39>ScanHex32uNumber</MethodPos39>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>796</LineBeg>
       <LineEnd>811</LineEnd>
+=======
+      <LineBeg>797</LineBeg>
+      <LineEnd>812</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos40>ScanHex16uNumber</MethodPos40>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>812</LineBeg>
       <LineEnd>827</LineEnd>
+=======
+      <LineBeg>813</LineBeg>
+      <LineEnd>828</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos41>ScanHex8uNumber</MethodPos41>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>828</LineBeg>
       <LineEnd>843</LineEnd>
+=======
+      <LineBeg>829</LineBeg>
+      <LineEnd>844</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos42>strtailcmp</MethodPos42>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>844</LineBeg>
       <LineEnd>860</LineEnd>
+=======
+      <LineBeg>845</LineBeg>
+      <LineEnd>861</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos43>strCutTail</MethodPos43>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>861</LineBeg>
       <LineEnd>878</LineEnd>
+=======
+      <LineBeg>862</LineBeg>
+      <LineEnd>879</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos44>ScanHex8uNumberNoPrefix</MethodPos44>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>879</LineBeg>
       <LineEnd>894</LineEnd>
+=======
+      <LineBeg>880</LineBeg>
+      <LineEnd>895</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos45>strcatNum32sDotValue100</MethodPos45>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>895</LineBeg>
       <LineEnd>912</LineEnd>
+=======
+      <LineBeg>896</LineBeg>
+      <LineEnd>913</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos46>ScanDecimal8sNumber</MethodPos46>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>913</LineBeg>
       <LineEnd>928</LineEnd>
+=======
+      <LineBeg>914</LineBeg>
+      <LineEnd>929</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos47>ScanDecimal16sNumber</MethodPos47>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>929</LineBeg>
       <LineEnd>944</LineEnd>
+=======
+      <LineBeg>930</LineBeg>
+      <LineEnd>945</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos48>ScanDecimal32sNumber</MethodPos48>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>945</LineBeg>
       <LineEnd>960</LineEnd>
+=======
+      <LineBeg>946</LineBeg>
+      <LineEnd>961</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos49>strFind</MethodPos49>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>961</LineBeg>
       <LineEnd>978</LineEnd>
+=======
+      <LineBeg>962</LineBeg>
+      <LineEnd>979</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos50>ScanSeparatedNumbers</MethodPos50>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>979</LineBeg>
       <LineEnd>999</LineEnd>
+=======
+      <LineBeg>980</LineBeg>
+      <LineEnd>1000</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos51>ScanDoubleQuotedString</MethodPos51>
+<<<<<<< Upstream, based on origin/master
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
       <LineBeg>1000</LineBeg>
@@ -2264,14 +3094,27 @@
     </MethodPos>
     <MethodPos>
       <MethodPos53>strcpy</MethodPos53>
+=======
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
+<<<<<<< Upstream, based on origin/master
       <ModuleType>Code</ModuleType>
       <LineBeg>95</LineBeg>
       <LineEnd>129</LineEnd>
+=======
+      <ModuleType>Header</ModuleType>
+      <LineBeg>1001</LineBeg>
+      <LineEnd>1019</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos54>strcat</MethodPos54>
+=======
+      <MethodPos52>ScanDecimal32sDotNumber</MethodPos52>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
+<<<<<<< Upstream, based on origin/master
       <ModuleType>Code</ModuleType>
       <LineBeg>130</LineBeg>
       <LineEnd>169</LineEnd>
@@ -2450,179 +3293,596 @@
       <ModuleType>Code</ModuleType>
       <LineBeg>990</LineBeg>
       <LineEnd>1045</LineEnd>
+=======
+      <ModuleType>Header</ModuleType>
+      <LineBeg>1020</LineBeg>
+      <LineEnd>1044</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos80>Num32uToStr</MethodPos80>
       <MethodType>method</MethodType>
+=======
+      <MethodPos53>ShiftRightAndFill</MethodPos53>
+      <MethodType>internal_method_declaration</MethodType>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1046</LineBeg>
       <LineEnd>1089</LineEnd>
+=======
+      <LineBeg>94</LineBeg>
+      <LineEnd>94</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos81>IsLeapYear</MethodPos81>
+=======
+      <MethodPos54>strcpy</MethodPos54>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1090</LineBeg>
       <LineEnd>1106</LineEnd>
+=======
+      <LineBeg>96</LineBeg>
+      <LineEnd>130</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos82>WeekDay</MethodPos82>
+=======
+      <MethodPos55>strcat</MethodPos55>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1107</LineBeg>
       <LineEnd>1141</LineEnd>
+=======
+      <LineBeg>131</LineBeg>
+      <LineEnd>170</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos83>ReadEscapedName</MethodPos83>
+=======
+      <MethodPos56>chcat</MethodPos56>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1142</LineBeg>
       <LineEnd>1232</LineEnd>
+=======
+      <LineBeg>171</LineBeg>
+      <LineEnd>201</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos84>xatoi</MethodPos84>
+=======
+      <MethodPos57>Num8uToStr</MethodPos57>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1233</LineBeg>
       <LineEnd>1330</LineEnd>
+=======
+      <LineBeg>202</LineBeg>
+      <LineEnd>226</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos85>ScanDate</MethodPos85>
+=======
+      <MethodPos58>Num8sToStr</MethodPos58>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1331</LineBeg>
       <LineEnd>1387</LineEnd>
+=======
+      <LineBeg>227</LineBeg>
+      <LineEnd>251</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos86>ScanTime</MethodPos86>
+=======
+      <MethodPos59>Num16uToStr</MethodPos59>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1388</LineBeg>
       <LineEnd>1468</LineEnd>
+=======
+      <LineBeg>252</LineBeg>
+      <LineEnd>295</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos87>ScanDecimal8uNumber</MethodPos87>
+=======
+      <MethodPos60>Num16sToStr</MethodPos60>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1469</LineBeg>
       <LineEnd>1508</LineEnd>
+=======
+      <LineBeg>296</LineBeg>
+      <LineEnd>351</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos88>ScanDecimal8sNumber</MethodPos88>
       <MethodType>method</MethodType>
+=======
+      <MethodPos61>ShiftRightAndFill</MethodPos61>
+      <MethodType>internal_method</MethodType>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1509</LineBeg>
       <LineEnd>1553</LineEnd>
+=======
+      <LineBeg>352</LineBeg>
+      <LineEnd>386</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos89>ScanDecimal16uNumber</MethodPos89>
+=======
+      <MethodPos62>Num16sToStrFormatted</MethodPos62>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1554</LineBeg>
       <LineEnd>1593</LineEnd>
+=======
+      <LineBeg>387</LineBeg>
+      <LineEnd>419</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos90>ScanDecimal16sNumber</MethodPos90>
+=======
+      <MethodPos63>Num16uToStrFormatted</MethodPos63>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1594</LineBeg>
       <LineEnd>1638</LineEnd>
+=======
+      <LineBeg>420</LineBeg>
+      <LineEnd>452</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos91>ScanDecimal32uNumber</MethodPos91>
+=======
+      <MethodPos64>Num32uToStrFormatted</MethodPos64>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1639</LineBeg>
       <LineEnd>1678</LineEnd>
+=======
+      <LineBeg>453</LineBeg>
+      <LineEnd>485</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos92>ScanDecimal32sNumber</MethodPos92>
+=======
+      <MethodPos65>Num32sToStrFormatted</MethodPos65>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1679</LineBeg>
       <LineEnd>1723</LineEnd>
+=======
+      <LineBeg>486</LineBeg>
+      <LineEnd>518</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos93>strcmp</MethodPos93>
+=======
+      <MethodPos66>strcatNum8u</MethodPos66>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1724</LineBeg>
       <LineEnd>1744</LineEnd>
+=======
+      <LineBeg>519</LineBeg>
+      <LineEnd>548</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos94>strncmp</MethodPos94>
+=======
+      <MethodPos67>strcatNum8s</MethodPos67>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1745</LineBeg>
       <LineEnd>1766</LineEnd>
+=======
+      <LineBeg>549</LineBeg>
+      <LineEnd>578</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos95>strlen</MethodPos95>
+=======
+      <MethodPos68>strcatNum16u</MethodPos68>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1767</LineBeg>
       <LineEnd>1785</LineEnd>
+=======
+      <LineBeg>579</LineBeg>
+      <LineEnd>608</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos96>ScanHex32uNumber</MethodPos96>
+=======
+      <MethodPos69>strcatNum16s</MethodPos69>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1825</LineBeg>
       <LineEnd>1860</LineEnd>
+=======
+      <LineBeg>609</LineBeg>
+      <LineEnd>638</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos97>ScanHex16uNumber</MethodPos97>
+=======
+      <MethodPos70>strcatNum16uFormatted</MethodPos70>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1861</LineBeg>
       <LineEnd>1896</LineEnd>
+=======
+      <LineBeg>639</LineBeg>
+      <LineEnd>674</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos98>ScanHex8uNumber</MethodPos98>
+=======
+      <MethodPos71>strcatNum16sFormatted</MethodPos71>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1897</LineBeg>
       <LineEnd>1932</LineEnd>
+=======
+      <LineBeg>675</LineBeg>
+      <LineEnd>710</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos99>ScanHex8uNumberNoPrefix</MethodPos99>
+=======
+      <MethodPos72>strcatNum32uFormatted</MethodPos72>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1933</LineBeg>
       <LineEnd>1968</LineEnd>
+=======
+      <LineBeg>711</LineBeg>
+      <LineEnd>746</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos100>strtailcmp</MethodPos100>
+=======
+      <MethodPos73>strcatNum32sFormatted</MethodPos73>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1969</LineBeg>
       <LineEnd>2003</LineEnd>
+=======
+      <LineBeg>747</LineBeg>
+      <LineEnd>782</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos101>strCutTail</MethodPos101>
+=======
+      <MethodPos74>strcatNum8Hex</MethodPos74>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2004</LineBeg>
       <LineEnd>2034</LineEnd>
+=======
+      <LineBeg>783</LineBeg>
+      <LineEnd>816</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos102>strcatNum32sDotValue100</MethodPos102>
+=======
+      <MethodPos75>strcatNum16Hex</MethodPos75>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2035</LineBeg>
       <LineEnd>2060</LineEnd>
+=======
+      <LineBeg>817</LineBeg>
+      <LineEnd>854</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos103>strFind</MethodPos103>
+=======
+      <MethodPos76>strcatNum24Hex</MethodPos76>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2061</LineBeg>
       <LineEnd>2089</LineEnd>
+=======
+      <LineBeg>855</LineBeg>
+      <LineEnd>892</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos104>ScanSeparatedNumbers</MethodPos104>
+      <MethodPos77>strcatNum32Hex</MethodPos77>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+      <LineBeg>893</LineBeg>
+      <LineEnd>930</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos78>strcatNum32s</MethodPos78>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>931</LineBeg>
+      <LineEnd>960</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos79>strcatNum32u</MethodPos79>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>961</LineBeg>
+      <LineEnd>990</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos80>Num32sToStr</MethodPos80>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>991</LineBeg>
+      <LineEnd>1046</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos81>Num32uToStr</MethodPos81>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1047</LineBeg>
+      <LineEnd>1090</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos82>IsLeapYear</MethodPos82>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1091</LineBeg>
+      <LineEnd>1107</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos83>WeekDay</MethodPos83>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1108</LineBeg>
+      <LineEnd>1142</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos84>ReadEscapedName</MethodPos84>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1143</LineBeg>
+      <LineEnd>1233</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos85>xatoi</MethodPos85>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1234</LineBeg>
+      <LineEnd>1331</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos86>ScanDate</MethodPos86>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1332</LineBeg>
+      <LineEnd>1388</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos87>ScanTime</MethodPos87>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1389</LineBeg>
+      <LineEnd>1469</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos88>ScanDecimal8uNumber</MethodPos88>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1470</LineBeg>
+      <LineEnd>1509</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos89>ScanDecimal8sNumber</MethodPos89>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1510</LineBeg>
+      <LineEnd>1554</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos90>ScanDecimal16uNumber</MethodPos90>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1555</LineBeg>
+      <LineEnd>1594</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos91>ScanDecimal16sNumber</MethodPos91>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1595</LineBeg>
+      <LineEnd>1639</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos92>ScanDecimal32uNumber</MethodPos92>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1640</LineBeg>
+      <LineEnd>1679</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos93>ScanDecimal32sNumber</MethodPos93>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1680</LineBeg>
+      <LineEnd>1724</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos94>ScanDecimal32sDotNumber</MethodPos94>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1725</LineBeg>
+      <LineEnd>1777</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos95>strcmp</MethodPos95>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1778</LineBeg>
+      <LineEnd>1798</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos96>strncmp</MethodPos96>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1799</LineBeg>
+      <LineEnd>1820</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos97>strlen</MethodPos97>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1821</LineBeg>
+      <LineEnd>1839</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos98>ScanHex32uNumber</MethodPos98>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1879</LineBeg>
+      <LineEnd>1914</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos99>ScanHex16uNumber</MethodPos99>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1915</LineBeg>
+      <LineEnd>1950</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos100>ScanHex8uNumber</MethodPos100>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1951</LineBeg>
+      <LineEnd>1986</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos101>ScanHex8uNumberNoPrefix</MethodPos101>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1987</LineBeg>
+      <LineEnd>2022</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos102>strtailcmp</MethodPos102>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>2023</LineBeg>
+      <LineEnd>2057</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos103>strCutTail</MethodPos103>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>2058</LineBeg>
+      <LineEnd>2088</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
+    </MethodPos>
+    <MethodPos>
+<<<<<<< Upstream, based on origin/master
+      <MethodPos104>ScanSeparatedNumbers</MethodPos104>
+=======
+      <MethodPos104>strcatNum32sDotValue100</MethodPos104>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2090</LineBeg>
       <LineEnd>2141</LineEnd>
     </MethodPos>
@@ -2632,19 +3892,57 @@
       <ModuleType>Code</ModuleType>
       <LineBeg>2142</LineBeg>
       <LineEnd>2185</LineEnd>
+=======
+      <LineBeg>2089</LineBeg>
+      <LineEnd>2114</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos105>strFind</MethodPos105>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>2115</LineBeg>
+      <LineEnd>2143</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos106>ScanSeparatedNumbers</MethodPos106>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>2144</LineBeg>
+      <LineEnd>2195</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos107>ScanDoubleQuotedString</MethodPos107>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>2196</LineBeg>
+      <LineEnd>2239</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <GenExtraFilesCount>0</GenExtraFilesCount>
   </ComponentID_10>
   <ComponentID_12>
     <Generated>true</Generated>
     <GenCompName>UTIL2</GenCompName>
+<<<<<<< Upstream, based on origin/master
     <GenComponentVersion>01.106</GenComponentVersion>
+=======
+    <GenComponentVersion>01.109</GenComponentVersion>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
+<<<<<<< Upstream, based on origin/master
     <HeaderAge>1182949679</HeaderAge>
     <CodeAge>1182949679</CodeAge>
+=======
+    <HeaderAge>1183319195</HeaderAge>
+    <CodeAge>1183319195</CodeAge>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <AsemblAge>-1</AsemblAge>
+<<<<<<< Upstream, based on origin/master
     <GenNumMethods>52</GenNumMethods>
+=======
+    <GenNumMethods>53</GenNumMethods>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <strcpy>true</strcpy>
     <strcat>true</strcat>
     <chcat>true</chcat>
@@ -2685,6 +3983,7 @@
     <ScanDecimal16sNumber>true</ScanDecimal16sNumber>
     <ScanDecimal32uNumber>true</ScanDecimal32uNumber>
     <ScanDecimal32sNumber>true</ScanDecimal32sNumber>
+    <ScanDecimal32sDotNumber>true</ScanDecimal32sDotNumber>
     <ScanHex8uNumber>true</ScanHex8uNumber>
     <ScanHex8uNumberNoPrefix>true</ScanHex8uNumberNoPrefix>
     <ScanHex16uNumber>true</ScanHex16uNumber>
@@ -2701,366 +4000,626 @@
     <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
     <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
     <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
+<<<<<<< Upstream, based on origin/master
     <GenMethodPos>106</GenMethodPos>
+=======
+    <GenMethodPos>108</GenMethodPos>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <MethodPos>
       <MethodPos0>strcpy</MethodPos0>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>112</LineBeg>
       <LineEnd>128</LineEnd>
+=======
+      <LineBeg>113</LineBeg>
+      <LineEnd>129</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos1>strcat</MethodPos1>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>129</LineBeg>
       <LineEnd>145</LineEnd>
+=======
+      <LineBeg>130</LineBeg>
+      <LineEnd>146</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos2>Num16sToStr</MethodPos2>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>146</LineBeg>
       <LineEnd>161</LineEnd>
+=======
+      <LineBeg>147</LineBeg>
+      <LineEnd>162</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos3>Num16sToStrFormatted</MethodPos3>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>162</LineBeg>
       <LineEnd>179</LineEnd>
+=======
+      <LineBeg>163</LineBeg>
+      <LineEnd>180</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos4>strcatNum16s</MethodPos4>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>180</LineBeg>
       <LineEnd>195</LineEnd>
+=======
+      <LineBeg>181</LineBeg>
+      <LineEnd>196</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos5>strcatNum16sFormatted</MethodPos5>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>196</LineBeg>
       <LineEnd>214</LineEnd>
+=======
+      <LineBeg>197</LineBeg>
+      <LineEnd>215</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos6>strcatNum8Hex</MethodPos6>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>215</LineBeg>
       <LineEnd>231</LineEnd>
+=======
+      <LineBeg>216</LineBeg>
+      <LineEnd>232</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos7>strcatNum16Hex</MethodPos7>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>232</LineBeg>
       <LineEnd>248</LineEnd>
+=======
+      <LineBeg>233</LineBeg>
+      <LineEnd>249</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos8>strcatNum32s</MethodPos8>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>249</LineBeg>
       <LineEnd>264</LineEnd>
+=======
+      <LineBeg>250</LineBeg>
+      <LineEnd>265</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos9>Num32sToStr</MethodPos9>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>265</LineBeg>
       <LineEnd>280</LineEnd>
+=======
+      <LineBeg>266</LineBeg>
+      <LineEnd>281</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos10>strcatNum32Hex</MethodPos10>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>281</LineBeg>
       <LineEnd>297</LineEnd>
+=======
+      <LineBeg>282</LineBeg>
+      <LineEnd>298</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos11>IsLeapYear</MethodPos11>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>298</LineBeg>
       <LineEnd>311</LineEnd>
+=======
+      <LineBeg>299</LineBeg>
+      <LineEnd>312</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos12>WeekDay</MethodPos12>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>312</LineBeg>
       <LineEnd>329</LineEnd>
+=======
+      <LineBeg>313</LineBeg>
+      <LineEnd>330</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos13>chcat</MethodPos13>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>330</LineBeg>
       <LineEnd>346</LineEnd>
+=======
+      <LineBeg>331</LineBeg>
+      <LineEnd>347</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos14>strcatNum32u</MethodPos14>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>347</LineBeg>
       <LineEnd>362</LineEnd>
+=======
+      <LineBeg>348</LineBeg>
+      <LineEnd>363</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos15>Num32uToStr</MethodPos15>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>363</LineBeg>
       <LineEnd>378</LineEnd>
+=======
+      <LineBeg>364</LineBeg>
+      <LineEnd>379</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos16>strcatNum32uFormatted</MethodPos16>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>379</LineBeg>
       <LineEnd>397</LineEnd>
+=======
+      <LineBeg>380</LineBeg>
+      <LineEnd>398</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos17>Num32uToStrFormatted</MethodPos17>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>398</LineBeg>
       <LineEnd>415</LineEnd>
+=======
+      <LineBeg>399</LineBeg>
+      <LineEnd>416</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos18>strcatNum24Hex</MethodPos18>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>416</LineBeg>
       <LineEnd>432</LineEnd>
+=======
+      <LineBeg>417</LineBeg>
+      <LineEnd>433</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos19>ReadEscapedName</MethodPos19>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>433</LineBeg>
       <LineEnd>464</LineEnd>
+=======
+      <LineBeg>434</LineBeg>
+      <LineEnd>465</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos20>xatoi</MethodPos20>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>465</LineBeg>
       <LineEnd>480</LineEnd>
+=======
+      <LineBeg>466</LineBeg>
+      <LineEnd>481</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos21>ScanDate</MethodPos21>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>481</LineBeg>
       <LineEnd>500</LineEnd>
+=======
+      <LineBeg>482</LineBeg>
+      <LineEnd>501</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos22>ScanTime</MethodPos22>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>501</LineBeg>
       <LineEnd>524</LineEnd>
+=======
+      <LineBeg>502</LineBeg>
+      <LineEnd>525</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos23>ScanDecimal16uNumber</MethodPos23>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>525</LineBeg>
       <LineEnd>540</LineEnd>
+=======
+      <LineBeg>526</LineBeg>
+      <LineEnd>541</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos24>ScanDecimal8uNumber</MethodPos24>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>541</LineBeg>
       <LineEnd>556</LineEnd>
+=======
+      <LineBeg>542</LineBeg>
+      <LineEnd>557</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos25>Num16uToStr</MethodPos25>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>557</LineBeg>
       <LineEnd>572</LineEnd>
+=======
+      <LineBeg>558</LineBeg>
+      <LineEnd>573</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos26>Num8sToStr</MethodPos26>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>573</LineBeg>
       <LineEnd>588</LineEnd>
+=======
+      <LineBeg>574</LineBeg>
+      <LineEnd>589</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos27>Num8uToStr</MethodPos27>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>589</LineBeg>
       <LineEnd>604</LineEnd>
+=======
+      <LineBeg>590</LineBeg>
+      <LineEnd>605</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos28>Num16uToStrFormatted</MethodPos28>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>605</LineBeg>
       <LineEnd>622</LineEnd>
+=======
+      <LineBeg>606</LineBeg>
+      <LineEnd>623</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos29>Num32sToStrFormatted</MethodPos29>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>623</LineBeg>
       <LineEnd>640</LineEnd>
+=======
+      <LineBeg>624</LineBeg>
+      <LineEnd>641</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos30>strcatNum16u</MethodPos30>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>641</LineBeg>
       <LineEnd>656</LineEnd>
+=======
+      <LineBeg>642</LineBeg>
+      <LineEnd>657</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos31>strcatNum16uFormatted</MethodPos31>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>657</LineBeg>
       <LineEnd>675</LineEnd>
+=======
+      <LineBeg>658</LineBeg>
+      <LineEnd>676</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos32>strcatNum32sFormatted</MethodPos32>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>676</LineBeg>
       <LineEnd>694</LineEnd>
+=======
+      <LineBeg>677</LineBeg>
+      <LineEnd>695</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos33>ScanDecimal32uNumber</MethodPos33>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>695</LineBeg>
       <LineEnd>710</LineEnd>
+=======
+      <LineBeg>696</LineBeg>
+      <LineEnd>711</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos34>strcatNum8u</MethodPos34>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>711</LineBeg>
       <LineEnd>726</LineEnd>
+=======
+      <LineBeg>712</LineBeg>
+      <LineEnd>727</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos35>strcatNum8s</MethodPos35>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>727</LineBeg>
       <LineEnd>742</LineEnd>
+=======
+      <LineBeg>728</LineBeg>
+      <LineEnd>743</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos36>strcmp</MethodPos36>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>743</LineBeg>
       <LineEnd>760</LineEnd>
+=======
+      <LineBeg>744</LineBeg>
+      <LineEnd>761</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos37>strncmp</MethodPos37>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>761</LineBeg>
       <LineEnd>779</LineEnd>
+=======
+      <LineBeg>762</LineBeg>
+      <LineEnd>780</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos38>strlen</MethodPos38>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>780</LineBeg>
       <LineEnd>795</LineEnd>
+=======
+      <LineBeg>781</LineBeg>
+      <LineEnd>796</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos39>ScanHex32uNumber</MethodPos39>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>796</LineBeg>
       <LineEnd>811</LineEnd>
+=======
+      <LineBeg>797</LineBeg>
+      <LineEnd>812</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos40>ScanHex16uNumber</MethodPos40>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>812</LineBeg>
       <LineEnd>827</LineEnd>
+=======
+      <LineBeg>813</LineBeg>
+      <LineEnd>828</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos41>ScanHex8uNumber</MethodPos41>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>828</LineBeg>
       <LineEnd>843</LineEnd>
+=======
+      <LineBeg>829</LineBeg>
+      <LineEnd>844</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos42>strtailcmp</MethodPos42>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>844</LineBeg>
       <LineEnd>860</LineEnd>
+=======
+      <LineBeg>845</LineBeg>
+      <LineEnd>861</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos43>strCutTail</MethodPos43>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>861</LineBeg>
       <LineEnd>878</LineEnd>
+=======
+      <LineBeg>862</LineBeg>
+      <LineEnd>879</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos44>ScanHex8uNumberNoPrefix</MethodPos44>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>879</LineBeg>
       <LineEnd>894</LineEnd>
+=======
+      <LineBeg>880</LineBeg>
+      <LineEnd>895</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos45>strcatNum32sDotValue100</MethodPos45>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>895</LineBeg>
       <LineEnd>912</LineEnd>
+=======
+      <LineBeg>896</LineBeg>
+      <LineEnd>913</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos46>ScanDecimal8sNumber</MethodPos46>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>913</LineBeg>
       <LineEnd>928</LineEnd>
+=======
+      <LineBeg>914</LineBeg>
+      <LineEnd>929</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos47>ScanDecimal16sNumber</MethodPos47>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>929</LineBeg>
       <LineEnd>944</LineEnd>
+=======
+      <LineBeg>930</LineBeg>
+      <LineEnd>945</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos48>ScanDecimal32sNumber</MethodPos48>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>945</LineBeg>
       <LineEnd>960</LineEnd>
+=======
+      <LineBeg>946</LineBeg>
+      <LineEnd>961</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos49>strFind</MethodPos49>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>961</LineBeg>
       <LineEnd>978</LineEnd>
+=======
+      <LineBeg>962</LineBeg>
+      <LineEnd>979</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos50>ScanSeparatedNumbers</MethodPos50>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>979</LineBeg>
       <LineEnd>999</LineEnd>
+=======
+      <LineBeg>980</LineBeg>
+      <LineEnd>1000</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
       <MethodPos51>ScanDoubleQuotedString</MethodPos51>
+<<<<<<< Upstream, based on origin/master
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
       <LineBeg>1000</LineBeg>
@@ -3075,14 +4634,27 @@
     </MethodPos>
     <MethodPos>
       <MethodPos53>strcpy</MethodPos53>
+=======
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
+<<<<<<< Upstream, based on origin/master
       <ModuleType>Code</ModuleType>
       <LineBeg>95</LineBeg>
       <LineEnd>129</LineEnd>
+=======
+      <ModuleType>Header</ModuleType>
+      <LineBeg>1001</LineBeg>
+      <LineEnd>1019</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos54>strcat</MethodPos54>
+=======
+      <MethodPos52>ScanDecimal32sDotNumber</MethodPos52>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
+<<<<<<< Upstream, based on origin/master
       <ModuleType>Code</ModuleType>
       <LineBeg>130</LineBeg>
       <LineEnd>169</LineEnd>
@@ -3261,179 +4833,596 @@
       <ModuleType>Code</ModuleType>
       <LineBeg>990</LineBeg>
       <LineEnd>1045</LineEnd>
+=======
+      <ModuleType>Header</ModuleType>
+      <LineBeg>1020</LineBeg>
+      <LineEnd>1044</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos80>Num32uToStr</MethodPos80>
       <MethodType>method</MethodType>
+=======
+      <MethodPos53>ShiftRightAndFill</MethodPos53>
+      <MethodType>internal_method_declaration</MethodType>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1046</LineBeg>
       <LineEnd>1089</LineEnd>
+=======
+      <LineBeg>94</LineBeg>
+      <LineEnd>94</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos81>IsLeapYear</MethodPos81>
+=======
+      <MethodPos54>strcpy</MethodPos54>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1090</LineBeg>
       <LineEnd>1106</LineEnd>
+=======
+      <LineBeg>96</LineBeg>
+      <LineEnd>130</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos82>WeekDay</MethodPos82>
+=======
+      <MethodPos55>strcat</MethodPos55>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1107</LineBeg>
       <LineEnd>1141</LineEnd>
+=======
+      <LineBeg>131</LineBeg>
+      <LineEnd>170</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos83>ReadEscapedName</MethodPos83>
+=======
+      <MethodPos56>chcat</MethodPos56>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1142</LineBeg>
       <LineEnd>1232</LineEnd>
+=======
+      <LineBeg>171</LineBeg>
+      <LineEnd>201</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos84>xatoi</MethodPos84>
+=======
+      <MethodPos57>Num8uToStr</MethodPos57>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1233</LineBeg>
       <LineEnd>1330</LineEnd>
+=======
+      <LineBeg>202</LineBeg>
+      <LineEnd>226</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos85>ScanDate</MethodPos85>
+=======
+      <MethodPos58>Num8sToStr</MethodPos58>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1331</LineBeg>
       <LineEnd>1387</LineEnd>
+=======
+      <LineBeg>227</LineBeg>
+      <LineEnd>251</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos86>ScanTime</MethodPos86>
+=======
+      <MethodPos59>Num16uToStr</MethodPos59>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1388</LineBeg>
       <LineEnd>1468</LineEnd>
+=======
+      <LineBeg>252</LineBeg>
+      <LineEnd>295</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos87>ScanDecimal8uNumber</MethodPos87>
+=======
+      <MethodPos60>Num16sToStr</MethodPos60>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1469</LineBeg>
       <LineEnd>1508</LineEnd>
+=======
+      <LineBeg>296</LineBeg>
+      <LineEnd>351</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos88>ScanDecimal8sNumber</MethodPos88>
       <MethodType>method</MethodType>
+=======
+      <MethodPos61>ShiftRightAndFill</MethodPos61>
+      <MethodType>internal_method</MethodType>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1509</LineBeg>
       <LineEnd>1553</LineEnd>
+=======
+      <LineBeg>352</LineBeg>
+      <LineEnd>386</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos89>ScanDecimal16uNumber</MethodPos89>
+=======
+      <MethodPos62>Num16sToStrFormatted</MethodPos62>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1554</LineBeg>
       <LineEnd>1593</LineEnd>
+=======
+      <LineBeg>387</LineBeg>
+      <LineEnd>419</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos90>ScanDecimal16sNumber</MethodPos90>
+=======
+      <MethodPos63>Num16uToStrFormatted</MethodPos63>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1594</LineBeg>
       <LineEnd>1638</LineEnd>
+=======
+      <LineBeg>420</LineBeg>
+      <LineEnd>452</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos91>ScanDecimal32uNumber</MethodPos91>
+=======
+      <MethodPos64>Num32uToStrFormatted</MethodPos64>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1639</LineBeg>
       <LineEnd>1678</LineEnd>
+=======
+      <LineBeg>453</LineBeg>
+      <LineEnd>485</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos92>ScanDecimal32sNumber</MethodPos92>
+=======
+      <MethodPos65>Num32sToStrFormatted</MethodPos65>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1679</LineBeg>
       <LineEnd>1723</LineEnd>
+=======
+      <LineBeg>486</LineBeg>
+      <LineEnd>518</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos93>strcmp</MethodPos93>
+=======
+      <MethodPos66>strcatNum8u</MethodPos66>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1724</LineBeg>
       <LineEnd>1744</LineEnd>
+=======
+      <LineBeg>519</LineBeg>
+      <LineEnd>548</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos94>strncmp</MethodPos94>
+=======
+      <MethodPos67>strcatNum8s</MethodPos67>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1745</LineBeg>
       <LineEnd>1766</LineEnd>
+=======
+      <LineBeg>549</LineBeg>
+      <LineEnd>578</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos95>strlen</MethodPos95>
+=======
+      <MethodPos68>strcatNum16u</MethodPos68>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1767</LineBeg>
       <LineEnd>1785</LineEnd>
+=======
+      <LineBeg>579</LineBeg>
+      <LineEnd>608</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos96>ScanHex32uNumber</MethodPos96>
+=======
+      <MethodPos69>strcatNum16s</MethodPos69>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1825</LineBeg>
       <LineEnd>1860</LineEnd>
+=======
+      <LineBeg>609</LineBeg>
+      <LineEnd>638</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos97>ScanHex16uNumber</MethodPos97>
+=======
+      <MethodPos70>strcatNum16uFormatted</MethodPos70>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1861</LineBeg>
       <LineEnd>1896</LineEnd>
+=======
+      <LineBeg>639</LineBeg>
+      <LineEnd>674</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos98>ScanHex8uNumber</MethodPos98>
+=======
+      <MethodPos71>strcatNum16sFormatted</MethodPos71>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1897</LineBeg>
       <LineEnd>1932</LineEnd>
+=======
+      <LineBeg>675</LineBeg>
+      <LineEnd>710</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos99>ScanHex8uNumberNoPrefix</MethodPos99>
+=======
+      <MethodPos72>strcatNum32uFormatted</MethodPos72>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1933</LineBeg>
       <LineEnd>1968</LineEnd>
+=======
+      <LineBeg>711</LineBeg>
+      <LineEnd>746</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos100>strtailcmp</MethodPos100>
+=======
+      <MethodPos73>strcatNum32sFormatted</MethodPos73>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>1969</LineBeg>
       <LineEnd>2003</LineEnd>
+=======
+      <LineBeg>747</LineBeg>
+      <LineEnd>782</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos101>strCutTail</MethodPos101>
+=======
+      <MethodPos74>strcatNum8Hex</MethodPos74>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2004</LineBeg>
       <LineEnd>2034</LineEnd>
+=======
+      <LineBeg>783</LineBeg>
+      <LineEnd>816</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos102>strcatNum32sDotValue100</MethodPos102>
+=======
+      <MethodPos75>strcatNum16Hex</MethodPos75>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2035</LineBeg>
       <LineEnd>2060</LineEnd>
+=======
+      <LineBeg>817</LineBeg>
+      <LineEnd>854</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <MethodPos>
+<<<<<<< Upstream, based on origin/master
       <MethodPos103>strFind</MethodPos103>
+=======
+      <MethodPos76>strcatNum24Hex</MethodPos76>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2061</LineBeg>
       <LineEnd>2089</LineEnd>
+=======
+      <LineBeg>855</LineBeg>
+      <LineEnd>892</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos104>ScanSeparatedNumbers</MethodPos104>
+      <MethodPos77>strcatNum32Hex</MethodPos77>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
+      <LineBeg>893</LineBeg>
+      <LineEnd>930</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos78>strcatNum32s</MethodPos78>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>931</LineBeg>
+      <LineEnd>960</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos79>strcatNum32u</MethodPos79>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>961</LineBeg>
+      <LineEnd>990</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos80>Num32sToStr</MethodPos80>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>991</LineBeg>
+      <LineEnd>1046</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos81>Num32uToStr</MethodPos81>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1047</LineBeg>
+      <LineEnd>1090</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos82>IsLeapYear</MethodPos82>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1091</LineBeg>
+      <LineEnd>1107</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos83>WeekDay</MethodPos83>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1108</LineBeg>
+      <LineEnd>1142</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos84>ReadEscapedName</MethodPos84>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1143</LineBeg>
+      <LineEnd>1233</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos85>xatoi</MethodPos85>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1234</LineBeg>
+      <LineEnd>1331</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos86>ScanDate</MethodPos86>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1332</LineBeg>
+      <LineEnd>1388</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos87>ScanTime</MethodPos87>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1389</LineBeg>
+      <LineEnd>1469</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos88>ScanDecimal8uNumber</MethodPos88>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1470</LineBeg>
+      <LineEnd>1509</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos89>ScanDecimal8sNumber</MethodPos89>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1510</LineBeg>
+      <LineEnd>1554</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos90>ScanDecimal16uNumber</MethodPos90>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1555</LineBeg>
+      <LineEnd>1594</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos91>ScanDecimal16sNumber</MethodPos91>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1595</LineBeg>
+      <LineEnd>1639</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos92>ScanDecimal32uNumber</MethodPos92>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1640</LineBeg>
+      <LineEnd>1679</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos93>ScanDecimal32sNumber</MethodPos93>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1680</LineBeg>
+      <LineEnd>1724</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos94>ScanDecimal32sDotNumber</MethodPos94>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1725</LineBeg>
+      <LineEnd>1777</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos95>strcmp</MethodPos95>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1778</LineBeg>
+      <LineEnd>1798</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos96>strncmp</MethodPos96>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1799</LineBeg>
+      <LineEnd>1820</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos97>strlen</MethodPos97>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1821</LineBeg>
+      <LineEnd>1839</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos98>ScanHex32uNumber</MethodPos98>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1879</LineBeg>
+      <LineEnd>1914</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos99>ScanHex16uNumber</MethodPos99>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1915</LineBeg>
+      <LineEnd>1950</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos100>ScanHex8uNumber</MethodPos100>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1951</LineBeg>
+      <LineEnd>1986</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos101>ScanHex8uNumberNoPrefix</MethodPos101>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>1987</LineBeg>
+      <LineEnd>2022</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos102>strtailcmp</MethodPos102>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>2023</LineBeg>
+      <LineEnd>2057</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos103>strCutTail</MethodPos103>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>2058</LineBeg>
+      <LineEnd>2088</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
+    </MethodPos>
+    <MethodPos>
+<<<<<<< Upstream, based on origin/master
+      <MethodPos104>ScanSeparatedNumbers</MethodPos104>
+=======
+      <MethodPos104>strcatNum32sDotValue100</MethodPos104>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+<<<<<<< Upstream, based on origin/master
       <LineBeg>2090</LineBeg>
       <LineEnd>2141</LineEnd>
     </MethodPos>
@@ -3443,6 +5432,31 @@
       <ModuleType>Code</ModuleType>
       <LineBeg>2142</LineBeg>
       <LineEnd>2185</LineEnd>
+=======
+      <LineBeg>2089</LineBeg>
+      <LineEnd>2114</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos105>strFind</MethodPos105>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>2115</LineBeg>
+      <LineEnd>2143</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos106>ScanSeparatedNumbers</MethodPos106>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>2144</LineBeg>
+      <LineEnd>2195</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos107>ScanDoubleQuotedString</MethodPos107>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>2196</LineBeg>
+      <LineEnd>2239</LineEnd>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     </MethodPos>
     <GenExtraFilesCount>0</GenExtraFilesCount>
   </ComponentID_12>
@@ -3452,8 +5466,13 @@
     <GenComponentVersion>02.023</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
+<<<<<<< Upstream, based on origin/master
     <HeaderAge>1182949678</HeaderAge>
     <CodeAge>1182949678</CodeAge>
+=======
+    <HeaderAge>1183319195</HeaderAge>
+    <CodeAge>1183319195</CodeAge>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>0</GenNumMethods>
     <GenNumEvents>0</GenNumEvents>
@@ -3566,8 +5585,13 @@
     <GenComponentVersion>02.142</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
+<<<<<<< Upstream, based on origin/master
     <HeaderAge>1182949678</HeaderAge>
     <CodeAge>1182949678</CodeAge>
+=======
+    <HeaderAge>1183319195</HeaderAge>
+    <CodeAge>1183319195</CodeAge>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>4</GenNumMethods>
     <Enable>true</Enable>
@@ -3754,8 +5778,13 @@
     <GenComponentVersion>01.067</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
+<<<<<<< Upstream, based on origin/master
     <HeaderAge>1182949678</HeaderAge>
     <CodeAge>1182949678</CodeAge>
+=======
+    <HeaderAge>1183319195</HeaderAge>
+    <CodeAge>1183319195</CodeAge>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>8</GenNumMethods>
     <Wait10Cycles>true</Wait10Cycles>
@@ -3775,57 +5804,57 @@
       <MethodPos0>Wait10Cycles</MethodPos0>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>81</LineBeg>
-      <LineEnd>91</LineEnd>
+      <LineBeg>82</LineBeg>
+      <LineEnd>92</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos1>Wait100Cycles</MethodPos1>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>92</LineBeg>
-      <LineEnd>102</LineEnd>
+      <LineBeg>93</LineBeg>
+      <LineEnd>103</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos2>WaitCycles</MethodPos2>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>103</LineBeg>
-      <LineEnd>115</LineEnd>
+      <LineBeg>104</LineBeg>
+      <LineEnd>116</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos3>Waitms</MethodPos3>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>116</LineBeg>
-      <LineEnd>129</LineEnd>
+      <LineBeg>117</LineBeg>
+      <LineEnd>130</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos4>Waitus</MethodPos4>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>130</LineBeg>
-      <LineEnd>150</LineEnd>
+      <LineBeg>131</LineBeg>
+      <LineEnd>151</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos5>Waitns</MethodPos5>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>151</LineBeg>
-      <LineEnd>171</LineEnd>
+      <LineBeg>152</LineBeg>
+      <LineEnd>172</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos6>WaitOSms</MethodPos6>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>172</LineBeg>
-      <LineEnd>188</LineEnd>
+      <LineBeg>173</LineBeg>
+      <LineEnd>189</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos7>WaitLongCycles</MethodPos7>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>189</LineBeg>
-      <LineEnd>201</LineEnd>
+      <LineBeg>190</LineBeg>
+      <LineEnd>202</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos8>Wait10Cycles</MethodPos8>
@@ -4207,8 +6236,13 @@
     <GenComponentVersion>01.052</GenComponentVersion>
     <GenDriverVersion>01.09</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
+<<<<<<< Upstream, based on origin/master
     <HeaderAge>1182949678</HeaderAge>
     <CodeAge>1182949678</CodeAge>
+=======
+    <HeaderAge>1183319195</HeaderAge>
+    <CodeAge>1183319195</CodeAge>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>9</GenNumMethods>
     <Init>true</Init>
@@ -4274,13 +6308,18 @@
     <ExtraFile0>Documentation\doxygen\Watchdog.txt</ExtraFile0>
   </ComponentID_78>
   <ComponentID_114>
-    <Generated>true</Generated>
+    <Generated>false</Generated>
     <GenCompName>EventTimer</GenCompName>
     <GenComponentVersion>01.164</GenComponentVersion>
     <GenDriverVersion>01.11</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
+<<<<<<< Upstream, based on origin/master
     <HeaderAge>1182949678</HeaderAge>
     <CodeAge>1182949678</CodeAge>
+=======
+    <HeaderAge>-1</HeaderAge>
+    <CodeAge>-1</CodeAge>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>22</GenNumMethods>
     <Init>true</Init>
@@ -4635,17 +6674,18 @@
     </InhrCompID_139>
   </ComponentID_138>
   <ComponentID_152>
-    <Generated>false</Generated>
+    <Generated>true</Generated>
     <GenCompName>Tuner</GenCompName>
     <GenComponentVersion>01.009</GenComponentVersion>
     <GenDriverVersion>01.09</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>-1</HeaderAge>
-    <CodeAge>-1</CodeAge>
+    <HeaderAge>1183319195</HeaderAge>
+    <CodeAge>1183319195</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
     <GenNumEvents>0</GenNumEvents>
+    <ISR_ISRHandleCommon>TunerIsr</ISR_ISRHandleCommon>
     <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
     <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
     <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
@@ -4654,15 +6694,15 @@
       <MethodPos0>Init</MethodPos0>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>204</LineBeg>
-      <LineEnd>218</LineEnd>
+      <LineBeg>214</LineBeg>
+      <LineEnd>228</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos1>Init</MethodPos1>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>200</LineBeg>
-      <LineEnd>457</LineEnd>
+      <LineBeg>210</LineBeg>
+      <LineEnd>471</LineEnd>
     </MethodPos>
     <GenExtraFilesCount>1</GenExtraFilesCount>
     <ExtraFile0>Documentation\doxygen\Tuner.txt</ExtraFile0>
@@ -4673,8 +6713,13 @@
     <GenComponentVersion>02.086</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
+<<<<<<< Upstream, based on origin/master
     <HeaderAge>1182949678</HeaderAge>
     <CodeAge>1182949678</CodeAge>
+=======
+    <HeaderAge>1183319195</HeaderAge>
+    <CodeAge>1183319195</CodeAge>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>11</GenNumMethods>
     <GetDir>false</GetDir>
@@ -4756,8 +6801,13 @@
       <GenComponentVersion>01.033</GenComponentVersion>
       <GenDriverVersion>01.03</GenDriverVersion>
       <GenEventModule />
+<<<<<<< Upstream, based on origin/master
       <HeaderAge>1182949678</HeaderAge>
       <CodeAge>1182949678</CodeAge>
+=======
+      <HeaderAge>1183319195</HeaderAge>
+      <CodeAge>1183319195</CodeAge>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>13</GenNumMethods>
       <Init>true</Init>
@@ -4858,8 +6908,13 @@
     <GenComponentVersion>01.033</GenComponentVersion>
     <GenDriverVersion>01.03</GenDriverVersion>
     <GenEventModule />
+<<<<<<< Upstream, based on origin/master
     <HeaderAge>1182949678</HeaderAge>
     <CodeAge>1182949678</CodeAge>
+=======
+    <HeaderAge>1183319195</HeaderAge>
+    <CodeAge>1183319195</CodeAge>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>13</GenNumMethods>
     <Init>true</Init>
@@ -4959,8 +7014,13 @@
     <GenComponentVersion>01.033</GenComponentVersion>
     <GenDriverVersion>01.03</GenDriverVersion>
     <GenEventModule />
+<<<<<<< Upstream, based on origin/master
     <HeaderAge>1182949678</HeaderAge>
     <CodeAge>1182949677</CodeAge>
+=======
+    <HeaderAge>1183319195</HeaderAge>
+    <CodeAge>1183319195</CodeAge>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>13</GenNumMethods>
     <Init>true</Init>
@@ -5060,8 +7120,13 @@
     <GenComponentVersion>01.033</GenComponentVersion>
     <GenDriverVersion>01.03</GenDriverVersion>
     <GenEventModule />
+<<<<<<< Upstream, based on origin/master
     <HeaderAge>1182949677</HeaderAge>
     <CodeAge>1182949677</CodeAge>
+=======
+    <HeaderAge>1183319195</HeaderAge>
+    <CodeAge>1183319195</CodeAge>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>13</GenNumMethods>
     <Init>true</Init>
@@ -5161,8 +7226,13 @@
     <GenComponentVersion>01.033</GenComponentVersion>
     <GenDriverVersion>01.03</GenDriverVersion>
     <GenEventModule />
+<<<<<<< Upstream, based on origin/master
     <HeaderAge>1182949677</HeaderAge>
     <CodeAge>1182949677</CodeAge>
+=======
+    <HeaderAge>1183319195</HeaderAge>
+    <CodeAge>1183319195</CodeAge>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>13</GenNumMethods>
     <Init>true</Init>
@@ -5259,13 +7329,24 @@
   <UsedSrcFiles>
     <SrcFile0>Drivers\Common\CheckRegBits8_Rst.prg=1116866294</SrcFile0>
     <SrcFile1>Drivers\Kinetis\Init_FTFL_FlashConfig_KINETIS.prg=1146382935</SrcFile1>
+<<<<<<< Upstream, based on origin/master
     <SrcFile2>Drivers\Common\Utilitystrcat.Inc=1178883693</SrcFile2>
+=======
+    <SrcFile2>Drivers\Common\Utilitystrcat.Inc=1183318456</SrcFile2>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <SrcFile3>Drivers\Common\PE_TypesSettings.inc=1116866294</SrcFile3>
     <SrcFile4>Drivers\WatchDog_LDD.src=1116866294</SrcFile4>
+<<<<<<< Upstream, based on origin/master
     <SrcFile5>Drivers\Common\FreeRTOSvApplicationTickHook.Inc=1178883684</SrcFile5>
     <SrcFile6>Drivers\FreeRTOS.src=1178883682</SrcFile6>
     <SrcFile7>Drivers\Common\FreeRTOSvTaskSuspendAll.Inc=1178883684</SrcFile7>
+=======
+    <SrcFile5>Drivers\Common\FreeRTOSvApplicationTickHook.Inc=1183318444</SrcFile5>
+    <SrcFile6>Drivers\FreeRTOS.src=1183318443</SrcFile6>
+    <SrcFile7>Drivers\Common\FreeRTOSvTaskSuspendAll.Inc=1183318444</SrcFile7>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
     <SrcFile8>Drivers\Common\BitIO_LDDAbstract.inc=1116866294</SrcFile8>
+<<<<<<< Upstream, based on origin/master
     <SrcFile9>Drivers\Common\FreeRTOSpvTimerGetTimerID.Inc=1178883684</SrcFile9>
     <SrcFile10>Drivers\Common\UtilityScanHex16uNumber.Inc=1178883694</SrcFile10>
     <SrcFile11>Drivers\Common\FreeRTOSxSemaphoreGiveFromISR.Inc=1178883683</SrcFile11>
@@ -5696,5 +7777,431 @@
     <SrcFile436>Drivers\Common\GeneralReturnNothing.inc=1116866294</SrcFile436>
     <SrcFile437>Drivers\Common\FreeRTOSvPortFree.Inc=1178883683</SrcFile437>
     <SrcFile438>Drivers\Common\CommonInitialization_FLASH.prg=1116866294</SrcFile438>
+=======
+    <SrcFile9>Drivers\Common\FreeRTOSpvTimerGetTimerID.Inc=1183318444</SrcFile9>
+    <SrcFile10>Drivers\Common\UtilityScanHex16uNumber.Inc=1183318456</SrcFile10>
+    <SrcFile11>Drivers\Common\FreeRTOSxSemaphoreGiveFromISR.Inc=1183318443</SrcFile11>
+    <SrcFile12>Drivers\Common\CommonRegInitialization_Flash.prg=1116866294</SrcFile12>
+    <SrcFile13>Drivers\Common\Static_SupportSubroutines.prg=1146382935</SrcFile13>
+    <SrcFile14>Drivers\Common\FreeRTOSxTaskResumeFromISR.Inc=1183318444</SrcFile14>
+    <SrcFile15>Drivers\Common\FreeRTOSvTaskNotifyGiveFromISR.Inc=1183318443</SrcFile15>
+    <SrcFile16>Drivers\Common\KinetisOnNMIINT.inc=1122535254</SrcFile16>
+    <SrcFile17>Drivers\Common\FreeRTOSxTaskNotifyWait.Inc=1183318444</SrcFile17>
+    <SrcFile18>Drivers\Common\CreateCodeSection.prg=1116866294</SrcFile18>
+    <SrcFile19>Drivers\Common\CriticalSectionSettings.Inc=1183318444</SrcFile19>
+    <SrcFile20>Drivers\sw\RTOSAdaptor\FreeRTOS_RTOSAdaptor.prg=1183318444</SrcFile20>
+    <SrcFile21>Drivers\Common\FreeRTOSxTimerCreate.Inc=1183318444</SrcFile21>
+    <SrcFile22>Drivers\Common\UtilitystrcatNum8u.Inc=1183318456</SrcFile22>
+    <SrcFile23>Drivers\Common\FreeRTOSxTaskGetTickCount.Inc=1183318444</SrcFile23>
+    <SrcFile24>Drivers\Common\PE_LDD_Types.prg=1116866294</SrcFile24>
+    <SrcFile25>Drivers\VAR\Init_FTM_VAR0_Incl.drv=1146382935</SrcFile25>
+    <SrcFile26>Drivers\freeRTOS\portTicks.h=1183318444</SrcFile26>
+    <SrcFile27>Drivers\Kinetis\Kinetis_Constants.prg=1116866294</SrcFile27>
+    <SrcFile28>Drivers\Common\FreeRTOSxEventGroupSetBitsFromISR.Inc=1183318444</SrcFile28>
+    <SrcFile29>Drivers\Kinetis\IsSupported_RTC_PDD.prg=1146382935</SrcFile29>
+    <SrcFile30>Drivers\Common\FreeRTOSxQueueReceiveFromISR.Inc=1183318443</SrcFile30>
+    <SrcFile31>Drivers\Kinetis\IsSupported_RTC0_PDD.prg=1146382935</SrcFile31>
+    <SrcFile32>Drivers\Common\UtilityNum32uToStrFormatted.Inc=1183318456</SrcFile32>
+    <SrcFile33>Drivers\Kinetis\Init_AIPS1_KINETIS.prg=1116866294</SrcFile33>
+    <SrcFile34>Drivers\Common\UtilityIsLeapYear.Inc=1183318455</SrcFile34>
+    <SrcFile35>Drivers\Common\FreeRTOSvTaskDelayUntil.Inc=1183318443</SrcFile35>
+    <SrcFile36>Drivers\Common\UtilitystrcatNum24Hex.Inc=1183318456</SrcFile36>
+    <SrcFile37>Drivers\VAR\InitInterrupt.prg=1116866294</SrcFile37>
+    <SrcFile38>Drivers\Common\FreeRTOSxTimerStartFromISR.Inc=1183318444</SrcFile38>
+    <SrcFile39>Drivers\Common\SetRegBits8_Rst.prg=1116866294</SrcFile39>
+    <SrcFile40>Drivers\Common\FreeRTOSvTaskDelay.Inc=1183318444</SrcFile40>
+    <SrcFile41>Drivers\Common\DefineISR.prg=1120303303</SrcFile41>
+    <SrcFile42>Drivers\Kinetis\IsSupported_USBDCD_PDD.prg=1146382935</SrcFile42>
+    <SrcFile43>Drivers\Common\GenReg16BitsInitInfo.prg=1116866294</SrcFile43>
+    <SrcFile44>Drivers\Common\PE_ConstSettings.inc=1116866294</SrcFile44>
+    <SrcFile45>Drivers\Kinetis\InitPin.prg=1122284138</SrcFile45>
+    <SrcFile46>Drivers\Common\FreeRTOSxEventGroupWaitBits.Inc=1183318443</SrcFile46>
+    <SrcFile47>Drivers\Common\InitReg8.prg=1116866294</SrcFile47>
+    <SrcFile48>Drivers\Common\FreeRTOSxQueueIsQueueFullFromISR.Inc=1183318443</SrcFile48>
+    <SrcFile49>Drivers\sw\FreeRTOS.drv=1183318443</SrcFile49>
+    <SrcFile50>Drivers\Kinetis\IsSupported_FTM_PDD.prg=1146382935</SrcFile50>
+    <SrcFile51>Drivers\Common\UtilityScanDate.Inc=1183318456</SrcFile51>
+    <SrcFile52>Drivers\Common\RTOSAdaptor.prg=1116866294</SrcFile52>
+    <SrcFile53>Drivers\Common\FreeRTOSxSemaphoreTakeRecursive.Inc=1183318443</SrcFile53>
+    <SrcFile54>Drivers\Common\Utilityxatoi.Inc=1183318456</SrcFile54>
+    <SrcFile55>Drivers\Kinetis\IsSupported_LLWU_PDD.prg=1146382935</SrcFile55>
+    <SrcFile56>Drivers\Kinetis\InterruptVector.drv=1146382935</SrcFile56>
+    <SrcFile57>Drivers\Kinetis\Kinetis_Linker.prg=1146382935</SrcFile57>
+    <SrcFile58>Drivers\Common\UtilityAbstract.Inc=1183318456</SrcFile58>
+    <SrcFile59>Drivers\Common\OneBitIOPutVal.inc=1116866294</SrcFile59>
+    <SrcFile60>Drivers\Common\Init_FTM_VAR0Abstract.inc=1116866294</SrcFile60>
+    <SrcFile61>Drivers\Kinetis\Init_MPU_KINETIS.prg=1146382935</SrcFile61>
+    <SrcFile62>Drivers\freeRTOS\portmacro.h=1183318444</SrcFile62>
+    <SrcFile63>Drivers\Kinetis\IsSupported_RCM_PDD.prg=1146382935</SrcFile63>
+    <SrcFile64>Drivers\freeRTOS\queue.c=1183318443</SrcFile64>
+    <SrcFile65>Drivers\Common\FreeRTOSxTaskCreate.Inc=1183318443</SrcFile65>
+    <SrcFile66>Drivers\Common\FreeRTOSxQueuePeekFromISR.Inc=1183318444</SrcFile66>
+    <SrcFile67>Drivers\Common\FreeRTOSvApplicationMallocFailedHook.Inc=1183318443</SrcFile67>
+    <SrcFile68>Drivers\Kinetis\IsSupported_PORT_PDD.prg=1146382935</SrcFile68>
+    <SrcFile69>Drivers\Common\Utilitystrcpy.Inc=1183318456</SrcFile69>
+    <SrcFile70>Drivers\Common\UtilityScanDoubleQuotedString.Inc=1183318456</SrcFile70>
+    <SrcFile71>Drivers\freeRTOS\list.h=1183318443</SrcFile71>
+    <SrcFile72>Drivers\freeRTOS\license.txt=1183318443</SrcFile72>
+    <SrcFile73>Drivers\freeRTOS\list.c=1183318443</SrcFile73>
+    <SrcFile74>Drivers\Kinetis\IsSupported_MCM_PDD.prg=1146382935</SrcFile74>
+    <SrcFile75>Drivers\Common\CriticalSectionExitCritical.Inc=1183318443</SrcFile75>
+    <SrcFile76>Drivers\Kinetis\IsSupported_DRY_PDD.prg=1146382935</SrcFile76>
+    <SrcFile77>Drivers\Kinetis\IsSupported_RNGA_PDD.prg=1146382935</SrcFile77>
+    <SrcFile78>Drivers\Common\UtilityScanHex8uNumberNoPrefix.Inc=1183318456</SrcFile78>
+    <SrcFile79>Drivers\Kinetis\IsSupported_MSCAN_PDD.prg=1146382935</SrcFile79>
+    <SrcFile80>Drivers\freeRTOS\queue.h=1183318443</SrcFile80>
+    <SrcFile81>Drivers\Kinetis\IsSupported_CAN_PDD.prg=1146382935</SrcFile81>
+    <SrcFile82>Drivers\Common\WaitWaitns.Inc=1183318456</SrcFile82>
+    <SrcFile83>Drivers\Common\CommonInitialization_NotRst.prg=1116866294</SrcFile83>
+    <SrcFile84>Drivers\Common\FreeRTOSxTimerIsTimerActive.Inc=1183318443</SrcFile84>
+    <SrcFile85>Drivers\Common\FreeRTOStaskEXIT_CRITICAL.Inc=1183318443</SrcFile85>
+    <SrcFile86>Drivers\InterruptVector.src=1122284138</SrcFile86>
+    <SrcFile87>Drivers\Common\FreeRTOSpcTimerGetTimerName.Inc=1183318443</SrcFile87>
+    <SrcFile88>Drivers\Common\FreeRTOSxQueueIsQueueEmptyFromISR.Inc=1183318444</SrcFile88>
+    <SrcFile89>Drivers\Kinetis\PE_Types.drv=1146382935</SrcFile89>
+    <SrcFile90>Drivers\Kinetis\IsSupported_USB_PDD.prg=1146382935</SrcFile90>
+    <SrcFile91>Drivers\Common\UtilityNum32uToStr.Inc=1183318456</SrcFile91>
+    <SrcFile92>Drivers\Common\Header.c=1116866294</SrcFile92>
+    <SrcFile93>Drivers\Kinetis\BitIO_LDD.drv=1124477581</SrcFile93>
+    <SrcFile94>Drivers\Common\Header.h=1116866294</SrcFile94>
+    <SrcFile95>Drivers\sw\CriticalSection.drv=1183318444</SrcFile95>
+    <SrcFile96>Drivers\Common\OneBitIOSettings.inc=1116866294</SrcFile96>
+    <SrcFile97>Drivers\Common\UtilitystrCutTail.Inc=1183318456</SrcFile97>
+    <SrcFile98>Drivers\Kinetis\IsSupported_FTFA_PDD.prg=1146382935</SrcFile98>
+    <SrcFile99>Drivers\sw\RTOSAdaptor\Common_RTOSAdaptor.prg=1116827381</SrcFile99>
+    <SrcFile100>Drivers\Common\KinetisOnPendableService.inc=1122535254</SrcFile100>
+    <SrcFile101>Drivers\Common\FreeRTOSxTimerGetTimerDaemonTaskHandle.Inc=1183318444</SrcFile101>
+    <SrcFile102>Drivers\freeRTOS\croutine.c=1183318444</SrcFile102>
+    <SrcFile103>Drivers\Common\FreeRTOSxEventGroupGetBitsFromISR.Inc=1183318444</SrcFile103>
+    <SrcFile104>Drivers\Kinetis\IO_Map.drv=1146382935</SrcFile104>
+    <SrcFile105>Drivers\Common\Header.C=1116866294</SrcFile105>
+    <SrcFile106>Drivers\freeRTOS\croutine.h=1183318444</SrcFile106>
+    <SrcFile107>Drivers\Kinetis\IsSupported_MCG_PDD.prg=1146382935</SrcFile107>
+    <SrcFile108>Drivers\Common\FreeRTOSxQueueSendToFront.Inc=1183318443</SrcFile108>
+    <SrcFile109>Drivers\Common\UtilityWeekDay.Inc=1183318455</SrcFile109>
+    <SrcFile110>Drivers\Common\SetRegBits32_Rst.prg=1116866294</SrcFile110>
+    <SrcFile111>Drivers\freeRTOS\portasm.s=1183318444</SrcFile111>
+    <SrcFile112>Drivers\Kinetis\IsSupported_PWT_PDD.prg=1146382935</SrcFile112>
+    <SrcFile113>Drivers\Common\HeaderCopyright.inc=1146382935</SrcFile113>
+    <SrcFile114>Drivers\Kinetis\Kinetis_PE_low_level_init.prg=1122788473</SrcFile114>
+    <SrcFile115>Drivers\Kinetis\IsSupported_LCDC_PDD.prg=1119719531</SrcFile115>
+    <SrcFile116>Drivers\Kinetis.src=1129740155</SrcFile116>
+    <SrcFile117>Drivers\Common\UtilityScanDecimal32sNumber.Inc=1183318456</SrcFile117>
+    <SrcFile118>Drivers\freeRTOS\mpu_wrappers.h=1183318444</SrcFile118>
+    <SrcFile119>Drivers\Kinetis\PE_LDD.prg=1146382935</SrcFile119>
+    <SrcFile120>Drivers\Common\UtilitystrcatNum32s.Inc=1183318456</SrcFile120>
+    <SrcFile121>Drivers\Kinetis\Init_FTMRx_FlashConfig_KINETIS.prg=1146382935</SrcFile121>
+    <SrcFile122>Drivers\Kinetis\IsSupported_DMA_PDD.prg=1146382935</SrcFile122>
+    <SrcFile123>Drivers\Common\Utilitychcat.Inc=1183318456</SrcFile123>
+    <SrcFile124>Drivers\Common\FreeRTOSxSemaphoreCreateMutex.Inc=1183318444</SrcFile124>
+    <SrcFile125>Drivers\Init_FTM_VAR0.src=1123183926</SrcFile125>
+    <SrcFile126>Drivers\sw\Wait.drv=1183318456</SrcFile126>
+    <SrcFile127>Drivers\Common\UtilityScanHex32uNumber.Inc=1183318456</SrcFile127>
+    <SrcFile128>Drivers\Wait.src=1183318455</SrcFile128>
+    <SrcFile129>Drivers\Common\GeneralParametersNone.inc=1116866294</SrcFile129>
+    <SrcFile130>Drivers\Common\UtilitystrcatNum8Hex.Inc=1183318456</SrcFile130>
+    <SrcFile131>Drivers\Kinetis\PExRegMap_MK21D5.prg=1116866294</SrcFile131>
+    <SrcFile132>Drivers\Common\GeneralInternalGlobal.inc=1116866294</SrcFile132>
+    <SrcFile133>Drivers\Common\UtilityNum16sToStrFormatted.Inc=1183318456</SrcFile133>
+    <SrcFile134>Drivers\Common\FreeRTOStaskENABLE_INTERRUPTS.Inc=1183318443</SrcFile134>
+    <SrcFile135>Drivers\Common\GeneralInternalDescription.prg=1116866294</SrcFile135>
+    <SrcFile136>Drivers\Common\FreeRTOSxQueueSendToBackFromISR.Inc=1183318443</SrcFile136>
+    <SrcFile137>Drivers\Common\CriticalSectionEnterCritical.Inc=1183318444</SrcFile137>
+    <SrcFile138>Drivers\freeRTOS\FreeRTOSConfig.h=1183318444</SrcFile138>
+    <SrcFile139>Drivers\freeRTOS\event_groups.c=1183318443</SrcFile139>
+    <SrcFile140>Drivers\sw\CommonSupport.prg=1183318456</SrcFile140>
+    <SrcFile141>Drivers\Common\BitIO_LDDPutVal.inc=1116866294</SrcFile141>
+    <SrcFile142>Drivers\freeRTOS\event_groups.h=1183318443</SrcFile142>
+    <SrcFile143>Drivers\Common\WaitAbstract.Inc=1183318456</SrcFile143>
+    <SrcFile144>Drivers\freeRTOS\portable.h=1183318444</SrcFile144>
+    <SrcFile145>Drivers\Common\FreeRTOSxQueueSendToBack.Inc=1183318443</SrcFile145>
+    <SrcFile146>Drivers\Common\WaitWait10Cycles.Inc=1183318456</SrcFile146>
+    <SrcFile147>Drivers\BitIO.src=1122284138</SrcFile147>
+    <SrcFile148>Drivers\freeRTOS\projdefs.h=1183318443</SrcFile148>
+    <SrcFile149>Drivers\Kinetis\Kinetis_EntryPointCode.prg=1128496915</SrcFile149>
+    <SrcFile150>Drivers\Common\OneBitIOAbstract.inc=1116866294</SrcFile150>
+    <SrcFile151>Drivers\Kinetis\IsSupported_DMAMUX_PDD.prg=1146382935</SrcFile151>
+    <SrcFile152>Drivers\Kinetis\IsSupported_SPI_PDD.prg=1146382935</SrcFile152>
+    <SrcFile153>Drivers\Kinetis\InitIntPriority.prg=1146382935</SrcFile153>
+    <SrcFile154>Drivers\VAR\InitClockGate.prg=1122284138</SrcFile154>
+    <SrcFile155>Drivers\Common\WatchDog_LDDOnWatchDog.inc=1116866294</SrcFile155>
+    <SrcFile156>Drivers\freeRTOS_Files.prg=1183318444</SrcFile156>
+    <SrcFile157>Drivers\Common\FreeRTOSxQueueSendToFrontFromISR.Inc=1183318443</SrcFile157>
+    <SrcFile158>Drivers\Common\InitISRimplement.inc=1116866294</SrcFile158>
+    <SrcFile159>Drivers\Kinetis\Init_ExternalBus_KINETIS.prg=1119773185</SrcFile159>
+    <SrcFile160>Drivers\Common\PE_MisraDisableRules.prg=1116866294</SrcFile160>
+    <SrcFile161>Drivers\Common\PE_Limitations.inc=1116866294</SrcFile161>
+    <SrcFile162>Drivers\Common\UsedPin.inc=1116866294</SrcFile162>
+    <SrcFile163>Drivers\Kinetis\IsSupported_DAC_PDD.prg=1146382935</SrcFile163>
+    <SrcFile164>Drivers\CriticalSection.src=1183318443</SrcFile164>
+    <SrcFile165>Drivers\Common\BitIO_LDDClrVal.inc=1116866294</SrcFile165>
+    <SrcFile166>Drivers\Common\KinetisEnableInt.inc=1122535254</SrcFile166>
+    <SrcFile167>Drivers\Common\SetRegBits32.prg=1127381294</SrcFile167>
+    <SrcFile168>Drivers\Common\FreeRTOSxTimerStart.Inc=1183318444</SrcFile168>
+    <SrcFile169>Drivers\Common\UtilityScanSeparatedNumbers.Inc=1183318456</SrcFile169>
+    <SrcFile170>lib\doxygen\pex.doxyfile=1177969043</SrcFile170>
+    <SrcFile171>Drivers\Kinetis\IsSupported_NFC_PDD.prg=1119719549</SrcFile171>
+    <SrcFile172>Drivers\Common\UtilityScanHex8uNumber.Inc=1183318456</SrcFile172>
+    <SrcFile173>Drivers\Common\UtilitystrcatNum32Hex.Inc=1183318456</SrcFile173>
+    <SrcFile174>Drivers\Common\UtilitystrFind.Inc=1183318456</SrcFile174>
+    <SrcFile175>Drivers\Common\FreeRTOSxTaskGetSchedulerState.Inc=1183318443</SrcFile175>
+    <SrcFile176>Drivers\Common\UtilityNum32sToStr.Inc=1183318456</SrcFile176>
+    <SrcFile177>Drivers\Common\SetReg8.prg=1127381294</SrcFile177>
+    <SrcFile178>Drivers\freeRTOS\task.h=1183318443</SrcFile178>
+    <SrcFile179>Drivers\Kinetis\Init_LLWU_KINETIS.prg=1128496915</SrcFile179>
+    <SrcFile180>Drivers\Kinetis\CreateSupportedPddList.prg=1146382935</SrcFile180>
+    <SrcFile181>Drivers\Kinetis\IsSupported_SCB_PDD.prg=1146382935</SrcFile181>
+    <SrcFile182>Drivers\Common\FreeRTOSxTaskNotifyGive.Inc=1183318443</SrcFile182>
+    <SrcFile183>Drivers\Common\KinetisOnSupervisorCall.inc=1122535254</SrcFile183>
+    <SrcFile184>Drivers\Common\DoxyGenCpuDoc.prg=1129740155</SrcFile184>
+    <SrcFile185>Drivers\Kinetis\IsSupported_ENET_PDD.prg=1146382935</SrcFile185>
+    <SrcFile186>Drivers\Common\SetReg16.prg=1127381294</SrcFile186>
+    <SrcFile187>Drivers\Common\FreeRTOSvApplicationStackOverflowHook.Inc=1183318444</SrcFile187>
+    <SrcFile188>Drivers\Common\Header.doxy=1119164667</SrcFile188>
+    <SrcFile189>Drivers\Common\WatchDog_LDDInit.inc=1116866294</SrcFile189>
+    <SrcFile190>Drivers\Kinetis\IsSupported_CRC_PDD.prg=1146382935</SrcFile190>
+    <SrcFile191>Drivers\Common\DummyReadReg8.prg=1116866294</SrcFile191>
+    <SrcFile192>Drivers\Kinetis\PE_Error.drv=1116866294</SrcFile192>
+    <SrcFile193>Drivers\Common\PE_TypesAbstract.inc=1116866294</SrcFile193>
+    <SrcFile194>Drivers\Common\FreeRTOSxQueueOverwriteFromISR.Inc=1183318444</SrcFile194>
+    <SrcFile195>Drivers\Common\PE_MisraRuleToDocumentation_Kinetis.prg=1116866294</SrcFile195>
+    <SrcFile196>Drivers\Kinetis\IsSupported_FMC_PDD.prg=1146382935</SrcFile196>
+    <SrcFile197>Drivers\Common\UtilityScanDecimal16uNumber.Inc=1183318456</SrcFile197>
+    <SrcFile198>Drivers\Kinetis\IsSupported_USBHS_PDD.prg=1119719708</SrcFile198>
+    <SrcFile199>Drivers\Common\FreeRTOSxPortGetFreeHeapSize.Inc=1183318443</SrcFile199>
+    <SrcFile200>Drivers\Kinetis\IsSupported_I2S_PDD.prg=1119719530</SrcFile200>
+    <SrcFile201>Drivers\Common\InitReg32Block.prg=1116866294</SrcFile201>
+    <SrcFile202>Drivers\Kinetis\IsSupported_IRQ_PDD.prg=1146382935</SrcFile202>
+    <SrcFile203>Drivers\Common\UtilitystrcatNum32u.Inc=1183318455</SrcFile203>
+    <SrcFile204>Drivers\Common\FreeRTOSvQueueAddToRegistry.Inc=1183318444</SrcFile204>
+    <SrcFile205>Drivers\Common\FreeRTOSxTimerDelete.Inc=1183318443</SrcFile205>
+    <SrcFile206>Drivers\Common\FreeRTOSxQueueReset.Inc=1183318444</SrcFile206>
+    <SrcFile207>Drivers\Common\FreeRTOSInit.Inc=1183318444</SrcFile207>
+    <SrcFile208>Drivers\Common\UtilitySettings.Inc=1183318456</SrcFile208>
+    <SrcFile209>Drivers\Common\WatchDog_LDDSettings.inc=1146382935</SrcFile209>
+    <SrcFile210>Drivers\Kinetis\Init_SystemControl_KINETIS.prg=1119773536</SrcFile210>
+    <SrcFile211>Drivers\freeRTOS\timers.c=1183318443</SrcFile211>
+    <SrcFile212>Drivers\Common\FreeRTOSxTimerPendFunctionCall.Inc=1183318444</SrcFile212>
+    <SrcFile213>Drivers\Kinetis\IsSupported_SIM_PDD.prg=1146382935</SrcFile213>
+    <SrcFile214>Drivers\Common\FreeRTOSxEventGroupSetBits.Inc=1183318443</SrcFile214>
+    <SrcFile215>Drivers\Kinetis\IsSupported_COP_PDD.prg=1146382935</SrcFile215>
+    <SrcFile216>Drivers\Common\KinetisDisableInt.inc=1122535254</SrcFile216>
+    <SrcFile217>Drivers\VAR\Init_FTM_VAR0.drv=1146382935</SrcFile217>
+    <SrcFile218>Drivers\Common\FreeRTOSuxTaskGetNumberOfTasks.Inc=1183318444</SrcFile218>
+    <SrcFile219>Drivers\Kinetis\InitInterrupt.prg=1123044898</SrcFile219>
+    <SrcFile220>Drivers\Common\CommonEnabling.prg=1116866294</SrcFile220>
+    <SrcFile221>Drivers\Common\Doxy_CollectRegInitInfo.prg=1116866294</SrcFile221>
+    <SrcFile222>Drivers\Common\SetRegBits8.prg=1127381294</SrcFile222>
+    <SrcFile223>Drivers\Kinetis\IsSupported_OSC_PDD.prg=1146382935</SrcFile223>
+    <SrcFile224>Drivers\Common\CriticalSectionCriticalVariable.Inc=1183318444</SrcFile224>
+    <SrcFile225>Drivers\Kinetis\IsSupported_FTMRE_PDD.prg=1146382935</SrcFile225>
+    <SrcFile226>Drivers\Common\UtilityNum8uToStr.Inc=1183318456</SrcFile226>
+    <SrcFile227>Drivers\freeRTOS\timers.h=1183318443</SrcFile227>
+    <SrcFile228>Drivers\Common\FreeRTOSuxTaskPriorityGet.Inc=1183318444</SrcFile228>
+    <SrcFile229>Drivers\Common\FreeRTOSxTaskResumeAll.Inc=1183318443</SrcFile229>
+    <SrcFile230>Drivers\Common\FreeRTOSxSemaphoreGetMutexHolder.Inc=1183318444</SrcFile230>
+    <SrcFile231>Drivers\Common\UtilityNum16sToStr.Inc=1183318456</SrcFile231>
+    <SrcFile232>Drivers\Common\Utilitystrlen.Inc=1183318456</SrcFile232>
+    <SrcFile233>Drivers\Common\UtilityScanDecimal8uNumber.Inc=1183318456</SrcFile233>
+    <SrcFile234>Drivers\Common\FreeRTOSxTaskNotifyFromISR.Inc=1183318444</SrcFile234>
+    <SrcFile235>Drivers\Common\UtilityNum8sToStr.Inc=1183318456</SrcFile235>
+    <SrcFile236>Drivers\Common\Utilitystrncmp.Inc=1183318456</SrcFile236>
+    <SrcFile237>Drivers\Common\FreeRTOSxQueueOverwrite.Inc=1183318443</SrcFile237>
+    <SrcFile238>Drivers\Common\UtilitystrcatNum8s.Inc=1183318455</SrcFile238>
+    <SrcFile239>Drivers\Common\BitIO_LDDInit.inc=1116866294</SrcFile239>
+    <SrcFile240>Drivers\Common\UtilityScanDecimal32uNumber.Inc=1183318455</SrcFile240>
+    <SrcFile241>Drivers\Common\FreeRTOSxQueueCreate.Inc=1183318443</SrcFile241>
+    <SrcFile242>Drivers\Kinetis\IsSupported_VREF_PDD.prg=1146382935</SrcFile242>
+    <SrcFile243>Drivers\Common\Header.End=1116866294</SrcFile243>
+    <SrcFile244>Drivers\Common\CopyrightUserC.inc=1116866294</SrcFile244>
+    <SrcFile245>Drivers\Kinetis\IsSupported_LPTMR_PDD.prg=1146382935</SrcFile245>
+    <SrcFile246>Drivers\Common\FreeRTOSuxQueueMessagesWaiting.Inc=1183318444</SrcFile246>
+    <SrcFile247>Drivers\BitIO_LDD.src=1116866294</SrcFile247>
+    <SrcFile248>Drivers\Kinetis\IsSupported_PMC_PDD.prg=1146382935</SrcFile248>
+    <SrcFile249>Drivers\Kinetis\IsSupported_RNG_PDD.prg=1119719570</SrcFile249>
+    <SrcFile250>Drivers\Common\FreeRTOSvQueueDelete.Inc=1183318444</SrcFile250>
+    <SrcFile251>Drivers\Common\UtilitystrcatNum16u.Inc=1183318456</SrcFile251>
+    <SrcFile252>Drivers\Common\GenReg8BitsInitInfo.prg=1116866294</SrcFile252>
+    <SrcFile253>Drivers\Common\FreeRTOSxSemaphoreCreateCounting.Inc=1183318443</SrcFile253>
+    <SrcFile254>Drivers\Common\FreeRTOSxTaskGetTickCountFromISR.Inc=1183318444</SrcFile254>
+    <SrcFile255>Drivers\Common\WaitWaitLongCycles.Inc=1183318456</SrcFile255>
+    <SrcFile256>Drivers\VAR\InitIntPriority.prg=1146382935</SrcFile256>
+    <SrcFile257>Drivers\Common\SetReg8_Rst.prg=1116866294</SrcFile257>
+    <SrcFile258>Drivers\Common\FreeRTOSxTimerReset.Inc=1183318443</SrcFile258>
+    <SrcFile259>Drivers\Common\UtilitystrcatNum16Hex.Inc=1183318456</SrcFile259>
+    <SrcFile260>Drivers\freeRTOS\heap_1.c=1183318443</SrcFile260>
+    <SrcFile261>Drivers\Common\SetReg32_Rst.prg=1116866294</SrcFile261>
+    <SrcFile262>Drivers\Kinetis\IsSupported_SAI_PDD.prg=1146382935</SrcFile262>
+    <SrcFile263>Drivers\Common\OneBitIOClrVal.inc=1116866294</SrcFile263>
+    <SrcFile264>Drivers\Common\UtilityScanDecimal32sDotNumber.Inc=1183318455</SrcFile264>
+    <SrcFile265>Drivers\Common\WaitWait100Cycles.Inc=1183318455</SrcFile265>
+    <SrcFile266>Drivers\Common\InitReg32.prg=1116866294</SrcFile266>
+    <SrcFile267>Drivers\freeRTOS\heap_5.c=1183318443</SrcFile267>
+    <SrcFile268>Drivers\Common\UtilitystrcatNum16s.Inc=1183318456</SrcFile268>
+    <SrcFile269>Drivers\Common\GenReg8InitInfo.prg=1116866294</SrcFile269>
+    <SrcFile270>Drivers\Common\FreeRTOSvSemaphoreCreateBinary.Inc=1183318444</SrcFile270>
+    <SrcFile271>Drivers\freeRTOS\heap_4.c=1183318444</SrcFile271>
+    <SrcFile272>Drivers\Common\FreeRTOSxTimerResetFromISR.Inc=1183318443</SrcFile272>
+    <SrcFile273>Drivers\Common\CommonInitialization.prg=1116866294</SrcFile273>
+    <SrcFile274>Drivers\Kinetis\IsSupported_UART0_PDD.prg=1146382935</SrcFile274>
+    <SrcFile275>Drivers\Common\KinetisSettings.inc=1116866294</SrcFile275>
+    <SrcFile276>Drivers\Common\SetReg32.prg=1127381294</SrcFile276>
+    <SrcFile277>Drivers\Common\UtilitystrcatNum16sFormatted.Inc=1183318455</SrcFile277>
+    <SrcFile278>Drivers\Common\FreeRTOSvTaskPrioritySet.Inc=1183318443</SrcFile278>
+    <SrcFile279>Drivers\Common\FreeRTOStaskDISABLE_INTERRUPTS.Inc=1183318443</SrcFile279>
+    <SrcFile280>Drivers\freeRTOS\deprecated_definitions.h=1183318444</SrcFile280>
+    <SrcFile281>Drivers\Common\BitIO_LDDSetVal.inc=1116866294</SrcFile281>
+    <SrcFile282>Drivers\Common\Header.end=1116866294</SrcFile282>
+    <SrcFile283>Drivers\Kinetis\Init_AXBS_KINETIS.prg=1146382935</SrcFile283>
+    <SrcFile284>Drivers\Common\FreeRTOSxTimerStopFromISR.Inc=1183318444</SrcFile284>
+    <SrcFile285>Drivers\Common\HeaderFreescale.h=1116866294</SrcFile285>
+    <SrcFile286>Drivers\Kinetis\IsSupported_FTFL_PDD.prg=1146382935</SrcFile286>
+    <SrcFile287>Drivers\Kinetis\Init_AIPS0_KINETIS.prg=1146382935</SrcFile287>
+    <SrcFile288>Drivers\Kinetis\IsSupported_FTMRH_PDD.prg=1122513371</SrcFile288>
+    <SrcFile289>Drivers\Common\FreeRTOSxTimerChangePeriod.Inc=1183318444</SrcFile289>
+    <SrcFile290>Drivers\Kinetis\IsSupported_EWM_PDD.prg=1146382935</SrcFile290>
+    <SrcFile291>Drivers\Kinetis\IsSupported_I2C_PDD.prg=1146382935</SrcFile291>
+    <SrcFile292>Drivers\Common\IO_MapAbstract.inc=1116866294</SrcFile292>
+    <SrcFile293>Drivers\Common\WaitWaitms.Inc=1183318456</SrcFile293>
+    <SrcFile294>Drivers\Kinetis\WatchDog_LDD.drv=1146382935</SrcFile294>
+    <SrcFile295>Drivers\Common\InitISRheader.inc=1116866294</SrcFile295>
+    <SrcFile296>Drivers\Common\BitIO_LDDSettings.inc=1146382935</SrcFile296>
+    <SrcFile297>Drivers\Kinetis\PE_Const.drv=1124477581</SrcFile297>
+    <SrcFile298>Drivers\Common\WaitWaitCycles.Inc=1183318455</SrcFile298>
+    <SrcFile299>Drivers\Common\WaitSettings.Inc=1183318456</SrcFile299>
+    <SrcFile300>Drivers\Common\GeneralInternal.inc=1116866294</SrcFile300>
+    <SrcFile301>Drivers\Kinetis\Kinetis.drv=1146382935</SrcFile301>
+    <SrcFile302>Drivers\Common\GenReg32BitsInitInfo.prg=1116866294</SrcFile302>
+    <SrcFile303>Drivers\Kinetis\IsSupported_TPM_PDD.prg=1146382935</SrcFile303>
+    <SrcFile304>Drivers\Common\Utilitystrcmp.Inc=1183318456</SrcFile304>
+    <SrcFile305>Drivers\Common\FreeRTOSvApplicationIdleHook.Inc=1183318443</SrcFile305>
+    <SrcFile306>Drivers\Common\FreeRTOSxSemaphoreCreateRecursiveMutex.Inc=1183318443</SrcFile306>
+    <SrcFile307>Drivers\Common\FreeRTOSxSemaphoreGive.Inc=1183318444</SrcFile307>
+    <SrcFile308>Drivers\Kinetis\IsSupported_PDB_PDD.prg=1146382935</SrcFile308>
+    <SrcFile309>Drivers\Kinetis\Kinetis_InterruptVectorTable.prg=1146382935</SrcFile309>
+    <SrcFile310>Drivers\Kinetis\IsSupported_SysTick_PDD.prg=1146382935</SrcFile310>
+    <SrcFile311>Drivers\Kinetis\Init_FMC_KINETIS.prg=1146382935</SrcFile311>
+    <SrcFile312>Drivers\Common\FreeRTOSxEventGroupSync.Inc=1183318444</SrcFile312>
+    <SrcFile313>Drivers\Common\InitReg8Block.prg=1116866294</SrcFile313>
+    <SrcFile314>Drivers\Kinetis\IsSupported_LPUART_PDD.prg=1146382935</SrcFile314>
+    <SrcFile315>Drivers\Common\ErrorDefinitions.inc=1116866294</SrcFile315>
+    <SrcFile316>Drivers\Common\FreeRTOSxTimerStop.Inc=1183318444</SrcFile316>
+    <SrcFile317>Drivers\freeRTOS\port.c=1183318444</SrcFile317>
+    <SrcFile318>Drivers\Common\PE_ConstAbstract.inc=1116866294</SrcFile318>
+    <SrcFile319>Drivers\Common\FreeRTOSulTaskNotifyTake.Inc=1183318443</SrcFile319>
+    <SrcFile320>Drivers\Common\UtilityNum32sToStrFormatted.Inc=1183318456</SrcFile320>
+    <SrcFile321>Drivers\freeRTOS\FreeRTOS.h=1183318443</SrcFile321>
+    <SrcFile322>Drivers\Common\GeneralMethod.inc=1116866294</SrcFile322>
+    <SrcFile323>Drivers\sw\Utility.drv=1183318455</SrcFile323>
+    <SrcFile324>Drivers\Common\InterruptVectorSettings.inc=1116866294</SrcFile324>
+    <SrcFile325>Drivers\Common\PE_MisraRuleToErrorCode.prg=1127381294</SrcFile325>
+    <SrcFile326>Drivers\Common\FreeRTOSxSemaphoreTakeFromISR.Inc=1183318443</SrcFile326>
+    <SrcFile327>Drivers\Kinetis\IsSupported_CMP_PDD.prg=1146382935</SrcFile327>
+    <SrcFile328>Drivers\Common\PE_MisraRuleToDocumentation.prg=1116866294</SrcFile328>
+    <SrcFile329>Drivers\Common\FreeRTOSpvPortMalloc.Inc=1183318444</SrcFile329>
+    <SrcFile330>Drivers\Kinetis\IsSupported_SMC_PDD.prg=1146382935</SrcFile330>
+    <SrcFile331>Drivers\Common\UtilitystrcatNum32sFormatted.Inc=1183318456</SrcFile331>
+    <SrcFile332>Drivers\Common\InitReg_GetValue.prg=1116866294</SrcFile332>
+    <SrcFile333>Drivers\Common\FreeRTOStaskYIELD.Inc=1183318443</SrcFile333>
+    <SrcFile334>Drivers\Kinetis\Kinetis_CW_MEM.prg=1146382935</SrcFile334>
+    <SrcFile335>Drivers\Common\UtilitystrcatNum32sDotValue100.Inc=1183318456</SrcFile335>
+    <SrcFile336>Drivers\Common\DoxyGenComponentDoc.prg=1118662669</SrcFile336>
+    <SrcFile337>Drivers\Kinetis\IsSupported_GPIO_PDD.prg=1146382935</SrcFile337>
+    <SrcFile338>Drivers\Common\FreeRTOSxQueuePeek.Inc=1183318444</SrcFile338>
+    <SrcFile339>Drivers\Kinetis\IsSupported_UART_PDD.prg=1146382935</SrcFile339>
+    <SrcFile340>Drivers\Common\UtilityNum16uToStr.Inc=1183318456</SrcFile340>
+    <SrcFile341>Drivers\Common\PE_MisraEnableRules.prg=1116866294</SrcFile341>
+    <SrcFile342>Drivers\freeRTOS\tasks.c=1183318444</SrcFile342>
+    <SrcFile343>Drivers\Kinetis\Init_SIM_KINETIS.prg=1146382935</SrcFile343>
+    <SrcFile344>Drivers\Common\GeneralParameters.inc=1116866294</SrcFile344>
+    <SrcFile345>Drivers\Common\FreeRTOSvSemaphoreDelete.Inc=1183318444</SrcFile345>
+    <SrcFile346>Drivers\Common\GeneralPublicGlobal.inc=1116866294</SrcFile346>
+    <SrcFile347>Drivers\Common\Utilitystrtailcmp.Inc=1183318456</SrcFile347>
+    <SrcFile348>Drivers\Common\BitIO_LDDGetVal.inc=1116866294</SrcFile348>
+    <SrcFile349>Drivers\Kinetis\Kinetis_MCG.prg=1146382935</SrcFile349>
+    <SrcFile350>Drivers\Kinetis\Kinetis_FlashConfig.prg=1121555243</SrcFile350>
+    <SrcFile351>Drivers\Kinetis\IsSupported_LCD_PDD.prg=1119719539</SrcFile351>
+    <SrcFile352>Drivers\freeRTOS\heap_3.c=1183318444</SrcFile352>
+    <SrcFile353>Drivers\Common\FreeRTOSvTaskSuspend.Inc=1183318444</SrcFile353>
+    <SrcFile354>Drivers\freeRTOS\heap_2.c=1183318444</SrcFile354>
+    <SrcFile355>Drivers\Kinetis\IsSupported_SDHC_PDD.prg=1146382935</SrcFile355>
+    <SrcFile356>Drivers\Common\FreeRTOSxQueueReceive.Inc=1183318443</SrcFile356>
+    <SrcFile357>Drivers\Common\GeneralDamage.inc=1116866294</SrcFile357>
+    <SrcFile358>Drivers\Kinetis\InitIntRequest.prg=1146382935</SrcFile358>
+    <SrcFile359>Drivers\Common\EBGNSupport\StringLib.prg=1146382935</SrcFile359>
+    <SrcFile360>Drivers\Kinetis\IsSupported_WDOG_PDD.prg=1146382935</SrcFile360>
+    <SrcFile361>Drivers\Common\FreeRTOSxSemaphoreGiveRecursive.Inc=1183318443</SrcFile361>
+    <SrcFile362>Drivers\Kinetis\BitIO.drv=1116866294</SrcFile362>
+    <SrcFile363>Drivers\Kinetis\FTFx.prg=1129740155</SrcFile363>
+    <SrcFile364>Drivers\Common\UtilitystrcatNum32uFormatted.Inc=1183318456</SrcFile364>
+    <SrcFile365>Drivers\Common\FreeRTOSuxTaskGetStackHighWaterMark.Inc=1183318444</SrcFile365>
+    <SrcFile366>Drivers\Common\HeaderGeneral.c=1116866294</SrcFile366>
+    <SrcFile367>Drivers\Common\KinetisSystemReset.inc=1122535254</SrcFile367>
+    <SrcFile368>Drivers\VAR\InitPin.prg=1116866294</SrcFile368>
+    <SrcFile369>Drivers\Common\HeaderGeneral.h=1116866294</SrcFile369>
+    <SrcFile370>Drivers\Common\FreeRTOSvQueueUnregisterQueue.Inc=1183318443</SrcFile370>
+    <SrcFile371>Drivers\Kinetis\Init_RCM_KINETIS.prg=1128496915</SrcFile371>
+    <SrcFile372>Drivers\Common\OneBitIOSetVal.inc=1116866294</SrcFile372>
+    <SrcFile373>Drivers\Kinetis\Init_PMC_KINETIS.prg=1146382935</SrcFile373>
+    <SrcFile374>Drivers\Common\PE_ErrorAbstract.inc=1116866294</SrcFile374>
+    <SrcFile375>Drivers\Utility.src=1183318456</SrcFile375>
+    <SrcFile376>Drivers\Common\FreeRTOSAbstract.Inc=1183318444</SrcFile376>
+    <SrcFile377>Drivers\Common\FreeRTOSxSemaphoreTake.Inc=1183318444</SrcFile377>
+    <SrcFile378>Drivers\Common\FreeRTOSxEventGroupClearBitsFromISR.Inc=1183318444</SrcFile378>
+    <SrcFile379>Drivers\Common\GeneralEvent.inc=1116866294</SrcFile379>
+    <SrcFile380>Drivers\freeRTOS\StackMacros.h=1183318444</SrcFile380>
+    <SrcFile381>Drivers\Common\SetRegBitMask.prg=1146382935</SrcFile381>
+    <SrcFile382>Drivers\Kinetis\IsSupported_ADC_PDD.prg=1146382935</SrcFile382>
+    <SrcFile383>Drivers\Common\FreeRTOStaskENTER_CRITICAL.Inc=1183318443</SrcFile383>
+    <SrcFile384>Drivers\Common\FreeRTOSvTaskResume.Inc=1183318444</SrcFile384>
+    <SrcFile385>Drivers\Kinetis\IsSupported_CMT_PDD.prg=1146382935</SrcFile385>
+    <SrcFile386>Drivers\Common\CommonRegInitialization.prg=1116866294</SrcFile386>
+    <SrcFile387>Drivers\Common\PE_MisraDisableRuleForSymbol.prg=1116866294</SrcFile387>
+    <SrcFile388>Drivers\Common\UtilityReadEscapedName.Inc=1183318456</SrcFile388>
+    <SrcFile389>Drivers\Common\OneBitIOGetVal.inc=1116866294</SrcFile389>
+    <SrcFile390>Drivers\Common\FreeRTOSvTaskStartScheduler.Inc=1183318444</SrcFile390>
+    <SrcFile391>Drivers\freeRTOS\semphr.h=1183318444</SrcFile391>
+    <SrcFile392>Drivers\Common\Init_FTM_VAR0Init.inc=1116866294</SrcFile392>
+    <SrcFile393>Drivers\Kinetis\Init_MCM_KINETIS.prg=1154514675</SrcFile393>
+    <SrcFile394>Drivers\Common\PE_LDD.prg=1124477581</SrcFile394>
+    <SrcFile395>Drivers\Common\FreeRTOSxEventGroupGetBits.Inc=1183318443</SrcFile395>
+    <SrcFile396>Drivers\Common\CheckRegBits32_Rst.prg=1116866294</SrcFile396>
+    <SrcFile397>Drivers\Kinetis\IsSupported_KBI_PDD.prg=1146382935</SrcFile397>
+    <SrcFile398>Drivers\Common\WatchDog_LDDClear.inc=1116866294</SrcFile398>
+    <SrcFile399>Drivers\Kinetis\IsSupported_PIT_PDD.prg=1146382935</SrcFile399>
+    <SrcFile400>Drivers\Common\Utils\Misc.inc=1116866294</SrcFile400>
+    <SrcFile401>Drivers\Common\CriticalSectionAbstract.Inc=1183318443</SrcFile401>
+    <SrcFile402>Drivers\Common\ToolChain_Settings.prg=1146382935</SrcFile402>
+    <SrcFile403>Drivers\Common\WaitWaitOSms.Inc=1183318456</SrcFile403>
+    <SrcFile404>Drivers\Kinetis\IsSupported_FTFE_PDD.prg=1146382935</SrcFile404>
+    <SrcFile405>Drivers\Kinetis\InitClockGate.prg=1146382935</SrcFile405>
+    <SrcFile406>Drivers\Common\Init_FTM_VAR0Settings.inc=1128496915</SrcFile406>
+    <SrcFile407>Drivers\Common\CommonRegInitialization_NotRst.prg=1116866294</SrcFile407>
+    <SrcFile408>Drivers\Common\UtilityScanTime.Inc=1183318456</SrcFile408>
+    <SrcFile409>Drivers\Common\WaitWaitus.Inc=1183318456</SrcFile409>
+    <SrcFile410>Drivers\Common\UtilityScanDecimal16sNumber.Inc=1183318456</SrcFile410>
+    <SrcFile411>Drivers\Common\FreeRTOSxEventGroupClearBits.Inc=1183318444</SrcFile411>
+    <SrcFile412>Drivers\Common\FreeRTOSuxQueueMessagesWaitingfromISR.Inc=1183318443</SrcFile412>
+    <SrcFile413>Drivers\Common\KinetisAbstract.inc=1116866294</SrcFile413>
+    <SrcFile414>Drivers\Common\FreeRTOSxTimerPendFunctionCallFromISR.Inc=1183318443</SrcFile414>
+    <SrcFile415>Drivers\Common\UtilitystrcatNum16uFormatted.Inc=1183318456</SrcFile415>
+    <SrcFile416>Drivers\Common\FreeRTOSSettings.Inc=1183318443</SrcFile416>
+    <SrcFile417>Drivers\Common\UtilityScanDecimal8sNumber.Inc=1183318456</SrcFile417>
+    <SrcFile418>Drivers\Kinetis\IsSupported_NVIC_PDD.prg=1146382935</SrcFile418>
+    <SrcFile419>Drivers\Common\FreeRTOSxTaskNotify.Inc=1183318444</SrcFile419>
+    <SrcFile420>Drivers\Common\InterruptVectorAbstract.inc=1116866294</SrcFile420>
+    <SrcFile421>Drivers\Common\FreeRTOSxTimerChangePeriodFromISR.Inc=1183318444</SrcFile421>
+    <SrcFile422>Drivers\Common\CreateIntSection.prg=1116866294</SrcFile422>
+    <SrcFile423>Drivers\Common\FreeRTOSxEventGroupCreate.Inc=1183318443</SrcFile423>
+    <SrcFile424>Drivers\Common\DeclareISR.prg=1146382935</SrcFile424>
+    <SrcFile425>Drivers\Common\WatchDog_LDDAbstract.inc=1116866294</SrcFile425>
+    <SrcFile426>Drivers\Common\IO_MapSettings.inc=1116866294</SrcFile426>
+    <SrcFile427>Drivers\VAR\InitIntRequest.prg=1122284138</SrcFile427>
+    <SrcFile428>Drivers\Common\UtilityNum16uToStrFormatted.Inc=1183318456</SrcFile428>
+    <SrcFile429>Drivers\Common\KinetisSetOperationMode.inc=1122535254</SrcFile429>
+    <SrcFile430>Drivers\Common\GeneralReturnNothing.inc=1116866294</SrcFile430>
+    <SrcFile431>Drivers\Common\FreeRTOSvPortFree.Inc=1183318444</SrcFile431>
+    <SrcFile432>Drivers\Common\CommonInitialization_FLASH.prg=1116866294</SrcFile432>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
   </UsedSrcFiles>
 </GenerationInfo_G_C>

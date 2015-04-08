@@ -280,7 +280,11 @@
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.functionsections.373481970" name="Function sections (-ffunction-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.functionsections" value="true" valueType="boolean"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections.671894514" name="Data sections (-fdata-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections" value="true" valueType="boolean"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.1222717843" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
+<<<<<<< Upstream, based on origin/master
 									<listOptionValue builtIn="false" value="GUID=&quot;000000BB&quot;"/>
+=======
+									<listOptionValue builtIn="false" value="GUID=&quot;00000093&quot;"/>
+>>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
 									<listOptionValue builtIn="false" value="SHARP_DISPLAY=TRUE"/>
 									<listOptionValue builtIn="false" value="RS485=TRUE"/>
 									<listOptionValue builtIn="false" value="CHE_CONTROLLER"/>

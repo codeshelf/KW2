@@ -22,6 +22,7 @@
 #include "smacGlue.h"
 #include "TransceiverDrv.h"
 #include "Cpu.h"
+//#include "GpsCalibrate.h"
 
 // --------------------------------------------------------------------------
 // Globals
@@ -46,9 +47,26 @@ void startApplication(void) {
 	MLMESetPromiscuousMode(gPromiscuousMode_d);
 	MLMESetChannelRequest(DEFAULT_CHANNEL);
 	MLMEPAOutputAdjust(DEFAULT_POWER);
-	MLMEXtalAdjust(DEFAULT_CRYSTAL_TRIM); 
+	uint8_t trim = DEFAULT_CRYSTAL_TRIM;
+	MLMEXtalAdjust(trim); 
 //	MLMEFEGainAdjust(15);
-
+	
+	// Capture and measure the rising edges of the GPS PPS signal.
+	FTM0_C2V = 0;
+	FTM0_MOD = 0xffff;
+	FTM0_CNTIN = 0x0001;
+	FTM0_COMBINE |= (FTM_COMBINE_DECAP1_MASK);
+	// Loop until there is an event.
+	while ((FTM0_STATUS & FTM_STATUS_CH3F_MASK) == 0) {
+		GW_WATCHDOG_RESET;
+	}
+	uint16_t cycles = 0;
+	if (FTM0_C2V < FTM0_C3V) {
+		cycles = FTM0_C3V - FTM0_C2V;
+	} else {
+		cycles = (0xffff - FTM0_C2V) + FTM0_C3V;
+	}
+	
 	gLocalDeviceState = eLocalStateStarted;
 
 	/* Start the task that will handle the radio */
@@ -66,12 +84,7 @@ void startApplication(void) {
 	// Initialize the network check.
 	gLastPacketReceivedTick = xTaskGetTickCount();
 	
-	/* Should not reach here! */
-	EnterCritical();
-	ExitCritical();
 	Cpu_EnableInt();
-	for (;;)
-		;
 }
 
 // --------------------------------------------------------------------------
