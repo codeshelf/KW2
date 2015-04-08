@@ -12,260 +12,125 @@
   </ToolchainSettings>
   <GeneratedFilesList>
     <GeneratedByPE>
-<<<<<<< Upstream, based on origin/master
-      <File Name="ProjectInfo.xml" FileDate="2015-04-02, 12:15:41" FileAge="1428002141483" FileType="45637" />
-      <File Name="Generated_Code/FRTOS1.h" FileDate="2015-04-02, 12:09:30" FileAge="1428001770044" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/FRTOS1.c" FileDate="2015-04-02, 12:09:30" FileAge="1428001770038" FileType="45637" CompNumb="8" />
-      <File Name="Documentation/doxygen/BitIoLdd2.txt" FileDate="2015-03-30, 12:05:07" FileAge="1427742307474" FileType="45637" CompNumb="193" />
-      <File Name="Documentation/doxygen/StatusLedSdi.txt" FileDate="2015-04-02, 12:09:30" FileAge="1428001770081" FileType="45637" CompNumb="227" />
-      <File Name="Generated_Code/FreeRTOS_license.txt" FileDate="2015-04-02, 12:09:29" FileAge="1428001769118" FileType="45637" CompNumb="8" />
-      <File Name="Documentation/doxygen/EventTimer.txt" FileDate="2015-02-17, 15:48:48" FileAge="1424216928602" FileType="45637" CompNumb="114" />
-      <File Name="Project_Settings/Linker_Files/ProcessorExpert.ld" FileDate="2015-02-18, 10:43:37" FileAge="1424285017593" FileType="8" CompNumb="225" />
-      <File Name="Generated_Code/EepromCS.h" FileDate="2015-04-02, 12:09:28" FileAge="1428001768199" FileType="45637" CompNumb="192" />
-      <File Name="Generated_Code/EventTimer.h" FileDate="2015-04-02, 12:09:28" FileAge="1428001768245" FileType="45637" CompNumb="114" />
-      <File Name="Generated_Code/EepromCS.c" FileDate="2015-04-02, 12:09:28" FileAge="1428001768199" FileType="45637" CompNumb="192" />
-=======
-      <File Name="Documentation/ProcessorExpert_SIGNALS.txt" FileDate="2015-04-08, 00:36:54" FileAge="1428478614674" FileType="3072" />
+      <File Name="Documentation/ProcessorExpert_SIGNALS.txt" FileDate="2015-04-08, 01:47:35" FileAge="1428482855071" FileType="3072" />
       <File Name="Generated_Code/PDD/SAI_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
       <File Name="Generated_Code/PDD/DMA_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
       <File Name="Generated_Code/PDD/SPI_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
       <File Name="Generated_Code/PDD/SIM_PDD.h" FileDate="2014-05-14, 13:09:28" FileAge="1400098168000" FileType="262144" />
-      <File Name="Generated_Code/StatusLedSdi.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614482" FileType="45637" CompNumb="227" />
+      <File Name="Generated_Code/StatusLedSdi.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854902" FileType="45637" CompNumb="227" />
       <File Name="Generated_Code/PDD/ADC_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/timers.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614607" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/timers.h" FileDate="2015-04-08, 01:47:35" FileAge="1428482855026" FileType="45637" CompNumb="8" />
       <File Name="Generated_Code/PDD/DAC_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/semphr.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614594" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/semphr.h" FileDate="2015-04-08, 01:47:35" FileAge="1428482855014" FileType="45637" CompNumb="8" />
       <File Name="Generated_Code/PDD/FTM_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/StatusLedSdi.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614479" FileType="45637" CompNumb="227" />
-      <File Name="ProjectInfo.xml" FileDate="2015-04-08, 00:37:06" FileAge="1428478626952" FileType="45637" />
-      <File Name="Generated_Code/timers.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614609" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/Tuner.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614511" FileType="45637" CompNumb="152" />
+      <File Name="Generated_Code/StatusLedSdi.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854898" FileType="45637" CompNumb="227" />
+      <File Name="ProjectInfo.xml" FileDate="2015-04-08, 01:47:46" FileAge="1428482866862" FileType="45637" />
+      <File Name="Generated_Code/timers.c" FileDate="2015-04-08, 01:47:35" FileAge="1428482855028" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/Tuner.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854927" FileType="45637" CompNumb="152" />
       <File Name="Generated_Code/PDD/GPIO_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
       <File Name="Generated_Code/PDD/CMT_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/Tuner.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614509" FileType="45637" CompNumb="152" />
+      <File Name="Generated_Code/Tuner.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854924" FileType="45637" CompNumb="152" />
       <File Name="Generated_Code/PDD/SysTick_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/queue.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614591" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/EepromCS.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614496" FileType="45637" CompNumb="192" />
-      <File Name="Generated_Code/queue.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614589" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/tasks.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614602" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/queue.h" FileDate="2015-04-08, 01:47:35" FileAge="1428482855011" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/EepromCS.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854914" FileType="45637" CompNumb="192" />
+      <File Name="Generated_Code/queue.c" FileDate="2015-04-08, 01:47:35" FileAge="1428482855009" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/tasks.c" FileDate="2015-04-08, 01:47:35" FileAge="1428482855021" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/EepromCS.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854912" FileType="45637" CompNumb="192" />
       <File Name="Documentation/doxygen/Tuner.txt" FileDate="2015-04-08, 00:36:54" FileAge="1428478614506" FileType="45637" CompNumb="152" />
-      <File Name="Generated_Code/EepromCS.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614493" FileType="45637" CompNumb="192" />
-      <File Name="Generated_Code/port.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614569" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/port.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854991" FileType="45637" CompNumb="8" />
       <File Name="Generated_Code/PDD/WDOG_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/PE_Error.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614456" FileType="45637" />
-      <File Name="Generated_Code/StatusLedClk.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614491" FileType="45637" CompNumb="226" />
-      <File Name="Generated_Code/portTicks.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614573" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/PE_Error.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854878" FileType="45637" />
+      <File Name="Generated_Code/StatusLedClk.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854909" FileType="45637" CompNumb="226" />
+      <File Name="Generated_Code/portTicks.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854995" FileType="45637" CompNumb="8" />
       <File Name="Documentation/ProcessorExpert.txt" FileDate="2015-04-08, 00:37:06" FileAge="1428478626960" FileType="3072" />
-      <File Name="Generated_Code/StatusLedClk.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614488" FileType="45637" CompNumb="226" />
+      <File Name="Generated_Code/StatusLedClk.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854906" FileType="45637" CompNumb="226" />
       <File Name="Generated_Code/PDD/PDB_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
       <File Name="Generated_Code/PDD/PDD_Types.h" FileDate="2013-04-18, 00:55:42" FileAge="1366271742000" FileType="262144" />
-      <File Name="Generated_Code/FRTOS1.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614620" FileType="45637" CompNumb="8" />
-      <File Name="Sources/Events.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614646" FileType="131328" />
-      <File Name="Generated_Code/FRTOS1.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614617" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/BitIoLdd2.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614504" FileType="45637" CompNumb="193" />
-      <File Name="Generated_Code/Rs485Power.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614467" FileType="45637" CompNumb="238" />
+      <File Name="Generated_Code/FRTOS1.h" FileDate="2015-04-08, 01:47:35" FileAge="1428482855038" FileType="45637" CompNumb="8" />
+      <File Name="Sources/Events.h" FileDate="2015-04-08, 01:46:43" FileAge="1428482803917" FileType="131328" />
+      <File Name="Generated_Code/FRTOS1.c" FileDate="2015-04-08, 01:47:35" FileAge="1428482855035" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/BitIoLdd2.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854920" FileType="45637" CompNumb="193" />
+      <File Name="Generated_Code/Rs485Power.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854887" FileType="45637" CompNumb="238" />
       <File Name="Generated_Code/PDD/PIT_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
       <File Name="Generated_Code/IO_Map/MK21D5.h" FileDate="2014-07-06, 20:00:58" FileAge="1404702058645" FileType="262144" />
       <File Name="Sources/Events.c" FileDate="2015-02-18, 10:27:55" FileAge="1424284075533" FileType="131328" />
-      <File Name="Generated_Code/BitIoLdd2.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614500" FileType="45637" CompNumb="193" />
+      <File Name="Generated_Code/BitIoLdd2.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854917" FileType="45637" CompNumb="193" />
       <File Name="Generated_Code/PDD/MCM_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/Rs485Power.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614464" FileType="45637" CompNumb="238" />
-      <File Name="Sources/ProcessorExpert.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614632" FileType="128" />
-      <File Name="Generated_Code/FreeRTOS.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614543" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/Cpu.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614448" FileType="45637" CompNumb="225" />
-      <File Name="Generated_Code/croutine.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614538" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/Cpu.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614445" FileType="45637" CompNumb="225" />
->>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
+      <File Name="Generated_Code/Rs485Power.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854885" FileType="45637" CompNumb="238" />
+      <File Name="Sources/ProcessorExpert.c" FileDate="2015-04-08, 01:47:01" FileAge="1428482821770" FileType="128" />
+      <File Name="Generated_Code/FreeRTOS.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854958" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/Cpu.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854869" FileType="45637" CompNumb="225" />
+      <File Name="Generated_Code/croutine.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854952" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854865" FileType="45637" CompNumb="225" />
       <File Name="Generated_Code/PDD/USBDCD_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-<<<<<<< Upstream, based on origin/master
-      <File Name="Documentation/ProcessorExpert_SIGNALS.txt" FileDate="2015-04-02, 15:54:52" FileAge="1428015292040" FileType="3072" />
-      <File Name="Generated_Code/BitIoLdd2.h" FileDate="2015-04-02, 12:09:28" FileAge="1428001768216" FileType="45637" CompNumb="193" />
-      <File Name="Generated_Code/PDD/SysTick_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/EventTimer.c" FileDate="2015-04-02, 12:09:28" FileAge="1428001768230" FileType="45637" CompNumb="114" />
-=======
       <File Name="Generated_Code/PDD/I2C_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/croutine.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614541" FileType="45637" CompNumb="8" />
->>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
+      <File Name="Generated_Code/croutine.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854955" FileType="45637" CompNumb="8" />
       <File Name="Generated_Code/PDD/DMAMUX_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-<<<<<<< Upstream, based on origin/master
-      <File Name="Generated_Code/PE_Error.h" FileDate="2015-04-02, 12:09:27" FileAge="1428001767589" FileType="45637" />
-      <File Name="Generated_Code/port.c" FileDate="2015-04-02, 12:09:29" FileAge="1428001769149" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/BitIoLdd2.c" FileDate="2015-04-02, 12:09:28" FileAge="1428001768199" FileType="45637" CompNumb="193" />
-=======
       <File Name="Generated_Code/PDD/RTC_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Project_Settings/Debugger/MK21DX256.mem" FileDate="2014-07-05, 22:31:37" FileAge="1404624697704" FileType="45637" CompNumb="225" />
+      <File Name="Project_Settings/Debugger/MK21DX256.mem" FileDate="2015-04-08, 01:47:34" FileAge="1428482854856" FileType="45637" CompNumb="225" />
       <File Name="Generated_Code/PDD/CRC_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
       <File Name="Documentation/doxygen/ProcessorExpert.txt" FileDate="2015-04-08, 00:36:54" FileAge="1428478614640" FileType="45637" CompNumb="225" />
-      <File Name="Generated_Code/PE_LDD.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614433" FileType="45637" CompNumb="225" />
-      <File Name="Generated_Code/portmacro.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614580" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/PE_LDD.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614436" FileType="45637" CompNumb="225" />
+      <File Name="Generated_Code/PE_LDD.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854851" FileType="45637" CompNumb="225" />
+      <File Name="Generated_Code/portmacro.h" FileDate="2015-04-08, 01:47:35" FileAge="1428482855002" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/PE_LDD.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854854" FileType="45637" CompNumb="225" />
       <File Name="Documentation/doxygen/Watchdog.txt" FileDate="2015-02-18, 11:17:56" FileAge="1424287076660" FileType="45637" CompNumb="78" />
       <File Name="Documentation/doxygen/BitIoLdd2.txt" FileDate="2015-04-08, 00:35:09" FileAge="1428478509058" FileType="45637" CompNumb="193" />
-      <File Name="Generated_Code/portasm.s" FileDate="2015-04-08, 00:36:54" FileAge="1428478614578" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/portasm.s" FileDate="2015-04-08, 01:47:34" FileAge="1428482854999" FileType="45637" CompNumb="8" />
       <File Name="Generated_Code/PDD/RNGA_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
       <File Name="Generated_Code/PDD/FTFL_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
       <File Name="Generated_Code/PDD/USB_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
       <File Name="Documentation/doxygen/pex.css" FileDate="2014-06-27, 00:00:59" FileAge="1403852459186" FileType="16384" CompNumb="225" />
-      <File Name="Generated_Code/FreeRTOS_license.txt" FileDate="2015-04-08, 00:36:54" FileAge="1428478614561" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/Watchdog.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614519" FileType="45637" CompNumb="78" />
+      <File Name="Generated_Code/FreeRTOS_license.txt" FileDate="2015-04-08, 01:47:34" FileAge="1428482854981" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/Watchdog.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854933" FileType="45637" CompNumb="78" />
       <File Name="Generated_Code/PDD/FMC_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/INT_PORTB.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614529" FileType="45637" CompNumb="25" />
-      <File Name="Generated_Code/FreeRTOSConfig.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614546" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/Watchdog.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614517" FileType="45637" CompNumb="78" />
-      <File Name="Generated_Code/INT_PORTB.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614527" FileType="45637" CompNumb="25" />
+      <File Name="Generated_Code/INT_PORTB.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854944" FileType="45637" CompNumb="25" />
+      <File Name="Generated_Code/FreeRTOSConfig.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854960" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/Watchdog.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854930" FileType="45637" CompNumb="78" />
+      <File Name="Generated_Code/INT_PORTB.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854941" FileType="45637" CompNumb="25" />
+      <File Name="Generated_Code/WAIT.h" FileDate="1969-12-31, 15:59:59" FileAge="-1" FileType="45637" />
       <File Name="Documentation/doxygen/StatusLedClk.txt" FileDate="2015-03-07, 17:23:57" FileAge="1425777837860" FileType="45637" CompNumb="226" />
-      <File Name="Generated_Code/WAIT.h" FileDate="1969-12-31, 15:59:59" FileAge="-1" FileType="45637" />
-      <File Name="Generated_Code/event_groups.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614614" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/deprecated_definitions.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614583" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/list.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614565" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/event_groups.h" FileDate="2015-04-08, 01:47:35" FileAge="1428482855033" FileType="45637" CompNumb="8" />
       <File Name="Generated_Code/WAIT.c" FileDate="1969-12-31, 15:59:59" FileAge="-1" FileType="45637" />
+      <File Name="Generated_Code/list.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854985" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/deprecated_definitions.h" FileDate="2015-04-08, 01:47:35" FileAge="1428482855004" FileType="45637" CompNumb="8" />
       <File Name="Documentation/doxygen/RoutingReport.txt" FileDate="2014-06-27, 00:01:00" FileAge="1403852460645" FileType="45637" CompNumb="225" />
-      <File Name="Generated_Code/Vectors.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614429" FileType="45637" CompNumb="225" />
-      <File Name="Generated_Code/event_groups.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614612" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/Critical.h" FileDate="1969-12-31, 15:59:59" FileAge="-1" FileType="45637" CompNumb="48" />
+      <File Name="Generated_Code/Vectors.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854847" FileType="45637" CompNumb="225" />
+      <File Name="Generated_Code/event_groups.c" FileDate="2015-04-08, 01:47:35" FileAge="1428482855031" FileType="45637" CompNumb="8" />
       <File Name="Generated_Code/PDD/VREF_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/list.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614567" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/Critical.h" FileDate="1969-12-31, 15:59:59" FileAge="-1" FileType="45637" CompNumb="48" />
+      <File Name="Generated_Code/list.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854988" FileType="45637" CompNumb="8" />
       <File Name="Documentation/doxygen/ScannerPower.txt" FileDate="2015-04-08, 00:36:54" FileAge="1428478614469" FileType="45637" CompNumb="237" />
-      <File Name="Documentation/doxygen/pex.doxyfile" FileDate="2015-02-18, 10:27:55" FileAge="1424284075509" FileType="45637" CompNumb="225" />
       <File Name="Project_Settings/Linker_Files/ProcessorExpert.ld" FileDate="2015-02-18, 11:16:28" FileAge="1424286988575" FileType="8" CompNumb="225" />
+      <File Name="Documentation/doxygen/pex.doxyfile" FileDate="2015-02-18, 10:27:55" FileAge="1424284075509" FileType="45637" CompNumb="225" />
+      <File Name="Generated_Code/PE_Types.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854881" FileType="45637" />
       <File Name="Documentation/doxygen/Rs485Power.txt" FileDate="2015-04-08, 00:36:54" FileAge="1428478614462" FileType="45637" CompNumb="238" />
-      <File Name="Generated_Code/PE_Types.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614460" FileType="45637" />
-      <File Name="Generated_Code/task.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614599" FileType="45637" CompNumb="8" />
       <File Name="Generated_Code/Critical.c" FileDate="1969-12-31, 15:59:59" FileAge="-1" FileType="45637" CompNumb="48" />
+      <File Name="Generated_Code/task.h" FileDate="2015-04-08, 01:47:35" FileAge="1428482855018" FileType="45637" CompNumb="8" />
       <File Name="Generated_Code/PDD/PORT_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
       <File Name="Generated_Code/PDD/UART_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/heap_5.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614560" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/portable.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614575" FileType="45637" CompNumb="8" />
-      <File Name="Documentation/ProcessorExpert_Settings.xml" FileDate="2015-04-08, 00:36:54" FileAge="1428478614789" FileType="3072" />
-      <File Name="Generated_Code/heap_4.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614556" FileType="45637" CompNumb="8" />
->>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
+      <File Name="Generated_Code/heap_5.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854978" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/portable.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854997" FileType="45637" CompNumb="8" />
+      <File Name="Documentation/ProcessorExpert_Settings.xml" FileDate="2015-04-08, 00:59:22" FileAge="1428479962384" FileType="3072" />
+      <File Name="Generated_Code/heap_4.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854970" FileType="45637" CompNumb="8" />
       <File Name="Generated_Code/PDD/LPTMR_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-<<<<<<< Upstream, based on origin/master
-      <File Name="Generated_Code/PDD/RNGA_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Documentation/ProcessorExpert_Settings.xml" FileDate="2015-04-02, 15:54:52" FileAge="1428015292205" FileType="3072" />
-      <File Name="Generated_Code/Rs485Power.h" FileDate="2015-04-02, 12:09:27" FileAge="1428001767604" FileType="45637" CompNumb="238" />
-=======
-      <File Name="Generated_Code/heap_3.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614555" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/UTIL2.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614626" FileType="45637" CompNumb="12" />
-      <File Name="Generated_Code/ScannerPower.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614474" FileType="45637" CompNumb="237" />
-      <File Name="Generated_Code/heap_2.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614551" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/UTIL2.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614623" FileType="45637" CompNumb="12" />
-      <File Name="Generated_Code/IO_Map.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614451" FileType="45637" />
-      <File Name="Generated_Code/UTIL1.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614535" FileType="45637" CompNumb="10" />
-      <File Name="Generated_Code/ScannerPower.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614472" FileType="45637" CompNumb="237" />
-      <File Name="Generated_Code/projdefs.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614585" FileType="45637" CompNumb="8" />
->>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
+      <File Name="Generated_Code/heap_3.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854967" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/UTIL2.h" FileDate="2015-04-08, 01:47:35" FileAge="1428482855044" FileType="45637" CompNumb="12" />
+      <File Name="Generated_Code/ScannerPower.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854894" FileType="45637" CompNumb="237" />
+      <File Name="Generated_Code/UTIL2.c" FileDate="2015-04-08, 01:47:35" FileAge="1428482855041" FileType="45637" CompNumb="12" />
+      <File Name="Generated_Code/heap_2.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854965" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/UTIL1.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854948" FileType="45637" CompNumb="10" />
+      <File Name="Generated_Code/IO_Map.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854873" FileType="45637" />
       <File Name="Generated_Code/PDD/CMP_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-<<<<<<< Upstream, based on origin/master
-      <File Name="Generated_Code/portmacro.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769165" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/StackMacros.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769329" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/Rs485Power.c" FileDate="2015-04-02, 12:09:27" FileAge="1428001767604" FileType="45637" CompNumb="238" />
-      <File Name="Documentation/doxygen/Rs485Power.txt" FileDate="2015-03-30, 12:05:07" FileAge="1427742307493" FileType="45637" CompNumb="238" />
-      <File Name="Generated_Code/PDD/FTFL_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Documentation/doxygen/pex.css" FileDate="2015-01-22, 16:44:43" FileAge="1421973883076" FileType="16384" CompNumb="225" />
-      <File Name="Generated_Code/FreeRTOSConfig.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769089" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/Cpu.h" FileDate="2015-04-02, 12:09:27" FileAge="1428001767571" FileType="45637" CompNumb="225" />
-      <File Name="Generated_Code/PDD/PORT_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/Cpu.c" FileDate="2015-04-02, 12:09:27" FileAge="1428001767543" FileType="45637" CompNumb="225" />
-      <File Name="Generated_Code/PE_LDD.h" FileDate="2015-04-02, 12:09:27" FileAge="1428001767512" FileType="45637" CompNumb="225" />
-      <File Name="Generated_Code/croutine.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769071" FileType="45637" CompNumb="8" />
-      <File Name="Documentation/ProcessorExpert.txt" FileDate="2015-04-02, 12:09:35" FileAge="1428001775039" FileType="3072" />
-      <File Name="Generated_Code/PDD/SAI_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/PE_LDD.c" FileDate="2015-04-02, 12:09:27" FileAge="1428001767512" FileType="45637" CompNumb="225" />
-      <File Name="Generated_Code/croutine.c" FileDate="2015-04-02, 12:09:29" FileAge="1428001769089" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/PDD/DMA_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/event_groups.h" FileDate="2015-04-02, 12:09:30" FileAge="1428001770029" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/PDD/SPI_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-=======
+      <File Name="Generated_Code/projdefs.h" FileDate="2015-04-08, 01:47:35" FileAge="1428482855006" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/ScannerPower.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854891" FileType="45637" CompNumb="237" />
       <File Name="Documentation/doxygen/StatusLedSdi.txt" FileDate="2015-03-07, 17:23:57" FileAge="1425777837852" FileType="45637" CompNumb="227" />
-      <File Name="Generated_Code/heap_1.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614548" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/UTIL1.c" FileDate="2015-04-08, 00:36:54" FileAge="1428478614533" FileType="45637" CompNumb="10" />
-      <File Name="Generated_Code/StackMacros.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614596" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/mpu_wrappers.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614604" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/PE_Const.h" FileDate="2015-04-08, 00:36:54" FileAge="1428478614454" FileType="45637" />
->>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
+      <File Name="Generated_Code/StackMacros.h" FileDate="2015-04-08, 01:47:35" FileAge="1428482855016" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/UTIL1.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854946" FileType="45637" CompNumb="10" />
+      <File Name="Generated_Code/heap_1.c" FileDate="2015-04-08, 01:47:34" FileAge="1428482854962" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/mpu_wrappers.h" FileDate="2015-04-08, 01:47:35" FileAge="1428482855024" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/PE_Const.h" FileDate="2015-04-08, 01:47:34" FileAge="1428482854876" FileType="45637" />
       <File Name="Generated_Code/PDD/EWM_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/PDD/SIM_PDD.h" FileDate="2014-05-14, 13:09:28" FileAge="1400098168000" FileType="262144" />
-      <File Name="Generated_Code/event_groups.c" FileDate="2015-04-02, 12:09:29" FileAge="1428001769479" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/PDD/VREF_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/PDD/ADC_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/UTIL2.h" FileDate="2015-04-02, 12:09:30" FileAge="1428001770055" FileType="45637" CompNumb="12" />
-      <File Name="Generated_Code/PDD/DAC_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/INT_PORTB.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769056" FileType="45637" CompNumb="25" />
-      <File Name="Sources/ProcessorExpert.c" FileDate="2015-04-02, 11:23:58" FileAge="1427999038055" FileType="128" />
-      <File Name="Generated_Code/PDD/FTM_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/FreeRTOS.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769089" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/UTIL2.c" FileDate="2015-04-02, 12:09:30" FileAge="1428001770050" FileType="45637" CompNumb="12" />
-      <File Name="Generated_Code/UTIL1.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769071" FileType="45637" CompNumb="10" />
-      <File Name="Generated_Code/PDD/UART_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/INT_PORTB.c" FileDate="2015-04-02, 12:09:29" FileAge="1428001769056" FileType="45637" CompNumb="25" />
-      <File Name="Generated_Code/PDD/CMT_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/UTIL1.c" FileDate="2015-04-02, 12:09:29" FileAge="1428001769071" FileType="45637" CompNumb="10" />
-      <File Name="Generated_Code/heap_5.c" FileDate="2015-04-02, 12:09:29" FileAge="1428001769118" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/heap_4.c" FileDate="2015-04-02, 12:09:29" FileAge="1428001769118" FileType="45637" CompNumb="8" />
-      <File Name="Documentation/doxygen/Watchdog.txt" FileDate="2015-02-10, 15:28:06" FileAge="1423610886495" FileType="45637" CompNumb="78" />
-      <File Name="Generated_Code/IO_Map/MK21D5.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/ScannerPower.h" FileDate="2015-04-02, 12:09:27" FileAge="1428001767620" FileType="45637" CompNumb="237" />
-      <File Name="Generated_Code/heap_3.c" FileDate="2015-04-02, 12:09:29" FileAge="1428001769103" FileType="45637" CompNumb="8" />
-      <File Name="Project_Settings/Debugger/MK21DX256.mem" FileDate="2015-01-22, 16:17:22" FileAge="1421972242868" FileType="45637" CompNumb="225" />
-      <File Name="Generated_Code/ScannerPower.c" FileDate="2015-04-02, 12:09:27" FileAge="1428001767620" FileType="45637" CompNumb="237" />
-      <File Name="Generated_Code/heap_2.c" FileDate="2015-04-02, 12:09:29" FileAge="1428001769103" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/IO_Map.h" FileDate="2015-04-02, 12:09:27" FileAge="1428001767589" FileType="45637" />
-      <File Name="Generated_Code/PDD/PDD_Types.h" FileDate="2013-04-18, 00:55:42" FileAge="1366271742000" FileType="262144" />
-      <File Name="Generated_Code/queue.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769314" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/mpu_wrappers.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769345" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/heap_1.c" FileDate="2015-04-02, 12:09:29" FileAge="1428001769103" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/PDD/PDB_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/WAIT.h" FileDate="1969-12-31, 15:59:59" FileAge="-1" FileType="45637" />
-      <File Name="Generated_Code/queue.c" FileDate="2015-04-02, 12:09:29" FileAge="1428001769314" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/portasm.s" FileDate="2015-04-02, 12:09:29" FileAge="1428001769149" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/StatusLedSdi.h" FileDate="2015-04-02, 12:09:28" FileAge="1428001768167" FileType="45637" CompNumb="227" />
-      <File Name="Sources/Events.h" FileDate="2015-04-02, 11:23:58" FileAge="1427999038052" FileType="131328" />
-      <File Name="Generated_Code/tasks.c" FileDate="2015-04-02, 12:09:29" FileAge="1428001769345" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/Vectors.c" FileDate="2015-04-02, 12:09:26" FileAge="1428001766977" FileType="45637" CompNumb="225" />
-      <File Name="Generated_Code/Watchdog.h" FileDate="2015-04-02, 12:09:28" FileAge="1428001768358" FileType="45637" CompNumb="78" />
-      <File Name="Generated_Code/list.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769134" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/WAIT.c" FileDate="1969-12-31, 15:59:59" FileAge="-1" FileType="45637" />
-      <File Name="Generated_Code/Critical.h" FileDate="1969-12-31, 15:59:59" FileAge="-1" FileType="45637" CompNumb="48" />
-      <File Name="Generated_Code/StatusLedSdi.c" FileDate="2015-04-02, 12:09:27" FileAge="1428001767635" FileType="45637" CompNumb="227" />
-      <File Name="Sources/Events.c" FileDate="2015-02-20, 13:32:26" FileAge="1424467946518" FileType="131328" />
-      <File Name="Generated_Code/PE_Types.h" FileDate="2015-04-02, 12:09:27" FileAge="1428001767589" FileType="45637" />
-      <File Name="Generated_Code/Watchdog.c" FileDate="2015-04-02, 12:09:28" FileAge="1428001768342" FileType="45637" CompNumb="78" />
-      <File Name="Generated_Code/list.c" FileDate="2015-04-02, 12:09:29" FileAge="1428001769134" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/Critical.c" FileDate="1969-12-31, 15:59:59" FileAge="-1" FileType="45637" CompNumb="48" />
-      <File Name="Generated_Code/PDD/PIT_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Documentation/doxygen/ProcessorExpert.txt" FileDate="2015-04-02, 12:09:30" FileAge="1428001770097" FileType="45637" CompNumb="225" />
-      <File Name="Documentation/doxygen/StatusLedClk.txt" FileDate="2015-04-02, 12:09:30" FileAge="1428001770072" FileType="45637" CompNumb="226" />
-      <File Name="Generated_Code/PDD/MCM_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/task.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769345" FileType="45637" CompNumb="8" />
-      <File Name="Documentation/doxygen/pex.doxyfile" FileDate="2015-02-17, 15:48:48" FileAge="1424216928660" FileType="45637" CompNumb="225" />
-      <File Name="Documentation/doxygen/LedDrive.txt" FileDate="2015-04-02, 15:54:52" FileAge="1428015292005" FileType="45637" CompNumb="124" />
-      <File Name="Generated_Code/portable.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769149" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/deprecated_definitions.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769165" FileType="45637" CompNumb="8" />
-      <File Name="Documentation/doxygen/RoutingReport.txt" FileDate="2015-01-22, 16:44:44" FileAge="1421973884065" FileType="45637" CompNumb="225" />
-      <File Name="Generated_Code/PDD/I2C_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/semphr.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769329" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/StatusLedClk.h" FileDate="2015-04-02, 12:09:28" FileAge="1428001768185" FileType="45637" CompNumb="226" />
-      <File Name="Generated_Code/PDD/GPIO_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/projdefs.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769219" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/PDD/RTC_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/StatusLedClk.c" FileDate="2015-04-02, 12:09:28" FileAge="1428001768185" FileType="45637" CompNumb="226" />
-      <File Name="Generated_Code/LedDrive.h" FileDate="2015-04-02, 15:54:51" FileAge="1428015291936" FileType="45637" CompNumb="124" />
-      <File Name="Generated_Code/PE_Const.h" FileDate="2015-04-02, 12:09:27" FileAge="1428001767589" FileType="45637" />
-      <File Name="Generated_Code/PDD/CRC_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/LedDrive.c" FileDate="2015-04-02, 15:54:51" FileAge="1428015291995" FileType="45637" CompNumb="124" />
-      <File Name="Documentation/doxygen/ScannerPower.txt" FileDate="2015-03-30, 12:05:07" FileAge="1427742307477" FileType="45637" CompNumb="237" />
-      <File Name="Generated_Code/PDD/WDOG_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/timers.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769345" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/portTicks.h" FileDate="2015-04-02, 12:09:29" FileAge="1428001769149" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/timers.c" FileDate="2015-04-02, 12:09:29" FileAge="1428001769439" FileType="45637" CompNumb="8" />
-      <File Name="Generated_Code/PDD/USB_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
-      <File Name="Generated_Code/PDD/FMC_PDD.h" FileDate="2014-02-20, 13:18:46" FileAge="1392931126000" FileType="262144" />
     </GeneratedByPE>
   </GeneratedFilesList>
-<<<<<<< Upstream, based on origin/master
-  <CodeGenReference>354</CodeGenReference>
-=======
-  <CodeGenReference>374</CodeGenReference>
->>>>>>> 2ccb9fc * Get the tuner project FTM0 basis to work. (More to do.) * Merge PE changes from Saba into my project changes.
+  <CodeGenReference>382</CodeGenReference>
 </CodeGenerationInfo>
