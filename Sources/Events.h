@@ -47,7 +47,6 @@
 #include "StatusLedClk.h"
 #include "StatusLedSdi.h"
 #include "ScannerPower.h"
-#include "Rs485Power.h"
 
 #ifdef __cplusplus
 extern "C" {

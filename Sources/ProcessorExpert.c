@@ -41,7 +41,6 @@
 #include "StatusLedClk.h"
 #include "StatusLedSdi.h"
 #include "ScannerPower.h"
-#include "Rs485Power.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"

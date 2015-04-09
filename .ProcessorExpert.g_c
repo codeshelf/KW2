@@ -18,7 +18,7 @@
         <Line>PE_Const</Line>
         <Line>IO_Map</Line>
       </GenSharedModules>
-      <ShrdHeaderAge0>1183321585</ShrdHeaderAge0>
+      <ShrdHeaderAge0>1183362447</ShrdHeaderAge0>
       <ShrdCodeAge0>-1</ShrdCodeAge0>
       <ShrdAsemblAge0>-1</ShrdAsemblAge0>
       <ShrdHeaderAge1>1183321585</ShrdHeaderAge1>
@@ -30,7 +30,7 @@
       <ShrdHeaderAge3>1183321585</ShrdHeaderAge3>
       <ShrdCodeAge3>-1</ShrdCodeAge3>
       <ShrdAsemblAge3>-1</ShrdAsemblAge3>
-      <GenExtraFiles lines_count="46">
+      <GenExtraFiles lines_count="45">
         <Line>Generated_Code\event_groups.h</Line>
         <Line>Generated_Code\event_groups.c</Line>
         <Line>Generated_Code\timers.c</Line>
@@ -67,7 +67,6 @@
         <Line>Documentation\doxygen\StatusLedClk.txt</Line>
         <Line>Documentation\doxygen\StatusLedSdi.txt</Line>
         <Line>Documentation\doxygen\ScannerPower.txt</Line>
-        <Line>Documentation\doxygen\Rs485Power.txt</Line>
         <Line>Documentation\doxygen\ProcessorExpert.txt</Line>
         <Line>Documentation\doxygen\RoutingReport.txt</Line>
         <Line>Documentation\doxygen\pex.doxyfile</Line>
@@ -78,7 +77,7 @@
         <Line>Project_Settings\Linker_Files\ProcessorExpert.ld</Line>
         <Line>Generated_Code\Vectors.c</Line>
       </GenExtraFiles>
-      <GenExtraFileSrcDir40>lib\doxygen\</GenExtraFileSrcDir40>
+      <GenExtraFileSrcDir39>lib\doxygen\</GenExtraFileSrcDir39>
       <XtraAge0>1183321585</XtraAge0>
       <XtraAge1>1183321585</XtraAge1>
       <XtraAge2>1183321585</XtraAge2>
@@ -108,16 +107,15 @@
       <XtraAge27>1183321585</XtraAge27>
       <XtraAge28>1183321585</XtraAge28>
       <XtraAge29>1183321585</XtraAge29>
-      <XtraAge42>1183321585</XtraAge42>
-      <XtraAge43>1183321585</XtraAge43>
-      <XtraAge45>1183321585</XtraAge45>
-      <GenExtraFileType45>4</GenExtraFileType45>
+      <XtraAge41>1183362447</XtraAge41>
+      <XtraAge42>1183362447</XtraAge42>
+      <XtraAge44>1183362447</XtraAge44>
       <GenExtraFileType44>4</GenExtraFileType44>
       <GenExtraFileType43>4</GenExtraFileType43>
       <GenExtraFileType42>4</GenExtraFileType42>
       <GenExtraFileType41>4</GenExtraFileType41>
-      <GenExtraFileType40>5</GenExtraFileType40>
-      <GenExtraFileType39>4</GenExtraFileType39>
+      <GenExtraFileType40>4</GenExtraFileType40>
+      <GenExtraFileType39>5</GenExtraFileType39>
       <GenExtraFileType38>4</GenExtraFileType38>
       <GenExtraFileType37>4</GenExtraFileType37>
       <GenExtraFileType36>4</GenExtraFileType36>
@@ -203,7 +201,7 @@
         <Line>Cpu_OnSupervisorCall</Line>
         <Line>Cpu_OnPendableService</Line>
       </GenMethodsInEvents>
-      <GenAllModules lines_count="20">
+      <GenAllModules lines_count="19">
         <Line>BitIoLdd2</Line>
         <Line>Cpu</Line>
         <Line>Critical</Line>
@@ -215,7 +213,6 @@
         <Line>PE_Const</Line>
         <Line>PE_Error</Line>
         <Line>PE_Types</Line>
-        <Line>Rs485Power</Line>
         <Line>ScannerPower</Line>
         <Line>StatusLedClk</Line>
         <Line>StatusLedSdi</Line>
@@ -226,7 +223,7 @@
         <Line>Watchdog</Line>
       </GenAllModules>
       <GenExternModules lines_count="0" />
-      <GenBeanModules lines_count="14">
+      <GenBeanModules lines_count="13">
         <Line>FRTOS1</Line>
         <Line>UTIL1</Line>
         <Line>UTIL2</Line>
@@ -240,12 +237,11 @@
         <Line>StatusLedClk</Line>
         <Line>StatusLedSdi</Line>
         <Line>ScannerPower</Line>
-        <Line>Rs485Power</Line>
       </GenBeanModules>
     </GenFiles>
     <SignalListFile>Documentation\ProcessorExpert_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>361</ProjectModificationStamp>
+    <ProjectModificationStamp>364</ProjectModificationStamp>
   </Options>
   <CpuID_225>
     <Generated>true</Generated>
@@ -254,7 +250,7 @@
     <GenDriverVersion>01.04</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
     <HeaderAge>1183321585</HeaderAge>
-    <CodeAge>1183321585</CodeAge>
+    <CodeAge>1183362447</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>14</GenNumMethods>
     <SetClockConfiguration>false</SetClockConfiguration>
@@ -4665,8 +4661,8 @@
     <GenComponentVersion>01.009</GenComponentVersion>
     <GenDriverVersion>01.09</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1183321585</HeaderAge>
-    <CodeAge>1183321585</CodeAge>
+    <HeaderAge>1183362447</HeaderAge>
+    <CodeAge>1183362447</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
@@ -4680,15 +4676,15 @@
       <MethodPos0>Init</MethodPos0>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>214</LineBeg>
-      <LineEnd>228</LineEnd>
+      <LineBeg>225</LineBeg>
+      <LineEnd>239</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos1>Init</MethodPos1>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>210</LineBeg>
-      <LineEnd>471</LineEnd>
+      <LineBeg>221</LineBeg>
+      <LineEnd>490</LineEnd>
     </MethodPos>
     <GenExtraFilesCount>1</GenExtraFilesCount>
     <ExtraFile0>Documentation\doxygen\Tuner.txt</ExtraFile0>
@@ -5182,7 +5178,7 @@
     <ExtraFile0>Documentation\doxygen\ScannerPower.txt</ExtraFile0>
   </ComponentID_237>
   <ComponentID_238>
-    <Generated>true</Generated>
+    <Generated>false</Generated>
     <GenCompName>Rs485Power</GenCompName>
     <GenComponentVersion>01.033</GenComponentVersion>
     <GenDriverVersion>01.03</GenDriverVersion>
