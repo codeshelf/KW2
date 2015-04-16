@@ -5,6 +5,7 @@
 #include "SPI_PDD.h"
 #include "commands.h"
 
+
 #define WAIT_SPI0_TRANSMISSON_END(count) {while ((SPI0_SR & SPI_SR_RXCTR_MASK) < (count<<SPI_SR_RXCTR_SHIFT)) {};}
 
 /*

@@ -13,6 +13,7 @@
 #include "queue.h"
 #include "commands.h"
 #include "Wait.h"
+//#include "display.h"
 
 #define DEFAULT_CRYSTAL_TRIM	0xf4
 #define PERFECT_REMAINDER		0x6b06
@@ -32,9 +33,13 @@ void tunerTask(void *pvParameters) {
 	gwUINT8 trim;
 	gwUINT16 remainder;
 	
+	
+	
 //	for (;;) {
 		GW_ENTER_CRITICAL(ccrHolder);
 		
+		//Tuner_Init();
+		/*
 		trim = DEFAULT_CRYSTAL_TRIM;
 		adjustTune(trim);
 		remainder = measureTune();
@@ -49,11 +54,22 @@ void tunerTask(void *pvParameters) {
 				remainder = measureTune();
 			}
 		}
+		*/
 		GW_EXIT_CRITICAL(ccrHolder);
 		
 		Wait_Waitms(8500);
 		Wait_Waitms(1);
 //	}
+		
+		/*
+		Rs485_Init();
+		SharpDisplay_Init();
+		
+		GW_ENTER_CRITICAL(ccrHolder);
+		clearDisplay();
+		displayMessage(1, "Tuning is complete", FONT_NORMAL);
+		GW_EXIT_CRITICAL(ccrHolder);
+		*/
 }
 
 void adjustTune(gwUINT8 trim) {
