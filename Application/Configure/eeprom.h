@@ -31,7 +31,7 @@
 #define SPI_READ_DELAY		10000000	// ns
 
 // Length of values stored in EEPROM in bytes
-#define EEPROM_AES_KEY_LEN		16
+#define EEPROM_AES_KEY_LEN		32
 #define EEPROM_GUID_LEN			8
 #define EEPROM_HW_VER_LEN		8
 #define EEPROM_TUNING_LEN		1
@@ -53,5 +53,7 @@ void writeHWVersion(uint8_t* dataPtr);
 void readHWVersion(uint8_t* dataPtr);
 void writeGuid(uint8_t* dataPtr);
 void readGuid(uint8_t* dataPtr);
+void writeTuning(uint8_t* dataPtr);
+void readTuning(uint8_t* dataPtr);
 
 #endif /* EEPROM_H_ */

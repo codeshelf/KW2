@@ -124,3 +124,11 @@ void writeGuid(uint8_t* dataPtr) {
 void readGuid(uint8_t* dataPtr) {
 	readEepromData((uint16_t)EEPROM_GUID_ADDR, dataPtr, (uint8_t)EEPROM_GUID_LEN);
 }
+
+void writeTuning(uint8_t* dataPtr) {
+	writeEepromData((uint16_t)EEPROM_TUNING_ADDR, dataPtr, (uint8_t)EEPROM_TUNING_LEN);
+}
+
+void readTuning(uint8_t* dataPtr) {
+	readEepromData((uint16_t)EEPROM_TUNING_ADDR, dataPtr, (uint8_t)EEPROM_TUNING_LEN);
+}

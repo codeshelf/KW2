@@ -15,12 +15,30 @@
 typedef enum {
 	eSetupModeStarted,
 	eSetupModeGetGuid,
-	eSetupModeGetTuning
+	eSetupModeGetAes,
+	eSetupModeGetHWver,
+	eSetupModeWaitingForSave,
+	eSetupModeComplete,
+	
 } ELocalSetupType;
 
 // --------------------------------------------------------------------------
 // Local functions prototypes.
 
 void tunerTask(void *pvParameters);
+
+void tuneRadio();
+
+
+void scanParams();
+int isSetupCommand();
+void handleSetupScan();
+void handleSetupCommand();
+void enterSetupMode();
+void clearParams();
+void saveParams();
+void getGuid();
+void getAes();
+void getHwVersion();
 
 #endif TUNERTASK_H

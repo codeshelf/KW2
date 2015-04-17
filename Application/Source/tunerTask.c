@@ -16,26 +16,24 @@
 #include "display.h"
 
 #include "scannerReadTask.h"
-#include "task.h"
-#include "queue.h"
-#include "commands.h"
 #include "Scanner.h"
-#include "Wait.h"
 #include "EventTimer.h"
 #include "ScannerPower.h"
+#include "eeprom.h"
 
 #define DEFAULT_CRYSTAL_TRIM	0xcd //0xf4
 #define PERFECT_REMAINDER		0x6b06
 
+void adjustTune(gwUINT8 trim);
+gwUINT16 measureTune();
+
 xTaskHandle gTunerTask = NULL;
 
-void adjustTune(gwUINT8 trim);
-gwUINT16 measureTune(void);
-gwUINT8 tuneRadio();
+char aes_key[EEPROM_AES_KEY_LEN];
+char hw_ver[EEPROM_HW_VER_LEN];
+char guid[EEPROM_GUID_LEN];
+gwUINT8 tune_param;
 
-char aes_key[32];
-char hw_ver[8];
-char guid[8];
 gwUINT8 ccrHolder;
 
 ELocalSetupType setupModeState;
@@ -45,10 +43,9 @@ ScanStringLenType gScanStringPos;
 // --------------------------------------------------------------------------
 
 void tunerTask(void *pvParameters) {
-	gwUINT8 trim = 0;
-	
+	SharpDisplay_Init();
 	Tuner_Init();
-	trim = tuneRadio();
+	tuneRadio();
 
 	Rs485_Init();
 	SharpDisplay_Init();
@@ -93,7 +90,7 @@ gwUINT16 measureTune() {
 	return remainder;
 }
 
-gwUINT8 tuneRadio() {
+void tuneRadio() {
 	
 	gwUINT8 trim;
 	gwUINT16 remainder;
@@ -117,12 +114,63 @@ gwUINT8 tuneRadio() {
 	
 	GW_EXIT_CRITICAL(ccrHolder);
 	
-	return trim;
+	tune_param = trim;
 }
 
 void scanParams() {
 	
+	enterSetupMode();
 	
+	gwUINT8 ccrHolder;
+	ScannerPower_SetVal(ScannerPower_DeviceData);
+	
+	for (;;) {
+		
+		// Break when finished
+		if (setupModeState == eSetupModeComplete) {
+			break;
+		}
+
+		// Clear the scan string.
+		gScanString[0] = NULL;
+		gScanStringPos = 0;
+
+		// Flush the RX FIFO.
+		Scanner_DEVICE ->CFIFO |= UART_CFIFO_RXFLUSH_MASK;
+		Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
+		// Wait until there are characters in the FIFO
+		while ((Scanner_DEVICE ->S1 & UART_S1_RDRF_MASK) == 0) {
+			vTaskDelay(1);
+		}
+		Wait_Waitus(50);
+
+		// Now we have characters - read until there are no more.
+		// Do the read in a critical-area-busy-wait loop to make sure we've gotten all characters that will arrive.
+		GW_ENTER_CRITICAL(ccrHolder);
+		EventTimer_ResetCounter(NULL);
+		// If there's no characters in 50ms then stop waiting for more.
+		while ((EventTimer_GetCounterValue(NULL) < 150) && (gScanStringPos < MAX_SCAN_STRING_BYTES)) {
+			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
+			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXOF_MASK;
+			if ((Scanner_DEVICE ->S1 & UART_S1_RDRF_MASK) != 0) {
+				gScanString[gScanStringPos++] = Scanner_DEVICE ->D;;
+				gScanString[gScanStringPos] = NULL;
+				EventTimer_ResetCounter(NULL);
+				Wait_Waitus(500);
+			}
+		}
+		GW_EXIT_CRITICAL(ccrHolder);
+
+		// Now send the scan string.
+		if (strlen(gScanString) > 0) {
+
+			if (isSetupCommand()) {
+				handleSetupCommand();
+			} else {
+				handleSetupScan();
+			}
+		}
+	}
 }
 
 // --------------------------------------------------------------------------
@@ -142,107 +190,114 @@ int isSetupCommand() {
 void handleSetupScan() {
 	
 	if (setupModeState == eSetupModeGetGuid) {
-		setGuid();
+		getGuid();
 	}
-	else if (setupModeState == eSetupModeGetTuning) {
-		setTuning();
+	else if (setupModeState == eSetupModeGetAes) {
+		getAes();
 	}
-	
+	else if (setupModeState == eSetupModeGetHWver) {
+		getHwVersion();
+	}
 }
 
 // --------------------------------------------------------------------------
 
 void handleSetupCommand() {
-	if (strcmp(gScanString, "S%SETUP") == 0) {
-		enterSetupMode();
-	} 
-	else if (strcmp(gScanString, "S%SETGUID") == 0) {
-		handleSetGuidCmd();
+	if (strcmp(gScanString, "S%CLEAR") == 0) {
+		clearParams();
 	}
-	else if (strcmp(gScanString, "S%SETTUNE") == 0) {
-		handleSetTuningCmd();
+	else if (strcmp(gScanString, "S%SAVE") == 0) {
+		saveParams();
 	}
-	else if (strcmp(gScanString, "S%EXIT") == 0) {
-		exitSetupMode();
-	}
-}
-
-// --------------------------------------------------------------------------
-
-void handleSetTuningCmd(){
-	setupModeState = eSetupModeGetGuid;
-
-	GW_ENTER_CRITICAL(ccrHolder);
-	displayMessage(2, "Scan tuning info", FONT_NORMAL);
-	GW_EXIT_CRITICAL(ccrHolder);
-}
-
-// --------------------------------------------------------------------------
-void setTuning() {
-	// Place holder
-	
-	// Go back to top level setup
-	enterSetupMode();
-}
-
-
-// --------------------------------------------------------------------------
-
-void handleSetGuidCmd(){
-	setupModeState = eSetupModeGetGuid;
-
-	GW_ENTER_CRITICAL(ccrHolder);
-	displayMessage(2, "Scan GUID", FONT_NORMAL);
-	GW_EXIT_CRITICAL(ccrHolder);
-}
-
-// --------------------------------------------------------------------------
-void setGuid() {
-	GW_ENTER_CRITICAL(ccrHolder);
-	displayMessage(2, "Got GUID", FONT_NORMAL);
-	displayMessage(3, gScanString, FONT_NORMAL);
-	GW_EXIT_CRITICAL(ccrHolder);
-	vTaskDelay(1500);
-	
-	// Save guid to eeprom
-	writeGuid((uint8_t *) &gScanString);
-
-	// Go back to top level setup
-	enterSetupMode();
-}
-
-// --------------------------------------------------------------------------
-void exitSetupMode() {
-	// FIXME - huffa - Ok to reboot here?
-	GW_ENTER_CRITICAL(ccrHolder);
-	displayMessage(2, "Rebooting", FONT_NORMAL);
-	GW_EXIT_CRITICAL(ccrHolder);
-	vTaskDelay(300);
-	GW_ENTER_CRITICAL(ccrHolder);
-	displayMessage(2, "Rebooting .", FONT_NORMAL);
-	GW_EXIT_CRITICAL(ccrHolder);
-	vTaskDelay(300);
-	GW_ENTER_CRITICAL(ccrHolder);
-	displayMessage(2, "Rebooting . .", FONT_NORMAL);
-	GW_EXIT_CRITICAL(ccrHolder);
-	vTaskDelay(300);
-	GW_ENTER_CRITICAL(ccrHolder);
-	displayMessage(2, "Rebooting . . .", FONT_NORMAL);
-	GW_EXIT_CRITICAL(ccrHolder);
-	vTaskDelay(300);
-	
-	GW_RESET_MCU()
 }
 
 // --------------------------------------------------------------------------
 void enterSetupMode() {
 	
-	// Enter setup mode
-	setupModeState = eSetupModeStarted;
+	// Next expected scan is GUID
+	setupModeState = eSetupModeGetGuid;
 	
 	GW_ENTER_CRITICAL(ccrHolder);
 	clearDisplay();
 	displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
-	displayMessage(2, "Scan setup command", FONT_NORMAL);
+	displayMessage(2, "Scan GUID", FONT_NORMAL);
+	GW_EXIT_CRITICAL(ccrHolder);
+}
+
+// --------------------------------------------------------------------------
+void clearParams() {
+	// FIXME - huffa clear out params
+	//guid = 
+	
+	enterSetupMode();
+}
+
+// --------------------------------------------------------------------------
+void saveParams() {
+	GW_ENTER_CRITICAL(ccrHolder);
+	clearDisplay();
+	displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+	displayMessage(2, "Setup complete. Params Saved.", FONT_NORMAL);
+	GW_EXIT_CRITICAL(ccrHolder);
+	
+	setupModeState = eSetupModeComplete;
+}
+
+// --------------------------------------------------------------------------
+void getGuid() {
+	GW_ENTER_CRITICAL(ccrHolder);
+	displayMessage(2, "Scanned GUID", FONT_NORMAL);
+	displayMessage(3, gScanString, FONT_NORMAL);
+	GW_EXIT_CRITICAL(ccrHolder);
+	vTaskDelay(1500);
+
+	strncpy(guid, gScanString, EEPROM_GUID_LEN);
+	
+	// Next we want the AES key
+	setupModeState = eSetupModeGetAes;
+	GW_ENTER_CRITICAL(ccrHolder);
+	clearDisplay();
+	displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+	displayMessage(3, "Scan AES key", FONT_NORMAL);
+	GW_EXIT_CRITICAL(ccrHolder);
+}
+
+// --------------------------------------------------------------------------
+void getAes() {
+	GW_ENTER_CRITICAL(ccrHolder);
+	// FIXME - huffa will one line be enough for AES key?
+	displayMessage(2, "Scanned AES key", FONT_NORMAL);
+	displayMessage(3, gScanString, FONT_NORMAL);
+	GW_EXIT_CRITICAL(ccrHolder);
+	vTaskDelay(1500);
+	
+	strncpy(aes_key, gScanString, EEPROM_AES_KEY_LEN);
+	
+	// Next we want the AES key
+	setupModeState = eSetupModeGetHWver;
+	GW_ENTER_CRITICAL(ccrHolder);
+	clearDisplay();
+	displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+	displayMessage(2, "Scan Hardware Version", FONT_NORMAL);
+	GW_EXIT_CRITICAL(ccrHolder);
+}
+
+// --------------------------------------------------------------------------
+void getHwVersion() {
+	GW_ENTER_CRITICAL(ccrHolder);
+	// FIXME - huffa will one line be enough for AES key?
+	displayMessage(2, "Scanned HW Version", FONT_NORMAL);
+	displayMessage(2, gScanString, FONT_NORMAL);
+	GW_EXIT_CRITICAL(ccrHolder);
+	vTaskDelay(1500);
+	
+	strncpy(hw_ver, gScanString, EEPROM_HW_VER_LEN);
+	
+	// Next we want the AES key
+	setupModeState = eSetupModeWaitingForSave;
+	GW_ENTER_CRITICAL(ccrHolder);
+	clearDisplay();
+	displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+	displayMessage(2, "Setup complete. Scan SAVE or CLEAR", FONT_NORMAL);
 	GW_EXIT_CRITICAL(ccrHolder);
 }
