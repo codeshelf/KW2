@@ -16,6 +16,9 @@
 //#include "display.h"
 
 #include "scannerReadTask.h"
+#include "task.h"
+#include "queue.h"
+#include "commands.h"
 #include "Scanner.h"
 #include "Wait.h"
 #include "EventTimer.h"
@@ -33,6 +36,7 @@ gwUINT8 tuneRadio();
 char aes_key[32];
 char hw_ver[8];
 char guid[8];
+gwUINT8 ccrHolder;
 
 extern ELocalStatusType gLocalDeviceState;
 
@@ -88,7 +92,7 @@ gwUINT16 measureTune() {
 }
 
 gwUINT8 tuneRadio() {
-	gwUINT8 ccrHolder;
+	
 	gwUINT8 trim;
 	gwUINT16 remainder;
 		
@@ -117,4 +121,127 @@ gwUINT8 tuneRadio() {
 void scanParams() {
 	
 	
+}
+
+// --------------------------------------------------------------------------
+
+int isSetupCommand() {
+	if (strlen(gScanString) > 1) {
+		if (gScanString[0] == 'S' && gScanString[1] == '%'){
+			return 1;
+		}
+	}
+	
+	return 0;
+}
+
+// --------------------------------------------------------------------------
+
+void handleSetupScan() {
+	
+	if (setupModeState == eSetupModeGetGuid) {
+		setGuid();
+	}
+	else if (setupModeState == eSetupModeGetTuning) {
+		setTuning();
+	}
+	
+}
+
+// --------------------------------------------------------------------------
+
+void handleSetupCommand() {
+	if (strcmp(gScanString, "S%SETUP") == 0) {
+		enterSetupMode();
+	} 
+	else if (strcmp(gScanString, "S%SETGUID") == 0) {
+		handleSetGuidCmd();
+	}
+	else if (strcmp(gScanString, "S%SETTUNE") == 0) {
+		handleSetTuningCmd();
+	}
+	else if (strcmp(gScanString, "S%EXIT") == 0) {
+		exitSetupMode();
+	}
+}
+
+// --------------------------------------------------------------------------
+
+void handleSetTuningCmd(){
+	setupModeState = eSetupModeGetGuid;
+
+	GW_ENTER_CRITICAL(ccrHolder);
+	displayMessage(2, "Scan tuning info", FONT_NORMAL);
+	GW_EXIT_CRITICAL(ccrHolder);
+}
+
+// --------------------------------------------------------------------------
+void setTuning() {
+	// Place holder
+	
+	// Go back to top level setup
+	enterSetupMode();
+}
+
+
+// --------------------------------------------------------------------------
+
+void handleSetGuidCmd(){
+	setupModeState = eSetupModeGetGuid;
+
+	GW_ENTER_CRITICAL(ccrHolder);
+	displayMessage(2, "Scan GUID", FONT_NORMAL);
+	GW_EXIT_CRITICAL(ccrHolder);
+}
+
+// --------------------------------------------------------------------------
+void setGuid() {
+	GW_ENTER_CRITICAL(ccrHolder);
+	displayMessage(2, "Got GUID", FONT_NORMAL);
+	displayMessage(3, gScanString, FONT_NORMAL);
+	GW_EXIT_CRITICAL(ccrHolder);
+	vTaskDelay(1500);
+	
+	// Save guid to eeprom
+	writeGuid((uint8_t *) &gScanString);
+
+	// Go back to top level setup
+	enterSetupMode();
+}
+
+// --------------------------------------------------------------------------
+void exitSetupMode() {
+	// FIXME - huffa - Ok to reboot here?
+	GW_ENTER_CRITICAL(ccrHolder);
+	displayMessage(2, "Rebooting", FONT_NORMAL);
+	GW_EXIT_CRITICAL(ccrHolder);
+	vTaskDelay(300);
+	GW_ENTER_CRITICAL(ccrHolder);
+	displayMessage(2, "Rebooting .", FONT_NORMAL);
+	GW_EXIT_CRITICAL(ccrHolder);
+	vTaskDelay(300);
+	GW_ENTER_CRITICAL(ccrHolder);
+	displayMessage(2, "Rebooting . .", FONT_NORMAL);
+	GW_EXIT_CRITICAL(ccrHolder);
+	vTaskDelay(300);
+	GW_ENTER_CRITICAL(ccrHolder);
+	displayMessage(2, "Rebooting . . .", FONT_NORMAL);
+	GW_EXIT_CRITICAL(ccrHolder);
+	vTaskDelay(300);
+	
+	GW_RESET_MCU()
+}
+
+// --------------------------------------------------------------------------
+void enterSetupMode() {
+	
+	// Enter setup mode
+	setupModeState = eSetupModeStarted;
+	gLocalDeviceState = eLocalStateSetupMode;
+	
+	GW_ENTER_CRITICAL(ccrHolder);
+	clearDisplay();
+	displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+	displayMessage(2, "Scan setup command", FONT_NORMAL);
+	GW_EXIT_CRITICAL(ccrHolder);
 }
