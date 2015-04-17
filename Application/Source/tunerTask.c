@@ -43,7 +43,7 @@ ScanStringLenType gScanStringPos;
 // --------------------------------------------------------------------------
 
 void tunerTask(void *pvParameters) {
-	SharpDisplay_Init();
+	//SharpDisplay_Init();
 	Tuner_Init();
 	tuneRadio();
 

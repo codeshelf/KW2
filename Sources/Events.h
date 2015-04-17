@@ -41,7 +41,6 @@
 #include "Wait.h"
 #include "Rs485.h"
 #include "Rs485TxCtl.h"
-#include "LcdPowerCtl.h"
 #include "Critical.h"
 #include "Scanner.h"
 #include "Watchdog.h"
