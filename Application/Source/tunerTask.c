@@ -15,61 +15,42 @@
 #include "Wait.h"
 //#include "display.h"
 
-#define DEFAULT_CRYSTAL_TRIM	0xf4
+#include "scannerReadTask.h"
+#include "Scanner.h"
+#include "Wait.h"
+#include "EventTimer.h"
+#include "ScannerPower.h"
+
+#define DEFAULT_CRYSTAL_TRIM	0xcd //0xf4
 #define PERFECT_REMAINDER		0x6b06
 
 xTaskHandle gTunerTask = NULL;
 
 void adjustTune(gwUINT8 trim);
 gwUINT16 measureTune(void);
+gwUINT8 tuneRadio();
+
+char aes_key[32];
+char hw_ver[8];
+char guid[8];
 
 extern ELocalStatusType gLocalDeviceState;
 
 // --------------------------------------------------------------------------
 
 void tunerTask(void *pvParameters) {
+	gwUINT8 trim = 0;
+	
+	Tuner_Init();
+	trim = tuneRadio();
 
-	gwUINT8 ccrHolder;
-	gwUINT8 trim;
-	gwUINT16 remainder;
+	Rs485_Init();
+	SharpDisplay_Init();
+	scanParams();
 	
 	
-	
-//	for (;;) {
-		GW_ENTER_CRITICAL(ccrHolder);
-		
-		//Tuner_Init();
-		/*
-		trim = DEFAULT_CRYSTAL_TRIM;
-		adjustTune(trim);
-		remainder = measureTune();
-		if (remainder > PERFECT_REMAINDER) {
-			while ((remainder > PERFECT_REMAINDER) && (trim < 255)) {
-				adjustTune(++trim);
-				remainder = measureTune();
-			}
-		} else if (remainder < PERFECT_REMAINDER) {
-			while ((remainder < PERFECT_REMAINDER) && (trim > 0)) {
-				adjustTune(--trim);
-				remainder = measureTune();
-			}
-		}
-		*/
-		GW_EXIT_CRITICAL(ccrHolder);
-		
-		Wait_Waitms(8500);
-		Wait_Waitms(1);
-//	}
-		
-		/*
-		Rs485_Init();
-		SharpDisplay_Init();
-		
-		GW_ENTER_CRITICAL(ccrHolder);
-		clearDisplay();
-		displayMessage(1, "Tuning is complete", FONT_NORMAL);
-		GW_EXIT_CRITICAL(ccrHolder);
-		*/
+	// Stop cpu interrupts
+	for(;;){}
 }
 
 void adjustTune(gwUINT8 trim) {
@@ -104,4 +85,36 @@ gwUINT16 measureTune() {
 	}
 	
 	return remainder;
+}
+
+gwUINT8 tuneRadio() {
+	gwUINT8 ccrHolder;
+	gwUINT8 trim;
+	gwUINT16 remainder;
+		
+	GW_ENTER_CRITICAL(ccrHolder);
+			
+	trim = DEFAULT_CRYSTAL_TRIM;
+	adjustTune(trim);
+	remainder = measureTune();
+	if (remainder > PERFECT_REMAINDER) {
+		while ((remainder > PERFECT_REMAINDER) && (trim < 255)) {
+			adjustTune(++trim);
+			remainder = measureTune();
+		}
+	} else if (remainder < PERFECT_REMAINDER) {
+		while ((remainder < PERFECT_REMAINDER) && (trim > 0)) {
+			adjustTune(--trim);
+			remainder = measureTune();
+		}
+	}
+	
+	GW_EXIT_CRITICAL(ccrHolder);
+	
+	return trim;
+}
+
+void scanParams() {
+	
+	
 }
