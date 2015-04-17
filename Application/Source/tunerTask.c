@@ -13,7 +13,7 @@
 #include "queue.h"
 #include "commands.h"
 #include "Wait.h"
-//#include "display.h"
+#include "display.h"
 
 #include "scannerReadTask.h"
 #include "task.h"
@@ -38,7 +38,9 @@ char hw_ver[8];
 char guid[8];
 gwUINT8 ccrHolder;
 
-extern ELocalStatusType gLocalDeviceState;
+ELocalSetupType setupModeState;
+ScanStringType gScanString;
+ScanStringLenType gScanStringPos;
 
 // --------------------------------------------------------------------------
 
@@ -237,7 +239,6 @@ void enterSetupMode() {
 	
 	// Enter setup mode
 	setupModeState = eSetupModeStarted;
-	gLocalDeviceState = eLocalStateSetupMode;
 	
 	GW_ENTER_CRITICAL(ccrHolder);
 	clearDisplay();

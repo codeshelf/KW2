@@ -12,6 +12,12 @@
 
 #include "FreeRTOS.h"
 
+typedef enum {
+	eSetupModeStarted,
+	eSetupModeGetGuid,
+	eSetupModeGetTuning
+} ELocalSetupType;
+
 // --------------------------------------------------------------------------
 // Local functions prototypes.
 
