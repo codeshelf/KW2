@@ -3,8 +3,8 @@
   <Header>
     <Name>ProcessorExpert</Name>
     <SavedBy>andrewhuff</SavedBy>
-    <ModificationStamp>380</ModificationStamp>
-    <Date>2015-04-17</Date>
+    <ModificationStamp>411</ModificationStamp>
+    <Date>2015-04-22</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
   </Header>
@@ -28,7 +28,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>298</ProjectCompNumb>
+    <ProjectCompNumb>313</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -105,7 +105,7 @@
         <ItemSymbol>ClockSettingGrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>ICLK</ItemSymbol>
@@ -7545,7 +7545,7 @@
       <ItemId5>78</ItemId5>
       <Value5>true</Value5>
       <ItemId6>53</ItemId6>
-      <Value6>true</Value6>
+      <Value6>false</Value6>
       <ItemId7>52</ItemId7>
       <Value7>true</Value7>
       <ItemId8>51</ItemId8>
@@ -7555,7 +7555,7 @@
       <ItemId10>42</ItemId10>
       <Value10>true</Value10>
       <ItemId11>38</ItemId11>
-      <Value11>true</Value11>
+      <Value11>false</Value11>
       <ItemId12>33</ItemId12>
       <Value12>false</Value12>
       <ItemId13>48</ItemId13>
@@ -7581,9 +7581,9 @@
       <ItemId23>225</ItemId23>
       <Value23>true</Value23>
       <ItemId24>237</ItemId24>
-      <Value24>true</Value24>
+      <Value24>false</Value24>
       <ItemId25>238</ItemId25>
-      <Value25>true</Value25>
+      <Value25>false</Value25>
     </BoolList_BeanConfig>
     <BoolList_TaskConfig>
       <Count>0</Count>
@@ -16197,7 +16197,7 @@
         <ItemSymbol>PinsGrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>ReceiverPinGrp</ItemSymbol>
@@ -16273,7 +16273,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>CtsPin</ItemSymbol>
@@ -16294,7 +16294,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>RtsPin</ItemSymbol>
@@ -20710,7 +20710,7 @@
         <ItemSymbol>PinsGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>DataInGrp</ItemSymbol>
@@ -22140,8 +22140,8 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>1</Index>
-        <Value>false</Value>
+        <Index>0</Index>
+        <Value>true</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>UtilizeResetValuesCondGroup</ItemSymbol>
@@ -22511,11 +22511,11 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>ConnectPin</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
+              <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
+              <Index>0</Index>
+              <Value>true</Value>
               <LastSelection>false</LastSelection>
               <LastUserSel>no</LastUserSel>
               <UsrMethodName>ConnectPin</UsrMethodName>
@@ -22742,10 +22742,10 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>1</Index>
-        <Value>false</Value>
+        <Index>0</Index>
+        <Value>true</Value>
         <LastSelection>true</LastSelection>
-        <LastUserSel>no</LastUserSel>
+        <LastUserSel>yes</LastUserSel>
         <UsrMethodName>ConnectPin</UsrMethodName>
       </ItemState>
       <ItemState>
@@ -24323,7 +24323,7 @@
         <ItemSymbol>ChannelIntGrp2</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>IntChan2</ItemSymbol>
@@ -24371,7 +24371,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>5</Index>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>InputControl3</ItemSymbol>
