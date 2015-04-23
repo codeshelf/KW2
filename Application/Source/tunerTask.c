@@ -14,15 +14,11 @@
 #include "commands.h"
 #include "Wait.h"
 #include "display.h"
-
-
 #include "scannerReadTask.h"
 #include "Scanner.h"
 #include "EventTimer.h"
 #include "ScannerPower.h"
-
 #include "eeprom.h"
-
 
 #define DEFAULT_CRYSTAL_TRIM	0xff //0xf4 // 0xcd
 #define PERFECT_REMAINDER		0x6b06
@@ -36,7 +32,6 @@ char aes_key[EEPROM_AES_KEY_LEN];
 char hw_ver[EEPROM_HW_VER_LEN];
 char guid[EEPROM_GUID_LEN];
 gwUINT8 tune_param;
-
 gwUINT8 ccrHolder;
 
 ELocalSetupType setupModeState;
@@ -54,24 +49,23 @@ void tunerTask(void *pvParameters) {
 	GW_EXIT_CRITICAL(ccrHolder);
 	
 	ENABLE_TUNER
-	//Tuner_Init();
 	tuneRadio();
 	
-	//Rs485_Init();
 	ENABLE_DISPLAY
-
 	scanParams();
 	
-	
-	// Stop cpu interrupts
 	for(;;){}
 }
+
+// --------------------------------------------------------------------------
 
 void adjustTune(gwUINT8 trim) {
 	MLMEXtalAdjust(trim); 
 	// Wait for the clocks to stabilize.
 	Wait_Waitms(200);
 }
+
+// --------------------------------------------------------------------------
 
 gwUINT16 measureTune() {
 	
@@ -101,6 +95,8 @@ gwUINT16 measureTune() {
 	return remainder;
 }
 
+// --------------------------------------------------------------------------
+
 void tuneRadio() {
 	
 	gwUINT8 trim;
@@ -128,19 +124,17 @@ void tuneRadio() {
 	tune_param = trim;
 }
 
+// --------------------------------------------------------------------------
+
 void scanParams() {
 	
+	zeroParams();
 	enterSetupMode();
 	
 	gwUINT8 ccrHolder;
 	ScannerPower_SetVal(ScannerPower_DeviceData);
 	
 	for (;;) {
-		
-		// Break when finished
-		if (setupModeState == eSetupModeComplete) {
-			break;
-		}
 
 		// Clear the scan string.
 		gScanString[0] = NULL;
@@ -174,7 +168,6 @@ void scanParams() {
 
 		// Now send the scan string.
 		if (strlen(gScanString) > 0) {
-
 			if (isSetupCommand()) {
 				handleSetupCommand();
 			} else {
@@ -182,6 +175,14 @@ void scanParams() {
 			}
 		}
 	}
+}
+
+// --------------------------------------------------------------------------
+
+void zeroParams() {
+	memset(guid, (uint8_t)0, EEPROM_GUID_LEN);
+	memset(hw_ver, (uint8_t)0, EEPROM_HW_VER_LEN);
+	memset(aes_key, (uint8_t)0, EEPROM_AES_KEY_LEN);
 }
 
 // --------------------------------------------------------------------------
@@ -223,6 +224,7 @@ void handleSetupCommand() {
 }
 
 // --------------------------------------------------------------------------
+
 void enterSetupMode() {
 	
 	// Next expected scan is GUID
@@ -236,35 +238,45 @@ void enterSetupMode() {
 }
 
 // --------------------------------------------------------------------------
+
 void clearParams() {
-	// FIXME - huffa clear out params
-	//guid = 
+	zeroParams();
+	
+	GW_ENTER_CRITICAL(ccrHolder);
+	clearDisplay();
+	displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+	displayMessage(2, "Cleared params", FONT_NORMAL);
+	GW_EXIT_CRITICAL(ccrHolder);
+	vTaskDelay(1500);
 	
 	enterSetupMode();
 }
 
 // --------------------------------------------------------------------------
+
 void saveParams() {
 	
-	// Save the params
-	writeGuid(guid);
-	
-	GW_ENTER_CRITICAL(ccrHolder);
-	clearDisplay();
-	displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
-	displayMessage(2, "Setup complete", FONT_NORMAL);
-	displayMessage(3, "Params Saved", FONT_NORMAL);
-	GW_EXIT_CRITICAL(ccrHolder);
-	
-	uint8_t gotGuid[9];
-	readGuid(gotGuid);
-	gotGuid[8] = NULL;
-	
-	
-	setupModeState = eSetupModeComplete;
+	if (setupModeState == eSetupModeWaitingForSave) {
+		
+		// Write parameters to eeprom
+		writeGuid(guid);
+		writeAESKey(aes_key);
+		writeHWVersion(hw_ver);
+		writeTuning(&tune_param);
+		
+		GW_ENTER_CRITICAL(ccrHolder);
+		clearDisplay();
+		displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+		displayMessage(2, "Setup complete", FONT_NORMAL);
+		displayMessage(3, "Params Saved", FONT_NORMAL);
+		GW_EXIT_CRITICAL(ccrHolder);
+		
+		setupModeState = eSetupModeComplete;
+	}
 }
 
 // --------------------------------------------------------------------------
+
 void getGuid() {
 	GW_ENTER_CRITICAL(ccrHolder);
 	displayMessage(2, "Scanned GUID", FONT_NORMAL);
@@ -284,6 +296,7 @@ void getGuid() {
 }
 
 // --------------------------------------------------------------------------
+
 void getAes() {
 	GW_ENTER_CRITICAL(ccrHolder);
 	// FIXME - huffa will one line be enough for AES key?
@@ -303,9 +316,9 @@ void getAes() {
 }
 
 // --------------------------------------------------------------------------
+
 void getHwVersion() {
 	GW_ENTER_CRITICAL(ccrHolder);
-	// FIXME - huffa will one line be enough for AES key?
 	clearDisplay();
 	displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
 	displayMessage(2, "Scanned HW Version", FONT_NORMAL);

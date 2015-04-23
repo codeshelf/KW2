@@ -28,11 +28,10 @@ typedef enum {
 // Local functions prototypes.
 
 void tunerTask(void *pvParameters);
-
 void tuneRadio();
 
-
 void scanParams();
+void zeroParams();
 int isSetupCommand();
 void handleSetupScan();
 void handleSetupCommand();

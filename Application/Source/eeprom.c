@@ -77,11 +77,14 @@ void readEepromData(uint16_t addr, uint8_t* dataPtr, uint8_t bytesToRead) {
  * data in current page.
  * 
  * Physical page boundaries start at addresses that are integer multiples 
- * of the page buffer size (32 bytes) (or ‘page size’) and, end at 
+ * of the page buffer size (32 bytes) (or ‘page size’) and end at 
  * addresses that are integer multiples of page size – 1
  */
 void writeEepromData(uint16_t addr, uint8_t* dataPtr, uint8_t bytesToWrite) {
+	gwUINT8 ccrHolder;
 	
+	GW_ENTER_CRITICAL(ccrHolder);
+
 	EEPROM_CS_ON
 	spiSendByte(WRITE_ENABLE_CMD);
 	EEPROM_CS_OFF
@@ -96,39 +99,80 @@ void writeEepromData(uint16_t addr, uint8_t* dataPtr, uint8_t bytesToWrite) {
 	}
 	
 	EEPROM_CS_OFF
+	GW_EXIT_CRITICAL(ccrHolder);
 	
-	// Wait for internal write cycle time (TWC)
+	// Wait for internal write cycle time of eeprom (TWC)
 	Wait_Waitns(EEPROM_TWC);
 }
 
+/**
+ * Writes AES key to eeprom
+ * 
+ * @param dataPtr - uint8_t array of length EEPROM_AES_KEY_LEN containing the AES key
+ */
 void writeAESKey(uint8_t* dataPtr) {
 	writeEepromData((uint16_t)EEPROM_AES_KEY_ADDR, dataPtr, (uint8_t)EEPROM_AES_KEY_LEN);
 }
 
+/**
+ * Reads AES key from eeprom
+ * 
+ * @param dataPtr - uint8_t array of length EEPROM_AES_KEY_LEN to put AES key in
+ */
 void readAESKey(uint8_t* dataPtr) {
 	readEepromData((uint16_t)EEPROM_AES_KEY_ADDR, dataPtr, (uint8_t)EEPROM_AES_KEY_LEN);
 }
 
+/**
+ * Writes HW version to eeprom
+ * 
+ * @param dataPtr - uint8_t array of length EEPROM_HW_VER_LEN containing HW version
+ */
 void writeHWVersion(uint8_t* dataPtr) {
 	writeEepromData((uint16_t)EEPROM_HW_VER_ADDR, dataPtr, (uint8_t)EEPROM_HW_VER_LEN);
 }
 
+/**
+ * Reads HW version from eeprom
+ * 
+ * @param dataPtr - uint8_t array of length EEPROM_HW_VER_LEN to put HW version 
+ */
 void readHWVersion(uint8_t* dataPtr) {
 	readEepromData((uint16_t)EEPROM_HW_VER_ADDR, dataPtr, (uint8_t)EEPROM_HW_VER_LEN);
 }
 
+/**
+ * Write GUID to eeprom
+ * 
+ * @param dataPtr - uint8_t array of length EEPROM_GUID_LEN containing GUID
+ */
 void writeGuid(uint8_t* dataPtr) {
 	writeEepromData((uint16_t)EEPROM_GUID_ADDR, dataPtr, (uint8_t)EEPROM_GUID_LEN);
 }
 
+/**
+ * Read GUID from eeprom
+ * 
+ * @param dataPtr - uint8_t array of length EEPROM_GUID_LEN to put GUID
+ */
 void readGuid(uint8_t* dataPtr) {
 	readEepromData((uint16_t)EEPROM_GUID_ADDR, dataPtr, (uint8_t)EEPROM_GUID_LEN);
 }
 
+/**
+ * Write radio tuning trim to eeprom
+ * 
+ * @param dataPtr - uint8_t array of length EEPROM_TUNING_LEN containint tuning value
+ */
 void writeTuning(uint8_t* dataPtr) {
 	writeEepromData((uint16_t)EEPROM_TUNING_ADDR, dataPtr, (uint8_t)EEPROM_TUNING_LEN);
 }
 
+/**
+ * Read radio tuning trime from eeprom
+ * 
+ * @param dataPtr - uint8_t array of length EEPROM_TUNING_LEN to put tuning value
+ */
 void readTuning(uint8_t* dataPtr) {
 	readEepromData((uint16_t)EEPROM_TUNING_ADDR, dataPtr, (uint8_t)EEPROM_TUNING_LEN);
 }

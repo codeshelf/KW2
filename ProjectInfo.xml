@@ -96,6 +96,7 @@
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\EventTimer.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\FRTOS1.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\INT_PORTB.c</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\LedDrive.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\PE_LDD.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Rs485.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Rs485Power.c</PathName>
@@ -198,6 +199,7 @@
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\INT_PORTB.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\iofiles\MK21D5.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\IO_Map.h</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\LedDrive.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\ADC_PDD.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\CMP_PDD.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\CMT_PDD.h</PathName>

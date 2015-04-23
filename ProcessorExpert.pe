@@ -3,7 +3,7 @@
   <Header>
     <Name>ProcessorExpert</Name>
     <SavedBy>andrewhuff</SavedBy>
-    <ModificationStamp>411</ModificationStamp>
+    <ModificationStamp>412</ModificationStamp>
     <Date>2015-04-22</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
@@ -7555,7 +7555,7 @@
       <ItemId10>42</ItemId10>
       <Value10>true</Value10>
       <ItemId11>38</ItemId11>
-      <Value11>false</Value11>
+      <Value11>true</Value11>
       <ItemId12>33</ItemId12>
       <Value12>false</Value12>
       <ItemId13>48</ItemId13>
@@ -7581,9 +7581,9 @@
       <ItemId23>225</ItemId23>
       <Value23>true</Value23>
       <ItemId24>237</ItemId24>
-      <Value24>false</Value24>
+      <Value24>true</Value24>
       <ItemId25>238</ItemId25>
-      <Value25>false</Value25>
+      <Value25>true</Value25>
     </BoolList_BeanConfig>
     <BoolList_TaskConfig>
       <Count>0</Count>
