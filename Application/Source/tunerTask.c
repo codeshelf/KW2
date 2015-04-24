@@ -22,6 +22,7 @@
 
 #define DEFAULT_CRYSTAL_TRIM	0xff //0xf4 // 0xcd
 #define PERFECT_REMAINDER		0x6b06
+#define PROMPT_DELAY_TIME		1500
 
 void adjustTune(gwUINT8 trim);
 gwUINT16 measureTune();
@@ -240,6 +241,7 @@ void enterSetupMode() {
 // --------------------------------------------------------------------------
 
 void clearParams() {
+
 	zeroParams();
 	
 	GW_ENTER_CRITICAL(ccrHolder);
@@ -282,7 +284,7 @@ void getGuid() {
 	displayMessage(2, "Scanned GUID", FONT_NORMAL);
 	displayMessage(3, gScanString, FONT_NORMAL);
 	GW_EXIT_CRITICAL(ccrHolder);
-	vTaskDelay(1500);
+	vTaskDelay(PROMPT_DELAY_TIME);
 
 	strncpy(guid, gScanString, EEPROM_GUID_LEN);
 	
@@ -302,7 +304,7 @@ void getAes() {
 	// FIXME - huffa will one line be enough for AES key?
 	displayMessage(2, "Scanned AES key", FONT_NORMAL);
 	GW_EXIT_CRITICAL(ccrHolder);
-	vTaskDelay(1500);
+	vTaskDelay(PROMPT_DELAY_TIME);
 	
 	strncpy(aes_key, gScanString, EEPROM_AES_KEY_LEN);
 	
@@ -324,7 +326,7 @@ void getHwVersion() {
 	displayMessage(2, "Scanned HW Version", FONT_NORMAL);
 	displayMessage(3, gScanString, FONT_NORMAL);
 	GW_EXIT_CRITICAL(ccrHolder);
-	vTaskDelay(1500);
+	vTaskDelay(PROMPT_DELAY_TIME);
 	
 	strncpy(hw_ver, gScanString, EEPROM_HW_VER_LEN);
 	

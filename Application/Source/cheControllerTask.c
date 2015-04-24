@@ -19,6 +19,8 @@
 #include "serial.h"
 #include "Rs485Power.h"
 #include "Rs485.h"
+#include "eeprom.h"
+#include "globals.h"
 
 xTaskHandle			gCartControllerTask;
 xQueueHandle		gCartControllerQueue;
@@ -69,13 +71,13 @@ void cheControllerTask(void *pvParameters) {
 	displayMessage(1, "CONNECTING...", FONT_NORMAL);
 
 	strcpy(msg, "HW v");
-	strcat(msg, STR(HARDWARE_VERSION));
+	strcat(msg, hw_ver);
 	strcat(msg, " FW v");
 	strcat(msg, STR(FIRMWARE_VERSION));
 	displayMessage(2, msg, FONT_NORMAL);
 	
 	strcpy(msg, "GUID ");
-	strcat(msg, STR(GUID));
+	strcat(msg, guid);
 	displayMessage(3, msg, FONT_NORMAL);
 	
 	displayCodeshelfLogo(48, 135);

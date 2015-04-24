@@ -42,7 +42,6 @@
 #include "SharpDisplay.h"
 #include "SharpDisplayCS.h"
 #include "BitIoLdd1.h"
-#include "Tuner.h"
 #include "EepromCS.h"
 #include "BitIoLdd2.h"
 #include "StatusLedClk.h"
@@ -55,6 +54,8 @@
 #include "PE_Const.h"
 #include "IO_Map.h"
 /* User includes (#include below this line is not maintained by Processor Expert) */
+#include "globals.h"
+#include "eeprom.h"
 void startApplication(void);
 
 PE_ISR(Rs485Isr) {	
@@ -84,6 +85,25 @@ int main(void) {
 	/*** End of Processor Expert internal initialization.                    ***/
 
 	/* Write your code here */
+	// Load GUID
+	readGuid(guid);
+	guid[8] = NULL;
+	
+	// Load hardware version
+	// Assumes format #.#
+	uint8_t unformatted_hw_ver[EEPROM_HW_VER_LEN];
+	readHWVersion(unformatted_hw_ver);
+	hw_ver[0] = unformatted_hw_ver[0];
+	hw_ver[1] = (uint8_t) '.';
+	hw_ver[2] = unformatted_hw_ver[1];
+	hw_ver[3] = NULL;
+	
+	// Load aes key
+	readAESKey(aes_key);
+	
+	// Load trim
+	readTuning(trim);
+	
 	startApplication();
 	
 	/*** Don't write any code pass this line, or it will be deleted during code generation. ***/
