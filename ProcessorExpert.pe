@@ -2,9 +2,9 @@
 <PEproject>
   <Header>
     <Name>ProcessorExpert</Name>
-    <SavedBy>jeffw</SavedBy>
-    <ModificationStamp>414</ModificationStamp>
-    <Date>2015-04-26</Date>
+    <SavedBy>andrewhuff</SavedBy>
+    <ModificationStamp>429</ModificationStamp>
+    <Date>2015-04-27</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
   </Header>
@@ -28,7 +28,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>304</ProjectCompNumb>
+    <ProjectCompNumb>325</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -105,7 +105,7 @@
         <ItemSymbol>ClockSettingGrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>ICLK</ItemSymbol>
@@ -7528,7 +7528,7 @@
   <Configuration>
     <CompNumb>166</CompNumb>
     <NodeName>Tuner</NodeName>
-    <CnfgEnabled>false</CnfgEnabled>
+    <CnfgEnabled>true</CnfgEnabled>
     <TargetCPU>225</TargetCPU>
     <ConfigurationComment lines_count="0" />
     <BoolList_FpgaConfig>
@@ -7539,27 +7539,27 @@
       <ItemId0>152</ItemId0>
       <Value0>true</Value0>
       <ItemId1>138</ItemId1>
-      <Value1>false</Value1>
+      <Value1>true</Value1>
       <ItemId2>137</ItemId2>
-      <Value2>false</Value2>
+      <Value2>true</Value2>
       <ItemId3>124</ItemId3>
       <Value3>false</Value3>
       <ItemId4>114</ItemId4>
-      <Value4>false</Value4>
+      <Value4>true</Value4>
       <ItemId5>78</ItemId5>
       <Value5>true</Value5>
       <ItemId6>53</ItemId6>
       <Value6>false</Value6>
       <ItemId7>52</ItemId7>
-      <Value7>false</Value7>
+      <Value7>true</Value7>
       <ItemId8>51</ItemId8>
       <Value8>false</Value8>
       <ItemId9>43</ItemId9>
-      <Value9>false</Value9>
+      <Value9>true</Value9>
       <ItemId10>42</ItemId10>
       <Value10>true</Value10>
       <ItemId11>38</ItemId11>
-      <Value11>false</Value11>
+      <Value11>true</Value11>
       <ItemId12>33</ItemId12>
       <Value12>false</Value12>
       <ItemId13>48</ItemId13>
@@ -7587,7 +7587,7 @@
       <ItemId24>237</ItemId24>
       <Value24>true</Value24>
       <ItemId25>238</ItemId25>
-      <Value25>false</Value25>
+      <Value25>true</Value25>
       <ItemId26>290</ItemId26>
       <Value26>true</Value26>
     </BoolList_BeanConfig>
@@ -16332,7 +16332,7 @@
         <ItemSymbol>PinsGrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>ReceiverPinGrp</ItemSymbol>
@@ -16408,7 +16408,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>CtsPin</ItemSymbol>
@@ -16429,7 +16429,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>RtsPin</ItemSymbol>
@@ -20845,7 +20845,7 @@
         <ItemSymbol>PinsGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>DataInGrp</ItemSymbol>
@@ -21312,7 +21312,7 @@
         <ItemSymbol>SettingsGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>PeriphClockGateFeatureGroup</ItemSymbol>
@@ -21338,13 +21338,13 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>ClockSettingsGroup0</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>Divisor0</ItemSymbol>
@@ -21881,7 +21881,7 @@
         <ItemSymbol>PinsGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>DataInGrp</ItemSymbol>
@@ -22646,11 +22646,11 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>ConnectPin</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
+              <ReadOnly>true</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
+              <Index>0</Index>
+              <Value>true</Value>
               <LastSelection>false</LastSelection>
               <LastUserSel>no</LastUserSel>
               <UsrMethodName>ConnectPin</UsrMethodName>
@@ -22877,10 +22877,10 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>1</Index>
-        <Value>false</Value>
+        <Index>0</Index>
+        <Value>true</Value>
         <LastSelection>true</LastSelection>
-        <LastUserSel>no</LastUserSel>
+        <LastUserSel>yes</LastUserSel>
         <UsrMethodName>ConnectPin</UsrMethodName>
       </ItemState>
       <ItemState>
@@ -22906,7 +22906,7 @@
     <BeanType>Init_FTM_VAR0</BeanType>
     <Name>Tuner</Name>
     <CompNumb>152</CompNumb>
-    <CompEnabled>false</CompEnabled>
+    <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PERIPHINSP</IconName>
     <UserFolderName />
@@ -22932,7 +22932,7 @@
         <ItemSymbol>SettingsGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>PeriphClockGateFeatureGroup</ItemSymbol>
@@ -23892,7 +23892,7 @@
         <ItemSymbol>ChannelsGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>ChannelGrp0FeatureCondGroup</ItemSymbol>
@@ -24446,7 +24446,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <Value>PTC5/LLWU_P9/SPI0_SCK/LPTMR0_ALT2/I2S0_RXD0/CMP0_OUT/FTM0_CH2</Value>
-        <SharedPrphMode>false</SharedPrphMode>
+        <SharedPrphMode>true</SharedPrphMode>
       </ItemState>
       <ItemState>
         <ItemSymbol>PinChan2Signal</ItemSymbol>
@@ -24458,7 +24458,7 @@
         <ItemSymbol>ChannelIntGrp2</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>IntChan2</ItemSymbol>
@@ -24506,7 +24506,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>5</Index>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>InputControl3</ItemSymbol>
@@ -24636,15 +24636,15 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>false</Value>
+        <Value>true</Value>
         <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>PinChan3</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value />
-        <SharedPrphMode>false</SharedPrphMode>
+        <Value>PTC4/LLWU_P8/SPI0_PCS0/UART1_TX/FTM0_CH3/CMP1_OUT</Value>
+        <SharedPrphMode>true</SharedPrphMode>
       </ItemState>
       <ItemState>
         <ItemSymbol>PinChan3Signal</ItemSymbol>
@@ -24696,7 +24696,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>true</Value>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>Mode4</ItemSymbol>
@@ -24828,7 +24828,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <Value>ADC0_SE21/PTD4/LLWU_P14/SPI0_PCS1/UART0_RTS_b/FTM0_CH4/EWM_IN</Value>
-        <SharedPrphMode>false</SharedPrphMode>
+        <SharedPrphMode>true</SharedPrphMode>
       </ItemState>
       <ItemState>
         <ItemSymbol>PinChan4Signal</ItemSymbol>
@@ -25708,7 +25708,7 @@
         <ItemSymbol>InterruptsGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>CommonIntGrp</ItemSymbol>
@@ -25797,7 +25797,7 @@
         <ItemSymbol>InitializationGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>INITCHANSFeatureCondGroup</ItemSymbol>

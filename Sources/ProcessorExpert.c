@@ -47,6 +47,8 @@
 #include "PE_Const.h"
 #include "IO_Map.h"
 /* User includes (#include below this line is not maintained by Processor Expert) */
+#include "globals.h"
+#include "eeprom.h"
 void startApplication(void);
 
 PE_ISR(Rs485Isr) {	
@@ -76,6 +78,19 @@ int main(void) {
 	/*** End of Processor Expert internal initialization.                    ***/
 
 	/* Write your code here */
+	// Load GUID
+	readGuid(guid);
+	guid[8] = NULL;
+	
+	// Load hardware version
+	readHWVersion(hw_ver);
+	
+	// Load aes key
+	readAESKey(aes_key);
+	
+	// Load trim
+	readTuning(trim);
+	
 	startApplication();
 	
 	/*** Don't write any code pass this line, or it will be deleted during code generation. ***/
