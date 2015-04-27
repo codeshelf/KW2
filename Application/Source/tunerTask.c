@@ -280,63 +280,104 @@ void saveParams() {
 // --------------------------------------------------------------------------
 
 void getGuid() {
-	GW_ENTER_CRITICAL(ccrHolder);
-	displayMessage(2, "Scanned GUID", FONT_NORMAL);
-	displayMessage(3, gScanString, FONT_NORMAL);
-	GW_EXIT_CRITICAL(ccrHolder);
-	vTaskDelay(PROMPT_DELAY_TIME);
-
-	strncpy(guid, gScanString, EEPROM_GUID_LEN);
 	
-	// Next we want the AES key
-	setupModeState = eSetupModeGetAes;
-	GW_ENTER_CRITICAL(ccrHolder);
-	clearDisplay();
-	displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
-	displayMessage(2, "Scan AES key", FONT_NORMAL);
-	GW_EXIT_CRITICAL(ccrHolder);
+	if (gScanString[0] == 'G' && gScanString[1] == '%') {
+		GW_ENTER_CRITICAL(ccrHolder);
+		displayMessage(2, "Scanned GUID", FONT_NORMAL);
+		displayMessage(3, gScanString, FONT_NORMAL);
+		GW_EXIT_CRITICAL(ccrHolder);
+		vTaskDelay(PROMPT_DELAY_TIME);
+	
+		strncpy(guid, gScanString[2], EEPROM_GUID_LEN);
+		
+		// Next we want the AES key
+		setupModeState = eSetupModeGetAes;
+		GW_ENTER_CRITICAL(ccrHolder);
+		clearDisplay();
+		displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+		displayMessage(2, "Scan AES key", FONT_NORMAL);
+		GW_EXIT_CRITICAL(ccrHolder);
+	} else {
+		GW_ENTER_CRITICAL(ccrHolder);
+		displayMessage(3, "Invaild Scan", FONT_NORMAL);
+		GW_EXIT_CRITICAL(ccrHolder);
+		
+		vTaskDelay(PROMPT_DELAY_TIME);
+		
+		GW_ENTER_CRITICAL(ccrHolder);
+		displayMessage(3, "", FONT_NORMAL);
+		GW_EXIT_CRITICAL(ccrHolder);
+	}
 }
 
 // --------------------------------------------------------------------------
 
 void getAes() {
-	GW_ENTER_CRITICAL(ccrHolder);
-	// FIXME - huffa will one line be enough for AES key?
-	displayMessage(2, "Scanned AES key", FONT_NORMAL);
-	GW_EXIT_CRITICAL(ccrHolder);
-	vTaskDelay(PROMPT_DELAY_TIME);
 	
-	strncpy(aes_key, gScanString, EEPROM_AES_KEY_LEN);
-	
-	// Next we want the AES key
-	setupModeState = eSetupModeGetHWver;
-	GW_ENTER_CRITICAL(ccrHolder);
-	clearDisplay();
-	displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
-	displayMessage(2, "Scan Hardware Version", FONT_NORMAL);
-	GW_EXIT_CRITICAL(ccrHolder);
+	if (gScanString[0] == 'A' && gScanString[1] == '%') {
+		GW_ENTER_CRITICAL(ccrHolder);
+		// FIXME - huffa will one line be enough for AES key?
+		displayMessage(2, "Scanned AES key", FONT_NORMAL);
+		GW_EXIT_CRITICAL(ccrHolder);
+		vTaskDelay(PROMPT_DELAY_TIME);
+		
+		strncpy(aes_key, gScanString[2], EEPROM_AES_KEY_LEN);
+		
+		// Next we want the AES key
+		setupModeState = eSetupModeGetHWver;
+		GW_ENTER_CRITICAL(ccrHolder);
+		clearDisplay();
+		displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+		displayMessage(2, "Scan Hardware Version", FONT_NORMAL);
+		GW_EXIT_CRITICAL(ccrHolder);
+		
+	} else {
+		GW_ENTER_CRITICAL(ccrHolder);
+		displayMessage(3, "Invaild Scan", FONT_NORMAL);
+		GW_EXIT_CRITICAL(ccrHolder);
+		
+		vTaskDelay(PROMPT_DELAY_TIME);
+		
+		GW_ENTER_CRITICAL(ccrHolder);
+		displayMessage(3, "", FONT_NORMAL);
+		GW_EXIT_CRITICAL(ccrHolder);
+	}
 }
 
 // --------------------------------------------------------------------------
 
 void getHwVersion() {
-	GW_ENTER_CRITICAL(ccrHolder);
-	clearDisplay();
-	displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
-	displayMessage(2, "Scanned HW Version", FONT_NORMAL);
-	displayMessage(3, gScanString, FONT_NORMAL);
-	GW_EXIT_CRITICAL(ccrHolder);
-	vTaskDelay(PROMPT_DELAY_TIME);
 	
-	strncpy(hw_ver, gScanString, EEPROM_HW_VER_LEN);
-	
-	// Next we want the AES key
-	setupModeState = eSetupModeWaitingForSave;
-	GW_ENTER_CRITICAL(ccrHolder);
-	clearDisplay();
-	displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
-	displayMessage(2, "Setup complete", FONT_NORMAL);
-	displayMessage(3, "Scan SAVE or CLEAR", FONT_NORMAL);
-	GW_EXIT_CRITICAL(ccrHolder);
+	if (gScanString[0] == 'H' && gScanString[1] == '%') {
+		GW_ENTER_CRITICAL(ccrHolder);
+		clearDisplay();
+		displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+		displayMessage(2, "Scanned HW Version", FONT_NORMAL);
+		displayMessage(3, gScanString, FONT_NORMAL);
+		GW_EXIT_CRITICAL(ccrHolder);
+		vTaskDelay(PROMPT_DELAY_TIME);
+		
+		strncpy(hw_ver, gScanString[2], EEPROM_HW_VER_LEN);
+		
+		// Next we want the AES key
+		setupModeState = eSetupModeWaitingForSave;
+		GW_ENTER_CRITICAL(ccrHolder);
+		clearDisplay();
+		displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+		displayMessage(2, "Setup complete", FONT_NORMAL);
+		displayMessage(3, "Scan SAVE or CLEAR", FONT_NORMAL);
+		GW_EXIT_CRITICAL(ccrHolder);
+		
+	} else {
+		GW_ENTER_CRITICAL(ccrHolder);
+		displayMessage(3, "Invaild Scan", FONT_NORMAL);
+		GW_EXIT_CRITICAL(ccrHolder);
+		
+		vTaskDelay(PROMPT_DELAY_TIME);
+		
+		GW_ENTER_CRITICAL(ccrHolder);
+		displayMessage(3, "", FONT_NORMAL);
+		GW_EXIT_CRITICAL(ccrHolder);
+	}
 }
 

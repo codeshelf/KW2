@@ -90,13 +90,7 @@ int main(void) {
 	guid[8] = NULL;
 	
 	// Load hardware version
-	// Assumes format #.#
-	uint8_t unformatted_hw_ver[EEPROM_HW_VER_LEN];
-	readHWVersion(unformatted_hw_ver);
-	hw_ver[0] = unformatted_hw_ver[0];
-	hw_ver[1] = (uint8_t) '.';
-	hw_ver[2] = unformatted_hw_ver[1];
-	hw_ver[3] = NULL;
+	readHWVersion(hw_ver);
 	
 	// Load aes key
 	readAESKey(aes_key);
