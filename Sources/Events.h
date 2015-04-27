@@ -39,21 +39,14 @@
 #include "UTIL2.h"
 #include "INT_PORTB.h"
 #include "Wait.h"
-#include "Rs485.h"
-#include "Rs485TxCtl.h"
 #include "Critical.h"
-#include "Scanner.h"
 #include "Watchdog.h"
 #include "EventTimer.h"
-#include "SharpDisplay.h"
-#include "SharpDisplayCS.h"
-#include "BitIoLdd1.h"
 #include "EepromCS.h"
 #include "BitIoLdd2.h"
 #include "StatusLedClk.h"
 #include "StatusLedSdi.h"
-#include "ScannerPower.h"
-#include "Rs485Power.h"
+#include "Gateway.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -197,6 +190,36 @@ void LcdScrollIsr(void);
 */
 /* ===================================================================*/
 void Watchdog_OnWatchDog(LDD_TUserData *UserDataPtr);
+
+/*
+** ===================================================================
+**     Event       :  Cpu_OnHardFault (module Events)
+**
+**     Component   :  Cpu [MK21DN512MC5]
+*/
+/*!
+**     @brief
+**         This event is called when the Hard Fault exception had
+**         occurred. This event is automatically enabled when the [Hard
+**         Fault] property is set to 'Enabled'.
+*/
+/* ===================================================================*/
+void Cpu_OnHardFault(void);
+
+/*
+** ===================================================================
+**     Event       :  Cpu_OnBusFault (module Events)
+**
+**     Component   :  Cpu [MK21DN512MC5]
+*/
+/*!
+**     @brief
+**         This event is called when the Bus Fault exception had
+**         occurred. This event is automatically enabled when the [Bus
+**         Fault] property is set to 'Enabled'.
+*/
+/* ===================================================================*/
+void Cpu_OnBusFault(void);
 
 /* END Events */
 

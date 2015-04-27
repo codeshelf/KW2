@@ -66,7 +66,7 @@ void remoteMgmtTask(void *pvParameters) {
 			GW_WATCHDOG_RESET;
 
 			// Set the channel to the current channel we're testing.
-			setRadioChannel(channel);
+			setRadioChannel(channel - 11);
 
 			// Send an associate request on the current channel.
 			txBufferNum = 0;//lockTxBuffer();

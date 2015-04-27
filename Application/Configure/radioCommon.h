@@ -78,24 +78,6 @@ typedef enum {
 	eTx,
 } RadioStateEnum;
 
-//#define RELEASE_RX_BUFFER(rxBufferNum, ccrHolder)	\
-//	GW_ENTER_CRITICAL(ccrHolder); \
-//	if (gRxRadioBuffer[rxBufferNum].bufferStatus != eBufferStateFree) { \
-//		gRxRadioBuffer[rxBufferNum].bufferStatus = eBufferStateFree; \
-//	} else if (GW_DEBUG) { \
-//		debugRefreed(rxBufferNum); \
-//	} \
-//	GW_EXIT_CRITICAL(ccrHolder);
-//
-//#define RELEASE_TX_BUFFER(txBufferNum, ccrHolder)	\
-//	GW_ENTER_CRITICAL(ccrHolder); \
-//	if (gTxRadioBuffer[txBufferNum].bufferStatus != eBufferStateFree) { \
-//		gTxRadioBuffer[txBufferNum].bufferStatus = eBufferStateFree; \
-//	} else if (GW_DEBUG) { \
-//		debugRefreed(txBufferNum); \
-//	} \
-//	GW_EXIT_CRITICAL(ccrHolder);
-
 // --------------------------------------------------------------------------
 // Typedefs
 

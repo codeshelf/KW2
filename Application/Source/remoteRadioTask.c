@@ -60,11 +60,20 @@ void radioReceiveTask(void *pvParameters) {
 
 			//Wait for packet in the queue
 			if (xQueueReceive(gRadioReceiveQueue, &rxBufferNum, portMAX_DELAY) == pdPASS ) {
+				while (gRxMsg.rxPacketPtr->rxStatus == rxProcessingReceptionStatus_c) {
+					vTaskDelay(0);
+				}
 				if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c) {
 					// Process the packet we just received.
+					gRxRadioBuffer[rxBufferNum].bufferSize = gRxMsg.rxPacketPtr->u8DataLength;
 					processRxPacket(rxBufferNum);
+				} else {
+					readRadioRx();
 				}
+			} else {
+				readRadioRx();
 			}
+
 		}
 	}
 	/* Will only get here if the queue could not be created. */
@@ -74,14 +83,10 @@ void radioReceiveTask(void *pvParameters) {
 // --------------------------------------------------------------------------
 
 void radioTransmitTask(void *pvParameters) {
-	//smacErrors_t smacError;
 	BufferCntType txBufferNum;
 	gwBoolean shouldRetry;
 	portTickType retryTickCount;
-	//NetAddrType cmdDstAddr;
-	//NetworkIDType networkID;
 	gwUINT8 ackId;
-	//gwUINT8 ccrHolder;
 
 	if (gRadioTransmitQueue && gTxAckQueue) {
 		for (;;) {
@@ -110,6 +115,9 @@ void radioTransmitTask(void *pvParameters) {
 						continue;
 					}
 					
+					readRadioRx();
+
+#ifndef GATEWAY
 					if (txedAckId != 0 && txCommandType != eCommandNetMgmt && txCommandType != eCommandAssoc) {
 						shouldRetry = TRUE;
 						
@@ -125,8 +133,9 @@ void radioTransmitTask(void *pvParameters) {
 							shouldRetry = FALSE;
 						}
 					}
-					
+#endif					
 				} while (shouldRetry);
+				gTxRadioBuffer[txBufferNum].bufferStatus = eBufferStateFree;
 			}
 		}
 	}

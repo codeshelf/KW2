@@ -201,6 +201,42 @@ void Watchdog_OnWatchDog(LDD_TUserData *UserDataPtr)
   /* Write your code here ... */
 }
 
+/*
+** ===================================================================
+**     Event       :  Cpu_OnHardFault (module Events)
+**
+**     Component   :  Cpu [MK21DN512MC5]
+*/
+/*!
+**     @brief
+**         This event is called when the Hard Fault exception had
+**         occurred. This event is automatically enabled when the [Hard
+**         Fault] property is set to 'Enabled'.
+*/
+/* ===================================================================*/
+void Cpu_OnHardFault(void)
+{
+  /* Write your code here ... */
+}
+
+/*
+** ===================================================================
+**     Event       :  Cpu_OnBusFault (module Events)
+**
+**     Component   :  Cpu [MK21DN512MC5]
+*/
+/*!
+**     @brief
+**         This event is called when the Bus Fault exception had
+**         occurred. This event is automatically enabled when the [Bus
+**         Fault] property is set to 'Enabled'.
+*/
+/* ===================================================================*/
+void Cpu_OnBusFault(void)
+{
+  /* Write your code here ... */
+}
+
 /* END Events */
 
 #ifdef __cplusplus

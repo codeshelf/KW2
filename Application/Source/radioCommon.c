@@ -26,41 +26,50 @@ RadioStateEnum gRadioState = eIdle;
 
 //Make sure radio is idle then change channel. If the channel was in read mode notify the reader task waiting on the queue.
 void setRadioChannel(ChannelNumberType channel) {	
+	ChannelNumberType oldChannel;
 	smacErrors_t smacError;
 	gwUINT8 ccrHolder;
 
-	GW_ENTER_CRITICAL(ccrHolder);
-	
-	//Wait for Tx to finish
-	while(gRadioState == eTx) {
-		GW_EXIT_CRITICAL(ccrHolder);
-		vTaskDelay(1);
-		//Entry critical before we check the state again
+	oldChannel = MLMEGetChannelRequest();
+	// We need to remain compatible with the old MC1322x until we finally switch away from it.
+	// Ivan will need to coordinate the change at the back end of the Java system.
+	channel += 11;
+
+	if (channel != oldChannel) {
+
 		GW_ENTER_CRITICAL(ccrHolder);
-	}
-	
-	gwBoolean readWasCancelled = FALSE;
-	if (gRadioState == eRx) {
-		readWasCancelled = TRUE;
-		smacError = MLMERXDisableRequest();
-		if (smacError != gErrorNoError_c){
+
+		//Wait for Tx to finish
+		while(gRadioState == eTx) {
+			GW_EXIT_CRITICAL(ccrHolder);
+			vTaskDelay(1);
+			//Entry critical before we check the state again
+			GW_ENTER_CRITICAL(ccrHolder);
+		}
+
+		gwBoolean readWasCancelled = FALSE;
+		if (gRadioState == eRx) {
+			readWasCancelled = TRUE;
+			smacError = MLMERXDisableRequest();
+			if (smacError != gErrorNoError_c){
+				GW_RESET_MCU()
+			}
+			gRadioState = eIdle;
+		}
+
+		//State is now idle, change the channel
+		smacError = MLMESetChannelRequest(channel);
+		if (smacError != gErrorNoError_c) {
 			GW_RESET_MCU()
 		}
-		gRadioState = eIdle;
-	}
 
-	//State is now idle, change the channel
-	smacError = MLMESetChannelRequest(channel);
-	if (smacError != gErrorNoError_c) {
-		GW_RESET_MCU()
-	}
+		GW_EXIT_CRITICAL(ccrHolder);
 
-	GW_EXIT_CRITICAL(ccrHolder);
-	
-	if(readWasCancelled) {
-		//Notify anyone listening on the receive queue that the read was canceled.
-		//xQueueSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
-		xQueueGenericSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portTickType) 0, (portBASE_TYPE) queueSEND_TO_BACK);
+		if(readWasCancelled) {
+			//Notify anyone listening on the receive queue that the read was canceled.
+			//xQueueSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
+			xQueueGenericSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portTickType) 0, (portBASE_TYPE) queueSEND_TO_BACK);
+		}
 	}
 }
 
@@ -99,15 +108,16 @@ void writeRadioTx() {
 		GW_RESET_MCU()
 	}
 	gRadioState = eTx;
+	
+//	serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) ("TX"),  2);
+	
 	GW_EXIT_CRITICAL(ccrHolder);
 	
-	if(readWasCancelled) {
-		//Notify anyone listening on the receive queue that the read was cancelled.
-		//xQueueSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
-		xQueueGenericSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portTickType) 0, (portBASE_TYPE) queueSEND_TO_BACK);
-
-	}
-
+//	if(readWasCancelled) {
+//		//Notify anyone listening on the receive queue that the read was cancelled.
+//		//xQueueSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
+//		xQueueGenericSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portTickType) 0, (portBASE_TYPE) queueSEND_TO_BACK);
+//	}
 }
 
 //Make sure the radio is idle then perform Rx. This method sleeps until an existing Tx is complete.
@@ -143,6 +153,9 @@ void readRadioRx() {
 		GW_RESET_MCU()
 	}
 	gRadioState = eRx;
+	
+//	serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) ("RX"),  2);
+
 	GW_EXIT_CRITICAL(ccrHolder);
 }
 

@@ -7,10 +7,13 @@
  $Name$
  */
 
-#include "remoteCommon.h"
+#include "processRx.h"
 #include "remoteRadioTask.h"
 #include "commands.h"
 #include "string.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
 
 // --------------------------------------------------------------------------
 // Global variables.

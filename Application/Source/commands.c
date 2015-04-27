@@ -259,7 +259,7 @@ void createAckPacket(BufferCntType inTXBufferNum, AckIDType inAckId, AckDataType
 
 // --------------------------------------------------------------------------
 
-#ifdef IS_GATEWAY
+#ifdef GATEWAY
 void createOutboundNetSetup() {
 	BufferCntType txBufferNum;
 	gwUINT8 ccrHolder;
@@ -286,10 +286,9 @@ void createOutboundNetSetup() {
 
 	gTxRadioBuffer[txBufferNum].bufferSize = CMDPOS_NETM_SETCMD_CHANNEL + 1;
 
-	serialTransmitFrame(UART_1, (gwUINT8*) (&gTxRadioBuffer[txBufferNum].bufferStorage), gTxRadioBuffer[txBufferNum].bufferSize);
-	RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
+	serialTransmitFrame(UART0_BASE_PTR, (gwUINT8*) (&gTxRadioBuffer[txBufferNum].bufferStorage), gTxRadioBuffer[txBufferNum].bufferSize);
 
-	vTaskResume(gRadioReceiveTask);
+//	vTaskResume(gRadioReceiveTask);
 
 }
 #endif
@@ -334,25 +333,13 @@ void processNetSetupCommand(BufferCntType inTXBufferNum) {
 
 	// Get the requested channel number.
 	channel = gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_NETM_SETCMD_CHANNEL];
-
-	// Write this value to MV_RAM if it's different than what we already have.
-	// NB: Writing to flash causes it to wear out over time.  FSL says 10K write cycles, but there
-	// are other issues that may reduce this number.  So only write if we have to.
-	//	if (NV_RAM_ptr->ChannelSelect != channel) {
-	//		// (cast away the "const" of the NVRAM channel number.)
-	//		EnterCritical();
-	//		Update_NV_RAM(&(NV_RAM_ptr->ChannelSelect), &channel, 1);
-	//		//WriteFlashByte(channel, &(NV_RAM_ptr->ChannelSelect));
-	//		ExitCritical();
-	//	}
-
 	setRadioChannel(channel);
 
 	gLocalDeviceState = eLocalStateRun;
 }
 // --------------------------------------------------------------------------
 
-#ifdef IS_GATEWAY
+#ifdef GATEWAY
 void processNetIntfTestCommand(BufferCntType inTXBufferNum) {
 
 	BufferCntType txBufferNum;
@@ -390,10 +377,9 @@ void processNetIntfTestCommand(BufferCntType inTXBufferNum) {
 
 	gTxRadioBuffer[txBufferNum].bufferSize = CMDPOS_NETM_TSTCMD_NUM + 1;
 
-	serialTransmitFrame(UART_1, (gwUINT8*) (&gTxRadioBuffer[txBufferNum].bufferStorage), gTxRadioBuffer[txBufferNum].bufferSize);
-	RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
+	serialTransmitFrame(UART0_BASE_PTR, (gwUINT8*) (&gTxRadioBuffer[txBufferNum].bufferStorage), gTxRadioBuffer[txBufferNum].bufferSize);
 
-	vTaskResume(gRadioReceiveTask);
+//	vTaskResume(gRadioReceiveTask);
 
 }
 
@@ -402,18 +388,12 @@ void processNetIntfTestCommand(BufferCntType inTXBufferNum) {
 void processNetCheckOutboundCommand(BufferCntType inTXBufferNum) {
 	BufferCntType txBufferNum;
 	ChannelNumberType channel;
-	ChannelNumberType newChannel;
 
 	//vTaskSuspend(gRadioReceiveTask);
 
 	// Switch to the channel requested in the outbound net-check.
-	channel = MLMEGetChannelRequest();
-	newChannel = gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_CHANNEL];
-
-	if (channel != newChannel) {
-		MLMESetChannelRequest(newChannel);
-		channel = newChannel;
-	}
+	channel = gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_CHANNEL];
+	setRadioChannel(channel);
 
 	// We need to put the gateway (dongle) GUID into the outbound packet before it gets transmitted.
 	memcpy(&(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_GUID]), STR(GUID), UNIQUE_ID_BYTES);
@@ -462,12 +442,12 @@ void processNetCheckOutboundCommand(BufferCntType inTXBufferNum) {
 
 		gTxRadioBuffer[txBufferNum].bufferSize = CMDPOS_NETM_CHKCMD_LINKQ + 1;
 
-		serialTransmitFrame(UART_1, (gwUINT8*) (&gTxRadioBuffer[txBufferNum].bufferStorage), gTxRadioBuffer[txBufferNum].bufferSize);
-		RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
+		serialTransmitFrame(UART0_BASE_PTR, (gwUINT8*) (&gTxRadioBuffer[txBufferNum].bufferStorage), gTxRadioBuffer[txBufferNum].bufferSize);
 
-		vTaskResume(gRadioReceiveTask);
+//		vTaskResume(gRadioReceiveTask);
 
 	}
+//	gTxRadioBuffer[inTXBufferNum].bufferStatus = eBufferStateFree;
 }
 #endif
 

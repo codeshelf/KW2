@@ -11,11 +11,12 @@
 #include "task.h"
 #include "gwTypes.h"
 #include "gwSystemMacros.h"
+#include "Wait.h"
 
 uint8_t gCircularBuffer[BUFFER_SIZE + 1];
-uint8_t gCircularBufferPos;
-uint8_t gCircularBufferEnd = BUFFER_SIZE + 1;
-gwBoolean gCircularBufferIsEmpty = TRUE;
+uint8_t gCircularBufferPos = 0;
+uint8_t gCircularBufferSize = 0;
+
 
 // --------------------------------------------------------------------------
 
@@ -23,45 +24,58 @@ void sendOneChar(UART_MemMapPtr uartRegPtr, UsbDataType data) {
 
 	// Until there is free space in the FIFO don't send a char.
 	while (uartRegPtr->TCFIFO >= uartRegPtr->TWFIFO) {
-		vTaskDelay(1);
+		//vTaskDelay(1);
+		Wait_Waitus(25);
 	}
 	uartRegPtr->D = data;
-	while (uartRegPtr->TCFIFO > 0) {
-		vTaskDelay(1);
-	}
+//	while (uartRegPtr->TCFIFO > uartRegPtr->TWFIFO) {
+//		vTaskDelay(1);
+//	}
 }
 
 // --------------------------------------------------------------------------
 
 void readOneChar(UART_MemMapPtr uartRegPtr, UsbDataPtrType dataPtr) {
 
-	gwUINT8 bytesToRead;
-	gwUINT8 byteNum;
-
 	// Loop until the buffer has something in it.
-	if (gCircularBufferIsEmpty == TRUE) {
+	if (gCircularBufferSize == 0) {
 		// Wait until there are characters in the FIFO
-		while (uartRegPtr->RCFIFO == 0) {
-			vTaskDelay(1);
-		}
-		bytesToRead = uartRegPtr->RCFIFO;
-		gCircularBufferIsEmpty = FALSE;
-		for (byteNum = 0; byteNum < bytesToRead; ++byteNum) {
-			gCircularBufferEnd++;
-			if (gCircularBufferEnd > BUFFER_SIZE) {
-				gCircularBufferEnd = 0;
+		while (uartRegPtr->RCFIFO < 2) {
+			vTaskDelay(0);
+			// If the status register shows a frame error then clear it by reading S! and D.
+			if (uartRegPtr->S1 & UART_S1_FE_MASK) {
+				uint8_t clearData = uartRegPtr->D;
 			}
-			gCircularBuffer[gCircularBufferEnd] = uartRegPtr->D;
+		}
+		Wait_Waitus(250);
+		
+//		uint8_t bytesToRead = uartRegPtr->RCFIFO;
+//		for (uint8_t byte = 0; byte < bytesToRead; byte++) {
+		while (uartRegPtr->RCFIFO > 1) {
+			uint8_t uartChar = uartRegPtr ->D;
+			//if ((uartRegPtr ->SFIFO & UART_SFIFO_RXUF_MASK) == 0) {
+				if ((gCircularBufferPos + gCircularBufferSize) > BUFFER_SIZE) {
+					gCircularBuffer[gCircularBufferPos + gCircularBufferSize - BUFFER_SIZE - 1] = uartChar;
+				} else {
+					gCircularBuffer[gCircularBufferPos + gCircularBufferSize] = uartChar;
+				}
+				gCircularBufferSize++;
+				if (gCircularBufferSize == BUFFER_SIZE) {
+					break;
+				}
+			//}
+//			// Weird, screwed up UART behavior doesn't update RCFIFO fast enough.
+//			if (uartRegPtr->RCFIFO == 1) {
+//				Wait_Waitus(500);
+//			}
 		}
 	}
 
 	// Get the first character out of the buffer.
 	*dataPtr = gCircularBuffer[gCircularBufferPos];
 
-	if (gCircularBufferPos == gCircularBufferEnd) {
-		gCircularBufferIsEmpty = TRUE;
-	}
 	gCircularBufferPos++;
+	gCircularBufferSize--;
 	if (gCircularBufferPos > BUFFER_SIZE) {
 		gCircularBufferPos = 0;
 	}
@@ -114,7 +128,8 @@ void serialTransmitFrame(UART_MemMapPtr uartRegPtr, BufferStoragePtrType inFrame
 	
 	// Wait until all of the TX bytes have been sent.
 	while (uartRegPtr ->TCFIFO > 0) {
-		vTaskDelay(1);
+		//vTaskDelay(1);
+		Wait_Waitus(100);
 	}
 
 	GW_WATCHDOG_RESET;
@@ -125,6 +140,7 @@ void serialTransmitFrame(UART_MemMapPtr uartRegPtr, BufferStoragePtrType inFrame
 BufferCntType serialReceiveFrame(UART_MemMapPtr uartRegPtr, BufferStoragePtrType inFramePtr, BufferCntType inMaxFrameSize) {
 	BufferStorageType nextByte;
 	BufferCntType bytesReceived = 0;
+	gwBoolean frameStarted = FALSE;
 
 	// Loop reading bytes until we put together a whole frame.
 	// Make sure not to copy them into the frame if we run out of room.
@@ -135,10 +151,11 @@ BufferCntType serialReceiveFrame(UART_MemMapPtr uartRegPtr, BufferStoragePtrType
 		switch (nextByte) {
 
 			case END:
-				if (bytesReceived) {
-					GW_WATCHDOG_RESET;
+				if ((frameStarted) && (bytesReceived)) {
 					return bytesReceived;
 				} else {
+					frameStarted = TRUE;
+					continue;
 					break;
 				}
 
@@ -159,8 +176,9 @@ BufferCntType serialReceiveFrame(UART_MemMapPtr uartRegPtr, BufferStoragePtrType
 				break;
 		}
 
-		if (bytesReceived < inMaxFrameSize)
+		if (frameStarted && (bytesReceived < inMaxFrameSize)) {
 			inFramePtr[bytesReceived++] = nextByte;
+		}
 	}
 	
 }

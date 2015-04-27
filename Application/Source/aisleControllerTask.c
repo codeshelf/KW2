@@ -19,7 +19,6 @@
 #define getMax(a,b)    (((a) > (b)) ? (a) : (b))
 #define getMin(a,b)    (((a) < (b)) ? (a) : (b))
 xTaskHandle gAisleControllerTask = NULL;
-//xQueueHandle gAisleControllerQueue;
 
 LedCycle gLedCycle = eLedCycleOff;
 

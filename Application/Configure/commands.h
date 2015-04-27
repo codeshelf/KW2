@@ -95,12 +95,12 @@ void createQueryCommand(BufferCntType inTXBufferNum, NetAddrType inRemoteAddr);
 void createResponseCommand(BufferCntType inTXBufferNum, BufferOffsetType inResponseSize, NetAddrType inRemoteAddr);
 void createScanCommand(BufferCntType inTXBufferNum, ScanStringPtrType inScanStringPtr, ScanStringLenType inScanStringLen);
 void createButtonCommand(BufferCntType inTXBufferNum, gwUINT8 inButtonNum, gwUINT8 inValue);
-#ifdef IS_GATEWAY
+#ifdef GATEWAY
 void createOutboundNetSetup(void);
 #endif
 
 void processNetCheckInboundCommand(BufferCntType inRXBufferNum);
-#ifdef IS_GATEWAY
+#ifdef GATEWAY
 void processNetCheckOutboundCommand(BufferCntType inTXBufferNum);
 void processNetIntfTestCommand(BufferCntType inTXBufferNum);
 #endif

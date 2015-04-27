@@ -17,8 +17,7 @@
 // --------------------------------------------------------------------------
 // Defines.
 
-#define GATEWAY_MGMT_QUEUE_SIZE		10
-#define BUFFER_SIZE					32
+#define BUFFER_SIZE					128
 
 #define END							0300    /* indicates end of frame */
 #define ESC							0333    /* indicates byte stuffing */
@@ -35,7 +34,6 @@ typedef gwUINT8	*UsbDataPtrType;
 
 void UART_ReadOneChar(UART_MemMapPtr uartRegPtr, UsbDataPtrType dataPtr);
 void sendOneChar(UART_MemMapPtr uartRegPtr, UsbDataType data);
-void serialReceiveTask(void *pvParameters);
 void serialTransmitFrame(UART_MemMapPtr uartRegPtr, BufferStoragePtrType inFramePtr, BufferCntType inFrameSize);
 BufferCntType serialReceiveFrame(UART_MemMapPtr uartRegPtr, BufferStoragePtrType inFramePtr, BufferCntType inMaxFrameSize);
 

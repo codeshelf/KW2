@@ -72,6 +72,7 @@
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\aisleControllerTask.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\appAisleController.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\appCheController.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\appGateway.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\appTuner.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\cheControllerTask.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\codeshelf.logo.c</PathName>
@@ -81,29 +82,24 @@
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\fontArial16.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\fontArial26.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\fontBarcode.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\gatewayTask.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\processRxGateway.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Source\processRxRemote.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\radioCommon.c</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Application\Source\remoteCommon.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\remoteMgmtTask.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\remoteRadioTask.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\scannerReadTask.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\serial.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\smacGlue.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Source\tunerTask.c</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\BitIoLdd1.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\BitIoLdd2.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Cpu.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\EepromCS.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\EventTimer.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\FRTOS1.c</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Gateway.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\INT_PORTB.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\PE_LDD.c</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485.c</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485Power.c</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485TxCtl.c</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Scanner.c</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\ScannerPower.c</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\SharpDisplay.c</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\SharpDisplayCS.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\StatusLedClk.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\StatusLedSdi.c</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\UTIL1.c</PathName>
@@ -166,6 +162,7 @@
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\aisleControllerTask.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\appAisleController.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\appCheController.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\appGateway.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\appTuner.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\cheControllerTask.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\codeshelf.logo.h</PathName>
@@ -176,17 +173,18 @@
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\fontArial16.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\fontArial26.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\fontBarcode.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\gatewayCommon.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\gatewayTask.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\gwSystemMacros.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\gwTypes.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\processRx.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\radioCommon.h</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Application\Configure\remoteCommon.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\remoteMgmtTask.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\remoteRadioTask.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\scannerReadTask.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\serial.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\smacGlue.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Application\Configure\tunerTask.h</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\BitIoLdd1.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\BitIoLdd2.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Cpu.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\EepromCS.h</PathName>
@@ -194,6 +192,7 @@
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\FRTOS1.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\FreeRTOS.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\FreeRTOSConfig.h</PathName>
+      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Gateway.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\INT_PORTB.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\iofiles\MK21D5.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\IO_Map.h</PathName>
@@ -231,13 +230,6 @@
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\PE_Error.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\PE_LDD.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\PE_Types.h</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485.h</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485Power.h</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Rs485TxCtl.h</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\Scanner.h</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\ScannerPower.h</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\SharpDisplay.h</PathName>
-      <PathName>C:\Users\jeffw\git\KW2\Generated_Code\SharpDisplayCS.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\StackMacros.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\StatusLedClk.h</PathName>
       <PathName>C:\Users\jeffw\git\KW2\Generated_Code\StatusLedSdi.h</PathName>

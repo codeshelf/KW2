@@ -3,8 +3,8 @@
   <Header>
     <Name>ProcessorExpert</Name>
     <SavedBy>jeffw</SavedBy>
-    <ModificationStamp>366</ModificationStamp>
-    <Date>2015-04-14</Date>
+    <ModificationStamp>414</ModificationStamp>
+    <Date>2015-04-26</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
   </Header>
@@ -28,7 +28,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>286</ProjectCompNumb>
+    <ProjectCompNumb>304</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -4287,7 +4287,7 @@
         <ItemSymbol>CPUInterrupts</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>IntNMIGrp</ItemSymbol>
@@ -4366,7 +4366,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>false</Value>
+        <Value>true</Value>
         <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
@@ -4412,7 +4412,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>false</Value>
+        <Value>true</Value>
         <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
@@ -4540,7 +4540,7 @@
         <ItemSymbol>IntLossOfLockGrp</ItemSymbol>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>IntLossOfLock</ItemSymbol>
@@ -6294,10 +6294,10 @@
         <ReadOnly>true</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
         <LastSelection>false</LastSelection>
-        <LastUserSel>never</LastUserSel>
+        <LastUserSel>always</LastUserSel>
       </ItemState>
       <ItemState>
         <ItemSymbol>OnHardFaultName</ItemSymbol>
@@ -6310,10 +6310,10 @@
         <ReadOnly>true</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
         <LastSelection>false</LastSelection>
-        <LastUserSel>never</LastUserSel>
+        <LastUserSel>always</LastUserSel>
       </ItemState>
       <ItemState>
         <ItemSymbol>OnBusFaultName</ItemSymbol>
@@ -7277,7 +7277,7 @@
       <Count>0</Count>
     </BoolList_FpgaConfig>
     <BoolList_BeanConfig>
-      <Count>26</Count>
+      <Count>27</Count>
       <ItemId0>8</ItemId0>
       <Value0>true</Value0>
       <ItemId1>10</ItemId1>
@@ -7330,6 +7330,8 @@
       <Value24>false</Value24>
       <ItemId25>238</ItemId25>
       <Value25>false</Value25>
+      <ItemId26>290</ItemId26>
+      <Value26>true</Value26>
     </BoolList_BeanConfig>
     <BoolList_TaskConfig>
       <Count>0</Count>
@@ -7397,14 +7399,14 @@
   <Configuration>
     <CompNumb>3</CompNumb>
     <NodeName>CHEController</NodeName>
-    <CnfgEnabled>true</CnfgEnabled>
+    <CnfgEnabled>false</CnfgEnabled>
     <TargetCPU>225</TargetCPU>
     <ConfigurationComment lines_count="0" />
     <BoolList_FpgaConfig>
       <Count>0</Count>
     </BoolList_FpgaConfig>
     <BoolList_BeanConfig>
-      <Count>26</Count>
+      <Count>27</Count>
       <ItemId0>8</ItemId0>
       <Value0>true</Value0>
       <ItemId1>10</ItemId1>
@@ -7457,6 +7459,8 @@
       <Value24>true</Value24>
       <ItemId25>238</ItemId25>
       <Value25>true</Value25>
+      <ItemId26>290</ItemId26>
+      <Value26>false</Value26>
     </BoolList_BeanConfig>
     <BoolList_TaskConfig>
       <Count>0</Count>
@@ -7531,7 +7535,7 @@
       <Count>0</Count>
     </BoolList_FpgaConfig>
     <BoolList_BeanConfig>
-      <Count>26</Count>
+      <Count>27</Count>
       <ItemId0>152</ItemId0>
       <Value0>true</Value0>
       <ItemId1>138</ItemId1>
@@ -7584,6 +7588,137 @@
       <Value24>true</Value24>
       <ItemId25>238</ItemId25>
       <Value25>false</Value25>
+      <ItemId26>290</ItemId26>
+      <Value26>true</Value26>
+    </BoolList_BeanConfig>
+    <BoolList_TaskConfig>
+      <Count>0</Count>
+    </BoolList_TaskConfig>
+    <BoolList_ProgConfig>
+      <Count>0</Count>
+    </BoolList_ProgConfig>
+    <ItemState>
+      <ItemSymbol>Optimizations</ItemSymbol>
+      <ReadOnly>false</ReadOnly>
+      <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      <Expanded>true</Expanded>
+    </ItemState>
+    <ItemState>
+      <ItemSymbol>Not_for_MPC512x</ItemSymbol>
+      <ReadOnly>false</ReadOnly>
+      <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+    </ItemState>
+    <ItemState>
+      <ItemSymbol>O_NoRangeChck</ItemSymbol>
+      <ReadOnly>false</ReadOnly>
+      <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+      <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      <Index>1</Index>
+      <Value>false</Value>
+    </ItemState>
+    <ItemState>
+      <ItemSymbol>O_NoEnableTest</ItemSymbol>
+      <ReadOnly>false</ReadOnly>
+      <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+      <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      <Index>1</Index>
+      <Value>false</Value>
+    </ItemState>
+    <ItemState>
+      <ItemSymbol>O_NoSpeedTest</ItemSymbol>
+      <ReadOnly>false</ReadOnly>
+      <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+      <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      <Index>1</Index>
+      <Value>false</Value>
+    </ItemState>
+    <ItemState>
+      <ItemSymbol>O_NoInitRegReset</ItemSymbol>
+      <ReadOnly>false</ReadOnly>
+      <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+      <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      <Index>1</Index>
+      <Value>false</Value>
+    </ItemState>
+    <ItemState>
+      <ItemSymbol>Not_for_MPC5500_MCF</ItemSymbol>
+      <ReadOnly>false</ReadOnly>
+      <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+    </ItemState>
+    <ItemState>
+      <ItemSymbol>O_PIB_full_Init</ItemSymbol>
+      <ReadOnly>false</ReadOnly>
+      <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+      <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      <Index>1</Index>
+      <Value>false</Value>
+    </ItemState>
+  </Configuration>
+  <Configuration>
+    <CompNumb>286</CompNumb>
+    <NodeName>Gateway</NodeName>
+    <CnfgEnabled>true</CnfgEnabled>
+    <TargetCPU>225</TargetCPU>
+    <ConfigurationComment lines_count="0" />
+    <BoolList_FpgaConfig>
+      <Count>0</Count>
+    </BoolList_FpgaConfig>
+    <BoolList_BeanConfig>
+      <Count>27</Count>
+      <ItemId0>238</ItemId0>
+      <Value0>false</Value0>
+      <ItemId1>237</ItemId1>
+      <Value1>false</Value1>
+      <ItemId2>227</ItemId2>
+      <Value2>true</Value2>
+      <ItemId3>226</ItemId3>
+      <Value3>true</Value3>
+      <ItemId4>192</ItemId4>
+      <Value4>true</Value4>
+      <ItemId5>152</ItemId5>
+      <Value5>false</Value5>
+      <ItemId6>138</ItemId6>
+      <Value6>false</Value6>
+      <ItemId7>137</ItemId7>
+      <Value7>false</Value7>
+      <ItemId8>124</ItemId8>
+      <Value8>false</Value8>
+      <ItemId9>114</ItemId9>
+      <Value9>true</Value9>
+      <ItemId10>78</ItemId10>
+      <Value10>true</Value10>
+      <ItemId11>53</ItemId11>
+      <Value11>false</Value11>
+      <ItemId12>52</ItemId12>
+      <Value12>false</Value12>
+      <ItemId13>51</ItemId13>
+      <Value13>false</Value13>
+      <ItemId14>43</ItemId14>
+      <Value14>false</Value14>
+      <ItemId15>42</ItemId15>
+      <Value15>true</Value15>
+      <ItemId16>38</ItemId16>
+      <Value16>false</Value16>
+      <ItemId17>33</ItemId17>
+      <Value17>false</Value17>
+      <ItemId18>48</ItemId18>
+      <Value18>true</Value18>
+      <ItemId19>27</ItemId19>
+      <Value19>false</Value19>
+      <ItemId20>26</ItemId20>
+      <Value20>false</Value20>
+      <ItemId21>25</ItemId21>
+      <Value21>true</Value21>
+      <ItemId22>12</ItemId22>
+      <Value22>true</Value22>
+      <ItemId23>10</ItemId23>
+      <Value23>true</Value23>
+      <ItemId24>8</ItemId24>
+      <Value24>true</Value24>
+      <ItemId25>290</ItemId25>
+      <Value25>true</Value25>
+      <ItemId26>225</ItemId26>
+      <Value26>true</Value26>
     </BoolList_BeanConfig>
     <BoolList_TaskConfig>
       <Count>0</Count>
@@ -13265,7 +13400,7 @@
     <BeanType>Init_UART_VAR0</BeanType>
     <Name>Scanner</Name>
     <CompNumb>38</CompNumb>
-    <CompEnabled>true</CompEnabled>
+    <CompEnabled>false</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PERIPHINSP</IconName>
     <UserFolderName />
@@ -15298,7 +15433,7 @@
     <BeanType>Init_UART_VAR0</BeanType>
     <Name>Rs485</Name>
     <CompNumb>43</CompNumb>
-    <CompEnabled>true</CompEnabled>
+    <CompEnabled>false</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PERIPHINSP</IconName>
     <UserFolderName />
@@ -15324,7 +15459,7 @@
         <ItemSymbol>SettingsGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>PeriphClockGateFeatureGroup</ItemSymbol>
@@ -16313,7 +16448,7 @@
         <ItemSymbol>InterruptsGrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>CommonTx_Rx_IntGrp</ItemSymbol>
@@ -16890,7 +17025,7 @@
         <ItemSymbol>InitializationGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>SBK</ItemSymbol>
@@ -18062,7 +18197,7 @@
     <BeanType>BitIO_LDD</BeanType>
     <Name>Rs485TxCtl</Name>
     <CompNumb>52</CompNumb>
-    <CompEnabled>true</CompEnabled>
+    <CompEnabled>false</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PORT_LDD</IconName>
     <UserFolderName />
@@ -18980,7 +19115,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>ClockConfigGrp</ItemSymbol>
@@ -18990,7 +19125,7 @@
         <ItemSymbol>_SpeedGrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>SpeedMode0</ItemSymbol>
@@ -21151,7 +21286,7 @@
     <BeanType>Init_SPI_VAR0</BeanType>
     <Name>SharpDisplay</Name>
     <CompNumb>137</CompNumb>
-    <CompEnabled>true</CompEnabled>
+    <CompEnabled>false</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PERIPHINSP</IconName>
     <UserFolderName />
@@ -22187,7 +22322,7 @@
     <BeanType>BitIO</BeanType>
     <Name>SharpDisplayCS</Name>
     <CompNumb>138</CompNumb>
-    <CompEnabled>true</CompEnabled>
+    <CompEnabled>false</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>BITIO</IconName>
     <UserFolderName />
@@ -24166,7 +24301,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>true</Value>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>Mode2</ItemSymbol>
@@ -24362,7 +24497,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>true</Value>
+        <Value>false</Value>
         <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
@@ -24502,7 +24637,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>PinChan3</ItemSymbol>
@@ -25294,7 +25429,7 @@
         <ItemSymbol>PinsGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>FaultPinsGrp</ItemSymbol>
@@ -25881,7 +26016,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <Value>ADC0_SE6b/PTD5/SPI0_PCS2/UART0_CTS_b/UART0_COL_b/FTM0_CH5/EWM_OUT_b</Value>
-        <SharedPrphMode>false</SharedPrphMode>
+        <SharedPrphMode>true</SharedPrphMode>
       </ItemState>
       <ItemState>
         <ItemSymbol>PinSignal</ItemSymbol>
@@ -25924,7 +26059,7 @@
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <Value>ADC0_SE6b/PTD5/SPI0_PCS2/UART0_CTS_b/UART0_COL_b/FTM0_CH5/EWM_OUT_b</Value>
-              <SharedPrphMode>false</SharedPrphMode>
+              <SharedPrphMode>true</SharedPrphMode>
             </ItemState>
             <ItemState>
               <ItemSymbol>PinSignal</ItemSymbol>
@@ -27083,7 +27218,7 @@
     <BeanType>BitIO_LDD</BeanType>
     <Name>ScannerPower</Name>
     <CompNumb>237</CompNumb>
-    <CompEnabled>true</CompEnabled>
+    <CompEnabled>false</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PORT_LDD</IconName>
     <UserFolderName />
@@ -27402,7 +27537,7 @@
     <BeanType>BitIO_LDD</BeanType>
     <Name>Rs485Power</Name>
     <CompNumb>238</CompNumb>
-    <CompEnabled>true</CompEnabled>
+    <CompEnabled>false</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PORT_LDD</IconName>
     <UserFolderName />
@@ -27713,6 +27848,1745 @@
         <LastSelection>true</LastSelection>
         <LastUserSel>no</LastUserSel>
         <UsrMethodName>GetRawVal</UsrMethodName>
+      </ItemState>
+    </Methods>
+    <Events />
+  </Bean>
+  <Bean>
+    <BeanType>Init_UART_VAR0</BeanType>
+    <Name>Gateway</Name>
+    <CompNumb>290</CompNumb>
+    <CompEnabled>true</CompEnabled>
+    <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
+    <IconName>PERIPHINSP</IconName>
+    <UserFolderName />
+    <Comment lines_count="0" />
+    <Template />
+    <BeanVersion>01.006</BeanVersion>
+    <LightErrorsIgnored>false</LightErrorsIgnored>
+    <Properties>
+      <ItemState>
+        <ItemSymbol>DeviceName</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>Gateway</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PeriphDevice</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>UART0</Value>
+        <SharedPrphMode>false</SharedPrphMode>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SettingsGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PeriphClockGateFeatureGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PeriphClockGate</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <EnumSymbVal>enabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ClockSettingsGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ClockSourceFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ClockSource</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Index>0</Index>
+        <EnumSymbVal>Source0</EnumSymbVal>
+        <Value />
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SCIBD</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>2</Value>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>BRFAFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>BRFA</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>13</Value>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SCIBaudFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SCIBaud</ItemSymbol>
+        <Value>1246035.117 baud</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>OverSamplingRatioFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>OverSamplingRatio</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>15</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SCIBaudOversampledFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SCIBaudOversampled</ItemSymbol>
+        <Value />
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SetBothEdgeSamplingFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SetBothEdgeSampling</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeSetBothEdgeSampling</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>EnableResyncFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>EnableResync</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeEnableResync</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>enabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SCIBaudNoAdjustFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SCIBaudNoAdjust</ItemSymbol>
+        <Value />
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TransferSettings</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MODE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeMODE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>8bit</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CPUCondGroup1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MSBF</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeMSBF</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>LSB</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PE_PT</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typePE_PT</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>Off</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CPUCondGroup2</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SelectStopBitNumber</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeSelectStopBitNumber</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>1</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CPUCondGroup3</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>M10</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeM10</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>ParityInLastDataBit</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>IDLECFGFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>IDLECFG</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeIDLECFG</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>state_000</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ILT</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeILT</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>StartBitStartsCounting</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>BreakLength</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeBreakLength</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>Short</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LBKDE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeLBKDE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SCISWAI</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeSCISWAI</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>ClockContinue</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ReceiverWakeupSettings</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>false</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RWU</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeRWU</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>NormalRxOperation</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>WAKE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeWAKE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>IdleLine</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RWUID</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeRWUID</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>WakeUpIdleOnlyWakeUp</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CPUCondGroup4</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MatchAddressSettings</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>false</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MATCFGFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MATCFG</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeMATCFG</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>state_00</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MAEn1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeMAEn1</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MA1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MAEn2</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeMAEn2</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MA2</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ModemSettingsFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ModemSettings</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TXCTSE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeTXCTSE</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>enabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MODIR_TXCTSCFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MODIR_TXCTSC</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeMODIR_TXCTSC</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>state_0</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MODIR_TXCTSSRCFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MODIR_TXCTSSRC</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeMODIR_TXCTSSRC</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>state_0</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TXRTSE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeTXRTSE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TXRTSPOL</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeTXRTSPOL</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>ActiveLow</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RXRTSE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeRXRTSE</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>enabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>IrSettingsFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>IrSettings</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>false</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>IREN</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeIREN</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TNPFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TNP</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeTNP</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>3_16</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MODIR_TNPFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MODIR_TNP</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeMODIR_TNP</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>state_00</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FIFOSettingsFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FIFOSettings</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TXFE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeTXFE</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>enabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TXWATER</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>7</Value>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RXFE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeRXFE</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>enabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RXWATER</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>6</Value>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ISO7816FeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ISO7816</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>false</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ISO_7816E</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeISO_7816E</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>T_TYPE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ANACK</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeANACK</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>ErrorNACKNotGenerated</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ONACK</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeONACK</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>OverflowNACKNotGenerated</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RXTHRESHOLD</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TXTHRESHOLD</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>WI8FeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>WI8</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>10</Value>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ADTIFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ADTI</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>WI16FeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>WI16</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>20</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TLEN</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CWIFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CWI</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CWI1FeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CWI1</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CWI2FeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CWI2</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>11</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>WTXFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>WTX</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>BWI</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>10</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>BGIFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>BGI</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>6</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>INIT_EN</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeINIT_EN</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>NormalOperation</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>GTN</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>GTFD</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>1</Value>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CEA709_SettingsFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CEA709_Settings</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Expanded>false</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CEA709</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeCEA709</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CEA709_Collision</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeCEA709_Collision</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CEA709_Transmitter</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeCEA709_Transmitter</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CEA709_Collision_Polarity</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeCEA709_Collision_Polarity</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>low</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CE709_PacketTimeCounter</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CE709_Beta1Timer</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CE709_SecondaryDelayTimer</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CE709_Preamble</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CE709_WBase</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CE709_CollisionPulseWidth</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CE709_ReceiveIndeterminateTime</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CE709_TransmitIndeterminateTime</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>0</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Base>DEC</Base>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Loops_SingleWire_Settings</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>false</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LOOPS</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeLOOPS</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>Normal</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RSRC</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeRSRC</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>Loop</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TXDIR</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeTXDIR</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>Input</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RXINV</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeRXINV</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>NonInverted</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TXINV</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeTXINV</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>NonInverted</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PinsGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ReceiverPinGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ReceiverPin</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>ADC0_SE7b/PTD6/LLWU_P15/SPI0_PCS3/UART0_RX/FTM0_CH6/FTM0_FLT0</Value>
+        <SharedPrphMode>false</SharedPrphMode>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ReceiverPinSignal</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value />
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TransmitterPinGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TransmitterPin</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>ADC0_SE22/PTD7/CMT_IRO/UART0_TX/FTM0_CH7/FTM0_FLT1</Value>
+        <SharedPrphMode>false</SharedPrphMode>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TransmitterPinSignal</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value />
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TransmitterModulationFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TransmitterModulation</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>false</Value>
+        <Expanded>false</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TxModulationSource</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value />
+        <SharedPrphMode>false</SharedPrphMode>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TxModulationSourceSignal</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value />
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CtsPinGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CtsPin</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>ADC0_SE6b/PTD5/SPI0_PCS2/UART0_CTS_b/UART0_COL_b/FTM0_CH5/EWM_OUT_b</Value>
+        <SharedPrphMode>false</SharedPrphMode>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CtsPinSignal</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value />
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RtsPinGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RtsPin</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value>ADC0_SE21/PTD4/LLWU_P14/SPI0_PCS1/UART0_RTS_b/FTM0_CH4/EWM_IN</Value>
+        <SharedPrphMode>false</SharedPrphMode>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RtsPinSignal</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value />
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>InterruptsGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>false</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CommonTx_Rx_IntGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>false</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CommonTx_Rx_Interrupt</ItemSymbol>
+        <Value>INT_UART0_RX_TX</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CommonTx_Rx_InterruptRequestFeatureGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CommonTx_Rx_InterruptRequest</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeCommonTx_Rx_InterruptRequest</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CommonTx_Rx_InterruptPExPriorityFeatureGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CommonTx_Rx_InterruptPExPriority</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>default</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CommonTx_Rx_InterruptPriorityFeatureGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CommonTx_Rx_InterruptPriority</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <EnumSymbVal>0</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CommonTx_Rx_ISRHandle</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value />
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeTIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TIE_RqType</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeTIE_RqType</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>IRQ</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TCIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeTCIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CPUCondGroup5</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TCIE_RqType</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeTCIE_RqType</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>IRQ</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeRIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RIE_RqType</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeRIE_RqType</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>IRQ</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ILIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeILIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CPUCondGroup6</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ILIE_RqType</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeILIE_RqType</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>IRQ</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LBKDIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeLBKDIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CPUCondGroup7</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>LBKDIE_RqType</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeLBKDIE_RqType</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>IRQ</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RXEDGIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeRXEDGIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ISO7816_Interrupts_CommonFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ISO7816_Interrupts_Common</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>INITDE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeINITDE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Error_IntGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>false</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Error_Interrupt</ItemSymbol>
+        <Value>INT_UART0_ERR</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Error_InterruptRequestFeatureGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Error_InterruptRequest</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeError_InterruptRequest</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Error_InterruptPExPriorityFeatureGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Error_InterruptPExPriority</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value>default</Value>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Error_InterruptPriorityFeatureGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Error_InterruptPriority</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <EnumSymbVal>0</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Error_ISRHandle</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value />
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ORIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeORIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>NEIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeNEIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FEIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeFEIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PEIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typePEIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FIFOs_InterruptsFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>FIFOs_Interrupts</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>false</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TXOF</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeTXOF</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RXUF</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeRXUF</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RXOFEFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RXOFE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeRXOFE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ISO7816_Interrupts_ErrorFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ISO7816_Interrupts_Error</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>false</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>WTE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeWTE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CWTE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeCWTE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>BWTE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeBWTE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TXTE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeTXTE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RXTE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeRXTE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>GTVE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeGTVE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CEA709_Interrupt_LONFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CEA709_Interrupt_LON</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CEA709_Interrupt</ItemSymbol>
+        <Value />
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CEA709_InterruptRequestFeatureGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CEA709_InterruptRequest</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeCEA709_InterruptRequest</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CEA709_InterruptPriorityFeatureGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CEA709_InterruptPriority</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Index>0</Index>
+        <EnumSymbVal>0</EnumSymbVal>
+        <Value />
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CEA709_ISRHandle</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value />
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>WBEIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeWBEIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>ISDIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeISDIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PRXIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typePRXIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PTXIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typePTXIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PCTEIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typePCTEIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>PSIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typePSIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TXFIE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeTXFIE</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Match_IntGrpFeatureCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Match_IntGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Match_Interrupt</ItemSymbol>
+        <Value />
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Match_InterruptRequestFeatureGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Match_InterruptRequest</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeMatch_InterruptRequest</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Match_InterruptPExPriorityFeatureGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Match_InterruptPExPriority</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Value />
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>Match_ISRHandle</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Value />
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MA1IE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeMA1IE</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>MA2IE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <TypeSpecNameState>typeMA2IE</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>disabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>InitializationGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>SBK</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeSBK</TypeSpecNameState>
+        <Index>1</Index>
+        <EnumSymbVal>NormalTxOperation</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>TE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeTE</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>enabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>RE</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <TypeSpecNameState>typeRE</TypeSpecNameState>
+        <Index>0</Index>
+        <EnumSymbVal>enabled</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>NON_MCU_INIT</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>InitEnable</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>1</Index>
+        <Value>false</Value>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>UtilizeResetValuesCondGroup</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>UtilizeResetValues</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Index>0</Index>
+        <EnumSymbVal>default</EnumSymbVal>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>CPUCondGroup8</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>UARTInternalUsageGrp</ItemSymbol>
+        <ReadOnly>false</ReadOnly>
+        <UserReadOnly>false</UserReadOnly>
+        <Expanded>true</Expanded>
+      </ItemState>
+      <ItemState>
+        <ItemSymbol>IsInitialized</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+      </ItemState>
+    </Properties>
+    <Methods>
+      <ItemState>
+        <ItemSymbol>Init</ItemSymbol>
+        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+        <Index>0</Index>
+        <Value>true</Value>
+        <LastSelection>true</LastSelection>
+        <LastUserSel>always</LastUserSel>
+        <UsrMethodName>Init</UsrMethodName>
       </ItemState>
     </Methods>
     <Events />

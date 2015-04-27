@@ -17,9 +17,9 @@
 
 extern xQueueHandle			gRadioReceiveQueue;
 extern BufferCntType		gRxCurBufferNum;
-extern RadioStateEnum gRadioState;
-extern xQueueHandle gRemoteMgmtQueue;
-extern ELocalStatusType gLocalDeviceState;
+extern RadioStateEnum		gRadioState;
+extern xQueueHandle			gRemoteMgmtQueue;
+extern ELocalStatusType		gLocalDeviceState;
 
 extern ERxMessageHolderType gRxMsg;
 extern ETxMessageHolderType gTxMsg;
