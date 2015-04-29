@@ -3,7 +3,7 @@
   <Header>
     <Name>ProcessorExpert</Name>
     <SavedBy>andrewhuff</SavedBy>
-    <ModificationStamp>451</ModificationStamp>
+    <ModificationStamp>454</ModificationStamp>
     <Date>2015-04-29</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
@@ -7270,7 +7270,7 @@
   <Configuration>
     <CompNumb>1</CompNumb>
     <NodeName>LEDController</NodeName>
-    <CnfgEnabled>false</CnfgEnabled>
+    <CnfgEnabled>true</CnfgEnabled>
     <TargetCPU>225</TargetCPU>
     <ConfigurationComment lines_count="0" />
     <BoolList_FpgaConfig>
@@ -7657,7 +7657,7 @@
   <Configuration>
     <CompNumb>286</CompNumb>
     <NodeName>Gateway</NodeName>
-    <CnfgEnabled>true</CnfgEnabled>
+    <CnfgEnabled>false</CnfgEnabled>
     <TargetCPU>225</TargetCPU>
     <ConfigurationComment lines_count="0" />
     <BoolList_FpgaConfig>
@@ -20250,7 +20250,7 @@
     <BeanType>Init_SPI_VAR0</BeanType>
     <Name>LedDrive</Name>
     <CompNumb>124</CompNumb>
-    <CompEnabled>false</CompEnabled>
+    <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PERIPHINSP</IconName>
     <UserFolderName />
