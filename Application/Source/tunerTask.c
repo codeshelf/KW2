@@ -288,7 +288,7 @@ void getGuid() {
 		GW_EXIT_CRITICAL(ccrHolder);
 		vTaskDelay(PROMPT_DELAY_TIME);
 	
-		strncpy(guid, gScanString[2], EEPROM_GUID_LEN);
+		strncpy(guid, gScanString + 2, EEPROM_GUID_LEN);
 		
 		// Next we want the AES key
 		setupModeState = eSetupModeGetAes;
@@ -321,7 +321,7 @@ void getAes() {
 		GW_EXIT_CRITICAL(ccrHolder);
 		vTaskDelay(PROMPT_DELAY_TIME);
 		
-		strncpy(aes_key, gScanString[2], EEPROM_AES_KEY_LEN);
+		strncpy(aes_key, gScanString + 2, EEPROM_AES_KEY_LEN);
 		
 		// Next we want the AES key
 		setupModeState = eSetupModeGetHWver;
@@ -357,7 +357,7 @@ void getHwVersion() {
 		GW_EXIT_CRITICAL(ccrHolder);
 		vTaskDelay(PROMPT_DELAY_TIME);
 		
-		strncpy(hw_ver, gScanString[2], EEPROM_HW_VER_LEN);
+		strncpy(hw_ver, gScanString + 2, EEPROM_HW_VER_LEN);
 		
 		// Next we want the AES key
 		setupModeState = eSetupModeWaitingForSave;
