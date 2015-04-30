@@ -22,16 +22,17 @@
 
 #define DEFAULT_CRYSTAL_TRIM	0xff //0xf4 // 0xcd
 #define PERFECT_REMAINDER		0x6b06
-#define PROMPT_DELAY_TIME		1500
+#define PROMPT_DELAY_TIME		2000
 
 void adjustTune(gwUINT8 trim);
 gwUINT16 measureTune();
 
 xTaskHandle gTunerTask = NULL;
 
-char aes_key[EEPROM_AES_KEY_LEN];
-char hw_ver[EEPROM_HW_VER_LEN];
-char guid[EEPROM_GUID_LEN];
+unsigned char aes_key[EEPROM_AES_KEY_LEN];
+unsigned char hw_ver[EEPROM_HW_VER_LEN];
+unsigned char guid[EEPROM_GUID_LEN];
+unsigned char guidStr[EEPROM_GUID_LEN + 1];
 gwUINT8 tune_param;
 gwUINT8 ccrHolder;
 
@@ -42,7 +43,6 @@ ScanStringLenType gScanStringPos;
 // --------------------------------------------------------------------------
 
 void tunerTask(void *pvParameters) {
-	
 	ENABLE_DISPLAY
 	GW_ENTER_CRITICAL(ccrHolder);
 	clearDisplay();
@@ -202,11 +202,8 @@ int isSetupCommand() {
 
 void handleSetupScan() {
 	
-	if (setupModeState == eSetupModeGetGuid) {
-		getGuid();
-	}
-	else if (setupModeState == eSetupModeGetAes) {
-		getAes();
+	if (setupModeState == eSetupModeGetGuidAes) {
+		getGuidAes();
 	}
 	else if (setupModeState == eSetupModeGetHWver) {
 		getHwVersion();
@@ -229,12 +226,12 @@ void handleSetupCommand() {
 void enterSetupMode() {
 	
 	// Next expected scan is GUID
-	setupModeState = eSetupModeGetGuid;
+	setupModeState = eSetupModeGetGuidAes;
 	
 	GW_ENTER_CRITICAL(ccrHolder);
 	clearDisplay();
 	displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
-	displayMessage(2, "Scan GUID", FONT_NORMAL);
+	displayMessage(2, "Scan GUID/AES", FONT_NORMAL);
 	GW_EXIT_CRITICAL(ccrHolder);
 }
 
@@ -279,58 +276,30 @@ void saveParams() {
 
 // --------------------------------------------------------------------------
 
-void getGuid() {
+void getGuidAes() {
 	
 	if (gScanString[0] == 'G' && gScanString[1] == '%') {
+		
+		strncpy(guidStr, gScanString+2, EEPROM_GUID_LEN);
+		guidStr[EEPROM_GUID_LEN] = NULL;
+		
 		GW_ENTER_CRITICAL(ccrHolder);
-		displayMessage(2, "Scanned GUID", FONT_NORMAL);
-		displayMessage(3, gScanString, FONT_NORMAL);
+		displayMessage(2, "Scanned GUID/AES", FONT_NORMAL);
+		displayMessage(3, guidStr, FONT_NORMAL);
 		GW_EXIT_CRITICAL(ccrHolder);
 		vTaskDelay(PROMPT_DELAY_TIME);
 	
 		strncpy(guid, gScanString + 2, EEPROM_GUID_LEN);
 		
-		// Next we want the AES key
-		setupModeState = eSetupModeGetAes;
-		GW_ENTER_CRITICAL(ccrHolder);
-		clearDisplay();
-		displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
-		displayMessage(2, "Scan AES key", FONT_NORMAL);
-		GW_EXIT_CRITICAL(ccrHolder);
-	} else {
-		GW_ENTER_CRITICAL(ccrHolder);
-		displayMessage(3, "Invaild Scan", FONT_NORMAL);
-		GW_EXIT_CRITICAL(ccrHolder);
+		strncpy(aes_key, gScanString + 2 + EEPROM_GUID_LEN, EEPROM_AES_KEY_LEN);
 		
-		vTaskDelay(PROMPT_DELAY_TIME);
-		
-		GW_ENTER_CRITICAL(ccrHolder);
-		displayMessage(3, "", FONT_NORMAL);
-		GW_EXIT_CRITICAL(ccrHolder);
-	}
-}
-
-// --------------------------------------------------------------------------
-
-void getAes() {
-	
-	if (gScanString[0] == 'A' && gScanString[1] == '%') {
-		GW_ENTER_CRITICAL(ccrHolder);
-		// FIXME - huffa will one line be enough for AES key?
-		displayMessage(2, "Scanned AES key", FONT_NORMAL);
-		GW_EXIT_CRITICAL(ccrHolder);
-		vTaskDelay(PROMPT_DELAY_TIME);
-		
-		strncpy(aes_key, gScanString + 2, EEPROM_AES_KEY_LEN);
-		
-		// Next we want the AES key
+		// Next we want the HW version
 		setupModeState = eSetupModeGetHWver;
 		GW_ENTER_CRITICAL(ccrHolder);
 		clearDisplay();
 		displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
 		displayMessage(2, "Scan Hardware Version", FONT_NORMAL);
 		GW_EXIT_CRITICAL(ccrHolder);
-		
 	} else {
 		GW_ENTER_CRITICAL(ccrHolder);
 		displayMessage(3, "Invaild Scan", FONT_NORMAL);
@@ -349,11 +318,15 @@ void getAes() {
 void getHwVersion() {
 	
 	if (gScanString[0] == 'H' && gScanString[1] == '%') {
+		char guidDispStr[6 + EEPROM_GUID_LEN + 1];
+		strcpy(guidDispStr, "GUID: ");
+		strcat(guidDispStr, guidStr);
+		
 		GW_ENTER_CRITICAL(ccrHolder);
 		clearDisplay();
 		displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
 		displayMessage(2, "Scanned HW Version", FONT_NORMAL);
-		displayMessage(3, gScanString, FONT_NORMAL);
+		displayMessage(3, gScanString + 2, FONT_NORMAL);
 		GW_EXIT_CRITICAL(ccrHolder);
 		vTaskDelay(PROMPT_DELAY_TIME);
 		
@@ -365,7 +338,8 @@ void getHwVersion() {
 		clearDisplay();
 		displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
 		displayMessage(2, "Setup complete", FONT_NORMAL);
-		displayMessage(3, "Scan SAVE or CLEAR", FONT_NORMAL);
+		displayMessage(3, guidDispStr, FONT_NORMAL);
+		displayMessage(6, "Scan SAVE or CLEAR", FONT_NORMAL);
 		GW_EXIT_CRITICAL(ccrHolder);
 		
 	} else {
@@ -380,4 +354,3 @@ void getHwVersion() {
 		GW_EXIT_CRITICAL(ccrHolder);
 	}
 }
-
