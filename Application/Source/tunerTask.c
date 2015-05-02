@@ -20,7 +20,7 @@
 #include "ScannerPower.h"
 #include "eeprom.h"
 
-#define DEFAULT_CRYSTAL_TRIM	0xff //0xf4 // 0xcd
+#define DEFAULT_CRYSTAL_TRIM	0xff
 #define PERFECT_REMAINDER		0x6b06
 #define PROMPT_DELAY_TIME		2000
 

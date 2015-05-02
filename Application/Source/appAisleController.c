@@ -24,6 +24,7 @@
 #include "Wait.h"
 #include "smacGlue.h"
 #include "TransceiverDrv.h"
+#include "globals.h"
 
 // --------------------------------------------------------------------------
 // Globals
@@ -51,7 +52,8 @@ void startApplication(void) {
 	MLMESetPromiscuousMode(gPromiscuousMode_d);
 	MLMESetChannelRequest(DEFAULT_CHANNEL);
 	MLMEPAOutputAdjust(DEFAULT_POWER);
-	MLMEXtalAdjust(DEFAULT_CRYSTAL_TRIM); 
+	MLMEXtalAdjust(trim[0]);
+	
 //	MLMEFEGainAdjust(15);
 
 	gLocalDeviceState = eLocalStateStarted;

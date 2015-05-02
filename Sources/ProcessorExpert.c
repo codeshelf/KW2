@@ -33,15 +33,21 @@
 #include "UTIL2.h"
 #include "INT_PORTB.h"
 #include "Wait.h"
+#include "Rs485.h"
+#include "Rs485TxCtl.h"
 #include "Critical.h"
+#include "Scanner.h"
 #include "Watchdog.h"
 #include "EventTimer.h"
-#include "LedDrive.h"
+#include "SharpDisplay.h"
+#include "SharpDisplayCS.h"
+#include "BitIoLdd1.h"
 #include "EepromCS.h"
 #include "BitIoLdd2.h"
 #include "StatusLedClk.h"
 #include "StatusLedSdi.h"
-#include "Gateway.h"
+#include "ScannerPower.h"
+#include "Rs485Power.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -78,6 +84,18 @@ int main(void) {
 	PE_low_level_init();
 	/*** End of Processor Expert internal initialization.                    ***/
 
+	uint32_t ptc4_mux = (uint32_t) PORTC_PCR4 >> PORT_PCR_MUX_SHIFT;
+	uint32_t ptc5_mux = (uint32_t) PORTC_PCR5 >> PORT_PCR_MUX_SHIFT;
+	uint32_t ptc6_mux = (uint32_t) PORTC_PCR6 >> PORT_PCR_MUX_SHIFT;
+	uint32_t ptc7_mux = (uint32_t) PORTC_PCR7 >> PORT_PCR_MUX_SHIFT;
+	uint32_t pddr = GPIOC_PDDR;
+	
+	PORTC_PCR4 = PORT_PCR_MUX(1);
+	PORTC_PCR5 = PORT_PCR_MUX(2);
+	PORTC_PCR6 = PORT_PCR_MUX(2);
+	PORTC_PCR7 = PORT_PCR_MUX(2);
+	GPIOC_PDDR = GPIO_PDDR_PDD(10);
+	
 	/* Write your code here */
 	// Load GUID
 	readGuid(guid);
@@ -91,6 +109,12 @@ int main(void) {
 	
 	// Load trim
 	readTuning(trim);
+	
+	PORTC_PCR4 = PORT_PCR_MUX(ptc4_mux);
+	PORTC_PCR5 = PORT_PCR_MUX(ptc5_mux);
+	PORTC_PCR6 = PORT_PCR_MUX(ptc6_mux);
+	PORTC_PCR7 = PORT_PCR_MUX(ptc7_mux);
+	GPIOC_PDDR = GPIO_PDDR_PDD(pddr);
 	
 	startApplication();
 	
