@@ -42,11 +42,11 @@
 #include "Critical.h"
 #include "Watchdog.h"
 #include "EventTimer.h"
-#include "LedDrive.h"
 #include "EepromCS.h"
 #include "BitIoLdd2.h"
 #include "StatusLedClk.h"
 #include "StatusLedSdi.h"
+#include "Gateway.h"
 
 #ifdef __cplusplus
 extern "C" {

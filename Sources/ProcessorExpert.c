@@ -36,11 +36,11 @@
 #include "Critical.h"
 #include "Watchdog.h"
 #include "EventTimer.h"
-#include "LedDrive.h"
 #include "EepromCS.h"
 #include "BitIoLdd2.h"
 #include "StatusLedClk.h"
 #include "StatusLedSdi.h"
+#include "Gateway.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
