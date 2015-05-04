@@ -243,7 +243,7 @@
     </GenFiles>
     <SignalListFile>Documentation\ProcessorExpert_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>486</ProjectModificationStamp>
+    <ProjectModificationStamp>487</ProjectModificationStamp>
   </Options>
   <CpuID_225>
     <Generated>true</Generated>
@@ -3745,14 +3745,12 @@
     <GenComponentVersion>01.006</GenComponentVersion>
     <GenDriverVersion>01.06</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1184994098</HeaderAge>
-    <CodeAge>1184994098</CodeAge>
+    <HeaderAge>-1</HeaderAge>
+    <CodeAge>-1</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
     <GenNumEvents>0</GenNumEvents>
-    <ISR_CommonTx_Rx_ISRHandle>ScannerIsr</ISR_CommonTx_Rx_ISRHandle>
-    <ISR_Error_ISRHandle>ScannerErrorIsr</ISR_Error_ISRHandle>
     <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
     <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
     <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
@@ -3917,14 +3915,12 @@
     <GenComponentVersion>01.006</GenComponentVersion>
     <GenDriverVersion>01.06</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1184994098</HeaderAge>
-    <CodeAge>1184994098</CodeAge>
+    <HeaderAge>-1</HeaderAge>
+    <CodeAge>-1</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
     <GenNumEvents>0</GenNumEvents>
-    <ISR_CommonTx_Rx_ISRHandle>Rs485Isr</ISR_CommonTx_Rx_ISRHandle>
-    <ISR_Error_ISRHandle>Rs485ErrorIsr</ISR_Error_ISRHandle>
     <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
     <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
     <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
@@ -4061,8 +4057,8 @@
     <GenComponentVersion>01.033</GenComponentVersion>
     <GenDriverVersion>01.03</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1184994098</HeaderAge>
-    <CodeAge>1184994098</CodeAge>
+    <HeaderAge>-1</HeaderAge>
+    <CodeAge>-1</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>13</GenNumMethods>
     <Init>true</Init>
@@ -4450,8 +4446,8 @@
     <GenComponentVersion>01.005</GenComponentVersion>
     <GenDriverVersion>01.05</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1184994098</HeaderAge>
-    <CodeAge>1184994098</CodeAge>
+    <HeaderAge>-1</HeaderAge>
+    <CodeAge>-1</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
@@ -4483,8 +4479,8 @@
     <GenComponentVersion>02.086</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1184994098</HeaderAge>
-    <CodeAge>1184994098</CodeAge>
+    <HeaderAge>-1</HeaderAge>
+    <CodeAge>-1</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>11</GenNumMethods>
     <GetDir>false</GetDir>
@@ -4580,8 +4576,8 @@
       <GenComponentVersion>01.033</GenComponentVersion>
       <GenDriverVersion>01.03</GenDriverVersion>
       <GenEventModule />
-      <HeaderAge>1184994098</HeaderAge>
-      <CodeAge>1184994098</CodeAge>
+      <HeaderAge>-1</HeaderAge>
+      <CodeAge>-1</CodeAge>
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>13</GenNumMethods>
       <Init>true</Init>
@@ -4702,7 +4698,6 @@
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
     <GenNumEvents>0</GenNumEvents>
-    <ISR_ISRHandleCommon>TunerIsr</ISR_ISRHandleCommon>
     <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
     <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
     <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
@@ -5117,8 +5112,8 @@
     <GenComponentVersion>01.033</GenComponentVersion>
     <GenDriverVersion>01.03</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1184994098</HeaderAge>
-    <CodeAge>1184994098</CodeAge>
+    <HeaderAge>-1</HeaderAge>
+    <CodeAge>-1</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>13</GenNumMethods>
     <Init>true</Init>
@@ -5218,8 +5213,8 @@
     <GenComponentVersion>01.033</GenComponentVersion>
     <GenDriverVersion>01.03</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1184994098</HeaderAge>
-    <CodeAge>1184994098</CodeAge>
+    <HeaderAge>-1</HeaderAge>
+    <CodeAge>-1</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>13</GenNumMethods>
     <Init>true</Init>

@@ -19,7 +19,7 @@
 #define	LED_CONTROLLER
 
 #define DEFAULT_CHANNEL			gChannel11_c
-#define DEFAULT_POWER			gMaxOutputPower_c
+#define DEFAULT_POWER			31 //gMaxOutputPower_c
 #define DEFAULT_CRYSTAL_TRIM	115
 
 // --------------------------------------------------------------------------
