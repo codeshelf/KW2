@@ -24,6 +24,8 @@
 #include "Wait.h"
 #include "smacGlue.h"
 #include "TransceiverDrv.h"
+#include "TransceiverReg.h"
+#include "globals.h"
 
 // --------------------------------------------------------------------------
 // Globals
@@ -51,7 +53,9 @@ void startApplication(void) {
 	MLMESetPromiscuousMode(gPromiscuousMode_d);
 	MLMESetChannelRequest(DEFAULT_CHANNEL);
 	MLMEPAOutputAdjust(DEFAULT_POWER);
-	MLMEXtalAdjust(DEFAULT_CRYSTAL_TRIM); 
+	MLMEXtalAdjust(trim[0]);
+	MC1324xDrv_IndirectAccessSPIWrite(ANT_PAD_CTRL, cANT_PAD_CTRL_ANTX_CTRLMODE + cANT_PAD_CTRL_ANTX_EN);
+	MC1324xDrv_IndirectAccessSPIWrite(ANT_AGC_CTRL, 0x40 + 0x02);
 //	MLMEFEGainAdjust(15);
 
 	gLocalDeviceState = eLocalStateStarted;

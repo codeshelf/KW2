@@ -533,6 +533,49 @@ void processDisplayMsgSubCommand(BufferCntType inRXBufferNum) {
 
 // --------------------------------------------------------------------------
 
+void processDisplaySingleMsgSubCommand(BufferCntType inRXBufferNum){
+#ifdef CHE_CONTROLLER
+	gwUINT8 ccrHolder;
+	gwUINT8 fontType;
+	gwUINT16 posX = 0;
+	gwUINT16 posY = 0;
+		
+	GW_ENTER_CRITICAL(ccrHolder);
+	
+	// First display line.
+	BufferStoragePtrType bufferPtr = gRxRadioBuffer[inRXBufferNum].bufferStorage + CMDPOS_MESSAGE_SINGLE;
+	gDisplayDataLineLen[0] = readAsPString(gDisplayDataLine[0], bufferPtr, MAX_DISPLAY_STRING_BYTES);
+	
+	fontType = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_MESSAGE_FONT];
+
+	posX |=  (uint16) (gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_MESSAGE_POSX]>>8 & 0xFF);
+	posX |=  (uint16) (gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_MESSAGE_POSX+1] & 0xFF);
+
+	posY |=  (uint16) (gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_MESSAGE_POSY]>>8 & 0xFF);
+	posY |=  (uint16) (gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_MESSAGE_POSY+1] & 0xFF);
+	
+	displayStringByFont(posX, posY, gDisplayDataLine[0], 1, fontType);
+	
+	GW_EXIT_CRITICAL(ccrHolder);
+#endif
+}
+
+// --------------------------------------------------------------------------
+
+void processClearDisplay(BufferCntType inRXBufferNum){
+#ifdef CHE_CONTROLLER
+	gwUINT8 ccrHolder;
+		
+	GW_ENTER_CRITICAL(ccrHolder);
+
+	clearDisplay();
+	
+	GW_EXIT_CRITICAL(ccrHolder);
+#endif
+}
+
+// --------------------------------------------------------------------------
+
 LedPositionType gTotalLedPositions;
 
 LedDataStruct gLedFlashData[MAX_LED_FLASH_POSITIONS];

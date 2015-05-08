@@ -11,7 +11,7 @@
 #include "PE_Types.h"
 #include "SharpDisplayCS.h"
 
-#define DISPLAY_WIDTH		400
+#define DISPLAY_WIDTH		400 // 4.4" = 320, 2.7" = 400
 #define DISPLAY_HEIGHT		240
 #define DISPLAY_BYTES		(DISPLAY_WIDTH * DISPLAY_HEIGHT) / 8
 #define MAX_MSG_BYES		30
@@ -34,6 +34,14 @@
 #define FONT_MED			2
 #define FONT_LARGE			3
 
+#define FONT_ARIAL16			1
+#define FONT_ARIAL26			2
+#define FONT_3OF9				3
+#define FONT_ARIAL16_MONO_BOLD	4
+#define FONT_ARIAL20_MONO_BOLD	5
+#define FONT_ARIAL24_MONO_BOLD	6
+#define FONT_ARIAL26_MONO_BOLD	7
+
 #define readFontByte(addr) (*(const unsigned char *)(addr))
 #define swap(a, b) { int16_t t = a; a = b; b = t; }
 #define getMax(a,b)    (((a) > (b)) ? (a) : (b))
@@ -52,11 +60,14 @@ void drawFastHLine(int16_t x, int16_t y, int16_t w);
 void drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1);
 void drawPixelInRowBuffer(int16_t x, byte *rowBufferPtr);
 void putCharSliceInRowBuffer(uint16_t x, unsigned char c, uint8_t *rowBufferPtr, uint8_t slice, uint8_t size);
+void putCharByFontSliceInRowBuffer(uint16_t x, unsigned char c, uint8_t *rowBufferPtr, uint8_t slice, uint8_t size, byte fontType);
 void putBarcodeInRowBuffer(uint16_t x, unsigned char c, uint8_t *rowBufferPtr, uint8_t slice, uint8_t size);
 void sendRowBuffer(uint16_t row, byte *rowBufferPtr);
 void displayString(uint16_t x, uint16_t y, char_t *stringPtr, uint8_t size);
+void displayStringByFont(uint16_t x, uint16_t y, char_t *stringPtr, uint8_t size, uint8_t fontType);
 void displayBarcode(uint16_t x, uint16_t y, char_t *stringPtr, uint8_t size);
 void displayMessage(uint8_t line, char_t *stringPtr, uint8_t size);
+void setFontType(uint8_t fontType);
 
 void displayCodeshelfLogo(uint8_t x, uint8_t y);
 

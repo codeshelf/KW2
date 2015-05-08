@@ -9,12 +9,20 @@
 #include "fontArial16.h"
 #include "fontArial26.h"
 #include "fontBarcode.h"
+#include "fontArialMono16Bold.h"
+#include "fontArialMono20Bold.h"
+#include "fontArialMono24Bold.h"
+#include "fontArialMono26Bold.h"
 #include "codeshelf.logo.h"
 #include "Wait.h"
 
 __attribute__ ((section(".m_data_20000000"))) byte displayBuffer[DISPLAY_BYTES];
 
 extern const unsigned char lcdfont[];
+
+FONT_INFO * font_info;
+FONT_CHAR_INFO * font_char_info;
+uint8_t * bitmaps;
 
 void sendByte(uint8_t data) {
 
@@ -207,6 +215,37 @@ void putCharSliceInRowBuffer(uint16_t x, unsigned char drawChar, uint8_t *rowBuf
 	}
 }
 
+void putCharByFontSliceInRowBuffer(uint16_t x, unsigned char drawChar, uint8_t *rowBufferPtr, uint8_t slice, uint8_t size, byte fontType) {
+	uint8_t hzPixelNum;
+	uint8_t pixelsByte;
+	uint8_t extra;
+	uint8_t sliceByteOffset;
+	uint8_t charDescOffset;
+	uint16_t pixDataOffset;
+
+	setFontType(fontType);
+	
+	charDescOffset = (uint8_t) (drawChar - font_info->startChar);
+	pixDataOffset = font_char_info[charDescOffset].offset;
+
+	sliceByteOffset = 0;
+	if (slice > 0) {
+		sliceByteOffset = slice * (font_char_info[charDescOffset].widthBits / 8);
+		if (font_char_info[charDescOffset].widthBits % 8) {
+			sliceByteOffset += slice;
+		}
+	}
+
+	for (hzPixelNum = 0; hzPixelNum < font_char_info[charDescOffset].widthBits; hzPixelNum++) {
+		pixelsByte = bitmaps[pixDataOffset + sliceByteOffset + hzPixelNum / 8];
+		if (pixelsByte & (0x80 >> (hzPixelNum % 8))) {
+			for (extra = 0; extra < size; extra++) {
+				drawPixelInRowBuffer(x + hzPixelNum + extra, rowBufferPtr);
+			}
+		}
+	}
+}
+
 void displayString(uint16_t x, uint16_t y, char_t *stringPtr, uint8_t size) {
 	byte rowBuffer[ROW_BUFFER_BYTES];
 	uint8_t slice;
@@ -231,6 +270,39 @@ void displayString(uint16_t x, uint16_t y, char_t *stringPtr, uint8_t size) {
 			sendRowBuffer(y + (slice * size) + extra, rowBuffer);
 		}
 	}
+}
+
+void displayStringByFont(uint16_t x, uint16_t y, char_t *stringPtr, uint8_t size, uint8_t fontType) {
+	byte rowBuffer[ROW_BUFFER_BYTES];
+	uint8_t slice;
+	uint8_t charPos;
+	uint8_t extra;
+	uint8_t charDescOffset;
+	uint16_t totalBits;
+	uint32_t offset = 0;
+	uint32_t maxBytes = 0;	
+	
+	for (slice = 0; slice < font_info->charInfo->heightBits; slice++) {
+		memset(&rowBuffer, 0x00, ROW_BUFFER_BYTES);
+		totalBits = 0;
+		for (charPos = 0; charPos < strlen(stringPtr); charPos++) {
+			if (stringPtr[charPos] == ' ') {
+				totalBits += font_info->spacePixels * size;
+			} else {
+				putCharByFontSliceInRowBuffer(totalBits, stringPtr[charPos], rowBuffer, slice, size, fontType);
+				charDescOffset = stringPtr[charPos] - font_info->startChar;
+				totalBits += font_char_info[charDescOffset].widthBits + size;
+			}
+		}
+		for (extra = 0; extra < size; extra++) {
+			offset = ((y + slice) * ROW_BUFFER_BYTES) + (x/8);
+			maxBytes = ROW_BUFFER_BYTES - (x/8);
+			memcpy(displayBuffer + offset, rowBuffer, maxBytes);
+		}
+	}
+
+	sendDisplayBuffer();
+
 }
 
 
@@ -308,5 +380,59 @@ void displayCodeshelfLogo(uint8_t x, uint8_t y) {
 			rowBuffer[bytePos + (x / 8)] = codeshelf_logobwBitmaps[(slice * codeshelf_logobwWidthPages) + bytePos];
 		}
 		sendRowBuffer(slice + y, rowBuffer);
+	}
+	
+}
+
+void setFontType(uint8_t fontType) {
+	
+	switch(fontType){
+		case FONT_ARIAL16:
+			font_info = (FONT_INFO *) &arial_16ptFontInfo;
+			font_char_info = (FONT_CHAR_INFO *) &arial_16ptDescriptors;
+			bitmaps = (uint8_t *) &arial_16ptBitmaps;
+			break;
+		
+		case FONT_ARIAL26:
+			font_info = (FONT_INFO *) &arial_26ptFontInfo;
+			font_char_info = (FONT_CHAR_INFO *) &arial_26ptDescriptors;
+			bitmaps = (uint8_t *) &arial_26ptBitmaps;
+			break;
+			
+		case FONT_ARIAL16_MONO_BOLD:
+			font_info = (FONT_INFO *) &arialMonospacedMTStd_16ptFontInfo;
+			font_char_info = (FONT_CHAR_INFO *) &arialMonospacedMTStd_16ptDescriptors;
+			bitmaps = (uint8_t *) arialMonospacedMTStd_16ptBitmaps;
+			break;
+			
+		case FONT_ARIAL20_MONO_BOLD:
+			font_info = (FONT_INFO *) &arialMonospacedMTStd_20ptFontInfo;
+			font_char_info = (FONT_CHAR_INFO *) &arialMonospacedMTStd_20ptDescriptors;
+			bitmaps = (uint8_t *) arialMonospacedMTStd_20ptBitmaps;
+			break;		
+
+		case FONT_ARIAL24_MONO_BOLD:
+			font_info = (FONT_INFO *) &arialMonospacedMTStd_24ptFontInfo;
+			font_char_info = (FONT_CHAR_INFO *) &arialMonospacedMTStd_24ptDescriptors;
+			bitmaps = (uint8_t *) arialMonospacedMTStd_24ptBitmaps;
+			break;	
+
+		case FONT_ARIAL26_MONO_BOLD:
+			font_info = (FONT_INFO *) &arialMonospacedMTStd_26ptFontInfo;
+			font_char_info = (FONT_CHAR_INFO *) &arialMonospacedMTStd_26ptDescriptors;
+			bitmaps = (uint8_t *) arialMonospacedMTStd_26ptBitmaps;
+			break;
+			
+		case FONT_3OF9:
+			font_info = (FONT_INFO *) &barcodeFontInfo;
+			font_char_info = (FONT_CHAR_INFO *) &barcodeDescriptors;
+			bitmaps = (uint8_t *) &barcodeDescriptors;
+			break;
+			
+		default:
+			font_info = (FONT_INFO *) &arial_26ptFontInfo;
+			font_char_info = (FONT_CHAR_INFO *) &arial_26ptDescriptors;
+			bitmaps = (uint8_t *) &arial_26ptBitmaps;
+			break;
 	}
 }

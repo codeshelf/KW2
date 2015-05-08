@@ -81,6 +81,10 @@
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Source\eeprom.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Source\fontArial16.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Source\fontArial26.c</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Source\fontArialMono16Bold.c</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Source\fontArialMono20Bold.c</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Source\fontArialMono24Bold.c</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Source\fontArialMono26Bold.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Source\fontBarcode.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Source\gatewayTask.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Source\processRxGateway.c</PathName>
@@ -99,7 +103,6 @@
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\FRTOS1.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Gateway.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\INT_PORTB.c</PathName>
-      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\LedDrive.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\PE_LDD.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\StatusLedClk.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\StatusLedSdi.c</PathName>
@@ -173,12 +176,17 @@
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\eeprom.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\fontArial16.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\fontArial26.h</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\fontArialMono16Bold.h</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\fontArialMono20Bold.h</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\fontArialMono24Bold.h</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\fontArialMono26Bold.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\fontBarcode.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\gatewayCommon.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\gatewayTask.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\globals.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\gwSystemMacros.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\gwTypes.h</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\muxing.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\processRx.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\radioCommon.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\remoteMgmtTask.h</PathName>
@@ -198,7 +206,6 @@
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\INT_PORTB.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\iofiles\MK21D5.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\IO_Map.h</PathName>
-      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\LedDrive.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\ADC_PDD.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\CMP_PDD.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\CMT_PDD.h</PathName>

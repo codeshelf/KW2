@@ -121,6 +121,14 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 						case eControlSubCmdMessage:
 							processDisplayMsgSubCommand(inRxBufferNum);
 							break;
+							
+						case eControlSubCmdSingleLineMessage:
+							processDisplaySingleMsgSubCommand(inRxBufferNum);
+							break;
+							
+						case eControlSubCmdClearDisplay:
+							processClearDisplay(inRxBufferNum);
+							break;
 
 						case eControlSubCmdLight:
 							processLedSubCommand(inRxBufferNum);
