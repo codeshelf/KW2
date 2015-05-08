@@ -95,6 +95,13 @@
 // Message Command
 #define CMDPOS_MESSAGE				CMDPOS_CONTROL_DATA
 
+// Single line message command
+
+#define CMDPOS_MESSAGE_FONT			CMDPOS_CONTROL_DATA
+#define CMDPOS_MESSAGE_POSX			CMDPOS_MESSAGE_FONT + 1
+#define CMDPOS_MESSAGE_POSY			CMDPOS_MESSAGE_POSX + 2
+#define CMDPOS_MESSAGE_SINGLE		CMDPOS_MESSAGE_POSY + 2
+
 // Button Command
 #define CMDPOS_BUTTON_NUM			CMDPOS_CONTROL_DATA
 #define CMDPOS_BUTTON_VAL			CMDPOS_BUTTON_NUM + 1
@@ -288,7 +295,9 @@ typedef enum {
 	eControlSubCmdLight = 2,
 	eControlSubCmdSetPosController = 3,
 	eControlSubCmdClearPosController = 4,
-	eControlSubCmdButton = 5
+	eControlSubCmdButton = 5,
+	eControlSubCmdSingleLineMessage = 6,
+	eControlSubCmdClearDisplay = 7
 //	eControlSubCmdEndpointAdj = 1,
 //	eControlSubCmdMotor = 2,
 //	eControlSubCmdButton = 3,

@@ -230,7 +230,7 @@ void enterSetupMode() {
 	
 	GW_ENTER_CRITICAL(ccrHolder);
 	clearDisplay();
-	displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+	displayMessage(1, "KW2 Setup Mode", FONT_NORMAL);
 	displayMessage(2, "Scan GUID/AES", FONT_NORMAL);
 	GW_EXIT_CRITICAL(ccrHolder);
 }
@@ -243,7 +243,7 @@ void clearParams() {
 	
 	GW_ENTER_CRITICAL(ccrHolder);
 	clearDisplay();
-	displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+	displayMessage(1, "KW2 Setup Mode", FONT_NORMAL);
 	displayMessage(2, "Cleared params", FONT_NORMAL);
 	GW_EXIT_CRITICAL(ccrHolder);
 	vTaskDelay(1500);
@@ -265,7 +265,7 @@ void saveParams() {
 		
 		GW_ENTER_CRITICAL(ccrHolder);
 		clearDisplay();
-		displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+		displayMessage(1, "KW2 Setup Mode", FONT_NORMAL);
 		displayMessage(2, "Setup complete", FONT_NORMAL);
 		displayMessage(3, "Params Saved", FONT_NORMAL);
 		GW_EXIT_CRITICAL(ccrHolder);
@@ -297,7 +297,7 @@ void getGuidAes() {
 		setupModeState = eSetupModeGetHWver;
 		GW_ENTER_CRITICAL(ccrHolder);
 		clearDisplay();
-		displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+		displayMessage(1, "KW2 Setup Mode", FONT_NORMAL);
 		displayMessage(2, "Scan Hardware Version", FONT_NORMAL);
 		GW_EXIT_CRITICAL(ccrHolder);
 	} else {
@@ -324,7 +324,7 @@ void getHwVersion() {
 		
 		GW_ENTER_CRITICAL(ccrHolder);
 		clearDisplay();
-		displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+		displayMessage(1, "KW2 Setup Mode", FONT_NORMAL);
 		displayMessage(2, "Scanned HW Version", FONT_NORMAL);
 		displayMessage(3, gScanString + 2, FONT_NORMAL);
 		GW_EXIT_CRITICAL(ccrHolder);
@@ -336,7 +336,7 @@ void getHwVersion() {
 		setupModeState = eSetupModeWaitingForSave;
 		GW_ENTER_CRITICAL(ccrHolder);
 		clearDisplay();
-		displayMessage(1, "CHE Setup Mode", FONT_NORMAL);
+		displayMessage(1, "KW2 Setup Mode", FONT_NORMAL);
 		displayMessage(2, "Setup complete", FONT_NORMAL);
 		displayMessage(3, guidDispStr, FONT_NORMAL);
 		displayMessage(6, "Scan SAVE or CLEAR", FONT_NORMAL);
