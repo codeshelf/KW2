@@ -9,6 +9,7 @@
 
 #include "processRx.h"
 #include "remoteRadioTask.h"
+#include "radioCommon.h"
 #include "commands.h"
 #include "string.h"
 #include "FreeRTOS.h"
@@ -67,6 +68,7 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 			switch (cmdID) {
 				case eCommandNetMgmt:
 					GW_WATCHDOG_RESET;
+					setStatusLed(0, 0, 1);
 					break;
 				case eCommandAssoc:
 					// This will only return sub-commands if the command GUID matches out GUID
