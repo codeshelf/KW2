@@ -170,8 +170,13 @@ void aisleControllerTask(void *pvParameters) {
 			gLedCycle = eLedCycleOn;
 		} else {
 			// Write 8 words into the FIFO - that will cause the FIFO low watermark ISR to execute.
-			gCurLedFlashDataElement = 0;
+			//gCurLedFlashDataElement = 0;
 			gNextFlashLedPosition = 0;
+			
+			if (gCurLedFlashDataElement >= gTotalLedFlashDataElements) {
+				gCurLedFlashDataElement = 0;
+			}
+			
 			GW_ENTER_CRITICAL(ccrHolder);
 			while ((SPI_PDD_GetTxFIFOCounter(LedDrive_DEVICE) <= 1) && (gNextFlashLedPosition <= gTotalLedPositions)) {
 				uint32 data = getNextFlashData();
