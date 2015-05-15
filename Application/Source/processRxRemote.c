@@ -19,6 +19,7 @@
 // --------------------------------------------------------------------------
 // Global variables.
 
+AckIDType gLastAckId = 0;
 UnixTimeType gUnixTime;
 
 extern RxRadioBufferStruct	gRxRadioBuffer[RX_BUFFER_COUNT];
@@ -65,92 +66,95 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 			ackId = getAckId(gRxRadioBuffer[inRxBufferNum].bufferStorage);
 			memset(ackData, 0, ACK_DATA_BYTES);
 
-			switch (cmdID) {
-				case eCommandNetMgmt:
-					GW_WATCHDOG_RESET;
-					setStatusLed(0, 0, 1);
-					break;
-				case eCommandAssoc:
-					// This will only return sub-commands if the command GUID matches out GUID
-					assocSubCmd = getAssocSubCommand(inRxBufferNum);
-					if (assocSubCmd == eCmdAssocInvalid) {
-						// Do nothing.
-					} else if (assocSubCmd == eCmdAssocRESP) {
-						// If we're not already running then signal the mgmt task that we just got a command ASSOC resp.
-						if (gLocalDeviceState != eLocalStateRun) {
-							if (xQueueSend(gRemoteMgmtQueue, &inRxBufferNum, (portTickType) 0)) {
+			if (ackId == 0 || ackId != gLastAckId) {
+				switch (cmdID) {
+					case eCommandNetMgmt:
+						GW_WATCHDOG_RESET;
+						setStatusLed(0, 0, 1);
+						break;
+					case eCommandAssoc:
+						// This will only return sub-commands if the command GUID matches out GUID
+						assocSubCmd = getAssocSubCommand(inRxBufferNum);
+						if (assocSubCmd == eCmdAssocInvalid) {
+							// Do nothing.
+						} else if (assocSubCmd == eCmdAssocRESP) {
+							// If we're not already running then signal the mgmt task that we just got a command ASSOC resp.
+							if (gLocalDeviceState != eLocalStateRun) {
+								if (xQueueSend(gRemoteMgmtQueue, &inRxBufferNum, (portTickType) 0)) {
+									// The management task will handle this packet.
+								}
+							}
+						} else if (assocSubCmd == eCmdAssocACK) {
+							// Record the time of the last ACK packet we received.
+							gLastPacketReceivedTick = xTaskGetTickCount();
+	
+							// If the associate state is 1 then we're not associated with this controller anymore.
+							// We need to reset the device, so that we can start a whole new session.
+							if (1 == gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ASSOCACK_STATE]) {
+								//GW_RESET_MCU();
+							} else {
+								gUnixTime.byteFields.byte1 = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ASSOCACK_TIME + 3];
+								gUnixTime.byteFields.byte2 = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ASSOCACK_TIME + 2];
+								gUnixTime.byteFields.byte3 = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ASSOCACK_TIME + 1];
+								gUnixTime.byteFields.byte4 = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ASSOCACK_TIME];
+							}
+							if ((networkID == gMyNetworkID) && (cmdDstAddr == gMyAddr)) {
+								if (xQueueSend(gTxAckQueue, &ackId, (portTickType) 0)) {
+								}
+							} else if (xQueueSend(gRemoteMgmtQueue, &inRxBufferNum, (portTickType) 0)) {
 								// The management task will handle this packet.
 							}
 						}
-					} else if (assocSubCmd == eCmdAssocACK) {
-						// Record the time of the last ACK packet we received.
-						gLastPacketReceivedTick = xTaskGetTickCount();
-
-						// If the associate state is 1 then we're not associated with this controller anymore.
-						// We need to reset the device, so that we can start a whole new session.
-						if (1 == gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ASSOCACK_STATE]) {
-							//GW_RESET_MCU();
-						} else {
-							gUnixTime.byteFields.byte1 = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ASSOCACK_TIME + 3];
-							gUnixTime.byteFields.byte2 = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ASSOCACK_TIME + 2];
-							gUnixTime.byteFields.byte3 = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ASSOCACK_TIME + 1];
-							gUnixTime.byteFields.byte4 = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ASSOCACK_TIME];
+						break;
+	
+					case eCommandControl:
+	
+						// Send an ACK if necessary.
+						if (ackId != 0) {
+							txBufferNum = 0;//lockTxBuffer();
+							createAckPacket(txBufferNum, ackId, ackData);
+							writeRadioTx();
+							gLastAckId = ackId;
 						}
-						if ((networkID == gMyNetworkID) && (cmdDstAddr == gMyAddr)) {
-							if (xQueueSend(gTxAckQueue, &ackId, (portTickType) 0)) {
-							}
-						} else if (xQueueSend(gRemoteMgmtQueue, &inRxBufferNum, (portTickType) 0)) {
-							// The management task will handle this packet.
+	
+						// Make sure that there is a valid sub-command in the control command.
+						switch (getControlSubCommand(inRxBufferNum)) {
+	
+							case eControlSubCmdScan:
+								break;
+	
+							case eControlSubCmdMessage:
+								processDisplayMsgSubCommand(inRxBufferNum);
+								break;
+								
+							case eControlSubCmdSingleLineMessage:
+								processDisplaySingleMsgSubCommand(inRxBufferNum);
+								break;
+								
+							case eControlSubCmdClearDisplay:
+								processClearDisplay(inRxBufferNum);
+								break;
+	
+							case eControlSubCmdLight:
+								processLedSubCommand(inRxBufferNum);
+								break;
+	
+							case eControlSubCmdSetPosController:
+								processSetPosControllerSubCommand(inRxBufferNum);
+								break;
+	
+							case eControlSubCmdClearPosController:
+								processClearPosControllerSubCommand(inRxBufferNum);
+								break;
+	
+							default:
+								break;
 						}
-					}
-					break;
-
-				case eCommandControl:
-
-					// Send an ACK if necessary.
-					if (ackId != 0) {
-						txBufferNum = 0;//lockTxBuffer();
-						createAckPacket(txBufferNum, ackId, ackData);
-						writeRadioTx();
-					}
-
-					// Make sure that there is a valid sub-command in the control command.
-					switch (getControlSubCommand(inRxBufferNum)) {
-
-						case eControlSubCmdScan:
-							break;
-
-						case eControlSubCmdMessage:
-							processDisplayMsgSubCommand(inRxBufferNum);
-							break;
-							
-						case eControlSubCmdSingleLineMessage:
-							processDisplaySingleMsgSubCommand(inRxBufferNum);
-							break;
-							
-						case eControlSubCmdClearDisplay:
-							processClearDisplay(inRxBufferNum);
-							break;
-
-						case eControlSubCmdLight:
-							processLedSubCommand(inRxBufferNum);
-							break;
-
-						case eControlSubCmdSetPosController:
-							processSetPosControllerSubCommand(inRxBufferNum);
-							break;
-
-						case eControlSubCmdClearPosController:
-							processClearPosControllerSubCommand(inRxBufferNum);
-							break;
-
-						default:
-							break;
-					}
-					break;
-
-						default:
-							break;
+						break;
+	
+							default:
+								break;
+				}
 			}
 		}
 	}
