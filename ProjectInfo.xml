@@ -96,17 +96,24 @@
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Source\serial.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Source\smacGlue.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Source\tunerTask.c</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\BitIoLdd1.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\BitIoLdd2.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Cpu.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\EepromCS.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\EventTimer.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\FRTOS1.c</PathName>
-      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Gateway.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\INT_PORTB.c</PathName>
-      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\LedDrive.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\PE_LDD.c</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Rs485.c</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Rs485Power.c</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Rs485TxCtl.c</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Scanner.c</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\ScannerPower.c</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\SharpDisplay.c</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\SharpDisplayCS.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\StatusLedClk.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\StatusLedSdi.c</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Tuner.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\UTIL1.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\UTIL2.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Vectors.c</PathName>
@@ -196,6 +203,7 @@
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\serial.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\smacGlue.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Application\Configure\tunerTask.h</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\BitIoLdd1.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\BitIoLdd2.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Cpu.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\EepromCS.h</PathName>
@@ -203,11 +211,9 @@
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\FRTOS1.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\FreeRTOS.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\FreeRTOSConfig.h</PathName>
-      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Gateway.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\INT_PORTB.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\iofiles\MK21D5.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\IO_Map.h</PathName>
-      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\LedDrive.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\ADC_PDD.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\CMP_PDD.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\CMT_PDD.h</PathName>
@@ -242,9 +248,17 @@
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\PE_Error.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\PE_LDD.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\PE_Types.h</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Rs485.h</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Rs485Power.h</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Rs485TxCtl.h</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Scanner.h</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\ScannerPower.h</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\SharpDisplay.h</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\SharpDisplayCS.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\StackMacros.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\StatusLedClk.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\StatusLedSdi.h</PathName>
+      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Tuner.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\UTIL1.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\UTIL2.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Wait.h</PathName>
