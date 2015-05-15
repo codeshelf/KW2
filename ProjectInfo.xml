@@ -101,7 +101,6 @@
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\EepromCS.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\EventTimer.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\FRTOS1.c</PathName>
-      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Gateway.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\INT_PORTB.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\LedDrive.c</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\PE_LDD.c</PathName>
@@ -203,7 +202,6 @@
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\FRTOS1.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\FreeRTOS.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\FreeRTOSConfig.h</PathName>
-      <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\Gateway.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\INT_PORTB.h</PathName>
       <PathName>C:\Freescale\CW MCU v10.6\MCU\ProcessorExpert\lib\Kinetis\iofiles\MK21D5.h</PathName>
       <PathName>C:\Users\andrewhuff\Documents\KW2\Generated_Code\IO_Map.h</PathName>

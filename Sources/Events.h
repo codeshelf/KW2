@@ -47,7 +47,6 @@
 #include "BitIoLdd2.h"
 #include "StatusLedClk.h"
 #include "StatusLedSdi.h"
-#include "Gateway.h"
 
 #ifdef __cplusplus
 extern "C" {

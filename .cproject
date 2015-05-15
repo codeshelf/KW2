@@ -625,7 +625,7 @@
 					</folderInfo>
 					<fileInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="Application/Source/gatewayTask.c|Application/Source/serialReceiveTask.c|Application/Source/appGateway.c|Application/Source/processRxGateway.c|Application/Source/scannerReadTask.c|Application/Source/display.c|Application/Source/aisleControllerTask.c|Application/Source/appAisleController.c|Application/Source/cheControllerTask.c|Application/Source/appCheController.c|Application/Source/appCartController.c|PLM/Source/Sys Common/vectors.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Application/Source/gatewayTask.c|Application/Source/serialReceiveTask.c|Application/Source/appGateway.c|Application/Source/processRxGateway.c|Application/Source/scannerReadTask.c|Application/Source/aisleControllerTask.c|Application/Source/appAisleController.c|Application/Source/cheControllerTask.c|Application/Source/appCheController.c|Application/Source/appCartController.c|PLM/Source/Sys Common/vectors.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
