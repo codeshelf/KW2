@@ -22,12 +22,16 @@ uint8_t gCircularBufferSize = 0;
 
 void sendOneChar(UART_MemMapPtr uartRegPtr, UsbDataType data) {
 
+	Wait_Waitus(250);
+	
 	// Until there is free space in the FIFO don't send a char.
 	while (uartRegPtr->TCFIFO >= uartRegPtr->TWFIFO) {
 		//vTaskDelay(1);
 		Wait_Waitus(25);
 	}
+	
 	uartRegPtr->D = data;
+
 //	while (uartRegPtr->TCFIFO > uartRegPtr->TWFIFO) {
 //		vTaskDelay(1);
 //	}
