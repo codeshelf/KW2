@@ -16,11 +16,13 @@
 #include "EventTimer.h"
 #include "ScannerPower.h"
 #include "Serial.h"
+#include "String.h"
 
 xTaskHandle gScannerReadTask = NULL;
 
 ScanStringType gScanString;
 ScanStringLenType gScanStringPos;
+char mac[] = "000652091481";
 
 extern ELocalStatusType gLocalDeviceState;
 
@@ -35,9 +37,8 @@ void clearRJ485RXFIFO(){
 // --------------------------------------------------------------------------
 
 void readBTResponse() {
-	gwUINT8 ccrHolder;
-
-	GW_ENTER_CRITICAL(ccrHolder);
+	clearRJ485RXFIFO();
+	
 	gScanString[0] = NULL;
 	gScanStringPos = 0;
 	EventTimer_ResetCounter(NULL);
@@ -46,28 +47,120 @@ void readBTResponse() {
 		Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
 		Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXOF_MASK;
 		if ((Scanner_DEVICE ->S1 & UART_S1_RDRF_MASK) != 0) {
+		//if ((Scanner_DEVICE ->SFIFO & UART_SFIFO_RXEMPT_MASK) == 0) {
 			gScanString[gScanStringPos++] = Scanner_DEVICE ->D;;
 			gScanString[gScanStringPos] = NULL;
 			EventTimer_ResetCounter(NULL);
 			Wait_Waitus(500);
 		}
 	}
-	GW_EXIT_CRITICAL(ccrHolder);
+}
+
+// --------------------------------------------------------------------------
+
+bool isBTRemoteConnected() {
+	sendOneChar(Scanner_DEVICE ,'G');
+	sendOneChar(Scanner_DEVICE ,'K');
+	sendOneChar(Scanner_DEVICE ,'\r');
+	sendOneChar(Scanner_DEVICE ,'\n');
+	
+	readBTResponse();
+	
+	if ( strncmp(gScanString, "1", 1) ==0) {
+		return TRUE;
+	} else {
+		return FALSE;
+	}
+}
+
+// --------------------------------------------------------------------------
+
+bool isBTRemoteMacAddrCorrect() {
+	sendOneChar(Scanner_DEVICE ,'G');
+	sendOneChar(Scanner_DEVICE ,'R');
+	sendOneChar(Scanner_DEVICE ,'\r');
+	sendOneChar(Scanner_DEVICE ,'\n');
+	
+	readBTResponse();
+		
+	if ( strncmp(gScanString, mac, 12) == 0) {
+		return TRUE;
+	} else {
+		return FALSE;
+	}
+}
+
+void setBTRemoteMacAddr() {
+	int i = 0;
+	
+	sendOneChar(Scanner_DEVICE ,'S');
+	sendOneChar(Scanner_DEVICE ,'R');
+	sendOneChar(Scanner_DEVICE ,',');
+	for(i=0; i<12; i++) {
+		sendOneChar(Scanner_DEVICE , mac[i]);
+	}
+	sendOneChar(Scanner_DEVICE ,'\r');
+	sendOneChar(Scanner_DEVICE ,'\n');
+	
+	Wait_Waitms(100);
+}
+
+// --------------------------------------------------------------------------
+
+void resetBTDongle() {
+	sendOneChar(Scanner_DEVICE ,'R');
+	sendOneChar(Scanner_DEVICE ,',');
+	sendOneChar(Scanner_DEVICE ,'1');
+	sendOneChar(Scanner_DEVICE ,'\r');
+	sendOneChar(Scanner_DEVICE ,'\n');
+}
+
+// --------------------------------------------------------------------------
+
+void disconnectBTDevice() {
+	sendOneChar(Scanner_DEVICE ,'K');
+	sendOneChar(Scanner_DEVICE ,',');
+	sendOneChar(Scanner_DEVICE ,'\r');
+	sendOneChar(Scanner_DEVICE ,'\n');
+}
+
+// --------------------------------------------------------------------------
+
+void exitBTCommandMode() {
+	sendOneChar(Scanner_DEVICE ,'-');
+	sendOneChar(Scanner_DEVICE ,'-');
+	sendOneChar(Scanner_DEVICE ,'-');
+	sendOneChar(Scanner_DEVICE ,'\r');
+	sendOneChar(Scanner_DEVICE ,'\n');
+}
+
+// --------------------------------------------------------------------------
+
+void enterBTCommandMode() {	
+	sendOneChar(Scanner_DEVICE ,'$');
+	//Wait_Waitms(50);
+	sendOneChar(Scanner_DEVICE ,'$');
+	//Wait_Waitms(50);
+	sendOneChar(Scanner_DEVICE ,'$');
+	//Wait_Waitms(50);
 }
 
 // --------------------------------------------------------------------------
 
 bool hasBTDongle() {
 	gwUINT8 ccrHolder;
-	vTaskDelay(500);
+	
+	// Wait for dongle to boot
+	vTaskDelay(1000);
 	
 	GW_ENTER_CRITICAL(ccrHolder);
-	sendOneChar(Scanner_DEVICE ,'$');
-	sendOneChar(Scanner_DEVICE ,'$');
-	sendOneChar(Scanner_DEVICE ,'$');
+	enterBTCommandMode();
+	readBTResponse();
+	resetBTDongle();
 	GW_EXIT_CRITICAL(ccrHolder);
 	
-	readBTResponse();
+	// Wait for dongle to boot
+	vTaskDelay(1000);
 	
 	if(strncmp(gScanString, "CMD", 3) == 0){
 		return TRUE;
@@ -79,52 +172,82 @@ bool hasBTDongle() {
 // --------------------------------------------------------------------------
 
 void connectBTScanner() {
-	
 	gwUINT8 ccrHolder;
 	int i = 0;
-	char mac[] = "000652091481";
 	
-	// Set remote MAC address
 	GW_ENTER_CRITICAL(ccrHolder);
+
+	enterBTCommandMode();
+	Wait_Waitms(100);
+	
+	// Set the remote mac address
 	sendOneChar(Scanner_DEVICE ,'S');
 	sendOneChar(Scanner_DEVICE ,'R');
 	sendOneChar(Scanner_DEVICE ,',');
-	
 	for(i=0; i<12; i++) {
 		sendOneChar(Scanner_DEVICE , mac[i]);
 	}
 	sendOneChar(Scanner_DEVICE ,'\r');
 	sendOneChar(Scanner_DEVICE ,'\n');
 	
-	readBTResponse();
+	Wait_Waitms(100);
 	
-	// Connect to remote MAC address
+	// Connect!
 	sendOneChar(Scanner_DEVICE ,'C');
 	sendOneChar(Scanner_DEVICE ,'\r');
 	sendOneChar(Scanner_DEVICE ,'\n');
 	
-	sendOneChar(Scanner_DEVICE ,'S');
-	sendOneChar(Scanner_DEVICE ,'M');
-	sendOneChar(Scanner_DEVICE ,',');
-	sendOneChar(Scanner_DEVICE ,'2');
-	sendOneChar(Scanner_DEVICE ,'\r');
-	sendOneChar(Scanner_DEVICE ,'\n');
-	
-	readBTResponse();
-	sendOneChar(Scanner_DEVICE ,'-');
-	sendOneChar(Scanner_DEVICE ,'-');
-	sendOneChar(Scanner_DEVICE ,'-');
-	sendOneChar(Scanner_DEVICE ,'\r');
-	sendOneChar(Scanner_DEVICE ,'\n');
-	
+	exitBTCommandMode();
 	GW_EXIT_CRITICAL(ccrHolder);
+
 }
 
+/*
+ * Note this doesn't work in auto-connect mode
+ * because when the dongle connects it drops us out of
+ * connect mode. We have no idea when that will happen.
+ * 
 // --------------------------------------------------------------------------
 
-int attemptBTConnection() {
+void connectBTScanner() {
 	gwUINT8 ccrHolder;
-	int BTDongleConnected = 0;
+	int i = 0;
+	
+	
+	GW_ENTER_CRITICAL(ccrHolder);
+
+	enterBTCommandMode();
+	Wait_Waitms(100);
+	
+	if (isBTRemoteConnected()){
+		if(!isBTRemoteMacAddrCorrect()) {
+			
+			// Disconnect from current bluetooth device
+			disconnectBTDevice();
+			
+			// Killing BT connection knocks us out out command mode
+			enterBTCommandMode();
+			Wait_Waitms(100);	
+			
+			// Set the remote mac address
+			setBTRemoteMacAddr();
+			
+			// Connect!
+			sendOneChar(Scanner_DEVICE ,'C');
+			sendOneChar(Scanner_DEVICE ,'\r');
+			sendOneChar(Scanner_DEVICE ,'\n');
+		}
+	}
+
+	exitBTCommandMode();
+	GW_EXIT_CRITICAL(ccrHolder);
+
+}
+*/
+// --------------------------------------------------------------------------
+
+void attemptBTConnection() {
+	gwUINT8 ccrHolder;
 	
 	// Clear buffer
 	clearRJ485RXFIFO();
@@ -133,6 +256,10 @@ int attemptBTConnection() {
 	if (hasBTDongle()) {
 		connectBTScanner();
 	}
+	
+	// Flush the RX FIFO.
+	Scanner_DEVICE ->CFIFO |= UART_CFIFO_RXFLUSH_MASK;
+	Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
 }
 
 // --------------------------------------------------------------------------
@@ -143,15 +270,12 @@ void scannerReadTask(void *pvParameters) {
 	char	currChar = NULL;
 	ScannerPower_SetVal(ScannerPower_DeviceData);
 	
-	//
 	attemptBTConnection();
 	
 	// Pause until associated.
 	while (gLocalDeviceState != eLocalStateRun) {
 		vTaskDelay(100);
 	}
-	
-	
 
 	for (;;) {
 
@@ -166,6 +290,7 @@ void scannerReadTask(void *pvParameters) {
 		Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
 		// Wait until there are characters in the FIFO
 		while ((Scanner_DEVICE ->S1 & UART_S1_RDRF_MASK) == 0) {
+		//while ((Scanner_DEVICE ->RCFIFO) == 0) {
 			vTaskDelay(1);
 		}
 		Wait_Waitus(50);
@@ -178,6 +303,7 @@ void scannerReadTask(void *pvParameters) {
 		while ((EventTimer_GetCounterValue(NULL) < 150) && (gScanStringPos < MAX_SCAN_STRING_BYTES)) {
 			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
 			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXOF_MASK;
+			//if ((Scanner_DEVICE ->SFIFO & UART_SFIFO_RXEMPT_MASK) == 0) {
 			if ((Scanner_DEVICE ->S1 & UART_S1_RDRF_MASK) != 0) {
 				
 				currChar = Scanner_DEVICE ->D;
