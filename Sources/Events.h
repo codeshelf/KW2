@@ -45,7 +45,7 @@
 #include "Scanner.h"
 #include "Watchdog.h"
 #include "EventTimer.h"
-#include "LedDrive.h"
+#include "SharpDisplay.h"
 #include "SharpDisplayCS.h"
 #include "BitIoLdd1.h"
 #include "Tuner.h"

@@ -3,7 +3,7 @@
   <Header>
     <Name>ProcessorExpert</Name>
     <SavedBy>andrewhuff</SavedBy>
-    <ModificationStamp>517</ModificationStamp>
+    <ModificationStamp>520</ModificationStamp>
     <Date>2015-05-21</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
@@ -28,7 +28,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>364</ProjectCompNumb>
+    <ProjectCompNumb>367</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -7270,7 +7270,7 @@
   <Configuration>
     <CompNumb>1</CompNumb>
     <NodeName>LEDController</NodeName>
-    <CnfgEnabled>true</CnfgEnabled>
+    <CnfgEnabled>false</CnfgEnabled>
     <TargetCPU>225</TargetCPU>
     <ConfigurationComment lines_count="0" />
     <BoolList_FpgaConfig>
@@ -7543,7 +7543,7 @@
       <ItemId2>137</ItemId2>
       <Value2>true</Value2>
       <ItemId3>124</ItemId3>
-      <Value3>false</Value3>
+      <Value3>true</Value3>
       <ItemId4>114</ItemId4>
       <Value4>true</Value4>
       <ItemId5>78</ItemId5>
@@ -20250,7 +20250,7 @@
     <BeanType>Init_SPI_VAR0</BeanType>
     <Name>LedDrive</Name>
     <CompNumb>124</CompNumb>
-    <CompEnabled>true</CompEnabled>
+    <CompEnabled>false</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PERIPHINSP</IconName>
     <UserFolderName />
