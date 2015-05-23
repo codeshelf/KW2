@@ -64,7 +64,7 @@ void startApplication(void) {
 	smacError = MLMEXtalAdjust(trim[0]);
 	//smacError = MLMEFEGainAdjust(15);
 	MC1324xDrv_IndirectAccessSPIWrite(ANT_PAD_CTRL, cANT_PAD_CTRL_ANTX_CTRLMODE + cANT_PAD_CTRL_ANTX_EN);
-	MC1324xDrv_IndirectAccessSPIWrite(ANT_AGC_CTRL, 0x40 + 0x02);
+	MC1324xDrv_IndirectAccessSPIWrite(ANT_AGC_CTRL, /*0x40 + */ 0x02 + 0x01);
 
 	gLocalDeviceState = eLocalStateStarted;
 

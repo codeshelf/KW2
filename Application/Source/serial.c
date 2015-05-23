@@ -131,10 +131,10 @@ void serialTransmitFrame(UART_MemMapPtr uartRegPtr, BufferStoragePtrType inFrame
 	sendOneChar(uartRegPtr, END);
 	
 	// Wait until all of the TX bytes have been sent.
-	while (uartRegPtr ->TCFIFO > 0) {
-		//vTaskDelay(1);
-		Wait_Waitus(100);
-	}
+//	while (uartRegPtr ->TCFIFO > 0) {
+//		//vTaskDelay(1);
+//		Wait_Waitus(100);
+//	}
 
 	GW_WATCHDOG_RESET;
 }

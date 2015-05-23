@@ -2,9 +2,9 @@
 <PEproject>
   <Header>
     <Name>ProcessorExpert</Name>
-    <SavedBy>andrewhuff</SavedBy>
-    <ModificationStamp>520</ModificationStamp>
-    <Date>2015-05-21</Date>
+    <SavedBy>jeffw</SavedBy>
+    <ModificationStamp>516</ModificationStamp>
+    <Date>2015-05-22</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
   </Header>
@@ -28,7 +28,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>367</ProjectCompNumb>
+    <ProjectCompNumb>358</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -326,7 +326,7 @@
         <ItemSymbol>ERCLKGrp0</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>SystemOSCERCLKENCLKMode0</ItemSymbol>
@@ -366,7 +366,7 @@
         <ItemSymbol>MCGGrp0</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>MCGModeSelCLKMode0</ItemSymbol>
@@ -7543,7 +7543,7 @@
       <ItemId2>137</ItemId2>
       <Value2>true</Value2>
       <ItemId3>124</ItemId3>
-      <Value3>true</Value3>
+      <Value3>false</Value3>
       <ItemId4>114</ItemId4>
       <Value4>true</Value4>
       <ItemId5>78</ItemId5>
@@ -7678,9 +7678,9 @@
       <ItemId5>152</ItemId5>
       <Value5>false</Value5>
       <ItemId6>138</ItemId6>
-      <Value6>false</Value6>
+      <Value6>true</Value6>
       <ItemId7>137</ItemId7>
-      <Value7>false</Value7>
+      <Value7>true</Value7>
       <ItemId8>124</ItemId8>
       <Value8>false</Value8>
       <ItemId9>114</ItemId9>
@@ -13746,7 +13746,7 @@
         <ItemSymbol>ModemSettings</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>TXCTSE</ItemSymbol>
@@ -14396,7 +14396,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>true</Value>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>RtsPin</ItemSymbol>
@@ -14421,7 +14421,7 @@
         <ItemSymbol>CommonTx_Rx_IntGrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>CommonTx_Rx_Interrupt</ItemSymbol>
@@ -15459,7 +15459,7 @@
         <ItemSymbol>SettingsGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>PeriphClockGateFeatureGroup</ItemSymbol>
@@ -15855,7 +15855,7 @@
         <ItemSymbol>FIFOSettings</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>TXFE</ItemSymbol>
@@ -27882,7 +27882,7 @@
         <ItemSymbol>SettingsGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>PeriphClockGateFeatureGroup</ItemSymbol>
