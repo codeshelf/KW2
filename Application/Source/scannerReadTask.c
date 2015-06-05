@@ -322,7 +322,7 @@ void scannerReadTask(void *pvParameters) {
 
 		// Now send the scan string.
 		if (strlen(gScanString) > 0) {
-			BufferCntType txBufferNum = 0;//lockTxBuffer();
+			BufferCntType txBufferNum = lockTxBuffer();
 			createScanCommand(txBufferNum, &gScanString, gScanStringPos);
 			transmitPacket(txBufferNum);
 		}

@@ -1,6 +1,6 @@
 /*
  FlyWeight
- © Copyright 2005, 2006 Jeffrey B. Williams
+ ï¿½ Copyright 2005, 2006 Jeffrey B. Williams
  All rights reserved
 
  $Id$
@@ -31,9 +31,15 @@ extern ETxMessageHolderType gTxMsg;
 portTickType gLastAssocCheckTickCount;
 
 extern RadioStateEnum gRadioState;
+extern ELocalStatusType gLocalDeviceState;
 
-extern RxRadioBufferStruct gRxRadioBuffer[RX_BUFFER_COUNT];
+extern RxRadioBufferStruct	gRxRadioBuffer[RX_BUFFER_COUNT];
+extern BufferCntType 		gRxCurBufferNum;
+extern BufferCntType 		gRxUsedBuffers;
+
 extern TxRadioBufferStruct gTxRadioBuffer[TX_BUFFER_COUNT];
+extern BufferCntType 		gTxCurBufferNum;
+extern BufferCntType 		gTxUsedBuffers;
 
 extern NetworkIDType gMyNetworkID;
 extern NetAddrType gMyAddr;
@@ -41,13 +47,16 @@ extern NetAddrType gMyAddr;
 // --------------------------------------------------------------------------
 
 void radioReceiveTask(void *pvParameters) {
-	BufferCntType rxBufferNum;
+	BufferCntType rxBufferNum = 0;
+	gwUINT8 ccrHolder;
 
 	//TODO Remove buffer code. It seems we only need to do this once
-	/*gRxMsg.rxPacketPtr = (rxPacket_t *) &(gRxRadioBuffer[0].rxPacket);
+	
+	/*
+	gRxMsg.rxPacketPtr = (rxPacket_t *) &(gRxRadioBuffer[rxBufferNum].rxPacket);
 	gRxMsg.rxPacketPtr->u8MaxDataLength = RX_BUFFER_SIZE;
 	gRxMsg.rxPacketPtr->rxStatus = rxInitStatus;
-	gRxMsg.bufferNum = 0;
+	gRxMsg.bufferNum = rxBufferNum;
 	*/
 	// The radio receive task will return a pointer to a radio data packet.
 	if (gRadioReceiveQueue) {
@@ -68,10 +77,10 @@ void radioReceiveTask(void *pvParameters) {
 					gRxRadioBuffer[rxBufferNum].bufferSize = gRxMsg.rxPacketPtr->u8DataLength;
 					processRxPacket(rxBufferNum);
 				} else {
-					readRadioRx();
+					RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 				}
 			} else {
-				readRadioRx();
+				RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 			}
 
 		}
@@ -87,6 +96,7 @@ void radioTransmitTask(void *pvParameters) {
 	gwBoolean shouldRetry;
 	portTickType retryTickCount;
 	gwUINT8 ackId;
+	gwUINT8 ccrHolder;
 
 	if (gRadioTransmitQueue && gTxAckQueue) {
 		for (;;) {
@@ -104,10 +114,10 @@ void radioTransmitTask(void *pvParameters) {
 					shouldRetry = FALSE;
 
 					//Write tx to the air. Callback will notify us when done.
-					writeRadioTx();
+					writeRadioTx(txBufferNum);
 					
 					while (gRadioState == eTx) {
-						vTaskDelay(1);
+						vTaskDelay(0);
 					}
 		
 					if (gTxMsg.txStatus == txFailureStatus_c) {
@@ -122,7 +132,7 @@ void radioTransmitTask(void *pvParameters) {
 						shouldRetry = TRUE;
 						
 						//Wait up to 50ms for an ACK
-						if (xQueueReceive(gTxAckQueue, &ackId, 50 * portTICK_RATE_MS) == pdPASS) {
+						if (xQueueReceive(gTxAckQueue, &ackId, 200 * portTICK_RATE_MS) == pdPASS) {
 							if (txedAckId == ackId) {
 								shouldRetry = FALSE;
 							}
@@ -134,8 +144,9 @@ void radioTransmitTask(void *pvParameters) {
 						}
 					}
 #endif					
+					vTaskDelay(1);
 				} while (shouldRetry);
-				gTxRadioBuffer[txBufferNum].bufferStatus = eBufferStateFree;
+				RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
 			}
 		}
 	}

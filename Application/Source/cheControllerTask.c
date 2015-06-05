@@ -123,9 +123,8 @@ void cheControllerTask(void *pvParameters) {
 		gLastUserAction = xTaskGetTickCount();
 
 		// Now send the scan string.
-		BufferCntType txBufferNum = 0;//lockTxBuffer();
+		BufferCntType txBufferNum = lockTxBuffer();
 		createButtonCommand(txBufferNum, rs485String[1], rs485String[2]);
 		transmitPacket(txBufferNum);
-
 	}
 }

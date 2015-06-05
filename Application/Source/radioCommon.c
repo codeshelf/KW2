@@ -1,6 +1,6 @@
 /*
  FlyWeight
- © Copyright 2005, 2006 Jeffrey B. Williams
+ ï¿½ Copyright 2005, 2006 Jeffrey B. Williams
  All rights reserved
 
  $Id$
@@ -17,12 +17,111 @@
 extern xQueueHandle	gRadioReceiveQueue;
 
 RxRadioBufferStruct	gRxRadioBuffer[RX_BUFFER_COUNT];
+BufferCntType 		gRxCurBufferNum = 0;
+BufferCntType 		gRxUsedBuffers = 0;
+
 TxRadioBufferStruct gTxRadioBuffer[TX_BUFFER_COUNT];
+BufferCntType 		gTxCurBufferNum = 0;
+BufferCntType 		gTxUsedBuffers = 0;
 
 ERxMessageHolderType gRxMsg;
 ETxMessageHolderType gTxMsg;
 
 RadioStateEnum gRadioState = eIdle;
+
+// --------------------------------------------------------------------------
+
+void advanceRxBuffer() {
+
+	gwUINT8 ccrHolder;
+
+	// The buffers are a shared, critical resource, so we have to protect them before we update.
+	GW_ENTER_CRITICAL(ccrHolder);
+
+	gRxRadioBuffer[gRxCurBufferNum].bufferStatus = eBufferStateInUse;
+
+	// marker
+	strcpy(gRxRadioBuffer[gRxCurBufferNum].bufferStorage, "advance");
+
+	// Advance to the next buffer.
+	gRxCurBufferNum++;
+	if (gRxCurBufferNum >= (RX_BUFFER_COUNT))
+		gRxCurBufferNum = 0;
+
+	// Account for the number of used buffers.
+	if (gRxUsedBuffers < RX_BUFFER_COUNT)
+		gRxUsedBuffers++;
+
+	GW_EXIT_CRITICAL(ccrHolder);
+}
+
+// --------------------------------------------------------------------------
+
+BufferCntType lockRxBuffer() {
+
+	BufferCntType result;
+	gwUINT8 ccrHolder;
+
+	// Wait until there is a free buffer.
+	while (gRxRadioBuffer[gRxCurBufferNum].bufferStatus == eBufferStateInUse) {
+		vTaskDelay(1);
+	}
+
+	// The buffers are a shared, critical resource, so we have to protect them before we update.
+	GW_ENTER_CRITICAL(ccrHolder);
+
+	result = gRxCurBufferNum;
+
+	gRxRadioBuffer[result].bufferStatus = eBufferStateInUse;
+
+	// Advance to the next buffer.
+	gRxCurBufferNum++;
+	if (gRxCurBufferNum >= (RX_BUFFER_COUNT))
+		gRxCurBufferNum = 0;
+
+	// Account for the number of used buffers.
+	gRxUsedBuffers++;
+
+	GW_EXIT_CRITICAL(ccrHolder);
+
+	return result;
+}
+
+// --------------------------------------------------------------------------
+
+BufferCntType lockTxBuffer() {
+
+	BufferCntType result;
+	gwUINT8 ccrHolder;
+
+	// Wait until there is a free buffer.
+	gwUINT8 retries = 0;
+	while (gTxRadioBuffer[gTxCurBufferNum].bufferStatus == eBufferStateInUse) {
+		vTaskDelay(1);
+		if (retries++ > 100) {
+			GW_RESET_MCU()
+			;
+		}
+	}
+
+	// The buffers are a shared, critical resource, so we have to protect them before we update.
+	GW_ENTER_CRITICAL(ccrHolder);
+
+	result = gTxCurBufferNum;
+	gTxRadioBuffer[result].bufferStatus = eBufferStateInUse;
+
+	// Advance to the next buffer.
+	gTxCurBufferNum++;
+	if (gTxCurBufferNum >= (TX_BUFFER_COUNT))
+		gTxCurBufferNum = 0;
+
+	// Account for the number of used buffers.
+	gTxUsedBuffers++;
+
+	GW_EXIT_CRITICAL(ccrHolder);
+
+	return result;
+}
 
 //Make sure radio is idle then change channel. If the channel was in read mode notify the reader task waiting on the queue.
 void setRadioChannel(ChannelNumberType channel) {	
@@ -68,13 +167,14 @@ void setRadioChannel(ChannelNumberType channel) {
 		if(readWasCancelled) {
 			//Notify anyone listening on the receive queue that the read was canceled.
 			//xQueueSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
-			xQueueGenericSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portTickType) 0, (portBASE_TYPE) queueSEND_TO_BACK);
+			//xQueueGenericSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portTickType) 0, (portBASE_TYPE) queueSEND_TO_BACK);
+			RELEASE_RX_BUFFER(gRxMsg.bufferNum, ccrHolder);
 		}
 	}
 }
 
 //Make sure the radio is idle then perform Tx.  If the channel was in read mode notify the reader task waiting on the queue.
-void writeRadioTx() {
+void writeRadioTx(BufferCntType inTxBufferNum) {
 	smacErrors_t smacError;
 	gwUINT8 ccrHolder;
 
@@ -98,9 +198,9 @@ void writeRadioTx() {
 	}
 	
 	//TODO Do we really have to do this each time?
-	gTxMsg.txPacketPtr = (txPacket_t *) &(gTxRadioBuffer[0].txPacket);
-	gTxMsg.txPacketPtr->u8DataLength = gTxRadioBuffer[0].bufferSize;
-	gTxMsg.bufferNum = 0;
+	gTxMsg.txPacketPtr = (txPacket_t *) &(gTxRadioBuffer[inTxBufferNum].txPacket);
+	gTxMsg.txPacketPtr->u8DataLength = gTxRadioBuffer[inTxBufferNum].bufferSize;
+	gTxMsg.bufferNum = inTxBufferNum;
 
 	//Request Tx
 	smacError = MCPSDataRequest(gTxMsg.txPacketPtr);
@@ -113,15 +213,17 @@ void writeRadioTx() {
 	
 	GW_EXIT_CRITICAL(ccrHolder);
 	
-//	if(readWasCancelled) {
+	if(readWasCancelled) {
 //		//Notify anyone listening on the receive queue that the read was cancelled.
+		RELEASE_RX_BUFFER(gRxMsg.bufferNum, ccrHolder);
 //		//xQueueSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portBASE_TYPE) 0);
 //		xQueueGenericSend(gRadioReceiveQueue, &gRxMsg.bufferNum, (portTickType) 0, (portBASE_TYPE) queueSEND_TO_BACK);
-//	}
+	}
 }
 
 //Make sure the radio is idle then perform Rx. This method sleeps until an existing Tx is complete.
-void readRadioRx() {	
+void readRadioRx() {
+	BufferCntType lockedBufferNum;
 	smacErrors_t smacError;
 	gwUINT8 ccrHolder;
 
@@ -142,10 +244,11 @@ void readRadioRx() {
 	}
 	
 	//TODO Do we really have to do this each time? Maybe only set rXStatus
-	gRxMsg.rxPacketPtr = (rxPacket_t *) &(gRxRadioBuffer[0].rxPacket);
+	lockedBufferNum = lockRxBuffer();
+	gRxMsg.rxPacketPtr = (rxPacket_t *) &(gRxRadioBuffer[lockedBufferNum].rxPacket);
 	gRxMsg.rxPacketPtr->u8MaxDataLength = RX_BUFFER_SIZE;
 	gRxMsg.rxPacketPtr->rxStatus = rxInitStatus;
-	gRxMsg.bufferNum = 0;
+	gRxMsg.bufferNum = lockedBufferNum;// 0;
 
 	//Perform the actual read and store it in the pointer with no timeout.
 	smacError = MLMERXEnableRequest(gRxMsg.rxPacketPtr, 0);
@@ -216,4 +319,11 @@ void debugReset() {
 
 void debugWatchdogallback(void) {
 	Cpu_SystemReset();
+}
+
+void debugRefreed(BufferCntType inBufferNum) {
+	gwUINT8 ccrHolder;
+	
+	// Any code, so that we have a place to set a breakpoint.
+	RELEASE_TX_BUFFER(inBufferNum, ccrHolder);
 }

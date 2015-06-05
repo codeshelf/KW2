@@ -19,6 +19,7 @@ $Name$
 #include "serial.h"
 #include "string.h"
 #include "Gateway.h"
+#include "radioCommon.h"
 
 xQueueHandle			gGatewayMgmtQueue;
 ControllerStateType		gControllerState;
@@ -27,7 +28,12 @@ xTaskHandle gSerialReceiveTask = NULL;
 extern xQueueHandle	gRadioTransmitQueue;
 
 extern RxRadioBufferStruct gRxRadioBuffer[RX_BUFFER_COUNT];
+extern BufferCntType gRxCurBufferNum;
+extern BufferCntType gRxUsedBuffers;
+
 extern TxRadioBufferStruct gTxRadioBuffer[TX_BUFFER_COUNT];
+extern BufferCntType 		gTxCurBufferNum;
+extern BufferCntType 		gTxUsedBuffers;
 
 // --------------------------------------------------------------------------
 
@@ -36,6 +42,7 @@ void serialReceiveTask(void *pvParameters ) {
 	ECommandGroupIDType		cmdID;
 	ENetMgmtSubCmdIDType	subCmdID;
 	BufferCntType			txBufferNum = 0;
+	gwUINT8 ccrHolder;
 	
 	// Setup the USB interface.
 	Gateway_Init();
@@ -74,6 +81,8 @@ void serialReceiveTask(void *pvParameters ) {
 	createOutboundNetSetup();
 	
 	for ( ;; ) {
+		
+		// FIXME - Huffa. This txBufferNum looks wrong? Needs to be allocated by lockTxBuffer()
 		while (gTxRadioBuffer[txBufferNum].bufferStatus == eBufferStateInUse) {
 			vTaskDelay(0);
 		}
@@ -99,19 +108,19 @@ void serialReceiveTask(void *pvParameters ) {
 					case eNetMgmtSubCmdNetSetup:
 						processNetSetupCommand(txBufferNum);
 						// We don't ever want to broadcast net-setup, so continue.
-						gTxRadioBuffer[txBufferNum].bufferStatus = eBufferStateFree;
+						RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
 						continue;
 						break;
 						
 					case eNetMgmtSubCmdNetIntfTest:
 						processNetIntfTestCommand(txBufferNum);
 						// We don't ever want to broadcast intf-test, so continue.
-						gTxRadioBuffer[txBufferNum].bufferStatus = eBufferStateFree;
+						RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
 						continue;
 						break;
 						
 					case eNetMgmtSubCmdInvalid:
-						gTxRadioBuffer[txBufferNum].bufferStatus = eBufferStateFree;
+						RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
 						continue;
 				}
 			}
@@ -121,7 +130,7 @@ void serialReceiveTask(void *pvParameters ) {
 			// Now send the buffer to the transmit queue.
 			if (xQueueSend(gRadioTransmitQueue, &txBufferNum, (portTickType) 0) != pdTRUE) {
 				// We couldn't queue the buffer, so release it.
-				gTxRadioBuffer[txBufferNum].bufferStatus = eBufferStateFree;
+				RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
 			}
 
 		}

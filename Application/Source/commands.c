@@ -265,7 +265,7 @@ void createOutboundNetSetup() {
 	BufferCntType txBufferNum;
 	gwUINT8 ccrHolder;
 
-	txBufferNum = 0;//lockTXBuffer();
+	txBufferNum = lockTxBuffer();
 
 	//vTaskSuspend(gRadioReceiveTask);
 
@@ -355,7 +355,7 @@ void processNetIntfTestCommand(BufferCntType inTXBufferNum) {
 	 * the only safe buffer available to us comes from the TX buffer.
 	 */
 
-	txBufferNum = 0;//lockTXBuffer();
+	txBufferNum = lockTxBuffer();
 
 	//vTaskSuspend(gRadioReceiveTask);
 
@@ -417,7 +417,7 @@ void processNetCheckOutboundCommand(BufferCntType inTXBufferNum) {
 	if (gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_TYPE] == eCmdAssocREQ) {
 		gwUINT8 ccrHolder;
 
-		txBufferNum = 0;//lockTXBuffer();
+		txBufferNum = lockTxBuffer();
 
 		// This command gets setup in the TX buffers, because it only gets sent back to the controller via
 		// the serial interface.  This command never comes from the air.  It's created by the gateway (dongle)

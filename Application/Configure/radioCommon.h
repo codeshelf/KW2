@@ -1,6 +1,6 @@
 /*
 	FlyWeight
-	© Copyright 2005, 2006 Jeffrey B. Williams
+	ï¿½ Copyright 2005, 2006 Jeffrey B. Williams
 	All rights reserved
 
 	$Id$
@@ -37,12 +37,12 @@
 #define REMOTE_MGMT_QUEUE_SIZE	10
 #define TX_ACK_QUEUE_SIZE		1
 
-#define RX_QUEUE_SIZE			1
-#define RX_BUFFER_COUNT			1
+#define RX_QUEUE_SIZE			5
+#define RX_BUFFER_COUNT			5
 #define RX_BUFFER_SIZE			MAX_PACKET_SIZE
 
-#define TX_QUEUE_SIZE			1
-#define TX_BUFFER_COUNT			1
+#define TX_QUEUE_SIZE			5
+#define TX_BUFFER_COUNT			5
 #define TX_BUFFER_SIZE			MAX_PACKET_SIZE
 
 #define INVALID_RX_BUFFER		99
@@ -72,14 +72,34 @@
 #define SCROLL_SECONDARY_SOURCE			gTmrSecondaryCnt0Input_c
 #define SCROLL_CLK_RATE					0xffff
 
+#define RELEASE_RX_BUFFER(rxBufferNum, ccrHolder)	\
+	GW_ENTER_CRITICAL(ccrHolder); \
+	if (gRxRadioBuffer[rxBufferNum].bufferStatus != eBufferStateFree) { \
+		gRxRadioBuffer[rxBufferNum].bufferStatus = eBufferStateFree; \
+	} else if (GW_DEBUG) { \
+		debugRefreed(rxBufferNum); \
+	} \
+	gRxUsedBuffers--; \
+	GW_EXIT_CRITICAL(ccrHolder);
+
+#define RELEASE_TX_BUFFER(txBufferNum, ccrHolder)	\
+	GW_ENTER_CRITICAL(ccrHolder); \
+	if (gTxRadioBuffer[txBufferNum].bufferStatus != eBufferStateFree) { \
+		gTxRadioBuffer[txBufferNum].bufferStatus = eBufferStateFree; \
+	} else if (GW_DEBUG) { \
+		debugRefreed(txBufferNum); \
+	} \
+	gTxUsedBuffers--; \
+	GW_EXIT_CRITICAL(ccrHolder);
+
+// --------------------------------------------------------------------------
+// Typedefs
+
 typedef enum {
 	eIdle,
 	eRx,
 	eTx,
 } RadioStateEnum;
-
-// --------------------------------------------------------------------------
-// Typedefs
 
 typedef gwUINT8				BufferCntType;
 typedef gwUINT8				BufferOffsetType;
@@ -190,17 +210,17 @@ typedef gwUINT8 ChannelNumberType;
 // --------------------------------------------------------------------------
 // Function prototypes
 
-//void advanceRxBuffer(void);
-//BufferCntType lockRxBuffer(void);
-//BufferCntType lockTxBuffer(void);
+void advanceRxBuffer(void);
+BufferCntType lockRxBuffer(void);
+BufferCntType lockTxBuffer(void);
 void setupWatchdog(void);
 
 void setRadioChannel(ChannelNumberType channel);
 void readRadioRx();
-void writeRadioTx();
+void writeRadioTx(BufferCntType inTxBufferNum);
 
 void debugReset();
-//void debugRefreed(BufferCntType inBufferNum);
+void debugRefreed(BufferCntType inBufferNum);
 void debugCrmCallback(void);
 void setStatusLed(uint8_t red, uint8_t green, uint8_t blue);
 
