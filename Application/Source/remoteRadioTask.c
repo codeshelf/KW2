@@ -82,7 +82,7 @@ void radioReceiveTask(void *pvParameters) {
 			} else {
 				RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 			}
-
+			vTaskDelay(0);
 		}
 	}
 	/* Will only get here if the queue could not be created. */
@@ -117,16 +117,14 @@ void radioTransmitTask(void *pvParameters) {
 					writeRadioTx(txBufferNum);
 					
 					while (gRadioState == eTx) {
-						vTaskDelay(0);
 					}
 		
 					if (gTxMsg.txStatus == txFailureStatus_c) {
 						shouldRetry = TRUE;
 						continue;
 					}
-					
-					readRadioRx();
 
+					readRadioRx();
 #ifndef GATEWAY
 					if (txedAckId != 0 && txCommandType != eCommandNetMgmt && txCommandType != eCommandAssoc) {
 						shouldRetry = TRUE;
@@ -139,12 +137,11 @@ void radioTransmitTask(void *pvParameters) {
 						}
 
 						//If we fail to receive an ACK after enough retries to exceed 500ms then break out of the loop.
-						if (shouldRetry && ((xTaskGetTickCount() - retryTickCount) > 500)) {
+						if (shouldRetry && ((xTaskGetTickCount() - retryTickCount) > 5000)) {
 							shouldRetry = FALSE;
 						}
 					}
 #endif					
-					vTaskDelay(1);
 				} while (shouldRetry);
 				RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
 			}

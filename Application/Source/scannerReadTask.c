@@ -25,6 +25,7 @@ ScanStringLenType gScanStringPos;
 char mac[] = "000652091481";
 
 extern ELocalStatusType gLocalDeviceState;
+extern RadioStateEnum gRadioState;
 
 // --------------------------------------------------------------------------
 
@@ -324,7 +325,13 @@ void scannerReadTask(void *pvParameters) {
 		if (strlen(gScanString) > 0) {
 			BufferCntType txBufferNum = lockTxBuffer();
 			createScanCommand(txBufferNum, &gScanString, gScanStringPos);
-			transmitPacket(txBufferNum);
+			//transmitPacket(txBufferNum);
+			if (transmitPacket(txBufferNum)) {
+				while (gRadioState == eTx) {
+					vTaskDelay(1);
+				}
+			}
+			
 		}
 
 	}

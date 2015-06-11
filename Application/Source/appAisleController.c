@@ -26,6 +26,7 @@
 #include "TransceiverDrv.h"
 #include "TransceiverReg.h"
 #include "globals.h"
+#include "radioCommon.h"
 
 // --------------------------------------------------------------------------
 // Globals
@@ -57,6 +58,12 @@ void startApplication(void) {
 	MC1324xDrv_IndirectAccessSPIWrite(ANT_PAD_CTRL, cANT_PAD_CTRL_ANTX_CTRLMODE + cANT_PAD_CTRL_ANTX_EN);
 	MC1324xDrv_IndirectAccessSPIWrite(ANT_AGC_CTRL, 0x40 + 0x02);
 //	MLMEFEGainAdjust(15);
+	
+	// Random connection start delay based on guid
+	uint32_t seed = 0;
+	seed = (uint32_t) (guid[6] << 16) | (guid[7] & 0xff);
+	srand(seed);
+	vTaskDelay(rand() % RAND_BACK_OFF_LIMIT);
 
 	gLocalDeviceState = eLocalStateStarted;
 

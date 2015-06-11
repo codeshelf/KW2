@@ -72,6 +72,12 @@
 #define SCROLL_SECONDARY_SOURCE			gTmrSecondaryCnt0Input_c
 #define SCROLL_CLK_RATE					0xffff
 
+#define TOTAL_NUM_CHANNELS				14
+#define CON_ATTEMPTS_BEFORE_BACKOFF		3 * TOTAL_NUM_CHANNELS	// This should be a multiple of TOTAL_NUM_CHANNELS
+#define SLOW_CON_ATTEMPTS				20 *  14				// This should be a multiple of TOTAL_NUM_CHANNELS
+#define SLOW_CON_SLEEP_MS				50
+#define RAND_BACK_OFF_LIMIT				300
+
 #define RELEASE_RX_BUFFER(rxBufferNum, ccrHolder)	\
 	GW_ENTER_CRITICAL(ccrHolder); \
 	if (gRxRadioBuffer[rxBufferNum].bufferStatus != eBufferStateFree) { \
