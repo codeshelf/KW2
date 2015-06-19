@@ -31,12 +31,18 @@ NetworkIDType				gMyNetworkID = BROADCAST_NET_NUM;
 portTickType				gSleepWaitMillis;
 BufferStorageType			gLastTxAckId = 1;
 
-extern RxRadioBufferStruct	gRxRadioBuffer[RX_BUFFER_COUNT];
-extern TxRadioBufferStruct	gTxRadioBuffer[TX_BUFFER_COUNT];
 extern xQueueHandle 		gRadioTransmitQueue;
 extern xQueueHandle 		gRadioReceiveQueue;
 extern ControllerStateType 	gControllerState;
 extern ELocalStatusType		gLocalDeviceState;
+
+extern RxRadioBufferStruct	gRxRadioBuffer[RX_BUFFER_COUNT];
+extern BufferCntType 		gRxCurBufferNum;
+extern BufferCntType		gRxUsedBuffers;
+
+extern TxRadioBufferStruct	gTxRadioBuffer[TX_BUFFER_COUNT];
+extern BufferCntType 		gTxCurBufferNum;
+extern BufferCntType 		gTxUsedBuffers;
 
 
 // --------------------------------------------------------------------------
@@ -288,7 +294,8 @@ void createOutboundNetSetup() {
 	gTxRadioBuffer[txBufferNum].bufferSize = CMDPOS_NETM_SETCMD_CHANNEL + 1;
 
 	serialTransmitFrame(UART0_BASE_PTR, (gwUINT8*) (&gTxRadioBuffer[txBufferNum].bufferStorage), gTxRadioBuffer[txBufferNum].bufferSize);
-
+	RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
+	
 //	vTaskResume(gRadioReceiveTask);
 
 }

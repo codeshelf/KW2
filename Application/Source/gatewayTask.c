@@ -82,15 +82,8 @@ void serialReceiveTask(void *pvParameters ) {
 	
 	for ( ;; ) {
 		
-		// FIXME - Huffa. This txBufferNum looks wrong? Needs to be allocated by lockTxBuffer()
-		while (gTxRadioBuffer[txBufferNum].bufferStatus == eBufferStateInUse) {
-			vTaskDelay(0);
-		}
-//		serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) ("IN"),  2);
-		
+		txBufferNum = lockTxBuffer();
 		gTxRadioBuffer[txBufferNum].bufferSize = serialReceiveFrame(UART0_BASE_PTR, gTxRadioBuffer[txBufferNum].bufferStorage, TX_BUFFER_SIZE);
-
-//		serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) ("OU"),  2);
 
 		GW_WATCHDOG_RESET;
 		
@@ -122,17 +115,15 @@ void serialReceiveTask(void *pvParameters ) {
 					case eNetMgmtSubCmdInvalid:
 						RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
 						continue;
+						break;
 				}
 			}
-
-//			serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) ("SN"),  2);
 
 			// Now send the buffer to the transmit queue.
 			if (xQueueSend(gRadioTransmitQueue, &txBufferNum, (portTickType) 0) != pdTRUE) {
 				// We couldn't queue the buffer, so release it.
 				RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
 			}
-
 		}
 	}
 

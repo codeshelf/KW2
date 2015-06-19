@@ -34,21 +34,23 @@ extern ELocalStatusType		gLocalDeviceState;
 
 void processRxPacket(BufferCntType inRxBufferNum) {
 
-	ECommandGroupIDType		cmdID;
-	ENetMgmtSubCmdIDType	subCmdID;
-
-  	cmdID = getCommandID(gRxRadioBuffer[inRxBufferNum].bufferStorage);
-	if (cmdID == eCommandAssoc) {
-		subCmdID = getNetMgmtSubCommand(gRxRadioBuffer[inRxBufferNum].bufferStorage);
-		switch (subCmdID) {
-			case eCmdAssocACK:
-				serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) ("AK"),  2);
-				break;
-
-			case eCmdAssocInvalid:
-				break;
-		}
-	}
+	gwUINT8	ccrHolder;
+//	ECommandGroupIDType		cmdID;
+//	ENetMgmtSubCmdIDType	subCmdID;
+//
+//  	cmdID = getCommandID(gRxRadioBuffer[inRxBufferNum].bufferStorage);
+//	if (cmdID == eCommandAssoc) {
+//		subCmdID = getNetMgmtSubCommand(gRxRadioBuffer[inRxBufferNum].bufferStorage);
+//		switch (subCmdID) {
+//			case eCmdAssocACK:
+//				serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) ("AK"),  2);
+//				break;
+//
+//			case eCmdAssocInvalid:
+//				break;
+//		}
+//	}
 //	serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) ("PC"),  2);
 	serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) (&gRxRadioBuffer[inRxBufferNum].bufferStorage),  gRxRadioBuffer[inRxBufferNum].bufferSize);
+	RELEASE_RX_BUFFER(inRxBufferNum, ccrHolder);
 }

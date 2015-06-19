@@ -325,5 +325,5 @@ void debugRefreed(BufferCntType inBufferNum) {
 	gwUINT8 ccrHolder;
 	
 	// Any code, so that we have a place to set a breakpoint.
-	RELEASE_TX_BUFFER(inBufferNum, ccrHolder);
+	//RELEASE_TX_BUFFER(inBufferNum, ccrHolder);
 }
