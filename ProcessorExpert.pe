@@ -2,9 +2,9 @@
 <PEproject>
   <Header>
     <Name>ProcessorExpert</Name>
-    <SavedBy>jeffw</SavedBy>
-    <ModificationStamp>523</ModificationStamp>
-    <Date>2015-06-18</Date>
+    <SavedBy>andrewhuff</SavedBy>
+    <ModificationStamp>542</ModificationStamp>
+    <Date>2015-06-23</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
   </Header>
@@ -28,7 +28,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>367</ProjectCompNumb>
+    <ProjectCompNumb>370</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>

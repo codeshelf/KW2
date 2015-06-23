@@ -31,7 +31,7 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
 								</option>
 								<option id="org.eclipse.cdt.cross.arm.gnu.assembler.option.preprocessor.def.1670986758" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.assembler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=3.0.2"/>
+									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=3.1"/>
 								</option>
 								<inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.661146421" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input"/>
 							</tool>
@@ -233,14 +233,14 @@
 							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.other.1082754604" name="Other debugging flags" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.other" value="-gstrict-dwarf" valueType="string"/>
 							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.addtools.createflash.713905941" name="Create Flash Image" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.addtools.createflash" value="true" valueType="boolean"/>
 							<targetPlatform id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.platform.debug.1608598168" isAbstract="false" name="Windows Platform" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.platform.debug"/>
-							<builder buildPath="${ProjDirPath}/CHEController" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.CWDLocator" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.builder.debug.1906291354" keepEnvironmentInBuildfile="false" name="ARM Ltd Windows GNU Make builder" parallelBuildOn="true" parallelBuildWorkspaceOn="true" parallelizationNumber="optimal" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.builder.debug"/>
+							<builder buildPath="${ProjDirPath}/CHEController" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.CWDLocator" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.builder.debug.1906291354" keepEnvironmentInBuildfile="false" name="ARM Ltd Windows GNU Make builder" parallelBuildOn="true" parallelBuildWorkspaceOn="false" parallelizationNumber="optimal" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.builder.debug"/>
 							<tool errorParsers="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;org.eclipse.cdt.core.GASErrorParser" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.47286415" name="ARM Ltd Windows GCC Assembler" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug">
 								<option id="org.eclipse.cdt.cross.arm.gnu.assembler.option.misc.enable.lstfilename.1820294925" name="Enable Assembler Listing" superClass="org.eclipse.cdt.cross.arm.gnu.assembler.option.misc.enable.lstfilename" value="false" valueType="boolean"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.assembler.option.include.paths.1158614641" name="Include paths (-I)" superClass="org.eclipse.cdt.cross.arm.gnu.assembler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
 								</option>
 								<option id="org.eclipse.cdt.cross.arm.gnu.assembler.option.preprocessor.def.712905394" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.assembler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=3.0.2"/>
+									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=3.1"/>
 									<listOptionValue builtIn="false" value="RADIO_PROTOCOL_VERSION=254"/>
 								</option>
 								<inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.22946048" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input"/>
@@ -455,7 +455,7 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
 								</option>
 								<option id="org.eclipse.cdt.cross.arm.gnu.assembler.option.preprocessor.def.1063617456" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.assembler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=3.0.2"/>
+									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=3.1"/>
 									<listOptionValue builtIn="false" value="RADIO_PROTOCOL_VERSION=254"/>
 								</option>
 								<inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.547201385" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input"/>
@@ -856,6 +856,7 @@
 		<configuration configurationName="AisleController">
 			<resource resourceType="PROJECT" workspacePath="/AisleController"/>
 		</configuration>
+		<configuration configurationName="Gateway"/>
 		<configuration configurationName="CHEController"/>
 		<configuration configurationName="Tuner">
 			<resource resourceType="PROJECT" workspacePath="/KW2"/>
@@ -865,22 +866,22 @@
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.1120919807;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.609424058">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.47286415;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.22946048">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.47286415;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.22946048">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.1120919807;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.609424058">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.207836675;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.387070637">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.1013882795;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.1152003247">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.1561457137;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.254819940">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.840787674;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.547201385">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.1561457137;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.254819940">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.1013882795;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.1152003247">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.576658235;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.1498190689">
