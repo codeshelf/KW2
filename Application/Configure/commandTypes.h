@@ -48,10 +48,12 @@
 #define PCKPOS_DST_ADDR 		PCKPOS_SRC_ADDR + 1
 #define PCKPOS_ACK_ID			PCKPOS_DST_ADDR + 1
 
-#define PCKPOS_ACK_DATA			PCKPOS_ACK_ID + 1
+//#define PCKPOS_ACK_DATA			PCKPOS_ACK_ID + 1
 
 #define CMDPOS_CMD_ID			PCKPOS_ACK_ID + 1
 #define CMDPOS_ENDPOINT			CMDPOS_CMD_ID
+
+#define PCKPOS_ACK_DATA			CMDPOS_ENDPOINT + 1
 #define CMDPOS_STARTOFCMD		CMDPOS_ENDPOINT + 1
 
 // Network Mgmt
@@ -80,7 +82,7 @@
 #define CMDPOS_ASSOCACK_STATE	CMDPOS_ASSOC_GUID + 8
 #define CMDPOS_ASSOCACK_TIME	CMDPOS_ASSOCACK_STATE + 1
 #define CMDPOS_ASSOCCHK_BATT	CMDPOS_ASSOC_GUID + 8
-
+#define CMDPOS_ASSOCCHK_LRC		CMDPOS_ASSOCCHK_BATT + 1
 
 // Info Command
 #define CMDPOS_INFO_SUBCMD		CMDPOS_STARTOFCMD
@@ -95,8 +97,10 @@
 // Message Command
 #define CMDPOS_MESSAGE				CMDPOS_CONTROL_DATA
 
-// Single line message command
+// Ack Command
+#define CMDPOS_ACK_NUM				CMDPOS_CONTROL_DATA
 
+// Single line message command
 #define CMDPOS_MESSAGE_FONT			CMDPOS_CONTROL_DATA
 #define CMDPOS_MESSAGE_POSX			CMDPOS_MESSAGE_FONT + 1
 #define CMDPOS_MESSAGE_POSY			CMDPOS_MESSAGE_POSX + 2
@@ -170,9 +174,7 @@
  * 		-> ControllerStateRun - After initialization.
  */
 typedef enum {
-	eControllerStateUnknown,
-	eControllerStateInit,
-	eControllerStateRun
+	eControllerStateUnknown, eControllerStateInit, eControllerStateRun
 } ControllerStateType;
 
 /*
@@ -191,11 +193,7 @@ typedef enum {
  * 		-> RemoteStateRun - After receiving an assign command.
  */
 typedef enum {
-	eRemoteStateUnknown,
-	eRemoteStateAssocReqRcvd,
-	eRemoteStateQuerySent,
-	eRemoteStateRespRcvd,
-	eRemoteStateRun
+	eRemoteStateUnknown, eRemoteStateAssocReqRcvd, eRemoteStateQuerySent, eRemoteStateRespRcvd, eRemoteStateRun
 } ERemoteStatusType;
 
 typedef enum {
@@ -208,6 +206,14 @@ typedef enum {
 	eLocalStateRespSent,
 	eLocalStateRun
 } ELocalStatusType;
+
+typedef enum {
+	eResponseTimeout = 1,
+	eTxBufferFullTimeout = 2,
+	eRxBufferFullTimeout = 3,
+	eSmacError = 4,
+	eOtherError = 5
+} ELocalRestartCauseType;
 
 /*
  * Network  commands
@@ -268,24 +274,15 @@ typedef enum {
 } ECommandGroupIDType;
 
 typedef enum {
-	eNetMgmtSubCmdInvalid = -1,
-	eNetMgmtSubCmdNetSetup = 0,
-	eNetMgmtSubCmdNetCheck = 1,
-	eNetMgmtSubCmdNetIntfTest = 2
+	eNetMgmtSubCmdInvalid = -1, eNetMgmtSubCmdNetSetup = 0, eNetMgmtSubCmdNetCheck = 1, eNetMgmtSubCmdNetIntfTest = 2
 } ENetMgmtSubCmdIDType;
 
 typedef enum {
-	eCmdAssocInvalid = -1,
-	eCmdAssocREQ = 0,
-	eCmdAssocRESP = 1,
-	eCmdAssocCHECK = 2,
-	eCmdAssocACK = 3
+	eCmdAssocInvalid = -1, eCmdAssocREQ = 0, eCmdAssocRESP = 1, eCmdAssocCHECK = 2, eCmdAssocACK = 3
 } ECmdAssocType;
 
 typedef enum {
-	eCmdInfoInvalid = -1,
-	eCmdInfoQuery = 0,
-	eCmdInfoResponse = 1
+	eCmdInfoInvalid = -1, eCmdInfoQuery = 0, eCmdInfoResponse = 1
 } EInfoSubCmdIDType;
 
 typedef enum {
@@ -297,7 +294,10 @@ typedef enum {
 	eControlSubCmdClearPosController = 4,
 	eControlSubCmdButton = 5,
 	eControlSubCmdSingleLineMessage = 6,
-	eControlSubCmdClearDisplay = 7
+	eControlSubCmdClearDisplay = 7,
+	eControlSubCmdPosconSetup = 8,
+	eControlSubCmdPosconBroadcast = 9,
+	eControlSubCmdAck = 10
 //	eControlSubCmdEndpointAdj = 1,
 //	eControlSubCmdMotor = 2,
 //	eControlSubCmdButton = 3,
@@ -329,11 +329,7 @@ typedef enum {
 //} ESDCardControlDeviceType;
 
 typedef enum {
-	eLedEffectInvalid = -1,
-	eLedEffectSolid = 0,
-	eLedEffectFlash = 1,
-	eLedEffectError = 2,
-	eLedEffectMotel = 3
+	eLedEffectInvalid = -1, eLedEffectSolid = 0, eLedEffectFlash = 1, eLedEffectError = 2, eLedEffectMotel = 3
 } ESDCardControlDeviceType;
 
 // --------------------------------------------------------------------------

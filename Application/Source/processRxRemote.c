@@ -41,7 +41,7 @@ extern RadioStateEnum gRadioState;
 
 // --------------------------------------------------------------------------
 
-void processRxPacket(BufferCntType inRxBufferNum) {
+void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 
 	ECommandGroupIDType cmdID;
 	NetAddrType cmdDstAddr;
@@ -71,7 +71,6 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 
 			// Prepare to handle packet ACK.
 			ackId = getAckId(gRxRadioBuffer[inRxBufferNum].bufferStorage);
-			memset(ackData, 0, ACK_DATA_BYTES);
 
 				switch (cmdID) {
 					case eCommandNetMgmt:
@@ -132,6 +131,10 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 			
 									case eControlSubCmdScan:
 										break;
+										
+									case eControlSubCmdAck:
+										processAckSubCommand(inRxBufferNum);
+										break;
 			
 									case eControlSubCmdMessage:
 										processDisplayMsgSubCommand(inRxBufferNum);
@@ -167,7 +170,9 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 							
 							// Send an ACK if necessary.
 							if (ackId != 0 /*&&  ackId != gLastAckId*/) {
+								memset(ackData, 0, ACK_DATA_BYTES);
 								txBufferNum = lockTxBuffer();
+								ackData[0] = lqi;
 								createAckPacket(txBufferNum, ackId, ackData);
 								
 								if (transmitPacket(txBufferNum)) {

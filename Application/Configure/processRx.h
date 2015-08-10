@@ -12,6 +12,6 @@
 
 #include "radioCommon.h"
 
-void processRxPacket(BufferCntType inRxBufferNum);
+void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi);
 
 #endif // PROCESS_RX_H

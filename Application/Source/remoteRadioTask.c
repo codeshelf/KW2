@@ -13,9 +13,11 @@
 #include "commands.h"
 #include "radioCommon.h"
 #include "Wait.h"
+#include "globals.h"
 
 // --------------------------------------------------------------------------
 // Global variables.
+__attribute__ ((section(".m_data_20000000"))) byte restartCause;
 
 xTaskHandle gRadioReceiveTask = NULL;
 xTaskHandle gRadioTransmitTask = NULL;
@@ -75,7 +77,7 @@ void radioReceiveTask(void *pvParameters) {
 				if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c) {
 					// Process the packet we just received.
 					gRxRadioBuffer[rxBufferNum].bufferSize = gRxMsg.rxPacketPtr->u8DataLength;
-					processRxPacket(rxBufferNum);
+					processRxPacket(rxBufferNum, gRxMsg.rxPacketPtr->lqi);
 				} else {
 					RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 				}
@@ -97,6 +99,7 @@ void radioTransmitTask(void *pvParameters) {
 	portTickType retryTickCount;
 	gwUINT8 ackId;
 	gwUINT8 ccrHolder;
+	gwBoolean isAck = FALSE;
 
 	if (gRadioTransmitQueue && gTxAckQueue) {
 		for (;;) {
@@ -108,7 +111,7 @@ void radioTransmitTask(void *pvParameters) {
 				retryTickCount = xTaskGetTickCount();
 				
 				gwUINT8 txedAckId = getAckId(gTxRadioBuffer[txBufferNum].bufferStorage);
-				ECommandGroupIDType txCommandType = getCommandID(gTxRadioBuffer[txBufferNum].bufferStorage);
+				ECommandGroupIDType txCommandType = getCommandID(gTxRadioBuffer[txBufferNum].bufferStorage); 
 				
 				do {
 					shouldRetry = FALSE;
@@ -126,7 +129,7 @@ void radioTransmitTask(void *pvParameters) {
 
 					readRadioRx();
 #ifndef GATEWAY
-					if (txedAckId != 0 && txCommandType != eCommandNetMgmt && txCommandType != eCommandAssoc) {
+					if (txedAckId != 0 && txCommandType != eCommandNetMgmt && txCommandType != eCommandAssoc && !isAck) {
 						shouldRetry = TRUE;
 						
 						//Wait up to 50ms for an ACK

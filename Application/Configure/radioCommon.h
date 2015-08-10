@@ -76,7 +76,7 @@
 #define CON_ATTEMPTS_BEFORE_BACKOFF		3 * TOTAL_NUM_CHANNELS	// This should be a multiple of TOTAL_NUM_CHANNELS
 #define SLOW_CON_ATTEMPTS				20 *  14				// This should be a multiple of TOTAL_NUM_CHANNELS
 #define SLOW_CON_SLEEP_MS				50
-#define RAND_BACK_OFF_LIMIT				300
+#define RAND_BACK_OFF_LIMIT				100
 
 #define RELEASE_RX_BUFFER(rxBufferNum, ccrHolder)	\
 	GW_ENTER_CRITICAL(ccrHolder); \

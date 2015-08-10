@@ -33,6 +33,7 @@ BufferStorageType			gLastTxAckId = 1;
 
 extern xQueueHandle 		gRadioTransmitQueue;
 extern xQueueHandle 		gRadioReceiveQueue;
+extern xQueueHandle			gTxAckQueue;
 extern ControllerStateType 	gControllerState;
 extern ELocalStatusType		gLocalDeviceState;
 
@@ -181,7 +182,7 @@ void createPacket(BufferCntType inTXBufferNum, ECommandGroupIDType inCmdID, Netw
 		NetAddrType inDestAddr) {
 
 	// First clear the packet header.
-	memset((void *) gTxRadioBuffer[inTXBufferNum].bufferStorage, 0, CMDPOS_CMD_ID);
+	memset((void *) gTxRadioBuffer[inTXBufferNum].bufferStorage, 0, CMDPOS_CMD_ID + 1);
 
 	// Write the packet header.
 	// (See the comments at the top of commandTypes.h.)
@@ -192,7 +193,7 @@ void createPacket(BufferCntType inTXBufferNum, ECommandGroupIDType inCmdID, Netw
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[PCKPOS_ACK_ID] = 0;
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_CMD_ID] = (inCmdID << SHIFTBITS_CMD_ID);
 
-	gTxRadioBuffer[inTXBufferNum].bufferSize += 4;
+	gTxRadioBuffer[inTXBufferNum].bufferSize += 5;
 }
 
 // --------------------------------------------------------------------------
@@ -251,7 +252,10 @@ void createAssocCheckCommand(BufferCntType inTXBufferNum) {
 	}
 
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_BATT] = batteryLevel;
-	gTxRadioBuffer[inTXBufferNum].bufferSize = CMDPOS_ASSOCCHK_BATT + 1;
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_LRC] = restartCause;
+	gTxRadioBuffer[inTXBufferNum].bufferSize = CMDPOS_ASSOCCHK_LRC + 1;
+	
+	restartCause = 0;
 }
 // --------------------------------------------------------------------------
 
@@ -496,6 +500,17 @@ void processAssocAckCommand(BufferCntType inRXBufferNum) {
 	//xTaskSetTickCount(gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOCACK_TIME)]);
 }
 
+
+// --------------------------------------------------------------------------
+
+void processAckSubCommand(BufferCntType inRxBufferNum) {
+	AckIDType ackId;
+	
+	ackId = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ACK_NUM];
+	
+	if (xQueueSend(gTxAckQueue, &ackId, (portTickType) 0)) {
+	}	
+}
 
 // --------------------------------------------------------------------------
 

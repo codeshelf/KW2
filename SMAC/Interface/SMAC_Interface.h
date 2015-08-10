@@ -84,6 +84,7 @@ typedef enum rxStatus_tag
 
 typedef struct rxPacket_tag
 {
+  uint8_t 	 lqi;
   uint8_t    u8MaxDataLength;
   rxStatus_t rxStatus;
   uint8_t    u8DataLength;
