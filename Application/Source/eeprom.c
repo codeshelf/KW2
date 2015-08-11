@@ -176,3 +176,7 @@ void writeTuning(uint8_t* dataPtr) {
 void readTuning(uint8_t* dataPtr) {
 	readEepromData((uint16_t)EEPROM_TUNING_ADDR, dataPtr, (uint8_t)EEPROM_TUNING_LEN);
 }
+
+void flushLedBuffers() {
+	
+}

@@ -228,7 +228,7 @@ void __thumb_startup(void)
 
 		if (__S_romp != 0L)
 
-			__copy_rom_sections_to_ram();
+			//__copy_rom_sections_to_ram();
 
 #endif
 

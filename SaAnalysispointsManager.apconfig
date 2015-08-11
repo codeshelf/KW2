@@ -1,6 +1,6 @@
 <Analysispoints>
 	<Name>AnalysispointsManager</Name>
-	<ProjectPath>C:/Users/jeffw/workspace/KW2.3.1-test/SaAnalysispointsManager.apconfig</ProjectPath>
+	<ProjectPath>C:/Users/andrewhuff/Documents/KW2/SaAnalysispointsManager.apconfig</ProjectPath>
 	<MaxNumberOfCores>1</MaxNumberOfCores>
 	<Comments>Analysispoints Manager</Comments>
 	<IgnoreAll>false</IgnoreAll>

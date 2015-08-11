@@ -27,6 +27,8 @@ BufferCntType 		gTxUsedBuffers = 0;
 ERxMessageHolderType gRxMsg;
 ETxMessageHolderType gTxMsg;
 
+gwUINT8 lastLQI;
+
 RadioStateEnum gRadioState = eIdle;
 
 // --------------------------------------------------------------------------
@@ -99,7 +101,7 @@ BufferCntType lockTxBuffer() {
 	while (gTxRadioBuffer[gTxCurBufferNum].bufferStatus == eBufferStateInUse) {
 		vTaskDelay(1);
 		if (retries++ > 100) {
-			GW_RESET_MCU()
+			GW_RESET_MCU(eTxBufferFullTimeout)
 			;
 		}
 	}
@@ -151,7 +153,7 @@ void setRadioChannel(ChannelNumberType channel) {
 			readWasCancelled = TRUE;
 			smacError = MLMERXDisableRequest();
 			if (smacError != gErrorNoError_c){
-				GW_RESET_MCU()
+				GW_RESET_MCU(eSmacError)
 			}
 			gRadioState = eIdle;
 		}
@@ -159,7 +161,7 @@ void setRadioChannel(ChannelNumberType channel) {
 		//State is now idle, change the channel
 		smacError = MLMESetChannelRequest(channel);
 		if (smacError != gErrorNoError_c) {
-			GW_RESET_MCU()
+			GW_RESET_MCU(eSmacError)
 		}
 
 		GW_EXIT_CRITICAL(ccrHolder);
@@ -193,7 +195,7 @@ void writeRadioTx(BufferCntType inTxBufferNum) {
 		readWasCancelled = TRUE;
 		smacError = MLMERXDisableRequest();
 		if (smacError != gErrorNoError_c){
-			GW_RESET_MCU()
+			GW_RESET_MCU(eSmacError)
 		}
 	}
 	
@@ -205,7 +207,7 @@ void writeRadioTx(BufferCntType inTxBufferNum) {
 	//Request Tx
 	smacError = MCPSDataRequest(gTxMsg.txPacketPtr);
 	if (smacError != gErrorNoError_c) {
-		GW_RESET_MCU()
+		GW_RESET_MCU(eSmacError)
 	}
 	gRadioState = eTx;
 	
@@ -253,8 +255,14 @@ void readRadioRx() {
 	//Perform the actual read and store it in the pointer with no timeout.
 	smacError = MLMERXEnableRequest(gRxMsg.rxPacketPtr, 0);
 	if (smacError != gErrorNoError_c){
-		GW_RESET_MCU()
+		GW_RESET_MCU(eSmacError)
 	}
+	
+	smacError = MLMELinkQuality(&(gRxMsg.rxPacketPtr->lqi));
+	if (smacError != gErrorNoError_c){
+		GW_RESET_MCU(eSmacError)
+	}
+	
 	gRadioState = eRx;
 	
 //	serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) ("RX"),  2);

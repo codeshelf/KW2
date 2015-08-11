@@ -13,15 +13,25 @@
 #include "Critical.h"
 #include "SMAC_Interface.h"
 #include "IO_Map.h"
+#include "globals.h"
 
 // Define this to debug RX/X packet handing, COP/Watchdog and MCU_RESET
 #define GW_DEBUG							TRUE
 
-	#if (GW_DEBUG)
-		#define GW_RESET_MCU()				debugReset();//CRM_SoftReset()
+	#if (GW_DEBUG) 
+		#define GW_RESET_MCU(cause) \
+			do { \
+				restartCause = cause; \
+				debugReset(); \
+			} while(0);
 	#else
-		#define GW_RESET_MCU()				CRM_SoftReset()
+		#define GW_RESET_MCU(cause)	\
+			do { \
+				restartCause = cause; \
+				 CRM_SoftReset(); \
+			} while(0);
 	#endif
+		
 
 #define GW_ENTER_CRITICAL(saveState)		Critical_EnterCritical(saveState);
 #define GW_EXIT_CRITICAL(restoreState)		Critical_ExitCritical(restoreState);

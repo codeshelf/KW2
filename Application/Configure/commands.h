@@ -109,6 +109,7 @@ void processAssocRespCommand(BufferCntType inRXBufferNum);
 void processQueryCommand(BufferCntType inRXBufferNum, NetAddrType inRemoteAddr);
 void processResponseCommand(BufferCntType inRXBufferNum, NetAddrType inRemoteAddr);
 
+void processAckSubCommand(BufferCntType inRxBufferNum);
 void processDisplayMsgSubCommand(BufferCntType inRXBufferNum);
 void processSetPosControllerSubCommand(BufferCntType inRXBufferNum);
 void processClearPosControllerSubCommand(BufferCntType inRXBufferNum);

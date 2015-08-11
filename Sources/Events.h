@@ -39,7 +39,10 @@
 #include "UTIL2.h"
 #include "INT_PORTB.h"
 #include "Wait.h"
+#include "Rs485.h"
+#include "Rs485TxCtl.h"
 #include "Critical.h"
+#include "Scanner.h"
 #include "Watchdog.h"
 #include "EventTimer.h"
 #include "SharpDisplay.h"
@@ -49,7 +52,10 @@
 #include "BitIoLdd2.h"
 #include "StatusLedClk.h"
 #include "StatusLedSdi.h"
+#include "ScannerPower.h"
+#include "Rs485Power.h"
 #include "Gateway.h"
+//#include "Gateway.h"
 
 #ifdef __cplusplus
 extern "C" {

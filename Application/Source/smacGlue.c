@@ -37,7 +37,7 @@ void MCPSDataIndication(rxPacket_t *inRxPacket) {
 
 	// If we haven't initialized the radio receive queue then cause a debug trap.
 	if (gRadioReceiveQueue == NULL)
-		GW_RESET_MCU();
+		GW_RESET_MCU(eOtherError);
 
 	// Send the message to the radio task's queue.
 	if (gLocalDeviceState == eLocalStateRun) {

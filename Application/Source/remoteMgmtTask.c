@@ -15,6 +15,7 @@
 #include "gwTypes.h"
 #include "commands.h"
 #include "globals.h"
+#include "stdlib.h"
 
 xTaskHandle gRemoteManagementTask;
 extern xQueueHandle gRemoteMgmtQueue;
@@ -33,6 +34,9 @@ extern BufferCntType gTxCurBufferNum;
 extern xTaskHandle gRemoteManagementTask;
 
 void preSleep();
+
+__attribute__ ((section(".m_data_20000000"))) byte lastChannel;
+//byte lastChannel = 0;
 
 // --------------------------------------------------------------------------
 
@@ -58,14 +62,26 @@ void remoteMgmtTask(void *pvParameters) {
 #endif
 
 	if (gRemoteMgmtQueue) {
+		
+		// Try to read last used channel from memory
+		// If it doesn't exist use default stating channel
+		if ((lastChannel >= gChannel11_c) && (lastChannel < gTotalChannels_c)) {
+			channel = lastChannel;
+			haveLastChannel = TRUE;
+		} else {
+			channel = gChannel11_c;
+		}
 
 		setStatusLed(5, 0, 0);
-		
+
 		// Compute random backoff value
 		uint32_t seed = 0;
 		seed = (guid[6] << 16) | (guid[7] & 0xff);
 		srand(seed);
 		conRandBackOff = rand() % RAND_BACK_OFF_LIMIT;
+		
+		// Random backoff
+		vTaskDelay(conRandBackOff);
 
 		/*
 		 * Attempt to associate with our controller.
@@ -74,26 +90,20 @@ void remoteMgmtTask(void *pvParameters) {
 		 * 3. If we get a response then start the main proccessing
 		 * 4. If no response then change channels and start at step 1.
 		 */
-		channel = gChannel11_c;
+		//channel = gChannel11_c;
 		associated = FALSE;
 		while (!associated) {
-			
-			
+
 			//Do stupid back-off
-			if (conNumAttempts >= (SLOW_CON_ATTEMPTS + CON_ATTEMPTS_BEFORE_BACKOFF) ) {
+			if (conNumAttempts >= (SLOW_CON_ATTEMPTS + CON_ATTEMPTS_BEFORE_BACKOFF)) {
 				conNumAttempts = 0;
 			} else {
 				conNumAttempts++;
 			}
-			
+
 			if (conNumAttempts > CON_ATTEMPTS_BEFORE_BACKOFF) {
 				vTaskDelay(SLOW_CON_SLEEP_MS + conRandBackOff);
-			}
-			 
-			//It's okay if we don't start at the first channel
-			channel++;
-			if (channel == gTotalChannels_c) {
-				channel = gChannel11_c;
+				conNumAttempts = 0;
 			}
 
 			GW_WATCHDOG_RESET;
@@ -101,7 +111,7 @@ void remoteMgmtTask(void *pvParameters) {
 			// Set the channel to the current channel we're testing.
 			setRadioChannel(channel - 11);
 
-			for (gwUINT8 i = 0; i < 3; i++) {
+			for (gwUINT8 i = 0; i < 1; i++) {
 				// Send an associate request on the current channel.
 				txBufferNum = lockTxBuffer();
 				createAssocReqCommand(txBufferNum);
@@ -118,7 +128,7 @@ void remoteMgmtTask(void *pvParameters) {
 				//read-cancellation described above.
 
 				// Wait up to 50ms for a response. (It actually maybe more if readRadio is waiting for a write but that shouldn't happen, TODO use tickCount)
-				//for(gwUINT8 i = 0; i < 5; i++) {
+				//for(gwUINT8 i = 0; i < 3; i++) {
 				//It's okay if we're already in read mode
 				//readRadioRx();
 				//vTaskDelay(1);
@@ -134,6 +144,7 @@ void remoteMgmtTask(void *pvParameters) {
 								processAssocRespCommand(rxBufferNum);
 								if (gLocalDeviceState == eLocalStateAssociated) {
 									associated = TRUE;
+									lastChannel = channel;
 									RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 									break;
 								}
@@ -141,6 +152,22 @@ void remoteMgmtTask(void *pvParameters) {
 						}
 					}
 					RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
+				}
+			}
+			//}
+
+			if (!associated) {
+				if (triedLastChannel || !haveLastChannel){
+					if (nextChannelToTry == gTotalChannels_c) {
+						channel = gChannel11_c;
+						nextChannelToTry = channel++;
+					} else {
+						channel = nextChannelToTry;
+						nextChannelToTry++;
+					}
+				} else {
+					channel = lastChannel;
+					triedLastChannel = TRUE;
 				}
 			}
 		}
@@ -177,7 +204,8 @@ void remoteMgmtTask(void *pvParameters) {
 								checked = TRUE;
 								setStatusLed(0, 0, 1);
 								RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
-								GW_WATCHDOG_RESET;
+								GW_WATCHDOG_RESET
+								;
 								break;
 							}
 						}
@@ -190,6 +218,8 @@ void remoteMgmtTask(void *pvParameters) {
 
 		gLocalDeviceState = eLocalStateRun;
 		readRadioRx();
+		lastChannel = channel;
+		channel = 0;
 
 		// Just in case we receive any extra management commands we need to free them.
 		/*
@@ -203,7 +233,8 @@ void remoteMgmtTask(void *pvParameters) {
 	// This thread is no longer needed
 	vTaskSuspend(gRemoteManagementTask);
 	/* Will only get here if the queue could not be created. */
-	for (;;);
+	for (;;)
+		;
 }
 
 void sleep() {
