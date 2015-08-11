@@ -18,6 +18,7 @@ typedef enum {
 	eSetupModeGetAes,
 	eSetupModeGetHWver,
 	eSetupModeWaitingForSave,
+	eSetupModeParamsSaved,
 	eSetupModeComplete,
 	
 } ELocalSetupType;

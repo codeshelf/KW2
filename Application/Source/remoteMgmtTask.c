@@ -49,6 +49,13 @@ void remoteMgmtTask(void *pvParameters) {
 	ECommandGroupIDType cmdID;
 	ECmdAssocType assocSubCmd;
 	vTaskDelay(0);
+	
+	// TODO - huffa If in tuning mode wait for tuning to be complete
+#ifdef TUNER
+	while(gLocalDeviceState == eLocalStateTuning){
+		vTaskDelay(10);
+	}
+#endif
 
 	if (gRemoteMgmtQueue) {
 

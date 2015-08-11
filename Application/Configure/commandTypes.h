@@ -206,7 +206,8 @@ typedef enum {
 	eLocalStateAssociated,
 	eLocalStateQueryRcvd,
 	eLocalStateRespSent,
-	eLocalStateRun
+	eLocalStateRun,
+	eLocalStateTuning
 } ELocalStatusType;
 
 /*

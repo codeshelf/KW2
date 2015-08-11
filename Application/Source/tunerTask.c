@@ -12,6 +12,7 @@
 #include "task.h"
 #include "queue.h"
 #include "commands.h"
+#include "commandTypes.h"
 #include "Wait.h"
 #include "display.h"
 #include "scannerReadTask.h"
@@ -23,6 +24,8 @@
 #define DEFAULT_CRYSTAL_TRIM	0xff
 #define PERFECT_REMAINDER		0x6b06
 #define PROMPT_DELAY_TIME		2000
+
+extern ELocalStatusType gLocalDeviceState;
 
 void adjustTune(gwUINT8 trim);
 gwUINT16 measureTune();
@@ -43,6 +46,8 @@ ScanStringLenType gScanStringPos;
 // --------------------------------------------------------------------------
 
 void tunerTask(void *pvParameters) {
+	gLocalDeviceState = eLocalStateTuning;
+	
 	ENABLE_DISPLAY
 	GW_ENTER_CRITICAL(ccrHolder);
 	clearDisplay();
@@ -218,6 +223,9 @@ void handleSetupCommand() {
 	}
 	else if (strcmp(gScanString, "S%SAVE") == 0) {
 		saveParams();
+	} 
+	else if (strcmp(gScanString, "S%ENTER") == 0) {
+		attemptConnection();
 	}
 }
 
@@ -255,6 +263,12 @@ void clearParams() {
 
 void saveParams() {
 	
+	char * guidStrHdr = "GUID: ";
+	char displayGuidStr[strlen(guidStrHdr) + EEPROM_GUID_LEN + 1];
+	
+	char *tuningStrHdr = "Tuning: ";
+	char displayTuningStr[strlen(tuningStrHdr) + EEPROM_TUNING_LEN + 1];
+	
 	if (setupModeState == eSetupModeWaitingForSave) {
 		
 		// Write parameters to eeprom
@@ -263,14 +277,22 @@ void saveParams() {
 		writeHWVersion(hw_ver);
 		writeTuning(&tune_param);
 		
+		sprintf(displayTuningStr,"%s %X", tuningStrHdr, tune_param);
+		displayTuningStr[EEPROM_TUNING_LEN] = NULL;
+		
+		strncpy(displayGuidStr, guidStrHdr, strlen(guidStrHdr));
+		strncat(displayGuidStr, guid, EEPROM_GUID_LEN);
+		displayGuidStr[EEPROM_GUID_LEN] = NULL;
+		
 		GW_ENTER_CRITICAL(ccrHolder);
 		clearDisplay();
-		displayMessage(1, "KW2 Setup Mode", FONT_NORMAL);
-		displayMessage(2, "Setup complete", FONT_NORMAL);
-		displayMessage(3, "Params Saved", FONT_NORMAL);
+		displayMessage(1, "KW2 Setup Mode ", FONT_NORMAL);
+		displayMessage(2, displayGuidStr, FONT_NORMAL);
+		displayMessage(3, displayTuningStr, FONT_NORMAL);
+		displayMessage(4, "Scan ENTER to continue...", FONT_NORMAL);
 		GW_EXIT_CRITICAL(ccrHolder);
 		
-		setupModeState = eSetupModeComplete;
+		setupModeState = eSetupModeParamsSaved;
 	}
 }
 
@@ -352,5 +374,13 @@ void getHwVersion() {
 		GW_ENTER_CRITICAL(ccrHolder);
 		displayMessage(3, "", FONT_NORMAL);
 		GW_EXIT_CRITICAL(ccrHolder);
+	}
+}
+
+// --------------------------------------------------------------------------
+
+void attemptConnection() {
+	if (setupModeState == eSetupModeParamsSaved) {
+		
 	}
 }

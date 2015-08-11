@@ -52,10 +52,10 @@ void startApplication(void) {
 //	MLMEFEGainAdjust(15);
 	
 	/* Start the task that will handle the radio */
+	xTaskCreate(tunerTask, (const signed portCHAR * const) "Tune", configMINIMAL_STACK_SIZE, NULL, MGMT_PRIORITY, &gTunerTask );
 	xTaskCreate(radioTransmitTask, (const signed portCHAR * const) "RadioTX", configMINIMAL_STACK_SIZE, NULL, RADIO_PRIORITY, &gRadioTransmitTask );
 	xTaskCreate(radioReceiveTask, (const signed portCHAR * const) "RadioRX", configMINIMAL_STACK_SIZE, NULL, RADIO_PRIORITY, &gRadioReceiveTask );
 	xTaskCreate(remoteMgmtTask, (const signed portCHAR * const) "Mgmt", configMINIMAL_STACK_SIZE, NULL, MGMT_PRIORITY, &gRemoteManagementTask );
-	xTaskCreate(tunerTask, (const signed portCHAR * const) "Tune", configMINIMAL_STACK_SIZE, NULL, MGMT_PRIORITY, &gTunerTask );
 
 	gRadioReceiveQueue = xQueueCreate(RX_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(BufferCntType));
 	gRadioTransmitQueue = xQueueCreate(TX_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(BufferCntType));
