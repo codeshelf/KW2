@@ -21,13 +21,13 @@
 	#if (GW_DEBUG) 
 		#define GW_RESET_MCU(cause) \
 			do { \
-				restartCause = cause; \
+				g_restartCause = cause; \
 				debugReset(); \
 			} while(0);
 	#else
 		#define GW_RESET_MCU(cause)	\
 			do { \
-				restartCause = cause; \
+				g_restartCause = cause; \
 				 CRM_SoftReset(); \
 			} while(0);
 	#endif

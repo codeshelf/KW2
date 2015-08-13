@@ -16,7 +16,7 @@
 // --------------------------------------------------------------------------
 // Definitions.
 
-#define	LED_CONTROLLER
+#define TUNER
 
 #define DEFAULT_CHANNEL			gChannel11_c
 #define DEFAULT_POWER			gMaxOutputPower_c

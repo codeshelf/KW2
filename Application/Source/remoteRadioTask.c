@@ -17,7 +17,7 @@
 
 // --------------------------------------------------------------------------
 // Global variables.
-__attribute__ ((section(".m_data_20000000"))) byte restartCause;
+__attribute__ ((section(".m_data_20000000"))) byte g_restartCause;
 
 xTaskHandle gRadioReceiveTask = NULL;
 xTaskHandle gRadioTransmitTask = NULL;
@@ -51,6 +51,11 @@ extern NetAddrType gMyAddr;
 void radioReceiveTask(void *pvParameters) {
 	BufferCntType rxBufferNum = 0;
 	gwUINT8 ccrHolder;
+#ifdef TUNER
+	while(gLocalDeviceState == eLocalStateTuning){
+		vTaskDelay(1);
+	}
+#endif
 
 	//TODO Remove buffer code. It seems we only need to do this once
 	
@@ -64,7 +69,7 @@ void radioReceiveTask(void *pvParameters) {
 	if (gRadioReceiveQueue) {
 		for (;;) {
 
-			//GW_WATCHDOG_RESET;
+			GW_WATCHDOG_RESET;
 
 			//A callback will add the packet to the queue below
 			readRadioRx();
@@ -100,6 +105,12 @@ void radioTransmitTask(void *pvParameters) {
 	gwUINT8 ackId;
 	gwUINT8 ccrHolder;
 	gwBoolean isAck = FALSE;
+	
+#ifdef TUNER
+	while(gLocalDeviceState == eLocalStateTuning){
+		vTaskDelay(1);
+	}
+#endif
 
 	if (gRadioTransmitQueue && gTxAckQueue) {
 		for (;;) {

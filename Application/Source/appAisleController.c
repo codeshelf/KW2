@@ -54,14 +54,14 @@ void startApplication(void) {
 	MLMESetPromiscuousMode(gPromiscuousMode_d);
 	MLMESetChannelRequest(DEFAULT_CHANNEL);
 	MLMEPAOutputAdjust(DEFAULT_POWER);
-	MLMEXtalAdjust(trim[0]);
+	MLMEXtalAdjust(g_trim[0]);
 	MC1324xDrv_IndirectAccessSPIWrite(ANT_PAD_CTRL, cANT_PAD_CTRL_ANTX_CTRLMODE + cANT_PAD_CTRL_ANTX_EN);
 	MC1324xDrv_IndirectAccessSPIWrite(ANT_AGC_CTRL, 0x40 + 0x02);
 //	MLMEFEGainAdjust(15);
 	
 	// Random connection start delay based on guid
 	uint32_t seed = 0;
-	seed = (uint32_t) (guid[6] << 16) | (guid[7] & 0xff);
+	seed = (uint32_t) (g_guid[6] << 16) | (g_guid[7] & 0xff);
 	srand(seed);
 	vTaskDelay(rand() % RAND_BACK_OFF_LIMIT);
 

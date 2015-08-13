@@ -20,23 +20,14 @@
 #include "EventTimer.h"
 #include "ScannerPower.h"
 #include "eeprom.h"
+#include "String.h"
 
-#define DEFAULT_CRYSTAL_TRIM	0xff
+#define DEFAULT_CRYSTAL_TRIM	0xb1//0xff
 #define PERFECT_REMAINDER		0x6b06
 #define PROMPT_DELAY_TIME		2000
 
 extern ELocalStatusType gLocalDeviceState;
-
-void adjustTune(gwUINT8 trim);
-gwUINT16 measureTune();
-
 xTaskHandle gTunerTask = NULL;
-
-unsigned char aes_key[EEPROM_AES_KEY_LEN];
-unsigned char hw_ver[EEPROM_HW_VER_LEN];
-unsigned char guid[EEPROM_GUID_LEN];
-unsigned char guidStr[EEPROM_GUID_LEN + 1];
-gwUINT8 tune_param;
 gwUINT8 ccrHolder;
 
 ELocalSetupType setupModeState;
@@ -117,17 +108,19 @@ void tuneRadio() {
 		while ((remainder > PERFECT_REMAINDER) && (trim < 255)) {
 			adjustTune(++trim);
 			remainder = measureTune();
+			GW_WATCHDOG_RESET;
 		}
 	} else if (remainder < PERFECT_REMAINDER) {
 		while ((remainder < PERFECT_REMAINDER) && (trim > 0)) {
 			adjustTune(--trim);
 			remainder = measureTune();
+			GW_WATCHDOG_RESET;
 		}
 	}
 	
 	GW_EXIT_CRITICAL(ccrHolder);
 	
-	tune_param = trim;
+	g_trim[0] = trim;
 }
 
 // --------------------------------------------------------------------------
@@ -142,6 +135,8 @@ void scanParams() {
 	
 	for (;;) {
 
+		GW_WATCHDOG_RESET;
+		
 		// Clear the scan string.
 		gScanString[0] = NULL;
 		gScanStringPos = 0;
@@ -151,6 +146,7 @@ void scanParams() {
 		Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
 		// Wait until there are characters in the FIFO
 		while ((Scanner_DEVICE ->S1 & UART_S1_RDRF_MASK) == 0) {
+			GW_WATCHDOG_RESET;
 			vTaskDelay(1);
 		}
 		Wait_Waitus(50);
@@ -160,7 +156,7 @@ void scanParams() {
 		GW_ENTER_CRITICAL(ccrHolder);
 		EventTimer_ResetCounter(NULL);
 		// If there's no characters in 50ms then stop waiting for more.
-		while ((EventTimer_GetCounterValue(NULL) < 150) && (gScanStringPos < MAX_SCAN_STRING_BYTES)) {
+		while ((EventTimer_GetCounterValue(NULL) < 150) && (gScanStringPos < MAX_SCAN_STRING_BYTES) /*&&(Scanner_DEVICE ->S1 & UART_S1_RDRF_MASK) != 0*/) {
 			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
 			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXOF_MASK;
 			if ((Scanner_DEVICE ->S1 & UART_S1_RDRF_MASK) != 0) {
@@ -186,9 +182,9 @@ void scanParams() {
 // --------------------------------------------------------------------------
 
 void zeroParams() {
-	memset(guid, (uint8_t)0, EEPROM_GUID_LEN);
-	memset(hw_ver, (uint8_t)0, EEPROM_HW_VER_LEN);
-	memset(aes_key, (uint8_t)0, EEPROM_AES_KEY_LEN);
+	memset(g_guid, (uint8_t)0, EEPROM_GUID_LEN);
+	memset(g_hw_ver, (uint8_t)0, EEPROM_HW_VER_LEN);
+	memset(g_aes_key, (uint8_t)0, EEPROM_AES_KEY_LEN);
 }
 
 // --------------------------------------------------------------------------
@@ -262,34 +258,28 @@ void clearParams() {
 // --------------------------------------------------------------------------
 
 void saveParams() {
-	
-	char * guidStrHdr = "GUID: ";
-	char displayGuidStr[strlen(guidStrHdr) + EEPROM_GUID_LEN + 1];
-	
-	char *tuningStrHdr = "Tuning: ";
-	char displayTuningStr[strlen(tuningStrHdr) + EEPROM_TUNING_LEN + 1];
+	char displayGuidStr[6 + EEPROM_GUID_LEN + 1];
+	char displayTuningStr[7 + EEPROM_TUNING_LEN + 1 + 10];
 	
 	if (setupModeState == eSetupModeWaitingForSave) {
 		
 		// Write parameters to eeprom
-		writeGuid(guid);
-		writeAESKey(aes_key);
-		writeHWVersion(hw_ver);
-		writeTuning(&tune_param);
+		writeGuid(g_guid);
+		writeAESKey(g_aes_key);
+		writeHWVersion(g_hw_ver);
+		writeTuning(&g_trim);
 		
-		sprintf(displayTuningStr,"%s %X", tuningStrHdr, tune_param);
-		displayTuningStr[EEPROM_TUNING_LEN] = NULL;
+		sprintf(displayTuningStr, "%s %X", "Tuning: ", g_trim[0] & 0xff);
 		
-		strncpy(displayGuidStr, guidStrHdr, strlen(guidStrHdr));
-		strncat(displayGuidStr, guid, EEPROM_GUID_LEN);
-		displayGuidStr[EEPROM_GUID_LEN] = NULL;
+		strcpy(displayGuidStr, "GUID: ");
+		strcat(displayGuidStr, g_guid);
 		
 		GW_ENTER_CRITICAL(ccrHolder);
 		clearDisplay();
 		displayMessage(1, "KW2 Setup Mode ", FONT_NORMAL);
 		displayMessage(2, displayGuidStr, FONT_NORMAL);
 		displayMessage(3, displayTuningStr, FONT_NORMAL);
-		displayMessage(4, "Scan ENTER to continue...", FONT_NORMAL);
+		displayMessage(6, "Scan ENTER to continue...", FONT_NORMAL);
 		GW_EXIT_CRITICAL(ccrHolder);
 		
 		setupModeState = eSetupModeParamsSaved;
@@ -302,19 +292,19 @@ void getGuidAes() {
 	
 	if (gScanString[0] == 'G' && gScanString[1] == '%') {
 		
-		strncpy(guidStr, gScanString+2, EEPROM_GUID_LEN);
-		guidStr[EEPROM_GUID_LEN] = NULL;
+		// Get the guid
+		strncpy(g_guid, gScanString + 2, EEPROM_GUID_LEN);
+		g_guid[EEPROM_GUID_LEN] = NULL;
+		
+		// Get the AES key
+		strncpy(g_aes_key, gScanString + 2 + EEPROM_GUID_LEN, EEPROM_AES_KEY_LEN);
 		
 		GW_ENTER_CRITICAL(ccrHolder);
 		displayMessage(2, "Scanned GUID/AES", FONT_NORMAL);
-		displayMessage(3, guidStr, FONT_NORMAL);
+		displayMessage(3, g_guid, FONT_NORMAL);
 		GW_EXIT_CRITICAL(ccrHolder);
 		vTaskDelay(PROMPT_DELAY_TIME);
 	
-		strncpy(guid, gScanString + 2, EEPROM_GUID_LEN);
-		
-		strncpy(aes_key, gScanString + 2 + EEPROM_GUID_LEN, EEPROM_AES_KEY_LEN);
-		
 		// Next we want the HW version
 		setupModeState = eSetupModeGetHWver;
 		GW_ENTER_CRITICAL(ccrHolder);
@@ -324,7 +314,7 @@ void getGuidAes() {
 		GW_EXIT_CRITICAL(ccrHolder);
 	} else {
 		GW_ENTER_CRITICAL(ccrHolder);
-		displayMessage(3, "Invaild Scan", FONT_NORMAL);
+		displayMessage(3, "Invalid Scan", FONT_NORMAL);
 		GW_EXIT_CRITICAL(ccrHolder);
 		
 		vTaskDelay(PROMPT_DELAY_TIME);
@@ -342,17 +332,18 @@ void getHwVersion() {
 	if (gScanString[0] == 'H' && gScanString[1] == '%') {
 		char guidDispStr[6 + EEPROM_GUID_LEN + 1];
 		strcpy(guidDispStr, "GUID: ");
-		strcat(guidDispStr, guidStr);
+		strcat(guidDispStr, g_guid);
+	
+		// Get the hw version
+		strncpy(g_hw_ver, gScanString + 2, EEPROM_HW_VER_LEN);
 		
 		GW_ENTER_CRITICAL(ccrHolder);
 		clearDisplay();
 		displayMessage(1, "KW2 Setup Mode", FONT_NORMAL);
 		displayMessage(2, "Scanned HW Version", FONT_NORMAL);
-		displayMessage(3, gScanString + 2, FONT_NORMAL);
+		displayMessage(3, g_hw_ver, FONT_NORMAL);
 		GW_EXIT_CRITICAL(ccrHolder);
 		vTaskDelay(PROMPT_DELAY_TIME);
-		
-		strncpy(hw_ver, gScanString + 2, EEPROM_HW_VER_LEN);
 		
 		// Next we want the AES key
 		setupModeState = eSetupModeWaitingForSave;
@@ -366,7 +357,7 @@ void getHwVersion() {
 		
 	} else {
 		GW_ENTER_CRITICAL(ccrHolder);
-		displayMessage(3, "Invaild Scan", FONT_NORMAL);
+		displayMessage(3, "Invalid Scan", FONT_NORMAL);
 		GW_EXIT_CRITICAL(ccrHolder);
 		
 		vTaskDelay(PROMPT_DELAY_TIME);
@@ -381,6 +372,21 @@ void getHwVersion() {
 
 void attemptConnection() {
 	if (setupModeState == eSetupModeParamsSaved) {
+
+		setupModeState = eSetupModeWaitingForSave;
 		
+		GW_ENTER_CRITICAL(ccrHolder);
+		clearDisplay();
+		displayMessage(1, "KW2 Setup Mode", FONT_NORMAL);
+		displayMessage(2, "Attempting Connection...", FONT_NORMAL);
+		GW_EXIT_CRITICAL(ccrHolder);
+		vTaskDelay(PROMPT_DELAY_TIME);
+		
+		gLocalDeviceState = eLocalStateStarted;
+		
+		while (gLocalDeviceState != eLocalStateRun) {
+			GW_WATCHDOG_RESET;
+			vTaskDelay(1);
+		}	
 	}
 }

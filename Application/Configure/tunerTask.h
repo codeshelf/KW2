@@ -11,6 +11,7 @@
 #define TUNERTASK_H
 
 #include "FreeRTOS.h"
+#include "gwTypes.h"
 
 typedef enum {
 	eSetupModeStarted,
@@ -26,14 +27,16 @@ typedef enum {
 // PTC4 enable tuner PORTC_PCR4 = PORT_PCR_MUX(4);
 // PTC4 enable display PORTC_PCR4 = PORT_PCR_MUX(1);
 
-#define ENABLE_TUNER PORTC_PCR4 = PORT_PCR_MUX(4); PORTC_PCR5 = PORT_PCR_MUX(7); GPIOC_PDDR &= (uint32_t)~(uint32_t)GPIO_PDDR_PDD(0x10); Wait_Waitms(1000);
-#define ENABLE_DISPLAY PORTC_PCR4 = PORT_PCR_MUX(1); PORTC_PCR5 = PORT_PCR_MUX(2); GPIOC_PDDR |= (uint32_t)GPIO_PDDR_PDD(0x10); Wait_Waitms(1000);
+#define ENABLE_TUNER PORTC_PCR4 = PORT_PCR_MUX(4); PORTC_PCR5 = PORT_PCR_MUX(7); GPIOC_PDDR &= (uint32_t)~(uint32_t)GPIO_PDDR_PDD(0x10);// Wait_Waitms(1000);
+#define ENABLE_DISPLAY PORTC_PCR4 = PORT_PCR_MUX(1); PORTC_PCR5 = PORT_PCR_MUX(2); GPIOC_PDDR |= (uint32_t)GPIO_PDDR_PDD(0x10); //Wait_Waitms(1000);
 
 #define ENABLE_PTD4_TUNE	PORTD_PCR4 = PORT_PCR_MUX(4); GPIOD_PDDR &= (uint32_t)~(uint32_t)GPIO_PDDR_PDD(0x10); Wait_Waitms(1000);
 #define DISABLE_PTD4_TUNE	PORTD_PCR4 = PORT_PCR_MUX(1); GPIOD_PDDR |= (uint32_t)GPIO_PDDR_PDD(0x10); Wait_Waitms(1000);
 // --------------------------------------------------------------------------
 // Local functions prototypes.
 
+void adjustTune(gwUINT8 trim);
+gwUINT16 measureTune();
 void tunerTask(void *pvParameters);
 void tuneRadio();
 

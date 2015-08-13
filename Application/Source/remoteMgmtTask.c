@@ -35,7 +35,7 @@ extern xTaskHandle gRemoteManagementTask;
 
 void preSleep();
 
-__attribute__ ((section(".m_data_20000000"))) byte lastChannel;
+__attribute__ ((section(".m_data_20000000"))) byte g_lastChannel;
 //byte lastChannel = 0;
 
 // --------------------------------------------------------------------------
@@ -54,10 +54,14 @@ void remoteMgmtTask(void *pvParameters) {
 	ECmdAssocType assocSubCmd;
 	vTaskDelay(0);
 	
+	gwBoolean haveLastChannel = FALSE;
+	gwBoolean triedLastChannel = FALSE;
+	int nextChannelToTry = gChannel11_c;
+	
 	// TODO - huffa If in tuning mode wait for tuning to be complete
 #ifdef TUNER
 	while(gLocalDeviceState == eLocalStateTuning){
-		vTaskDelay(10);
+		vTaskDelay(1);
 	}
 #endif
 
@@ -65,8 +69,8 @@ void remoteMgmtTask(void *pvParameters) {
 		
 		// Try to read last used channel from memory
 		// If it doesn't exist use default stating channel
-		if ((lastChannel >= gChannel11_c) && (lastChannel < gTotalChannels_c)) {
-			channel = lastChannel;
+		if ((g_lastChannel >= gChannel11_c) && (g_lastChannel < gTotalChannels_c)) {
+			channel = g_lastChannel;
 			haveLastChannel = TRUE;
 		} else {
 			channel = gChannel11_c;
@@ -76,7 +80,7 @@ void remoteMgmtTask(void *pvParameters) {
 
 		// Compute random backoff value
 		uint32_t seed = 0;
-		seed = (guid[6] << 16) | (guid[7] & 0xff);
+		seed = (g_guid[6] << 16) | (g_guid[7] & 0xff);
 		srand(seed);
 		conRandBackOff = rand() % RAND_BACK_OFF_LIMIT;
 		
@@ -144,7 +148,7 @@ void remoteMgmtTask(void *pvParameters) {
 								processAssocRespCommand(rxBufferNum);
 								if (gLocalDeviceState == eLocalStateAssociated) {
 									associated = TRUE;
-									lastChannel = channel;
+									g_lastChannel = channel;
 									RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 									break;
 								}
@@ -166,7 +170,7 @@ void remoteMgmtTask(void *pvParameters) {
 						nextChannelToTry++;
 					}
 				} else {
-					channel = lastChannel;
+					channel = g_lastChannel;
 					triedLastChannel = TRUE;
 				}
 			}
@@ -218,7 +222,7 @@ void remoteMgmtTask(void *pvParameters) {
 
 		gLocalDeviceState = eLocalStateRun;
 		readRadioRx();
-		lastChannel = channel;
+		g_lastChannel = channel;
 		channel = 0;
 
 		// Just in case we receive any extra management commands we need to free them.

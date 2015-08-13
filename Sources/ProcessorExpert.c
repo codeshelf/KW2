@@ -44,6 +44,7 @@
 #include "SharpDisplay.h"
 #include "SharpDisplayCS.h"
 #include "BitIoLdd1.h"
+#include "Tuner.h"
 //#include "SharpDisplay.h"
 //#include "SharpDisplayCS.h"
 //#include "BitIoLdd1.h"
@@ -105,17 +106,17 @@ int main(void) {
 	
 	/* Write your code here */
 	// Load GUID
-	readGuid(guid);
-	guid[8] = NULL;
+	readGuid(g_guid);
+	g_guid[8] = NULL;
 	
 	// Load hardware version
-	readHWVersion(hw_ver);
+	readHWVersion(g_hw_ver);
 	
 	// Load aes key
-	readAESKey(aes_key);
+	readAESKey(g_aes_key);
 	
 	// Load trim
-	readTuning(trim);
+	readTuning(g_trim);
 	
 	PORTC_PCR4 = PORT_PCR_MUX(ptc4_mux);
 	PORTC_PCR5 = PORT_PCR_MUX(ptc5_mux);

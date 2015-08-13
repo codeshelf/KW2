@@ -31,7 +31,7 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
 								</option>
 								<option id="org.eclipse.cdt.cross.arm.gnu.assembler.option.preprocessor.def.1670986758" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.assembler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=3.1"/>
+									<listOptionValue builtIn="false" value="RADIO_PROTOCOL_VERSION=254"/>
 								</option>
 								<inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.661146421" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input"/>
 							</tool>
@@ -74,10 +74,7 @@
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections.1913196993" name="Data sections (-fdata-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections" value="true" valueType="boolean"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std.1899338002" name="Language Standard" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std" value="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std.gnu99" valueType="enumerated"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.1302974102" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="SHARP_DISPLAY=TRUE"/>
-									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=&quot;3.2.3&quot;"/>
-									<listOptionValue builtIn="false" value="RS485=TRUE"/>
-									<listOptionValue builtIn="false" value="CHE_CONTROLLER"/>
+									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=&quot;3.2.4&quot;"/>
 									<listOptionValue builtIn="false" value="gPromiscuousMode_d=FALSE"/>
 									<listOptionValue builtIn="false" value="HARDWARE_VERSION=&quot;01.0&quot;"/>
 									<listOptionValue builtIn="false" value="RADIO_PROTOCOL_VERSION=2"/>
@@ -243,7 +240,6 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
 								</option>
 								<option id="org.eclipse.cdt.cross.arm.gnu.assembler.option.preprocessor.def.712905394" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.assembler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=3.1"/>
 									<listOptionValue builtIn="false" value="RADIO_PROTOCOL_VERSION=254"/>
 								</option>
 								<inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.22946048" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input"/>
@@ -285,13 +281,13 @@
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.functionsections.373481970" name="Function sections (-ffunction-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.functionsections" value="true" valueType="boolean"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections.671894514" name="Data sections (-fdata-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections" value="true" valueType="boolean"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.1222717843" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="SHARP_DISPLAY=TRUE"/>
-									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=&quot;3.2.3&quot;"/>
-									<listOptionValue builtIn="false" value="RS485=TRUE"/>
-									<listOptionValue builtIn="false" value="CHE_CONTROLLER"/>
 									<listOptionValue builtIn="false" value="gPromiscuousMode_d=FALSE"/>
+									<listOptionValue builtIn="false" value="SHARP_DISPLAY=TRUE"/>
+									<listOptionValue builtIn="false" value="RS485=TRUE"/>
 									<listOptionValue builtIn="false" value="HARDWARE_VERSION=&quot;01.0&quot;"/>
 									<listOptionValue builtIn="false" value="RADIO_PROTOCOL_VERSION=2"/>
+									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=&quot;3.2.4&quot;"/>
+									<listOptionValue builtIn="false" value="CHE_CONTROLLER"/>
 								</option>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std.1956017948" name="Language Standard" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std" value="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std.gnu99" valueType="enumerated"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.warnings.allwarn.1800025901" name="All warnings (-Wall)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.warnings.allwarn" value="true" valueType="boolean"/>
@@ -458,7 +454,6 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
 								</option>
 								<option id="org.eclipse.cdt.cross.arm.gnu.assembler.option.preprocessor.def.1063617456" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.assembler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=3.1"/>
 									<listOptionValue builtIn="false" value="RADIO_PROTOCOL_VERSION=254"/>
 								</option>
 								<inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.547201385" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input"/>
@@ -502,10 +497,7 @@
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections.106879313" name="Data sections (-fdata-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections" value="true" valueType="boolean"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std.1408928236" name="Language Standard" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std" value="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std.gnu99" valueType="enumerated"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.1835443960" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="SHARP_DISPLAY=TRUE"/>
-									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=&quot;3.2.3&quot;"/>
-									<listOptionValue builtIn="false" value="RS485=TRUE"/>
-									<listOptionValue builtIn="false" value="CHE_CONTROLLER"/>
+									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=&quot;3.2.4&quot;"/>
 									<listOptionValue builtIn="false" value="gPromiscuousMode_d=FALSE"/>
 									<listOptionValue builtIn="false" value="HARDWARE_VERSION=&quot;01.0&quot;"/>
 									<listOptionValue builtIn="false" value="RADIO_PROTOCOL_VERSION=2"/>
@@ -664,7 +656,7 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
 								</option>
 								<option id="org.eclipse.cdt.cross.arm.gnu.assembler.option.preprocessor.def.1499848038" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.assembler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=3.0.2"/>
+									<listOptionValue builtIn="false" value="RADIO_PROTOCOL_VERSION=254"/>
 								</option>
 								<inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.1152003247" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input"/>
 							</tool>
@@ -707,10 +699,7 @@
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections.1230358001" name="Data sections (-fdata-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections" value="true" valueType="boolean"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std.2024603292" name="Language Standard" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std" value="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std.gnu99" valueType="enumerated"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.1268381073" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="SHARP_DISPLAY=TRUE"/>
-									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=&quot;3.2.3&quot;"/>
-									<listOptionValue builtIn="false" value="RS485=TRUE"/>
-									<listOptionValue builtIn="false" value="CHE_CONTROLLER"/>
+									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=&quot;3.2.4&quot;"/>
 									<listOptionValue builtIn="false" value="gPromiscuousMode_d=FALSE"/>
 									<listOptionValue builtIn="false" value="HARDWARE_VERSION=&quot;01.0&quot;"/>
 									<listOptionValue builtIn="false" value="RADIO_PROTOCOL_VERSION=2"/>
@@ -874,7 +863,7 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
 								</option>
 								<option id="org.eclipse.cdt.cross.arm.gnu.assembler.option.preprocessor.def.421004961" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.assembler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=3.0.2"/>
+									<listOptionValue builtIn="false" value="RADIO_PROTOCOL_VERSION=254"/>
 								</option>
 								<inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.491063762" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input"/>
 							</tool>
@@ -917,10 +906,7 @@
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections.1160456240" name="Data sections (-fdata-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.datasections" value="true" valueType="boolean"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std.644754465" name="Language Standard" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std" value="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.misc.std.gnu99" valueType="enumerated"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.751853170" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="SHARP_DISPLAY=TRUE"/>
-									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=&quot;3.2.3&quot;"/>
-									<listOptionValue builtIn="false" value="RS485=TRUE"/>
-									<listOptionValue builtIn="false" value="CHE_CONTROLLER"/>
+									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=&quot;3.2.4&quot;"/>
 									<listOptionValue builtIn="false" value="gPromiscuousMode_d=FALSE"/>
 									<listOptionValue builtIn="false" value="HARDWARE_VERSION=&quot;01.0&quot;"/>
 									<listOptionValue builtIn="false" value="RADIO_PROTOCOL_VERSION=2"/>
@@ -1081,22 +1067,22 @@
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.47286415;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.22946048">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.1120919807;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.609424058">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.1120919807;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.609424058">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.47286415;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.22946048">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.207836675;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.387070637">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.1561457137;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.254819940">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.1013882795;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.1152003247">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.840787674;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.547201385">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.1013882795;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.1152003247">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.1561457137;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.254819940">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.576658235;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.1498190689">

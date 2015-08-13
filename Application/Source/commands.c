@@ -147,7 +147,7 @@ ENetMgmtSubCmdIDType getNetMgmtSubCommand(BufferStoragePtrType inBufferPtr) {
 ECmdAssocType getAssocSubCommand(BufferCntType inRXBufferNum) {
 	ECmdAssocType result = eCmdAssocInvalid;
 	// Make sure the command is actually for us.
-	if (memcmp(guid, &(gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), UNIQUE_ID_BYTES) == 0) {
+	if (memcmp(g_guid, &(gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), UNIQUE_ID_BYTES) == 0) {
 		result = (gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOC_SUBCMD]);
 	}
 	return result;
@@ -207,7 +207,7 @@ void createAssocReqCommand(BufferCntType inTXBufferNum) {
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOC_SUBCMD] = eCmdAssocREQ;
 
 	// The next 8 bytes are the unique ID of the device.
-	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), guid, UNIQUE_ID_BYTES);
+	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), g_guid, UNIQUE_ID_BYTES);
 
 	// Set the hardware version (2 bytes)
 	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_HW_VER]), STR(HARDWARE_VERSION), 4);
@@ -241,7 +241,7 @@ void createAssocCheckCommand(BufferCntType inTXBufferNum) {
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOC_SUBCMD] = eCmdAssocCHECK;
 
 	// The next 8 bytes are the unique ID of the device.
-	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), guid, UNIQUE_ID_BYTES);
+	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), g_guid, UNIQUE_ID_BYTES);
 
 	// Nominalize to a 0-100 scale.
 	if (batteryLevel < 0) {
@@ -252,10 +252,10 @@ void createAssocCheckCommand(BufferCntType inTXBufferNum) {
 	}
 
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_BATT] = batteryLevel;
-	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_LRC] = restartCause;
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_LRC] = g_restartCause;
 	gTxRadioBuffer[inTXBufferNum].bufferSize = CMDPOS_ASSOCCHK_LRC + 1;
 	
-	restartCause = 0;
+	g_restartCause = 0;
 }
 // --------------------------------------------------------------------------
 
@@ -408,7 +408,7 @@ void processNetCheckOutboundCommand(BufferCntType inTXBufferNum) {
 	setRadioChannel(channel);
 
 	// We need to put the gateway (dongle) GUID into the outbound packet before it gets transmitted.
-	memcpy(&(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_GUID]), guid, UNIQUE_ID_BYTES);
+	memcpy(&(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_GUID]), g_guid, UNIQUE_ID_BYTES);
 
 	/*
 	 * At this point we transmit one inbound net-check back over the serial link from the gateway (dongle) itself.
@@ -477,7 +477,7 @@ void processAssocRespCommand(BufferCntType inRXBufferNum) {
 	gwUINT8 ccrHolder;
 
 	// Let's first make sure that this assign command is for us.
-	if (memcmp(guid, &(gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), UNIQUE_ID_BYTES) == 0) {
+	if (memcmp(g_guid, &(gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), UNIQUE_ID_BYTES) == 0) {
 		// The destination address is the third half-byte of the command.
 		gMyAddr = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOCRESP_ADDR];
 		gMyNetworkID = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOCRESP_NET];
