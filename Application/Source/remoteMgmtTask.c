@@ -36,7 +36,6 @@ extern xTaskHandle gRemoteManagementTask;
 void preSleep();
 
 __attribute__ ((section(".m_data_20000000"))) byte g_lastChannel;
-//byte lastChannel = 0;
 
 // --------------------------------------------------------------------------
 
@@ -58,7 +57,6 @@ void remoteMgmtTask(void *pvParameters) {
 	gwBoolean triedLastChannel = FALSE;
 	int nextChannelToTry = gChannel11_c;
 	
-	// TODO - huffa If in tuning mode wait for tuning to be complete
 #ifdef TUNER
 	while(gLocalDeviceState == eLocalStateTuning){
 		vTaskDelay(1);
@@ -67,8 +65,7 @@ void remoteMgmtTask(void *pvParameters) {
 
 	if (gRemoteMgmtQueue) {
 		
-		// Try to read last used channel from memory
-		// If it doesn't exist use default stating channel
+		// Try to read last used channel from memory. Otherwise use default starting
 		if ((g_lastChannel >= gChannel11_c) && (g_lastChannel < gTotalChannels_c)) {
 			channel = g_lastChannel;
 			haveLastChannel = TRUE;
@@ -79,9 +76,10 @@ void remoteMgmtTask(void *pvParameters) {
 		setStatusLed(5, 0, 0);
 
 		// Compute random backoff value
-		uint32_t seed = 0;
-		seed = (g_guid[6] << 16) | (g_guid[7] & 0xff);
-		srand(seed);
+		//uint32_t seed = 0;
+		//seed = (g_guid[6] << 16) | (g_guid[7] & 0xff);
+		//srand(seed);
+		srand((uint32_t) (g_guid[6] << 16) | (g_guid[7] & 0xff));
 		conRandBackOff = rand() % RAND_BACK_OFF_LIMIT;
 		
 		// Random backoff
