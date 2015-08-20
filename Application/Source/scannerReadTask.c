@@ -16,6 +16,7 @@
 #include "ScannerPower.h"
 #include "Serial.h"
 #include "String.h"
+
 xTaskHandle gScannerReadTask = NULL;
 
 ScanStringType gScanString;
@@ -328,16 +329,30 @@ void scannerReadTask(void *pvParameters) {
 
 		// Now send the scan string.
 		if (strlen(gScanString) > 0) {
-			BufferCntType txBufferNum = lockTxBuffer();
-			createScanCommand(txBufferNum, &gScanString, gScanStringPos);
-			//transmitPacket(txBufferNum);
-			if (transmitPacket(txBufferNum)) {
-				while (gRadioState == eTx) {
-					vTaskDelay(1);
-				}
-			}
+//			BufferCntType txBufferNum = lockTxBuffer();
+//			createScanCommand(txBufferNum, &gScanString, gScanStringPos);
+//			//transmitPacket(txBufferNum);
+//			if (transmitPacket(txBufferNum)) {
+//				while (gRadioState == eTx) {
+//					vTaskDelay(1);
+//				}
+//			}
 
 		}
 
 	}
+}
+
+void sendLineToScanner(DisplayStringType inString, DisplayStringLenType inLen) {
+	int i = 0;
+	UsbDataType nextChar = NULL;
+	
+	sendOneChar(Scanner_DEVICE, '|');
+	for (i=0; i < inLen; i++ ) {
+		nextChar = inString[i];
+		sendOneChar(Scanner_DEVICE, nextChar);
+	}
+	
+	sendOneChar(Scanner_DEVICE, '\r');
+	sendOneChar(Scanner_DEVICE, '\n');
 }

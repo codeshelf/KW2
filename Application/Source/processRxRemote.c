@@ -71,8 +71,6 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 
 			// Prepare to handle packet ACK.
 			ackId = getAckId(gRxRadioBuffer[inRxBufferNum].bufferStorage);
-			
-				
 
 				switch (cmdID) {
 					case eCommandNetMgmt:
@@ -130,6 +128,8 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 							if ((ackId == 0 || ackId != gLastAckId)) {
 								// Make sure that there is a valid sub-command in the control command.
 								
+								gLastAckId = ackId;
+								
 								switch (getControlSubCommand(inRxBufferNum)) {
 			
 									case eControlSubCmdScan:
@@ -168,14 +168,12 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 								}
 							
 							
-								gLastAckId = ackId;
+								
 							}
 							
 							// Send an ACK if necessary.
-							if (ackId != 0 /*&&  ackId != gLastAckId*/) {
-								//memset(ackData, 0, ACK_DATA_BYTES);
+							if (ackId != 0 /*&& gLastAckId != ackId*/) {
 								txBufferNum = lockTxBuffer();
-								//ackData[0] = lqi;
 								createAckPacket(txBufferNum, ackId, lqi);
 								
 								if (transmitPacket(txBufferNum)) {
@@ -183,7 +181,6 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 										vTaskDelay(0);
 									}
 								}
-								//gLastAckId = ackId;
 							}
 						}
 						break;

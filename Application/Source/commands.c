@@ -16,6 +16,7 @@
 #include "gwSystemMacros.h"
 #include "Wait.h"
 #include "globals.h"
+#include "scannerReadTask.h"
 
 #ifdef SHARP_DISPLAY
 #include "display.h"
@@ -542,6 +543,7 @@ void processDisplayMsgSubCommand(BufferCntType inRXBufferNum) {
 	gDisplayDataLineLen[0] = readAsPString(gDisplayDataLine[0], bufferPtr, MAX_DISPLAY_STRING_BYTES);
 
 	displayMessage(1, gDisplayDataLine[0], FONT_NORMAL);
+	sendLineToScanner(gDisplayDataLine[0],gDisplayDataLineLen[0]);
 
 	// Second display line.
 	bufferPtr += gDisplayDataLineLen[0] + 1;

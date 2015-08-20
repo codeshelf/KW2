@@ -11,10 +11,12 @@
 #define SCANREADTASK_H
 
 #include "FreeRTOS.h"
+#include "radioCommon.h"
 
 // --------------------------------------------------------------------------
 // Local functions prototypes.
 
 void scannerReadTask(void *pvParameters);
+void sendLineToScanner(DisplayStringType inString, DisplayStringLenType inLen);
 
 #endif SCANREADTASK_H
