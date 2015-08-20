@@ -253,19 +253,31 @@ void createAssocCheckCommand(BufferCntType inTXBufferNum) {
 
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_BATT] = batteryLevel;
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_LRC] = g_restartCause;
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_RD] = g_restartData;
 	gTxRadioBuffer[inTXBufferNum].bufferSize = CMDPOS_ASSOCCHK_LRC + 1;
 	
 	g_restartCause = 0;
 }
 // --------------------------------------------------------------------------
 
-void createAckPacket(BufferCntType inTXBufferNum, AckIDType inAckId, AckDataType inAckData) {
+//void createAckPacket(BufferCntType inTXBufferNum, AckIDType inAckId, AckDataType inAckData) {
+//	//eCommandNetMgmt
+//	createPacket(inTXBufferNum, eCommandNetMgmt, gMyNetworkID, gMyAddr, ADDR_CONTROLLER);
+//	gTxRadioBuffer[inTXBufferNum].bufferStorage[PCKPOS_PCK_TYPE_BIT] |= 1 << SHIFTBITS_PCK_TYPE;
+//	gTxRadioBuffer[inTXBufferNum].bufferStorage[PCKPOS_ACK_ID] = inAckId;
+//	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[PCKPOS_ACK_DATA]), inAckData, ACK_DATA_BYTES);
+//	gTxRadioBuffer[inTXBufferNum].bufferSize = PCKPOS_ACK_DATA + ACK_DATA_BYTES;
+//}
 
-	createPacket(inTXBufferNum, eCommandNetMgmt, gMyNetworkID, gMyAddr, ADDR_CONTROLLER);
-	gTxRadioBuffer[inTXBufferNum].bufferStorage[PCKPOS_PCK_TYPE_BIT] |= 1 << SHIFTBITS_PCK_TYPE;
-	gTxRadioBuffer[inTXBufferNum].bufferStorage[PCKPOS_ACK_ID] = inAckId;
-	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[PCKPOS_ACK_DATA]), inAckData, ACK_DATA_BYTES);
-	gTxRadioBuffer[inTXBufferNum].bufferSize = PCKPOS_ACK_DATA + ACK_DATA_BYTES;
+void createAckPacket(BufferCntType inTXBufferNum, AckIDType inAckId, AckLQIType inAckLQI) {
+
+	createPacket(inTXBufferNum, eCommandControl, gMyNetworkID, gMyAddr, ADDR_CONTROLLER);
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_CONTROL_SUBCMD] = eControlSubCmdAck;
+	
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ACK_NUM] = inAckId;
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ACK_LQI] = inAckLQI;
+
+	gTxRadioBuffer[inTXBufferNum].bufferSize = CMDPOS_ACK_LQI + 1;
 }
 
 // --------------------------------------------------------------------------

@@ -53,8 +53,9 @@
 #define CMDPOS_CMD_ID			PCKPOS_ACK_ID + 1
 #define CMDPOS_ENDPOINT			CMDPOS_CMD_ID
 
-#define PCKPOS_ACK_DATA			CMDPOS_ENDPOINT + 1
+
 #define CMDPOS_STARTOFCMD		CMDPOS_ENDPOINT + 1
+#define PCKPOS_ACK_DATA			CMDPOS_ENDPOINT + 1
 
 // Network Mgmt
 #define CMDPOS_NETM_SUBCMD			CMDPOS_STARTOFCMD
@@ -83,6 +84,7 @@
 #define CMDPOS_ASSOCACK_TIME	CMDPOS_ASSOCACK_STATE + 1
 #define CMDPOS_ASSOCCHK_BATT	CMDPOS_ASSOC_GUID + 8
 #define CMDPOS_ASSOCCHK_LRC		CMDPOS_ASSOCCHK_BATT + 1
+#define CMDPOS_ASSOCCHK_RD		CMDPOS_ASSOCCHK_LRC + 1
 
 // Info Command
 #define CMDPOS_INFO_SUBCMD		CMDPOS_STARTOFCMD
@@ -99,6 +101,7 @@
 
 // Ack Command
 #define CMDPOS_ACK_NUM				CMDPOS_CONTROL_DATA
+#define CMDPOS_ACK_LQI				CMDPOS_ACK_NUM + 1
 
 // Single line message command
 #define CMDPOS_MESSAGE_FONT			CMDPOS_CONTROL_DATA
@@ -214,6 +217,12 @@ typedef enum {
 	eRxBufferFullTimeout = 3,
 	eSmacError = 4,
 	eOtherError = 5
+} ELocalRestartSoftwareReasonType;
+
+typedef enum {
+	eUserRestart = 1,
+	eSoftwareRestart = 2,
+	eWatchDogRestart = 3
 } ELocalRestartCauseType;
 
 /*

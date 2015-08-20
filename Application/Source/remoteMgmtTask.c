@@ -76,9 +76,6 @@ void remoteMgmtTask(void *pvParameters) {
 		setStatusLed(5, 0, 0);
 
 		// Compute random backoff value
-		//uint32_t seed = 0;
-		//seed = (g_guid[6] << 16) | (g_guid[7] & 0xff);
-		//srand(seed);
 		srand((uint32_t) (g_guid[6] << 16) | (g_guid[7] & 0xff));
 		conRandBackOff = rand() % RAND_BACK_OFF_LIMIT;
 		
@@ -92,20 +89,19 @@ void remoteMgmtTask(void *pvParameters) {
 		 * 3. If we get a response then start the main proccessing
 		 * 4. If no response then change channels and start at step 1.
 		 */
-		//channel = gChannel11_c;
+
 		associated = FALSE;
 		while (!associated) {
-
-			//Do stupid back-off
+	
 			if (conNumAttempts >= (SLOW_CON_ATTEMPTS + CON_ATTEMPTS_BEFORE_BACKOFF)) {
 				conNumAttempts = 0;
 			} else {
 				conNumAttempts++;
 			}
 
+			// Back-off
 			if (conNumAttempts > CON_ATTEMPTS_BEFORE_BACKOFF) {
-				vTaskDelay(SLOW_CON_SLEEP_MS + conRandBackOff);
-				conNumAttempts = 0;
+ 				vTaskDelay(SLOW_CON_SLEEP_MS + conRandBackOff);
 			}
 
 			GW_WATCHDOG_RESET;
@@ -133,7 +129,6 @@ void remoteMgmtTask(void *pvParameters) {
 				//for(gwUINT8 i = 0; i < 3; i++) {
 				//It's okay if we're already in read mode
 				//readRadioRx();
-				//vTaskDelay(1);
 
 				if (xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 50 * portTICK_RATE_MS) == pdTRUE ) {
 					if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c) {
@@ -191,11 +186,9 @@ void remoteMgmtTask(void *pvParameters) {
 					}
 				}
 
-				//vTaskDelay(1);
-
 				//It's okay if we're already in read mode
 				//readRadioRx();
-				//vTaskDelay(5);
+
 				if (xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 200 * portTICK_RATE_MS) == pdPASS ) {
 					if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c) {
 						// Check to see what kind of command we just got.
@@ -215,7 +208,6 @@ void remoteMgmtTask(void *pvParameters) {
 					RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 				}
 			}
-			//vTaskDelay(5);
 		}
 
 		gLocalDeviceState = eLocalStateRun;
@@ -235,8 +227,7 @@ void remoteMgmtTask(void *pvParameters) {
 	// This thread is no longer needed
 	vTaskSuspend(gRemoteManagementTask);
 	/* Will only get here if the queue could not be created. */
-	for (;;)
-		;
+	for (;;);
 }
 
 void sleep() {

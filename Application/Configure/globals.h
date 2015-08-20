@@ -2,6 +2,7 @@
 
 extern byte g_lastChannel;
 extern byte g_restartCause;
+extern byte g_restartData;
 extern byte g_lastLQI;
 
 // ------------------------------------------------------------

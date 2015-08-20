@@ -74,7 +74,7 @@
 
 #define TOTAL_NUM_CHANNELS				14
 #define CON_ATTEMPTS_BEFORE_BACKOFF		3 * TOTAL_NUM_CHANNELS	// This should be a multiple of TOTAL_NUM_CHANNELS
-#define SLOW_CON_ATTEMPTS				20 *  14				// This should be a multiple of TOTAL_NUM_CHANNELS
+#define SLOW_CON_ATTEMPTS				3 * TOTAL_NUM_CHANNELS	// This should be a multiple of TOTAL_NUM_CHANNELS
 #define SLOW_CON_SLEEP_MS				50
 #define RAND_BACK_OFF_LIMIT				100
 
@@ -151,6 +151,7 @@ typedef struct {
 typedef gwUINT8				NetworkIDType;
 typedef gwUINT8				AckIDType;
 typedef gwUINT8				AckDataType[ACK_DATA_BYTES];
+typedef gwUINT8				AckLQIType;
 typedef gwUINT8				NetAddrType;
 typedef gwUINT8				EndpointNumType;
 typedef gwUINT8				KVPNumType;

@@ -295,14 +295,15 @@ void scannerReadTask(void *pvParameters) {
 			//while ((Scanner_DEVICE ->RCFIFO) == 0) {
 			vTaskDelay(1);
 		}
+		GW_ENTER_CRITICAL(ccrHolder);
 		Wait_Waitus(50);
 
 		// Now we have characters - read until there are no more.
 		// Do the read in a critical-area-busy-wait loop to make sure we've gotten all characters that will arrive.
-		GW_ENTER_CRITICAL(ccrHolder);
+		
 		EventTimer_ResetCounter(NULL );
 		// If there's no characters in 50ms then stop waiting for more.
-		while ((EventTimer_GetCounterValue(NULL ) < 150) && (gScanStringPos < MAX_SCAN_STRING_BYTES)) {
+		while ((EventTimer_GetCounterValue(NULL ) < 250) && (gScanStringPos < MAX_SCAN_STRING_BYTES)) {
 			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
 			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXOF_MASK;
 			//if ((Scanner_DEVICE ->SFIFO & UART_SFIFO_RXEMPT_MASK) == 0) {
@@ -317,10 +318,13 @@ void scannerReadTask(void *pvParameters) {
 				Wait_Waitus(500);
 			}
 		}
-		GW_EXIT_CRITICAL(ccrHolder);
-
+		
+		
 		// Disable all of the position controllers on the cart.
 		// TODO
+		
+		//Wait_Waitms(5);
+		GW_EXIT_CRITICAL(ccrHolder);
 
 		// Now send the scan string.
 		if (strlen(gScanString) > 0) {

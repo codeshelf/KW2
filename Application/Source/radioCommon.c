@@ -326,6 +326,7 @@ void debugReset() {
 
 
 void debugWatchdogallback(void) {
+	
 	Cpu_SystemReset();
 }
 
@@ -335,3 +336,5 @@ void debugRefreed(BufferCntType inBufferNum) {
 	// Any code, so that we have a place to set a breakpoint.
 	//RELEASE_TX_BUFFER(inBufferNum, ccrHolder);
 }
+
+

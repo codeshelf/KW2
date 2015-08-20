@@ -18,6 +18,7 @@
 // --------------------------------------------------------------------------
 // Global variables.
 __attribute__ ((section(".m_data_20000000"))) byte g_restartCause;
+__attribute__ ((section(".m_data_20000000"))) byte g_restartData;
 
 xTaskHandle gRadioReceiveTask = NULL;
 xTaskHandle gRadioTransmitTask = NULL;
@@ -68,8 +69,6 @@ void radioReceiveTask(void *pvParameters) {
 	// The radio receive task will return a pointer to a radio data packet.
 	if (gRadioReceiveQueue) {
 		for (;;) {
-
-			GW_WATCHDOG_RESET;
 
 			//A callback will add the packet to the queue below
 			readRadioRx();
@@ -139,6 +138,10 @@ void radioTransmitTask(void *pvParameters) {
 					}
 
 					readRadioRx();
+					
+					if ((gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_CONTROL_SUBCMD]) == eControlSubCmdAck) {
+						isAck = TRUE;
+					}
 #ifndef GATEWAY
 					if (txedAckId != 0 && txCommandType != eCommandNetMgmt && txCommandType != eCommandAssoc && !isAck) {
 						shouldRetry = TRUE;

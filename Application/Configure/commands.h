@@ -86,7 +86,8 @@ void writeAsPString(BufferStoragePtrType inDestPtr, const BufferStoragePtrType i
 gwUINT8 readAsPString(BufferStoragePtrType inDestStringPtr, const BufferStoragePtrType inSrcPtr, gwUINT8 inMaxBytes);
 
 void createNetCheckRespInboundCommand(BufferCntType inRXBufferNum);
-void createAckPacket(BufferCntType inTXBufferNum, AckIDType inAckId, AckDataType inAckData);
+//void createAckPacket(BufferCntType inTXBufferNum, AckIDType inAckId, AckDataType inAckData);
+void createAckPacket(BufferCntType inTXBufferNum, AckIDType inAckId, AckLQIType inAckLQI);
 void createAssocReqCommand(BufferCntType inTXBufferNum);
 void createAssocCheckCommand(BufferCntType inTXBufferNum);
 void createButtonControlCommand(BufferCntType inTXBufferNum, gwUINT8 inButtonNumber, gwUINT8 inFunctionType);
