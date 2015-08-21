@@ -53,7 +53,6 @@
 #define CMDPOS_CMD_ID			PCKPOS_ACK_ID + 1
 #define CMDPOS_ENDPOINT			CMDPOS_CMD_ID
 
-
 #define CMDPOS_STARTOFCMD		CMDPOS_ENDPOINT + 1
 #define PCKPOS_ACK_DATA			CMDPOS_ENDPOINT + 1
 
@@ -72,6 +71,7 @@
 // Assoc Command
 #define CMDPOS_ASSOC_SUBCMD		CMDPOS_STARTOFCMD
 #define CMDPOS_ASSOC_GUID		CMDPOS_ASSOC_SUBCMD + 1
+
 #define CMDPOS_ASSOCREQ_HW_VER	CMDPOS_ASSOC_GUID + 8
 #define CMDPOS_ASSOCREQ_FW_VER	CMDPOS_ASSOCREQ_HW_VER + 4
 #define CMDPOS_ASSOCREQ_RP_VER	CMDPOS_ASSOCREQ_FW_VER + 4
@@ -80,8 +80,11 @@
 #define CMDPOS_ASSOCRESP_ADDR	CMDPOS_ASSOC_GUID + 8
 #define CMDPOS_ASSOCRESP_NET	CMDPOS_ASSOCRESP_ADDR + 1
 #define CMDPOS_ASSOCRESP_SLEEP	CMDPOS_ASSOCRESP_NET + 1
+#define CMDPOS_ASSOCRESP_SCANNER CMDPOS_ASSOCRESP_SLEEP + 2
+
 #define CMDPOS_ASSOCACK_STATE	CMDPOS_ASSOC_GUID + 8
-#define CMDPOS_ASSOCACK_TIME	CMDPOS_ASSOCACK_STATE + 1
+#define CMDPOS_ASSOCACK_TIME	CMDPOS_ASSOCACK_STATE + 1 
+
 #define CMDPOS_ASSOCCHK_BATT	CMDPOS_ASSOC_GUID + 8
 #define CMDPOS_ASSOCCHK_LRC		CMDPOS_ASSOCCHK_BATT + 1
 #define CMDPOS_ASSOCCHK_RD		CMDPOS_ASSOCCHK_LRC + 1
@@ -212,17 +215,11 @@ typedef enum {
 } ELocalStatusType;
 
 typedef enum {
-	eResponseTimeout = 1,
-	eTxBufferFullTimeout = 2,
-	eRxBufferFullTimeout = 3,
-	eSmacError = 4,
-	eOtherError = 5
+	eResponseTimeout = 1, eTxBufferFullTimeout = 2, eRxBufferFullTimeout = 3, eSmacError = 4, eOtherError = 5
 } ELocalRestartSoftwareReasonType;
 
 typedef enum {
-	eUserRestart = 1,
-	eSoftwareRestart = 2,
-	eWatchDogRestart = 3
+	eUserRestart = 1, eSoftwareRestart = 2, eWatchDogRestart = 3
 } ELocalRestartCauseType;
 
 /*

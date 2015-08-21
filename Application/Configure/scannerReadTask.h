@@ -18,5 +18,6 @@
 
 void scannerReadTask(void *pvParameters);
 void sendLineToScanner(DisplayStringType inString, DisplayStringLenType inLen);
+void clearScannerDisplay();
 
 #endif SCANREADTASK_H

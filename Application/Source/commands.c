@@ -26,32 +26,32 @@
 #include "Rs485.h"
 #endif
 
-RemoteDescStruct			gRemoteStateTable[MAX_REMOTES];
-NetAddrType					gMyAddr = INVALID_REMOTE;
-NetworkIDType				gMyNetworkID = BROADCAST_NET_NUM;
-portTickType				gSleepWaitMillis;
-BufferStorageType			gLastTxAckId = 1;
+RemoteDescStruct gRemoteStateTable[MAX_REMOTES];
+NetAddrType gMyAddr = INVALID_REMOTE;
+NetworkIDType gMyNetworkID = BROADCAST_NET_NUM;
+portTickType gSleepWaitMillis;
+BufferStorageType gLastTxAckId = 1;
+EScannerType gScannerType = 0;
 
-extern xQueueHandle 		gRadioTransmitQueue;
-extern xQueueHandle 		gRadioReceiveQueue;
-extern xQueueHandle			gTxAckQueue;
-extern ControllerStateType 	gControllerState;
-extern ELocalStatusType		gLocalDeviceState;
+extern xQueueHandle gRadioTransmitQueue;
+extern xQueueHandle gRadioReceiveQueue;
+extern xQueueHandle gTxAckQueue;
+extern ControllerStateType gControllerState;
+extern ELocalStatusType gLocalDeviceState;
 
-extern RxRadioBufferStruct	gRxRadioBuffer[RX_BUFFER_COUNT];
-extern BufferCntType 		gRxCurBufferNum;
-extern BufferCntType		gRxUsedBuffers;
+extern RxRadioBufferStruct gRxRadioBuffer[RX_BUFFER_COUNT];
+extern BufferCntType gRxCurBufferNum;
+extern BufferCntType gRxUsedBuffers;
 
-extern TxRadioBufferStruct	gTxRadioBuffer[TX_BUFFER_COUNT];
-extern BufferCntType 		gTxCurBufferNum;
-extern BufferCntType 		gTxUsedBuffers;
-
+extern TxRadioBufferStruct gTxRadioBuffer[TX_BUFFER_COUNT];
+extern BufferCntType gTxCurBufferNum;
+extern BufferCntType gTxUsedBuffers;
 
 // --------------------------------------------------------------------------
 // Local function prototypes
 
 void createPacket(BufferCntType inTXBufferNum, ECommandGroupIDType inCmdID, NetworkIDType inNetworkID, NetAddrType inSrcAddr,
-		NetAddrType inDestAddr);
+        NetAddrType inDestAddr);
 
 // --------------------------------------------------------------------------
 
@@ -60,7 +60,7 @@ gwUINT8 transmitPacket(BufferCntType inTXBufferNum) {
 	BufferCntType txBufferNum = inTXBufferNum;
 
 	// Transmit the packet.
-	result = xQueueGenericSend(gRadioTransmitQueue, &txBufferNum, (portTickType) 0, (portBASE_TYPE) queueSEND_TO_BACK);
+	result = xQueueGenericSend(gRadioTransmitQueue, &txBufferNum, (portTickType) 0, (portBASE_TYPE) queueSEND_TO_BACK );
 
 	return result;
 
@@ -114,7 +114,7 @@ EndpointNumType getEndpointNumber(BufferCntType inRXBufferNum) {
 
 	// The command number is in the third half-byte of the packet.
 	EndpointNumType result = ((gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ENDPOINT] & CMDMASK_ENDPOINT)
-			>> SHIFTBITS_CMD_ENDPOINT);
+	        >> SHIFTBITS_CMD_ENDPOINT);
 	return result;
 }
 
@@ -180,7 +180,7 @@ gwUINT8 readAsPString(BufferStoragePtrType inDestStringPtr, const BufferStorageP
 // --------------------------------------------------------------------------
 
 void createPacket(BufferCntType inTXBufferNum, ECommandGroupIDType inCmdID, NetworkIDType inNetworkID, NetAddrType inSrcAddr,
-		NetAddrType inDestAddr) {
+        NetAddrType inDestAddr) {
 
 	// First clear the packet header.
 	memset((void *) gTxRadioBuffer[inTXBufferNum].bufferStorage, 0, CMDPOS_CMD_ID + 1);
@@ -214,17 +214,18 @@ void createAssocReqCommand(BufferCntType inTXBufferNum) {
 	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_HW_VER]), STR(HARDWARE_VERSION), 4);
 	//gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_HW_VER] = (HARDWARE_VERSION >> 8) & 0xFF;
 	//gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_HW_VER + 1] = HARDWARE_VERSION & 0xFF;
-	
+
 	// Set the firmware version (2 bytes)
 	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_FW_VER]), STR(FIRMWARE_VERSION), 4);
 	//gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_FW_VER] = (FIRMWARE_VERSION >> 8) & 0xFF;
 	//gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_FW_VER + 1] = FIRMWARE_VERSION & 0xFF;
-	
+
 	// Set the radio protocol version (1 byte)
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_RP_VER] = RADIO_PROTOCOL_VERSION;
-	
+
 	// Set the system status register
-	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_SYSSTAT] = GW_GET_SYSTEM_STATUS;
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCREQ_SYSSTAT] = GW_GET_SYSTEM_STATUS
+	;
 
 	gTxRadioBuffer[inTXBufferNum].bufferSize = CMDPOS_ASSOCREQ_SYSSTAT + 1;
 }
@@ -256,7 +257,7 @@ void createAssocCheckCommand(BufferCntType inTXBufferNum) {
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_LRC] = g_restartCause;
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_RD] = g_restartData;
 	gTxRadioBuffer[inTXBufferNum].bufferSize = CMDPOS_ASSOCCHK_LRC + 1;
-	
+
 	g_restartCause = 0;
 }
 // --------------------------------------------------------------------------
@@ -274,7 +275,7 @@ void createAckPacket(BufferCntType inTXBufferNum, AckIDType inAckId, AckLQIType 
 
 	createPacket(inTXBufferNum, eCommandControl, gMyNetworkID, gMyAddr, ADDR_CONTROLLER);
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_CONTROL_SUBCMD] = eControlSubCmdAck;
-	
+
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ACK_NUM] = inAckId;
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ACK_LQI] = inAckLQI;
 
@@ -312,7 +313,7 @@ void createOutboundNetSetup() {
 
 	serialTransmitFrame(UART0_BASE_PTR, (gwUINT8*) (&gTxRadioBuffer[txBufferNum].bufferStorage), gTxRadioBuffer[txBufferNum].bufferSize);
 	RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
-	
+
 //	vTaskResume(gRadioReceiveTask);
 
 }
@@ -327,7 +328,7 @@ void createScanCommand(BufferCntType inTXBufferNum, ScanStringPtrType inScanStri
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_CONTROL_SUBCMD] = eControlSubCmdScan;
 
 	writeAsPString(gTxRadioBuffer[inTXBufferNum].bufferStorage + CMDPOS_CONTROL_DATA, (BufferStoragePtrType) inScanStringPtr,
-			inScanStringLen);
+	        inScanStringLen);
 
 	gTxRadioBuffer[inTXBufferNum].bufferSize = CMDPOS_STARTOFCMD + inScanStringLen + 2;
 }
@@ -490,21 +491,23 @@ void processAssocRespCommand(BufferCntType inRXBufferNum) {
 	gwUINT8 ccrHolder;
 
 	// Let's first make sure that this assign command is for us.
-	if (memcmp(g_guid, &(gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), UNIQUE_ID_BYTES) == 0) {
-		// The destination address is the third half-byte of the command.
-		gMyAddr = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOCRESP_ADDR];
-		gMyNetworkID = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOCRESP_NET];
-		gSleepWaitMillis = (gwUINT16) gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOCRESP_SLEEP + 0] << 8;
-		gSleepWaitMillis += (gwUINT16) gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOCRESP_SLEEP + 1];
-		gSleepWaitMillis *= 1000;
-		gLocalDeviceState = eLocalStateAssociated;
+	//if (memcmp(g_guid, &(gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOC_GUID]), UNIQUE_ID_BYTES) == 0) {
+	// The destination address is the third half-byte of the command.
+	gMyAddr = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOCRESP_ADDR];
+	gMyNetworkID = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOCRESP_NET];
+	gSleepWaitMillis = (gwUINT16) gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOCRESP_SLEEP + 0] << 8;
+	gSleepWaitMillis += (gwUINT16) gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOCRESP_SLEEP + 1];
 
-		//BufferCntType txBufferNum = 0;//lockTxBuffer();
-		//createAssocCheckCommand(txBufferNum);
-		//if (transmitPacket(txBufferNum)) {
-		//}
+	gScannerType = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOCRESP_SCANNER];
+	gSleepWaitMillis *= 1000;
+	gLocalDeviceState = eLocalStateAssociated;
 
-	}
+	//BufferCntType txBufferNum = 0;//lockTxBuffer();
+	//createAssocCheckCommand(txBufferNum);
+	//if (transmitPacket(txBufferNum)) {
+	//}
+
+	//}
 }
 // --------------------------------------------------------------------------
 
@@ -513,16 +516,15 @@ void processAssocAckCommand(BufferCntType inRXBufferNum) {
 	//xTaskSetTickCount(gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_ASSOCACK_TIME)]);
 }
 
-
 // --------------------------------------------------------------------------
 
 void processAckSubCommand(BufferCntType inRxBufferNum) {
 	AckIDType ackId;
-	
+
 	ackId = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ACK_NUM];
-	
+
 	if (xQueueSend(gTxAckQueue, &ackId, (portTickType) 0)) {
-	}	
+	}
 }
 
 // --------------------------------------------------------------------------
@@ -533,17 +535,20 @@ DisplayStringLenType gDisplayDataLinePos[4];
 
 void processDisplayMsgSubCommand(BufferCntType inRXBufferNum) {
 #ifdef CHE_CONTROLLER
-	gwUINT8 ccrHolder;
-	
+	gwUINT8 ccrHolder, i;
+
 	GW_ENTER_CRITICAL(ccrHolder);
 	clearDisplay();
-
+	
+	if (gScannerType == eCodeCorp3600) {
+		clearScannerDisplay();
+	}
+	
 	// First display line.
 	BufferStoragePtrType bufferPtr = gRxRadioBuffer[inRXBufferNum].bufferStorage + CMDPOS_MESSAGE;
 	gDisplayDataLineLen[0] = readAsPString(gDisplayDataLine[0], bufferPtr, MAX_DISPLAY_STRING_BYTES);
 
 	displayMessage(1, gDisplayDataLine[0], FONT_NORMAL);
-	sendLineToScanner(gDisplayDataLine[0],gDisplayDataLineLen[0]);
 
 	// Second display line.
 	bufferPtr += gDisplayDataLineLen[0] + 1;
@@ -562,50 +567,70 @@ void processDisplayMsgSubCommand(BufferCntType inRXBufferNum) {
 	gDisplayDataLineLen[3] = readAsPString(gDisplayDataLine[3], bufferPtr, MAX_DISPLAY_STRING_BYTES);
 
 	displayMessage(4, gDisplayDataLine[3], FONT_NORMAL);
-	
+
+	// Send lines to CodeCorp3600 scanner if attached
+	if (gScannerType == eCodeCorp3600) {
+
+		for (i=0; i<4; i++) {
+			if (gDisplayDataLineLen[i] > 0) {
+				sendLineToScanner(gDisplayDataLine[i],gDisplayDataLineLen[i]);
+			}
+		}
+	}
+
 	GW_EXIT_CRITICAL(ccrHolder);
 #endif
 }
 
 // --------------------------------------------------------------------------
 
-void processDisplaySingleMsgSubCommand(BufferCntType inRXBufferNum){
+void processDisplaySingleMsgSubCommand(BufferCntType inRXBufferNum) {
 #ifdef CHE_CONTROLLER
 	gwUINT8 ccrHolder;
 	gwUINT8 fontType;
 	gwUINT16 posX = 0;
 	gwUINT16 posY = 0;
-		
+
 	GW_ENTER_CRITICAL(ccrHolder);
-	
+
 	// First display line.
 	BufferStoragePtrType bufferPtr = gRxRadioBuffer[inRXBufferNum].bufferStorage + CMDPOS_MESSAGE_SINGLE;
 	gDisplayDataLineLen[0] = readAsPString(gDisplayDataLine[0], bufferPtr, MAX_DISPLAY_STRING_BYTES);
-	
+
 	fontType = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_MESSAGE_FONT];
 
-	posX |=  (uint16) (gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_MESSAGE_POSX]>>8 & 0xFF);
-	posX |=  (uint16) (gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_MESSAGE_POSX+1] & 0xFF);
+	posX |= (uint16) (gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_MESSAGE_POSX]>>8 & 0xFF);
+	posX |= (uint16) (gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_MESSAGE_POSX+1] & 0xFF);
 
-	posY |=  (uint16) (gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_MESSAGE_POSY]>>8 & 0xFF);
-	posY |=  (uint16) (gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_MESSAGE_POSY+1] & 0xFF);
-	
+	posY |= (uint16) (gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_MESSAGE_POSY]>>8 & 0xFF);
+	posY |= (uint16) (gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_MESSAGE_POSY+1] & 0xFF);
+
 	displayStringByFont(posX, posY, gDisplayDataLine[0], 1, fontType);
-	
+
+	// Send to scanner display if connected to CodeCorp3600
+	if (gScannerType == eCodeCorp3600) {
+		if (gDisplayDataLineLen[0] > 0) {
+			sendLineToScanner(gDisplayDataLine[0],gDisplayDataLineLen[0]);
+		}
+	}
+
 	GW_EXIT_CRITICAL(ccrHolder);
 #endif
 }
 
 // --------------------------------------------------------------------------
 
-void processClearDisplay(BufferCntType inRXBufferNum){
+void processClearDisplay(BufferCntType inRXBufferNum) {
 #ifdef CHE_CONTROLLER
 	gwUINT8 ccrHolder;
-		
+
 	GW_ENTER_CRITICAL(ccrHolder);
 
 	clearDisplay();
-	
+	if (gScannerType == eCodeCorp3600) {
+		clearScannerDisplay();
+	}
+
 	GW_EXIT_CRITICAL(ccrHolder);
 #endif
 }
@@ -639,53 +664,53 @@ void processLedSubCommand(BufferCntType inRXBufferNum) {
 		ledData.channel = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_LED_CHANNEL];
 		//memcpy(&ledData.position, (void *) &(gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_LED_SAMPLES + (sampleNum * LED_SAMPLE_BYTES + 0)]), sizeof(ledData.position));
 		ledData.position = (gwUINT16) gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_LED_SAMPLES
-		+ (sampleNum * LED_SAMPLE_BYTES + 0)] << 8;
+		        + (sampleNum * LED_SAMPLE_BYTES + 0)] << 8;
 		ledData.position += (gwUINT16) gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_LED_SAMPLES
-		+ (sampleNum * LED_SAMPLE_BYTES + 1)];
+		        + (sampleNum * LED_SAMPLE_BYTES + 1)];
 		ledData.red = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_LED_SAMPLES + (sampleNum * LED_SAMPLE_BYTES + 2)];
 		ledData.green = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_LED_SAMPLES + (sampleNum * LED_SAMPLE_BYTES + 3)];
 		ledData.blue = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_LED_SAMPLES + (sampleNum * LED_SAMPLE_BYTES + 4)];
 
 		switch (effect) {
 			case eLedEffectSolid:
-			if (ledData.position == ((gwUINT16) -1)) {
-				gTotalLedSolidDataElements = 0;
-				gCurLedSolidDataElement = 0;
-				gNextSolidLedPosition = 0;
-			} else {
-				gLedSolidData[gTotalLedSolidDataElements] = ledData;
-				gTotalLedSolidDataElements += 1;
-			}
-			break;
+				if (ledData.position == ((gwUINT16) -1)) {
+					gTotalLedSolidDataElements = 0;
+					gCurLedSolidDataElement = 0;
+					gNextSolidLedPosition = 0;
+				} else {
+					gLedSolidData[gTotalLedSolidDataElements] = ledData;
+					gTotalLedSolidDataElements += 1;
+				}
+				break;
 
 			case eLedEffectFlash:
-			if (ledData.position == ((gwUINT16) -1)) {
-				gTotalLedFlashDataElements = 0;
-				gCurLedFlashDataElement = 0;
-				gNextFlashLedPosition = 0;
-			} else {
-				gLedFlashData[gTotalLedFlashDataElements] = ledData;
-				gTotalLedFlashDataElements += 1;
-			}
-			break;
+				if (ledData.position == ((gwUINT16) -1)) {
+					gTotalLedFlashDataElements = 0;
+					gCurLedFlashDataElement = 0;
+					gNextFlashLedPosition = 0;
+				} else {
+					gLedFlashData[gTotalLedFlashDataElements] = ledData;
+					gTotalLedFlashDataElements += 1;
+				}
+				break;
 
 			case eLedEffectError:
-			break;
+				break;
 
 			case eLedEffectMotel:
-			break;
+				break;
 
 			default:
-			break;
+				break;
 		}
 	}
 }
 
 // --------------------------------------------------------------------------
 
-void processSetPosControllerSubCommand(BufferCntType inRXBufferNum) {	
+void processSetPosControllerSubCommand(BufferCntType inRXBufferNum) {
 #ifdef RS485
-	
+
 	gwUINT8 instructionNum;
 	gwUINT8 instructionCount;
 

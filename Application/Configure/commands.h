@@ -40,6 +40,11 @@
 // Typedefs.
 
 typedef enum {
+	eMotorolaEthernet = 0,
+	eCodeCorp3600 = 1
+} EScannerType;
+
+typedef enum {
 	eMotorCommandInvalid = -1,
 	eMotorCommandFreewheel = 0,
 	eMotorCommandFwd = 1,
