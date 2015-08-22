@@ -27,7 +27,7 @@ BufferCntType 		gTxUsedBuffers = 0;
 ERxMessageHolderType gRxMsg;
 ETxMessageHolderType gTxMsg;
 
-gwUINT8 g_lastLQI;
+gwUINT8 gLastLQI;
 
 RadioStateEnum gRadioState = eIdle;
 

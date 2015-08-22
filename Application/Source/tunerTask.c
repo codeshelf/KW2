@@ -120,7 +120,7 @@ void tuneRadio() {
 	
 	GW_EXIT_CRITICAL(ccrHolder);
 	
-	g_trim[0] = trim;
+	gTrim[0] = trim;
 }
 
 // --------------------------------------------------------------------------
@@ -182,9 +182,9 @@ void scanParams() {
 // --------------------------------------------------------------------------
 
 void zeroParams() {
-	memset(g_guid, (uint8_t)0, EEPROM_GUID_LEN);
-	memset(g_hw_ver, (uint8_t)0, EEPROM_HW_VER_LEN);
-	memset(g_aes_key, (uint8_t)0, EEPROM_AES_KEY_LEN);
+	memset(gGuid, (uint8_t)0, EEPROM_GUID_LEN);
+	memset(gHwVer, (uint8_t)0, EEPROM_HW_VER_LEN);
+	memset(gAesKey, (uint8_t)0, EEPROM_AES_KEY_LEN);
 }
 
 // --------------------------------------------------------------------------
@@ -264,15 +264,15 @@ void saveParams() {
 	if (setupModeState == eSetupModeWaitingForSave) {
 		
 		// Write parameters to eeprom
-		writeGuid(g_guid);
-		writeAESKey(g_aes_key);
-		writeHWVersion(g_hw_ver);
-		writeTuning(&g_trim);
+		writeGuid(gGuid);
+		writeAESKey(gAesKey);
+		writeHWVersion(gHwVer);
+		writeTuning(&gTrim);
 		
-		sprintf(displayTuningStr, "%s %X", "Tuning: ", g_trim[0] & 0xff);
+		sprintf(displayTuningStr, "%s %X", "Tuning: ", gTrim[0] & 0xff);
 		
 		strcpy(displayGuidStr, "GUID: ");
-		strcat(displayGuidStr, g_guid);
+		strcat(displayGuidStr, gGuid);
 		
 		GW_ENTER_CRITICAL(ccrHolder);
 		clearDisplay();
@@ -293,15 +293,15 @@ void getGuidAes() {
 	if (gScanString[0] == 'G' && gScanString[1] == '%') {
 		
 		// Get the guid
-		strncpy(g_guid, gScanString + 2, EEPROM_GUID_LEN);
-		g_guid[EEPROM_GUID_LEN] = NULL;
+		strncpy(gGuid, gScanString + 2, EEPROM_GUID_LEN);
+		gGuid[EEPROM_GUID_LEN] = NULL;
 		
 		// Get the AES key
-		strncpy(g_aes_key, gScanString + 2 + EEPROM_GUID_LEN, EEPROM_AES_KEY_LEN);
+		strncpy(gAesKey, gScanString + 2 + EEPROM_GUID_LEN, EEPROM_AES_KEY_LEN);
 		
 		GW_ENTER_CRITICAL(ccrHolder);
 		displayMessage(2, "Scanned GUID/AES", FONT_NORMAL);
-		displayMessage(3, g_guid, FONT_NORMAL);
+		displayMessage(3, gGuid, FONT_NORMAL);
 		GW_EXIT_CRITICAL(ccrHolder);
 		vTaskDelay(PROMPT_DELAY_TIME);
 	
@@ -332,16 +332,16 @@ void getHwVersion() {
 	if (gScanString[0] == 'H' && gScanString[1] == '%') {
 		char guidDispStr[6 + EEPROM_GUID_LEN + 1];
 		strcpy(guidDispStr, "GUID: ");
-		strcat(guidDispStr, g_guid);
+		strcat(guidDispStr, gGuid);
 	
 		// Get the hw version
-		strncpy(g_hw_ver, gScanString + 2, EEPROM_HW_VER_LEN);
+		strncpy(gHwVer, gScanString + 2, EEPROM_HW_VER_LEN);
 		
 		GW_ENTER_CRITICAL(ccrHolder);
 		clearDisplay();
 		displayMessage(1, "KW2 Setup Mode", FONT_NORMAL);
 		displayMessage(2, "Scanned HW Version", FONT_NORMAL);
-		displayMessage(3, g_hw_ver, FONT_NORMAL);
+		displayMessage(3, gHwVer, FONT_NORMAL);
 		GW_EXIT_CRITICAL(ccrHolder);
 		vTaskDelay(PROMPT_DELAY_TIME);
 		

@@ -181,10 +181,10 @@ void FRTOS1_vApplicationIdleHook(void)
 /* ===================================================================*/
 void Watchdog_OnWatchDog(LDD_TUserData *UserDataPtr)
 {
-  /* Write your code here ... */
-	int i = 0;
-	i++;
-	g_restartCause = 8;
+	  /* Write your code here ... */
+		register int *sp asm ("sp");
+		gProgramCounter = *(sp + 8);
+		gRestartCause = 0xcd;
 }
 
 /*
@@ -203,6 +203,9 @@ void Watchdog_OnWatchDog(LDD_TUserData *UserDataPtr)
 void Cpu_OnHardFault(void)
 {
   /* Write your code here ... */
+	register int *sp asm ("sp");
+	gProgramCounter = *(sp + 11);
+	gRestartCause = 0xcc;
 }
 
 /*
@@ -219,6 +222,24 @@ void Cpu_OnHardFault(void)
 */
 /* ===================================================================*/
 void Cpu_OnBusFault(void)
+{
+  /* Write your code here ... */
+}
+
+/*
+** ===================================================================
+**     Event       :  Cpu_OnNMIINT (module Events)
+**
+**     Component   :  Cpu [MK21DN512MC5]
+*/
+/*!
+**     @brief
+**         This event is called when the Non maskable interrupt had
+**         occurred. This event is automatically enabled when the [NMI
+**         interrupt] property is set to 'Enabled'.
+*/
+/* ===================================================================*/
+void Cpu_OnNMIINT(void)
 {
   /* Write your code here ... */
 }

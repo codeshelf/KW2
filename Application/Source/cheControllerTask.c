@@ -71,13 +71,13 @@ void cheControllerTask(void *pvParameters) {
 	displayMessage(1, "CONNECTING...", FONT_NORMAL);
 
 	strcpy(msg, "HW v");
-	strcat(msg, g_hw_ver);
+	strcat(msg, gHwVer);
 	strcat(msg, " FW v");
 	strcat(msg, STR(FIRMWARE_VERSION));
 	displayMessage(2, msg, FONT_NORMAL);
 	
 	strcpy(msg, "GUID ");
-	strcat(msg, g_guid);
+	strcat(msg, gGuid);
 	displayMessage(3, msg, FONT_NORMAL);
 	
 	displayCodeshelfLogo(48, 135);

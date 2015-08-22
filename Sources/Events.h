@@ -54,8 +54,6 @@
 #include "StatusLedSdi.h"
 #include "ScannerPower.h"
 #include "Rs485Power.h"
-#include "Gateway.h"
-//#include "Gateway.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -213,6 +211,21 @@ void Cpu_OnHardFault(void);
 */
 /* ===================================================================*/
 void Cpu_OnBusFault(void);
+
+/*
+** ===================================================================
+**     Event       :  Cpu_OnNMIINT (module Events)
+**
+**     Component   :  Cpu [MK21DN512MC5]
+*/
+/*!
+**     @brief
+**         This event is called when the Non maskable interrupt had
+**         occurred. This event is automatically enabled when the [NMI
+**         interrupt] property is set to 'Enabled'.
+*/
+/* ===================================================================*/
+void Cpu_OnNMIINT(void);
 
 /* END Events */
 

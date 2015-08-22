@@ -2,8 +2,8 @@
 <PEproject>
   <Header>
     <Name>ProcessorExpert</Name>
-    <SavedBy>andrewhuff</SavedBy>
-    <ModificationStamp>598</ModificationStamp>
+    <SavedBy>jeffw</SavedBy>
+    <ModificationStamp>550</ModificationStamp>
     <Date>2015-08-21</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
@@ -28,7 +28,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>397</ProjectCompNumb>
+    <ProjectCompNumb>379</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -544,7 +544,7 @@
         <ItemSymbol>Intperiphgrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>SharedADC0</ItemSymbol>
@@ -668,7 +668,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>true</Value>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>PeriphDeviceRCM</ItemSymbol>
@@ -859,7 +859,7 @@
         <ItemSymbol>FlashMemoryOrgGrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>SharedFLASHGrp</ItemSymbol>
@@ -3663,7 +3663,7 @@
         <ItemSymbol>SystemControlSCBSettingGrp</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>SystemControlITFolding</ItemSymbol>
@@ -3929,7 +3929,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMCLKOUTPin</ItemSymbol>
@@ -3959,7 +3959,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>SIMClkGateEWM</ItemSymbol>
@@ -4294,8 +4294,8 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>IntNMI</ItemSymbol>
@@ -6263,7 +6263,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
         <LastSelection>false</LastSelection>
         <LastUserSel>no</LastUserSel>
       </ItemState>
@@ -6278,10 +6278,10 @@
         <ReadOnly>true</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
         <LastSelection>true</LastSelection>
-        <LastUserSel>never</LastUserSel>
+        <LastUserSel>always</LastUserSel>
       </ItemState>
       <ItemState>
         <ItemSymbol>OnNMIINTName</ItemSymbol>
@@ -7399,7 +7399,7 @@
   <Configuration>
     <CompNumb>3</CompNumb>
     <NodeName>CHEController</NodeName>
-    <CnfgEnabled>false</CnfgEnabled>
+    <CnfgEnabled>true</CnfgEnabled>
     <TargetCPU>225</TargetCPU>
     <ConfigurationComment lines_count="0" />
     <BoolList_FpgaConfig>
@@ -7528,7 +7528,7 @@
   <Configuration>
     <CompNumb>166</CompNumb>
     <NodeName>Tuner</NodeName>
-    <CnfgEnabled>true</CnfgEnabled>
+    <CnfgEnabled>false</CnfgEnabled>
     <TargetCPU>225</TargetCPU>
     <ConfigurationComment lines_count="0" />
     <BoolList_FpgaConfig>
@@ -7938,7 +7938,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>LDDRuntimeCounterGroup</ItemSymbol>
@@ -8040,7 +8040,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>true</Value>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>ARMFamilyType</ItemSymbol>
@@ -8268,7 +8268,7 @@
         <ItemSymbol>TicksGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>TicklessIdleModeEnabled</ItemSymbol>
@@ -9285,7 +9285,7 @@
         <ItemSymbol>QueuesGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>QueueRegistrySize</ItemSymbol>
@@ -9307,7 +9307,7 @@
         <ItemSymbol>MutexGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>UseMutexes</ItemSymbol>
@@ -9331,7 +9331,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>TimerTaskPriority</ItemSymbol>
@@ -9361,7 +9361,7 @@
         <ItemSymbol>MemoryGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>MemoryScheme</ItemSymbol>
@@ -9473,7 +9473,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>Shell</ItemSymbol>
@@ -9537,7 +9537,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>GenerateRTOSPExMacros</ItemSymbol>
@@ -13701,7 +13701,7 @@
         <ItemSymbol>MatchAddressSettings</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>MAEn1</ItemSymbol>
@@ -13746,7 +13746,7 @@
         <ItemSymbol>ModemSettings</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>TXCTSE</ItemSymbol>
@@ -13822,7 +13822,7 @@
         <ItemSymbol>FIFOSettings</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>TXFE</ItemSymbol>
@@ -18880,7 +18880,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>medium priority</Value>
+        <Value>maximal priority</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>ISRHandleFeatureGroup1</ItemSymbol>
@@ -22906,7 +22906,7 @@
     <BeanType>Init_FTM_VAR0</BeanType>
     <Name>Tuner</Name>
     <CompNumb>152</CompNumb>
-    <CompEnabled>true</CompEnabled>
+    <CompEnabled>false</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PERIPHINSP</IconName>
     <UserFolderName />

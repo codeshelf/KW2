@@ -53,8 +53,6 @@
 #include "StatusLedSdi.h"
 #include "ScannerPower.h"
 #include "Rs485Power.h"
-#include "Gateway.h"
-//#include "Gateway.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -105,17 +103,17 @@ int main(void) {
 	
 	/* Write your code here */
 	// Load GUID
-	readGuid(g_guid);
-	g_guid[8] = NULL;
+	readGuid(gGuid);
+	gGuid[8] = NULL;
 	
 	// Load hardware version
-	readHWVersion(g_hw_ver);
+	readHWVersion(gHwVer);
 	
 	// Load aes key
-	readAESKey(g_aes_key);
+	readAESKey(gAesKey);
 	
 	// Load trim
-	readTuning(g_trim);
+	readTuning(gTrim);
 	
 	PORTC_PCR4 = PORT_PCR_MUX(ptc4_mux);
 	PORTC_PCR5 = PORT_PCR_MUX(ptc5_mux);

@@ -17,8 +17,9 @@
 
 // --------------------------------------------------------------------------
 // Global variables.
-__attribute__ ((section(".m_data_20000000"))) byte g_restartCause;
-__attribute__ ((section(".m_data_20000000"))) byte g_restartData;
+__attribute__ ((section(".m_data_20000000"))) byte gRestartCause;
+__attribute__ ((section(".m_data_20000000"))) byte gRestartData;
+__attribute__ ((section(".m_data_20000000"))) uint32_t gProgramCounter;
 
 xTaskHandle gRadioReceiveTask = NULL;
 xTaskHandle gRadioTransmitTask = NULL;

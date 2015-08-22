@@ -55,13 +55,22 @@ void startApplication(void) {
 	
 	smacErrors_t smacError;
 	uint8_t data;
+	uint32_t *tmp;
+	
+//	Cpu_EnableInt();
+//	while (1) {
+//		
+//	}
+//	
+//	tmp = 0x08000001;
+//	tmp = *tmp;
 
 	MC1324xDrv_SPIInit();
 	smacError = MLMERadioInit();
 	MLMESetPromiscuousMode(gPromiscuousMode_d);
 	smacError = MLMESetChannelRequest(DEFAULT_CHANNEL);
 	smacError = MLMEPAOutputAdjust(DEFAULT_POWER);
-	smacError = MLMEXtalAdjust(g_trim[0]);
+	smacError = MLMEXtalAdjust(gTrim[0]);
 	//smacError = MLMEFEGainAdjust(15);
 	MC1324xDrv_IndirectAccessSPIWrite(ANT_PAD_CTRL, cANT_PAD_CTRL_ANTX_CTRLMODE + cANT_PAD_CTRL_ANTX_EN);
 	MC1324xDrv_IndirectAccessSPIWrite(ANT_AGC_CTRL, 0x40 + 0x02 /*+ 0x01*/);

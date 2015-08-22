@@ -1,16 +1,17 @@
 #include "eeprom.h"
 #include "gwTypes.h"
 
-extern byte g_lastChannel;
-extern byte g_restartCause;
-extern byte g_restartData;
-extern byte g_lastLQI;
+extern byte 		gLastChannel;
+extern byte 		gRestartCause;
+extern byte 		gRestartData;
+extern byte			gLastLQI;
+extern uint32_t		gProgramCounter;
 
 // ------------------------------------------------------------
 // ------------------ Global Values ---------------------------
 // ------------------------------------------------------------
 
-uint8_t g_guid[EEPROM_GUID_LEN + 1];		// space for null termination
-uint8_t g_hw_ver[EEPROM_HW_VER_LEN + 2];	// space for period and null termination
-uint8_t g_aes_key[EEPROM_AES_KEY_LEN];
-uint8_t g_trim[EEPROM_TUNING_LEN];
+uint8_t gGuid[EEPROM_GUID_LEN + 1];		// space for null termination
+uint8_t gHwVer[EEPROM_HW_VER_LEN + 2];	// space for period and null termination
+uint8_t gAesKey[EEPROM_AES_KEY_LEN];
+uint8_t gTrim[EEPROM_TUNING_LEN];

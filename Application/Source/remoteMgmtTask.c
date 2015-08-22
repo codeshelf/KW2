@@ -35,7 +35,7 @@ extern xTaskHandle gRemoteManagementTask;
 
 void preSleep();
 
-__attribute__ ((section(".m_data_20000000"))) byte g_lastChannel;
+__attribute__ ((section(".m_data_20000000"))) byte gLastChannel;
 
 // --------------------------------------------------------------------------
 
@@ -66,8 +66,8 @@ void remoteMgmtTask(void *pvParameters) {
 	if (gRemoteMgmtQueue) {
 		
 		// Try to read last used channel from memory. Otherwise use default starting
-		if ((g_lastChannel >= gChannel11_c) && (g_lastChannel < gTotalChannels_c)) {
-			channel = g_lastChannel;
+		if ((gLastChannel >= gChannel11_c) && (gLastChannel < gTotalChannels_c)) {
+			channel = gLastChannel;
 			haveLastChannel = TRUE;
 		} else {
 			channel = gChannel11_c;
@@ -76,7 +76,7 @@ void remoteMgmtTask(void *pvParameters) {
 		setStatusLed(5, 0, 0);
 
 		// Compute random backoff value
-		srand((uint32_t) (g_guid[6] << 16) | (g_guid[7] & 0xff));
+		srand((uint32_t) (gGuid[6] << 16) | (gGuid[7] & 0xff));
 		conRandBackOff = rand() % RAND_BACK_OFF_LIMIT;
 		
 		// Random backoff
@@ -141,7 +141,7 @@ void remoteMgmtTask(void *pvParameters) {
 								processAssocRespCommand(rxBufferNum);
 								if (gLocalDeviceState == eLocalStateAssociated) {
 									associated = TRUE;
-									g_lastChannel = channel;
+									gLastChannel = channel;
 									RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 									break;
 								}
@@ -163,7 +163,7 @@ void remoteMgmtTask(void *pvParameters) {
 						nextChannelToTry++;
 					}
 				} else {
-					channel = g_lastChannel;
+					channel = gLastChannel;
 					triedLastChannel = TRUE;
 				}
 			}
@@ -212,7 +212,7 @@ void remoteMgmtTask(void *pvParameters) {
 
 		gLocalDeviceState = eLocalStateRun;
 		readRadioRx();
-		g_lastChannel = channel;
+		gLastChannel = channel;
 		channel = 0;
 
 		// Just in case we receive any extra management commands we need to free them.
