@@ -255,10 +255,15 @@ void createAssocCheckCommand(BufferCntType inTXBufferNum) {
 
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_BATT] = batteryLevel;
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_LRC] = gRestartCause;
-	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_RD] = gRestartData;
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_RST_DATA] = gRestartData;
+	//memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_RST_DATA]), gRestartData, ASSOC_RST_DATA_LEN);
+	//gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_PC] = gProgramCounter;
+	
 	gTxRadioBuffer[inTXBufferNum].bufferSize = CMDPOS_ASSOCCHK_LRC + 1;
 
-	gRestartCause = 0;
+	//gRestartCause = 0;
+	//memset(gRestartData, 0, ASSOC_RST_DATA_LEN);
+	//gProgramCounter = 0;
 }
 // --------------------------------------------------------------------------
 

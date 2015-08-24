@@ -183,7 +183,7 @@ void Watchdog_OnWatchDog(LDD_TUserData *UserDataPtr)
 {
 	  /* Write your code here ... */
 		register int *sp asm ("sp");
-		gProgramCounter = *(sp + 8);
+		//gProgramCounter = *(sp + 8);
 		gRestartCause = 0xcd;
 }
 
@@ -204,7 +204,7 @@ void Cpu_OnHardFault(void)
 {
   /* Write your code here ... */
 	register int *sp asm ("sp");
-	gProgramCounter = *(sp + 11);
+	//gProgramCounter = *(sp + 11);
 	gRestartCause = 0xcc;
 }
 
