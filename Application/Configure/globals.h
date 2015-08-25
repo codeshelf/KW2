@@ -7,7 +7,7 @@ extern byte			gLastLQI;
 
 // --------------- Restart Debug Values ------------------------
 extern byte 		gRestartCause;
-extern byte gRestartData;
+extern byte 		gRestartData[2];
 extern uint32_t		gProgramCounter;
 
 // ------------------- Global Values ---------------------------

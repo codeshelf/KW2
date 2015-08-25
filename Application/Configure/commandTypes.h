@@ -17,6 +17,7 @@
 // Definitions.
 
 #define UNIQUE_ID_BYTES			8
+#define ASSOC_RST_DATA_LEN		2
 
 
 #define PRIVATE_GUID			"00000000"
@@ -90,8 +91,7 @@
 #define CMDPOS_ASSOCCHK_BATT	CMDPOS_ASSOC_GUID + 8
 #define CMDPOS_ASSOCCHK_LRC		CMDPOS_ASSOCCHK_BATT + 1
 #define CMDPOS_ASSOCCHK_RST_DATA		CMDPOS_ASSOCCHK_LRC + 1
-#define CMDPOS_ASSOCCHK_PADDING CMDPOS_ASSOCCHK_RST_DATA + 1
-#define CMDPOS_ASSOCCHK_PC		CMDPOS_ASSOCCHK_PADDING + 1
+#define CMDPOS_ASSOCCHK_PC		CMDPOS_ASSOCCHK_RST_DATA + ASSOC_RST_DATA_LEN
 
 // Info Command
 #define CMDPOS_INFO_SUBCMD		CMDPOS_STARTOFCMD
@@ -219,11 +219,15 @@ typedef enum {
 } ELocalStatusType;
 
 typedef enum {
-	eResponseTimeout = 1, eTxBufferFullTimeout = 2, eRxBufferFullTimeout = 3, eSmacError = 4, eOtherError = 5
-} ELocalRestartSoftwareReasonType;
-
-typedef enum {
-	eUserRestart = 1, eSoftwareRestart = 2, eWatchDogRestart = 3
+	eUserRestart = 1, 
+	eHardFault = 2, 
+	eWatchDogRestart = 3, 
+	eResponseTimeout = 4, 
+	eTxBufferFullTimeout = 5,
+	eRxBufferFullTimeout = 6, 
+	eSmacError = 7,
+	eOtherError = 9,
+	ePowerOn = 10
 } ELocalRestartCauseType;
 
 /*

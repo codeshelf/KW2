@@ -214,6 +214,11 @@ void remoteMgmtTask(void *pvParameters) {
 		readRadioRx();
 		gLastChannel = channel;
 		channel = 0;
+		
+		// Clear last reset cause and related data
+		gRestartCause = 0;
+		memset(gRestartData, 0, ASSOC_RST_DATA_LEN);
+		gProgramCounter = 0;
 
 		// Just in case we receive any extra management commands we need to free them.
 		/*

@@ -254,16 +254,33 @@ void createAssocCheckCommand(BufferCntType inTXBufferNum) {
 	}
 
 	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_BATT] = batteryLevel;
-	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_LRC] = gRestartCause;
-	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_RST_DATA] = gRestartData;
-	//memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_RST_DATA]), gRestartData, ASSOC_RST_DATA_LEN);
-	//gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_PC] = gProgramCounter;
 	
-	gTxRadioBuffer[inTXBufferNum].bufferSize = CMDPOS_ASSOCCHK_LRC + 1;
+	if ( RCM_SRS0 & RCM_SRS0_PIN_MASK ) { 
+		// Reset button
+		gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_LRC] = eUserRestart;
+		gProgramCounter = 0;
+		memset(gRestartData, 0, ASSOC_RST_DATA_LEN);
+	} else if (RCM_SRS0 & RCM_SRS0_POR_MASK) {
+		// Power on
+		gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_LRC] = ePowerOn;
+		gProgramCounter = 0;
+		memset(gRestartData, 0, ASSOC_RST_DATA_LEN);
+	} else {
+		gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_LRC] = gRestartCause;
+	}
 
-	//gRestartCause = 0;
-	//memset(gRestartData, 0, ASSOC_RST_DATA_LEN);
-	//gProgramCounter = 0;
+	memcpy((void *) &(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_RST_DATA]), gRestartData, ASSOC_RST_DATA_LEN);
+	
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_PC + 0] = (gProgramCounter >> 24) & 0xFF;
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_PC + 1] = (gProgramCounter >> 16) & 0xFF;
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_PC + 2] = (gProgramCounter >> 8) & 0xFF;
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_ASSOCCHK_PC + 3] = (gProgramCounter >> 0) & 0xFF;
+	
+	gTxRadioBuffer[inTXBufferNum].bufferSize = CMDPOS_ASSOCCHK_PC + 4;
+
+//	gRestartCause = 0;
+//	memset(gRestartData, 0, ASSOC_RST_DATA_LEN);
+//	gProgramCounter = 0;
 }
 // --------------------------------------------------------------------------
 

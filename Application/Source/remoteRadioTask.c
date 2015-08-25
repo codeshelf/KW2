@@ -18,8 +18,8 @@
 // --------------------------------------------------------------------------
 // Global variables.
 __attribute__ ((section(".m_data_20000000"))) byte gRestartCause;
-__attribute__ ((section(".m_data_20000000"))) byte gRestartData;
-//__attribute__ ((section(".m_data_20000000"))) uint32_t gProgramCounter;
+__attribute__ ((section(".m_data_20000000"))) byte gRestartData[2];
+__attribute__ ((section(".m_data_20000000"))) uint32_t gProgramCounter;
 
 xTaskHandle gRadioReceiveTask = NULL;
 xTaskHandle gRadioTransmitTask = NULL;
@@ -142,13 +142,14 @@ void radioTransmitTask(void *pvParameters) {
 					
 					if ((gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_CONTROL_SUBCMD]) == eControlSubCmdAck) {
 						isAck = TRUE;
+						
 					}
 #ifndef GATEWAY
 					if (txedAckId != 0 && txCommandType != eCommandNetMgmt && txCommandType != eCommandAssoc && !isAck) {
 						shouldRetry = TRUE;
 						
 						//Wait up to 50ms for an ACK
-						if (xQueueReceive(gTxAckQueue, &ackId, 200 * portTICK_RATE_MS) == pdPASS) {
+						if (xQueueReceive(gTxAckQueue, &ackId, 50 * portTICK_RATE_MS) == pdPASS) {
 							if (txedAckId == ackId) {
 								shouldRetry = FALSE;
 							}
@@ -161,6 +162,7 @@ void radioTransmitTask(void *pvParameters) {
 					}
 #endif					
 				} while (shouldRetry);
+
 				RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
 			}
 		}
