@@ -11,7 +11,7 @@
 #define PROCESS_RX_H
 
 #include "radioCommon.h"
-
+#ifndef GATEWAY
 void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi);
-
+#endif
 #endif // PROCESS_RX_H

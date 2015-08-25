@@ -10,6 +10,8 @@
 
 #include "PE_Types.h"
 #include "SharpDisplayCS.h"
+#include "radioCommon.h"
+#include "Scanner.h"
 
 #define DISPLAY_WIDTH		400 // 4.4" = 320, 2.7" = 400
 #define DISPLAY_HEIGHT		240
@@ -70,5 +72,8 @@ void displayMessage(uint8_t line, char_t *stringPtr, uint8_t size);
 void setFontType(uint8_t fontType);
 
 void displayCodeshelfLogo(uint8_t x, uint8_t y);
+
+void sendLineToScanner(DisplayStringType inString, DisplayStringLenType inLen);
+void clearScannerDisplay();
 
 #endif /* DISPLAY_H_ */

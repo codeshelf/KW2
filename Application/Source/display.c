@@ -436,3 +436,32 @@ void setFontType(uint8_t fontType) {
 			break;
 	}
 }
+
+// --------------------------------------------------------------------------
+
+void sendLineToScanner(DisplayStringType inString, DisplayStringLenType inLen) {
+	int i = 0;
+	char nextChar = NULL;
+	
+	sendOneChar(Scanner_DEVICE, '|');
+	for (i=0; i < inLen; i++ ) {
+		nextChar = inString[i];
+		sendOneChar(Scanner_DEVICE, nextChar);
+	}
+	
+	sendOneChar(Scanner_DEVICE, '\r');
+	sendOneChar(Scanner_DEVICE, '\n');
+}
+
+// --------------------------------------------------------------------------
+
+void clearScannerDisplay() {
+	sendOneChar(Scanner_DEVICE, '|');
+	sendOneChar(Scanner_DEVICE, 'c');
+	sendOneChar(Scanner_DEVICE, 'l');
+	sendOneChar(Scanner_DEVICE, 'e');
+	sendOneChar(Scanner_DEVICE, 'a');
+	sendOneChar(Scanner_DEVICE, 'r');
+	sendOneChar(Scanner_DEVICE, '\r');
+	sendOneChar(Scanner_DEVICE, '\n');
+}
