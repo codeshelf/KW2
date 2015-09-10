@@ -1,7 +1,7 @@
 /* ###################################################################
  **     Filename    : ProcessorExpert.c
  **     Project     : ProcessorExpert
- **     Processor   : MK21DX256VMC5
+ **     Processor   : MKW21D256VHA5
  **     Version     : Driver 01.01
  **     Compiler    : GNU C Compiler
  **     Date/Time   : 2014-03-24, 15:29, # CodeGen: 0
@@ -33,21 +33,14 @@
 #include "UTIL2.h"
 #include "INT_PORTB.h"
 #include "Wait.h"
-#include "Rs485.h"
 #include "Rs485TxCtl.h"
 
 #include "Critical.h"
-#include "Scanner.h"
 #include "Wait.h"
 #include "Watchdog.h"
 #include "EventTimer.h"
-#include "SharpDisplay.h"
 #include "SharpDisplayCS.h"
 #include "BitIoLdd1.h"
-#include "Tuner.h"
-//#include "SharpDisplay.h"
-//#include "SharpDisplayCS.h"
-//#include "BitIoLdd1.h"
 #include "EepromCS.h"
 #include "BitIoLdd2.h"
 #include "StatusLedClk.h"
@@ -59,6 +52,8 @@
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
+#include "PDD_Includes.h"
+#include "Init_Config.h"
 /* User includes (#include below this line is not maintained by Processor Expert) */
 #include "globals.h"
 #include "eeprom.h"

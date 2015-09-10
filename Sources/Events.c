@@ -1,7 +1,7 @@
 /* ###################################################################
 **     Filename    : Events.c
 **     Project     : ProcessorExpert
-**     Processor   : MK21DX256VMC5
+**     Processor   : MKW21D256VHA5
 **     Component   : Events
 **     Version     : Driver 01.00
 **     Compiler    : GNU C Compiler
@@ -29,6 +29,8 @@
 
 #include "Cpu.h"
 #include "Events.h"
+#include "Init_Config.h"
+#include "PDD_Includes.h"
 #include "globals.h"
 
 #ifdef __cplusplus
@@ -210,27 +212,9 @@ void Cpu_OnHardFault(void)
 
 /*
 ** ===================================================================
-**     Event       :  Cpu_OnBusFault (module Events)
+**     Event       :  Cpu_OnNMI (module Events)
 **
-**     Component   :  Cpu [MK21DN512MC5]
-*/
-/*!
-**     @brief
-**         This event is called when the Bus Fault exception had
-**         occurred. This event is automatically enabled when the [Bus
-**         Fault] property is set to 'Enabled'.
-*/
-/* ===================================================================*/
-void Cpu_OnBusFault(void)
-{
-  /* Write your code here ... */
-}
-
-/*
-** ===================================================================
-**     Event       :  Cpu_OnNMIINT (module Events)
-**
-**     Component   :  Cpu [MK21DN512MC5]
+**     Component   :  Cpu [MKW21D256HA5]
 */
 /*!
 **     @brief
@@ -239,7 +223,7 @@ void Cpu_OnBusFault(void)
 **         interrupt] property is set to 'Enabled'.
 */
 /* ===================================================================*/
-void Cpu_OnNMIINT(void)
+void Cpu_OnNMI(void)
 {
   /* Write your code here ... */
 }

@@ -1,7 +1,7 @@
 /* ###################################################################
 **     Filename    : Events.h
 **     Project     : ProcessorExpert
-**     Processor   : MK21DX256VMC5
+**     Processor   : MKW21D256VHA5
 **     Component   : Events
 **     Version     : Driver 01.00
 **     Compiler    : GNU C Compiler
@@ -39,16 +39,12 @@
 #include "UTIL2.h"
 #include "INT_PORTB.h"
 #include "Wait.h"
-#include "Rs485.h"
 #include "Rs485TxCtl.h"
 #include "Critical.h"
-#include "Scanner.h"
 #include "Watchdog.h"
 #include "EventTimer.h"
-#include "SharpDisplay.h"
 #include "SharpDisplayCS.h"
 #include "BitIoLdd1.h"
-#include "Tuner.h"
 #include "EepromCS.h"
 #include "BitIoLdd2.h"
 #include "StatusLedClk.h"
@@ -200,24 +196,9 @@ void Cpu_OnHardFault(void);
 
 /*
 ** ===================================================================
-**     Event       :  Cpu_OnBusFault (module Events)
+**     Event       :  Cpu_OnNMI (module Events)
 **
-**     Component   :  Cpu [MK21DN512MC5]
-*/
-/*!
-**     @brief
-**         This event is called when the Bus Fault exception had
-**         occurred. This event is automatically enabled when the [Bus
-**         Fault] property is set to 'Enabled'.
-*/
-/* ===================================================================*/
-void Cpu_OnBusFault(void);
-
-/*
-** ===================================================================
-**     Event       :  Cpu_OnNMIINT (module Events)
-**
-**     Component   :  Cpu [MK21DN512MC5]
+**     Component   :  Cpu [MKW21D256HA5]
 */
 /*!
 **     @brief
@@ -226,7 +207,7 @@ void Cpu_OnBusFault(void);
 **         interrupt] property is set to 'Enabled'.
 */
 /* ===================================================================*/
-void Cpu_OnNMIINT(void);
+void Cpu_OnNMI(void);
 
 /* END Events */
 
