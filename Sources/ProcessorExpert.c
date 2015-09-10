@@ -35,6 +35,7 @@
 #include "Wait.h"
 #include "Rs485.h"
 #include "Rs485TxCtl.h"
+//#include "Rs485TxCtl.h"
 
 #include "Critical.h"
 #include "Scanner.h"
@@ -44,7 +45,7 @@
 #include "SharpDisplay.h"
 #include "SharpDisplayCS.h"
 #include "BitIoLdd1.h"
-#include "Tuner.h"
+//#include "Tuner.h"
 //#include "SharpDisplay.h"
 //#include "SharpDisplayCS.h"
 //#include "BitIoLdd1.h"
@@ -54,6 +55,7 @@
 #include "StatusLedSdi.h"
 #include "ScannerPower.h"
 #include "Rs485Power.h"
+//#include "Rs485Power.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"

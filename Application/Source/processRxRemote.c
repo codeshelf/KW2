@@ -162,6 +162,14 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 									case eControlSubCmdClearPosController:
 										processClearPosControllerSubCommand(inRxBufferNum);
 										break;
+										
+									case eControlSubCmdCreateScan:
+										processCreateScanSubCommand(inRxBufferNum);
+										break;
+										
+									case eControlSubCmdCreateButton:
+										processCreateButtonSubCommand(inRxBufferNum);
+										break;
 			
 									default:
 										break;

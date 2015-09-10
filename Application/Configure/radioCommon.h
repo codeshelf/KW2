@@ -58,6 +58,7 @@
 #define POS_CTRL_INIT					0x00
 #define POS_CTRL_CLEAR					0x01
 #define POS_CTRL_DISPLAY				0x02
+#define POS_CTRL_CREAT_BUTTON			0x08
 
 #define POS_CTRL_ALL_POSITIONS			0x00
 

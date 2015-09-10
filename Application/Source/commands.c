@@ -47,6 +47,8 @@ extern TxRadioBufferStruct gTxRadioBuffer[TX_BUFFER_COUNT];
 extern BufferCntType gTxCurBufferNum;
 extern BufferCntType gTxUsedBuffers;
 
+extern RadioStateEnum gRadioState;
+
 // --------------------------------------------------------------------------
 // Local function prototypes
 
@@ -777,5 +779,43 @@ void processClearPosControllerSubCommand(BufferCntType inRXBufferNum) {
 
 	RS485_TX_OFF
 
+#endif
+}
+
+void processCreateScanSubCommand(BufferCntType inRxBufferNum) {
+#ifdef CHE_CONTROLLER
+	ScanStringType commandStr;
+	ScanStringLenType commandStrLen = 0;
+	
+	BufferStoragePtrType bufferPtr = gRxRadioBuffer[inRxBufferNum].bufferStorage + CMDPOS_SCAN_COMMAND;
+	commandStrLen = readAsPString(&commandStr, bufferPtr, MAX_DISPLAY_STRING_BYTES);
+	
+	if (commandStrLen > 0) {
+		BufferCntType txBufferNum = lockTxBuffer();
+		createScanCommand(txBufferNum, &commandStr, commandStrLen);
+		if (transmitPacket(txBufferNum)) {
+			while (gRadioState == eTx) {
+				vTaskDelay(1);
+			}
+		}
+	}
+#endif
+}
+
+void processCreateButtonSubCommand(BufferCntType inRxBufferNum) {
+#ifdef RS485
+	
+	gwUINT8 pos = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_CREATE_BUTTON_POS];
+	gwUINT8 num = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_CREATE_BUTTON_NUM];
+	
+	RS485_TX_ON
+	gwUINT8 message[] = {POS_CTRL_CREAT_BUTTON, pos, num};
+	serialTransmitFrame(Rs485_DEVICE, message, 3);
+
+	vTaskDelay(5);
+
+	RS485_TX_OFF
+
+	
 #endif
 }
