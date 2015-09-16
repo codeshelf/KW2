@@ -110,6 +110,7 @@
       <PathName>/Users/jeffw/git/KW2/Generated_Code/PE_LDD.c</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SPI0_Init.c</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART0_Init.c</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART1_Init.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/Rs485Power.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/Rs485TxCtl.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/ScannerPower.c</PathName>
@@ -170,7 +171,6 @@
       <PathName>/Users/jeffw/git/KW2/SMAC/Source/SMAC.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Sources/Events.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Sources/ProcessorExpert.c</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART1_Init.c</PathName>
     </GeneratedCs>
     <GeneratedHs>
       <PathName>/Users/jeffw/git/KW2/Application/Configure/Critical.h</PathName>
@@ -260,6 +260,7 @@
       <PathName>/Users/jeffw/git/KW2/Generated_Code/PE_Types.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SPI0_Init.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART0_Init.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART1_Init.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/Rs485.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/Rs485Power.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/Rs485TxCtl.h</PathName>
@@ -337,7 +338,6 @@
       <PathName>/Users/jeffw/git/KW2/SMAC/Interface/SMAC_Interface.h</PathName>
       <PathName>/Users/jeffw/git/KW2/SMAC/Source/SMAC.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Sources/Events.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART1_Init.h</PathName>
     </GeneratedHs>
     <GeneratedASMs>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/portasm.s</PathName>

@@ -106,6 +106,9 @@
 // Message Command
 #define CMDPOS_MESSAGE				CMDPOS_CONTROL_DATA
 
+// Create Scan Command
+#define CMDPOS_SCAN_COMMAND			CMDPOS_CONTROL_DATA
+
 // Ack Command
 #define CMDPOS_ACK_NUM				CMDPOS_CONTROL_DATA
 #define CMDPOS_ACK_LQI				CMDPOS_ACK_NUM + 1
@@ -138,6 +141,10 @@
 
 // Position controller clear command
 #define CMDPOS_CLEAR_POS			CMDPOS_CONTROL_DATA
+
+// Create button press command
+#define CMDPOS_CREATE_BUTTON_POS			CMDPOS_CONTROL_DATA
+#define CMDPOS_CREATE_BUTTON_NUM			CMDPOS_CREATE_BUTTON_POS + 1
 
 // Command masks
 #define PACKETMASK_VERSION		0xc0    /* 0b11000000 */
@@ -312,7 +319,9 @@ typedef enum {
 	eControlSubCmdClearDisplay = 7,
 	eControlSubCmdPosconSetup = 8,
 	eControlSubCmdPosconBroadcast = 9,
-	eControlSubCmdAck = 10
+	eControlSubCmdAck = 10,
+	eControlSubCmdCreateScan = 11,
+	eControlSubCmdCreateButton = 12
 //	eControlSubCmdEndpointAdj = 1,
 //	eControlSubCmdMotor = 2,
 //	eControlSubCmdButton = 3,

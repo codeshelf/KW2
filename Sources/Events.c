@@ -228,6 +228,24 @@ void Cpu_OnNMI(void)
   /* Write your code here ... */
 }
 
+/*
+** ===================================================================
+**     Event       :  Cpu_OnBusFault (module Events)
+**
+**     Component   :  Cpu [MKW21D256HA5]
+*/
+/*!
+**     @brief
+**         This event is called when the Bus Fault exception had
+**         occurred. This event is automatically enabled when the [Bus
+**         Fault] property is set to 'Enabled'.
+*/
+/* ===================================================================*/
+void Cpu_OnBusFault(void)
+{
+  /* Write your code here ... */
+}
+
 /* END Events */
 
 #ifdef __cplusplus

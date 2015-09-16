@@ -121,6 +121,9 @@ void processSetPosControllerSubCommand(BufferCntType inRXBufferNum);
 void processClearPosControllerSubCommand(BufferCntType inRXBufferNum);
 void processLedSubCommand(BufferCntType inRXBufferNum);
 
+void processCreateScanSubCommand(BufferCntType inRXBufferNum);
+void processCreateButtonSubCommand(BufferCntType inRXBufferNum);
+
 void startScrolling();
 void stopScrolling();
 

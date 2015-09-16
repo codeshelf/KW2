@@ -1,6 +1,6 @@
 /*
  Codeshelf
- © Copyright 2005, 2014 Codeshelf, Inc.
+ ï¿½ Copyright 2005, 2014 Codeshelf, Inc.
  All rights reserved
 
  $Id$
@@ -74,6 +74,12 @@ void startApplication(void) {
 	//smacError = MLMEFEGainAdjust(15);
 	MC1324xDrv_IndirectAccessSPIWrite(ANT_PAD_CTRL, cANT_PAD_CTRL_ANTX_CTRLMODE + cANT_PAD_CTRL_ANTX_EN);
 	MC1324xDrv_IndirectAccessSPIWrite(ANT_AGC_CTRL, 0x40 + 0x02 /*+ 0x01*/);
+
+	// Random connection start delay based on guid
+	uint32_t seed = 0;
+	seed = (uint32_t) (gGuid[6] << 16) | (gGuid[7] & 0xff);
+	srand(seed);
+	vTaskDelay(rand() % RAND_BACK_OFF_LIMIT);
 
 	gLocalDeviceState = eLocalStateStarted;
 
