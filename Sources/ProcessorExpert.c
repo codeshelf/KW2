@@ -100,6 +100,7 @@ int main(void) {
 	/* Write your code here */
 	// Load GUID
 	readGuid(gGuid);
+//	strcpy (gGuid, "00000AFF");
 	gGuid[8] = NULL;
 	
 	// Load hardware version

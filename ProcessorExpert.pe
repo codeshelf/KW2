@@ -3,7 +3,7 @@
   <Header>
     <Name>ProcessorExpert</Name>
     <SavedBy>andrewhuff</SavedBy>
-    <ModificationStamp>586</ModificationStamp>
+    <ModificationStamp>590</ModificationStamp>
     <Date>2015-08-25</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.12.1.RT7_b1531-0480</PEversion>
@@ -293,7 +293,7 @@
         <ReadOnly>false</ReadOnly>
         <ListItemCount>1</ListItemCount>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>CLKMode0</ItemSymbol>
@@ -561,7 +561,7 @@
         <ReadOnly>false</ReadOnly>
         <ListItemCount>1</ListItemCount>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>SpeedMode0</ItemSymbol>
@@ -1493,7 +1493,7 @@
       <ItemState>
         <ListItemCount>2</ListItemCount>
         <ItemSymbol>FlashOrgDscrBlockList</ItemSymbol>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>FlashOrgDscrBlock0</ItemSymbol>
@@ -3256,7 +3256,7 @@
           <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
           <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
           <Value>true</Value>
-          <Expanded>true</Expanded>
+          <Expanded>false</Expanded>
         </ItemState>
         <ItemState>
           <ItemSymbol>Cmplr_GenerateCfgFile</ItemSymbol>
@@ -17144,7 +17144,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>Frequency0</ItemSymbol>
-        <Value>218.453 kHz</Value>
+        <Value>499.712 kHz</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>PCStoSCKDivisor0</ItemSymbol>
@@ -17166,7 +17166,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>PCStoSCKDelay0</ItemSymbol>
-        <Value>0.095 us</Value>
+        <Value>0.042 us</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterSCKDivisor0</ItemSymbol>
@@ -17188,7 +17188,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterSCKDelay0</ItemSymbol>
-        <Value>0.095 us</Value>
+        <Value>0.042 us</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterTransferDivisor0</ItemSymbol>
@@ -17210,7 +17210,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterTransferDelay0</ItemSymbol>
-        <Value>2.289 us</Value>
+        <Value>1.001 us</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>TransferSize0</ItemSymbol>
@@ -17326,7 +17326,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>Frequency1</ItemSymbol>
-        <Value>218.453 kHz</Value>
+        <Value>499.712 kHz</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>PCStoSCKDivisor1</ItemSymbol>
@@ -17348,7 +17348,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>PCStoSCKDelay1</ItemSymbol>
-        <Value>0.095 us</Value>
+        <Value>0.042 us</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterSCKDivisor1</ItemSymbol>
@@ -17370,7 +17370,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterSCKDelay1</ItemSymbol>
-        <Value>0.095 us</Value>
+        <Value>0.042 us</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterTransferDivisor1</ItemSymbol>
@@ -17392,7 +17392,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterTransferDelay1</ItemSymbol>
-        <Value>0.095 us</Value>
+        <Value>0.042 us</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>TransferSize1</ItemSymbol>
@@ -19790,7 +19790,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>CounterFrequency</ItemSymbol>
-        <Value>20.972 MHz</Value>
+        <Value>47.972 MHz</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>CounterInitFeatureCondGroup</ItemSymbol>
@@ -24771,7 +24771,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>SCIBaud</ItemSymbol>
-        <Value>544714.805 baud</Value>
+        <Value>1246035.117 baud</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>OverSamplingRatioFeatureCondGroup</ItemSymbol>
