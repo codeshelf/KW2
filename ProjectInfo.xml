@@ -110,10 +110,6 @@
       <PathName>/Users/jeffw/git/KW2/Generated_Code/PE_LDD.c</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SPI0_Init.c</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART0_Init.c</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART1_Init.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Rs485Power.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Rs485TxCtl.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/ScannerPower.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/SharpDisplayCS.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/StatusLedClk.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/StatusLedSdi.c</PathName>
@@ -216,6 +212,7 @@
       <PathName>/Users/jeffw/git/KW2/Generated_Code/FRTOS1.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/FreeRTOS.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/FreeRTOSConfig.h</PathName>
+      <PathName>/Users/jeffw/git/KW2/Generated_Code/Gateway.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/INT_PORTB.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/iofiles/MKW21D5.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/IO_Map.h</PathName>
@@ -260,13 +257,7 @@
       <PathName>/Users/jeffw/git/KW2/Generated_Code/PE_Types.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SPI0_Init.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART0_Init.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART1_Init.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Rs485.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Rs485Power.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Rs485TxCtl.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/SPI0_Config.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Scanner.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/ScannerPower.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/SharpDisplay.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/SharpDisplayCS.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/StackMacros.h</PathName>
@@ -276,7 +267,6 @@
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/PDD_Includes.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/Peripherals_Init.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/UART0_Config.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/UART1_Config.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/UTIL1.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/UTIL2.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/Vectors_Config.h</PathName>

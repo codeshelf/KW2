@@ -1,6 +1,6 @@
 /*
  Codeshelf
- © Copyright 2005, 2014 Codeshelf, Inc.
+ ï¿½ Copyright 2005, 2014 Codeshelf, Inc.
  All rights reserved
 
  $Id$
@@ -16,7 +16,6 @@
 // --------------------------------------------------------------------------
 // Definitions.
 
-#define	GATEWAY
 
 #define DEFAULT_CHANNEL			gChannel11_c
 #define DEFAULT_POWER			gMaxOutputPower_c

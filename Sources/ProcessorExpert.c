@@ -33,7 +33,6 @@
 #include "UTIL2.h"
 #include "INT_PORTB.h"
 #include "Wait.h"
-#include "Rs485TxCtl.h"
 
 #include "Critical.h"
 #include "Wait.h"
@@ -45,8 +44,6 @@
 #include "BitIoLdd2.h"
 #include "StatusLedClk.h"
 #include "StatusLedSdi.h"
-#include "ScannerPower.h"
-#include "Rs485Power.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"

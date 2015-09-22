@@ -47,10 +47,10 @@
 <intAttribute key="org.eclipse.cdt.launch.ATTR_BUILD_BEFORE_LAUNCH_ATTR" value="0"/>
 <stringAttribute key="org.eclipse.cdt.launch.COREFILE_PATH" value=""/>
 <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_REGISTER_GROUPS" value=""/>
-<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="CHEController/CHEController.elf"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Gateway/Gateway.elf"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="KW2"/>
 <booleanAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_AUTO_ATTR" value="false"/>
-<stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1188745242"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1188745242.1539496924"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/KW2"/>
 </listAttribute>

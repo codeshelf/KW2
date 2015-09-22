@@ -1,6 +1,6 @@
 /*
  FlyWeight
- © Copyright 2005, 2006 Jeffrey B. Williams
+ ï¿½ Copyright 2005, 2006 Jeffrey B. Williams
  All rights reserved
 
  $Id$
@@ -21,8 +21,8 @@
 #define LCD_ON					LcdPowerCtl_SetVal(LcdPowerCtl_DeviceData);
 #define LCD_OFF					LcdPowerCtl_ClrVal(LcdPowerCtl_DeviceData);
 
-#define DEFAULT_CHANNEL			gChannel15_c
-#define DEFAULT_POWER			31
+#define DEFAULT_CHANNEL			gChannel11_c
+#define DEFAULT_POWER			gMaxOutputPower_c
 #define DEFAULT_CRYSTAL_TRIM	117
 
 // --------------------------------------------------------------------------
