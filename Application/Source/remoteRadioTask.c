@@ -126,6 +126,7 @@ void radioTransmitTask(void *pvParameters) {
 				
 				do {
 					shouldRetry = FALSE;
+					isAck = FALSE;
 
 					//Write tx to the air. Callback will notify us when done.
 					writeRadioTx(txBufferNum);
