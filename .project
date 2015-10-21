@@ -225,6 +225,16 @@
 			<location>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART0_Init.h</location>
 		</link>
 		<link>
+			<name>Generated_Code/Peripherals/UART1_Init.c</name>
+			<type>1</type>
+			<location>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART1_Init.c</location>
+		</link>
+		<link>
+			<name>Generated_Code/Peripherals/UART1_Init.h</name>
+			<type>1</type>
+			<location>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART1_Init.h</location>
+		</link>
+		<link>
 			<name>Generated_Code/System/CPU_Init.c</name>
 			<type>1</type>
 			<location>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/CPU_Init.c</location>

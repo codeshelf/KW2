@@ -81,6 +81,9 @@ void startApplication(void) {
 	uint8_t gpioData = MC1324xDrv_IndirectAccessSPIRead(GPIO_DATA);
 	MC1324xDrv_IndirectAccessSPIWrite(GPIO_DATA, gpioDir | cGPIO_DATA_2);
 
+	MC1324xDrv_Set_CLK_OUT_Freq(gCLK_OUT_FREQ_32_MHz);
+	Cpu_SetClockConfiguration(1);
+
 	// Random connection start delay based on guid
 	uint32_t seed = 0;
 	seed = (uint32_t) (gGuid[6] << 16) | (gGuid[7] & 0xff);
