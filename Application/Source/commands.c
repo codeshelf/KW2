@@ -543,11 +543,7 @@ void processAssocAckCommand(BufferCntType inRXBufferNum) {
 // --------------------------------------------------------------------------
 
 void processAckSubCommand(BufferCntType inRxBufferNum) {
-	AckIDType ackId;
-
-	ackId = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ACK_NUM];
-
-	if (xQueueSend(gTxAckQueue, &ackId, (portTickType) 0)) {
+	if (xQueueSend(gTxAckQueue, &inRxBufferNum, (portTickType) 0)) {
 	}
 }
 
@@ -758,9 +754,9 @@ void processSetPosControllerSubCommand(BufferCntType inRXBufferNum) {
 		gwUINT8 message[] = {POS_CTRL_DISPLAY, pos, reqQty, minQty, maxQty, freq, dutyCycle};
 		serialTransmitFrame(Rs485_DEVICE, message, 7);
 
-		vTaskDelay(5);
+		//vTaskDelay(5);
 	}
-	vTaskDelay(10);
+	//vTaskDelay(10);
 
 	RS485_TX_OFF
 
@@ -775,7 +771,7 @@ void processClearPosControllerSubCommand(BufferCntType inRXBufferNum) {
 	gwUINT8 message[] = {POS_CTRL_CLEAR, pos};
 	serialTransmitFrame(Rs485_DEVICE, message, 2);
 
-	vTaskDelay(5);
+	//vTaskDelay(5);
 
 	RS485_TX_OFF
 

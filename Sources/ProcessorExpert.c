@@ -45,6 +45,7 @@
 #include "SharpDisplay.h"
 #include "SharpDisplayCS.h"
 #include "BitIoLdd1.h"
+#include "Tuner.h"
 //#include "Tuner.h"
 //#include "SharpDisplay.h"
 //#include "SharpDisplayCS.h"

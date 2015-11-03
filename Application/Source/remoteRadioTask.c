@@ -48,11 +48,15 @@ extern BufferCntType 		gTxUsedBuffers;
 extern NetworkIDType gMyNetworkID;
 extern NetAddrType gMyAddr;
 
+gwBoolean	waitingForAck = FALSE;
+
 // --------------------------------------------------------------------------
 
 void radioReceiveTask(void *pvParameters) {
 	BufferCntType rxBufferNum = 0;
 	gwUINT8 ccrHolder;
+	ECommandGroupIDType cmdID;
+	
 #ifdef TUNER
 	while(gLocalDeviceState == eLocalStateTuning){
 		vTaskDelay(1);
@@ -82,7 +86,28 @@ void radioReceiveTask(void *pvParameters) {
 				if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c) {
 					// Process the packet we just received.
 					gRxRadioBuffer[rxBufferNum].bufferSize = gRxMsg.rxPacketPtr->u8DataLength;
-					processRxPacket(rxBufferNum, gRxMsg.rxPacketPtr->lqi);
+					
+					if (!waitingForAck) {
+						processRxPacket(rxBufferNum, gRxMsg.rxPacketPtr->lqi);
+					} else {
+						cmdID = getCommandID(gRxRadioBuffer[rxBufferNum].bufferStorage);
+						
+						// Process netchecks always
+						if (cmdID == eCommandNetMgmt) {
+							processRxPacket(rxBufferNum, gRxMsg.rxPacketPtr->lqi);
+						} else if (cmdID == eCommandControl) {
+							// Only process ack messages
+							EControlSubCmdIDType subcmd = getControlSubCommand(rxBufferNum);
+							
+							if (subcmd == eControlSubCmdAck) {
+								processRxPacket(rxBufferNum, gRxMsg.rxPacketPtr->lqi);
+							} else {
+								RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
+							}
+						} else {
+							RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
+						}
+					}
 				} else {
 					RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 				}
@@ -100,6 +125,7 @@ void radioReceiveTask(void *pvParameters) {
 
 void radioTransmitTask(void *pvParameters) {
 	BufferCntType txBufferNum;
+	BufferCntType rxBufferNum;
 	gwBoolean shouldRetry;
 	portTickType retryTickCount;
 	gwUINT8 ackId;
@@ -114,7 +140,7 @@ void radioTransmitTask(void *pvParameters) {
 
 	if (gRadioTransmitQueue && gTxAckQueue) {
 		for (;;) {
-
+			waitingForAck = FALSE;
 			// Wait until the management thread signals us that we have a full buffer to transmit.
 			if (xQueueReceive(gRadioTransmitQueue, &txBufferNum, portMAX_DELAY) == pdPASS) {
 				
@@ -125,6 +151,7 @@ void radioTransmitTask(void *pvParameters) {
 				ECommandGroupIDType txCommandType = getCommandID(gTxRadioBuffer[txBufferNum].bufferStorage); 
 				
 				do {
+					//waitingForAck = FALSE;
 					shouldRetry = FALSE;
 					isAck = FALSE;
 
@@ -148,17 +175,23 @@ void radioTransmitTask(void *pvParameters) {
 #ifndef GATEWAY
 					if (txedAckId != 0 && txCommandType != eCommandNetMgmt && txCommandType != eCommandAssoc && !isAck) {
 						shouldRetry = TRUE;
-						
+						waitingForAck = TRUE;
 						//Wait up to 50ms for an ACK
-						if (xQueueReceive(gTxAckQueue, &ackId, 50 * portTICK_RATE_MS) == pdPASS) {
+						if (xQueueReceive(gTxAckQueue, &rxBufferNum, 50 * portTICK_RATE_MS) == pdPASS) {
+							ackId = gRxRadioBuffer[rxBufferNum].bufferStorage[CMDPOS_ACK_NUM];
+							
 							if (txedAckId == ackId) {
 								shouldRetry = FALSE;
+								waitingForAck = FALSE;
 							}
+							
+							RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 						}
 
 						//If we fail to receive an ACK after enough retries to exceed 500ms then break out of the loop.
-						if (shouldRetry && ((xTaskGetTickCount() - retryTickCount) > 5000)) {
+						if (shouldRetry && ((xTaskGetTickCount() - retryTickCount) > 10000)) {
 							shouldRetry = FALSE;
+							waitingForAck = FALSE;
 						}
 					}
 #endif					

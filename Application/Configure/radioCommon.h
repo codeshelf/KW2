@@ -37,12 +37,12 @@
 #define REMOTE_MGMT_QUEUE_SIZE	10
 #define TX_ACK_QUEUE_SIZE		1
 
-#define RX_QUEUE_SIZE			5
-#define RX_BUFFER_COUNT			5
+#define RX_QUEUE_SIZE			10
+#define RX_BUFFER_COUNT			10
 #define RX_BUFFER_SIZE			MAX_PACKET_SIZE
 
-#define TX_QUEUE_SIZE			5
-#define TX_BUFFER_COUNT			5
+#define TX_QUEUE_SIZE			10
+#define TX_BUFFER_COUNT			10
 #define TX_BUFFER_SIZE			MAX_PACKET_SIZE
 
 #define INVALID_RX_BUFFER		99
@@ -226,6 +226,7 @@ void setupWatchdog(void);
 void setRadioChannel(ChannelNumberType channel);
 void readRadioRx();
 void writeRadioTx(BufferCntType inTxBufferNum);
+gwBoolean preProcessPacket(int inBufferNum);
 
 void debugReset();
 void debugRefreed(BufferCntType inBufferNum);

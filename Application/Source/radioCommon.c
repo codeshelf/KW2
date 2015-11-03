@@ -13,6 +13,7 @@
 #include "task.h"
 #include "queue.h"
 #include "Wait.h"
+#include "commands.h"
 
 extern xQueueHandle	gRadioReceiveQueue;
 
@@ -30,6 +31,9 @@ ETxMessageHolderType gTxMsg;
 gwUINT8 gLastLQI;
 
 RadioStateEnum gRadioState = eIdle;
+
+extern ELocalStatusType gLocalDeviceState;
+extern NetAddrType gMyAddr;
 
 // --------------------------------------------------------------------------
 
@@ -228,46 +232,95 @@ void readRadioRx() {
 	BufferCntType lockedBufferNum;
 	smacErrors_t smacError;
 	gwUINT8 ccrHolder;
+	//gwBoolean packetForMe = FALSE;
 
 	GW_ENTER_CRITICAL(ccrHolder);
 
-	//Wait for Tx to finish
-	while(gRadioState == eTx) {
-		GW_EXIT_CRITICAL(ccrHolder);
-		vTaskDelay(1);
-		//Entry critical before we check the state again
-		GW_ENTER_CRITICAL(ccrHolder);
-	}
-
-	//If we're already doing an Rx do nothing since we only have one buffer. This should never happen since we only have 1 reader
-	if(gRadioState == eRx) {
-		GW_EXIT_CRITICAL(ccrHolder);
-		return;
-	}
+	//while (!packetForMe) {
+		//Wait for Tx to finish
+		while(gRadioState == eTx) {
+			GW_EXIT_CRITICAL(ccrHolder);
+			vTaskDelay(1);
+			//Entry critical before we check the state again
+			GW_ENTER_CRITICAL(ccrHolder);
+		}
 	
-	//TODO Do we really have to do this each time? Maybe only set rXStatus
-	lockedBufferNum = lockRxBuffer();
-	gRxMsg.rxPacketPtr = (rxPacket_t *) &(gRxRadioBuffer[lockedBufferNum].rxPacket);
-	gRxMsg.rxPacketPtr->u8MaxDataLength = RX_BUFFER_SIZE;
-	gRxMsg.rxPacketPtr->rxStatus = rxInitStatus;
-	gRxMsg.bufferNum = lockedBufferNum;// 0;
-
-	//Perform the actual read and store it in the pointer with no timeout.
-	smacError = MLMERXEnableRequest(gRxMsg.rxPacketPtr, 0);
-	if (smacError != gErrorNoError_c){
-		GW_RESET_MCU(eSmacError)
-	}
+		//If we're already doing an Rx do nothing since we only have one buffer. This should never happen since we only have 1 reader
+		if(gRadioState == eRx) {
+			GW_EXIT_CRITICAL(ccrHolder);
+			return;
+		}
+		
+		//TODO Do we really have to do this each time? Maybe only set rXStatus
+		lockedBufferNum = lockRxBuffer();
+		gRxMsg.rxPacketPtr = (rxPacket_t *) &(gRxRadioBuffer[lockedBufferNum].rxPacket);
+		gRxMsg.rxPacketPtr->u8MaxDataLength = RX_BUFFER_SIZE;
+		gRxMsg.rxPacketPtr->rxStatus = rxInitStatus;
+		gRxMsg.bufferNum = lockedBufferNum;// 0;
 	
-	smacError = MLMELinkQuality(&(gRxMsg.rxPacketPtr->lqi));
-	if (smacError != gErrorNoError_c){
-		GW_RESET_MCU(eSmacError)
-	}
-	
-	gRadioState = eRx;
-	
+		//Perform the actual read and store it in the pointer with no timeout.
+		smacError = MLMERXEnableRequest(gRxMsg.rxPacketPtr, 0);
+		if (smacError != gErrorNoError_c){
+			GW_RESET_MCU(eSmacError)
+		}
+		
+		smacError = MLMELinkQuality(&(gRxMsg.rxPacketPtr->lqi));
+		if (smacError != gErrorNoError_c){
+			GW_RESET_MCU(eSmacError)
+		}
+		
+		gRadioState = eRx;
+		
+		//preProcessPacket(lockedBufferNum);
+	//}
 //	serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) ("RX"),  2);
 
 	GW_EXIT_CRITICAL(ccrHolder);
+}
+
+gwBoolean preProcessPacket(int inBufferNum) {
+	gwUINT8 ccrHolder;
+	ECommandGroupIDType cmdID = getCommandID(gRxRadioBuffer[inBufferNum].bufferStorage);
+	ECmdAssocType assocSubCmd;
+	NetAddrType cmdDstAddr;
+	
+	// Always reset on netchecks
+	if (cmdID == eCommandNetMgmt && gLocalDeviceState == eLocalStateRun) {
+		GW_WATCHDOG_RESET;
+		setStatusLed(0, 0, 1);
+		RELEASE_RX_BUFFER(inBufferNum, ccrHolder);
+		return FALSE;
+	}
+	
+	// Un-associated - Only process incoming association packets
+	if (gLocalDeviceState != eLocalStateRun) {
+		if (cmdID == eCommandControl) {
+			RELEASE_RX_BUFFER(inBufferNum, ccrHolder);
+			return FALSE;
+		} else {
+			assocSubCmd = getAssocSubCommand(inBufferNum);
+			
+			if (assocSubCmd != eCmdAssocRESP || assocSubCmd != eCmdAssocACK) {
+				RELEASE_RX_BUFFER(inBufferNum, ccrHolder);
+				return FALSE;
+			}
+		}
+		return TRUE;
+	}
+	
+	// Associated - Only process command packets for us
+	if (gLocalDeviceState == eLocalStateRun) {
+		cmdDstAddr = getCommandDstAddr(inBufferNum);
+	
+		if (cmdID != eCommandControl || cmdDstAddr != gMyAddr) {
+			RELEASE_RX_BUFFER(inBufferNum, ccrHolder);
+			return FALSE;
+		} else {
+			return TRUE;
+		}
+	}
+	
+	return TRUE;
 }
 
 void setStatusLed(uint8_t red, uint8_t green, uint8_t blue) {

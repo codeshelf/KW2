@@ -51,7 +51,6 @@ void remoteMgmtTask(void *pvParameters) {
 	gwBoolean checked;
 	ECommandGroupIDType cmdID;
 	ECmdAssocType assocSubCmd;
-	vTaskDelay(0);
 	
 	gwBoolean haveLastChannel = FALSE;
 	gwBoolean triedLastChannel = FALSE;
@@ -189,7 +188,7 @@ void remoteMgmtTask(void *pvParameters) {
 				//It's okay if we're already in read mode
 				//readRadioRx();
 
-				if (xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 200 * portTICK_RATE_MS) == pdPASS ) {
+				if (xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 20 * portTICK_RATE_MS) == pdPASS ) {
 					if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c) {
 						// Check to see what kind of command we just got.
 						cmdID = getCommandID(gRxRadioBuffer[rxBufferNum].bufferStorage);
@@ -211,7 +210,6 @@ void remoteMgmtTask(void *pvParameters) {
 		}
 
 		gLocalDeviceState = eLocalStateRun;
-		readRadioRx();
 		gLastChannel = channel;
 		channel = 0;
 		
@@ -229,10 +227,12 @@ void remoteMgmtTask(void *pvParameters) {
 		 }*/
 	}
 
+	readRadioRx();
+	
 	// This thread is no longer needed
 	vTaskSuspend(gRemoteManagementTask);
 	/* Will only get here if the queue could not be created. */
-	for (;;);
+	//for (;;);
 }
 
 void sleep() {

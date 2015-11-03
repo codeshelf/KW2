@@ -91,11 +91,19 @@ void serialTransmitFrame(UART_MemMapPtr uartRegPtr, BufferStoragePtrType inFrame
 
 	gwUINT16 charsSent;
 
+	// Wait until all of the TX bytes have been sent.
+	while (uartRegPtr ->TCFIFO > 0) {
+		// NOTE - Huffa - Busy wait here seems to perform better than task switching
+		//vTaskDelay(1);
+		//Wait_Waitus(100);
+	}
+
 	// Send the frame contents to the controller via the serial port.
 	// First send the framing character.
 
 	// Send another framing character. (For some stupid reason the USB routine doesn't try very hard, so we have to loop until it succeeds.)
 	sendOneChar(uartRegPtr, END);
+	//Wait_Waitms(2);
 
 	for (charsSent = 0; charsSent < inFrameSize; charsSent++) {
 
@@ -125,16 +133,20 @@ void serialTransmitFrame(UART_MemMapPtr uartRegPtr, BufferStoragePtrType inFrame
 		}
 		inFramePtr++;
 	}
-
+	
+	
 	// Send another framing character. (For some stupid reason the USB routine doesn't try very hard, so we have to loop until it succeeds.)
 	sendOneChar(uartRegPtr, END);
+	Wait_Waitms(2);
 	sendOneChar(uartRegPtr, END);
+	Wait_Waitms(2);
 	
 	// Wait until all of the TX bytes have been sent.
-//	while (uartRegPtr ->TCFIFO > 0) {
-//		//vTaskDelay(1);
-//		Wait_Waitus(100);
-//	}
+	while (uartRegPtr ->TCFIFO > 0) {
+		// NOTE - Huffa - Busy wait here seems to perform better than task switching
+		//vTaskDelay(1);
+		//Wait_Waitus(100);
+	}
 
 	GW_WATCHDOG_RESET;
 }
