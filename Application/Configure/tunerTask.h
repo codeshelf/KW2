@@ -30,8 +30,13 @@ typedef enum {
 #define ENABLE_TUNER PORTC_PCR4 = PORT_PCR_MUX(4); PORTC_PCR5 = PORT_PCR_MUX(7); GPIOC_PDDR &= (uint32_t)~(uint32_t)GPIO_PDDR_PDD(0x10);// Wait_Waitms(1000);
 #define ENABLE_DISPLAY PORTC_PCR4 = PORT_PCR_MUX(1); PORTC_PCR5 = PORT_PCR_MUX(2); GPIOC_PDDR |= (uint32_t)GPIO_PDDR_PDD(0x10); //Wait_Waitms(1000);
 
-#define ENABLE_PTD4_TUNE	PORTD_PCR4 = PORT_PCR_MUX(4); GPIOD_PDDR &= (uint32_t)~(uint32_t)GPIO_PDDR_PDD(0x10); Wait_Waitms(1000);
-#define DISABLE_PTD4_TUNE	PORTD_PCR4 = PORT_PCR_MUX(1); GPIOD_PDDR |= (uint32_t)GPIO_PDDR_PDD(0x10); Wait_Waitms(1000);
+#define ENABLE_PTA1_TUNE_OUT	PORTA_PCR1 = PORT_PCR_MUX(3); GPIOA_PDDR |= (uint32_t)GPIO_PDDR_PDD(0x01); Wait_Waitms(1000);
+#define ENABLE_PTD4_TUNE		PORTD_PCR4 = PORT_PCR_MUX(4); GPIOD_PDDR &= (uint32_t)~(uint32_t)GPIO_PDDR_PDD(0x10); Wait_Waitms(1000);
+#define DISABLE_PTD4_TUNE		PORTD_PCR4 = PORT_PCR_MUX(1); GPIOD_PDDR |= (uint32_t)GPIO_PDDR_PDD(0x10); Wait_Waitms(1000);
+
+typedef char				TuneStringType;
+typedef TuneStringType*		TuneStringPtrType;
+
 // --------------------------------------------------------------------------
 // Local functions prototypes.
 
@@ -51,5 +56,6 @@ void saveParams();
 void getGuid();
 void getAes();
 void getHwVersion();
+TuneStringPtrType getScanStr(TuneStringPtrType promptStrPtr, TuneStringPtrType prefixStrPtr, gwBoolean shouldClear);
 
 #endif TUNERTASK_H

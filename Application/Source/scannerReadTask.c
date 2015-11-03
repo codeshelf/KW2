@@ -31,7 +31,7 @@ void scannerReadTask(void *pvParameters) {
 
 	gwUINT8 ccrHolder;
 	char currChar = NULL;
-	ScannerPower_SetVal(ScannerPower_DeviceData );
+	ScannerPower_SetVal(ScannerPower_DeviceData);
 
 	// Pause until associated.
 	while (gLocalDeviceState != eLocalStateRun) {
@@ -63,9 +63,9 @@ void scannerReadTask(void *pvParameters) {
 		// Now we have characters - read until there are no more.
 		// Do the read in a critical-area-busy-wait loop to make sure we've gotten all characters that will arrive.
 		
-		EventTimer_ResetCounter(NULL );
+		EventTimer_ResetCounter(EventTimer_DeviceData);
 		// If there's no characters in 50ms then stop waiting for more.
-		while ((EventTimer_GetCounterValue(NULL ) < 150) && (gScanStringPos < MAX_SCAN_STRING_BYTES)) {
+		while ((EventTimer_GetCounterValue(EventTimer_DeviceData) < 150) && (gScanStringPos < MAX_SCAN_STRING_BYTES)) {
 			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
 			Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXOF_MASK;
 			//if ((Scanner_DEVICE ->SFIFO & UART_SFIFO_RXEMPT_MASK) == 0) {
@@ -76,7 +76,7 @@ void scannerReadTask(void *pvParameters) {
 					gScanString[gScanStringPos++] = currChar; //Scanner_DEVICE ->D;;
 					gScanString[gScanStringPos] = NULL;
 				}
-				EventTimer_ResetCounter(NULL );
+				EventTimer_ResetCounter(EventTimer_DeviceData);
 				Wait_Waitus(500);
 			}
 		}

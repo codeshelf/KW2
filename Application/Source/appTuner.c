@@ -22,6 +22,7 @@
 #include "Wait.h"
 #include "smacGlue.h"
 #include "TransceiverDrv.h"
+#include "TransceiverReg.h"
 #include "Cpu.h"
 
 // --------------------------------------------------------------------------
@@ -43,7 +44,7 @@ extern ELocalStatusType gLocalDeviceState;
 // --------------------------------------------------------------------------
 
 void startApplication(void) {
-
+	
 	MC1324xDrv_SPIInit();
 	MLMERadioInit();
 	MLMESetPromiscuousMode(gPromiscuousMode_d);
@@ -51,6 +52,9 @@ void startApplication(void) {
 	MLMEPAOutputAdjust(DEFAULT_POWER);
 	MLMEXtalAdjust(DEFAULT_CRYSTAL_TRIM); 
 //	MLMEFEGainAdjust(15);
+	
+	MC1324xDrv_Set_CLK_OUT_Freq(gCLK_OUT_FREQ_32_MHz);
+	Cpu_SetClockConfiguration(1);
 	
 	/* Start the task that will handle the radio */
 	xTaskCreate(radioTransmitTask, (const signed portCHAR * const) "RadioTX", configMINIMAL_STACK_SIZE, NULL, RADIO_PRIORITY, &gRadioTransmitTask );

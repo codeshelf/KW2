@@ -55,9 +55,12 @@ void startApplication(void) {
 	MLMESetChannelRequest(DEFAULT_CHANNEL);
 	MLMEPAOutputAdjust(DEFAULT_POWER);
 	MLMEXtalAdjust(gTrim[0]);
+	//smacError = MLMEFEGainAdjust(15);
 	MC1324xDrv_IndirectAccessSPIWrite(ANT_PAD_CTRL, cANT_PAD_CTRL_ANTX_CTRLMODE + cANT_PAD_CTRL_ANTX_EN);
 	MC1324xDrv_IndirectAccessSPIWrite(ANT_AGC_CTRL, 0x40 + 0x02);
-//	MLMEFEGainAdjust(15);
+	
+	MC1324xDrv_Set_CLK_OUT_Freq(gCLK_OUT_FREQ_32_MHz);
+	Cpu_SetClockConfiguration(1);
 	
 	// Random connection start delay based on guid
 	uint32_t seed = 0;

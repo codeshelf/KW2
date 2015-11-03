@@ -16,6 +16,9 @@
 #include "codeshelf.logo.h"
 #include "Wait.h"
 
+#define getMax(a,b)    (((a) > (b)) ? (a) : (b))
+#define getMin(a,b)    (((a) < (b)) ? (a) : (b))
+
 __attribute__ ((section(".m_data_20000000"))) byte displayBuffer[DISPLAY_BYTES];
 
 extern const unsigned char lcdfont[];
@@ -373,11 +376,12 @@ void displayCodeshelfLogo(uint8_t x, uint8_t y) {
 	byte rowBuffer[ROW_BUFFER_BYTES];
 	uint8_t slice;
 	uint8_t bytePos;
+	uint8_t maxLogoWidth = getMax((DISPLAY_WIDTH - x)/8, codeshelf_logobwWidthPages);
 
 	for (slice = 0; slice < codeshelf_logobwHeightPixels; slice++) {
 		memset(&rowBuffer, 0x00, ROW_BUFFER_BYTES);
-		for (bytePos = 0; bytePos < codeshelf_logobwWidthPages; bytePos++) {
-			rowBuffer[bytePos + (x / 8)] = codeshelf_logobwBitmaps[(slice * codeshelf_logobwWidthPages) + bytePos];
+		for (bytePos = 0; bytePos < maxLogoWidth; bytePos++) {
+			rowBuffer[bytePos + (x / 8)] = codeshelf_logobwBitmaps[(slice * maxLogoWidth) + bytePos];
 		}
 		sendRowBuffer(slice + y, rowBuffer);
 	}
