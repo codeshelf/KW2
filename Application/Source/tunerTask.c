@@ -43,6 +43,7 @@ void tunerTask(void *pvParameters) {
 
 	gLocalDeviceState = eLocalStateTuning;
 	
+	Watchdog_Disable(NULL);
 	EventTimer_Init(EventTimer_DeviceData);
 	
 	zeroParams();
@@ -106,6 +107,9 @@ gwUINT16 measureTune() {
 	// There's probably a somewhat unchanging "expected remainder" for each GPS.  
 	// Tho' we should validate this before each manufacturing run!
 	
+	// The expected remainder for KW2 v1.2 to reach good clock trim is: 0x6f4b
+	// The expected remainder for KW2 v1.3 to reach good clock trim is: 0x701d
+	
 	Tuner_Init();
 	FTM0_SC = 0x80;
 	FTM0_C4V = 0;
@@ -151,6 +155,10 @@ void tuneRadio() {
 		
 	displayMessage(1, "Tuning...", FONT_NORMAL);
 	
+	// Set the modem EXTAL to 32MHz and put the MCU into BPLE mode so that it clocks exactly 32MHz.
+	Cpu_SetClockConfiguration(2);
+	MC1324xDrv_Set_CLK_OUT_Freq(gCLK_OUT_FREQ_32_MHz);
+	
 	GW_ENTER_CRITICAL(ccrHolder);
 			
 	trim = gStartTrim;
@@ -184,6 +192,7 @@ void tuneRadio() {
 	
 	gTrim[0] = trim;
 	FTM0_C6V = 0x6C00;
+	GW_WATCHDOG_RESET;
 
 	// You can now verify the tuning as needed for a manufacturing run.
 	
@@ -288,6 +297,7 @@ TuneStringPtrType getScanStr(TuneStringPtrType promptStrPtr, TuneStringPtrType p
 				EventTimer_ResetCounter(EventTimer_DeviceData);
 				Wait_Waitus(500);
 			}
+			GW_WATCHDOG_RESET;
 		}
 		
 		gwUINT8 len = strlen(gScanTuneString);

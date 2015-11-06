@@ -13,7 +13,7 @@
 #include "radioCommon.h"
 #include "Scanner.h"
 
-#define DISPLAY_WIDTH		320 // 4.4" = 320, 2.7" = 400
+#define DISPLAY_WIDTH		400 // 4.4" = 320, 2.7" = 400
 #define DISPLAY_HEIGHT		240
 #define DISPLAY_BYTES		(DISPLAY_WIDTH * DISPLAY_HEIGHT) / 8
 #define MAX_MSG_BYES		30

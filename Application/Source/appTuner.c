@@ -44,18 +44,18 @@ extern ELocalStatusType gLocalDeviceState;
 // --------------------------------------------------------------------------
 
 void startApplication(void) {
+	smacErrors_t smacError;
 	
 	MC1324xDrv_SPIInit();
-	MLMERadioInit();
+	smacError = MLMERadioInit();
 	MLMESetPromiscuousMode(gPromiscuousMode_d);
-	MLMESetChannelRequest(DEFAULT_CHANNEL);
-	MLMEPAOutputAdjust(DEFAULT_POWER);
-	MLMEXtalAdjust(DEFAULT_CRYSTAL_TRIM); 
-//	MLMEFEGainAdjust(15);
-	
-	MC1324xDrv_Set_CLK_OUT_Freq(gCLK_OUT_FREQ_32_MHz);
-	Cpu_SetClockConfiguration(1);
-	
+	smacError = MLMESetChannelRequest(DEFAULT_CHANNEL);
+	smacError = MLMEPAOutputAdjust(DEFAULT_POWER);
+	smacError = MLMEXtalAdjust(DEFAULT_CRYSTAL_TRIM); 
+	//smacError = MLMEFEGainAdjust(15);
+	MC1324xDrv_IndirectAccessSPIWrite(ANT_PAD_CTRL, cANT_PAD_CTRL_ANTX_CTRLMODE + cANT_PAD_CTRL_ANTX_EN);
+	MC1324xDrv_IndirectAccessSPIWrite(ANT_AGC_CTRL, 0x40 + 0x02 /*+ 0x01*/);
+
 	/* Start the task that will handle the radio */
 	xTaskCreate(radioTransmitTask, (const signed portCHAR * const) "RadioTX", configMINIMAL_STACK_SIZE, NULL, RADIO_PRIORITY, &gRadioTransmitTask );
 	xTaskCreate(radioReceiveTask, (const signed portCHAR * const) "RadioRX", configMINIMAL_STACK_SIZE, NULL, RADIO_PRIORITY, &gRadioReceiveTask );
