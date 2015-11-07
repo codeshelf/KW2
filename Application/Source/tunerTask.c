@@ -114,6 +114,7 @@ gwUINT16 measureTune() {
 	FTM0_SC = 0x80;
 	FTM0_C4V = 0;
 	FTM0_C5V = 0;
+	FTM0_C6V = gTargetRemainder;
 	FTM0_MOD = 0xffff;
 	FTM0_CNTIN = 0x0000;
 	FTM0_CNT = 0x0001;
@@ -191,7 +192,7 @@ void tuneRadio() {
 	GW_EXIT_CRITICAL(ccrHolder);
 	
 	gTrim[0] = trim;
-	FTM0_C6V = 0x6C00;
+	//FTM0_C6V = 0x6C00;
 	GW_WATCHDOG_RESET;
 
 	// You can now verify the tuning as needed for a manufacturing run.
