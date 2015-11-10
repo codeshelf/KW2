@@ -117,10 +117,10 @@ gwUINT16 measureTune() {
 	FTM0_C6V = gTargetRemainder;
 	FTM0_MOD = 0xffff;
 	FTM0_CNTIN = 0x0000;
-	FTM0_CNT = 0x0001;
-	FTM0_SC = 0x88;
+	FTM0_CNT = 0x0000;
 	// DECAP2 sets up dual-edge capture for counters 4 and 5.  See the KW2 RM for more details.
 	FTM0_COMBINE |= (FTM_COMBINE_DECAP2_MASK);
+	FTM0_SC = 0x88;
 	
 	// Loop until there is a 1st event.
 	while ((FTM0_STATUS & FTM_STATUS_CH4F_MASK) == 0) {
@@ -191,6 +191,10 @@ void tuneRadio() {
 	
 	GW_EXIT_CRITICAL(ccrHolder);
 	
+	// Set the modem EXTAL back to 50MHz.
+	Cpu_SetClockConfiguration(1);
+	MC1324xDrv_Set_CLK_OUT_Freq(gCLK_OUT_FREQ_32_MHz);
+
 	gTrim[0] = trim;
 	//FTM0_C6V = 0x6C00;
 	GW_WATCHDOG_RESET;
