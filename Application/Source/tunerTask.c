@@ -107,8 +107,12 @@ gwUINT16 measureTune() {
 	// There's probably a somewhat unchanging "expected remainder" for each GPS.  
 	// Tho' we should validate this before each manufacturing run!
 	
-	// The expected remainder for KW2 v1.2 to reach good clock trim is: 0x6f4b
-	// The expected remainder for KW2 v1.3 to reach good clock trim is: 0x701d
+	// Calculate the expected FTM0 "remainder" for the KW2 modules from this formula:
+	// Take the remainder of: (PPS width * 32,000,000 / 65536) and multiply it by 65536.
+	// You must first settle in the GPS in order for this to work.
+	// The GPS must be put into 115200 baud (send $PMTK251,115200*1F) and 10Hz update mode (send $PMTK220,100*2F)
+	// The PAH6H GPS won't be accurate until it settles into a PPM period of roughly 0.999995440 that jitters less than 100ns.
+	// It can take a good 10-15 minutes to get settled.
 	
 	Tuner_Init();
 	FTM0_SC = 0x80;
@@ -191,6 +195,25 @@ void tuneRadio() {
 	
 	GW_EXIT_CRITICAL(ccrHolder);
 	
+	// You can now verify the tuning as needed for a manufacturing run.
+	// You need to put a breakpoint just above here (before we reset the clock to allow the "save" scan to work right.)
+	
+	// Prior to the tuning we put the modem in 32MHz clock mode and have the output show up on PTA18.
+	// We also set the MCU clock to BLPE mode so that this 32MHz clock comes straight into the FTM0 unchanged.
+	// PTA1 is now setup to output an edge-align PWM signal derived from FTM0 which is derived from the trimmed XTAL32 crystal.
+	// The PWM period is 65,536 FTM0 clock cycles and the duty cycle is FTM0 clock cycles "remainder" scanned during the setup.
+	// This way there will exist a PWM high-low transition that corresponds to a multiple of exactly 32,000,000 FTM ticks.
+	// The KW2 can hold the 802.15.4 spec as long as the input crystal is 32MHz +/- 1280 (40ppm)
+	// How to verify-measure?
+	// On the logic analyzer capture 2 seconds of PWM (PTA1) and the PPS (PTD4).
+	// Create a marker A1 on the first PPS rising edge and A2 on the second rising edge.
+	// Then create a "measurement" and enable "rising edge count".  
+	// Put the first measure point on the first PWM rising edge before the first PPS.
+	// Put the second measure point 489 "rising" PWM cycles away.
+	// Then create a new marker B1 that's on the first PWM rising edge from the measurement.
+	// Put B2 on the first lowering edge after the PWM measurement area.
+	// The time values of A1/A2 and B1/B2 should be equal to within 50ns.
+
 	// Set the modem EXTAL back to 50MHz.
 	Cpu_SetClockConfiguration(1);
 	MC1324xDrv_Set_CLK_OUT_Freq(gCLK_OUT_FREQ_32_MHz);
@@ -198,17 +221,6 @@ void tuneRadio() {
 	gTrim[0] = trim;
 	//FTM0_C6V = 0x6C00;
 	GW_WATCHDOG_RESET;
-
-	// You can now verify the tuning as needed for a manufacturing run.
-	
-	// PTA1 is now setup to output an edge-align PWM signal derived from FTM0 which is derived from the trimmed XTAL32 crystal.
-	// The PWM period is 65,535 FTM0 clock cycles and the duty cycle is 0x6c00 FTM0 clock cycles.
-	// This way there will exist a PWM high-low transition that corresponds to a multiple of exactly 48,000,000 FTM ticks.
-	// How to verify-measure?
-	// On the logic analyzer capture 12 seconds of PWM (PTA1) and the PPS (PTD4).
-	// Put a marker A1 on the first rising edge near the first PPS rising edge.
-	// Ten PPS leading edges later put a marker A2 on a PWM high-low edge that's almost exactly 10sec.
-	// The A1 & A2 time difference minus 10 and divided by 480 million is the inaccuracy of each cycle of XTAL32 after trimming. 
 
 }
 
