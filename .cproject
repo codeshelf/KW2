@@ -502,7 +502,6 @@
 									<listOptionValue builtIn="false" value="TUNER"/>
 									<listOptionValue builtIn="false" value="RS485"/>
 									<listOptionValue builtIn="false" value="SHARP_DISPLAY"/>
-									<listOptionValue builtIn="false" value="CHE_CONTROLLER"/>
 									<listOptionValue builtIn="false" value="gPromiscuousMode_d=FALSE"/>
 									<listOptionValue builtIn="false" value="HARDWARE_VERSION=&quot;01.0&quot;"/>
 									<listOptionValue builtIn="false" value="RADIO_PROTOCOL_VERSION=2"/>
