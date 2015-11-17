@@ -3,7 +3,7 @@
   <Header>
     <Name>ProcessorExpert</Name>
     <SavedBy>andrewhuff</SavedBy>
-    <ModificationStamp>614</ModificationStamp>
+    <ModificationStamp>619</ModificationStamp>
     <Date>2015-08-25</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.12.1.RT7_b1531-0480</PEversion>
@@ -28,7 +28,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>388</ProjectCompNumb>
+    <ProjectCompNumb>389</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -4614,7 +4614,7 @@
   <Configuration>
     <CompNumb>3</CompNumb>
     <NodeName>CHEController</NodeName>
-    <CnfgEnabled>true</CnfgEnabled>
+    <CnfgEnabled>false</CnfgEnabled>
     <TargetCPU>385</TargetCPU>
     <ConfigurationComment lines_count="0" />
     <BoolList_FpgaConfig>
@@ -4629,7 +4629,7 @@
       <ItemId2>12</ItemId2>
       <Value2>true</Value2>
       <ItemId3>25</ItemId3>
-      <Value3>true</Value3>
+      <Value3>false</Value3>
       <ItemId4>26</ItemId4>
       <Value4>false</Value4>
       <ItemId5>27</ItemId5>
@@ -4743,7 +4743,7 @@
   <Configuration>
     <CompNumb>166</CompNumb>
     <NodeName>Tuner</NodeName>
-    <CnfgEnabled>false</CnfgEnabled>
+    <CnfgEnabled>true</CnfgEnabled>
     <TargetCPU>385</TargetCPU>
     <ConfigurationComment lines_count="0" />
     <BoolList_FpgaConfig>
@@ -10673,13 +10673,13 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>BeforeNewSpeed</ItemSymbol>
-        <ReadOnly>true</ReadOnly>
+        <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
         <Expanded>true</Expanded>
         <LastSelection>false</LastSelection>
-        <LastUserSel>never</LastUserSel>
+        <LastUserSel>no</LastUserSel>
       </ItemState>
       <ItemState>
         <ItemSymbol>BeforeNewSpeedName</ItemSymbol>
@@ -10689,13 +10689,13 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterNewSpeed</ItemSymbol>
-        <ReadOnly>true</ReadOnly>
+        <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>false</Value>
         <Expanded>true</Expanded>
         <LastSelection>false</LastSelection>
-        <LastUserSel>never</LastUserSel>
+        <LastUserSel>no</LastUserSel>
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterNewSpeedName</ItemSymbol>
@@ -17700,7 +17700,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>Frequency0</ItemSymbol>
-        <Value>520.833 kHz</Value>
+        <Value>499.712 kHz</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>PCStoSCKDivisor0</ItemSymbol>
@@ -17722,7 +17722,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>PCStoSCKDelay0</ItemSymbol>
-        <Value>0.040 us</Value>
+        <Value>0.042 us</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterSCKDivisor0</ItemSymbol>
@@ -17744,7 +17744,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterSCKDelay0</ItemSymbol>
-        <Value>0.040 us</Value>
+        <Value>0.042 us</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterTransferDivisor0</ItemSymbol>
@@ -17766,7 +17766,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterTransferDelay0</ItemSymbol>
-        <Value>0.960 us</Value>
+        <Value>1.001 us</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>TransferSize0</ItemSymbol>
@@ -17882,7 +17882,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>Frequency1</ItemSymbol>
-        <Value>520.833 kHz</Value>
+        <Value>499.712 kHz</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>PCStoSCKDivisor1</ItemSymbol>
@@ -17904,7 +17904,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>PCStoSCKDelay1</ItemSymbol>
-        <Value>0.040 us</Value>
+        <Value>0.042 us</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterSCKDivisor1</ItemSymbol>
@@ -17926,7 +17926,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterSCKDelay1</ItemSymbol>
-        <Value>0.040 us</Value>
+        <Value>0.042 us</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterTransferDivisor1</ItemSymbol>
@@ -17948,7 +17948,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>AfterTransferDelay1</ItemSymbol>
-        <Value>0.040 us</Value>
+        <Value>0.042 us</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>TransferSize1</ItemSymbol>
@@ -20272,7 +20272,7 @@
     <BeanType>Init_FTM_VAR0</BeanType>
     <Name>Tuner</Name>
     <CompNumb>152</CompNumb>
-    <CompEnabled>false</CompEnabled>
+    <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>PERIPHINSP</IconName>
     <UserFolderName />
@@ -20346,7 +20346,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>CounterFrequency</ItemSymbol>
-        <Value>50 MHz</Value>
+        <Value>47.972 MHz</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>CounterInitFeatureCondGroup</ItemSymbol>
@@ -21667,8 +21667,8 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>true</Value>
-        <Expanded>true</Expanded>
+        <Value>false</Value>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>Mode2</ItemSymbol>
@@ -21864,8 +21864,8 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>true</Value>
-        <Expanded>true</Expanded>
+        <Value>false</Value>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>Mode3</ItemSymbol>
@@ -22070,7 +22070,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>2</Index>
+        <Index>5</Index>
         <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
@@ -22144,7 +22144,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeCaptureMode</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>oneShot</EnumSymbVal>
@@ -22154,10 +22153,9 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeEdgePol</TypeSpecNameState>
-        <Index>0</Index>
-        <EnumSymbVal>disabled</EnumSymbVal>
+        <Index>1</Index>
+        <EnumSymbVal>rising</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CH4OCFeatureCondGroup</ItemSymbol>
@@ -22207,7 +22205,7 @@
         <ItemSymbol>ChannelIntGrp4</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>IntChan4</ItemSymbol>
@@ -22246,15 +22244,15 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>Mode5</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>2</Index>
+        <Index>5</Index>
         <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
@@ -22328,7 +22326,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeCaptureMode</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>oneShot</EnumSymbVal>
@@ -22338,10 +22335,9 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typeEdgePol</TypeSpecNameState>
-        <Index>0</Index>
-        <EnumSymbVal>disabled</EnumSymbVal>
+        <Index>1</Index>
+        <EnumSymbVal>rising</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CH5OCFeatureCondGroup</ItemSymbol>
@@ -22378,7 +22374,7 @@
         <ItemSymbol>PinChan5</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>ADC0_SE6b/PTD5/SPI0_PCS2/UART0_CTS_b/UART0_COL_b/FTM0_CH5/EWM_OUT_b</Value>
+        <Value>ADC0_SE6b/PTD5/SPI0_PCS2/UART0_CTS_b/FTM0_CH5/EWM_OUT_b</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -22430,15 +22426,15 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>false</Value>
-        <Expanded>false</Expanded>
+        <Value>true</Value>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>Mode6</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
+        <Index>2</Index>
         <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
@@ -22465,7 +22461,6 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
         <TypeSpecNameState>typePWMPolarity</TypeSpecNameState>
         <Index>0</Index>
         <EnumSymbVal>highTrue</EnumSymbVal>
@@ -22475,8 +22470,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>0</Value>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        <Value>27648</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -23164,7 +23158,7 @@
         <ItemSymbol>InitializationGroup</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>INITCHANSFeatureCondGroup</ItemSymbol>
@@ -23233,8 +23227,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeCHSEL</TypeSpecNameState>
-        <Index>0</Index>
-        <EnumSymbVal>yes</EnumSymbVal>
+        <Index>1</Index>
+        <EnumSymbVal>no</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CH3SELFeatureCondGroup</ItemSymbol>
@@ -23247,8 +23241,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeCHSEL</TypeSpecNameState>
-        <Index>0</Index>
-        <EnumSymbVal>yes</EnumSymbVal>
+        <Index>1</Index>
+        <EnumSymbVal>no</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CH4SELFeatureCondGroup</ItemSymbol>
@@ -23261,8 +23255,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeCHSEL</TypeSpecNameState>
-        <Index>1</Index>
-        <EnumSymbVal>no</EnumSymbVal>
+        <Index>0</Index>
+        <EnumSymbVal>yes</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CH5SELFeatureCondGroup</ItemSymbol>
@@ -23275,8 +23269,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeCHSEL</TypeSpecNameState>
-        <Index>1</Index>
-        <EnumSymbVal>no</EnumSymbVal>
+        <Index>0</Index>
+        <EnumSymbVal>yes</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CH6SELFeatureCondGroup</ItemSymbol>
@@ -25327,7 +25321,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>SCIBaud</ItemSymbol>
-        <Value>1298701.299 baud</Value>
+        <Value>1246035.117 baud</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>OverSamplingRatioFeatureCondGroup</ItemSymbol>

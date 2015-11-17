@@ -37,7 +37,6 @@
 #include "FRTOS1.h"
 #include "UTIL1.h"
 #include "UTIL2.h"
-#include "INT_PORTB.h"
 #include "Wait.h"
 #include "Rs485TxCtl.h"
 #include "Critical.h"
@@ -51,6 +50,7 @@
 #include "StatusLedSdi.h"
 #include "ScannerPower.h"
 #include "Rs485Power.h"
+#include "ModemIRQ.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -223,6 +223,23 @@ void Cpu_OnNMI(void);
 */
 /* ===================================================================*/
 void Cpu_OnBusFault(void);
+
+/*
+** ===================================================================
+**     Event       :  ModemIRQ_OnInterrupt (module Events)
+**
+**     Component   :  ModemIRQ [ExtInt_LDD]
+*/
+/*!
+**     @brief
+**         This event is called when an active signal edge/level has
+**         occurred.
+**     @param
+**         UserDataPtr     - Pointer to RTOS device
+**                           data structure pointer.
+*/
+/* ===================================================================*/
+void ModemIRQ_OnInterrupt(LDD_TUserData *UserDataPtr);
 
 /* END Events */
 

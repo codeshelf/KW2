@@ -246,6 +246,26 @@ void Cpu_OnBusFault(void)
   /* Write your code here ... */
 }
 
+/*
+** ===================================================================
+**     Event       :  ModemIRQ_OnInterrupt (module Events)
+**
+**     Component   :  ModemIRQ [ExtInt_LDD]
+*/
+/*!
+**     @brief
+**         This event is called when an active signal edge/level has
+**         occurred.
+**     @param
+**         UserDataPtr     - Pointer to RTOS device
+**                           data structure pointer.
+*/
+/* ===================================================================*/
+void ModemIRQ_OnInterrupt(LDD_TUserData *UserDataPtr)
+{
+  /* Write your code here ... */
+}
+
 /* END Events */
 
 #ifdef __cplusplus
