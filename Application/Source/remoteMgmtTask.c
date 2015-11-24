@@ -106,7 +106,7 @@ void remoteMgmtTask(void *pvParameters) {
 			GW_WATCHDOG_RESET;
 
 			// Set the channel to the current channel we're testing.
-			setRadioChannel(channel - 11);
+			setRadioChannel(channel);
 
 			for (gwUINT8 i = 0; i < 1; i++) {
 				// Send an associate request on the current channel.

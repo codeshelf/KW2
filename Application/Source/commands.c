@@ -543,7 +543,11 @@ void processAssocAckCommand(BufferCntType inRXBufferNum) {
 // --------------------------------------------------------------------------
 
 void processAckSubCommand(BufferCntType inRxBufferNum) {
-	if (xQueueSend(gTxAckQueue, &inRxBufferNum, (portTickType) 0)) {
+	AckIDType ackId;
+
+	ackId = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ACK_NUM];
+
+	if (xQueueSend(gTxAckQueue, &ackId, (portTickType) 0)) {
 	}
 }
 
@@ -661,11 +665,13 @@ LedPositionType gTotalLedPositions;
 
 LedDataStruct gLedFlashData[MAX_LED_FLASH_POSITIONS];
 LedPositionType gCurLedFlashDataElement;
+LedData	gCurLedFlashBitPos;
 LedPositionType gTotalLedFlashDataElements;
 LedPositionType gNextFlashLedPosition;
 
 LedDataStruct gLedSolidData[MAX_LED_SOLID_POSITIONS];
 LedPositionType gCurLedSolidDataElement;
+LedData	gCurLedSolidBitPos;
 LedPositionType gTotalLedSolidDataElements;
 LedPositionType gNextSolidLedPosition;
 
@@ -690,6 +696,10 @@ void processLedSubCommand(BufferCntType inRXBufferNum) {
 		ledData.red = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_LED_SAMPLES + (sampleNum * LED_SAMPLE_BYTES + 2)];
 		ledData.green = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_LED_SAMPLES + (sampleNum * LED_SAMPLE_BYTES + 3)];
 		ledData.blue = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_LED_SAMPLES + (sampleNum * LED_SAMPLE_BYTES + 4)];
+		ledData.sample1 = 0;
+		ledData.sample2 = 0;
+		ledData.sample3 = 0;
+		ledData.sample4 = 0;
 
 		switch (effect) {
 			case eLedEffectSolid:

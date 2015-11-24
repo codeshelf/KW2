@@ -136,10 +136,6 @@ void setRadioChannel(ChannelNumberType channel) {
 	gwUINT8 ccrHolder;
 
 	oldChannel = MLMEGetChannelRequest();
-	// We need to remain compatible with the old MC1322x until we finally switch away from it.
-	// Ivan will need to coordinate the change at the back end of the Java system.
-	channel += 11;
-
 	if (channel != oldChannel) {
 
 		GW_ENTER_CRITICAL(ccrHolder);

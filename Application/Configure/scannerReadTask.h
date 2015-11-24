@@ -17,7 +17,7 @@
 // Local functions prototypes.
 
 void scannerReadTask(void *pvParameters);
-//void sendLineToScanner(DisplayStringType inString, DisplayStringLenType inLen);
-//void clearScannerDisplay();
+void prepUartBus();
+void getScan(ScanStringType scanString);
 
 #endif SCANREADTASK_H

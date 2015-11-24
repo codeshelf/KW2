@@ -10,7 +10,7 @@
 // --------------------------------------------------------------------------
 // Kernel includes
 
-#include "appCheController.h"
+#include "appFccTest.h"
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
@@ -18,7 +18,7 @@
 #include "gwSystemMacros.h"
 #include "remoteRadioTask.h"
 #include "remoteMgmtTask.h"
-#include "cheControllerTask.h"
+#include "fccTestTask.h"
 #include "scannerReadTask.h"
 #include "commands.h"
 #include "string.h"
@@ -39,7 +39,8 @@ extern xTaskHandle gRadioReceiveTask;
 extern xTaskHandle gRadioTransmitTask;
 extern xTaskHandle gSerialReceiveTask;
 extern xTaskHandle gRemoteManagementTask;
-extern xTaskHandle gCartControllerTask;
+extern xTaskHandle gFccSetupTask;
+extern xTaskHandle gFccTxTask;
 extern xTaskHandle gScannerReadTask;
 
 extern xQueueHandle gRadioTransmitQueue;
@@ -72,33 +73,40 @@ void startApplication(void) {
 	smacError = MLMEPAOutputAdjust(DEFAULT_POWER);
 	smacError = MLMEXtalAdjust(gTrim[0]);
 	//smacError = MLMEFEGainAdjust(15);
-	MC1324xDrv_IndirectAccessSPIWrite(ANT_PAD_CTRL, cANT_PAD_CTRL_ANTX_CTRLMODE + cANT_PAD_CTRL_ANTX_EN);
+	MC1324xDrv_IndirectAccessSPIWrite(ANT_PAD_CTRL, /*cANT_PAD_CTRL_ANTX_CTRLMODE +*/ cANT_PAD_CTRL_ANTX_EN);
 	MC1324xDrv_IndirectAccessSPIWrite(ANT_AGC_CTRL, 0x40 + 0x02 /*+ 0x01*/);
 
-	MC1324xDrv_Set_CLK_OUT_Freq(gCLK_OUT_FREQ_32_MHz);
-	Cpu_SetClockConfiguration(1);
-	
+	uint8_t gpioDir = MC1324xDrv_IndirectAccessSPIRead(GPIO_DIR) | GPIO_PIN2;
+	MC1324xDrv_IndirectAccessSPIWrite(GPIO_DIR, gpioDir);
+	uint8_t gpioData = MC1324xDrv_IndirectAccessSPIRead(GPIO_DATA) & ~GPIO_PIN2;
+	MC1324xDrv_IndirectAccessSPIWrite(GPIO_DATA, gpioData);
+	uint8_t gpioPulEn = MC1324xDrv_IndirectAccessSPIRead(GPIO_PUL_EN) | GPIO_PIN2;
+	MC1324xDrv_IndirectAccessSPIWrite(GPIO_PUL_EN, gpioPulEn);
+	uint8_t gpioPulSel = MC1324xDrv_IndirectAccessSPIRead(GPIO_PUL_SEL) & ~GPIO_PIN2;
+	MC1324xDrv_IndirectAccessSPIWrite(GPIO_PUL_SEL, gpioPulSel);
+
 	gLocalDeviceState = eLocalStateStarted;
 
 	/* Start the task that will handle the radio */
-	xTaskCreate(radioTransmitTask, (signed portCHAR *) "RadioTX", configMINIMAL_STACK_SIZE, NULL, RADIO_PRIORITY , &gRadioTransmitTask);
-	xTaskCreate(radioReceiveTask, (signed portCHAR *) "RadioRX", configMINIMAL_STACK_SIZE, NULL, RADIO_PRIORITY , &gRadioReceiveTask);
-	xTaskCreate(remoteMgmtTask, (signed portCHAR *) "Mgmt", configMINIMAL_STACK_SIZE, NULL, MGMT_PRIORITY, &gRemoteManagementTask);
-	xTaskCreate(cheControllerTask, (signed portCHAR *) "LED", configMINIMAL_STACK_SIZE, NULL, MGMT_PRIORITY, &gCartControllerTask);
+	//xTaskCreate(radioTransmitTask, (signed portCHAR *) "RadioTX", configMINIMAL_STACK_SIZE, NULL, RADIO_PRIORITY , &gRadioTransmitTask);
+	//xTaskCreate(radioReceiveTask, (signed portCHAR *) "RadioRX", configMINIMAL_STACK_SIZE, NULL, RADIO_PRIORITY , &gRadioReceiveTask);
+	//xTaskCreate(remoteMgmtTask, (signed portCHAR *) "Mgmt", configMINIMAL_STACK_SIZE, NULL, MGMT_PRIORITY, &gRemoteManagementTask);
+	xTaskCreate(fccSetupTask, (signed portCHAR *) "FCCSetup", configMINIMAL_STACK_SIZE, NULL, MGMT_PRIORITY, &gFccSetupTask);
+	xTaskCreate(fccTxTask, (signed portCHAR *) "FccTx", configMINIMAL_STACK_SIZE, NULL, MGMT_PRIORITY, &gFccTxTask);
 	xTaskCreate(scannerReadTask, (signed portCHAR *) "Scan", configMINIMAL_STACK_SIZE, NULL, MGMT_PRIORITY, &gScannerReadTask);
 	
 
-	gRadioReceiveQueue = xQueueCreate(RX_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(BufferCntType));
-	vQueueAddToRegistry(gRadioReceiveQueue, (signed char*)"RxQ");
+//	gRadioReceiveQueue = xQueueCreate(RX_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(BufferCntType));
+//	vQueueAddToRegistry(gRadioReceiveQueue, (signed char*)"RxQ");
 
-	gRadioTransmitQueue = xQueueCreate(TX_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(BufferCntType));
-	vQueueAddToRegistry(gRadioTransmitQueue, (signed char*)"TxQ");
+//	gRadioTransmitQueue = xQueueCreate(TX_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(BufferCntType));
+//	vQueueAddToRegistry(gRadioTransmitQueue, (signed char*)"TxQ");
 
-	gRemoteMgmtQueue = xQueueCreate(REMOTE_MGMT_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(gwUINT8));
-	vQueueAddToRegistry(gRemoteMgmtQueue, (signed char*)"MgmtQ");
+//	gRemoteMgmtQueue = xQueueCreate(REMOTE_MGMT_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(gwUINT8));
+//	vQueueAddToRegistry(gRemoteMgmtQueue, (signed char*)"MgmtQ");
 
-	gTxAckQueue = xQueueCreate(TX_ACK_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(gwUINT8));
-	vQueueAddToRegistry(gTxAckQueue, (signed char*)"TxAck");
+//	gTxAckQueue = xQueueCreate(TX_ACK_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(gwUINT8));
+//	vQueueAddToRegistry(gTxAckQueue, (signed char*)"TxAck");
 
 	// Set the state to running
 	gLocalDeviceState = eLocalStateStarted;

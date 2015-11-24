@@ -62,11 +62,11 @@
 
 #define POS_CTRL_ALL_POSITIONS			0x00
 
-#define TOTAL_ERROR_SETS				80
+#define TOTAL_ERROR_SETS				20
 #define DISTANCE_BETWEEN_ERROR_LEDS		16
 	
 #define MAX_LED_FLASH_POSITIONS 		TOTAL_ERROR_SETS * 2
-#define MAX_LED_SOLID_POSITIONS 		MAX_LED_FLASH_POSITIONS
+#define MAX_LED_SOLID_POSITIONS 		0
 
 #define	SCROLL_TIMER					gTmr1_c
 #define SCROLL_PRIMARY_SOURCE			gTmrPrimaryClkDiv128_c
@@ -201,6 +201,10 @@ typedef struct {
 		LedData				red;
 		LedData				green;
 		LedData				blue;
+		gwUINT32			sample1;
+		gwUINT32			sample2;
+		gwUINT32			sample3;
+		gwUINT32			sample4;
 } LedDataStruct;
 
 typedef gwCHAR				DisplayCharType;
