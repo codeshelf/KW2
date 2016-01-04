@@ -39,7 +39,7 @@ void Delay_ms
  void delayMs(uint16_t val)
 {
 	/* Turn on clock to LPTMR module */
-	SIM_SCGC5 |= SIM_SCGC5_LPTIMER_MASK;
+	SIM_SCGC5 |= SIM_SCGC5_LPTMR_MASK;
         
 	/* Disable LPTMR */
 	LPTMR0_CSR &= ~(LPTMR_CSR_TEN_MASK);
@@ -60,7 +60,7 @@ void Delay_ms
 	LPTMR0_CSR &= ~LPTMR_CSR_TEN_MASK;
 
 	/* Turn off clock to LPTMR module */
-	SIM_SCGC5 &= ~SIM_SCGC5_LPTIMER_MASK;	
+	SIM_SCGC5 &= ~SIM_SCGC5_LPTMR_MASK;
 }
 /************************************************************************************
 * Delay_us

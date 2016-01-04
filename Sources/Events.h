@@ -37,7 +37,6 @@
 #include "FRTOS1.h"
 #include "UTIL1.h"
 #include "UTIL2.h"
-#include "INT_PORTB.h"
 #include "Wait.h"
 #include "Rs485.h"
 #include "Rs485TxCtl.h"
@@ -228,6 +227,21 @@ void Cpu_OnBusFault(void);
 */
 /* ===================================================================*/
 void Cpu_OnNMIINT(void);
+
+/*
+** ===================================================================
+**     Event       :  Cpu_OnNMI (module Events)
+**
+**     Component   :  Cpu [MKW21D256HA5]
+*/
+/*!
+**     @brief
+**         This event is called when the Non maskable interrupt had
+**         occurred. This event is automatically enabled when the [NMI
+**         interrupt] property is set to 'Enabled'.
+*/
+/* ===================================================================*/
+void Cpu_OnNMI(void);
 
 /* END Events */
 

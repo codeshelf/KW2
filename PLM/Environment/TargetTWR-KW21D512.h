@@ -84,7 +84,7 @@
  * Name: UART_NR_INSTANCES
  * Description: number of UART peripherals on board
  */ 
-#define  gUART_HW_MODULES_AVAILABLE_c            4
+#define  gUART_HW_MODULES_AVAILABLE_c            3
 
 #define gUART_HW_MOD_0_c                         0
 #define gUART_HW_MOD_1_c                         1
@@ -95,7 +95,7 @@
 #define gUART0_BASE_PTR_c                        UART0_BASE_PTR
 #define gUART1_BASE_PTR_c                        UART1_BASE_PTR
 #define gUART2_BASE_PTR_c                        UART2_BASE_PTR
-#define gUART3_BASE_PTR_c                        UART3_BASE_PTR
+//#define gUART3_BASE_PTR_c                        UART3_BASE_PTR
 
 
 #define gUART0_LON_IRQ_NUM_c                     (30)  
@@ -105,20 +105,20 @@
 #define gUART1_ERR_IRQ_NUM_c                     (34)
 #define gUART2_IRQ_NUM_c                         (35)
 #define gUART2_ERR_IRQ_NUM_c                     (36)
-#define gUART3_IRQ_NUM_c                         (37)
-#define gUART3_ERR_IRQ_NUM_c                     (38)
+//#define gUART3_IRQ_NUM_c                         (37)
+//#define gUART3_ERR_IRQ_NUM_c                     (38)
 
 
 #define gUART0_SIM_SCGC_REG_c                    SIM_SCGC4
 #define gUART1_SIM_SCGC_REG_c                    SIM_SCGC4
 #define gUART2_SIM_SCGC_REG_c                    SIM_SCGC4
-#define gUART3_SIM_SCGC_REG_c                    SIM_SCGC4
+//#define gUART3_SIM_SCGC_REG_c                    SIM_SCGC4
 
 
 #define gUART0_SIM_SCGC_BIT_c                    (10)
 #define gUART1_SIM_SCGC_BIT_c                    (11)
 #define gUART2_SIM_SCGC_BIT_c                    (12)
-#define gUART3_SIM_SCGC_BIT_c                    (13)
+//#define gUART3_SIM_SCGC_BIT_c                    (13)
 
 /*Port A*/
 
@@ -147,13 +147,13 @@
 #define gUART2_RTS_PCR_REG_c                     PORTE_PCR19      /* Port Control Register (PCR) associated with RTS pin */
 #define gUART2_CTS_PCR_REG_c                     PORTE_PCR18      /* Port Control Register (PCR) associated with CTS pin */
 
-#define gUART3_PORT_SIM_SCGC_REG_c               SIM_SCGC5       /* Port clock gating register */
-#define gUART3_PORT_SIM_SGC_BIT_c                (1<<11)         /* Port clock gating bit */
-#define gUART3_PORT_MUX_c                        (3)             /* Port MUX (alternate function) */
-#define gUART3_RX_PCR_REG_c                      PORTC_PCR16     /* Port Control Register (PCR) associated with RX pin */
-#define gUART3_TX_PCR_REG_c                      PORTC_PCR17     /* Port Control Register (PCR) associated with TX pin */
-#define gUART3_RTS_PCR_REG_c                     PORTC_PCR18     /* Port Control Register (PCR) associated with RTS pin */
-#define gUART3_CTS_PCR_REG_c                     PORTC_PCR19     /* Port Control Register (PCR) associated with CTS pin */
+//#define gUART3_PORT_SIM_SCGC_REG_c               SIM_SCGC5       /* Port clock gating register */
+//#define gUART3_PORT_SIM_SGC_BIT_c                (1<<11)         /* Port clock gating bit */
+//#define gUART3_PORT_MUX_c                        (3)             /* Port MUX (alternate function) */
+//#define gUART3_RX_PCR_REG_c                      PORTC_PCR16     /* Port Control Register (PCR) associated with RX pin */
+//#define gUART3_TX_PCR_REG_c                      PORTC_PCR17     /* Port Control Register (PCR) associated with TX pin */
+//#define gUART3_RTS_PCR_REG_c                     PORTC_PCR18     /* Port Control Register (PCR) associated with RTS pin */
+//#define gUART3_CTS_PCR_REG_c                     PORTC_PCR19     /* Port Control Register (PCR) associated with CTS pin */
 
 
 /* Error flags masks */

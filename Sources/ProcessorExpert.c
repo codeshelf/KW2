@@ -31,7 +31,6 @@
 #include "FRTOS1.h"
 #include "UTIL1.h"
 #include "UTIL2.h"
-#include "INT_PORTB.h"
 #include "Wait.h"
 #include "Rs485.h"
 #include "Rs485TxCtl.h"
@@ -56,6 +55,8 @@
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
+#include "PDD_Includes.h"
+#include "Init_Config.h"
 /* User includes (#include below this line is not maintained by Processor Expert) */
 #include "globals.h"
 #include "eeprom.h"

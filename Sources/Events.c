@@ -29,6 +29,8 @@
 
 #include "Cpu.h"
 #include "Events.h"
+#include "Init_Config.h"
+#include "PDD_Includes.h"
 #include "globals.h"
 
 #ifdef __cplusplus
@@ -240,6 +242,24 @@ void Cpu_OnBusFault(void)
 */
 /* ===================================================================*/
 void Cpu_OnNMIINT(void)
+{
+  /* Write your code here ... */
+}
+
+/*
+** ===================================================================
+**     Event       :  Cpu_OnNMI (module Events)
+**
+**     Component   :  Cpu [MKW21D256HA5]
+*/
+/*!
+**     @brief
+**         This event is called when the Non maskable interrupt had
+**         occurred. This event is automatically enabled when the [NMI
+**         interrupt] property is set to 'Enabled'.
+*/
+/* ===================================================================*/
+void Cpu_OnNMI(void)
 {
   /* Write your code here ... */
 }
