@@ -45,10 +45,9 @@
       <Path>/Users/jeffw/git/KW2/Generated_Code/</Path>
     </IncludePaths>
     <SourceCodePaths>
+      <Path>/Users/jeffw/git/KW2/.metadata/.plugins/org.eclipse.cdt.make.core/</Path>
       <Path>/Users/jeffw/git/KW2/Application/Source/</Path>
       <Path>/Users/jeffw/git/KW2/Generated_Code/</Path>
-      <Path>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/</Path>
-      <Path>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/</Path>
       <Path>/Users/jeffw/git/KW2/Generic Services/Source/</Path>
       <Path>/Users/jeffw/git/KW2/PLM/Source/Keyboard/</Path>
       <Path>/Users/jeffw/git/KW2/PLM/Source/LED/</Path>
@@ -68,10 +67,13 @@
       <Path>/Users/jeffw/git/KW2/Project_Settings/Startup_Code/</Path>
       <Path>/Users/jeffw/git/KW2/SMAC/Source/</Path>
       <Path>/Users/jeffw/git/KW2/Sources/</Path>
+      <Path>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/</Path>
+      <Path>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/</Path>
     </SourceCodePaths>
   </PATHS>
   <FILES>
     <GeneratedCs>
+      <PathName>/Users/jeffw/git/KW2/.metadata/.plugins/org.eclipse.cdt.make.core/specs.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Application/Source/Critical.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Application/Source/aisleControllerTask.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Application/Source/appAisleController.c</PathName>
@@ -102,25 +104,15 @@
       <PathName>/Users/jeffw/git/KW2/Application/Source/serial.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Application/Source/smacGlue.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Application/Source/tunerTask.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/BitIoLdd1.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/BitIoLdd2.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/Cpu.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/EepromCS.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/EventTimer.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/FRTOS1.c</PathName>
+      <PathName>/Users/jeffw/git/KW2/Generated_Code/INT_PORTB.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/PE_LDD.c</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SPI0_Init.c</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART0_Init.c</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART1_Init.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Rs485Power.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Rs485TxCtl.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/ScannerPower.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/SharpDisplayCS.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/StatusLedClk.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/StatusLedSdi.c</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/CPU_Init.c</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/Peripherals_Init.c</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/Vectors.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/UTIL1.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/UTIL2.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/Wait.c</PathName>
@@ -168,12 +160,14 @@
       <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Driver/usb_sim_settings.c</PathName>
       <PathName>/Users/jeffw/git/KW2/PLM/Source/Uart/UART.c</PathName>
       <PathName>/Users/jeffw/git/KW2/PLM/Source/WDOG/wdog.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Project_Settings/Startup_Code/__arm_end.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Project_Settings/Startup_Code/__arm_start.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Project_Settings/Startup_Code/startup.c</PathName>
       <PathName>/Users/jeffw/git/KW2/SMAC/Source/SMAC.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Sources/Events.c</PathName>
       <PathName>/Users/jeffw/git/KW2/Sources/ProcessorExpert.c</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SPI0_Init.c</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/CPU_Init.c</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/Peripherals_Init.c</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/Vectors.c</PathName>
     </GeneratedCs>
     <GeneratedHs>
       <PathName>/Users/jeffw/git/KW2/Application/Configure/Critical.h</PathName>
@@ -213,7 +207,6 @@
       <PathName>/Users/jeffw/git/KW2/Application/Configure/serial.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Application/Configure/smacGlue.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Application/Configure/tunerTask.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/BitIoLdd1.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/BitIoLdd2.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/CPU_Config.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/Cpu.h</PathName>
@@ -222,66 +215,18 @@
       <PathName>/Users/jeffw/git/KW2/Generated_Code/FRTOS1.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/FreeRTOS.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/FreeRTOSConfig.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/iofiles/MKW21D5.h</PathName>
+      <PathName>/Users/jeffw/git/KW2/Generated_Code/INT_PORTB.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/IO_Map.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/Init_Config.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/ADC_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/CMP_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/CMT_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/CRC_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/DMAMUX_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/DMA_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/EWM_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/FMC_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/FTFL_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/FTM_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/GPIO_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/I2C_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/LLWU_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/LPTMR_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/MCG_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/MCM_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/NVIC_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/OSC_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/PDB_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/PDD_Types.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/PIT_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/PMC_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/PORT_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/RCM_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/RNGA_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/RTC_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/SAI_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/SCB_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/SIM_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/SMC_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/SPI_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/SysTick_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/UART_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/WDOG_PDD.h</PathName>
+      <PathName>/Users/jeffw/git/KW2/Generated_Code/LedDrive.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/PE_Const.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/PE_Error.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/PE_LDD.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/PE_Types.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SPI0_Init.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART0_Init.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART1_Init.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Rs485.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Rs485Power.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Rs485TxCtl.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/SPI0_Config.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Scanner.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/ScannerPower.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/SharpDisplay.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/SharpDisplayCS.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/StackMacros.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/StatusLedClk.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/StatusLedSdi.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/CPU_Init.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/PDD_Includes.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/Peripherals_Init.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/UART0_Config.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/UART1_Config.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/UTIL1.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/UTIL2.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/Vectors_Config.h</PathName>
@@ -344,6 +289,45 @@
       <PathName>/Users/jeffw/git/KW2/SMAC/Interface/SMAC_Interface.h</PathName>
       <PathName>/Users/jeffw/git/KW2/SMAC/Source/SMAC.h</PathName>
       <PathName>/Users/jeffw/git/KW2/Sources/Events.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SPI0_Init.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/CPU_Init.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/PDD_Includes.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/Peripherals_Init.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/iofiles/MKW21D5.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/PDD_Types.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/ADC_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/CMP_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/CMT_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/CRC_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/DMA_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/DMAMUX_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/EWM_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/FMC_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/FTFL_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/FTM_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/GPIO_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/I2C_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/LLWU_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/LPTMR_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/MCG_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/MCM_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/NVIC_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/OSC_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/PDB_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/PIT_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/PMC_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/PORT_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/RCM_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/RNGA_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/RTC_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/SAI_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/SCB_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/SIM_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/SMC_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/SPI_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/SysTick_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/UART_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/WDOG_PDD.h</PathName>
     </GeneratedHs>
     <GeneratedASMs>
       <PathName>/Users/jeffw/git/KW2/Generated_Code/portasm.s</PathName>

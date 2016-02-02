@@ -37,24 +37,20 @@
 #include "FRTOS1.h"
 #include "UTIL1.h"
 #include "UTIL2.h"
+#include "INT_PORTB.h"
 #include "Wait.h"
-#include "Rs485.h"
-#include "Rs485TxCtl.h"
+//#include "Rs485.h"
 #include "Critical.h"
-#include "Scanner.h"
+//#include "Scanner.h"
 #include "Watchdog.h"
 #include "EventTimer.h"
-#include "SharpDisplay.h"
-#include "SharpDisplayCS.h"
-#include "BitIoLdd1.h"
+//#include "SharpDisplay.h"
 #ifdef TUNER
 #endif
 #include "EepromCS.h"
 #include "BitIoLdd2.h"
 #include "StatusLedClk.h"
 #include "StatusLedSdi.h"
-#include "ScannerPower.h"
-#include "Rs485Power.h"
 
 #ifdef __cplusplus
 extern "C" {
