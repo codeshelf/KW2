@@ -48,15 +48,11 @@ extern BufferCntType 		gTxUsedBuffers;
 extern NetworkIDType gMyNetworkID;
 extern NetAddrType gMyAddr;
 
-gwBoolean	waitingForAck = FALSE;
-
 // --------------------------------------------------------------------------
 
 void radioReceiveTask(void *pvParameters) {
 	BufferCntType rxBufferNum = 0;
 	gwUINT8 ccrHolder;
-	ECommandGroupIDType cmdID;
-	
 #ifdef TUNER
 	while(gLocalDeviceState == eLocalStateTuning){
 		vTaskDelay(1);
@@ -83,31 +79,13 @@ void radioReceiveTask(void *pvParameters) {
 				while (gRxMsg.rxPacketPtr->rxStatus == rxProcessingReceptionStatus_c) {
 					vTaskDelay(0);
 				}
-				if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c) {
+
+				// Did we get a a packet and is the crc ok?
+				if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c &&
+					checkCRC(gRxRadioBuffer[rxBufferNum].bufferStorage, gRxMsg.rxPacketPtr->u8DataLength)) {
 					// Process the packet we just received.
 					gRxRadioBuffer[rxBufferNum].bufferSize = gRxMsg.rxPacketPtr->u8DataLength;
-					
-					if (!waitingForAck) {
-						processRxPacket(rxBufferNum, gRxMsg.rxPacketPtr->lqi);
-					} else {
-						cmdID = getCommandID(gRxRadioBuffer[rxBufferNum].bufferStorage);
-						
-						// Process netchecks always
-						if (cmdID == eCommandNetMgmt) {
-							processRxPacket(rxBufferNum, gRxMsg.rxPacketPtr->lqi);
-						} else if (cmdID == eCommandControl) {
-							// Only process ack messages
-							EControlSubCmdIDType subcmd = getControlSubCommand(rxBufferNum);
-							
-							if (subcmd == eControlSubCmdAck) {
-								processRxPacket(rxBufferNum, gRxMsg.rxPacketPtr->lqi);
-							} else {
-								RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
-							}
-						} else {
-							RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
-						}
-					}
+					processRxPacket(rxBufferNum, gRxMsg.rxPacketPtr->lqi);
 				} else {
 					RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 				}
@@ -125,7 +103,6 @@ void radioReceiveTask(void *pvParameters) {
 
 void radioTransmitTask(void *pvParameters) {
 	BufferCntType txBufferNum;
-	BufferCntType rxBufferNum;
 	gwBoolean shouldRetry;
 	portTickType retryTickCount;
 	gwUINT8 ackId;
@@ -140,20 +117,23 @@ void radioTransmitTask(void *pvParameters) {
 
 	if (gRadioTransmitQueue && gTxAckQueue) {
 		for (;;) {
-			waitingForAck = FALSE;
+
 			// Wait until the management thread signals us that we have a full buffer to transmit.
 			if (xQueueReceive(gRadioTransmitQueue, &txBufferNum, portMAX_DELAY) == pdPASS) {
 				
-				//Store current tick count
+				// Calculate the crc for the messages
+				gwUINT16 crc = 0;
+				crc = calculateCRC16(gTxRadioBuffer[txBufferNum].bufferStorage, gTxRadioBuffer[txBufferNum].bufferSize);
+				setCRC(gTxRadioBuffer[txBufferNum].bufferStorage, crc);
+
+				// Store current tick count
 				retryTickCount = xTaskGetTickCount();
 				
 				gwUINT8 txedAckId = getAckId(gTxRadioBuffer[txBufferNum].bufferStorage);
 				ECommandGroupIDType txCommandType = getCommandID(gTxRadioBuffer[txBufferNum].bufferStorage); 
 				
 				do {
-					//waitingForAck = FALSE;
 					shouldRetry = FALSE;
-					isAck = FALSE;
 
 					//Write tx to the air. Callback will notify us when done.
 					writeRadioTx(txBufferNum);
@@ -175,23 +155,17 @@ void radioTransmitTask(void *pvParameters) {
 #ifndef GATEWAY
 					if (txedAckId != 0 && txCommandType != eCommandNetMgmt && txCommandType != eCommandAssoc && !isAck) {
 						shouldRetry = TRUE;
-						waitingForAck = TRUE;
+
 						//Wait up to 50ms for an ACK
-						if (xQueueReceive(gTxAckQueue, &rxBufferNum, 50 * portTICK_RATE_MS) == pdPASS) {
-							ackId = gRxRadioBuffer[rxBufferNum].bufferStorage[CMDPOS_ACK_NUM];
-							
+						if (xQueueReceive(gTxAckQueue, &ackId, 50 * portTICK_RATE_MS) == pdPASS) {
 							if (txedAckId == ackId) {
 								shouldRetry = FALSE;
-								waitingForAck = FALSE;
 							}
-							
-							RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 						}
 
 						//If we fail to receive an ACK after enough retries to exceed 500ms then break out of the loop.
-						if (shouldRetry && ((xTaskGetTickCount() - retryTickCount) > 10000)) {
+						if (shouldRetry && ((xTaskGetTickCount() - retryTickCount) > 5000)) {
 							shouldRetry = FALSE;
-							waitingForAck = FALSE;
 						}
 					}
 #endif					

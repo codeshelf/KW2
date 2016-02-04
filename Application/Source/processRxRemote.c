@@ -15,6 +15,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
+#include "CRC1.h"
 
 // --------------------------------------------------------------------------
 // Global variables.
@@ -52,14 +53,25 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 	BufferCntType txBufferNum;
 	gwBoolean shouldReleasePacket = TRUE;
 	gwUINT8 ccrHolder;
+	PacketVerType packetVersion;
+	uint32_t crc = 0;
+	LDD_TError err;
+
+	packetVersion = getPacketVersion(inRxBufferNum);
 
 	// We just received a valid packet.
 	networkID = getNetworkID(inRxBufferNum);
 
-	// Only process packets sent to the broadcast network ID and our assigned network ID.
-	if ((networkID != BROADCAST_NET_NUM) && (networkID != gMyNetworkID)) {
+	if (packetVersion != PACKET_VERSION) {
+		// Do nothing if the packet version is incorrect
+
+	} else if ((networkID != BROADCAST_NET_NUM) && (networkID != gMyNetworkID)) {
+		// Only process packets sent to the broadcast network ID and our assigned network ID.
 		// Do nothing
 	} else {
+		// Reset watchdog if we see messages to our network
+		GW_WATCHDOG_RESET;
+		setStatusLed(0, 0, 1);
 
 		cmdID = getCommandID(gRxRadioBuffer[inRxBufferNum].bufferStorage);
 		cmdDstAddr = getCommandDstAddr(inRxBufferNum);
@@ -68,69 +80,26 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 		if ((cmdDstAddr != ADDR_BROADCAST) && (cmdDstAddr != gMyAddr)) {
 			// Do nothing.
 		} else {
+
+			// Prepare to handle packet ACK.
+			ackId = getAckId(gRxRadioBuffer[inRxBufferNum].bufferStorage);
+
 				switch (cmdID) {
 					case eCommandNetMgmt:
-						GW_WATCHDOG_RESET;
 						setStatusLed(0, 0, 1);
+						GW_WATCHDOG_RESET;
 						break;
 					case eCommandAssoc:
-						// Only process association messages when we are unassociated
-						if (gLocalDeviceState != eLocalStateRun) {
-							// This will only return sub-commands if the command GUID matches out GUID
-							assocSubCmd = getAssocSubCommand(inRxBufferNum);
-							if (assocSubCmd == eCmdAssocInvalid) {
-								// Do nothing.
-							} else if (assocSubCmd == eCmdAssocRESP) {
-								// If we're not already running then signal the mgmt task that we just got a command ASSOC resp.
-								if (gLocalDeviceState != eLocalStateRun) {
-									if (xQueueSend(gRemoteMgmtQueue, &inRxBufferNum, (portTickType) 0)) {
-										// The management task will handle this packet.
-										shouldReleasePacket = FALSE;
-									}
-								}
-							} else if (assocSubCmd == eCmdAssocACK) {
-								// Record the time of the last ACK packet we received.
-								gLastPacketReceivedTick = xTaskGetTickCount();
-		
-								// If the associate state is 1 then we're not associated with this controller anymore.
-								// We need to reset the device, so that we can start a whole new session.
-								if (1 == gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ASSOCACK_STATE]) {
-									//GW_RESET_MCU();
-								} else {
-									gUnixTime.byteFields.byte1 = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ASSOCACK_TIME + 3];
-									gUnixTime.byteFields.byte2 = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ASSOCACK_TIME + 2];
-									gUnixTime.byteFields.byte3 = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ASSOCACK_TIME + 1];
-									gUnixTime.byteFields.byte4 = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ASSOCACK_TIME];
-								}
-								
-								if ((networkID == gMyNetworkID) && (cmdDstAddr == gMyAddr)) {
-									if (xQueueSend(gTxAckQueue, &ackId, (portTickType) 0)) {
-									}
-								} else if (gLocalDeviceState != eLocalStateRun) {
-									if (xQueueSend(gRemoteMgmtQueue, &inRxBufferNum, (portTickType) 0)) {
-										// The management task will handle this packet.
-										shouldReleasePacket = FALSE;
-									}
-								}
-							}
-						}
+						// Should not get command associate messages at this stage
 						break;
 	
 					case eCommandControl:
-						
 						if (gLocalDeviceState == eLocalStateRun) {
-							// We got a command packet - as good as a netcheck in my opinion
-							GW_WATCHDOG_RESET;
-							
-							// Prepare to handle packet ACK.
-							ackId = getAckId(gRxRadioBuffer[inRxBufferNum].bufferStorage);
 							
 							if ((ackId == 0 || ackId != gLastAckId)) {
 								// Make sure that there is a valid sub-command in the control command.
 								
-								if (ackId != 0) {
-									gLastAckId = ackId;
-								}
+								gLastAckId = ackId;
 								
 								switch (getControlSubCommand(inRxBufferNum)) {
 			
@@ -138,7 +107,6 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 										break;
 										
 									case eControlSubCmdAck:
-										shouldReleasePacket = FALSE;
 										processAckSubCommand(inRxBufferNum);
 										break;
 			
@@ -177,11 +145,13 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 									default:
 										break;
 								}
+
+
+
 							}
 							
 							// Send an ACK if necessary.
 							if (ackId != 0 /*&& gLastAckId != ackId*/) {
-								
 								txBufferNum = lockTxBuffer();
 								createAckPacket(txBufferNum, ackId, lqi);
 								

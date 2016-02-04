@@ -30,6 +30,8 @@
 #define RADIO_PRIORITY			( tskIDLE_PRIORITY + 2 )
 #define KEYBOARD_PRIORITY		( tskIDLE_PRIORITY + 2 )
 
+#define LQI_BYTES				1
+
 #define MAX_PACKET_SIZE			123
 #define ACK_DATA_BYTES			8
 
@@ -59,6 +61,7 @@
 #define POS_CTRL_CLEAR					0x01
 #define POS_CTRL_DISPLAY				0x02
 #define POS_CTRL_CREAT_BUTTON			0x08
+#define POS_CTRL_DSP_ADDR				0x09
 
 #define POS_CTRL_ALL_POSITIONS			0x00
 
@@ -149,11 +152,12 @@ typedef struct {
 	BufferCntType	bufferNum;
 } ETxMessageHolderType;
 
+typedef gwUINT8				PacketVerType;
 typedef gwUINT8				NetworkIDType;
 typedef gwUINT8				AckIDType;
 typedef gwUINT8				AckDataType[ACK_DATA_BYTES];
 typedef gwUINT8				AckLQIType;
-typedef gwUINT8				NetAddrType;
+typedef gwUINT16			NetAddrType;
 typedef gwUINT8				EndpointNumType;
 typedef gwUINT8				KVPNumType;
 

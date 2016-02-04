@@ -51,6 +51,10 @@ void processRxPacket(BufferCntType inRxBufferNum) {
 //		}
 //	}
 //	serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) ("PC"),  2);
-	serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) (&gRxRadioBuffer[inRxBufferNum].bufferStorage),  gRxRadioBuffer[inRxBufferNum].bufferSize);
+
+	// Include LQI as last byte in the frame
+	gRxRadioBuffer[inRxBufferNum].bufferStorage[gRxRadioBuffer[inRxBufferNum].bufferSize] = lqi;
+
+	serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) (&gRxRadioBuffer[inRxBufferNum].bufferStorage),  gRxRadioBuffer[inRxBufferNum].bufferSize + LQI_BYTES);
 	RELEASE_RX_BUFFER(inRxBufferNum, ccrHolder);
 }

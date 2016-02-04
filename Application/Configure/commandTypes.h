@@ -29,9 +29,13 @@
  * 1b - Ack requested bit
  * 1b - Reserved
  * 4b - Network number
- * 1B - Packet source address
- * 1B - Packet dest address
+ * 2B - Packet source address
+ * 2B - Packet dest address
  * 1B - Ack Id
+ * 2B - Packet Payload CRC
+ *
+ * ========== End of Logical Header =========
+ *
  * 4b - Command ID
  * 4b - Command endpoint
  * nB - Command bytes
@@ -47,12 +51,12 @@
 #define PCKPOS_RESERVED			PCKPOS_PCK_TYPE_BIT
 #define PCKPOS_NET_NUM			PCKPOS_RESERVED
 #define PCKPOS_SRC_ADDR			PCKPOS_NET_NUM + 1
-#define PCKPOS_DST_ADDR 		PCKPOS_SRC_ADDR + 1
-#define PCKPOS_ACK_ID			PCKPOS_DST_ADDR + 1
+#define PCKPOS_DST_ADDR 		PCKPOS_SRC_ADDR + 2
+#define PCKPOS_ACK_ID			PCKPOS_DST_ADDR + 2
+#define PCKPOS_CRC				PCKPOS_ACK_ID + 1
+#define PCKPOS_HDR_ENDPOINT		PCKPOS_CRC + 2
 
-//#define PCKPOS_ACK_DATA			PCKPOS_ACK_ID + 1
-
-#define CMDPOS_CMD_ID			PCKPOS_ACK_ID + 1
+#define CMDPOS_CMD_ID			PCKPOS_HDR_ENDPOINT
 #define CMDPOS_ENDPOINT			CMDPOS_CMD_ID
 
 #define CMDPOS_STARTOFCMD		CMDPOS_ENDPOINT + 1
@@ -71,7 +75,6 @@
 #define CMDPOS_NETM_SETCMD_CHANNEL	CMDPOS_NETM_SUBCMD + 1
 
 // Assoc Command
-
 #define CMDPOS_ASSOC_SUBCMD		CMDPOS_STARTOFCMD
 #define CMDPOS_ASSOC_GUID		CMDPOS_ASSOC_SUBCMD + 1
 
@@ -81,7 +84,7 @@
 #define CMDPOS_ASSOCREQ_SYSSTAT CMDPOS_ASSOCREQ_RP_VER + 1
 
 #define CMDPOS_ASSOCRESP_ADDR	CMDPOS_ASSOC_GUID + 8
-#define CMDPOS_ASSOCRESP_NET	CMDPOS_ASSOCRESP_ADDR + 1
+#define CMDPOS_ASSOCRESP_NET	CMDPOS_ASSOCRESP_ADDR + 2
 #define CMDPOS_ASSOCRESP_SLEEP	CMDPOS_ASSOCRESP_NET + 1
 #define CMDPOS_ASSOCRESP_SCANNER CMDPOS_ASSOCRESP_SLEEP + 2
 
@@ -90,8 +93,9 @@
 
 #define CMDPOS_ASSOCCHK_BATT	CMDPOS_ASSOC_GUID + 8
 #define CMDPOS_ASSOCCHK_LRC		CMDPOS_ASSOCCHK_BATT + 1
-#define CMDPOS_ASSOCCHK_RST_DATA		CMDPOS_ASSOCCHK_LRC + 1
-#define CMDPOS_ASSOCCHK_PC		CMDPOS_ASSOCCHK_RST_DATA + ASSOC_RST_DATA_LEN
+#define CMDPOS_ASSOCCHK_RCM0	CMDPOS_ASSOCCHK_LRC + 1
+#define CMDPOS_ASSOCCHK_RCM1	CMDPOS_ASSOCCHK_RCM0 + 1
+#define CMDPOS_ASSOCCHK_PC		CMDPOS_ASSOCCHK_RCM1 + 1
 
 // Info Command
 #define CMDPOS_INFO_SUBCMD		CMDPOS_STARTOFCMD
@@ -142,6 +146,9 @@
 // Position controller clear command
 #define CMDPOS_CLEAR_POS			CMDPOS_CONTROL_DATA
 
+// Position controller display address command
+#define CMDPOS_DSP_ADDR_POS			CMDPOS_CONTROL_DATA
+
 // Create button press command
 #define CMDPOS_CREATE_BUTTON_POS			CMDPOS_CONTROL_DATA
 #define CMDPOS_CREATE_BUTTON_NUM			CMDPOS_CREATE_BUTTON_POS + 1
@@ -161,11 +168,11 @@
 #define SHIFTBITS_CMD_ID		4
 #define SHIFTBITS_CMD_ENDPOINT	0
 
-#define PACKET_VERSION			0x00
+#define PACKET_VERSION			0x01
 
 #define BROADCAST_NET_NUM		0x0f
-#define ADDR_CONTROLLER			0x00
-#define ADDR_BROADCAST			0xff
+#define ADDR_CONTROLLER			0x0000
+#define ADDR_BROADCAST			0xffff
 
 #define MAX_REMOTES				0xfe
 #define INVALID_REMOTE			0xff
@@ -180,6 +187,7 @@
 
 // --------------------------------------------------------------------------
 // Typedefs
+
 
 /*
  * The controller state machine;

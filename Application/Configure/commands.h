@@ -14,6 +14,7 @@
 #include "gwTypes.h"
 #include "commandTypes.h"
 #include "radioCommon.h"
+#include "CRC1.h"
 #ifdef RS485
 #include "Rs485TxCtl.h"
 #endif
@@ -77,6 +78,11 @@ ECommandGroupIDType getCommandID(BufferStoragePtrType inBufferPtr);
 NetworkIDType getNetworkID(BufferCntType inRXBufferNum);
 AckIDType getAckId(BufferStoragePtrType inBufferPtr);
 void setAckId(BufferStoragePtrType inBufferPtr);
+gwUINT16 getCRC(BufferStoragePtrType inBufferPtr);
+void setCRC(BufferStoragePtrType inBufferPtr, gwUINT16 crc);
+
+gwUINT16 calculateCRC16(BufferStoragePtrType inBufferPtr, BufferCntType pcktSize);
+gwBoolean checkCRC(BufferStoragePtrType inBufferPtr, BufferCntType pcktSize);
 
 ENetMgmtSubCmdIDType getNetMgmtSubCommand(BufferStoragePtrType inBufferPtr);
 ECmdAssocType getAssocSubCommand(BufferCntType inRXBufferNum);
@@ -120,6 +126,7 @@ void processDisplayMsgSubCommand(BufferCntType inRXBufferNum);
 void processSetPosControllerSubCommand(BufferCntType inRXBufferNum);
 void processClearPosControllerSubCommand(BufferCntType inRXBufferNum);
 void processLedSubCommand(BufferCntType inRXBufferNum);
+void processDspAddrPosControllerSubCommand(BufferCntType inRXBufferNum);
 
 void processCreateScanSubCommand(BufferCntType inRXBufferNum);
 void processCreateButtonSubCommand(BufferCntType inRXBufferNum);

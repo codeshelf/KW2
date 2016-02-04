@@ -38,6 +38,9 @@
 
 #define GW_GET_SYSTEM_STATUS				RCM_SRS0;
 
+#define GW_GET_SYSTEM_STATUS0				RCM_SRS0;
+#define GW_GET_SYSTEM_STATUS1				RCM_SRS1;
+
 #define	GW_WATCHDOG_RESET					Watchdog_Clear(Watchdog_DeviceData);
 
 #define GW_ENERGY_DETECT(channel)			0
