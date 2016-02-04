@@ -441,6 +441,8 @@ void setFontType(uint8_t fontType) {
 	}
 }
 
+
+#ifdef CHE_CONTROLLER
 // --------------------------------------------------------------------------
 
 void sendLineToScanner(DisplayStringType inString, DisplayStringLenType inLen) {
@@ -469,3 +471,4 @@ void clearScannerDisplay() {
 	sendOneChar(Scanner_DEVICE, '\r');
 	sendOneChar(Scanner_DEVICE, '\n');
 }
+#endif

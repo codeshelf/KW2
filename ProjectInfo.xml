@@ -35,272 +35,202 @@
     <FLASHsize>256k</FLASHsize>
   </PROCESSOR>
   <PATHS>
-    <LinkerCommandFile>/Users/jeffw/git/KW2/Project_Settings/Linker_Files/ProcessorExpert.ld</LinkerCommandFile>
+    <LinkerCommandFile>/Users/andrewhuff/git/KW2/Project_Settings/Linker_Files/ProcessorExpert.ld</LinkerCommandFile>
     <IncludePaths>
       <Path>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/</Path>
       <Path>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/</Path>
       <Path>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/iofiles/</Path>
       <Path>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/</Path>
-      <Path>/Users/jeffw/git/KW2/Sources/</Path>
-      <Path>/Users/jeffw/git/KW2/Generated_Code/</Path>
+      <Path>/Users/andrewhuff/git/KW2/Sources/</Path>
+      <Path>/Users/andrewhuff/git/KW2/Generated_Code/</Path>
     </IncludePaths>
     <SourceCodePaths>
-      <Path>/Users/jeffw/git/KW2/.metadata/.plugins/org.eclipse.cdt.make.core/</Path>
-      <Path>/Users/jeffw/git/KW2/Application/Source/</Path>
-      <Path>/Users/jeffw/git/KW2/Generated_Code/</Path>
-      <Path>/Users/jeffw/git/KW2/Generic Services/Source/</Path>
-      <Path>/Users/jeffw/git/KW2/PLM/Source/Keyboard/</Path>
-      <Path>/Users/jeffw/git/KW2/PLM/Source/LED/</Path>
-      <Path>/Users/jeffw/git/KW2/PLM/Source/MCG/</Path>
-      <Path>/Users/jeffw/git/KW2/PLM/Source/NVIC/</Path>
-      <Path>/Users/jeffw/git/KW2/PLM/Source/Radio/MC1324x/DRV/</Path>
-      <Path>/Users/jeffw/git/KW2/PLM/Source/Radio/MC1324x/PHY/</Path>
-      <Path>/Users/jeffw/git/KW2/PLM/Source/Sys Common/</Path>
-      <Path>/Users/jeffw/git/KW2/PLM/Source/TMR/</Path>
-      <Path>/Users/jeffw/git/KW2/PLM/Source/USB/APP/CDC/</Path>
-      <Path>/Users/jeffw/git/KW2/PLM/Source/USB/APP/Descriptor/</Path>
-      <Path>/Users/jeffw/git/KW2/PLM/Source/USB/Class/</Path>
-      <Path>/Users/jeffw/git/KW2/PLM/Source/USB/Common/</Path>
-      <Path>/Users/jeffw/git/KW2/PLM/Source/USB/Driver/</Path>
-      <Path>/Users/jeffw/git/KW2/PLM/Source/Uart/</Path>
-      <Path>/Users/jeffw/git/KW2/PLM/Source/WDOG/</Path>
-      <Path>/Users/jeffw/git/KW2/Project_Settings/Startup_Code/</Path>
-      <Path>/Users/jeffw/git/KW2/SMAC/Source/</Path>
-      <Path>/Users/jeffw/git/KW2/Sources/</Path>
+      <Path>/Users/andrewhuff/git/KW2/Application/Source/</Path>
+      <Path>/Users/andrewhuff/git/KW2/Generated_Code/</Path>
       <Path>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/</Path>
       <Path>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/</Path>
+      <Path>/Users/andrewhuff/git/KW2/Generic Services/Source/</Path>
+      <Path>/Users/andrewhuff/git/KW2/PLM/Source/Keyboard/</Path>
+      <Path>/Users/andrewhuff/git/KW2/PLM/Source/LED/</Path>
+      <Path>/Users/andrewhuff/git/KW2/PLM/Source/MCG/</Path>
+      <Path>/Users/andrewhuff/git/KW2/PLM/Source/NVIC/</Path>
+      <Path>/Users/andrewhuff/git/KW2/PLM/Source/Radio/MC1324x/DRV/</Path>
+      <Path>/Users/andrewhuff/git/KW2/PLM/Source/Radio/MC1324x/PHY/</Path>
+      <Path>/Users/andrewhuff/git/KW2/PLM/Source/Sys Common/</Path>
+      <Path>/Users/andrewhuff/git/KW2/PLM/Source/TMR/</Path>
+      <Path>/Users/andrewhuff/git/KW2/PLM/Source/USB/APP/CDC/</Path>
+      <Path>/Users/andrewhuff/git/KW2/PLM/Source/USB/APP/Descriptor/</Path>
+      <Path>/Users/andrewhuff/git/KW2/PLM/Source/USB/Class/</Path>
+      <Path>/Users/andrewhuff/git/KW2/PLM/Source/USB/Common/</Path>
+      <Path>/Users/andrewhuff/git/KW2/PLM/Source/USB/Driver/</Path>
+      <Path>/Users/andrewhuff/git/KW2/PLM/Source/Uart/</Path>
+      <Path>/Users/andrewhuff/git/KW2/PLM/Source/WDOG/</Path>
+      <Path>/Users/andrewhuff/git/KW2/Project_Settings/Startup_Code/</Path>
+      <Path>/Users/andrewhuff/git/KW2/SMAC/Source/</Path>
+      <Path>/Users/andrewhuff/git/KW2/Sources/</Path>
     </SourceCodePaths>
   </PATHS>
   <FILES>
     <GeneratedCs>
-      <PathName>/Users/jeffw/git/KW2/.metadata/.plugins/org.eclipse.cdt.make.core/specs.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/Critical.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/aisleControllerTask.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/appAisleController.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/appCheController.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/appFccTest.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/appGateway.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/appTuner.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/cheControllerTask.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/codeshelf.logo.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/commands.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/display.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/eeprom.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/fccTestTask.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/fontArial16.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/fontArial26.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/fontArialMono16Bold.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/fontArialMono20Bold.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/fontArialMono24Bold.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/fontArialMono26Bold.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/fontBarcode.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/gatewayTask.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/processRxGateway.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/processRxRemote.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/radioCommon.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/remoteMgmtTask.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/remoteRadioTask.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/scannerReadTask.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/serial.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/smacGlue.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Source/tunerTask.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/BitIoLdd2.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Cpu.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/EepromCS.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/EventTimer.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/FRTOS1.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/INT_PORTB.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/PE_LDD.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/StatusLedClk.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/StatusLedSdi.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/UTIL1.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/UTIL2.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Wait.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Watchdog.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/croutine.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/event_groups.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/heap_1.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/heap_2.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/heap_3.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/heap_4.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/heap_5.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/list.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/port.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/queue.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/tasks.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/timers.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generic Services/Source/CommUtil.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generic Services/Source/MsgSystem.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generic Services/Source/Utilities.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Keyboard/Keyboard.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/LED/LED.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/MCG/mcg.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/NVIC/Interrupt.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Radio/MC1324x/DRV/TransceiverDrv.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Radio/MC1324x/PHY/PhyISR.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Radio/MC1324x/PHY/PhyPacketProcessor.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Radio/MC1324x/PHY/PhyPlmeData.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Radio/MC1324x/PHY/PhyTime.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Radio/MC1324x/PHY/SimplePhy.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Sys Common/crt0.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Sys Common/vectors.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/TMR/Timer.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/APP/CDC/usb_cdc_descriptor.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/APP/CDC/virtual_com.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/APP/Descriptor/usb_descriptor.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Class/usb_cdc.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Class/usb_cdc_pstn.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Class/usb_hid.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Common/USB.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Common/UsbMsgQueue.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Common/usb_class.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Common/usb_framework.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Driver/usb_dci.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Driver/usb_driver.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Driver/usb_sim_settings.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Uart/UART.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/WDOG/wdog.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Project_Settings/Startup_Code/startup.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/SMAC/Source/SMAC.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Sources/Events.c</PathName>
-      <PathName>/Users/jeffw/git/KW2/Sources/ProcessorExpert.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/Critical.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/aisleControllerTask.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/appAisleController.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/appCheController.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/appFccTest.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/appGateway.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/appTuner.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/cheControllerTask.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/codeshelf.logo.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/commands.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/display.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/eeprom.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/fccTestTask.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/fontArial16.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/fontArial26.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/fontArialMono16Bold.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/fontArialMono20Bold.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/fontArialMono24Bold.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/fontArialMono26Bold.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/fontBarcode.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/gatewayTask.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/processRxGateway.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/processRxRemote.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/radioCommon.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/remoteMgmtTask.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/remoteRadioTask.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/scannerReadTask.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/serial.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/smacGlue.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/tunerTask.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/BitIoLdd1.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/BitIoLdd2.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/CRC1.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/Cpu.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/EepromCS.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/EventTimer.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/FRTOS1.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/INT_PORTB.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/PE_LDD.c</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SPI0_Init.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/SharpDisplayCS.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/StatusLedClk.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/StatusLedSdi.c</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/CPU_Init.c</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/Peripherals_Init.c</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/Vectors.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/UTIL1.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/UTIL2.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/Wait.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/Watchdog.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/croutine.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/event_groups.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/heap_1.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/heap_2.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/heap_3.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/heap_4.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/heap_5.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/list.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/port.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/queue.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/tasks.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/timers.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generic Services/Source/CommUtil.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generic Services/Source/MsgSystem.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generic Services/Source/Utilities.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Keyboard/Keyboard.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/LED/LED.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/MCG/mcg.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/NVIC/Interrupt.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Radio/MC1324x/DRV/TransceiverDrv.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Radio/MC1324x/PHY/PhyISR.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Radio/MC1324x/PHY/PhyPacketProcessor.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Radio/MC1324x/PHY/PhyPlmeData.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Radio/MC1324x/PHY/PhyTime.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Radio/MC1324x/PHY/SimplePhy.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Sys Common/crt0.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Sys Common/vectors.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/TMR/Timer.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/APP/CDC/usb_cdc_descriptor.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/APP/CDC/virtual_com.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/APP/Descriptor/usb_descriptor.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Class/usb_cdc.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Class/usb_cdc_pstn.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Class/usb_hid.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Common/USB.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Common/UsbMsgQueue.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Common/usb_class.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Common/usb_framework.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Driver/usb_dci.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Driver/usb_driver.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Driver/usb_sim_settings.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Uart/UART.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/WDOG/wdog.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Project_Settings/Startup_Code/startup.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/SMAC/Source/SMAC.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Sources/Events.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Sources/ProcessorExpert.c</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART0_Init.c</PathName>
     </GeneratedCs>
     <GeneratedHs>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/Critical.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/FontTypes.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/aisleControllerTask.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/appAisleController.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/appCheController.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/appFccTest.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/appGateway.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/appTuner.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/cheControllerTask.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/codeshelf.logo.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/commandTypes.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/commands.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/display.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/eeprom.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/fccTestTask.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/fontArial16.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/fontArial26.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/fontArialMono16Bold.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/fontArialMono20Bold.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/fontArialMono24Bold.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/fontArialMono26Bold.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/fontBarcode.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/gatewayCommon.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/gatewayTask.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/globals.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/gwSystemMacros.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/gwTypes.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/ledControllerLookupTable.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/muxing.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/processRx.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/radioCommon.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/remoteMgmtTask.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/remoteRadioTask.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/scannerReadTask.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/serial.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/smacGlue.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Application/Configure/tunerTask.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/BitIoLdd2.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/CPU_Config.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Cpu.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/EepromCS.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/EventTimer.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/FRTOS1.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/FreeRTOS.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/FreeRTOSConfig.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/INT_PORTB.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/IO_Map.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Init_Config.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/LedDrive.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/PE_Const.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/PE_Error.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/PE_LDD.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/PE_Types.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/SPI0_Config.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/StackMacros.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/StatusLedClk.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/StatusLedSdi.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/UTIL1.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/UTIL2.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Vectors_Config.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Wait.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/Watchdog.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/croutine.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/deprecated_definitions.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/event_groups.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/list.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/mpu_wrappers.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/portTicks.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/portable.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/portmacro.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/projdefs.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/queue.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/semphr.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/task.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/timers.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generic Services/Interface/CommUtil.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generic Services/Interface/EmbeddedTypes.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generic Services/Interface/MsgSystem.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Generic Services/Interface/Utilities_Interface.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Configure/PortConfig.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Environment/TargetTWR-KW21D512.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Interface/CDC_Interface.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Interface/Interrupt.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Interface/Keyboard.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Interface/LED.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Interface/TMR_Interface.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Interface/UART_Interface.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Interface/USB_Interface.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Interface/cau_api.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Interface/mcg.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Interface/wdog.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Radio/MC1324x/DRV/TransceiverDrv.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Radio/MC1324x/DRV/TransceiverReg.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Radio/MC1324x/PHY/Phy.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Radio/MC1324x/PHY/SimplePhy.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Sys Common/crt0.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Sys Common/vectors.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/TMR/Timer.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/APP/CDC/usb_cdc_descriptor.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/APP/Descriptor/usb_descriptor.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Class/usb_cdc.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Class/usb_cdc_pstn.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Class/usb_hid.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Common/USB.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Common/UsbMsgQueue.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Common/usb_class.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Common/usb_framework.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Driver/usb_bdt.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Driver/usb_dci.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Driver/usb_dciapi.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Driver/usb_devapi.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/Driver/usb_sim_settings.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/USB/USB_Configuration.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/PLM/Source/Uart/Uart.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Project_Settings/Startup_Code/runtime_configuration.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/SMAC/Configure/SMAC_config.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/SMAC/Interface/SMAC_Interface.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/SMAC/Source/SMAC.h</PathName>
-      <PathName>/Users/jeffw/git/KW2/Sources/Events.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SPI0_Init.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/CPU_Init.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/PDD_Includes.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/Peripherals_Init.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/Critical.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/FontTypes.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/aisleControllerTask.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/appAisleController.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/appCheController.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/appFccTest.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/appGateway.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/appTuner.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/cheControllerTask.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/codeshelf.logo.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/commandTypes.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/commands.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/display.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/eeprom.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/fccTestTask.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/fontArial16.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/fontArial26.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/fontArialMono16Bold.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/fontArialMono20Bold.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/fontArialMono24Bold.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/fontArialMono26Bold.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/fontBarcode.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/gatewayCommon.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/gatewayTask.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/globals.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/gwSystemMacros.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/gwTypes.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/ledControllerLookupTable.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/muxing.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/processRx.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/radioCommon.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/remoteMgmtTask.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/remoteRadioTask.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/scannerReadTask.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/serial.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/smacGlue.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/tunerTask.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/BitIoLdd1.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/BitIoLdd2.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/CPU_Config.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/CRC1.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/Cpu.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/EepromCS.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/EventTimer.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/FRTOS1.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/FreeRTOS.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/FreeRTOSConfig.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/Gateway.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/INT_PORTB.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/iofiles/MKW21D5.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/PDD_Types.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/IO_Map.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/Init_Config.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/LedDrive.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/ADC_PDD.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/CMP_PDD.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/CMT_PDD.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/CRC_PDD.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/DMA_PDD.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/DMAMUX_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/DMA_PDD.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/EWM_PDD.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/FMC_PDD.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/FTFL_PDD.h</PathName>
@@ -314,6 +244,7 @@
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/NVIC_PDD.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/OSC_PDD.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/PDB_PDD.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/PDD_Types.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/PIT_PDD.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/PMC_PDD.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/PORT_PDD.h</PathName>
@@ -328,9 +259,87 @@
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/SysTick_PDD.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/UART_PDD.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/lib/Kinetis/pdd/inc/WDOG_PDD.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/PE_Const.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/PE_Error.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/PE_LDD.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/PE_Types.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SPI0_Init.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/SPI0_Config.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/SharpDisplay.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/SharpDisplayCS.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/StackMacros.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/StatusLedClk.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/StatusLedSdi.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/CPU_Init.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/PDD_Includes.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system/Peripherals_Init.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/UART0_Config.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/UTIL1.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/UTIL2.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/Vectors_Config.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/Wait.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/Watchdog.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/croutine.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/deprecated_definitions.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/event_groups.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/list.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/mpu_wrappers.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/portTicks.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/portable.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/portmacro.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/projdefs.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/queue.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/semphr.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/task.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/timers.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generic Services/Interface/CommUtil.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generic Services/Interface/EmbeddedTypes.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generic Services/Interface/MsgSystem.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generic Services/Interface/Utilities_Interface.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Configure/PortConfig.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Environment/TargetTWR-KW21D512.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Interface/CDC_Interface.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Interface/Interrupt.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Interface/Keyboard.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Interface/LED.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Interface/TMR_Interface.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Interface/UART_Interface.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Interface/USB_Interface.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Interface/cau_api.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Interface/mcg.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Interface/wdog.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Radio/MC1324x/DRV/TransceiverDrv.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Radio/MC1324x/DRV/TransceiverReg.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Radio/MC1324x/PHY/Phy.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Radio/MC1324x/PHY/SimplePhy.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Sys Common/crt0.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Sys Common/vectors.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/TMR/Timer.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/APP/CDC/usb_cdc_descriptor.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/APP/Descriptor/usb_descriptor.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Class/usb_cdc.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Class/usb_cdc_pstn.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Class/usb_hid.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Common/USB.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Common/UsbMsgQueue.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Common/usb_class.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Common/usb_framework.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Driver/usb_bdt.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Driver/usb_dci.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Driver/usb_dciapi.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Driver/usb_devapi.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/Driver/usb_sim_settings.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/USB/USB_Configuration.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/PLM/Source/Uart/Uart.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Project_Settings/Startup_Code/runtime_configuration.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/SMAC/Configure/SMAC_config.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/SMAC/Interface/SMAC_Interface.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/SMAC/Source/SMAC.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Sources/Events.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART0_Init.h</PathName>
     </GeneratedHs>
     <GeneratedASMs>
-      <PathName>/Users/jeffw/git/KW2/Generated_Code/portasm.s</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Generated_Code/portasm.s</PathName>
     </GeneratedASMs>
   </FILES>
   <OPTIONS>

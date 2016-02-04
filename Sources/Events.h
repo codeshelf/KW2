@@ -44,6 +44,8 @@
 //#include "Scanner.h"
 #include "Watchdog.h"
 #include "EventTimer.h"
+#include "SharpDisplayCS.h"
+#include "BitIoLdd1.h"
 //#include "SharpDisplay.h"
 #ifdef TUNER
 #endif
@@ -51,6 +53,7 @@
 #include "BitIoLdd2.h"
 #include "StatusLedClk.h"
 #include "StatusLedSdi.h"
+#include "CRC1.h"
 
 #ifdef __cplusplus
 extern "C" {
