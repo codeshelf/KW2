@@ -844,6 +844,35 @@ void processDspAddrPosControllerSubCommand(BufferCntType inRXBufferNum) {
 #endif
 }
 
+void processPosControllerMassSetupStop(BufferCntType inRXBufferNum) {
+#ifdef RS485
+	gwUINT8 pos = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_DSP_ADDR_POS];
+
+	RS485_TX_ON
+	gwUINT8 message[] = {POS_CTRL_MASSSETUP_STOP, pos};
+	serialTransmitFrame(Rs485_DEVICE, message, 2);
+
+	//vTaskDelay(5);
+
+	RS485_TX_OFF
+
+#endif
+}
+
+void processPosControllerMassSetupStart() {
+#ifdef RS485
+
+	RS485_TX_ON
+	gwUINT8 message[] = {POS_CTRL_MASSSETUP_START, 0x00};
+	serialTransmitFrame(Rs485_DEVICE, message, 2);
+
+	//vTaskDelay(5);
+
+	RS485_TX_OFF
+
+#endif
+}
+
 void processCreateScanSubCommand(BufferCntType inRxBufferNum) {
 #ifdef CHE_CONTROLLER
 	ScanStringType commandStr;

@@ -127,6 +127,8 @@ void processSetPosControllerSubCommand(BufferCntType inRXBufferNum);
 void processClearPosControllerSubCommand(BufferCntType inRXBufferNum);
 void processLedSubCommand(BufferCntType inRXBufferNum);
 void processDspAddrPosControllerSubCommand(BufferCntType inRXBufferNum);
+void processPosControllerMassSetupStop(BufferCntType inRXBufferNum);
+void processPosControllerMassSetupStart();
 
 void processCreateScanSubCommand(BufferCntType inRXBufferNum);
 void processCreateButtonSubCommand(BufferCntType inRXBufferNum);

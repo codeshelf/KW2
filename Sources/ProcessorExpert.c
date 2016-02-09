@@ -33,22 +33,21 @@
 #include "UTIL2.h"
 #include "INT_PORTB.h"
 #include "Wait.h"
-//#include "Rs485.h"
 #include "Critical.h"
-//#include "Scanner.h"
 #include "Wait.h"
+#include "Rs485TxCtl.h"
 #include "Watchdog.h"
 #include "EventTimer.h"
 #include "SharpDisplayCS.h"
 #include "BitIoLdd1.h"
-//#include "SharpDisplay.h"
-#ifdef TUNER
-#endif
 #include "EepromCS.h"
 #include "BitIoLdd2.h"
 #include "StatusLedClk.h"
 #include "StatusLedSdi.h"
+#include "ScannerPower.h"
+#include "Rs485Power.h"
 #include "CRC1.h"
+#include "RNG1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -59,6 +58,7 @@
 /* User includes (#include below this line is not maintained by Processor Expert) */
 #include "globals.h"
 #include "eeprom.h"
+
 void startApplication(void);
 
 PE_ISR(Rs485Isr) {	

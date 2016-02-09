@@ -1,6 +1,6 @@
 /*
  FlyWeight
- © Copyright 2005, 2006 Jeffrey B. Williams
+ ï¿½ Copyright 2005, 2006 Jeffrey B. Williams
  All rights reserved
 
  $Id$
@@ -87,21 +87,19 @@ void getScan(ScanStringType scanString) {
 
 	// Now we have characters - read until there are no more.
 	// Do the read in a critical-area-busy-wait loop to make sure we've gotten all characters that will arrive.
-	
+
 	EventTimer_ResetCounter(EventTimer_DeviceData);
 	// If there's no characters in 50ms then stop waiting for more.
 	while ((EventTimer_GetCounterValue(EventTimer_DeviceData) < 150) && (gScanStringPos < MAX_SCAN_STRING_BYTES)) {
 		Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXUF_MASK;
 		Scanner_DEVICE ->SFIFO |= UART_SFIFO_RXOF_MASK;
-		//if ((Scanner_DEVICE ->SFIFO & UART_SFIFO_RXEMPT_MASK) == 0) {
 		if ((Scanner_DEVICE ->S1 & UART_S1_RDRF_MASK) != 0) {
 
 			currChar = Scanner_DEVICE ->D;
 			if (currChar != '\r' && currChar != '\n') {
-				gScanString[gScanStringPos++] = currChar; //Scanner_DEVICE ->D;;
+				gScanString[gScanStringPos++] = currChar;
 				gScanString[gScanStringPos] = NULL;
 			}
-			EventTimer_ResetCounter(EventTimer_DeviceData);
 			Wait_Waitus(500);
 		}
 	}

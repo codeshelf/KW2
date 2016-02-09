@@ -39,21 +39,20 @@
 #include "UTIL2.h"
 #include "INT_PORTB.h"
 #include "Wait.h"
-//#include "Rs485.h"
+#include "Rs485TxCtl.h"
 #include "Critical.h"
-//#include "Scanner.h"
 #include "Watchdog.h"
 #include "EventTimer.h"
 #include "SharpDisplayCS.h"
 #include "BitIoLdd1.h"
-//#include "SharpDisplay.h"
-#ifdef TUNER
-#endif
 #include "EepromCS.h"
 #include "BitIoLdd2.h"
 #include "StatusLedClk.h"
 #include "StatusLedSdi.h"
+#include "ScannerPower.h"
+#include "Rs485Power.h"
 #include "CRC1.h"
+#include "RNG1.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -241,6 +240,25 @@ void Cpu_OnNMIINT(void);
 */
 /* ===================================================================*/
 void Cpu_OnNMI(void);
+
+/*
+** ===================================================================
+**     Event       :  RNG1_OnError (module Events)
+**
+**     Component   :  RNG1 [RNG_LDD]
+*/
+/*!
+**     @brief
+**         Called when empty FIFO is read (interrupt must be enabled
+**         and no mask applied). See SetEventMask() and GetEventMask()
+**         methods.
+**     @param
+**         UserDataPtr     - Pointer to the user or
+**                           RTOS specific data. This pointer is passed
+**                           as the parameter of Init method.
+*/
+/* ===================================================================*/
+void RNG1_OnError(LDD_TUserData *UserDataPtr);
 
 /* END Events */
 

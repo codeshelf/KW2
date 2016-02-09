@@ -264,6 +264,28 @@ void Cpu_OnNMI(void)
   /* Write your code here ... */
 }
 
+/*
+** ===================================================================
+**     Event       :  RNG1_OnError (module Events)
+**
+**     Component   :  RNG1 [RNG_LDD]
+*/
+/*!
+**     @brief
+**         Called when empty FIFO is read (interrupt must be enabled
+**         and no mask applied). See SetEventMask() and GetEventMask()
+**         methods.
+**     @param
+**         UserDataPtr     - Pointer to the user or
+**                           RTOS specific data. This pointer is passed
+**                           as the parameter of Init method.
+*/
+/* ===================================================================*/
+void RNG1_OnError(LDD_TUserData *UserDataPtr)
+{
+  /* Write your code here ... */
+}
+
 /* END Events */
 
 #ifdef __cplusplus

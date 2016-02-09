@@ -1,6 +1,6 @@
 /*
  Codeshelf
- © Copyright 2005, 2014 Codeshelf, Inc.
+ ï¿½ Copyright 2005, 2014 Codeshelf, Inc.
  All rights reserved
 
  $Id$
@@ -75,8 +75,8 @@ void startApplication(void) {
 	MC1324xDrv_IndirectAccessSPIWrite(ANT_PAD_CTRL, cANT_PAD_CTRL_ANTX_CTRLMODE + cANT_PAD_CTRL_ANTX_EN);
 	MC1324xDrv_IndirectAccessSPIWrite(ANT_AGC_CTRL, 0x40 + 0x02 /*+ 0x01*/);
 
-	MC1324xDrv_Set_CLK_OUT_Freq(gCLK_OUT_FREQ_32_MHz);
-	Cpu_SetClockConfiguration(1);
+	//MC1324xDrv_Set_CLK_OUT_Freq(gCLK_OUT_FREQ_32_MHz);
+	//Cpu_SetClockConfiguration(1);
 	
 	gLocalDeviceState = eLocalStateStarted;
 

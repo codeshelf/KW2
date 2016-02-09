@@ -141,13 +141,22 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 									case eControlSubCmdCreateButton:
 										processCreateButtonSubCommand(inRxBufferNum);
 										break;
+
+									case eControlSubCmdPosconAddrDisp:
+										processDspAddrPosControllerSubCommand(inRxBufferNum);
+										break;
+
+									case eControlSubCmdPosconSetupStop:
+										processPosControllerMassSetupStop(inRxBufferNum);
+										break;
+
+									case eControlSubCmdPosconSetupStart:
+ 										processPosControllerMassSetupStart();
+										break;
 			
 									default:
 										break;
 								}
-
-
-
 							}
 							
 							// Send an ACK if necessary.

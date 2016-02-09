@@ -325,11 +325,13 @@ typedef enum {
 	eControlSubCmdButton = 5,
 	eControlSubCmdSingleLineMessage = 6,
 	eControlSubCmdClearDisplay = 7,
-	eControlSubCmdPosconSetup = 8,
+	eControlSubCmdPosconSetupStart = 8,
 	eControlSubCmdPosconBroadcast = 9,
 	eControlSubCmdAck = 10,
 	eControlSubCmdCreateScan = 11,
-	eControlSubCmdCreateButton = 12
+	eControlSubCmdCreateButton = 12,
+	eControlSubCmdPosconAddrDisp = 13,
+	eControlSubCmdPosconSetupStop = 14
 //	eControlSubCmdEndpointAdj = 1,
 //	eControlSubCmdMotor = 2,
 //	eControlSubCmdButton = 3,

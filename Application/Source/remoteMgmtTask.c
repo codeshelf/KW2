@@ -16,6 +16,7 @@
 #include "commands.h"
 #include "globals.h"
 #include "stdlib.h"
+#include "RNG1.h"
 
 xTaskHandle gRemoteManagementTask;
 extern xQueueHandle gRemoteMgmtQueue;
@@ -75,11 +76,8 @@ void remoteMgmtTask(void *pvParameters) {
 		setStatusLed(5, 0, 0);
 
 		// Compute random backoff value
-		srand((uint32_t) (gGuid[6] << 16) | (gGuid[7] & 0xff));
-		conRandBackOff = rand() % RAND_BACK_OFF_LIMIT;
-		
-		// Random backoff
-		vTaskDelay(conRandBackOff);
+		LDD_TError err = RNG1_GetRandomNumber(RNG1_DeviceData, &conRandBackOff);
+		vTaskDelay(conRandBackOff% RAND_BACK_OFF_LIMIT);
 
 		/*
 		 * Attempt to associate with our controller.

@@ -32,7 +32,7 @@ extern ELocalStatusType		gLocalDeviceState;
 
 // --------------------------------------------------------------------------
 
-void processRxPacket(BufferCntType inRxBufferNum) {
+void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 
 	gwUINT8	ccrHolder;
 //	ECommandGroupIDType		cmdID;
