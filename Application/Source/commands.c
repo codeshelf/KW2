@@ -98,6 +98,21 @@ ECommandGroupIDType getCommandID(BufferStoragePtrType inBufferPtr) {
 	ECommandGroupIDType result = ((inBufferPtr[CMDPOS_CMD_ID]) & CMDMASK_CMDID) >> 4;
 	return result;
 }
+
+// --------------------------------------------------------------------------
+
+//ECommandGroupIDType getCommandID(BufferStoragePtrType inBufferPtr, PacketVerType inPacketVersion) {
+//	ECommandGroupIDType result;
+//
+//	if (inPacketVersion == PROTOCOL_VER_0) {
+//		result = ((inBufferPtr[CMDPOS_CMD_ID - 4]) & CMDMASK_CMDID) >> 4;
+//	} else {
+//		result = ((inBufferPtr[CMDPOS_CMD_ID]) & CMDMASK_CMDID) >> 4;
+//	}
+//
+//	return result;
+//}
+
 // --------------------------------------------------------------------------
 
 NetworkIDType getNetworkID(BufferCntType inRXBufferNum) {
@@ -106,8 +121,8 @@ NetworkIDType getNetworkID(BufferCntType inRXBufferNum) {
 
 // --------------------------------------------------------------------------
 
-gwUINT8 getPacketVersion(BufferCntType inRXBufferNum) {
-	return ((gRxRadioBuffer[inRXBufferNum].bufferStorage[PCKPOS_VERSION] & PACKETMASK_VERSION) >> SHIFTBITS_PKT_VER);
+gwUINT8 getPacketVersion(BufferStoragePtrType inBufferPtr) {
+	return ((inBufferPtr[PCKPOS_VERSION] & PACKETMASK_VERSION) >> SHIFTBITS_PKT_VER);
 }
 
 // --------------------------------------------------------------------------
@@ -155,6 +170,7 @@ gwUINT16 calculateCRC16(BufferStoragePtrType inBufferPtr, BufferCntType inPcktSi
 gwBoolean checkCRC(BufferStoragePtrType inBufferPtr, BufferCntType inPcktSize) {
 	gwUINT16 pcktCrc = 0x0;
 	gwUINT16 calculatedCrc = 0x0;
+	gwUINT8		pcktVer = 0;
 
 	pcktCrc = getCRC(inBufferPtr);
 	calculatedCrc = calculateCRC16(inBufferPtr, inPcktSize);
@@ -202,6 +218,19 @@ ENetMgmtSubCmdIDType getNetMgmtSubCommand(BufferStoragePtrType inBufferPtr) {
 	ENetMgmtSubCmdIDType result = (inBufferPtr[CMDPOS_NETM_SUBCMD]);
 	return result;
 }
+
+// --------------------------------------------------------------------------
+
+//ENetMgmtSubCmdIDType getNetMgmtSubCommand(BufferStoragePtrType inBufferPtr, PacketVerType inPacketVersion) {
+//	ENetMgmtSubCmdIDType result;
+//
+//	if (inPacketVersion == PROTOCOL_VER_0) {
+//		result = (inBufferPtr[CMDPOS_NETM_SUBCMD - 4]);
+//	} else {
+//		result = (inBufferPtr[CMDPOS_NETM_SUBCMD]);
+//	}
+//	return result;
+//}
 
 // --------------------------------------------------------------------------
 
@@ -908,5 +937,50 @@ void processCreateButtonSubCommand(BufferCntType inRxBufferNum) {
 	RS485_TX_OFF
 
 	
+#endif
+}
+
+// -------------------------------------------------------------------------
+
+void processPosconLedBroadcastSubCommand(BufferCntType inRXBufferNum) {
+#ifdef RS485
+	gwUINT8 currByteCount = 0;
+	gwUINT8 i = 0;
+	gwUINT8 mask = 1;
+	gwUINT8 pos = 0;
+
+	gwUINT8 redValue = 0;
+	gwUINT8 greenValue = 0;
+	gwUINT8 blueValue = 0;
+
+	gwUINT8 lightStyle = 0;
+	gwUINT8 byteCount = 0;
+
+	RS485_TX_ON
+
+	redValue = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_RED_VALUE];
+	greenValue = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_GREEN_VALUE];
+	blueValue = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_BLUE_VALUE];
+	lightStyle = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_LIGHT_STYLE];
+	byteCount = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_LED_COUNT];
+
+	for (currByteCount = 0; currByteCount < byteCount; ++currByteCount) {
+		gwUINT8 currByte = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_LED_MAP_START + currByteCount];
+
+		pos = (currByteCount * 8) + 1;
+		mask = 1;
+
+		for (i = 0; i < 8; i++, pos++) {
+			if ((currByte & mask) != 0) {
+				gwUINT8 message[] = {POS_CTRL_LED, pos, redValue, greenValue, blueValue, lightStyle};
+				serialTransmitFrame(Rs485_DEVICE, message, 6);
+			}
+
+			mask <<= 1;
+		}
+	}
+
+	RS485_TX_OFF
+
 #endif
 }

@@ -1,6 +1,6 @@
 /*
  Codeshelf
- © Copyright 2005, 2014 Codeshelf, Inc.
+ ï¿½ Copyright 2005, 2014 Codeshelf, Inc.
  All rights reserved
 
  $Id$
@@ -16,7 +16,7 @@
 #include "queue.h"
 #include "gwTypes.h"
 #include "gwSystemMacros.h"
-#include "remoteRadioTask.h"
+#include "remoteGatewayRadioTask.h"
 #include "gatewayTask.h"
 #include "SMAC_Interface.h"
 #include "Wait.h"
@@ -25,6 +25,7 @@
 #include "TransceiverDrv.h"
 #include "TransceiverReg.h"
 #include "globals.h"
+#include "Watchdog.h"
 
 // --------------------------------------------------------------------------
 // Globals
@@ -61,10 +62,11 @@ void startApplication(void) {
 	//Cpu_SetClockConfiguration(1);
 	
 	gLocalDeviceState = eLocalStateStarted;
+	Watchdog_Disable(Watchdog_DeviceData);
 
 	/* Start the task that will handle the radio */
-	xTaskCreate(radioTransmitTask, (signed portCHAR *) "RadioTX", configMINIMAL_STACK_SIZE, NULL, RADIO_PRIORITY, &gRadioTransmitTask);
-	xTaskCreate(radioReceiveTask, (signed portCHAR *) "RadioRX", configMINIMAL_STACK_SIZE, NULL, RADIO_PRIORITY, &gRadioReceiveTask);
+	xTaskCreate(radioGatewayTransmitTask, (signed portCHAR *) "RadioTX", configMINIMAL_STACK_SIZE, NULL, RADIO_PRIORITY, &gRadioTransmitTask);
+	xTaskCreate(radioGatewayReceiveTask, (signed portCHAR *) "RadioRX", configMINIMAL_STACK_SIZE, NULL, RADIO_PRIORITY, &gRadioReceiveTask);
 	xTaskCreate(serialReceiveTask, (signed portCHAR *) "Serial", configMINIMAL_STACK_SIZE, NULL, SERIAL_RECV_PRIORITY, &gSerialReceiveTask);
 
 	gRadioReceiveQueue = xQueueCreate(RX_QUEUE_SIZE, (unsigned portBASE_TYPE) sizeof(BufferCntType));

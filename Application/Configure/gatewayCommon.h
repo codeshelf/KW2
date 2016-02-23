@@ -1,6 +1,6 @@
 /*
    FlyWeight
-   © Copyright 2005, 2006 Jeffrey B. Williams
+   ï¿½ Copyright 2005, 2006 Jeffrey B. Williams
    All rights reserved
 
    $Id$
@@ -12,6 +12,6 @@
 
 #include "radioCommon.h"
 
-void processRxPacket(BufferCntType inRxBufferNum);
+void processRxGatewayPacket(BufferCntType inRxBufferNum);
 
 #endif // GATEWAYCOMMON_H

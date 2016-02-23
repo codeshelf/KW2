@@ -83,6 +83,7 @@ void radioReceiveTask(void *pvParameters) {
 				// Did we get a a packet and is the crc ok?
 				if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c &&
 					checkCRC(gRxRadioBuffer[rxBufferNum].bufferStorage, gRxMsg.rxPacketPtr->u8DataLength)) {
+
 					// Process the packet we just received.
 					gRxRadioBuffer[rxBufferNum].bufferSize = gRxMsg.rxPacketPtr->u8DataLength;
 					processRxPacket(rxBufferNum, gRxMsg.rxPacketPtr->lqi);
@@ -107,6 +108,7 @@ void radioTransmitTask(void *pvParameters) {
 	portTickType retryTickCount;
 	gwUINT8 ackId;
 	gwUINT8 ccrHolder;
+	gwUINT8 pcktVer;
 	gwBoolean isAck = FALSE;
 	
 #ifdef TUNER
@@ -122,9 +124,14 @@ void radioTransmitTask(void *pvParameters) {
 			if (xQueueReceive(gRadioTransmitQueue, &txBufferNum, portMAX_DELAY) == pdPASS) {
 				
 				// Calculate the crc for the messages
-				gwUINT16 crc = 0;
-				crc = calculateCRC16(gTxRadioBuffer[txBufferNum].bufferStorage, gTxRadioBuffer[txBufferNum].bufferSize);
-				setCRC(gTxRadioBuffer[txBufferNum].bufferStorage, crc);
+
+				pcktVer = getPacketVersion(gTxRadioBuffer[txBufferNum].bufferStorage);
+
+				if (pcktVer == PROTOCOL_VER_1) {
+					gwUINT16 crc = 0;
+					crc = calculateCRC16(gTxRadioBuffer[txBufferNum].bufferStorage, gTxRadioBuffer[txBufferNum].bufferSize);
+					setCRC(gTxRadioBuffer[txBufferNum].bufferStorage, crc);
+				}
 
 				// Store current tick count
 				retryTickCount = xTaskGetTickCount();

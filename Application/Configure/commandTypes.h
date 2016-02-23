@@ -19,6 +19,10 @@
 #define UNIQUE_ID_BYTES			8
 #define ASSOC_RST_DATA_LEN		2
 
+#define PROTOCOL_VER_0			0x00
+#define PROTOCOL_VER_1			0x01
+
+#define PACKET_VERSION			PROTOCOL_VER_1
 
 #define PRIVATE_GUID			"00000000"
 
@@ -143,6 +147,14 @@
 #define CMDPOS_FREQ 				4
 #define CMDPOS_DUTY_CYCLE 			5
 
+// Led broadcast command
+#define CMDPOS_RED_VALUE			CMDPOS_CONTROL_DATA
+#define CMDPOS_GREEN_VALUE			CMDPOS_RED_VALUE + 1
+#define CMDPOS_BLUE_VALUE			CMDPOS_GREEN_VALUE + 1
+#define CMDPOS_LIGHT_STYLE			CMDPOS_BLUE_VALUE + 1
+#define CMDPOS_LED_COUNT			CMDPOS_LIGHT_STYLE + 1
+#define CMDPOS_LED_MAP_START		CMDPOS_LED_COUNT + 1
+
 // Position controller clear command
 #define CMDPOS_CLEAR_POS			CMDPOS_CONTROL_DATA
 
@@ -167,8 +179,6 @@
 #define SHIFTBITS_PKT_NET_NUM	0
 #define SHIFTBITS_CMD_ID		4
 #define SHIFTBITS_CMD_ENDPOINT	0
-
-#define PACKET_VERSION			0x01
 
 #define BROADCAST_NET_NUM		0x0f
 #define ADDR_CONTROLLER			0x0000
@@ -331,7 +341,7 @@ typedef enum {
 	eControlSubCmdCreateScan = 11,
 	eControlSubCmdCreateButton = 12,
 	eControlSubCmdPosconAddrDisp = 13,
-	eControlSubCmdPosconSetupStop = 14
+	eControlSubCmdPosconLedBroadcast = 14
 //	eControlSubCmdEndpointAdj = 1,
 //	eControlSubCmdMotor = 2,
 //	eControlSubCmdButton = 3,

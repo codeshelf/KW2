@@ -8,7 +8,7 @@ $Name$
 */
 
 #include "gatewayTask.h"
-#include "remoteRadioTask.h"
+#include "remoteGatewayRadioTask.h"
 #include "commands.h"
 #include "FreeRTOS.h"
 #include "task.h"
@@ -42,6 +42,7 @@ void serialReceiveTask(void *pvParameters ) {
 	ECommandGroupIDType		cmdID;
 	ENetMgmtSubCmdIDType	subCmdID;
 	BufferCntType			txBufferNum = 0;
+	PacketVerType 			packetVersion;
 	gwUINT8 ccrHolder;
 	
 	// Setup the USB interface.
@@ -85,12 +86,15 @@ void serialReceiveTask(void *pvParameters ) {
 		txBufferNum = lockTxBuffer();
 		gTxRadioBuffer[txBufferNum].bufferSize = serialReceiveFrame(UART0_BASE_PTR, gTxRadioBuffer[txBufferNum].bufferStorage, TX_BUFFER_SIZE);
 
-		GW_WATCHDOG_RESET;
+		//GW_WATCHDOG_RESET;
 		
 		if (gTxRadioBuffer[txBufferNum].bufferSize > 0) {
 			gTxRadioBuffer[txBufferNum].bufferStatus = eBufferStateInUse;
 
-		  	cmdID = getCommandID(gTxRadioBuffer[txBufferNum].bufferStorage);
+			//packetVersion = getPacketVersion(txBufferNum);
+
+			cmdID = getCommandID(gTxRadioBuffer[txBufferNum].bufferStorage);
+
 			if (cmdID == eCommandNetMgmt) {
 				subCmdID = getNetMgmtSubCommand(gTxRadioBuffer[txBufferNum].bufferStorage);
 				switch (subCmdID) {

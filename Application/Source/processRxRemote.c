@@ -57,7 +57,7 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 	uint32_t crc = 0;
 	LDD_TError err;
 
-	packetVersion = getPacketVersion(inRxBufferNum);
+	packetVersion = getPacketVersion(gRxRadioBuffer[inRxBufferNum].bufferStorage);
 
 	// We just received a valid packet.
 	networkID = getNetworkID(inRxBufferNum);
@@ -152,6 +152,10 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 
 									case eControlSubCmdPosconSetupStart:
  										processPosControllerMassSetupStart();
+										break;
+
+									case eControlSubCmdPosconLedBroadcast:
+										processPosconLedBroadcastSubCommand(inRxBufferNum);
 										break;
 			
 									default:

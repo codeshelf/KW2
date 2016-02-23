@@ -64,6 +64,7 @@
 #define POS_CTRL_CREAT_BUTTON			0x08
 #define POS_CTRL_DSP_ADDR				0x09
 #define POS_CTRL_MASSSETUP_STOP			0x0a
+#define POS_CTRL_LED					0x0b
 
 #define POS_CTRL_ALL_POSITIONS			0x00
 
