@@ -96,6 +96,7 @@
       <PathName>/Users/andrewhuff/git/KW2/Application/Source/processRxGateway.c</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Application/Source/processRxRemote.c</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Application/Source/radioCommon.c</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Source/remoteGatewayRadioTask.c</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Application/Source/remoteMgmtTask.c</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Application/Source/remoteRadioTask.c</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Application/Source/scannerReadTask.c</PathName>
@@ -111,8 +112,8 @@
       <PathName>/Users/andrewhuff/git/KW2/Generated_Code/FRTOS1.c</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Generated_Code/INT_PORTB.c</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Generated_Code/PE_LDD.c</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SMC_Init.c</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SPI0_Init.c</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART0_Init.c</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Generated_Code/RNG1.c</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Generated_Code/Rs485Power.c</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Generated_Code/Rs485TxCtl.c</PathName>
@@ -175,7 +176,7 @@
       <PathName>/Users/andrewhuff/git/KW2/Sources/Events.c</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Sources/ProcessorExpert.c</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART1_Init.c</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART0_Init.c</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SMC_Init.c</PathName>
     </GeneratedCs>
     <GeneratedHs>
       <PathName>/Users/andrewhuff/git/KW2/Application/Configure/Critical.h</PathName>
@@ -209,6 +210,7 @@
       <PathName>/Users/andrewhuff/git/KW2/Application/Configure/muxing.h</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Application/Configure/processRx.h</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Application/Configure/radioCommon.h</PathName>
+      <PathName>/Users/andrewhuff/git/KW2/Application/Configure/remoteGatewayRadioTask.h</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Application/Configure/remoteMgmtTask.h</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Application/Configure/remoteRadioTask.h</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Application/Configure/scannerReadTask.h</PathName>
@@ -267,8 +269,8 @@
       <PathName>/Users/andrewhuff/git/KW2/Generated_Code/PE_Error.h</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Generated_Code/PE_LDD.h</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Generated_Code/PE_Types.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SMC_Init.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SPI0_Init.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART0_Init.h</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Generated_Code/RNG1.h</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Generated_Code/Rs485.h</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Generated_Code/Rs485Power.h</PathName>
@@ -351,7 +353,7 @@
       <PathName>/Users/andrewhuff/git/KW2/SMAC/Source/SMAC.h</PathName>
       <PathName>/Users/andrewhuff/git/KW2/Sources/Events.h</PathName>
       <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART1_Init.h</PathName>
-      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/UART0_Init.h</PathName>
+      <PathName>/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals/SMC_Init.h</PathName>
     </GeneratedHs>
     <GeneratedASMs>
       <PathName>/Users/andrewhuff/git/KW2/Generated_Code/portasm.s</PathName>
