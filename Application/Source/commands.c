@@ -873,12 +873,12 @@ void processDspAddrPosControllerSubCommand(BufferCntType inRXBufferNum) {
 #endif
 }
 
-void processPosControllerMassSetupStop(BufferCntType inRXBufferNum) {
+void processPosconFWVerDisplaySubCommand(BufferCntType inRXBufferNum){
 #ifdef RS485
 	gwUINT8 pos = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_DSP_ADDR_POS];
 
 	RS485_TX_ON
-	gwUINT8 message[] = {POS_CTRL_MASSSETUP_STOP, pos};
+	gwUINT8 message[] = {POS_CTRL_DSP_FWVER, pos};
 	serialTransmitFrame(Rs485_DEVICE, message, 2);
 
 	//vTaskDelay(5);

@@ -130,6 +130,7 @@ void processDspAddrPosControllerSubCommand(BufferCntType inRXBufferNum);
 void processPosControllerMassSetupStop(BufferCntType inRXBufferNum);
 void processPosControllerMassSetupStart();
 void processPosconLedBroadcastSubCommand(BufferCntType inRXBufferNum);
+void processPosconFWVerDisplaySubCommand(BufferCntType inRXBufferNum);
 
 void processCreateScanSubCommand(BufferCntType inRXBufferNum);
 void processCreateButtonSubCommand(BufferCntType inRXBufferNum);

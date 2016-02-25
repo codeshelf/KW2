@@ -146,16 +146,16 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 										processDspAddrPosControllerSubCommand(inRxBufferNum);
 										break;
 
-									case eControlSubCmdPosconSetupStop:
-										processPosControllerMassSetupStop(inRxBufferNum);
-										break;
-
 									case eControlSubCmdPosconSetupStart:
  										processPosControllerMassSetupStart();
 										break;
 
 									case eControlSubCmdPosconLedBroadcast:
 										processPosconLedBroadcastSubCommand(inRxBufferNum);
+										break;
+
+									case eControlSubCmdPosconHWVerDisplay:
+										processPosconFWVerDisplaySubCommand(inRxBufferNum);
 										break;
 			
 									default:
