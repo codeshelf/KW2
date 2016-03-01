@@ -155,6 +155,20 @@
 #define CMDPOS_LED_COUNT			CMDPOS_LIGHT_STYLE + 1
 #define CMDPOS_LED_MAP_START		CMDPOS_LED_COUNT + 1
 
+// Set broadcast command
+#define CMDPOS_SETBRD_REQ_QTY		CMDPOS_CONTROL_DATA
+#define CMDPOS_SETBRD_MIN_QTY		CMDPOS_SETBRD_REQ_QTY + 1
+#define CMDPOS_SETBRD_MAX_QTY		CMDPOS_SETBRD_MIN_QTY + 1
+#define	CMDPOS_SETBRD_FREQ			CMDPOS_SETBRD_MAX_QTY + 1
+#define CMDPOS_SETBRD_DUTY_CYCLE	CMDPOS_SETBRD_FREQ + 1
+#define CMDPOS_SETBRD_BYTE_COUNT	CMDPOS_SETBRD_DUTY_CYCLE + 1
+#define CMDPOS_SETBRD_MAP_START		CMDPOS_SETBRD_BYTE_COUNT + 1
+
+// Poscon broadcast command
+#define CMDPOS_BRD_CMD				CMDPOS_CONTROL_DATA
+#define CMDPOS_BRD_BYTE_COUNT		CMDPOS_BRD_CMD + 1
+#define CMDPOS_BRD_MAP_START		CMDPOS_BRD_BYTE_COUNT + 1
+
 // Position controller clear command
 #define CMDPOS_CLEAR_POS			CMDPOS_CONTROL_DATA
 
@@ -342,7 +356,8 @@ typedef enum {
 	eControlSubCmdCreateButton = 12,
 	eControlSubCmdPosconAddrDisp = 13,
 	eControlSubCmdPosconLedBroadcast = 14,
-	eControlSubCmdPosconHWVerDisplay = 15
+	eControlSubCmdPosconFWVerDisplay = 15,
+	eControlSubCmdPosconSetBroadcast = 16
 //	eControlSubCmdEndpointAdj = 1,
 //	eControlSubCmdMotor = 2,
 //	eControlSubCmdButton = 3,

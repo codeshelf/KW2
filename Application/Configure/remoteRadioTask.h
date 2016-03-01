@@ -1,6 +1,6 @@
 /*
    FlyWeight
-   © Copyright 2005, 2006 Jeffrey B. Williams
+   ï¿½ Copyright 2005, 2006 Jeffrey B. Williams
    All rights reserved
    
    $Id$
@@ -27,6 +27,7 @@
 
 void radioReceiveTask( void *pvParameters );
 void radioTransmitTask( void *pvParameters );
+bool packetIsAck(BufferCntType inTXBufferNum);
 
 #endif // REMOTERADIOTASK_H
 

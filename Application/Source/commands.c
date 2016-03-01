@@ -914,9 +914,8 @@ void processCreateScanSubCommand(BufferCntType inRxBufferNum) {
 		BufferCntType txBufferNum = lockTxBuffer();
 		createScanCommand(txBufferNum, &commandStr, commandStrLen);
 		if (transmitPacket(txBufferNum)) {
-			while (gRadioState == eTx) {
-				vTaskDelay(1);
-			}
+
+
 		}
 	}
 #endif
@@ -967,13 +966,19 @@ void processPosconLedBroadcastSubCommand(BufferCntType inRXBufferNum) {
 	for (currByteCount = 0; currByteCount < byteCount; ++currByteCount) {
 		gwUINT8 currByte = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_LED_MAP_START + currByteCount];
 
-		pos = (currByteCount * 8) + 1;
+		pos = (currByteCount * 8);
 		mask = 1;
 
 		for (i = 0; i < 8; i++, pos++) {
 			if ((currByte & mask) != 0) {
 				gwUINT8 message[] = {POS_CTRL_LED, pos, redValue, greenValue, blueValue, lightStyle};
 				serialTransmitFrame(Rs485_DEVICE, message, 6);
+
+				if (pos == 0) {
+					// We got a command to the broadcast position 0x00
+					RS485_TX_OFF
+					return;
+				}
 			}
 
 			mask <<= 1;
@@ -982,5 +987,98 @@ void processPosconLedBroadcastSubCommand(BufferCntType inRXBufferNum) {
 
 	RS485_TX_OFF
 
+#endif
+}
+
+// -------------------------------------------------------------------------
+
+void processPosconSetBroadcastSubCommand(BufferCntType inRXBufferNum) {
+#ifdef RS485
+	gwUINT8 currByteCount = 0;
+	gwUINT8 i = 0;
+	gwUINT8 mask = 1;
+	gwUINT8 pos = 0;
+
+	gwUINT8 reqQty = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_SETBRD_REQ_QTY];
+	gwUINT8 minQty = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_SETBRD_MIN_QTY];
+	gwUINT8 maxQty = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_SETBRD_MAX_QTY];
+	gwUINT8 freq = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_SETBRD_FREQ];
+	gwUINT8 dutyCycle = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_SETBRD_DUTY_CYCLE];
+	gwUINT8 byteCount = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_SETBRD_BYTE_COUNT];
+
+	RS485_TX_ON
+	for (currByteCount = 0; currByteCount < byteCount; ++currByteCount) {
+		gwUINT8 currByte = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_SETBRD_MAP_START + currByteCount];
+
+		pos = (currByteCount * 8);
+		mask = 1;
+
+		for (i = 0; i < 8; i++, pos++) {
+			if ((currByte & mask) != 0) {
+				gwUINT8 message[] = {POS_CTRL_DISPLAY, pos, reqQty, minQty, maxQty, freq, dutyCycle};
+				serialTransmitFrame(Rs485_DEVICE, message, 7);
+
+				if (pos == 0) {
+					// We got a command to the broadcast position 0x00
+					RS485_TX_OFF
+					return;
+				}
+			}
+			mask <<= 1;
+		}
+	}
+
+	RS485_TX_OFF
+#endif
+}
+
+void processPosconBroadcastSubCommand(BufferCntType inRXBufferNum) {
+#ifdef RS485
+	gwUINT8 currByteCount = 0;
+	gwUINT8 i = 0;
+	gwUINT8 mask = 1;
+	gwUINT8 pos = 0;
+	gwUINT8 cmd = 0;
+
+	gwUINT8 inCmd = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_BRD_CMD];
+	gwUINT8 byteCount = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_BRD_BYTE_COUNT];
+
+	switch(inCmd) {
+		case eControlSubCmdClearPosController:
+			cmd = POS_CTRL_CLEAR;
+			break;
+		case eControlSubCmdPosconAddrDisp:
+			cmd = POS_CTRL_DSP_ADDR;
+			break;
+		case eControlSubCmdPosconFWVerDisplay:
+			cmd = POS_CTRL_DSP_FWVER;
+			break;
+		defaut:
+			return;
+	}
+
+	RS485_TX_ON
+	for (currByteCount = 0; currByteCount < byteCount; ++currByteCount) {
+		gwUINT8 currByte = gRxRadioBuffer[inRXBufferNum].bufferStorage[CMDPOS_BRD_MAP_START + currByteCount];
+
+		pos = (currByteCount * 8);
+		mask = 1;
+
+		for (i = 0; i < 8; i++, pos++) {
+			if ((currByte & mask) != 0) {
+				gwUINT8 message[] = {cmd, pos };
+				serialTransmitFrame(Rs485_DEVICE, message, 2);
+
+				if (pos == 0) {
+					// We got a command to the broadcast position 0x00
+					RS485_TX_OFF
+					return;
+				}
+			}
+			mask <<= 1;
+		}
+	}
+
+	RS485_TX_OFF
 #endif
 }

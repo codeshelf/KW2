@@ -141,6 +141,7 @@ void radioTransmitTask(void *pvParameters) {
 				
 				do {
 					shouldRetry = FALSE;
+					isAck = packetIsAck(txBufferNum);
 
 					//Write tx to the air. Callback will notify us when done.
 					writeRadioTx(txBufferNum);
@@ -154,11 +155,8 @@ void radioTransmitTask(void *pvParameters) {
 					}
 
 					readRadioRx();
-					
-					if ((gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_CONTROL_SUBCMD]) == eControlSubCmdAck) {
-						isAck = TRUE;
-						
-					}
+
+
 #ifndef GATEWAY
 					if (txedAckId != 0 && txCommandType != eCommandNetMgmt && txCommandType != eCommandAssoc && !isAck) {
 						shouldRetry = TRUE;
@@ -185,4 +183,22 @@ void radioTransmitTask(void *pvParameters) {
 
 	/* Will only get here if the queue could not be created. */
 	for (;;);
+}
+
+// --------------------------------------------------------------------------
+
+bool packetIsAck(BufferCntType inTXBufferNum) {
+
+
+	ECommandGroupIDType cmdid = ((gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_CMD_ID]) & CMDMASK_CMDID) >> 4;
+
+	if (cmdid == eCommandControl) {
+		EControlSubCmdIDType subcmdid = (gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_CONTROL_SUBCMD]);
+
+		if (subcmdid == eControlSubCmdAck) {
+			return TRUE;
+		}
+	}
+
+	return FALSE;
 }

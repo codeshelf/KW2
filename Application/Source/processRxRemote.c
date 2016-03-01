@@ -84,106 +84,116 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 			// Prepare to handle packet ACK.
 			ackId = getAckId(gRxRadioBuffer[inRxBufferNum].bufferStorage);
 
-				switch (cmdID) {
-					case eCommandNetMgmt:
-						setStatusLed(0, 0, 1);
-						GW_WATCHDOG_RESET;
-						break;
-					case eCommandAssoc:
-						// Should not get command associate messages at this stage
-						break;
-	
-					case eCommandControl:
-						if (gLocalDeviceState == eLocalStateRun) {
-							
-							if ((ackId == 0 || ackId != gLastAckId)) {
-								// Make sure that there is a valid sub-command in the control command.
-								
-								gLastAckId = ackId;
-								
-								switch (getControlSubCommand(inRxBufferNum)) {
-			
-									case eControlSubCmdScan:
-										break;
-										
-									case eControlSubCmdAck:
-										processAckSubCommand(inRxBufferNum);
-										break;
-			
-									case eControlSubCmdMessage:
-										processDisplayMsgSubCommand(inRxBufferNum);
-										break;
-										
-									case eControlSubCmdSingleLineMessage:
-										processDisplaySingleMsgSubCommand(inRxBufferNum);
-										break;
-										
-									case eControlSubCmdClearDisplay:
-										processClearDisplay(inRxBufferNum);
-										break;
-			
-									case eControlSubCmdLight:
-										processLedSubCommand(inRxBufferNum);
-										break;
-			
-									case eControlSubCmdSetPosController:
-										processSetPosControllerSubCommand(inRxBufferNum);
-										break;
-			
-									case eControlSubCmdClearPosController:
-										processClearPosControllerSubCommand(inRxBufferNum);
-										break;
-										
-									case eControlSubCmdCreateScan:
-										processCreateScanSubCommand(inRxBufferNum);
-										break;
-										
-									case eControlSubCmdCreateButton:
-										processCreateButtonSubCommand(inRxBufferNum);
-										break;
+			// Send an ACK if necessary.
+			if (ackId != 0) {
+				txBufferNum = lockTxBuffer();
+				createAckPacket(txBufferNum, ackId, lqi);
 
-									case eControlSubCmdPosconAddrDisp:
-										processDspAddrPosControllerSubCommand(inRxBufferNum);
-										break;
-
-									case eControlSubCmdPosconSetupStart:
- 										processPosControllerMassSetupStart();
-										break;
-
-									case eControlSubCmdPosconLedBroadcast:
-										processPosconLedBroadcastSubCommand(inRxBufferNum);
-										break;
-
-									case eControlSubCmdPosconHWVerDisplay:
-										processPosconFWVerDisplaySubCommand(inRxBufferNum);
-										break;
-			
-									default:
-										break;
-								}
-							}
-							
-							// Send an ACK if necessary.
-							if (ackId != 0 /*&& gLastAckId != ackId*/) {
-								txBufferNum = lockTxBuffer();
-								createAckPacket(txBufferNum, ackId, lqi);
-								
-								if (transmitPacket(txBufferNum)) {
-									while (gTxRadioBuffer[txBufferNum].bufferStatus != eBufferStateFree) {
-										vTaskDelay(0);
-									}
-								}
-							}
-						}
-						break;
-	
-					default:
-						break;
+				if (transmitPacket(txBufferNum)) {
+					while (gTxRadioBuffer[txBufferNum].bufferStatus != eBufferStateFree) {
+						vTaskDelay(0);
+					}
 				}
 			}
+
+			switch (cmdID) {
+				case eCommandNetMgmt:
+					setStatusLed(0, 0, 1);
+					GW_WATCHDOG_RESET;
+					break;
+				case eCommandAssoc:
+					// Should not get command associate messages at this stage
+					break;
+
+				case eCommandControl:
+					if (gLocalDeviceState == eLocalStateRun) {
+
+						if ((ackId == 0 || ackId != gLastAckId)) {
+							// Make sure that there is a valid sub-command in the control command.
+
+							gLastAckId = ackId;
+
+							switch (getControlSubCommand(inRxBufferNum)) {
+
+								case eControlSubCmdScan:
+									break;
+
+								case eControlSubCmdAck:
+									processAckSubCommand(inRxBufferNum);
+									break;
+
+								case eControlSubCmdMessage:
+									processDisplayMsgSubCommand(inRxBufferNum);
+									break;
+
+								case eControlSubCmdSingleLineMessage:
+									processDisplaySingleMsgSubCommand(inRxBufferNum);
+									break;
+
+								case eControlSubCmdClearDisplay:
+									processClearDisplay(inRxBufferNum);
+									break;
+
+								case eControlSubCmdLight:
+									processLedSubCommand(inRxBufferNum);
+									break;
+
+								case eControlSubCmdSetPosController:
+									processSetPosControllerSubCommand(inRxBufferNum);
+									break;
+
+								case eControlSubCmdClearPosController:
+									processClearPosControllerSubCommand(inRxBufferNum);
+									break;
+
+								case eControlSubCmdCreateScan:
+									processCreateScanSubCommand(inRxBufferNum);
+									break;
+
+								case eControlSubCmdCreateButton:
+									processCreateButtonSubCommand(inRxBufferNum);
+									break;
+
+								case eControlSubCmdPosconAddrDisp:
+									processDspAddrPosControllerSubCommand(inRxBufferNum);
+									break;
+
+								case eControlSubCmdPosconSetupStart:
+									processPosControllerMassSetupStart();
+									break;
+
+								case eControlSubCmdPosconLedBroadcast:
+									processPosconLedBroadcastSubCommand(inRxBufferNum);
+									break;
+
+								case eControlSubCmdPosconFWVerDisplay:
+									processPosconFWVerDisplaySubCommand(inRxBufferNum);
+									break;
+
+								case eControlSubCmdPosconSetBroadcast:
+									processPosconSetBroadcastSubCommand(inRxBufferNum);
+									break;
+
+								case eControlSubCmdPosconBroadcast:
+									processPosconBroadcastSubCommand(inRxBufferNum);
+									break;
+
+								default:
+									break;
+							}
+						}
+					}
+					break;
+
+				default:
+					break;
+			}
 		}
+	}
 
 	if (shouldReleasePacket) {
 			RELEASE_RX_BUFFER(inRxBufferNum, ccrHolder);
 	}
+
+	readRadioRx();
 }
