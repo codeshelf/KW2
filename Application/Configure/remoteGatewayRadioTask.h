@@ -25,5 +25,6 @@
 
 void radioGatewayReceiveTask( void *pvParameters );
 void radioGatewayTransmitTask( void *pvParameters );
+gwBoolean checkGatewayCRC(BufferStoragePtrType inBufferPtr, BufferCntType inPcktSize);
 
 #endif /* APPLICATION_CONFIGURE_REMOTEGATEWAYRADIOTASK_H_ */

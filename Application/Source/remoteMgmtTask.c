@@ -87,6 +87,9 @@ void remoteMgmtTask(void *pvParameters) {
 		 * 4. If no response then change channels and start at step 1.
 		 */
 
+		txBufferNum = lockTxBuffer();
+		createAssocReqCommand(txBufferNum);
+
 		associated = FALSE;
 		while (!associated) {
 	
@@ -108,13 +111,9 @@ void remoteMgmtTask(void *pvParameters) {
 
 			for (gwUINT8 i = 0; i < 1; i++) {
 				// Send an associate request on the current channel.
-				txBufferNum = lockTxBuffer();
-				createAssocReqCommand(txBufferNum);
-				//writeRadioTx();
+
+//				writeRadioTx(txBufferNum);
 				if (transmitPacket(txBufferNum)) {
-					while (gRadioState == eTx) {
-						vTaskDelay(0);
-					}
 				}
 
 				//Make sure we are in read mode. Transmit just puts the packet on the queue so we may have finished writing the packet to the air or not. We could be in read mode
@@ -123,31 +122,31 @@ void remoteMgmtTask(void *pvParameters) {
 				//read-cancellation described above.
 
 				// Wait up to 50ms for a response. (It actually maybe more if readRadio is waiting for a write but that shouldn't happen, TODO use tickCount)
-				//for(gwUINT8 i = 0; i < 3; i++) {
-				//It's okay if we're already in read mode
-				//readRadioRx();
+				//for(gwUINT8 i = 0; i < 10; i++) {
+					//It's okay if we're already in read mode
+					//readRadioRx();
 
-				if (xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 50 * portTICK_RATE_MS) == pdTRUE ) {
-					if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c) {
-						// Check to see what kind of command we just got.
-						cmdID = getCommandID(gRxRadioBuffer[rxBufferNum].bufferStorage);
-						if (cmdID == eCommandAssoc) {
-							assocSubCmd = getAssocSubCommand(rxBufferNum);
-							if (assocSubCmd == eCmdAssocRESP) {
-								gLocalDeviceState = eLocalStateAssocRespRcvd;
-								processAssocRespCommand(rxBufferNum);
-								if (gLocalDeviceState == eLocalStateAssociated) {
-									associated = TRUE;
-									gLastChannel = channel;
-									RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
-									break;
+					if (xQueueReceive(gRemoteMgmtQueue, &rxBufferNum, 50 * portTICK_RATE_MS) == pdTRUE ) {
+						if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c) {
+							// Check to see what kind of command we just got.
+							cmdID = getCommandID(gRxRadioBuffer[rxBufferNum].bufferStorage);
+							if (cmdID == eCommandAssoc) {
+								assocSubCmd = getAssocSubCommand(rxBufferNum);
+								if (assocSubCmd == eCmdAssocRESP) {
+									gLocalDeviceState = eLocalStateAssocRespRcvd;
+									processAssocRespCommand(rxBufferNum);
+									if (gLocalDeviceState == eLocalStateAssociated) {
+										associated = TRUE;
+										gLastChannel = channel;
+										RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
+										break;
+									}
 								}
 							}
 						}
+						RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 					}
-					RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 				}
-			}
 			//}
 
 			if (!associated) {

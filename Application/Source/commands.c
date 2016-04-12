@@ -18,6 +18,10 @@
 #include "globals.h"
 #include "scannerReadTask.h"
 
+#ifdef GATEWAY
+#include "gatewayCommonTypes.h"
+#endif
+
 #ifdef SHARP_DISPLAY
 #include "display.h"
 #endif
@@ -98,20 +102,6 @@ ECommandGroupIDType getCommandID(BufferStoragePtrType inBufferPtr) {
 	ECommandGroupIDType result = ((inBufferPtr[CMDPOS_CMD_ID]) & CMDMASK_CMDID) >> 4;
 	return result;
 }
-
-// --------------------------------------------------------------------------
-
-//ECommandGroupIDType getCommandID(BufferStoragePtrType inBufferPtr, PacketVerType inPacketVersion) {
-//	ECommandGroupIDType result;
-//
-//	if (inPacketVersion == PROTOCOL_VER_0) {
-//		result = ((inBufferPtr[CMDPOS_CMD_ID - 4]) & CMDMASK_CMDID) >> 4;
-//	} else {
-//		result = ((inBufferPtr[CMDPOS_CMD_ID]) & CMDMASK_CMDID) >> 4;
-//	}
-//
-//	return result;
-//}
 
 // --------------------------------------------------------------------------
 
@@ -218,19 +208,6 @@ ENetMgmtSubCmdIDType getNetMgmtSubCommand(BufferStoragePtrType inBufferPtr) {
 	ENetMgmtSubCmdIDType result = (inBufferPtr[CMDPOS_NETM_SUBCMD]);
 	return result;
 }
-
-// --------------------------------------------------------------------------
-
-//ENetMgmtSubCmdIDType getNetMgmtSubCommand(BufferStoragePtrType inBufferPtr, PacketVerType inPacketVersion) {
-//	ENetMgmtSubCmdIDType result;
-//
-//	if (inPacketVersion == PROTOCOL_VER_0) {
-//		result = (inBufferPtr[CMDPOS_NETM_SUBCMD - 4]);
-//	} else {
-//		result = (inBufferPtr[CMDPOS_NETM_SUBCMD]);
-//	}
-//	return result;
-//}
 
 // --------------------------------------------------------------------------
 
@@ -386,7 +363,7 @@ void createAckPacket(BufferCntType inTXBufferNum, AckIDType inAckId, AckLQIType 
 // --------------------------------------------------------------------------
 
 #ifdef GATEWAY
-void createOutboundNetSetup() {
+void createOutboundNetSetupV0() {
 	BufferCntType txBufferNum;
 	gwUINT8 ccrHolder;
 
@@ -400,17 +377,52 @@ void createOutboundNetSetup() {
 
 	// The remote doesn't have an assigned address yet, so we send the broadcast addr as the source.
 	//createPacket(inTXBufferNum, eCommandNetMgmt, BROADCAST_NETID, ADDR_CONTROLLER, ADDR_BROADCAST);
-	gTxRadioBuffer[txBufferNum].bufferStorage[PCKPOS_VERSION] |= (PACKET_VERSION << SHIFTBITS_PKT_VER);
-	gTxRadioBuffer[txBufferNum].bufferStorage[PCKPOS_NET_NUM] |= (BROADCAST_NET_NUM << SHIFTBITS_PKT_NET_NUM);
-	gTxRadioBuffer[txBufferNum].bufferStorage[PCKPOS_SRC_ADDR] = ADDR_CONTROLLER;
-	gTxRadioBuffer[txBufferNum].bufferStorage[PCKPOS_DST_ADDR] = ADDR_CONTROLLER;
-	gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_CMD_ID] = (eCommandNetMgmt << SHIFTBITS_CMD_ID);
+	gTxRadioBuffer[txBufferNum].bufferStorage[V0_PCKPOS_VERSION] |= (PROTOCOL_VER_0 << SHIFTBITS_PKT_VER);
+	gTxRadioBuffer[txBufferNum].bufferStorage[V0_PCKPOS_NET_NUM] |= (V0_BROADCAST_NET_NUM << SHIFTBITS_PKT_NET_NUM);
+	gTxRadioBuffer[txBufferNum].bufferStorage[V0_PCKPOS_SRC_ADDR] = V0_ADDR_CONTROLLER;
+	gTxRadioBuffer[txBufferNum].bufferStorage[V0_PCKPOS_DST_ADDR] = V0_ADDR_CONTROLLER;
+	gTxRadioBuffer[txBufferNum].bufferStorage[V0_CMDPOS_CMD_ID] = (eCommandNetMgmt << SHIFTBITS_CMD_ID);
 
 	// Set the sub-command.
-	gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_NETM_SUBCMD] = eNetMgmtSubCmdNetSetup;
-	gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_NETM_SETCMD_CHANNEL] = 0;
+	gTxRadioBuffer[txBufferNum].bufferStorage[V0_CMDPOS_NETM_SUBCMD] = eNetMgmtSubCmdNetSetup;
+	gTxRadioBuffer[txBufferNum].bufferStorage[V0_CMDPOS_NETM_SETCMD_CHANNEL] = 0;
 
-	gTxRadioBuffer[txBufferNum].bufferSize = CMDPOS_NETM_SETCMD_CHANNEL + 1;
+	gTxRadioBuffer[txBufferNum].bufferSize = V0_CMDPOS_NETM_SETCMD_CHANNEL + 1;
+
+	serialTransmitFrame(UART0_BASE_PTR, (gwUINT8*) (&gTxRadioBuffer[txBufferNum].bufferStorage), gTxRadioBuffer[txBufferNum].bufferSize);
+	RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
+
+//	vTaskResume(gRadioReceiveTask);
+
+}
+
+// --------------------------------------------------------------------------
+
+void createOutboundNetSetupV1() {
+	BufferCntType txBufferNum;
+	gwUINT8 ccrHolder;
+
+	txBufferNum = lockTxBuffer();
+
+	//vTaskSuspend(gRadioReceiveTask);
+
+	// This command gets setup in the TX buffers, because it only gets sent back to the controller via
+	// the serial interface.  This command never comes from the air.  It's created by the gateway (dongle)
+	// directly.
+
+	// The remote doesn't have an assigned address yet, so we send the broadcast addr as the source.
+	//createPacket(inTXBufferNum, eCommandNetMgmt, BROADCAST_NETID, ADDR_CONTROLLER, ADDR_BROADCAST);
+	gTxRadioBuffer[txBufferNum].bufferStorage[V1_PCKPOS_VERSION] |= (PROTOCOL_VER_1 << SHIFTBITS_PKT_VER);
+	gTxRadioBuffer[txBufferNum].bufferStorage[V1_PCKPOS_NET_NUM] |= (V1_BROADCAST_NET_NUM << SHIFTBITS_PKT_NET_NUM);
+	gTxRadioBuffer[txBufferNum].bufferStorage[V1_PCKPOS_SRC_ADDR] = V1_ADDR_CONTROLLER;
+	gTxRadioBuffer[txBufferNum].bufferStorage[V1_PCKPOS_DST_ADDR] = V1_ADDR_CONTROLLER;
+	gTxRadioBuffer[txBufferNum].bufferStorage[V1_CMDPOS_CMD_ID] = (eCommandNetMgmt << SHIFTBITS_CMD_ID);
+
+	// Set the sub-command.
+	gTxRadioBuffer[txBufferNum].bufferStorage[V1_CMDPOS_NETM_SUBCMD] = eNetMgmtSubCmdNetSetup;
+	gTxRadioBuffer[txBufferNum].bufferStorage[V1_CMDPOS_NETM_SETCMD_CHANNEL] = 0;
+
+	gTxRadioBuffer[txBufferNum].bufferSize = V1_CMDPOS_NETM_SETCMD_CHANNEL + 1;
 
 	serialTransmitFrame(UART0_BASE_PTR, (gwUINT8*) (&gTxRadioBuffer[txBufferNum].bufferStorage), gTxRadioBuffer[txBufferNum].bufferSize);
 	RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
@@ -448,8 +460,8 @@ void createButtonCommand(BufferCntType inTXBufferNum, gwUINT8 inButtonNum, gwUIN
 }
 
 // --------------------------------------------------------------------------
-
-void processNetSetupCommand(BufferCntType inTXBufferNum) {
+#ifdef GATEWAY
+void processNetSetupCommandV0(BufferCntType inTXBufferNum) {
 
 	ChannelNumberType channel;
 	gwUINT8 ccrHolder;
@@ -459,15 +471,31 @@ void processNetSetupCommand(BufferCntType inTXBufferNum) {
 	// These commands NEVER go onto the air.
 
 	// Get the requested channel number.
-	channel = gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_NETM_SETCMD_CHANNEL];
+	channel = gTxRadioBuffer[inTXBufferNum].bufferStorage[V0_CMDPOS_NETM_SETCMD_CHANNEL];
 	setRadioChannel(channel);
 
 	gLocalDeviceState = eLocalStateRun;
 }
+
+void processNetSetupCommandV1(BufferCntType inTXBufferNum) {
+
+	ChannelNumberType channel;
+	gwUINT8 ccrHolder;
+
+	// Network Setup ALWAYS comes in via the serial interface to the gateway (dongle)
+	// This means we process it FROM the TX buffers and SEND from the TX buffers.
+	// These commands NEVER go onto the air.
+
+	// Get the requested channel number.
+	channel = gTxRadioBuffer[inTXBufferNum].bufferStorage[V1_CMDPOS_NETM_SETCMD_CHANNEL];
+	setRadioChannel(channel);
+
+	gLocalDeviceState = eLocalStateRun;
+}
+
 // --------------------------------------------------------------------------
 
-#ifdef GATEWAY
-void processNetIntfTestCommand(BufferCntType inTXBufferNum) {
+void processNetIntfTestCommandV0(BufferCntType inTXBufferNum) {
 
 	BufferCntType txBufferNum;
 	gwUINT8 ccrHolder;
@@ -491,18 +519,18 @@ void processNetIntfTestCommand(BufferCntType inTXBufferNum) {
 
 	// The remote doesn't have an assigned address yet, so we send the broadcast addr as the source.
 	//createPacket(inTXBufferNum, eCommandNetMgmt, BROADCAST_NETID, ADDR_CONTROLLER, ADDR_BROADCAST);
-	gTxRadioBuffer[txBufferNum].bufferStorage[PCKPOS_VERSION] |= (PACKET_VERSION << SHIFTBITS_PKT_VER);
-	gTxRadioBuffer[txBufferNum].bufferStorage[PCKPOS_NET_NUM] |= (BROADCAST_NET_NUM << SHIFTBITS_PKT_NET_NUM);
-	gTxRadioBuffer[txBufferNum].bufferStorage[PCKPOS_SRC_ADDR] = ADDR_CONTROLLER;
-	gTxRadioBuffer[txBufferNum].bufferStorage[PCKPOS_DST_ADDR] = ADDR_CONTROLLER;
-	gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_CMD_ID] = (eCommandNetMgmt << SHIFTBITS_CMD_ID);
+	gTxRadioBuffer[txBufferNum].bufferStorage[V0_PCKPOS_VERSION] |= (PROTOCOL_VER_0 << SHIFTBITS_PKT_VER);
+	gTxRadioBuffer[txBufferNum].bufferStorage[V0_PCKPOS_NET_NUM] |= (V0_BROADCAST_NET_NUM << SHIFTBITS_PKT_NET_NUM);
+	gTxRadioBuffer[txBufferNum].bufferStorage[V0_PCKPOS_SRC_ADDR] = V0_ADDR_CONTROLLER;
+	gTxRadioBuffer[txBufferNum].bufferStorage[V0_PCKPOS_DST_ADDR] = V0_ADDR_CONTROLLER;
+	gTxRadioBuffer[txBufferNum].bufferStorage[V0_CMDPOS_CMD_ID] = (eCommandNetMgmt << SHIFTBITS_CMD_ID);
 
 	// Set the sub-command.
-	gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_NETM_SUBCMD] = eNetMgmtSubCmdNetIntfTest;
-	gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_NETM_TSTCMD_NUM] =
-	gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_NETM_TSTCMD_NUM];
+	gTxRadioBuffer[txBufferNum].bufferStorage[V0_CMDPOS_NETM_SUBCMD] = eNetMgmtSubCmdNetIntfTest;
+	gTxRadioBuffer[txBufferNum].bufferStorage[V0_CMDPOS_NETM_TSTCMD_NUM] =
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[V0_CMDPOS_NETM_TSTCMD_NUM];
 
-	gTxRadioBuffer[txBufferNum].bufferSize = CMDPOS_NETM_TSTCMD_NUM + 1;
+	gTxRadioBuffer[txBufferNum].bufferSize = V0_CMDPOS_NETM_TSTCMD_NUM + 1;
 
 	serialTransmitFrame(UART0_BASE_PTR, (gwUINT8*) (&gTxRadioBuffer[txBufferNum].bufferStorage), gTxRadioBuffer[txBufferNum].bufferSize);
 
@@ -512,18 +540,63 @@ void processNetIntfTestCommand(BufferCntType inTXBufferNum) {
 
 // --------------------------------------------------------------------------
 
-void processNetCheckOutboundCommand(BufferCntType inTXBufferNum) {
+void processNetIntfTestCommandV1(BufferCntType inTXBufferNum) {
+
+	BufferCntType txBufferNum;
+	gwUINT8 ccrHolder;
+
+	/*
+	 * At this point we transmit one inbound interface test back over the serial link from the gateway (dongle) itself.
+	 *
+	 * The only rational way to do this is to use a transmit buffer.  The reason is that the radio may
+	 * already be waiting to fill an inbound packet that we already sent to the MAC.  There is no
+	 * way to let the MAC know that we're about to switch the current RX buffer.  For this reason
+	 * the only safe buffer available to us comes from the TX buffer.
+	 */
+
+	txBufferNum = lockTxBuffer();
+
+	//vTaskSuspend(gRadioReceiveTask);
+
+	// This command gets setup in the TX buffers, because it only gets sent back to the controller via
+	// the serial interface.  This command never comes from the air.  It's created by the gateway (dongle)
+	// directly.
+
+	// The remote doesn't have an assigned address yet, so we send the broadcast addr as the source.
+	//createPacket(inTXBufferNum, eCommandNetMgmt, BROADCAST_NETID, ADDR_CONTROLLER, ADDR_BROADCAST);
+	gTxRadioBuffer[txBufferNum].bufferStorage[V1_PCKPOS_VERSION] |= (PROTOCOL_VER_1 << SHIFTBITS_PKT_VER);
+	gTxRadioBuffer[txBufferNum].bufferStorage[V1_PCKPOS_NET_NUM] |= (V1_BROADCAST_NET_NUM << SHIFTBITS_PKT_NET_NUM);
+	gTxRadioBuffer[txBufferNum].bufferStorage[V1_PCKPOS_SRC_ADDR] = V1_ADDR_CONTROLLER;
+	gTxRadioBuffer[txBufferNum].bufferStorage[V1_PCKPOS_DST_ADDR] = V1_ADDR_CONTROLLER;
+	gTxRadioBuffer[txBufferNum].bufferStorage[V1_CMDPOS_CMD_ID] = (eCommandNetMgmt << SHIFTBITS_CMD_ID);
+
+	// Set the sub-command.
+	gTxRadioBuffer[txBufferNum].bufferStorage[V1_CMDPOS_NETM_SUBCMD] = eNetMgmtSubCmdNetIntfTest;
+	gTxRadioBuffer[txBufferNum].bufferStorage[V1_CMDPOS_NETM_TSTCMD_NUM] =
+	gTxRadioBuffer[inTXBufferNum].bufferStorage[V1_CMDPOS_NETM_TSTCMD_NUM];
+
+	gTxRadioBuffer[txBufferNum].bufferSize = V1_CMDPOS_NETM_TSTCMD_NUM + 1;
+
+	serialTransmitFrame(UART0_BASE_PTR, (gwUINT8*) (&gTxRadioBuffer[txBufferNum].bufferStorage), gTxRadioBuffer[txBufferNum].bufferSize);
+
+//	vTaskResume(gRadioReceiveTask);
+
+}
+
+// --------------------------------------------------------------------------
+
+void processNetCheckOutboundCommandV0(BufferCntType inTXBufferNum) {
 	BufferCntType txBufferNum;
 	ChannelNumberType channel;
 
 	//vTaskSuspend(gRadioReceiveTask);
 
 	// Switch to the channel requested in the outbound net-check.
-	channel = gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_CHANNEL];
+	channel = gTxRadioBuffer[inTXBufferNum].bufferStorage[V0_CMDPOS_NETM_CHKCMD_CHANNEL];
 	setRadioChannel(channel);
 
 	// We need to put the gateway (dongle) GUID into the outbound packet before it gets transmitted.
-	memcpy(&(gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_GUID]), gGuid, UNIQUE_ID_BYTES);
+	memcpy(&(gTxRadioBuffer[inTXBufferNum].bufferStorage[V0_CMDPOS_NETM_CHKCMD_GUID]), gGuid, UNIQUE_ID_BYTES);
 
 	/*
 	 * At this point we transmit one inbound net-check back over the serial link from the gateway (dongle) itself.
@@ -540,7 +613,7 @@ void processNetCheckOutboundCommand(BufferCntType inTXBufferNum) {
 	 * the only safe buffer available to us comes from the TX buffer.
 	 */
 
-	if (gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_TYPE] == eCmdAssocREQ) {
+	if (gTxRadioBuffer[inTXBufferNum].bufferStorage[V0_CMDPOS_NETM_CHKCMD_TYPE] == eCmdAssocREQ) {
 		gwUINT8 ccrHolder;
 
 		txBufferNum = lockTxBuffer();
@@ -551,23 +624,23 @@ void processNetCheckOutboundCommand(BufferCntType inTXBufferNum) {
 
 		// The remote doesn't have an assigned address yet, so we send the broadcast addr as the source.
 		//createPacket(inTXBufferNum, eCommandNetMgmt, BROADCAST_NETID, ADDR_CONTROLLER, ADDR_BROADCAST);
-		gTxRadioBuffer[txBufferNum].bufferStorage[PCKPOS_VERSION] |= (PACKET_VERSION << SHIFTBITS_PKT_VER);
-		gTxRadioBuffer[txBufferNum].bufferStorage[PCKPOS_NET_NUM] |= (BROADCAST_NET_NUM << SHIFTBITS_PKT_NET_NUM);
-		gTxRadioBuffer[txBufferNum].bufferStorage[PCKPOS_SRC_ADDR] = ADDR_CONTROLLER;
-		gTxRadioBuffer[txBufferNum].bufferStorage[PCKPOS_DST_ADDR] = ADDR_CONTROLLER;
-		gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_CMD_ID] = (eCommandNetMgmt << SHIFTBITS_CMD_ID);
+		gTxRadioBuffer[txBufferNum].bufferStorage[V0_PCKPOS_VERSION] |= (PROTOCOL_VER_0 << SHIFTBITS_PKT_VER);
+		gTxRadioBuffer[txBufferNum].bufferStorage[V0_PCKPOS_NET_NUM] |= (V0_BROADCAST_NET_NUM << SHIFTBITS_PKT_NET_NUM);
+		gTxRadioBuffer[txBufferNum].bufferStorage[V0_PCKPOS_SRC_ADDR] = V0_ADDR_CONTROLLER;
+		gTxRadioBuffer[txBufferNum].bufferStorage[V0_PCKPOS_DST_ADDR] = V0_ADDR_CONTROLLER;
+		gTxRadioBuffer[txBufferNum].bufferStorage[V0_CMDPOS_CMD_ID] = (eCommandNetMgmt << SHIFTBITS_CMD_ID);
 
 		// Set the sub-command.
-		gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_NETM_SUBCMD] = eNetMgmtSubCmdNetCheck;
-		gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_TYPE] = eCmdAssocRESP;
+		gTxRadioBuffer[txBufferNum].bufferStorage[V0_CMDPOS_NETM_SUBCMD] = eNetMgmtSubCmdNetCheck;
+		gTxRadioBuffer[txBufferNum].bufferStorage[V0_CMDPOS_NETM_CHKCMD_TYPE] = eCmdAssocRESP;
 
-		gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_NET_NUM] = BROADCAST_NET_NUM;
-		memcpy((void *) &(gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_GUID]), PRIVATE_GUID, UNIQUE_ID_BYTES);
-		gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_CHANNEL] = channel;
-		gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_ENERGY] = GW_ENERGY_DETECT(channel);
-		gTxRadioBuffer[txBufferNum].bufferStorage[CMDPOS_NETM_CHKCMD_LINKQ] = 0;
+		gTxRadioBuffer[txBufferNum].bufferStorage[V0_CMDPOS_NETM_CHKCMD_NET_NUM] = V0_BROADCAST_NET_NUM;
+		memcpy((void *) &(gTxRadioBuffer[txBufferNum].bufferStorage[V0_CMDPOS_NETM_CHKCMD_GUID]), PRIVATE_GUID, UNIQUE_ID_BYTES);
+		gTxRadioBuffer[txBufferNum].bufferStorage[V0_CMDPOS_NETM_CHKCMD_CHANNEL] = channel;
+		gTxRadioBuffer[txBufferNum].bufferStorage[V0_CMDPOS_NETM_CHKCMD_ENERGY] = GW_ENERGY_DETECT(channel);
+		gTxRadioBuffer[txBufferNum].bufferStorage[V0_CMDPOS_NETM_CHKCMD_LINKQ] = 0;
 
-		gTxRadioBuffer[txBufferNum].bufferSize = CMDPOS_NETM_CHKCMD_LINKQ + 1;
+		gTxRadioBuffer[txBufferNum].bufferSize = V0_CMDPOS_NETM_CHKCMD_LINKQ + 1;
 
 		serialTransmitFrame(UART0_BASE_PTR, (gwUINT8*) (&gTxRadioBuffer[txBufferNum].bufferStorage), gTxRadioBuffer[txBufferNum].bufferSize);
 
@@ -576,14 +649,89 @@ void processNetCheckOutboundCommand(BufferCntType inTXBufferNum) {
 	}
 //	gTxRadioBuffer[inTXBufferNum].bufferStatus = eBufferStateFree;
 }
-#endif
 
 // --------------------------------------------------------------------------
 
-void processNetCheckInboundCommand(BufferCntType inRXBufferNum) {
+void processNetCheckOutboundCommandV1(BufferCntType inTXBufferNum) {
+	BufferCntType txBufferNum;
+	ChannelNumberType channel;
+
+	//vTaskSuspend(gRadioReceiveTask);
+
+	// Switch to the channel requested in the outbound net-check.
+	channel = gTxRadioBuffer[inTXBufferNum].bufferStorage[V1_CMDPOS_NETM_CHKCMD_CHANNEL];
+	setRadioChannel(channel);
+
+	// We need to put the gateway (dongle) GUID into the outbound packet before it gets transmitted.
+	memcpy(&(gTxRadioBuffer[inTXBufferNum].bufferStorage[V1_CMDPOS_NETM_CHKCMD_GUID]), gGuid, UNIQUE_ID_BYTES);
+
+	/*
+	 * At this point we transmit one inbound net-check back over the serial link from the gateway (dongle) itself.
+	 * The reason is that we need to guarantee that at least one net-check goes back to the controller
+	 * for each channel.  If there are no other controllers operating or listening at least the controller
+	 * will have a net-check from the dongle itself.  This is necessary, so that the controller can
+	 * assess the energy detect (ED) for each channel.  Even though there may be no other controllers
+	 * on the channel, but there may be other systems using the channel with different protocols or
+	 * modulation schemes.
+	 *
+	 * The only rational way to do this is to use a transmit buffer.  The reason is that the radio may
+	 * already be waiting to fill an inbound packet that we already sent to the MAC.  There is no
+	 * way to let the MAC know that we're about to switch the current RX buffer.  For this reason
+	 * the only safe buffer available to us comes from the TX buffer.
+	 */
+
+	if (gTxRadioBuffer[inTXBufferNum].bufferStorage[V1_CMDPOS_NETM_CHKCMD_TYPE] == eCmdAssocREQ) {
+		gwUINT8 ccrHolder;
+
+		txBufferNum = lockTxBuffer();
+
+		// This command gets setup in the TX buffers, because it only gets sent back to the controller via
+		// the serial interface.  This command never comes from the air.  It's created by the gateway (dongle)
+		// directly.
+
+		// The remote doesn't have an assigned address yet, so we send the broadcast addr as the source.
+		//createPacket(inTXBufferNum, eCommandNetMgmt, BROADCAST_NETID, ADDR_CONTROLLER, ADDR_BROADCAST);
+		gTxRadioBuffer[txBufferNum].bufferStorage[V1_PCKPOS_VERSION] |= (PROTOCOL_VER_1 << SHIFTBITS_PKT_VER);
+		gTxRadioBuffer[txBufferNum].bufferStorage[V1_PCKPOS_NET_NUM] |= (V1_BROADCAST_NET_NUM << SHIFTBITS_PKT_NET_NUM);
+		gTxRadioBuffer[txBufferNum].bufferStorage[V1_PCKPOS_SRC_ADDR] = V1_ADDR_CONTROLLER;
+		gTxRadioBuffer[txBufferNum].bufferStorage[V1_PCKPOS_DST_ADDR] = V1_ADDR_CONTROLLER;
+		gTxRadioBuffer[txBufferNum].bufferStorage[V1_CMDPOS_CMD_ID] = (eCommandNetMgmt << SHIFTBITS_CMD_ID);
+
+		// Set the sub-command.
+		gTxRadioBuffer[txBufferNum].bufferStorage[V1_CMDPOS_NETM_SUBCMD] = eNetMgmtSubCmdNetCheck;
+		gTxRadioBuffer[txBufferNum].bufferStorage[V1_CMDPOS_NETM_CHKCMD_TYPE] = eCmdAssocRESP;
+
+		gTxRadioBuffer[txBufferNum].bufferStorage[V1_CMDPOS_NETM_CHKCMD_NET_NUM] = V1_BROADCAST_NET_NUM;
+		memcpy((void *) &(gTxRadioBuffer[txBufferNum].bufferStorage[V1_CMDPOS_NETM_CHKCMD_GUID]), PRIVATE_GUID, UNIQUE_ID_BYTES);
+		gTxRadioBuffer[txBufferNum].bufferStorage[V1_CMDPOS_NETM_CHKCMD_CHANNEL] = channel;
+		gTxRadioBuffer[txBufferNum].bufferStorage[V1_CMDPOS_NETM_CHKCMD_ENERGY] = GW_ENERGY_DETECT(channel);
+		gTxRadioBuffer[txBufferNum].bufferStorage[V1_CMDPOS_NETM_CHKCMD_LINKQ] = 0;
+
+		gTxRadioBuffer[txBufferNum].bufferSize = V1_CMDPOS_NETM_CHKCMD_LINKQ + 1;
+
+		serialTransmitFrame(UART0_BASE_PTR, (gwUINT8*) (&gTxRadioBuffer[txBufferNum].bufferStorage), gTxRadioBuffer[txBufferNum].bufferSize);
+
+//		vTaskResume(gRadioReceiveTask);
+
+	}
+//	gTxRadioBuffer[inTXBufferNum].bufferStatus = eBufferStateFree;
+}
+
+// --------------------------------------------------------------------------
+
+void processNetCheckInboundCommandV0(BufferCntType inRXBufferNum) {
 	// The gateway (dongle) needs to add the link quality to the channel energy field.
 	// This way the gateway can assess channel energy.
 }
+
+// --------------------------------------------------------------------------
+
+void processNetCheckInboundCommandV1(BufferCntType inRXBufferNum) {
+	// The gateway (dongle) needs to add the link quality to the channel energy field.
+	// This way the gateway can assess channel energy.
+}
+#endif
+
 // --------------------------------------------------------------------------
 
 void processAssocRespCommand(BufferCntType inRXBufferNum) {
@@ -613,11 +761,7 @@ void processAssocAckCommand(BufferCntType inRXBufferNum) {
 // --------------------------------------------------------------------------
 
 void processAckSubCommand(BufferCntType inRxBufferNum) {
-	AckIDType ackId;
-
-	ackId = gRxRadioBuffer[inRxBufferNum].bufferStorage[CMDPOS_ACK_NUM];
-
-	if (xQueueSend(gTxAckQueue, &ackId, (portTickType) 0)) {
+	if (xQueueSend(gTxAckQueue, &inRxBufferNum, (portTickType) 0)) {
 	}
 }
 
@@ -1081,4 +1225,36 @@ void processPosconBroadcastSubCommand(BufferCntType inRXBufferNum) {
 
 	RS485_TX_OFF
 #endif
+}
+
+// --------------------------------------------------------------------------
+
+gwBoolean packetIsAckPacket(BufferStoragePtrType inBufferPtr) {
+	ECommandGroupIDType cmdID;
+	EControlSubCmdIDType subcmd;
+
+	cmdID = getCommandID(inBufferPtr);
+	if (cmdID == eCommandControl)  {
+
+		subcmd = inBufferPtr[CMDPOS_CONTROL_SUBCMD];
+		if (subcmd == eControlSubCmdAck) {
+			return TRUE;
+		}
+	}
+
+	return FALSE;
+}
+
+// --------------------------------------------------------------------------
+
+gwBoolean packetIsNetcheck(BufferStoragePtrType inBufferPtr) {
+	ECommandGroupIDType cmdID;
+	EControlSubCmdIDType subcmd;
+
+	cmdID = getCommandID(inBufferPtr);
+	if (cmdID == eCommandNetMgmt)  {
+		return TRUE;
+	}
+
+	return FALSE;
 }

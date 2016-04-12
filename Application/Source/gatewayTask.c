@@ -20,6 +20,7 @@ $Name$
 #include "string.h"
 #include "Gateway.h"
 #include "radioCommon.h"
+#include "gatewayCommonTypes.h"
 
 xQueueHandle			gGatewayMgmtQueue;
 ControllerStateType		gControllerState;
@@ -31,6 +32,7 @@ extern RxRadioBufferStruct gRxRadioBuffer[RX_BUFFER_COUNT];
 extern BufferCntType gRxCurBufferNum;
 extern BufferCntType gRxUsedBuffers;
 
+extern xTaskHandle gRadioTransmitTask;
 extern TxRadioBufferStruct gTxRadioBuffer[TX_BUFFER_COUNT];
 extern BufferCntType 		gTxCurBufferNum;
 extern BufferCntType 		gTxUsedBuffers;
@@ -43,7 +45,8 @@ void serialReceiveTask(void *pvParameters ) {
 	ENetMgmtSubCmdIDType	subCmdID;
 	BufferCntType			txBufferNum = 0;
 	PacketVerType 			packetVersion;
-	gwUINT8 ccrHolder;
+	gwUINT16				crc = 0;
+	gwUINT8 				ccrHolder;
 	
 	// Setup the USB interface.
 	Gateway_Init();
@@ -79,47 +82,84 @@ void serialReceiveTask(void *pvParameters ) {
 
 	// Send a net-setup command to the controller.
 	// It will respond with the channel that we should be using.
-	createOutboundNetSetup();
+	createOutboundNetSetupV1();
+	createOutboundNetSetupV0();
 	
 	for ( ;; ) {
 		
 		txBufferNum = lockTxBuffer();
 		gTxRadioBuffer[txBufferNum].bufferSize = serialReceiveFrame(UART0_BASE_PTR, gTxRadioBuffer[txBufferNum].bufferStorage, TX_BUFFER_SIZE);
 
-		//GW_WATCHDOG_RESET;
-		
 		if (gTxRadioBuffer[txBufferNum].bufferSize > 0) {
 			gTxRadioBuffer[txBufferNum].bufferStatus = eBufferStateInUse;
 
-			//packetVersion = getPacketVersion(txBufferNum);
+			packetVersion = getPacketVersion(gTxRadioBuffer[txBufferNum].bufferStorage);
 
-			cmdID = getCommandID(gTxRadioBuffer[txBufferNum].bufferStorage);
+			// We manipulate packets based on version
+			if (packetVersion == PROTOCOL_VER_1) {
+				cmdID = ((gTxRadioBuffer[txBufferNum].bufferStorage[V1_CMDPOS_CMD_ID]) & CMDMASK_CMDID) >> 4;
 
-			if (cmdID == eCommandNetMgmt) {
-				subCmdID = getNetMgmtSubCommand(gTxRadioBuffer[txBufferNum].bufferStorage);
-				switch (subCmdID) {
-					case eNetMgmtSubCmdNetCheck:
-						processNetCheckOutboundCommand(txBufferNum);
-						break;
-						
-					case eNetMgmtSubCmdNetSetup:
-						processNetSetupCommand(txBufferNum);
-						// We don't ever want to broadcast net-setup, so continue.
-						RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
-						continue;
-						break;
-						
-					case eNetMgmtSubCmdNetIntfTest:
-						processNetIntfTestCommand(txBufferNum);
-						// We don't ever want to broadcast intf-test, so continue.
-						RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
-						continue;
-						break;
-						
-					case eNetMgmtSubCmdInvalid:
-						RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
-						continue;
-						break;
+				if (cmdID == eCommandNetMgmt) {
+					subCmdID = gTxRadioBuffer[txBufferNum].bufferStorage[V1_CMDPOS_NETM_SUBCMD];
+					switch (subCmdID) {
+						case eNetMgmtSubCmdNetCheck:
+							processNetCheckOutboundCommandV1(txBufferNum);
+							break;
+
+						case eNetMgmtSubCmdNetSetup:
+							processNetSetupCommandV1(txBufferNum);
+							// We don't ever want to broadcast net-setup, so continue.
+							RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
+							continue;
+							break;
+
+						case eNetMgmtSubCmdNetIntfTest:
+							processNetIntfTestCommandV1(txBufferNum);
+							// We don't ever want to broadcast intf-test, so continue.
+							RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
+							continue;
+							break;
+
+						case eNetMgmtSubCmdInvalid:
+							RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
+							continue;
+							break;
+					}
+				}
+
+				// Calculate the crc for the messages protocol v1 messages
+				crc = calculateCRC16(gTxRadioBuffer[txBufferNum].bufferStorage, gTxRadioBuffer[txBufferNum].bufferSize);
+				setCRC(gTxRadioBuffer[txBufferNum].bufferStorage, crc);
+
+			} else {
+				cmdID = ((gTxRadioBuffer[txBufferNum].bufferStorage[V0_CMDPOS_CMD_ID]) & CMDMASK_CMDID) >> 4;
+
+				if (cmdID == eCommandNetMgmt) {
+					subCmdID = gTxRadioBuffer[txBufferNum].bufferStorage[V0_CMDPOS_NETM_SUBCMD];
+					switch (subCmdID) {
+						case eNetMgmtSubCmdNetCheck:
+							processNetCheckOutboundCommandV0(txBufferNum);
+							break;
+
+						case eNetMgmtSubCmdNetSetup:
+							processNetSetupCommandV0(txBufferNum);
+							// We don't ever want to broadcast net-setup, so continue.
+							RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
+							continue;
+							break;
+
+						case eNetMgmtSubCmdNetIntfTest:
+							processNetIntfTestCommandV0(txBufferNum);
+							// We don't ever want to broadcast intf-test, so continue.
+							RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
+							continue;
+							break;
+
+						case eNetMgmtSubCmdInvalid:
+							RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
+							continue;
+							break;
+					}
 				}
 			}
 
@@ -127,7 +167,11 @@ void serialReceiveTask(void *pvParameters ) {
 			if (xQueueSend(gRadioTransmitQueue, &txBufferNum, (portTickType) 0) != pdTRUE) {
 				// We couldn't queue the buffer, so release it.
 				RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
+			} else {
+				vTaskResume(gRadioTransmitTask);
 			}
+		} else {
+			RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
 		}
 	}
 

@@ -48,26 +48,54 @@ extern BufferCntType 		gTxUsedBuffers;
 extern NetworkIDType gMyNetworkID;
 extern NetAddrType gMyAddr;
 
+gwBoolean	gWaitingForAck = FALSE;
+
+// --------------------------------------------------------------------------
+
+gwBoolean shouldProcessPacket(BufferCntType rxBufferNum) {
+	gwBoolean ackPacket = packetIsAckPacket(gRxRadioBuffer[rxBufferNum].bufferStorage);
+	gwBoolean netcheck = packetIsNetcheck(gRxRadioBuffer[rxBufferNum].bufferStorage);
+
+	// Process packet with verified CRC
+	if ( !checkCRC(gRxRadioBuffer[rxBufferNum].bufferStorage, gRxMsg.rxPacketPtr->u8DataLength) ) {
+		return FALSE;
+	}
+
+	// Only process ACK/Netcheck packets when waiting for ACK
+	if (gWaitingForAck) {
+		if (ackPacket || netcheck) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+	}
+
+	// Do not process ACK packets when not expecting one
+	if (!gWaitingForAck) {
+		if (ackPacket) {
+			return FALSE;
+		} else {
+			return TRUE;
+		}
+	}
+
+	return FALSE;
+}
+
 // --------------------------------------------------------------------------
 
 void radioReceiveTask(void *pvParameters) {
 	BufferCntType rxBufferNum = 0;
 	gwUINT8 ccrHolder;
+	ECommandGroupIDType cmdID;
+
 #ifdef TUNER
 	while(gLocalDeviceState == eLocalStateTuning){
 		vTaskDelay(1);
 	}
 #endif
 
-	//TODO Remove buffer code. It seems we only need to do this once
 	
-	/*
-	gRxMsg.rxPacketPtr = (rxPacket_t *) &(gRxRadioBuffer[rxBufferNum].rxPacket);
-	gRxMsg.rxPacketPtr->u8MaxDataLength = RX_BUFFER_SIZE;
-	gRxMsg.rxPacketPtr->rxStatus = rxInitStatus;
-	gRxMsg.bufferNum = rxBufferNum;
-	*/
-	// The radio receive task will return a pointer to a radio data packet.
 	if (gRadioReceiveQueue) {
 		for (;;) {
 
@@ -80,20 +108,22 @@ void radioReceiveTask(void *pvParameters) {
 					vTaskDelay(0);
 				}
 
-				// Did we get a a packet and is the crc ok?
-				if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c &&
-					checkCRC(gRxRadioBuffer[rxBufferNum].bufferStorage, gRxMsg.rxPacketPtr->u8DataLength)) {
-
+				if (gRxMsg.rxPacketPtr->rxStatus == rxSuccessStatus_c) {
 					// Process the packet we just received.
 					gRxRadioBuffer[rxBufferNum].bufferSize = gRxMsg.rxPacketPtr->u8DataLength;
-					processRxPacket(rxBufferNum, gRxMsg.rxPacketPtr->lqi);
+
+					if (shouldProcessPacket(rxBufferNum)) {
+						processRxPacket(rxBufferNum, gRxMsg.rxPacketPtr->lqi);
+					} else {
+						RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
+					}
 				} else {
 					RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 				}
+
 			} else {
 				RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 			}
-			vTaskDelay(0);
 		}
 	}
 	/* Will only get here if the queue could not be created. */
@@ -104,12 +134,14 @@ void radioReceiveTask(void *pvParameters) {
 
 void radioTransmitTask(void *pvParameters) {
 	BufferCntType txBufferNum;
+	BufferCntType rxBufferNum;
 	gwBoolean shouldRetry;
 	portTickType retryTickCount;
 	gwUINT8 ackId;
 	gwUINT8 ccrHolder;
 	gwUINT8 pcktVer;
 	gwBoolean isAck = FALSE;
+	gwUINT16 crc = 0;
 	
 #ifdef TUNER
 	while(gLocalDeviceState == eLocalStateTuning){
@@ -119,19 +151,14 @@ void radioTransmitTask(void *pvParameters) {
 
 	if (gRadioTransmitQueue && gTxAckQueue) {
 		for (;;) {
+			gWaitingForAck = FALSE;
 
 			// Wait until the management thread signals us that we have a full buffer to transmit.
 			if (xQueueReceive(gRadioTransmitQueue, &txBufferNum, portMAX_DELAY) == pdPASS) {
+
 				
-				// Calculate the crc for the messages
-
-				pcktVer = getPacketVersion(gTxRadioBuffer[txBufferNum].bufferStorage);
-
-				if (pcktVer == PROTOCOL_VER_1) {
-					gwUINT16 crc = 0;
-					crc = calculateCRC16(gTxRadioBuffer[txBufferNum].bufferStorage, gTxRadioBuffer[txBufferNum].bufferSize);
-					setCRC(gTxRadioBuffer[txBufferNum].bufferStorage, crc);
-				}
+				crc = calculateCRC16(gTxRadioBuffer[txBufferNum].bufferStorage, gTxRadioBuffer[txBufferNum].bufferSize);
+				setCRC(gTxRadioBuffer[txBufferNum].bufferStorage, crc);
 
 				// Store current tick count
 				retryTickCount = xTaskGetTickCount();
@@ -141,7 +168,7 @@ void radioTransmitTask(void *pvParameters) {
 				
 				do {
 					shouldRetry = FALSE;
-					isAck = packetIsAck(txBufferNum);
+					isAck = packetIsAckPacket(gTxRadioBuffer[txBufferNum].bufferStorage);
 
 					//Write tx to the air. Callback will notify us when done.
 					writeRadioTx(txBufferNum);
@@ -156,24 +183,32 @@ void radioTransmitTask(void *pvParameters) {
 
 					readRadioRx();
 
-
 #ifndef GATEWAY
 					if (txedAckId != 0 && txCommandType != eCommandNetMgmt && txCommandType != eCommandAssoc && !isAck) {
 						shouldRetry = TRUE;
+						gWaitingForAck = TRUE;
 
 						//Wait up to 50ms for an ACK
-						if (xQueueReceive(gTxAckQueue, &ackId, 50 * portTICK_RATE_MS) == pdPASS) {
+						if (xQueueReceive(gTxAckQueue, &rxBufferNum, 50 * portTICK_RATE_MS) == pdPASS) {
+							ackId = gRxRadioBuffer[rxBufferNum].bufferStorage[CMDPOS_ACK_NUM];
+
 							if (txedAckId == ackId) {
 								shouldRetry = FALSE;
+								gWaitingForAck = FALSE;
 							}
+
+							RELEASE_RX_BUFFER(rxBufferNum, ccrHolder);
 						}
 
 						//If we fail to receive an ACK after enough retries to exceed 500ms then break out of the loop.
 						if (shouldRetry && ((xTaskGetTickCount() - retryTickCount) > 5000)) {
 							shouldRetry = FALSE;
+							gWaitingForAck = FALSE;
+						} else {
+							vTaskDelay(1);
 						}
 					}
-#endif					
+#endif
 				} while (shouldRetry);
 
 				RELEASE_TX_BUFFER(txBufferNum, ccrHolder);
@@ -183,22 +218,4 @@ void radioTransmitTask(void *pvParameters) {
 
 	/* Will only get here if the queue could not be created. */
 	for (;;);
-}
-
-// --------------------------------------------------------------------------
-
-bool packetIsAck(BufferCntType inTXBufferNum) {
-
-
-	ECommandGroupIDType cmdid = ((gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_CMD_ID]) & CMDMASK_CMDID) >> 4;
-
-	if (cmdid == eCommandControl) {
-		EControlSubCmdIDType subcmdid = (gTxRadioBuffer[inTXBufferNum].bufferStorage[CMDPOS_CONTROL_SUBCMD]);
-
-		if (subcmdid == eControlSubCmdAck) {
-			return TRUE;
-		}
-	}
-
-	return FALSE;
 }

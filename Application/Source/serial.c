@@ -94,7 +94,7 @@ void serialTransmitFrame(UART_MemMapPtr uartRegPtr, BufferStoragePtrType inFrame
 	// Wait until all of the TX bytes have been sent.
 	while (uartRegPtr ->TCFIFO > 0) {
 		// NOTE - Huffa - Busy wait here seems to perform better than task switching
-		//vTaskDelay(1);
+		vTaskDelay(1);
 		//Wait_Waitus(100);
 	}
 

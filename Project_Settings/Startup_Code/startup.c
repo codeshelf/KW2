@@ -1,5 +1,5 @@
 /* GNUC Startup library
- *    Copyright © 2005 Freescale semiConductor Inc. All Rights Reserved.
+ *    Copyright ï¿½ 2005 Freescale semiConductor Inc. All Rights Reserved.
  *
  * $Date: 2011/09/21 06:41:34 $
  * $Revision: 1.4 $

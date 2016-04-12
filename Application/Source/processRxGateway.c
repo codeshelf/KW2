@@ -34,26 +34,23 @@ extern ELocalStatusType		gLocalDeviceState;
 
 void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 	gwUINT8	ccrHolder;
-//	ECommandGroupIDType		cmdID;
-//	ENetMgmtSubCmdIDType	subCmdID;
-//
-//  	cmdID = getCommandID(gRxRadioBuffer[inRxBufferNum].bufferStorage);
-//	if (cmdID == eCommandAssoc) {
-//		subCmdID = getNetMgmtSubCommand(gRxRadioBuffer[inRxBufferNum].bufferStorage);
-//		switch (subCmdID) {
-//			case eCmdAssocACK:
-//				serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) ("AK"),  2);
-//				break;
-//
-//			case eCmdAssocInvalid:
-//				break;
-//		}
-//	}
-//	serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) ("PC"),  2);
+	bool crc = TRUE;
+	PacketVerType packetVersion;
 
-	// Include LQI as last byte in the frame
-	gRxRadioBuffer[inRxBufferNum].bufferStorage[gRxRadioBuffer[inRxBufferNum].bufferSize] = lqi;
+	packetVersion = getPacketVersion(gRxRadioBuffer[inRxBufferNum].bufferStorage);
 
-	serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) (&gRxRadioBuffer[inRxBufferNum].bufferStorage),  gRxRadioBuffer[inRxBufferNum].bufferSize + LQI_BYTES);
+	if (packetVersion == PROTOCOL_VER_1) {
+		crc = checkCRC(gRxRadioBuffer[inRxBufferNum].bufferStorage, gRxRadioBuffer[inRxBufferNum].bufferSize);
+	} else {
+		crc = TRUE;
+	}
+
+	// Transmit if the CRC checks out
+	if (crc) {
+		// Include LQI as last byte in the frame
+		gRxRadioBuffer[inRxBufferNum].bufferStorage[gRxRadioBuffer[inRxBufferNum].bufferSize] = lqi;
+		serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) (&gRxRadioBuffer[inRxBufferNum].bufferStorage),  gRxRadioBuffer[inRxBufferNum].bufferSize + LQI_BYTES);
+	}
+
 	RELEASE_RX_BUFFER(inRxBufferNum, ccrHolder);
 }

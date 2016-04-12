@@ -142,6 +142,9 @@ void stopScrolling();
 void createDataSampleCommand(BufferCntType inTXBufferNum, EndpointNumType inEndpoint);
 void addDataSampleToCommand(BufferCntType inTXBufferNum, TimestampType inTimestamp, DataSampleType inDataSample, char inUnitsByte);
 
+gwBoolean packetIsNetcheck(BufferStoragePtrType inBufferPtr);
+gwBoolean packetIsAckPacket(BufferStoragePtrType inBufferPtr);
+
 // --------------------------------------------------------------------------
 // Globals.
 

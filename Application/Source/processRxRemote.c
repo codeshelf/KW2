@@ -90,9 +90,6 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 				createAckPacket(txBufferNum, ackId, lqi);
 
 				if (transmitPacket(txBufferNum)) {
-					while (gTxRadioBuffer[txBufferNum].bufferStatus != eBufferStateFree) {
-						vTaskDelay(0);
-					}
 				}
 			}
 
@@ -111,7 +108,9 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 						if ((ackId == 0 || ackId != gLastAckId)) {
 							// Make sure that there is a valid sub-command in the control command.
 
-							gLastAckId = ackId;
+							if (ackId != 0) {
+								gLastAckId = ackId;
+							}
 
 							switch (getControlSubCommand(inRxBufferNum)) {
 
@@ -119,6 +118,7 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 									break;
 
 								case eControlSubCmdAck:
+									shouldReleasePacket = FALSE;
 									processAckSubCommand(inRxBufferNum);
 									break;
 
@@ -195,5 +195,4 @@ void processRxPacket(BufferCntType inRxBufferNum, uint8_t lqi) {
 			RELEASE_RX_BUFFER(inRxBufferNum, ccrHolder);
 	}
 
-	readRadioRx();
 }

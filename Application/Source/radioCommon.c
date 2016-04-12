@@ -69,10 +69,13 @@ BufferCntType lockRxBuffer() {
 	BufferCntType result;
 	gwUINT8 ccrHolder;
 
+#ifndef GATEWAY
 	// Wait until there is a free buffer.
 	while (gRxRadioBuffer[gRxCurBufferNum].bufferStatus == eBufferStateInUse) {
 		vTaskDelay(1);
 	}
+#endif
+
 
 	// The buffers are a shared, critical resource, so we have to protect them before we update.
 	GW_ENTER_CRITICAL(ccrHolder);
@@ -105,10 +108,14 @@ BufferCntType lockTxBuffer() {
 	gwUINT8 retries = 0;
 	while (gTxRadioBuffer[gTxCurBufferNum].bufferStatus == eBufferStateInUse) {
 		vTaskDelay(1);
+
+#ifndef GATEWAY
 		if (retries++ > 100) {
 			GW_RESET_MCU(eTxBufferFullTimeout)
 			;
 		}
+#endif
+
 	}
 
 	// The buffers are a shared, critical resource, so we have to protect them before we update.
@@ -215,7 +222,7 @@ void writeRadioTx(BufferCntType inTxBufferNum) {
 //	serialTransmitFrame(UART0_BASE_PTR, (BufferStoragePtrType) ("TX"),  2);
 	
 	GW_EXIT_CRITICAL(ccrHolder);
-	
+
 	if(readWasCancelled) {
 //		//Notify anyone listening on the receive queue that the read was cancelled.
 		RELEASE_RX_BUFFER(gRxMsg.bufferNum, ccrHolder);
