@@ -16,8 +16,6 @@
 // --------------------------------------------------------------------------
 // Definitions.
 
-#define RS485					TRUE
-
 #define LCD_ON					LcdPowerCtl_SetVal(LcdPowerCtl_DeviceData);
 #define LCD_OFF					LcdPowerCtl_ClrVal(LcdPowerCtl_DeviceData);
 

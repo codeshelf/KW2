@@ -141,9 +141,9 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Interface&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Environment&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Configure&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic Services/Interface&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic Services/Source&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic Services&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic_Services/Interface&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic_Services/Source&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic_Services&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Startup_Code&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
@@ -152,6 +152,8 @@
 									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/lib/Kinetis/pdd/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals&quot;"/>
 								</option>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs.1822874194" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="CHE_CONTROLLER"/>
@@ -176,7 +178,7 @@
 					</folderInfo>
 					<fileInfo id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1188745242..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="Application/Source/remoteGatewayRadioTask.c|Application/Source/appFccTest.c|Application/Source/fccTestTask.c|PLM/Source/USB|Application/Source/gatewayTask.c|Application/Source/serialReceiveTask.c|Application/Source/appGateway.c|Application/Source/processRxGateway.c|Application/Source/tunerTask.c|Application/Source/appTuner.c|Application/Source/appAisleController.c|Application/Source/aisleControllerTask.c|PLM/Environment/MK21D5.h|PLM/Source/Sys Common/vectors.h|PLM/Source/Sys Common/vectors.c|Application/Source/UART.h|Application/Source/UART.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Application/Source/appAisleController.c|Application/Source/fccTestTask.c|Application/Source/UART.h|Application/Source/processRxGateway.c|Application/Source/appTuner.c|Application/Source/remoteGatewayRadioTask.c|Application/Source/appGateway.c|Application/Source/aisleControllerTask.c|PLM/Source/Sys Common/crt0.c|PLM/Source/USB|Application/Source/tunerTask.c|PLM/Source/Sys Common/crt0.h|PLM/Environment/MK21D5.h|.settings/com.freescale.processorexpert.core.prefs|Application/Source/UART.c|PLM/Source/Sys Common/vectors.c|Application/Source/serialReceiveTask.c|PLM/Source/Sys Common/vectors.h|Application/Source/appFccTest.c|Application/Source/gatewayTask.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -254,9 +256,9 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Interface&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Environment&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Configure&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic Services/Interface&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic Services/Source&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic Services&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic_Services/Interface&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic_Services/Source&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic_Services&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Startup_Code&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/ARM_GCC_Support/ewl/EWL_C/include&quot;"/>
@@ -270,6 +272,8 @@
 									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/lib/Kinetis/pdd/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals&quot;"/>
 								</option>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option. .1408928236" name="Language Standard" superClass="ilg.gnuarmeclipse.managedbuild.cross.option. " useByScannerDiscovery="false" value="ilg.gnuarmeclipse.managedbuild.cross.option. .gnu99" valueType="enumerated"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.1835443960" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs" useByScannerDiscovery="false" valueType="definedSymbols">
@@ -293,6 +297,8 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals&quot;"/>
 								</option>
 							</tool>
 							<tool errorParsers="org.eclipse.cdt.core.GLDErrorParser" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.linker.debug.1152285343" name="Cross ARM C Linker" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.linker">
@@ -336,9 +342,9 @@
 									<listOptionValue builtIn="false" value="Generated_Code/queue.c"/>
 									<listOptionValue builtIn="false" value="Generated_Code/tasks.c"/>
 									<listOptionValue builtIn="false" value="Generated_Code/timers.c"/>
-									<listOptionValue builtIn="false" value="Generic Services/Source/CommUtil.c"/>
-									<listOptionValue builtIn="false" value="Generic Services/Source/MsgSystem.c"/>
-									<listOptionValue builtIn="false" value="Generic Services/Source/Utilities.c"/>
+									<listOptionValue builtIn="false" value="Generic_Services/Source/CommUtil.c"/>
+									<listOptionValue builtIn="false" value="Generic_Services/Source/MsgSystem.c"/>
+									<listOptionValue builtIn="false" value="Generic_Services/Source/Utilities.c"/>
 									<listOptionValue builtIn="false" value="PLM/Source/Keyboard/Keyboard.c"/>
 									<listOptionValue builtIn="false" value="PLM/Source/LED/LED.c"/>
 									<listOptionValue builtIn="false" value="PLM/Source/MCG/mcg.c"/>
@@ -394,7 +400,7 @@
 					</folderInfo>
 					<fileInfo id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.627703703.514932070..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="Application/Source/remoteGatewayRadioTask.c|PLM/Source/USB|Application/Source/gatewayTask.c|Application/Source/serialReceiveTask.c|Application/Source/appGateway.c|Application/Source/processRxGateway.c|Application/Source/scannerReadTask.c|Application/Source/aisleControllerTask.c|Application/Source/appAisleController.c|Application/Source/cheControllerTask.c|Application/Source/appCheController.c|Application/Source/appCartController.c|PLM/Source/Sys Common/vectors.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Application/Source/appAisleController.c|Application/Source/fccTestTask.c|Application/Source/appCartController.c|Application/Source/processRxGateway.c|Application/Source/remoteGatewayRadioTask.c|Application/Source/appGateway.c|Application/Source/scannerReadTask.c|Application/Source/aisleControllerTask.c|PLM/Source/Sys Common/crt0.c|Application/Source/appCheController.c|Application/Source/cheControllerTask.c|PLM/Source/USB|PLM/Source/Sys Common/crt0.h|.settings/com.freescale.processorexpert.core.prefs|PLM/Source/Sys Common/vectors.c|Application/Source/serialReceiveTask.c|Application/Source/appFccTest.c|Application/Source/gatewayTask.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -540,9 +546,9 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Interface&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Environment&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Configure&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic Services/Interface&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic Services/Source&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic Services&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic_Services/Interface&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic_Services/Source&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic_Services&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Startup_Code&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
@@ -551,6 +557,8 @@
 									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/lib/Kinetis/pdd/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals&quot;"/>
 								</option>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs.1038347604" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="GATEWAY"/>
@@ -574,7 +582,7 @@
 					</folderInfo>
 					<fileInfo id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1188745242.1539496924..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="Application/Source/remoteRadioTask.c|Application/Source/remoteMgmtTask.c|Application/Source/appFccTest.c|Application/Source/fccTestTask.c|Application/Source/processRxRemote.c|Application/Source/cheControllerTask.c|Application/Source/appCheController.c|Application/Source/scannerReadTask.c|PLM/Source/USB|Application/Source/serialReceiveTask.c|Application/Source/tunerTask.c|Application/Source/appTuner.c|Application/Source/appAisleController.c|Application/Source/aisleControllerTask.c|PLM/Environment/MK21D5.h|PLM/Source/Sys Common/vectors.h|PLM/Source/Sys Common/vectors.c|Application/Source/UART.h|Application/Source/UART.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Application/Source/appAisleController.c|Application/Source/fccTestTask.c|Application/Source/UART.h|Application/Source/processRxRemote.c|Application/Source/appTuner.c|Application/Source/scannerReadTask.c|Application/Source/aisleControllerTask.c|PLM/Source/Sys Common/crt0.c|Application/Source/appCheController.c|Application/Source/cheControllerTask.c|PLM/Source/USB|Application/Source/tunerTask.c|PLM/Source/Sys Common/crt0.h|PLM/Environment/MK21D5.h|.settings/com.freescale.processorexpert.core.prefs|Application/Source/remoteRadioTask.c|Application/Source/UART.c|PLM/Source/Sys Common/vectors.c|Application/Source/serialReceiveTask.c|PLM/Source/Sys Common/vectors.h|Application/Source/appFccTest.c|Application/Source/remoteMgmtTask.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -721,9 +729,9 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Interface&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Environment&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Configure&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic Services/Interface&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic Services/Source&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic Services&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic_Services/Interface&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic_Services/Source&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic_Services&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Startup_Code&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
@@ -732,6 +740,8 @@
 									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/lib/Kinetis/pdd/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals&quot;"/>
 								</option>
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs.458865457" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="LED_CONTROLLER"/>
@@ -754,163 +764,195 @@
 					</folderInfo>
 					<fileInfo id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1188745242.829606520..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="Application/Source/remoteGatewayRadioTask.c|Application/Source/appFccTest.c|Application/Source/fccTestTask.c|Application/Source/scannerReadTask.c|Application/Source/display.c|Application/Source/appCheController.c|Application/Source/cheControllerTask.c|PLM/Source/USB|Application/Source/gatewayTask.c|Application/Source/serialReceiveTask.c|Application/Source/appGateway.c|Application/Source/processRxGateway.c|Application/Source/tunerTask.c|Application/Source/appTuner.c|PLM/Environment/MK21D5.h|PLM/Source/Sys Common/vectors.h|PLM/Source/Sys Common/vectors.c|Application/Source/UART.h|Application/Source/UART.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Application/Source/fccTestTask.c|Application/Source/display.c|Application/Source/UART.h|Application/Source/processRxGateway.c|Application/Source/appTuner.c|Application/Source/remoteGatewayRadioTask.c|Application/Source/scannerReadTask.c|Application/Source/appGateway.c|PLM/Source/Sys Common/crt0.c|Application/Source/appCheController.c|Application/Source/cheControllerTask.c|PLM/Source/USB|Application/Source/tunerTask.c|PLM/Source/Sys Common/crt0.h|PLM/Environment/MK21D5.h|.settings/com.freescale.processorexpert.core.prefs|Application/Source/UART.c|PLM/Source/Sys Common/vectors.c|Application/Source/serialReceiveTask.c|PLM/Source/Sys Common/vectors.h|Application/Source/appFccTest.c|Application/Source/gatewayTask.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 			<storageModule moduleId="ilg.gnuarmeclipse.managedbuild.packs"/>
 		</cconfiguration>
-		<cconfiguration id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703" moduleId="org.eclipse.cdt.core.settings" name="LEDController">
+		<cconfiguration id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1188745242.1722096837">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1188745242.1722096837" moduleId="org.eclipse.cdt.core.settings" name="FCCTest">
+				<macros>
+					<stringMacro name="MCUTooldBaseDir" type="VALUE_TEXT" value="/Applications/KDS_3.0.0.app/Contents/toolchain"/>
+					<stringMacro name="openocd_path" type="VALUE_TEXT" value="/Applications/GNU ARM Eclipse/OpenOCD/0.9.0-201505191004/bin"/>
+				</macros>
 				<externalSettings/>
 				<extensions>
+					<extension id="org.eclipse.cdt.managedbuilder.core.ManagedBuildManager" point="org.eclipse.cdt.core.ScannerInfoProvider"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="LEDController" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser;com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;org.eclipse.cdt.core.CWDLocator;" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703" name="LEDController">
-					<folderInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703." name="/" resourcePath="">
-						<toolChain errorParsers="" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.toolchain.debug.1488101957" name="ARM Ltd Windows GCC (G++ Lite)">
-							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.level.24981247" name="Debug level" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.max" valueType="enumerated"/>
-							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.sharedoption.librarian.396501816" name="Enable automatic library configurations" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.sharedoption.librarian" value="true" valueType="boolean"/>
-							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.other.2147462176" name="Other debugging flags" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.other" value="-gstrict-dwarf" valueType="string"/>
-							<targetPlatform id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.platform.debug.279688984" isAbstract="false" name="Windows Platform"/>
-							<builder buildPath="${ProjDirPath}/LEDController" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.CWDLocator" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.builder.debug.1904845038" keepEnvironmentInBuildfile="false" name="ARM Ltd Windows GNU Make builder" parallelBuildOn="true"/>
+				<configuration artifactName="FCCTest" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" description="FCC test firmware target" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser;com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;org.eclipse.cdt.core.CWDLocator;" id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1188745242.1722096837" name="FCCTest" parent="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug" postannouncebuildStep="Generate S19 File" postbuildStep="arm-none-eabi-objcopy -O srec &quot;${ProjDirPath}/${BuildArtifactFileBaseName}/${BuildArtifactFileName}&quot; &quot;${BuildArtifactFileBaseName}.s19&quot;">
+					<folderInfo id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1188745242.1722096837." name="/" resourcePath="">
+						<toolChain id="ilg.gnuarmeclipse.managedbuild.cross.toolchain.base.522949509" name="Cross ARM GCC" superClass="ilg.gnuarmeclipse.managedbuild.cross.toolchain.base" unusedChildren="ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.linker;ilg.gnuarmeclipse.managedbuild.cross.tool.cpp.compiler">
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.architecture.1726299597" name="Architecture" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.architecture" value="ilg.gnuarmeclipse.managedbuild.cross.option.architecture.arm" valueType="enumerated"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.prefix.637865408" name="Prefix" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.prefix" value="arm-none-eabi-" valueType="string"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.suffix.1071582210" name="Suffix" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.suffix"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.c.1415821394" name="C compiler" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.c" value="gcc" valueType="string"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.cpp.1877907356" name="C++ compiler" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.cpp" value="g++" valueType="string"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.ar.217574592" name="Archiver" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.ar" value="ar" valueType="string"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.objcopy.1894694696" name="Hex/Bin converter" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.objcopy" value="objcopy" valueType="string"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.objdump.1926883084" name="Listing generator" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.objdump" value="objdump" valueType="string"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.size.1553258368" name="Size command" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.size" value="size" valueType="string"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.make.1498124424" name="Build command" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.make" value="make" valueType="string"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.rm.288447043" name="Remove command" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.rm" value="rm" valueType="string"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.toolchain.useglobalpath.634371458" name="Use global path" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.toolchain.useglobalpath"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.toolchain.path.1303391848" name="Path" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.toolchain.path"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.createflash.859155444" name="Create flash image" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.createflash" value="false" valueType="boolean"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.createlisting.1989472988" name="Create extended listing" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.createlisting"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.printsize.216220110" name="Print size" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.printsize" value="false" valueType="boolean"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.family.1927294102" name="ARM family" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.family" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.mcpu.cortex-m4" valueType="enumerated"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.architecture.342210484" name="Architecture" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.architecture" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.arch.none" valueType="enumerated"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.instructionset.1006200606" name="Instruction set" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.instructionset" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.instructionset.thumb" valueType="enumerated"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.thumbinterwork.992029818" name="Thumb interwork (-mthumb-interwork)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.thumbinterwork"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.endianness.139113517" name="Endianness" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.endianness"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.fpu.abi.923113893" name="Float ABI" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.fpu.abi" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.fpu.abi.default" valueType="enumerated"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.fpu.unit.2083914461" name="FPU Type" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.fpu.unit"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.unalignedaccess.20335312" name="Unaligned access" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.unalignedaccess"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.aarch64.target.family.616257154" name="AArch64 family" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.aarch64.target.family"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.aarch64.target.feature.crc.884722298" name="Feature crc" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.aarch64.target.feature.crc"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.aarch64.target.feature.crypto.1150519118" name="Feature crypto" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.aarch64.target.feature.crypto"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.aarch64.target.feature.fp.657785607" name="Feature fp" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.aarch64.target.feature.fp"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.aarch64.target.feature.simd.1682706962" name="Feature simd" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.aarch64.target.feature.simd"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.aarch64.target.cmodel.218787891" name="Code model" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.aarch64.target.cmodel"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.aarch64.target.strictalign.916055536" name="Strict align (-mstrict-align)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.aarch64.target.strictalign"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.target.other.1768442687" name="Other target flags" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.target.other"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.level.334444407" name="Optimization Level" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.level" value="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.level.none" valueType="enumerated"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.messagelength.701424083" name="Message length (-fmessage-length=0)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.messagelength" value="true" valueType="boolean"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.signedchar.670768152" name="'char' is signed (-fsigned-char)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.signedchar" value="true" valueType="boolean"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.functionsections.69161750" name="Function sections (-ffunction-sections)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.functionsections" value="true" valueType="boolean"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.datasections.52406987" name="Data sections (-fdata-sections)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.datasections" value="true" valueType="boolean"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.nocommon.956112946" name="No common unitialized (-fno-common)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.nocommon"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.noinlinefunctions.405817912" name="Do not inline functions (-fno-inline-functions)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.noinlinefunctions"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.freestanding.854417968" name="Assume freestanding environment (-ffreestanding)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.freestanding"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.nobuiltin.655783177" name="Disable builtin (-fno-builtin)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.nobuiltin"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.spconstant.1940185207" name="Single precision constants (-fsingle-precision-constant)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.spconstant"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.PIC.1733224236" name="Position independent code (-fPIC)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.PIC"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.lto.367077937" name="Link-time optimizer (-flto)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.lto"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.nomoveloopinvariants.309821462" name="Disable loop invariant move (-fno-move-loop-invariants)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.nomoveloopinvariants"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.other.551265556" name="Other optimization flags" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.other"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.toolchain.name.1060436155" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.toolchain.name" value="GNU Tools for ARM Embedded Processors" valueType="string"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.syntaxonly.532726867" name="Check syntax only (-fsyntax-only)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.syntaxonly"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.pedantic.1900608373" name="Pedantic (-pedantic)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.pedantic"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.pedanticerrors.778559190" name="Pedantic warnings as errors (-pedantic-errors)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.pedanticerrors"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.nowarn.1205978293" name="Inhibit all warnings (-w)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.nowarn"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.unused.49454699" name="Warn on various unused elements (-Wunused)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.unused"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.uninitialized.581208128" name="Warn on uninitialized variables (-Wuninitialised)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.uninitialized"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.allwarn.1059263794" name="Enable all common warnings (-Wall)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.allwarn"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.extrawarn.183502127" name="Enable extra warnings (-Wextra)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.extrawarn"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.missingdeclaration.1407953005" name="Warn on undeclared global function (-Wmissing-declaration)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.missingdeclaration"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.conversion.1781250461" name="Warn on implicit conversions (-Wconversion)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.conversion"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.pointerarith.2084848892" name="Warn if pointer arithmetic (-Wpointer-arith)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.pointerarith"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.padded.104648609" name="Warn if padding is included (-Wpadded)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.padded"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.shadow.1377386195" name="Warn if shadowed variable (-Wshadow)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.shadow"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.logicalop.2137771104" name="Warn if suspicious logical ops (-Wlogical-op)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.logicalop"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.agreggatereturn.576240129" name="Warn if struct is returned (-Wagreggate-return)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.agreggatereturn"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.floatequal.709438750" name="Warn if floats are compared as equal (-Wfloat-equal)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.floatequal"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.toerrors.2059769129" name="Generate errors instead of warnings (-Werror)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.toerrors"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.other.24250707" name="Other warning flags" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.other"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level.1394055658" name="Debug level" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level" value="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level.max" valueType="enumerated"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.format.937055091" name="Debug format" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.format" value="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.format.default" valueType="enumerated"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.prof.877231521" name="Generate prof information (-p)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.prof"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.gprof.283714073" name="Generate gprof information (-pg)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.gprof"/>
+							<option id="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.other.467070069" name="Other debugging flags" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.other" value="-gstrict-dwarf" valueType="string"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="ilg.gnuarmeclipse.managedbuild.cross.targetPlatform.245768351" isAbstract="false" osList="all" superClass="ilg.gnuarmeclipse.managedbuild.cross.targetPlatform"/>
+							<builder buildPath="${workspace_loc:/KW2}/CHEController" enableAutoBuild="true" id="ilg.gnuarmeclipse.managedbuild.cross.builder.344782099" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="ilg.gnuarmeclipse.managedbuild.cross.builder"/>
+							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.printsize.548682356" name="Cross ARM GNU Print Size" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.printsize">
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format.150912777" name="Size format" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format"/>
+							</tool>
+							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.createflash.395154241" name="Cross ARM GNU Create Flash Image" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.createflash"/>
+							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.createlisting.307203383" name="Cross ARM GNU Create Listing" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.createlisting">
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.source.1570436966" name="Display source (--source|-S)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.source" value="true" valueType="boolean"/>
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.allheaders.1516365822" name="Display all headers (--all-headers|-x)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.allheaders" value="true" valueType="boolean"/>
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.demangle.1367600382" name="Demangle names (--demangle|-C)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.demangle" value="true" valueType="boolean"/>
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.linenumbers.958965744" name="Display line numbers (--line-numbers|-l)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.linenumbers" value="true" valueType="boolean"/>
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.wide.328934024" name="Wide lines (--wide|-w)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.wide" value="true" valueType="boolean"/>
+							</tool>
+							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.archiver.794742932" name="Cross ARM GNU Archiver" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.archiver"/>
+							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.linker.298321971" name="Cross ARM C Linker" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.linker">
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.paths.606045150" name="Library search path (-L)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="&quot;${MCUToolsBaseDir}/arm-none-eabi/lib/armv7-m&quot;"/>
+								</option>
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.gcsections.23476577" name="Remove unused sections (-Xlinker --gc-sections)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.gcsections" value="true" valueType="boolean"/>
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.libs.421014740" name="Libraries (-l)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.libs"/>
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.other.830369736" name="Other linker flags" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.other" value="-specs=nano.specs -specs=nosys.specs" valueType="string"/>
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.scriptfile.1620442176" name="Script files (-T)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.scriptfile" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Project_Settings/Linker_Files/ProcessorExpert.ld}&quot;"/>
+								</option>
+								<inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.linker.input.921501814" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.354544776" name="Cross ARM C Compiler" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler">
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.include.paths.900774399" name="Include paths (-I)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/TMR&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Application/Source&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Application/Configure&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/USB/APP/CDC&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/USB/APP/Descriptor&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/USB/Driver&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SMAC/Source&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/USB/Class&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/USB/Common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/USB&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SMAC/Interface&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/Radio/MC1324x/DRV&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Source/Radio/MC1324x/PHY&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Interface&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Environment&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM/Configure&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic_Services/Interface&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic_Services/Source&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generic_Services&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/PLM&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Startup_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/lib/Kinetis/iofiles&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/lib/Kinetis/pdd/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;/Applications/KDS_3.0.0.app/Contents/eclipse/ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/system&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProcessorExpertPath}/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKW21D256HA5/peripherals&quot;"/>
+								</option>
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs.1982643673" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="FCC_TEST"/>
+									<listOptionValue builtIn="false" value="SHARP_DISPLAY"/>
+									<listOptionValue builtIn="false" value="gPromiscuousMode_d=FALSE"/>
+									<listOptionValue builtIn="false" value="HARDWARE_VERSION=&quot;01.0&quot;"/>
+									<listOptionValue builtIn="false" value="RADIO_PROTOCOL_VERSION=2"/>
+									<listOptionValue builtIn="false" value="FIRMWARE_VERSION=&quot;3.4-RC1&quot;"/>
+								</option>
+								<inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input.1466455121" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input"/>
+							</tool>
+							<tool command="${cross_prefix}${cross_c}${cross_suffix}" commandLinePattern="${COMMAND} ${cross_toolchain_flags} ${FLAGS} -c ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.1283964435" name="Cross ARM GNU Assembler" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler">
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.usepreprocessor.225065208" name="Use preprocessor" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.usepreprocessor" value="true" valueType="boolean"/>
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.include.paths.1674085242" name="Include paths (-I)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
+								</option>
+								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.other.825992520" name="Other assembler flags" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.other" value="-c -fmessage-length=0" valueType="string"/>
+								<inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.input.1802126959" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.input"/>
+							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
+					<fileInfo id="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1188745242.1722096837..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="Application/Source/remoteGatewayRadioTask.c|Application/Source/gatewayTask.c|Application/Source/serialReceiveTask.c|Application/Source/appGateway.c|Application/Source/processRxGateway.c|Application/Source/tunerTask.c|Application/Source/appTuner.c|Application/Source/scannerReadTask.c|Application/Source/display.c|Application/Source/cheControllerTask.c|Application/Source/appCheController.c|Application/Source/appCartController.c|PLM/Source/Sys Common/vectors.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Application/Source/appAisleController.c|Application/Source/UART.h|Application/Source/processRxGateway.c|Application/Source/appTuner.c|Application/Source/remoteGatewayRadioTask.c|Application/Source/appGateway.c|Application/Source/aisleControllerTask.c|PLM/Source/Sys Common/crt0.c|Application/Source/appCheController.c|Application/Source/cheControllerTask.c|PLM/Source/USB|Application/Source/tunerTask.c|PLM/Source/Sys Common/crt0.h|PLM/Environment/MK21D5.h|.settings/com.freescale.processorexpert.core.prefs|Application/Source/UART.c|PLM/Source/Sys Common/vectors.c|Application/Source/serialReceiveTask.c|PLM/Source/Sys Common/vectors.h|Application/Source/gatewayTask.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
-		</cconfiguration>
-		<cconfiguration id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242" moduleId="org.eclipse.cdt.core.settings" name="CHEController">
-				<externalSettings/>
-				<extensions>
-					<extension id="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-				</extensions>
-			</storageModule>
-			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="CHEController" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser;com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;org.eclipse.cdt.core.CWDLocator;" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242" name="CHEController" postannouncebuildStep="Generate S19 File" postbuildStep="arm-none-eabi-objcopy -O srec &quot;${ProjDirPath}/Debug/${ProjName}.${BuildArtifactsFileExt}&quot; &quot;${ProjName}.s19&quot;">
-					<folderInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242." name="/" resourcePath="">
-						<toolChain errorParsers="" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.toolchain.debug.516888614" name="ARM Ltd Windows GCC (G++ Lite)">
-							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.level.385789786" name="Debug level" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.max" valueType="enumerated"/>
-							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.sharedoption.librarian.1764886030" name="Enable automatic library configurations" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.sharedoption.librarian" value="true" valueType="boolean"/>
-							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.other.1082754604" name="Other debugging flags" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.other" value="-gstrict-dwarf" valueType="string"/>
-							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.addtools.createflash.713905941" name="Create Flash Image" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.addtools.createflash" value="true" valueType="boolean"/>
-							<targetPlatform id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.platform.debug.1608598168" isAbstract="false" name="Windows Platform"/>
-							<builder buildPath="${ProjDirPath}/CHEController" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.CWDLocator" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.builder.debug.1906291354" keepEnvironmentInBuildfile="false" name="ARM Ltd Windows GNU Make builder" parallelBuildOn="true"/>
-						</toolChain>
-					</folderInfo>
-					<fileInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
-					<sourceEntries>
-						<entry excluding="Application/Source/remoteGatewayRadioTask.c|Application/Source/gatewayTask.c|Application/Source/serialReceiveTask.c|Application/Source/appGateway.c|Application/Source/processRxGateway.c|Application/Source/tunerTask.c|Application/Source/appTuner.c|Application/Source/appAisleController.c|Application/Source/aisleControllerTask.c|PLM/Environment/MK21D5.h|PLM/Source/Sys Common/vectors.h|PLM/Source/Sys Common/vectors.c|Application/Source/UART.h|Application/Source/UART.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-					</sourceEntries>
-				</configuration>
-			</storageModule>
-			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
-		</cconfiguration>
-		<cconfiguration id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070" moduleId="org.eclipse.cdt.core.settings" name="Tuner">
-				<externalSettings/>
-				<extensions>
-					<extension id="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-				</extensions>
-			</storageModule>
-			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="Tuner" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="Target to tune devices" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser;com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;org.eclipse.cdt.core.CWDLocator;" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070" name="Tuner">
-					<folderInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070." name="/" resourcePath="">
-						<toolChain errorParsers="" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.toolchain.debug.737215759" name="ARM Ltd Windows GCC (G++ Lite)">
-							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.level.926418937" name="Debug level" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.max" valueType="enumerated"/>
-							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.sharedoption.librarian.2096458753" name="Enable automatic library configurations" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.sharedoption.librarian" value="true" valueType="boolean"/>
-							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.other.670859656" name="Other debugging flags" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.other" value="-gstrict-dwarf" valueType="string"/>
-							<targetPlatform id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.platform.debug.565152077" isAbstract="false" name="Windows Platform"/>
-							<builder buildPath="${ProjDirPath}/Tuner" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.CWDLocator" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.builder.debug.2026352494" keepEnvironmentInBuildfile="false" name="ARM Ltd Windows GNU Make builder" parallelBuildOn="true"/>
-						</toolChain>
-					</folderInfo>
-					<fileInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
-					<sourceEntries>
-						<entry excluding="Application/Source/remoteGatewayRadioTask.c|Application/Source/gatewayTask.c|Application/Source/serialReceiveTask.c|Application/Source/appGateway.c|Application/Source/processRxGateway.c|Application/Source/scannerReadTask.c|Application/Source/aisleControllerTask.c|Application/Source/appAisleController.c|Application/Source/cheControllerTask.c|Application/Source/appCheController.c|Application/Source/appCartController.c|PLM/Source/Sys Common/vectors.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-					</sourceEntries>
-				</configuration>
-			</storageModule>
-			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
-		</cconfiguration>
-		<cconfiguration id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607" moduleId="org.eclipse.cdt.core.settings" name="Gateway">
-				<externalSettings/>
-				<extensions>
-					<extension id="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-				</extensions>
-			</storageModule>
-			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="Gateway" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="The gateway radio project." errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser;com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;org.eclipse.cdt.core.CWDLocator;" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607" name="Gateway">
-					<folderInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607." name="/" resourcePath="">
-						<toolChain errorParsers="" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.toolchain.debug.686683566" name="ARM Ltd Windows GCC (G++ Lite)">
-							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.level.1876790422" name="Debug level" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.max" valueType="enumerated"/>
-							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.sharedoption.librarian.1850901359" name="Enable automatic library configurations" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.sharedoption.librarian" value="true" valueType="boolean"/>
-							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.other.1149011706" name="Other debugging flags" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.other" value="-gstrict-dwarf" valueType="string"/>
-							<targetPlatform id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.platform.debug.1923868408" isAbstract="false" name="Windows Platform"/>
-							<builder buildPath="${ProjDirPath}/Gateway" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.CWDLocator" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.builder.debug.1582040747" keepEnvironmentInBuildfile="false" name="ARM Ltd Windows GNU Make builder" parallelBuildOn="true"/>
-						</toolChain>
-					</folderInfo>
-					<fileInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
-					<sourceEntries>
-						<entry excluding="Application/Source/remoteRadioTask.c|Application/Source/processRxRemote.c|Application/Source/remoteMgmtTask.c|Application/Source/remoteCommon.c|Application/Source/appAisleController.c|Application/Source/aisleControllerTask.c|Application/Source/tunerTask.c|Application/Source/appTuner.c|Application/Source/scannerReadTask.c|Application/Source/display.c|Application/Source/cheControllerTask.c|Application/Source/appCheController.c|Application/Source/appCartController.c|PLM/Source/Sys Common/vectors.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-					</sourceEntries>
-				</configuration>
-			</storageModule>
-			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
-		</cconfiguration>
-		<cconfiguration id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1058502618">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1058502618" moduleId="org.eclipse.cdt.core.settings" name="LaserController">
-				<externalSettings/>
-				<extensions>
-					<extension id="com.freescale.core.ide.cdt.errorParsers.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-				</extensions>
-			</storageModule>
-			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="LEDController" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser;com.freescale.core.ide.cdt.errorParsers.GCCErrorParser;org.eclipse.cdt.core.CWDLocator;" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1058502618" name="LaserController">
-					<folderInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1058502618." name="/" resourcePath="">
-						<toolChain errorParsers="" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.toolchain.debug.814877604" name="ARM Ltd Windows GCC (G++ Lite)">
-							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.level.1836679057" name="Debug level" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.max" valueType="enumerated"/>
-							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.sharedoption.librarian.488887452" name="Enable automatic library configurations" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.sharedoption.librarian" value="true" valueType="boolean"/>
-							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.other.2020593331" name="Other debugging flags" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.debugging.other" value="-gstrict-dwarf" valueType="string"/>
-							<targetPlatform id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.platform.debug.1892625159" isAbstract="false" name="Windows Platform"/>
-							<builder buildPath="${ProjDirPath}/LaserController" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.CWDLocator" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.builder.debug.527033267" keepEnvironmentInBuildfile="false" name="ARM Ltd Windows GNU Make builder" parallelBuildOn="true"/>
-						</toolChain>
-					</folderInfo>
-					<fileInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1058502618..settings/com.freescale.processorexpert.core.prefs" name="com.freescale.processorexpert.core.prefs" rcbsApplicability="disable" resourcePath=".settings/com.freescale.processorexpert.core.prefs" toolsToInvoke=""/>
-					<sourceEntries>
-						<entry excluding="Application/Source/remoteGatewayRadioTask.c|Application/Source/appAisleController.c|Application/Source/aisleControllerTask.c|Application/Source/gatewayTask.c|Application/Source/serialReceiveTask.c|Application/Source/appGateway.c|Application/Source/processRxGateway.c|Application/Source/tunerTask.c|Application/Source/appTuner.c|Application/Source/scannerReadTask.c|Application/Source/display.c|Application/Source/cheControllerTask.c|Application/Source/appCheController.c|Application/Source/appCartController.c|PLM/Source/Sys Common/vectors.c|PLM/Source/Sys Common/crt0.h|PLM/Source/Sys Common/crt0.c|.settings/com.freescale.processorexpert.core.prefs" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-					</sourceEntries>
-				</configuration>
-			</storageModule>
-			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+			<storageModule moduleId="ilg.gnuarmeclipse.managedbuild.packs"/>
 		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
@@ -938,22 +980,22 @@
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.1120919807;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.609424058">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.47286415;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.22946048">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.47286415;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.22946048">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.1188745242.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.1120919807;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.609424058">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.207836675;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.387070637">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.1013882795;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.1152003247">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.1561457137;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.254819940">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.514932070.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.840787674;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.547201385">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.1561457137;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.254819940">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.1013882795;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.1152003247">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.1050145607.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.debug.576658235;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.1498190689">
@@ -961,6 +1003,9 @@
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.debug.627703703.;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.debug.451030182;org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.661146421">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_CS_GCCWinManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1188745242.1722096837;ilg.gnuarmeclipse.managedbuild.cross.config.elf.debug.1188745242.1722096837.;ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.354544776;ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input.1466455121">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 	</storageModule>
 </cproject><!-- KDSProjectConverter -->

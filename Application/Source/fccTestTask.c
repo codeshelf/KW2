@@ -12,18 +12,20 @@
 #include "radioCommon.h"
 #include "scannerReadTask.h"
 #include "string.h"
-#include "Rs485.h"
 #include "Wait.h"
 #include "EventTimer.h"
 #include "display.h"
 #include "serial.h"
-#include "Rs485Power.h"
-#include "Rs485.h"
 #include "eeprom.h"
 #include "globals.h"
 #include "Watchdog.h"
 #include "TransceiverDrv.h"
 #include "TransceiverReg.h"
+
+#ifdef RS485
+#include "Rs485.h"
+#include "Rs485Power.h"
+#endif
 
 extern TxRadioBufferStruct gTxRadioBuffer[TX_BUFFER_COUNT];
 extern RadioStateEnum gRadioState;
@@ -42,23 +44,6 @@ char 				gPowerMsg[20];
 char 				gDelayMsg[20];
 char 				gPacketSizeMsg[20];
 char 				gPaMsg[20];
-
-// --------------------------------------------------------------------------
-
-gwUINT8 sendRs485Message(char* msgPtr, gwUINT8 msgLen) {
-
-	RS485_TX_ON;
-	serialTransmitFrame(Rs485_DEVICE, msgPtr, msgLen);
-	vTaskDelay(25);
-	RS485_TX_OFF;
-
-	return 0;
-}
-
-void clearAllPositions() {
-	gwUINT8 message[] = { POS_CTRL_CLEAR, POS_CTRL_ALL_POSITIONS };
-	sendRs485Message(message, 2);
-}
 
 // --------------------------------------------------------------------------
 
@@ -87,9 +72,6 @@ void fccSetupTask(void *pvParameters) {
 	
 	// For the Fcc test disable the Watchdog.
 	Watchdog_Disable(Watchdog_DeviceData);
-	
-	// Turn off the Rs485 bus.
-	Rs485Power_ClrVal(Rs485Power_DeviceData);
 	
 	prepUartBus();
 

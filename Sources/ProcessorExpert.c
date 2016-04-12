@@ -36,7 +36,6 @@
 #include "Watchdog.h"
 #include "Critical.h"
 #include "Wait.h"
-#include "Rs485TxCtl.h"
 #include "EventTimer.h"
 #include "SharpDisplayCS.h"
 #include "BitIoLdd1.h"
@@ -45,7 +44,6 @@
 #include "StatusLedClk.h"
 #include "StatusLedSdi.h"
 #include "ScannerPower.h"
-#include "Rs485Power.h"
 #include "CRC1.h"
 #include "RNG1.h"
 /* Including shared modules, which are used for whole project */
