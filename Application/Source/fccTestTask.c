@@ -44,6 +44,7 @@ char 				gPowerMsg[20];
 char 				gDelayMsg[20];
 char 				gPacketSizeMsg[20];
 char 				gPaMsg[20];
+char				gDelayStr[20];
 
 // --------------------------------------------------------------------------
 
@@ -112,10 +113,10 @@ void fccSetupTask(void *pvParameters) {
 				smacError = MLMEPAOutputAdjust(27);				
 			} else 	if (strcmp(gScanString, "A%1") == 0) {
 				strcpy(gAntennaMsg, "Ant: A1");
-				MC1324xDrv_IndirectAccessSPIWrite(ANT_AGC_CTRL, 0x40 + 0x02);
+				MC1324xDrv_IndirectAccessSPIWrite(ANT_AGC_CTRL, /*0x40 + */0x02);
 			} else 	if (strcmp(gScanString, "A%2") == 0) {
 				strcpy(gAntennaMsg, "Ant: A2");
-				MC1324xDrv_IndirectAccessSPIWrite(ANT_AGC_CTRL, 0x40);
+				MC1324xDrv_IndirectAccessSPIWrite(ANT_AGC_CTRL, /*0x40 + */ 0x00);
 			} else 	if (strcmp(gScanString, "T%ON") == 0) {
 				strcpy(gPaMsg, "PA: On");
 				uint8_t padCtrl = MC1324xDrv_IndirectAccessSPIRead(ANT_PAD_CTRL) | 0x01;
@@ -129,10 +130,10 @@ void fccSetupTask(void *pvParameters) {
 				uint8_t gpioData = MC1324xDrv_IndirectAccessSPIRead(GPIO_DATA) | GPIO_PIN2;
 				MC1324xDrv_IndirectAccessSPIWrite(GPIO_DATA, gpioData);
 			} else 	if (strncmp(gScanString, "D%", 2) == 0) {
-				byte delayStr[5];
-				strncpy(gScanString[2], delayStr, strlen(gScanString) - 2);
-				strcpy(gDelayMsg, strcat("Delay: ", delayStr));
-				gDelayMs = atol(delayStr);
+				strncpy(gDelayStr, &gScanString[2], strlen(gScanString) - 1);
+				strcpy(gDelayMsg, "Delay: ");
+				strcat(gDelayMsg, gDelayStr);
+				gDelayMs = atol(gDelayStr);
 			} else if (strcmp(gScanString, "S%NORM") == 0) {
 				strcpy(gPacketSizeMsg, "Packet: 25");
 				gTxRadioBuffer[gFccTxBufferNum].bufferSize = 25;
