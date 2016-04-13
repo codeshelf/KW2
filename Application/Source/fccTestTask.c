@@ -122,7 +122,7 @@ void fccSetupTask(void *pvParameters) {
 				uint8_t padCtrl = MC1324xDrv_IndirectAccessSPIRead(ANT_PAD_CTRL) | 0x01;
 				MC1324xDrv_IndirectAccessSPIWrite(ANT_PAD_CTRL, padCtrl);
 				uint8_t gpioData = MC1324xDrv_IndirectAccessSPIRead(GPIO_DATA) & ~GPIO_PIN2;
-				MC1324xDrv_IndirectAccessSPIWrite(GPIO_DATA, gpioData);
+//				MC1324xDrv_IndirectAccessSPIWrite(GPIO_DATA, gpioData);
 			} else 	if (strcmp(gScanString, "T%OFF") == 0) {
 				strcpy(gPaMsg, "PA: Off");
 				uint8_t padCtrl = MC1324xDrv_IndirectAccessSPIRead(ANT_PAD_CTRL) & ~0x01;
